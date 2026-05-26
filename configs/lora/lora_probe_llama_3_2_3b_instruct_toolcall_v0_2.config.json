@@ -1,0 +1,90 @@
+{
+  "config_version": "1.0",
+  "name": "lora_probe_llama_3_2_3b_instruct_toolcall_v0_2",
+  "generated_utc": "2026-05-05T10:44:19Z",
+  "status": "prepared_not_started",
+  "purpose": "v0.2 probe with strict tool-call emission system prompt on unchanged grouped split membership.",
+  "model": {
+    "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.2-3b-instruct",
+    "fallback_remote_model_id": "meta-llama/Llama-3.2-3B-Instruct",
+    "tokenizer_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.2-3b-instruct",
+    "trust_remote_code": false,
+    "torch_dtype": "bfloat16"
+  },
+  "dataset": {
+    "train_jsonl": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2_train_grouped.jsonl",
+    "val_jsonl": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2_val_grouped.jsonl",
+    "format": "openai_messages_with_assistant_tool_calls",
+    "field_map": {
+      "messages": "messages",
+      "metadata": "metadata"
+    },
+    "max_seq_length": 2048,
+    "packing": false
+  },
+  "loss": {
+    "assistant_completion_only_requested": true,
+    "assistant_only_loss": true,
+    "completion_only_loss": true,
+    "train_on_inputs": false,
+    "mask_user_and_system_tokens": true,
+    "fallback_behavior_if_not_supported": "fail_fast"
+  },
+  "lora": {
+    "enabled": true,
+    "use_qlora": true,
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "bias": "none",
+    "task_type": "CAUSAL_LM",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "quantization": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "bnb_4bit_compute_dtype": "bfloat16"
+  },
+  "optimization": {
+    "num_train_epochs": 3,
+    "learning_rate": 0.0001,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "per_device_train_batch_size": 2,
+    "per_device_eval_batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "gradient_checkpointing": true,
+    "optim": "paged_adamw_8bit",
+    "logging_steps": 5,
+    "eval_strategy": "steps",
+    "eval_steps": 20,
+    "save_strategy": "steps",
+    "save_steps": 20,
+    "save_total_limit": 2,
+    "bf16": true,
+    "fp16": false,
+    "seed": 42
+  },
+  "outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/lora_probe_llama_3_2_3b_instruct_toolcall_v0_2",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/lora_probe_llama_3_2_3b_instruct_toolcall_v0_2",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/lora_probe_llama_3_2_3b_instruct_toolcall_v0_2",
+    "save_adapter_only": true,
+    "merge_adapter_after_training": false
+  },
+  "safety": {
+    "do_not_start_training_automatically": true,
+    "requires_manual_review": true
+  }
+}
