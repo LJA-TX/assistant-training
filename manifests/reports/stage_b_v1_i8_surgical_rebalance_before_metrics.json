@@ -1,0 +1,99 @@
+{
+  "targeted_rows": 799,
+  "family_entropy": 3.564487,
+  "prompt_uniqueness_ratio_targeted": 799,
+  "top_family_shares_pct": [
+    {
+      "source_case_id": "i3_adapt_p0_read_file_1",
+      "share_pct": 15.269086,
+      "rows": 122
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_4",
+      "share_pct": 12.390488,
+      "rows": 99
+    },
+    {
+      "source_case_id": "i3_adapt_p0_read_file_2",
+      "share_pct": 11.013767,
+      "rows": 88
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_1",
+      "share_pct": 10.888611,
+      "rows": 87
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_3",
+      "share_pct": 10.137672,
+      "rows": 81
+    }
+  ],
+  "effective_diversity": {
+    "i3_adapt_p0_read_file_1": 0.115462,
+    "i3_adapt_p0_rg_search_4": 0.097658
+  },
+  "top1_skeleton_share_targeted": null,
+  "ambiguity_counts": {
+    "duplicate_prompt_groups_different_target_count": 0,
+    "duplicate_prompt_groups_different_tool_count": 0,
+    "duplicate_prompt_tool_groups_different_arguments_count": 0
+  },
+  "ambiguity_hard_blocks": {
+    "prompt_to_multiple_targets": false,
+    "prompt_to_multiple_tools": false,
+    "prompt_tool_to_multiple_arguments": false
+  },
+  "contamination_combined": {
+    "heldout_validation": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "tool_holdout": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "no_call": {
+      "prompt_overlap": 0,
+      "target_overlap": 6,
+      "source_case_id_overlap": 0
+    },
+    "adversarial": {
+      "prompt_overlap": 0,
+      "target_overlap": 4,
+      "source_case_id_overlap": 0
+    },
+    "direct_answer": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    }
+  },
+  "style_bucket_targeted_counts": {
+    "imperative_line_scoped": 387,
+    "imperative_general": 350,
+    "task_narrative": 62
+  },
+  "diagnostics_diversity_summary": {
+    "status": "ok",
+    "style_bucket_count_targeted": 3,
+    "dominant_style_share_targeted": 0.484355,
+    "unique_skeletons_targeted": 54,
+    "top1_skeleton_share_targeted": 0.052566,
+    "risk_flags": [],
+    "pass": true
+  },
+  "diagnostics_anti_homogenization_summary": {
+    "status": "ok",
+    "forbidden_hits_total": 0,
+    "targeted_top1_skeleton_share": 0.052566,
+    "targeted_top3_skeleton_share": 0.147685,
+    "dominant_style_share": 0.484355,
+    "risk_signals": [],
+    "pass": true
+  },
+  "targeted_rows_from_dataset": 799,
+  "targeted_prompt_uniqueness_ratio": 0.128911
+}

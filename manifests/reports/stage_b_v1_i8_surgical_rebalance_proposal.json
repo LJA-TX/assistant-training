@@ -1,0 +1,252 @@
+{
+  "artifact": "stage_b_v1_i8_surgical_rebalance_proposal",
+  "generated_utc": "2026-05-26T16:56:43Z",
+  "mode": "reconnaissance_planning_only",
+  "objective": "achieve telemetry-equivalent of 12% concentration cap with surgical trim while preserving ambiguity-remediation and routing coverage",
+  "inputs": [
+    "manifests/reports/stage_b_v1_i8_family_concentration_review.json",
+    "manifests/reports/stage_b_v1_i8_family_concentration_review.md",
+    "scripts/build_stage_b_v1_i8_family_concentration_review.py",
+    "data/v1_0/dataset_v1_0_stage_b_recovery_i8_train.jsonl",
+    "data/v1_0/dataset_v1_0_stage_b_recovery_i8_val.jsonl"
+  ],
+  "baseline": {
+    "targeted_rows_total": 799,
+    "cap_share_reference": 0.12,
+    "cap_rows_absolute": 95,
+    "families_over_cap": [
+      {
+        "source_case_id": "i3_adapt_p0_read_file_1",
+        "rows": 122
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_4",
+        "rows": 99
+      }
+    ],
+    "simulated_cap12_reference": {
+      "targeted_rows_removed": 31,
+      "family_entropy_delta": 0.02778,
+      "intervention_dilution_risk": "low"
+    }
+  },
+  "risk_taxonomy": {
+    "mass_concentration_risk": [
+      "i3_adapt_p0_read_file_1",
+      "i3_adapt_p0_rg_search_4"
+    ],
+    "semantic_clone_risk": "elevated across i3_adapt and readstyle/literal families via high exact prompt reuse",
+    "template_replication_risk": [
+      {
+        "tool": "rg_search",
+        "skeleton_id": "7bf04fd7509e",
+        "rows": 42
+      },
+      {
+        "tool": "rg_search",
+        "skeleton_id": "a195264dd90c",
+        "rows": 40
+      },
+      {
+        "tool": "rg_search",
+        "skeleton_id": "49e8a004f19b",
+        "rows": 36
+      }
+    ],
+    "historical_ambiguity_residue": [
+      "i3_adapt_p0_read_file_1",
+      "i3_adapt_p0_rg_search_4",
+      "i3_adapt_p0_read_file_2",
+      "i3_adapt_p0_rg_search_1",
+      "i3_adapt_p0_rg_search_3",
+      "i3_adapt_p0_rg_search_2",
+      "i3_adapt_p0_read_file_3",
+      "i3_adapt_p0_rg_search_5"
+    ]
+  },
+  "trim_plan": {
+    "total_rows_to_trim": 31,
+    "families": [
+      {
+        "source_case_id": "i3_adapt_p0_read_file_1",
+        "trim_rows": 27,
+        "from_tool": "read_file",
+        "filters": [
+          "non_ambiguity_remediation_only",
+          "imperative_line_scoped_only"
+        ],
+        "preserve_constraints": [
+          "preserve_all_ambiguity_remediation_rows",
+          "preserve_all_rg_search_rows_in_family",
+          "preserve_all_task_narrative_rows_in_family",
+          "preserve_at_least_one_row_per_target_payload",
+          "preserve_at_least_one_row_per_skeleton"
+        ],
+        "prompt_cluster_quotas": [
+          {
+            "prompt_sha1": "238226878513",
+            "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/service.py line range 1-25 and report the first function name. Return strict JSON tool_calls only.",
+            "pre_count": 13,
+            "trim_count": 9,
+            "post_count": 4
+          },
+          {
+            "prompt_sha1": "fd340335aea4",
+            "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only.",
+            "pre_count": 10,
+            "trim_count": 6,
+            "post_count": 4
+          },
+          {
+            "prompt_sha1": "f925407ecd53",
+            "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only.",
+            "pre_count": 9,
+            "trim_count": 5,
+            "post_count": 4
+          },
+          {
+            "prompt_sha1": "733ee5f55cf9",
+            "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py line range 1-25 and report the first function name. Return strict JSON tool_calls only.",
+            "pre_count": 7,
+            "trim_count": 3,
+            "post_count": 4
+          },
+          {
+            "prompt_sha1": "2b74f2b3af5c",
+            "prompt": "Open /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only.",
+            "pre_count": 6,
+            "trim_count": 3,
+            "post_count": 3
+          },
+          {
+            "prompt_sha1": "bba47afc9799",
+            "prompt": "Show /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only.",
+            "pre_count": 4,
+            "trim_count": 1,
+            "post_count": 3
+          }
+        ]
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_4",
+        "trim_rows": 4,
+        "from_tool": "rg_search",
+        "filters": [
+          "highest_frequency_prompt_clusters_only"
+        ],
+        "preserve_constraints": [
+          "preserve_both_path_target_payloads",
+          "preserve_all_skeleton_classes",
+          "preserve_all_prompt_families"
+        ],
+        "prompt_cluster_quotas": [
+          {
+            "prompt_sha1": "10d48a3b0824",
+            "prompt": "Use rg_search in /mnt/services/runtimes/assistant-runtime/server/agent.py for pattern \"tool_calls\" and report match_count only. Return strict JSON tool_calls only.",
+            "pre_count": 15,
+            "trim_count": 3,
+            "post_count": 12
+          },
+          {
+            "prompt_sha1": "58719836e566",
+            "prompt": "Find in /opt/ai-stack/runtimes/assistant-runtime/server/agent.py for pattern \"tool_calls\" and report match_count only. Return strict JSON tool_calls only.",
+            "pre_count": 13,
+            "trim_count": 1,
+            "post_count": 12
+          }
+        ]
+      }
+    ]
+  },
+  "post_trim_projection": {
+    "targeted_rows_total": 768,
+    "family_entropy_delta_bits": 0.02778,
+    "targeted_prompt_uniqueness_ratio": {
+      "pre": 0.128911,
+      "post": 0.134115,
+      "delta": 0.005204
+    },
+    "targeted_top1_skeleton_share": {
+      "pre": 0.052566,
+      "post": 0.050781,
+      "delta": -0.001785
+    },
+    "family_concentration": [
+      {
+        "source_case_id": "i3_adapt_p0_read_file_1",
+        "pre_rows": 122,
+        "post_rows": 95,
+        "pre_share_pct": 15.269086,
+        "post_share_pct": 12.369792
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_4",
+        "pre_rows": 99,
+        "post_rows": 95,
+        "pre_share_pct": 12.390488,
+        "post_share_pct": 12.369792
+      },
+      {
+        "source_case_id": "i3_adapt_p0_read_file_2",
+        "pre_rows": 88,
+        "post_rows": 88,
+        "pre_share_pct": 11.013767,
+        "post_share_pct": 11.458333
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_1",
+        "pre_rows": 87,
+        "post_rows": 87,
+        "pre_share_pct": 10.888611,
+        "post_share_pct": 11.328125
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_3",
+        "pre_rows": 81,
+        "post_rows": 81,
+        "pre_share_pct": 10.137672,
+        "post_share_pct": 10.546875
+      }
+    ],
+    "affected_family_effective_diversity_ratio": [
+      {
+        "source_case_id": "i3_adapt_p0_read_file_1",
+        "pre": 0.115462,
+        "post": 0.139779,
+        "delta": 0.024317
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_4",
+        "pre": 0.097658,
+        "post": 0.10296,
+        "delta": 0.005302
+      }
+    ]
+  },
+  "post_remediation_telemetry_targets": {
+    "max_family_rows_absolute": 95,
+    "effective_diversity_ratio_floor_high_mass_families": 0.1,
+    "effective_diversity_ratio_stretch_target_high_mass_families": 0.13,
+    "semantic_variation_floor_nn_metric": "non_degradation_from_current_baseline",
+    "semantic_variation_floor_pairwise_proxy": 0.2,
+    "acceptable_family_entropy_delta_bits": [
+      0.02,
+      0.05
+    ],
+    "acceptable_normalized_prompt_entropy_delta": [
+      0.0,
+      0.01
+    ]
+  },
+  "recommendation": {
+    "mode": "pure_surgical_trimming",
+    "reason": "meets cap-equivalent concentration objective with low dilution risk and lower governance risk than augmentation",
+    "defer_augmentation_unless": "post_trim_review_still_flags_local_template_coercion"
+  },
+  "governance_unknowns": [
+    "lexical telemetry under-measures intent-level semantic breadth",
+    "concentration reduction does not by itself prove better parse/schema dynamics after training",
+    "small single-template families remain clone-prone and may still add memorization pressure",
+    "latent semantic aliasing and local-template coercion can persist after rebalance"
+  ]
+}

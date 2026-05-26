@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -60,6 +61,7 @@ class BuilderInputs:
     eval_no_call_jsonl: Path
     eval_adversarial_jsonl: Path
     eval_direct_answer_jsonl: Path
+    surgical_rebalance_proposal_json: Path
 
 
 @dataclass(frozen=True)
@@ -232,6 +234,7 @@ def _resolve_inputs(args: argparse.Namespace) -> BuilderInputs:
         eval_no_call_jsonl=Path(args.eval_no_call_jsonl).resolve(),
         eval_adversarial_jsonl=Path(args.eval_adversarial_jsonl).resolve(),
         eval_direct_answer_jsonl=Path(args.eval_direct_answer_jsonl).resolve(),
+        surgical_rebalance_proposal_json=Path(args.surgical_rebalance_proposal_json).resolve(),
     )
 
 
@@ -258,6 +261,14 @@ def _fail_fast_generation_unlock(args: argparse.Namespace) -> None:
         raise RuntimeError("output_root must be set for generation phase")
 
 
+def _fail_fast_surgical_rebalance_unlock(args: argparse.Namespace) -> None:
+    if not bool(args.enable_surgical_rebalance):
+        raise RuntimeError(
+            "i8 generation now requires explicit --enable-surgical-rebalance "
+            "to enforce approved deterministic trim plan"
+        )
+
+
 def _fail_fast_input_validation(inputs: BuilderInputs) -> None:
     required = [
         inputs.parent_train_jsonl,
@@ -272,6 +283,12 @@ def _fail_fast_input_validation(inputs: BuilderInputs) -> None:
     missing = [str(p) for p in required if not p.exists()]
     if missing:
         raise RuntimeError("missing required inputs:\n- " + "\n- ".join(missing))
+
+    if not inputs.surgical_rebalance_proposal_json.exists():
+        raise RuntimeError(
+            "missing required surgical rebalance proposal JSON: "
+            f"{inputs.surgical_rebalance_proposal_json}"
+        )
 
 
 def _validate_parent_invariants(train_rows: list[dict[str, Any]], val_rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -515,6 +532,334 @@ def _build_prompt_ambiguity_audit(rows: list[dict[str, Any]]) -> dict[str, Any]:
     audit["generated_utc"] = _now_utc()
     audit["iteration"] = RUN_NAME
     return audit
+
+
+def _row_unique_id(split: str, idx_1based: int) -> str:
+    return f"{split}:{idx_1based}"
+
+
+def _surgical_trim_index(
+    train_rows: list[dict[str, Any]],
+    val_rows: list[dict[str, Any]],
+) -> dict[tuple[str, str, str], list[tuple[str, int]]]:
+    """
+    Build deterministic lookup for surgical trimming:
+    (source_case_id, tool_name, prompt) -> [(split, idx_0based), ...] in stable row order.
+    """
+    out: dict[tuple[str, str, str], list[tuple[str, int]]] = {}
+    for split, rows in (("train", train_rows), ("val", val_rows)):
+        for idx_0, row in enumerate(rows):
+            tool = _tool_name(row)
+            if tool not in TARGETED_TOOLS:
+                continue
+            prompt = _user_prompt(row)
+            case_id = _row_case_id(row, _row_unique_id(split, idx_0 + 1))
+            key = (case_id, tool, prompt)
+            out.setdefault(key, []).append((split, idx_0))
+    return out
+
+
+def _surgical_trim_style_bucket(prompt: str) -> str:
+    p = prompt.strip().lower()
+    if not p:
+        return "empty"
+    imperative_heads = (
+        "use ",
+        "call ",
+        "invoke ",
+        "run ",
+        "open ",
+        "read ",
+        "search ",
+        "find ",
+        "check ",
+        "list ",
+        "show ",
+        "return ",
+        "retrieve ",
+    )
+    if p.endswith("?"):
+        return "question_form"
+    if any(p.startswith(h) for h in imperative_heads):
+        if "line" in p or "lines" in p:
+            return "imperative_line_scoped"
+        return "imperative_general"
+    return "task_narrative"
+
+
+def _target_signature(row: dict[str, Any]) -> str:
+    return _assistant_target_text(row)
+
+
+def _family_snapshot(rows: list[dict[str, Any]], family: str) -> dict[str, Any]:
+    fam_rows = [r for r in rows if _tool_name(r) in TARGETED_TOOLS and _row_case_id(r, "") == family]
+    if not fam_rows:
+        return {
+            "rows": 0,
+            "tools": set(),
+            "prompts": set(),
+            "targets": set(),
+            "skeletons": set(),
+            "task_narrative_rows": 0,
+            "ambiguity_remediation_rows": 0,
+        }
+    anns = build_intervention_annotations(fam_rows, targeted_tools=TARGETED_TOOLS)
+    return {
+        "rows": len(fam_rows),
+        "tools": {_tool_name(r) for r in fam_rows},
+        "prompts": {_user_prompt(r) for r in fam_rows},
+        "targets": {_target_signature(r) for r in fam_rows},
+        "skeletons": {a.get("skeleton_id", "") for a in anns},
+        "task_narrative_rows": sum(1 for a in anns if a.get("style_bucket") == "task_narrative"),
+        "ambiguity_remediation_rows": sum(
+            1
+            for r in fam_rows
+            if bool((r.get("metadata") if isinstance(r.get("metadata"), dict) else {}).get("ambiguity_remediation_applied", False))
+        ),
+    }
+
+
+def _global_targeted_snapshot(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    targeted_rows = [r for r in rows if _tool_name(r) in TARGETED_TOOLS]
+    anns = build_intervention_annotations(targeted_rows, targeted_tools=TARGETED_TOOLS)
+    return {
+        "rows": len(targeted_rows),
+        "targets": {_target_signature(r) for r in targeted_rows},
+        "skeletons": {a.get("skeleton_id", "") for a in anns},
+        "task_narrative_rows": sum(1 for a in anns if a.get("style_bucket") == "task_narrative"),
+        "prompt_uniqueness_ratio": (
+            len({a.get("prompt", "") for a in anns}) / len(anns)
+            if anns
+            else 0.0
+        ),
+    }
+
+
+def _load_surgical_rebalance_proposal(path: Path) -> dict[str, Any]:
+    proposal = _load_json(path)
+    if str(proposal.get("artifact") or "") != "stage_b_v1_i8_surgical_rebalance_proposal":
+        raise RuntimeError(f"unexpected surgical proposal artifact id: {proposal.get('artifact')}")
+    trim_plan = proposal.get("trim_plan")
+    if not isinstance(trim_plan, dict):
+        raise RuntimeError("surgical proposal missing trim_plan object")
+    families = trim_plan.get("families")
+    if not isinstance(families, list) or not families:
+        raise RuntimeError("surgical proposal trim_plan.families must be non-empty list")
+    if int(trim_plan.get("total_rows_to_trim", -1)) != 31:
+        raise RuntimeError(
+            "surgical proposal total_rows_to_trim must be exactly 31 "
+            f"(got {trim_plan.get('total_rows_to_trim')})"
+        )
+    return proposal
+
+
+def _apply_surgical_rebalance_plan(
+    candidate_train: list[dict[str, Any]],
+    candidate_val: list[dict[str, Any]],
+    *,
+    proposal: dict[str, Any],
+    proposal_path: Path,
+) -> dict[str, Any]:
+    """
+    Apply exactly the approved i8 surgical trim plan with hard preservation checks.
+    Fail-fast on any drift from approved quotas/constraints.
+    """
+    combined_before = _combined_rows(candidate_train, candidate_val)
+    global_before = _global_targeted_snapshot(combined_before)
+
+    trim_plan = proposal["trim_plan"]
+    family_plans = trim_plan["families"]
+
+    # Validate cap-equivalent regime declared in proposal.
+    targeted_total = global_before["rows"]
+    cap_rows = int(math.floor(float(proposal.get("baseline", {}).get("cap_share_reference", 0.12)) * targeted_total))
+    if cap_rows != int(proposal.get("baseline", {}).get("cap_rows_absolute", 95)):
+        raise RuntimeError(
+            "proposal cap regime mismatch: "
+            f"computed cap_rows={cap_rows} proposal={proposal.get('baseline', {}).get('cap_rows_absolute')}"
+        )
+
+    trim_lookup = _surgical_trim_index(candidate_train, candidate_val)
+    removal_targets: list[tuple[str, int]] = []
+    removal_details: list[dict[str, Any]] = []
+
+    pre_family_state: dict[str, dict[str, Any]] = {}
+    for fam_plan in family_plans:
+        family = str(fam_plan.get("source_case_id") or "")
+        if not family:
+            raise RuntimeError("surgical proposal has empty source_case_id")
+        pre_family_state[family] = _family_snapshot(combined_before, family)
+
+        family_trim_expected = int(fam_plan.get("trim_rows", 0))
+        tool_expected = str(fam_plan.get("from_tool") or "")
+        quotas = fam_plan.get("prompt_cluster_quotas")
+        if not isinstance(quotas, list) or not quotas:
+            raise RuntimeError(f"family {family} missing prompt_cluster_quotas")
+
+        family_trim_applied = 0
+        for quota in quotas:
+            prompt = str(quota.get("prompt") or "")
+            trim_count = int(quota.get("trim_count", 0))
+            pre_count_expected = int(quota.get("pre_count", 0))
+            post_count_expected = int(quota.get("post_count", 0))
+            if trim_count <= 0:
+                raise RuntimeError(f"invalid trim_count for family={family} prompt={prompt[:48]}")
+
+            key = (family, tool_expected, prompt)
+            matches = list(trim_lookup.get(key, []))
+            pre_count_actual = len(matches)
+            if pre_count_actual != pre_count_expected:
+                raise RuntimeError(
+                    f"surgical quota pre_count mismatch family={family} tool={tool_expected} "
+                    f"expected={pre_count_expected} actual={pre_count_actual} prompt_sha={_sha1_text(prompt)}"
+                )
+            if pre_count_expected - trim_count != post_count_expected:
+                raise RuntimeError(
+                    f"surgical quota post_count mismatch family={family} tool={tool_expected} "
+                    f"prompt_sha={_sha1_text(prompt)} expected_post={post_count_expected} "
+                    f"computed_post={pre_count_expected - trim_count}"
+                )
+
+            selected = matches[:trim_count]
+            if len(selected) != trim_count:
+                raise RuntimeError(
+                    f"insufficient rows for quota family={family} tool={tool_expected} "
+                    f"needed={trim_count} have={len(selected)} prompt_sha={_sha1_text(prompt)}"
+                )
+
+            for split, idx_0 in selected:
+                row = candidate_train[idx_0] if split == "train" else candidate_val[idx_0]
+                meta = row.get("metadata") if isinstance(row.get("metadata"), dict) else {}
+                style = _surgical_trim_style_bucket(_user_prompt(row))
+                if family == "i3_adapt_p0_read_file_1":
+                    if bool(meta.get("ambiguity_remediation_applied", False)):
+                        raise RuntimeError("preservation violation: attempted to trim ambiguity-remediated row")
+                    if style != "imperative_line_scoped":
+                        raise RuntimeError(
+                            "preservation violation: i3_adapt_p0_read_file_1 trim must remain imperative_line_scoped "
+                            f"(got {style})"
+                        )
+                removal_targets.append((split, idx_0))
+                removal_details.append(
+                    {
+                        "split": split,
+                        "row_index_1based": idx_0 + 1,
+                        "source_case_id": family,
+                        "tool": tool_expected,
+                        "prompt_sha1": _sha1_text(prompt),
+                    }
+                )
+            family_trim_applied += trim_count
+
+        if family_trim_applied != family_trim_expected:
+            raise RuntimeError(
+                f"family trim mismatch for {family}: expected={family_trim_expected} applied={family_trim_applied}"
+            )
+
+    # No duplicate row removals allowed.
+    uniq_targets = sorted(set(removal_targets), key=lambda x: (x[0], x[1]))
+    if len(uniq_targets) != len(removal_targets):
+        raise RuntimeError("duplicate row removals detected in surgical plan execution")
+
+    expected_total = int(trim_plan.get("total_rows_to_trim", 0))
+    if len(uniq_targets) != expected_total:
+        raise RuntimeError(
+            f"global trim mismatch: expected={expected_total} applied={len(uniq_targets)}"
+        )
+
+    # Apply removals in descending index order per split.
+    by_split: dict[str, list[int]] = {"train": [], "val": []}
+    for split, idx_0 in uniq_targets:
+        by_split[split].append(idx_0)
+    for split in ("train", "val"):
+        rows = candidate_train if split == "train" else candidate_val
+        for idx_0 in sorted(by_split[split], reverse=True):
+            if idx_0 < 0 or idx_0 >= len(rows):
+                raise RuntimeError(f"trim target index out of range: {split}:{idx_0 + 1}")
+            rows.pop(idx_0)
+
+    combined_after = _combined_rows(candidate_train, candidate_val)
+    global_after = _global_targeted_snapshot(combined_after)
+
+    # Global preservation checks.
+    if global_after["targets"] != global_before["targets"]:
+        raise RuntimeError("global target payload class preservation failed after surgical trim")
+    if global_after["skeletons"] != global_before["skeletons"]:
+        raise RuntimeError("global skeleton family preservation failed after surgical trim")
+    if global_after["task_narrative_rows"] != global_before["task_narrative_rows"]:
+        raise RuntimeError("global task_narrative coverage changed during surgical trim")
+    if global_before["rows"] - global_after["rows"] != expected_total:
+        raise RuntimeError(
+            f"targeted row reduction mismatch: expected={expected_total} "
+            f"actual={global_before['rows'] - global_after['rows']}"
+        )
+
+    post_family_state: dict[str, dict[str, Any]] = {}
+    for fam_plan in family_plans:
+        family = str(fam_plan.get("source_case_id") or "")
+        post_family_state[family] = _family_snapshot(combined_after, family)
+
+    # Family-specific preservation checks.
+    fam_a = "i3_adapt_p0_read_file_1"
+    if fam_a in pre_family_state:
+        pre = pre_family_state[fam_a]
+        post = post_family_state[fam_a]
+        if post["ambiguity_remediation_rows"] != pre["ambiguity_remediation_rows"]:
+            raise RuntimeError("family preservation failed: ambiguity-remediated rows changed in i3_adapt_p0_read_file_1")
+        if "rg_search" in pre["tools"] and "rg_search" not in post["tools"]:
+            raise RuntimeError("family preservation failed: rg_search lineage removed in i3_adapt_p0_read_file_1")
+        if post["task_narrative_rows"] != pre["task_narrative_rows"]:
+            raise RuntimeError("family preservation failed: task_narrative coverage changed in i3_adapt_p0_read_file_1")
+
+    fam_b = "i3_adapt_p0_rg_search_4"
+    if fam_b in pre_family_state:
+        pre = pre_family_state[fam_b]
+        post = post_family_state[fam_b]
+        if post["targets"] != pre["targets"]:
+            raise RuntimeError("family preservation failed: target payload class changed in i3_adapt_p0_rg_search_4")
+        if post["skeletons"] != pre["skeletons"]:
+            raise RuntimeError("family preservation failed: skeleton family changed in i3_adapt_p0_rg_search_4")
+        if post["prompts"] != pre["prompts"]:
+            raise RuntimeError("family preservation failed: prompt family set changed in i3_adapt_p0_rg_search_4")
+
+    # Enforce intended cap-equivalent regime for top families from proposal projection.
+    fam_counts = Counter(
+        _row_case_id(r, "")
+        for r in combined_after
+        if _tool_name(r) in TARGETED_TOOLS
+    )
+    projection = proposal.get("post_trim_projection", {}).get("family_concentration", [])
+    for item in projection:
+        if not isinstance(item, dict):
+            continue
+        fam = str(item.get("source_case_id") or "")
+        if fam in ("i3_adapt_p0_read_file_1", "i3_adapt_p0_rg_search_4"):
+            expected_rows = int(item.get("post_rows", -1))
+            actual_rows = int(fam_counts.get(fam, 0))
+            if actual_rows != expected_rows:
+                raise RuntimeError(
+                    f"post-trim cap regime mismatch for {fam}: expected={expected_rows} actual={actual_rows}"
+                )
+
+    return {
+        "status": "applied",
+        "proposal_json": str(proposal_path),
+        "total_rows_trimmed": expected_total,
+        "cap_rows_absolute": cap_rows,
+        "trimmed_rows_by_split": {
+            "train": len(by_split["train"]),
+            "val": len(by_split["val"]),
+        },
+        "trimmed_rows_by_family": {
+            fam: int(fam_plan.get("trim_rows", 0))
+            for fam, fam_plan in ((str(x.get("source_case_id")), x) for x in family_plans)
+        },
+        "global_targeted_rows_before": global_before["rows"],
+        "global_targeted_rows_after": global_after["rows"],
+        "global_prompt_uniqueness_ratio_before": round(global_before["prompt_uniqueness_ratio"], 6),
+        "global_prompt_uniqueness_ratio_after": round(global_after["prompt_uniqueness_ratio"], 6),
+        "rows_trimmed": removal_details,
+    }
 
 
 def _fail_fast_prompt_ambiguity_hard_blocks(ambiguity_audit: dict[str, Any], *, scope: str) -> None:
@@ -782,6 +1127,8 @@ def _build_summary(
 ) -> dict[str, Any]:
     train_overlap = contamination_audit["train_overlap"]
     val_overlap = contamination_audit["val_overlap"]
+    surgical = transform_stats.get("surgical_rebalance", {}) if isinstance(transform_stats, dict) else {}
+    fixed_row_count = not bool(surgical.get("status") == "applied")
 
     return {
         "generated_utc": _now_utc(),
@@ -799,7 +1146,7 @@ def _build_summary(
             },
         },
         "policy": {
-            "fixed_row_count": True,
+            "fixed_row_count": fixed_row_count,
             "train_rows": len(candidate_train),
             "val_rows": len(candidate_val),
             "targeted_recovery": "localized parse-anchor shaping on rg_search/read_file from i3 parent baseline",
@@ -828,6 +1175,7 @@ def _build_summary(
             "targeted_tools": list(TARGETED_TOOLS),
             "train": transform_stats["train"],
             "val": transform_stats["val"],
+            "surgical_rebalance": surgical,
         },
         "overlap_audit": {
             "train": train_overlap,
@@ -872,6 +1220,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--eval-no-call-jsonl", default="/opt/ai-stack/assistant-training/evals/data/canonical_v1/no_call.jsonl")
     parser.add_argument("--eval-adversarial-jsonl", default="/opt/ai-stack/assistant-training/evals/data/canonical_v1/adversarial.jsonl")
     parser.add_argument("--eval-direct-answer-jsonl", default="/opt/ai-stack/assistant-training/evals/data/canonical_v1/direct_answer.jsonl")
+    parser.add_argument(
+        "--surgical-rebalance-proposal-json",
+        default="/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_surgical_rebalance_proposal.json",
+    )
 
     parser.add_argument("--output-root", default="/opt/ai-stack/assistant-training/data/v1_0")
     parser.add_argument("--report-root", default="/opt/ai-stack/assistant-training/manifests/reports")
@@ -880,6 +1232,7 @@ def parse_args() -> argparse.Namespace:
     # Explicit unlock flags: generation remains opt-in and auditable.
     parser.add_argument("--enable-dataset-emission", action="store_true")
     parser.add_argument("--allow-generation-phase", action="store_true")
+    parser.add_argument("--enable-surgical-rebalance", action="store_true")
 
     return parser.parse_args()
 
@@ -887,6 +1240,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     _fail_fast_generation_unlock(args)
+    _fail_fast_surgical_rebalance_unlock(args)
 
     inputs = _resolve_inputs(args)
     outputs = _resolve_outputs(args)
@@ -933,6 +1287,24 @@ def main() -> int:
     prompt_ambiguity_audit["remediation"] = remediation_stats
     _fail_fast_prompt_ambiguity_hard_blocks(prompt_ambiguity_audit, scope="candidate_dataset")
 
+    proposal = _load_surgical_rebalance_proposal(inputs.surgical_rebalance_proposal_json)
+    surgical_rebalance_stats = _apply_surgical_rebalance_plan(
+        candidate_train,
+        candidate_val,
+        proposal=proposal,
+        proposal_path=inputs.surgical_rebalance_proposal_json,
+    )
+
+    # Ambiguity hard blocks must remain clean after deterministic trimming.
+    prompt_ambiguity_audit = _build_prompt_ambiguity_audit(_combined_rows(candidate_train, candidate_val))
+    prompt_ambiguity_audit["remediation"] = remediation_stats
+    prompt_ambiguity_audit["surgical_rebalance"] = {
+        "applied": True,
+        "proposal_json": str(inputs.surgical_rebalance_proposal_json),
+        "stats": surgical_rebalance_stats,
+    }
+    _fail_fast_prompt_ambiguity_hard_blocks(prompt_ambiguity_audit, scope="candidate_dataset_post_trim")
+
     eval_map = _collect_eval_map(inputs)
     train_overlap = _overlap_report(candidate_train, eval_map)
     val_overlap = _overlap_report(candidate_val, eval_map)
@@ -947,7 +1319,11 @@ def main() -> int:
     contamination_audit = _build_contamination_audit(candidate_train, candidate_val, eval_map)
     review_package = _build_review_package(
         diagnostics,
-        transform_stats={"train": train_stats, "val": val_stats},
+        transform_stats={
+            "train": train_stats,
+            "val": val_stats,
+            "surgical_rebalance": surgical_rebalance_stats,
+        },
     )
 
     # Output emission only after all fail-fast checks pass.
@@ -968,7 +1344,11 @@ def main() -> int:
         diagnostics=diagnostics,
         prompt_ambiguity_audit=prompt_ambiguity_audit,
         contamination_audit=contamination_audit,
-        transform_stats={"train": train_stats, "val": val_stats},
+        transform_stats={
+            "train": train_stats,
+            "val": val_stats,
+            "surgical_rebalance": surgical_rebalance_stats,
+        },
     )
     _write_json(outputs.summary_json, summary)
 

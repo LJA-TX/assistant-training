@@ -1,31 +1,31 @@
 {
   "report_version": "1.0",
-  "generated_utc": "2026-05-26T16:04:20Z",
+  "generated_utc": "2026-05-26T17:09:27Z",
   "iteration": "stage_b_llama31_8b_base_v1_i8",
   "status": "completed",
   "question": "Are parseability gains likely structural, or are we drifting toward local-template coercion?",
   "targeted_prompt_samples": {
     "status": "ok",
-    "targeted_rows": 799,
+    "targeted_rows": 768,
     "samples_by_tool": {
       "read_file": [
         {
           "source_case_id": "i3_adapt_p0_read_file_1",
           "style_bucket": "imperative_line_scoped",
-          "prompt_chars": 146,
-          "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          "prompt_chars": 274,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only. Disambiguation: call read_file with path=/mnt/services/runtimes/assistant-runtime/server/service.py, line_start=1, line_end=25."
         },
         {
           "source_case_id": "i3_adapt_p0_read_file_1",
           "style_bucket": "imperative_line_scoped",
-          "prompt_chars": 146,
-          "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          "prompt_chars": 274,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only. Disambiguation: call read_file with path=/mnt/services/runtimes/assistant-runtime/server/service.py, line_start=1, line_end=25."
         },
         {
           "source_case_id": "i3_adapt_p0_read_file_1",
           "style_bucket": "imperative_line_scoped",
-          "prompt_chars": 146,
-          "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          "prompt_chars": 274,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only. Disambiguation: call read_file with path=/mnt/services/runtimes/assistant-runtime/server/service.py, line_start=1, line_end=25."
         }
       ],
       "rg_search": [
@@ -68,14 +68,14 @@
         {
           "source_case_id": "i3_adapt_p0_read_file_1",
           "tool": "read_file",
-          "prompt_chars": 146,
-          "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          "prompt_chars": 274,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only. Disambiguation: call read_file with path=/mnt/services/runtimes/assistant-runtime/server/service.py, line_start=1, line_end=25."
         },
         {
           "source_case_id": "i3_adapt_p0_read_file_1",
           "tool": "read_file",
-          "prompt_chars": 146,
-          "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          "prompt_chars": 274,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only. Disambiguation: call read_file with path=/mnt/services/runtimes/assistant-runtime/server/service.py, line_start=1, line_end=25."
         }
       ],
       "task_narrative": [
@@ -113,99 +113,99 @@
   "top_skeleton_families": [
     {
       "skeleton_id": "7bf04fd7509e",
-      "row_count": 42,
-      "share": 0.052566,
+      "row_count": 39,
+      "share": 0.050781,
       "dominance_flag": false
     },
     {
       "skeleton_id": "a195264dd90c",
-      "row_count": 40,
-      "share": 0.050063,
+      "row_count": 39,
+      "share": 0.050781,
       "dominance_flag": false
     },
     {
       "skeleton_id": "49e8a004f19b",
       "row_count": 36,
-      "share": 0.045056,
+      "share": 0.046875,
       "dominance_flag": false
     },
     {
       "skeleton_id": "b5346fe71f24",
       "row_count": 32,
-      "share": 0.04005,
+      "share": 0.041667,
       "dominance_flag": false
     },
     {
       "skeleton_id": "52c9c7295b06",
       "row_count": 30,
-      "share": 0.037547,
+      "share": 0.039062,
       "dominance_flag": false
     },
     {
       "skeleton_id": "3d04e2e8f9fb",
       "row_count": 23,
-      "share": 0.028786,
+      "share": 0.029948,
       "dominance_flag": false
     },
     {
       "skeleton_id": "4ea5a9d3e1aa",
       "row_count": 22,
-      "share": 0.027534,
+      "share": 0.028646,
       "dominance_flag": false
     },
     {
       "skeleton_id": "4b6c95f32e2c",
       "row_count": 20,
-      "share": 0.025031,
-      "dominance_flag": false
-    },
-    {
-      "skeleton_id": "612a971c4bf5",
-      "row_count": 20,
-      "share": 0.025031,
+      "share": 0.026042,
       "dominance_flag": false
     },
     {
       "skeleton_id": "1fe8b9d6152b",
       "row_count": 17,
-      "share": 0.021277,
+      "share": 0.022135,
       "dominance_flag": false
     },
     {
       "skeleton_id": "893cddcb0d09",
       "row_count": 17,
-      "share": 0.021277,
+      "share": 0.022135,
       "dominance_flag": false
     },
     {
       "skeleton_id": "a7adbd6c63ca",
       "row_count": 17,
-      "share": 0.021277,
+      "share": 0.022135,
+      "dominance_flag": false
+    },
+    {
+      "skeleton_id": "48686176673c",
+      "row_count": 16,
+      "share": 0.020833,
       "dominance_flag": false
     }
   ],
   "dominant_style_buckets": [
     {
       "bucket_name": "imperative_line_scoped",
-      "row_count": 387,
-      "share": 0.484355
+      "row_count": 360,
+      "share": 0.46875
     },
     {
       "bucket_name": "imperative_general",
-      "row_count": 350,
-      "share": 0.438048
+      "row_count": 346,
+      "share": 0.450521
     },
     {
       "bucket_name": "task_narrative",
       "row_count": 62,
-      "share": 0.077597
+      "share": 0.080729
     }
   ],
   "prompt_length_distribution": {
     "delta_targeted": {
-      "chars_mean_delta": 13.296621,
+      "chars_mean_delta": 14.613237,
       "chars_p95_delta": 17.0,
-      "words_mean_delta": 1.105131,
+      "words_mean_delta": 1.243775,
       "words_p95_delta": 0.0
     },
     "reference_targeted": {
@@ -226,15 +226,15 @@
     },
     "candidate_targeted": {
       "chars": {
-        "count": 799.0,
-        "mean": 182.45682102628285,
-        "median": 165.0,
+        "count": 768.0,
+        "mean": 183.7734375,
+        "median": 166.0,
         "p95": 273.0,
         "max": 296.0
       },
       "words": {
-        "count": 799.0,
-        "mean": 18.918648310387987,
+        "count": 768.0,
+        "mean": 19.057291666666668,
         "median": 17.0,
         "p95": 31.0,
         "max": 36.0
@@ -245,18 +245,18 @@
     "diversity": {
       "status": "ok",
       "style_bucket_count_targeted": 3,
-      "dominant_style_share_targeted": 0.484355,
+      "dominant_style_share_targeted": 0.46875,
       "unique_skeletons_targeted": 54,
-      "top1_skeleton_share_targeted": 0.052566,
+      "top1_skeleton_share_targeted": 0.050781,
       "risk_flags": [],
       "pass": true
     },
     "anti_homogenization": {
       "status": "ok",
       "forbidden_hits_total": 0,
-      "targeted_top1_skeleton_share": 0.052566,
-      "targeted_top3_skeleton_share": 0.147685,
-      "dominant_style_share": 0.484355,
+      "targeted_top1_skeleton_share": 0.050781,
+      "targeted_top3_skeleton_share": 0.148438,
+      "dominant_style_share": 0.46875,
       "risk_signals": [],
       "pass": true
     },
@@ -352,7 +352,7 @@
     "source_case_divergence_groups": [
       {
         "source_case_id": "i3_adapt_p0_read_file_1",
-        "rows": 122,
+        "rows": 95,
         "distinct_targets": 7,
         "distinct_tools": 2,
         "distinct_prompts": 15,
@@ -360,7 +360,7 @@
       },
       {
         "source_case_id": "i3_adapt_p0_rg_search_4",
-        "rows": 99,
+        "rows": 95,
         "distinct_targets": 2,
         "distinct_tools": 1,
         "distinct_prompts": 10,
