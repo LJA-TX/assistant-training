@@ -1,0 +1,128 @@
+{
+  "generated_utc": "2026-05-26T02:15:38Z",
+  "seed": 20260526,
+  "inputs": {
+    "stage_b_train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_train.jsonl",
+    "stage_b_val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_val.jsonl",
+    "tool_sources": [
+      "/opt/ai-stack/assistant-training/data/tool_ft_allaliases_20260525_from_qual_reports_freq.jsonl",
+      "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_aug_rebalanced_20260417T104659Z.jsonl",
+      "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_aug_focus_rebalanced_20260417T104747Z.jsonl"
+    ]
+  },
+  "policy": {
+    "fixed_row_count": true,
+    "train_rows": 2160,
+    "val_rows": 240,
+    "targeted_recovery": "multi-tool rebalance + contrastive semantic examples",
+    "canonical_eval_rows_used_for_training": false,
+    "synthetic_growth": "no total row-count expansion vs stage_b_i1"
+  },
+  "outputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i2_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i2_val.jsonl",
+    "summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i2_summary.json"
+  },
+  "source_pool": {
+    "curated_tool_rows_total": 129,
+    "curated_tool_rows_by_tool": {
+      "apply_unified_diff": 1,
+      "archive_create": 1,
+      "archive_extract": 1,
+      "check_service_health": 2,
+      "copy_path": 1,
+      "debug_tools": 1,
+      "find_files": 3,
+      "get_system_datetime": 1,
+      "get_system_version": 1,
+      "git_diff": 2,
+      "git_status": 1,
+      "http_request": 1,
+      "json_edit": 1,
+      "list_active_ports": 2,
+      "list_dir": 3,
+      "list_models": 1,
+      "list_tools": 1,
+      "move_path": 1,
+      "read_file": 40,
+      "rg_search": 52,
+      "run_command": 3,
+      "service_control": 1,
+      "sha256_file": 1,
+      "stat_path": 2,
+      "test_run": 1,
+      "write_file": 4
+    },
+    "contrastive_rows_total": 24
+  },
+  "composition": {
+    "train_categories": {
+      "adversarial_malformed": 65,
+      "no_call_direct": 216,
+      "refusal_policy": 151,
+      "runtime_alignment": 324,
+      "tool_positive": 1404
+    },
+    "val_categories": {
+      "adversarial_malformed": 7,
+      "no_call_direct": 24,
+      "refusal_policy": 17,
+      "runtime_alignment": 36,
+      "tool_positive": 156
+    },
+    "train_tool_counts": {
+      "apply_unified_diff": 25,
+      "archive_create": 40,
+      "archive_extract": 35,
+      "check_service_health": 60,
+      "copy_path": 35,
+      "debug_tools": 70,
+      "find_files": 120,
+      "get_system_datetime": 60,
+      "get_system_version": 7,
+      "git_diff": 7,
+      "git_status": 7,
+      "http_request": 8,
+      "json_edit": 8,
+      "list_active_ports": 8,
+      "list_tools": 7,
+      "read_file": 270,
+      "rg_search": 520,
+      "run_command": 35,
+      "service_control": 7,
+      "sha256_file": 8,
+      "stat_path": 25,
+      "test_run": 7,
+      "write_file": 35
+    },
+    "val_tool_counts": {
+      "apply_unified_diff": 3,
+      "archive_create": 4,
+      "archive_extract": 4,
+      "check_service_health": 6,
+      "copy_path": 4,
+      "debug_tools": 8,
+      "find_files": 13,
+      "get_system_datetime": 6,
+      "get_system_version": 1,
+      "git_diff": 1,
+      "git_status": 1,
+      "http_request": 1,
+      "json_edit": 1,
+      "list_active_ports": 1,
+      "list_tools": 1,
+      "read_file": 30,
+      "rg_search": 57,
+      "run_command": 4,
+      "service_control": 1,
+      "sha256_file": 1,
+      "stat_path": 3,
+      "test_run": 1,
+      "write_file": 4
+    }
+  },
+  "hashes": {
+    "train_sha256": "5708bbf816c1ee09b7493b6d52f0dbac7860bedc448fe777581e2ee3e043fed9",
+    "val_sha256": "2f0f72d2c92f92c9b1d8e82b0abed98449bc00d3a85735ea976fb61716d46515"
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "generated_utc": "2026-05-26T03:22:30Z",
+  "seed": 20260526,
+  "inputs": {
+    "stage_b_train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_train.jsonl",
+    "stage_b_val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_val.jsonl",
+    "dataset_summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_summary.json",
+    "tool_sources": [
+      "/opt/ai-stack/assistant-training/data/tool_ft_allaliases_20260525_from_qual_reports_freq.jsonl",
+      "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_aug_rebalanced_20260417T104659Z.jsonl",
+      "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_aug_focus_rebalanced_20260417T104747Z.jsonl"
+    ],
+    "eval_paths": {
+      "heldout_validation": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/heldout_validation.jsonl",
+      "tool_holdout": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/tool_holdout.jsonl",
+      "no_call": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/no_call.jsonl",
+      "adversarial": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/adversarial.jsonl",
+      "direct_answer": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/direct_answer.jsonl"
+    }
+  },
+  "policy": {
+    "fixed_row_count": true,
+    "train_rows": 2160,
+    "val_rows": 240,
+    "targeted_recovery": "semantic-disambiguation + compact JSON target shaping + contamination exclusions",
+    "canonical_eval_rows_used_for_training": false,
+    "synthetic_growth": "no total row-count expansion vs stage_b_i1"
+  },
+  "outputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i3_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i3_val.jsonl",
+    "summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i3_summary.json"
+  },
+  "source_pool": {
+    "excluded_holdout_case_ids": [
+      "p0_check_service_health_1",
+      "p0_find_files_1",
+      "p2_debug_tools_1",
+      "p2_get_system_datetime_1",
+      "p3_apply_unified_diff_1",
+      "p3_archive_create_1",
+      "p3_archive_extract_1",
+      "p3_copy_path_1"
+    ],
+    "excluded_eval_tool_case_ids": [
+      "p0_check_service_health_1",
+      "p0_find_files_1",
+      "p2_debug_tools_1",
+      "p2_get_system_datetime_1",
+      "p3_apply_unified_diff_1",
+      "p3_archive_create_1",
+      "p3_archive_extract_1",
+      "p3_copy_path_1"
+    ],
+    "curated_tool_rows_total": 122,
+    "curated_tool_rows_by_tool": {
+      "check_service_health": 1,
+      "find_files": 2,
+      "get_system_version": 1,
+      "git_diff": 2,
+      "git_status": 1,
+      "http_request": 1,
+      "json_edit": 1,
+      "list_active_ports": 2,
+      "list_dir": 3,
+      "list_models": 1,
+      "list_tools": 1,
+      "move_path": 1,
+      "read_file": 36,
+      "rg_search": 57,
+      "run_command": 3,
+      "service_control": 1,
+      "sha256_file": 1,
+      "stat_path": 2,
+      "test_run": 1,
+      "write_file": 4
+    },
+    "adapted_source_rows_total": 122,
+    "adapted_source_rows_by_tool": {
+      "check_service_health": 1,
+      "find_files": 2,
+      "get_system_version": 1,
+      "git_diff": 2,
+      "git_status": 1,
+      "http_request": 1,
+      "json_edit": 1,
+      "list_active_ports": 2,
+      "list_dir": 3,
+      "list_models": 1,
+      "list_tools": 1,
+      "move_path": 1,
+      "read_file": 36,
+      "rg_search": 57,
+      "run_command": 3,
+      "service_control": 1,
+      "sha256_file": 1,
+      "stat_path": 2,
+      "test_run": 1,
+      "write_file": 4
+    },
+    "synthetic_rows_total": 42,
+    "synthetic_rows_by_tool": {
+      "apply_unified_diff": 1,
+      "archive_create": 1,
+      "archive_extract": 1,
+      "check_service_health": 1,
+      "copy_path": 1,
+      "debug_tools": 20,
+      "find_files": 1,
+      "get_system_datetime": 1,
+      "read_file": 4,
+      "rg_search": 6,
+      "run_command": 5
+    }
+  },
+  "composition": {
+    "train_categories": {
+      "adversarial_malformed": 65,
+      "no_call_direct": 216,
+      "refusal_policy": 151,
+      "runtime_alignment": 324,
+      "tool_positive": 1404
+    },
+    "val_categories": {
+      "adversarial_malformed": 7,
+      "no_call_direct": 24,
+      "refusal_policy": 17,
+      "runtime_alignment": 36,
+      "tool_positive": 156
+    },
+    "train_tool_counts": {
+      "apply_unified_diff": 20,
+      "archive_create": 35,
+      "archive_extract": 30,
+      "check_service_health": 55,
+      "copy_path": 30,
+      "debug_tools": 110,
+      "find_files": 120,
+      "get_system_datetime": 45,
+      "get_system_version": 8,
+      "git_diff": 8,
+      "git_status": 8,
+      "http_request": 10,
+      "json_edit": 10,
+      "list_active_ports": 10,
+      "list_tools": 10,
+      "read_file": 249,
+      "rg_search": 470,
+      "run_command": 70,
+      "service_control": 8,
+      "sha256_file": 10,
+      "stat_path": 35,
+      "test_run": 8,
+      "write_file": 45
+    },
+    "val_tool_counts": {
+      "apply_unified_diff": 2,
+      "archive_create": 4,
+      "archive_extract": 3,
+      "check_service_health": 6,
+      "copy_path": 4,
+      "debug_tools": 12,
+      "find_files": 13,
+      "get_system_datetime": 5,
+      "get_system_version": 1,
+      "git_diff": 1,
+      "git_status": 1,
+      "http_request": 1,
+      "json_edit": 1,
+      "list_active_ports": 1,
+      "list_tools": 1,
+      "read_file": 28,
+      "rg_search": 52,
+      "run_command": 8,
+      "service_control": 1,
+      "sha256_file": 1,
+      "stat_path": 4,
+      "test_run": 1,
+      "write_file": 5
+    }
+  },
+  "overlap_audit": {
+    "heldout_validation": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "tool_holdout": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "no_call": {
+      "prompt_overlap": 0,
+      "target_overlap": 6,
+      "source_case_id_overlap": 0
+    },
+    "adversarial": {
+      "prompt_overlap": 0,
+      "target_overlap": 4,
+      "source_case_id_overlap": 0
+    },
+    "direct_answer": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    }
+  },
+  "hashes": {
+    "train_sha256": "c19dbab14d930c39b90f85de8f7bf820f1ac37035756a9ca5063f823369e3f9a",
+    "val_sha256": "d1bde5c675e22a88df250ac91e13522bb4d9ff8685d86e3b885f6d8d106d661f"
+  }
+}

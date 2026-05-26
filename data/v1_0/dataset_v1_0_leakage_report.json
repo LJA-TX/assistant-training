@@ -1,0 +1,111 @@
+{
+  "generated_utc": "2026-05-26T00:35:23Z",
+  "seed": 20260525,
+  "overlaps": {
+    "train__vs__val": {
+      "source_case_id_overlap": 1,
+      "prompt_overlap": 0,
+      "target_overlap": 20
+    },
+    "train__vs__heldout_validation": {
+      "source_case_id_overlap": 1,
+      "prompt_overlap": 0,
+      "target_overlap": 1
+    },
+    "train__vs__tool_holdout": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "train__vs__no_call": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 6
+    },
+    "train__vs__adversarial": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 4
+    },
+    "train__vs__direct_answer": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "val__vs__heldout_validation": {
+      "source_case_id_overlap": 8,
+      "prompt_overlap": 2,
+      "target_overlap": 13
+    },
+    "val__vs__tool_holdout": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "val__vs__no_call": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 6
+    },
+    "val__vs__adversarial": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 4
+    },
+    "val__vs__direct_answer": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "heldout_validation__vs__tool_holdout": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "heldout_validation__vs__no_call": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "heldout_validation__vs__adversarial": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "heldout_validation__vs__direct_answer": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "tool_holdout__vs__no_call": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "tool_holdout__vs__adversarial": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "tool_holdout__vs__direct_answer": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "no_call__vs__adversarial": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "no_call__vs__direct_answer": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    },
+    "adversarial__vs__direct_answer": {
+      "source_case_id_overlap": 0,
+      "prompt_overlap": 0,
+      "target_overlap": 0
+    }
+  }
+}

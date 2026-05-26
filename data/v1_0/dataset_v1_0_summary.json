@@ -1,0 +1,94 @@
+{
+  "generated_utc": "2026-05-26T00:35:23Z",
+  "seed": 20260525,
+  "tool_sources": [
+    "/opt/ai-stack/assistant-training/data/tool_ft_allaliases_20260525_from_qual_reports_freq.jsonl",
+    "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_aug_rebalanced_20260417T104659Z.jsonl",
+    "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_aug_focus_rebalanced_20260417T104747Z.jsonl"
+  ],
+  "input_tool_rows_normalized": 144,
+  "holdout_case_ids": [
+    "p0_check_service_health_1",
+    "p0_find_files_1",
+    "p2_debug_tools_1",
+    "p2_get_system_datetime_1",
+    "p3_apply_unified_diff_1",
+    "p3_archive_create_1",
+    "p3_archive_extract_1",
+    "p3_copy_path_1"
+  ],
+  "dataset_paths": {
+    "train": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_train.jsonl",
+    "val": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_val.jsonl",
+    "stage_a_train": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_a_train.jsonl",
+    "stage_a_val": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_a_val.jsonl",
+    "stage_b_train": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_train.jsonl",
+    "stage_b_val": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_val.jsonl",
+    "heldout_validation": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/heldout_validation.jsonl",
+    "tool_holdout": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/tool_holdout.jsonl",
+    "no_call": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/no_call.jsonl",
+    "adversarial": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/adversarial.jsonl",
+    "direct_answer": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/direct_answer.jsonl"
+  },
+  "row_counts": {
+    "train": 2160,
+    "val": 240,
+    "stage_a_train": 2160,
+    "stage_a_val": 240,
+    "stage_b_train": 2160,
+    "stage_b_val": 240,
+    "heldout_validation": 100,
+    "tool_holdout": 40,
+    "no_call": 20,
+    "adversarial": 20,
+    "direct_answer": 20
+  },
+  "composition": {
+    "train": {
+      "adversarial_malformed": 108,
+      "no_call_direct": 324,
+      "refusal_policy": 216,
+      "runtime_alignment": 540,
+      "tool_positive": 972
+    },
+    "val": {
+      "adversarial_malformed": 12,
+      "no_call_direct": 36,
+      "refusal_policy": 24,
+      "runtime_alignment": 60,
+      "tool_positive": 108
+    },
+    "stage_a_train": {
+      "adversarial_malformed": 216,
+      "no_call_direct": 432,
+      "refusal_policy": 324,
+      "runtime_alignment": 756,
+      "tool_positive": 432
+    },
+    "stage_b_train": {
+      "adversarial_malformed": 65,
+      "no_call_direct": 216,
+      "refusal_policy": 151,
+      "runtime_alignment": 324,
+      "tool_positive": 1404
+    }
+  },
+  "synthetic_ratio": {
+    "train": 0.55,
+    "val": 0.55
+  },
+  "hashes": {
+    "train_sha256": "b95e55d128d709def2f0c9f3ff87c88f88164b5c1e751cad6b3aa938dd41b164",
+    "val_sha256": "d3091f776708aa7778c51590aa9f17c9da2acb11e112f2bbd2dedfee63e8a6c8",
+    "stage_a_train_sha256": "28d703fdf92a7178e193ca7fa29cb4352391c4841a21f1131b560910b6c565c7",
+    "stage_a_val_sha256": "d9df1ea0f61a215f40187974e3c3ac2f52169e7da6e2752c7e7789520adde1e7",
+    "stage_b_train_sha256": "f695f9bdb76866a88e08a1a42a942be015983c05e1be02c116c93dd2243b6684",
+    "stage_b_val_sha256": "9227dfcf86612b074d4736e92766c8daa4a88af0d82b43102daaacbda4bd316f",
+    "heldout_validation_sha256": "78d47d4fb974f0f3245eaf81a17a847febc2667da5926bd372f625cd00b127a5",
+    "tool_holdout_sha256": "ca492290645cdf3e374bdd456b9488500c594b080180caae9b3b73fe288d0f45",
+    "no_call_sha256": "0584f529d86b8b319b2abaaa2410e504d614243f32a56a3a1eae44e8f8768fa7",
+    "adversarial_sha256": "c500b8195722355b54dc7ddb612690daa9ef530ba4b030bcd04c7c2b2b50c5cc",
+    "direct_answer_sha256": "969d1d5dde3b17515c45c9a5f4b69beb1d908063f61ce470f778d625b1b1afbd"
+  },
+  "leakage_report_path": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_leakage_report.json"
+}
