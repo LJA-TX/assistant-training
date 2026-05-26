@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "status": "draft_schema_not_executed",
+  "sections": {
+    "style_bucket_analysis": {
+      "description": "Prompt-style bucket distribution inside targeted tool families.",
+      "required_fields": [
+        "bucket_name",
+        "tool_family",
+        "row_count",
+        "share",
+        "deviation_from_reference"
+      ]
+    },
+    "prompt_skeleton_concentration": {
+      "description": "Concentration analysis to detect hidden prompt homogenization.",
+      "required_fields": [
+        "tool_family",
+        "skeleton_id",
+        "row_count",
+        "share",
+        "dominance_flag"
+      ]
+    },
+    "targeted_tool_distribution": {
+      "description": "Distribution checks for rg_search/read_file targeting while holding global composition stable.",
+      "required_fields": [
+        "tool",
+        "row_count",
+        "share",
+        "expected_share",
+        "deviation"
+      ]
+    },
+    "forbidden_pattern_scan": {
+      "description": "Scan for prohibited schema-pressure and lexical homogenization patterns.",
+      "required_fields": [
+        "pattern_id",
+        "pattern",
+        "hit_count",
+        "sample_source_case_ids"
+      ]
+    },
+    "intervention_annotations": {
+      "description": "Per-row intervention tags for governance traceability.",
+      "required_fields": [
+        "source_case_id",
+        "tool",
+        "style_bucket",
+        "intervention_tags",
+        "is_targeted_family"
+      ]
+    }
+  },
+  "spill_guard_support": {
+    "description": "Interpretive fields supporting coupled schema-failure readout.",
+    "required_fields": [
+      "payload_not_parsed_shift",
+      "payload_not_object_shift",
+      "missing_tool_calls_shift",
+      "coupling_directionality_note"
+    ]
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false
+  },
+  "template_status": "draft_planning_only"
+}

@@ -1,0 +1,81 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "TEMPLATE_PENDING",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md"
+  },
+  "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "intervention_declaration": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_intervention_declaration.template.json",
+  "sources": {
+    "stage_b_i3_summary": "TEMPLATE_PENDING",
+    "stage_b_i8_summary": "TEMPLATE_PENDING",
+    "stage_b_i8_dataset_summary": "TEMPLATE_PENDING",
+    "stage_b_i8_train_summary": "TEMPLATE_PENDING",
+    "stage_b_i8_contamination_audit": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_contamination_audit.template.json",
+    "stage_b_i8_diagnostics_report": "TEMPLATE_PENDING"
+  },
+  "metrics": {
+    "stage_b_i3_heldout": {
+      "exact_json_validity": null,
+      "invalid_json": null,
+      "tool_name_accuracy": null,
+      "argument_accuracy": null,
+      "wrapper_leakage": null,
+      "no_call_correctness": null
+    },
+    "stage_b_i8_heldout": {
+      "exact_json_validity": null,
+      "invalid_json": null,
+      "tool_name_accuracy": null,
+      "argument_accuracy": null,
+      "wrapper_leakage": null,
+      "no_call_correctness": null
+    }
+  },
+  "schema_failure_coupling_readout": {
+    "payload_not_parsed": {
+      "i3": null,
+      "i8": null,
+      "delta": null
+    },
+    "payload_not_object": {
+      "i3": null,
+      "i8": null,
+      "delta": null
+    },
+    "missing_tool_calls": {
+      "i3": null,
+      "i8": null,
+      "delta": null
+    },
+    "invalid_json_alias_check": {
+      "expected_alias_of_payload_not_parsed": true,
+      "observed_match": null
+    }
+  },
+  "gate_results": {
+    "minimum_promising": {
+      "heldout_exact_json_validity_delta_pp_ge_10": null,
+      "heldout_tool_name_accuracy_delta_pp_ge_5": null,
+      "invalid_json_decreased": null,
+      "wrapper_leakage_not_worse_by_gt_5pp": null,
+      "no_call_not_degraded_by_gt_10pp": null,
+      "overall_pass": null
+    },
+    "spill_guard": {
+      "payload_not_object_not_regressed_vs_i3": null,
+      "missing_tool_calls_not_regressed_vs_i3": null,
+      "localized_homogenization_detected": null,
+      "overall_pass": null
+    }
+  },
+  "promotion_decision": {
+    "stage_b_i8": "pending",
+    "autonomous_promotion_allowed": false,
+    "reason": "TEMPLATE_PENDING"
+  },
+  "template_status": "draft_planning_only"
+}

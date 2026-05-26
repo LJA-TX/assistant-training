@@ -1,0 +1,30 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "TEMPLATE_PENDING",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "status": "planned_not_run",
+  "inputs": {
+    "candidate_train_jsonl": "TEMPLATE_PENDING",
+    "candidate_val_jsonl": "TEMPLATE_PENDING",
+    "heldout_eval_jsonl": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/heldout_validation.jsonl",
+    "tool_holdout_eval_jsonl": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/tool_holdout.jsonl"
+  },
+  "overlap_metrics": {
+    "heldout_prompt_overlap": null,
+    "heldout_target_overlap": null,
+    "heldout_source_case_overlap": null,
+    "tool_holdout_prompt_overlap": null,
+    "tool_holdout_target_overlap": null,
+    "tool_holdout_source_case_overlap": null
+  },
+  "blocking_policy": {
+    "max_allowed_overlap": 0,
+    "fail_fast": true,
+    "status": "pending"
+  },
+  "approval_state": {
+    "clean_for_training": false,
+    "approved_to_run": false
+  },
+  "template_status": "draft_planning_only"
+}

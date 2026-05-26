@@ -1,0 +1,58 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "TEMPLATE_PENDING",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "status": "draft_planning_only",
+  "flow_points": [
+    {
+      "name": "overlap_audit",
+      "blocking": true,
+      "status": "planned_not_run",
+      "required_reports": [
+        "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_contamination_audit.template.json"
+      ]
+    },
+    {
+      "name": "diversity_checks",
+      "blocking": true,
+      "status": "planned_not_run",
+      "required_subchecks": [
+        "style_bucket_analysis",
+        "prompt_skeleton_concentration"
+      ]
+    },
+    {
+      "name": "forbidden_pattern_checks",
+      "blocking": true,
+      "status": "planned_not_run",
+      "required_subchecks": [
+        "global_negation_pressure_scan",
+        "imperative_template_rewrite_scan",
+        "wrapper_key_blacklist_flooding_scan"
+      ]
+    },
+    {
+      "name": "concentration_checks",
+      "blocking": true,
+      "status": "planned_not_run",
+      "required_subchecks": [
+        "prompt_skeleton_concentration",
+        "tool_family_concentration"
+      ]
+    },
+    {
+      "name": "spill_guard_interpretation_support",
+      "blocking": false,
+      "status": "planned_not_run",
+      "required_subchecks": [
+        "payload_not_parsed_vs_payload_not_object_shift",
+        "missing_tool_calls_coupling_shift"
+      ]
+    }
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_promote": false
+  }
+}

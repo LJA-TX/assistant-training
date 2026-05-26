@@ -1,0 +1,41 @@
+{
+  "generated_utc": "TEMPLATE_PENDING",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "status": "draft_template_not_generated",
+  "policy": {
+    "fixed_row_count": true,
+    "targeted_recovery": "parseability improvement with schema-spill guard",
+    "targeted_tools": [
+      "rg_search",
+      "read_file"
+    ],
+    "canonical_eval_rows_used_for_training": false,
+    "synthetic_growth": "no total row-count expansion vs stage_b_i1"
+  },
+  "composition": {
+    "train_rows": null,
+    "val_rows": null,
+    "train_tool_counts": {},
+    "val_tool_counts": {}
+  },
+  "overlap_audit": {
+    "heldout_validation": {
+      "prompt_overlap": null,
+      "target_overlap": null,
+      "source_case_id_overlap": null
+    },
+    "tool_holdout": {
+      "prompt_overlap": null,
+      "target_overlap": null,
+      "source_case_id_overlap": null
+    }
+  },
+  "diagnostics_refs": {
+    "preflight_validation_plan": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_preflight_validation_plan.template.json",
+    "diagnostics_schema": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_diagnostics_schema.template.json"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false
+  }
+}
