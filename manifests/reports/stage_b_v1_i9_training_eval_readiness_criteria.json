@@ -1,0 +1,49 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T20:30:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "status": "prepared_not_approved",
+  "readiness_scope": "bounded_training_eval_review",
+  "required_preconditions": [
+    "i9_dataset_generation_completed",
+    "ambiguity_hard_blocks_all_false",
+    "heldout_and_tool_holdout_overlap_zero",
+    "forbidden_pattern_hits_zero",
+    "diversity_review_pass_true",
+    "anti_homogenization_pass_true",
+    "anchor_dominance_ratio_below_threshold"
+  ],
+  "collapse_watch_conditions": [
+    "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+    "top-1 behavioral category share exceeds 0.70",
+    "scalar/direct-answer substitutions increase materially",
+    "no-call correctness regresses",
+    "wrapper leakage appears",
+    "single-anchor canonical dependence strengthens",
+    "paraphrastic canonical success narrows"
+  ],
+  "governance_requirements": {
+    "canonical_eval_topology_immutable": true,
+    "thresholds_immutable": true,
+    "decode_defaults_immutable": true,
+    "contamination_policy_immutable": true
+  },
+  "bounded_execution_restrictions": {
+    "allowed": [
+      "single approved i9 LoRA run",
+      "canonical eval execution",
+      "gate assessment report generation"
+    ],
+    "disallowed": [
+      "silent retries",
+      "hidden config edits",
+      "automatic promotion/canonization"
+    ]
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

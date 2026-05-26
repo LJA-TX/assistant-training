@@ -1,0 +1,130 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T19:38:10Z",
+  "phase": "i9_commitment_conversion_design",
+  "intervention_families": [
+    {
+      "id": "near_miss_wrapper_envelope_repair_pairs",
+      "family": "near_miss_to_canonical_repair",
+      "description": "Convert wrapper_key_drift and envelope_omission rows to strict canonical tool_calls envelope while preserving prompt diversity.",
+      "target_behaviors": [
+        "wrapper_key_drift",
+        "envelope_omission",
+        "object_missing_commitment_envelope"
+      ],
+      "expected_gain": 4.4,
+      "collapse_risk": 1.8,
+      "schema_spill_risk": 1.6,
+      "semantic_flatten_risk": 1.9,
+      "lexical_overfit_risk": 2.4,
+      "safety_notes": "High-structure, low-policing repair path. Keep diverse phrasing and avoid imperative global constraints.",
+      "risk_mean": 1.925,
+      "utility_score": 3.245
+    },
+    {
+      "id": "semantic_substitution_conversion_pairs",
+      "family": "semantic_result_to_canonical_conversion",
+      "description": "Train conversions from answer-content substitution into canonical call payloads for same prompt intent/tool args.",
+      "target_behaviors": [
+        "semantic_textual_substitution",
+        "direct_scalar_answer_substitution",
+        "token_scalar_substitution",
+        "code_excerpt_substitution"
+      ],
+      "expected_gain": 4.7,
+      "collapse_risk": 2.8,
+      "schema_spill_risk": 2.4,
+      "semantic_flatten_risk": 3.0,
+      "lexical_overfit_risk": 2.7,
+      "safety_notes": "Most leverage; requires careful style-preservation and family balancing to avoid local coercion.",
+      "risk_mean": 2.725,
+      "utility_score": 3.065
+    },
+    {
+      "id": "uncertainty_conditioned_canonical_fallback",
+      "family": "uncertainty_handling_commitment",
+      "description": "Teach fallback behavior: when unsure of result, still emit canonical tool_calls for acquisition step instead of direct answer.",
+      "target_behaviors": [
+        "semantic_textual_substitution",
+        "direct_scalar_answer_substitution",
+        "uncertainty_refusal_substitution"
+      ],
+      "expected_gain": 4.0,
+      "collapse_risk": 2.2,
+      "schema_spill_risk": 1.9,
+      "semantic_flatten_risk": 2.6,
+      "lexical_overfit_risk": 2.1,
+      "safety_notes": "Potentially robust if implemented with varied, non-imperative exemplars and no blacklist policing.",
+      "risk_mean": 2.2,
+      "utility_score": 2.68
+    },
+    {
+      "id": "lexical_anchor_expansion_without_template_lock",
+      "family": "schema_generalization",
+      "description": "Expand canonical activation beyond brittle literal anchor (e.g., tool_calls token trigger) through paraphrastic canonical targets.",
+      "target_behaviors": [
+        "anchor_brittleness"
+      ],
+      "expected_gain": 3.6,
+      "collapse_risk": 3.1,
+      "schema_spill_risk": 2.7,
+      "semantic_flatten_risk": 3.3,
+      "lexical_overfit_risk": 3.8,
+      "safety_notes": "Useful but risky; can drift into hidden template homogenization if not tightly bounded.",
+      "risk_mean": 3.225,
+      "utility_score": 1.665
+    },
+    {
+      "id": "negation_heavy_global_policing",
+      "family": "unsafe_global_constrainting",
+      "description": "Global directives/blacklists forcing only canonical structure and forbidding alternatives.",
+      "target_behaviors": [
+        "all"
+      ],
+      "expected_gain": 1.5,
+      "collapse_risk": 4.9,
+      "schema_spill_risk": 4.5,
+      "semantic_flatten_risk": 4.9,
+      "lexical_overfit_risk": 4.7,
+      "safety_notes": "High probability of i4/i5-style collapse dynamics; should remain disallowed.",
+      "risk_mean": 4.75,
+      "utility_score": -1.35
+    }
+  ],
+  "ranked_by_utility": [
+    {
+      "id": "near_miss_wrapper_envelope_repair_pairs",
+      "utility_score": 3.245,
+      "risk_mean": 1.925
+    },
+    {
+      "id": "semantic_substitution_conversion_pairs",
+      "utility_score": 3.065,
+      "risk_mean": 2.725
+    },
+    {
+      "id": "uncertainty_conditioned_canonical_fallback",
+      "utility_score": 2.68,
+      "risk_mean": 2.2
+    },
+    {
+      "id": "lexical_anchor_expansion_without_template_lock",
+      "utility_score": 1.665,
+      "risk_mean": 3.225
+    },
+    {
+      "id": "negation_heavy_global_policing",
+      "utility_score": -1.35,
+      "risk_mean": 4.75
+    }
+  ],
+  "most_promising_family": "near_miss_wrapper_envelope_repair_pairs",
+  "most_dangerous_family": "negation_heavy_global_policing",
+  "early_collapse_signals": [
+    "rapid rise in payload_not_parsed/invalid_json with simultaneous drop in exact_valid over first bounded eval slice",
+    "collapse of behavior diversity: top-1 behavioral category share > 0.70 in targeted tools",
+    "sharp increase in scalar/direct-answer substitutions while near-canonical repairs do not rise",
+    "drop in no-call correctness below established invariant or any wrapper leakage > 0",
+    "new dominance of single lexical anchor family with loss of paraphrastic canonical success"
+  ]
+}

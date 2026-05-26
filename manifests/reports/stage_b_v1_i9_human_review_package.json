@@ -1,0 +1,404 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T20:01:25Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "status": "completed",
+  "question": "Are canonical-commitment gains likely generalized, or just lexical/template coercion?",
+  "conversion_selection_summary": {
+    "train": {
+      "quotas": {
+        "near_miss_wrapper_envelope_repair_pairs": 24,
+        "semantic_substitution_conversion_pairs": 56,
+        "uncertainty_conditioned_canonical_fallback": 8
+      },
+      "pool_sizes": {
+        "near_miss_wrapper_envelope_repair_pairs": 76,
+        "semantic_substitution_conversion_pairs": 366,
+        "uncertainty_conditioned_canonical_fallback": 75
+      },
+      "selected_by_family": {
+        "semantic_substitution_conversion_pairs": 56,
+        "near_miss_wrapper_envelope_repair_pairs": 24,
+        "uncertainty_conditioned_canonical_fallback": 8
+      },
+      "selected_by_tool": {
+        "rg_search": 56,
+        "read_file": 32
+      },
+      "selected_by_behavior": {
+        "direct_scalar_answer_substitution": 30,
+        "token_scalar_substitution": 28,
+        "wrapper_key_drift": 12,
+        "semantic_textual_substitution": 10,
+        "envelope_omission": 4,
+        "object_missing_commitment_envelope": 4
+      },
+      "selected_by_transform_mode": {
+        "append_ec916ee02d78": 21,
+        "append_f03bc6ba6e0e": 15,
+        "append_f6113fc2673f": 11,
+        "append_94f50d4076dc": 9,
+        "append_64f1caecafc3": 7,
+        "append_c5675a87301a": 7,
+        "append_3141ee07bd0d": 6,
+        "append_422d3fe5de4a": 4,
+        "append_436fcd7109cb": 4,
+        "append_5a879cfdc67f": 4
+      },
+      "selected_by_anchor_bucket": {
+        "no_anchor_phrase": 62,
+        "paraphrastic_tool_call": 16,
+        "literal_tool_calls": 10
+      },
+      "skipped_due_conflict": 0,
+      "skipped_due_diversity_caps": 83,
+      "families_not_filled": []
+    },
+    "val": {
+      "quotas": {
+        "near_miss_wrapper_envelope_repair_pairs": 4,
+        "semantic_substitution_conversion_pairs": 8,
+        "uncertainty_conditioned_canonical_fallback": 2
+      },
+      "pool_sizes": {
+        "near_miss_wrapper_envelope_repair_pairs": 10,
+        "semantic_substitution_conversion_pairs": 47,
+        "uncertainty_conditioned_canonical_fallback": 7
+      },
+      "selected_by_family": {
+        "semantic_substitution_conversion_pairs": 8,
+        "near_miss_wrapper_envelope_repair_pairs": 4,
+        "uncertainty_conditioned_canonical_fallback": 2
+      },
+      "selected_by_tool": {
+        "rg_search": 8,
+        "read_file": 6
+      },
+      "selected_by_behavior": {
+        "direct_scalar_answer_substitution": 6,
+        "token_scalar_substitution": 4,
+        "semantic_textual_substitution": 2,
+        "wrapper_key_drift": 2
+      },
+      "selected_by_transform_mode": {
+        "append_422d3fe5de4a": 3,
+        "append_ec916ee02d78": 3,
+        "append_3858a5ef9a8b": 2,
+        "append_94f50d4076dc": 2,
+        "append_f6113fc2673f": 2,
+        "append_c5675a87301a": 1,
+        "append_f03bc6ba6e0e": 1
+      },
+      "selected_by_anchor_bucket": {
+        "no_anchor_phrase": 8,
+        "paraphrastic_tool_call": 4,
+        "literal_tool_calls": 2
+      },
+      "skipped_due_conflict": 0,
+      "skipped_due_diversity_caps": 0,
+      "families_not_filled": []
+    },
+    "added_rows_total": 102,
+    "added_rows_train": 88,
+    "added_rows_val": 14
+  },
+  "targeted_prompt_samples": {
+    "status": "ok",
+    "targeted_rows": 870,
+    "samples_by_tool": {
+      "read_file": [
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_1",
+          "style_bucket": "constrained_output",
+          "prompt_chars": 184,
+          "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return only the structured tool invocation needed to gather evidence."
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_2",
+          "style_bucket": "constrained_output",
+          "prompt_chars": 198,
+          "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name. Return only the structured tool invocation needed to gather evidence."
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_1",
+          "style_bucket": "imperative_line_scoped",
+          "prompt_chars": 274,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only. Disambiguation: call read_file with path=/mnt/services/runtimes/assistant-runtime/server/service.py, line_start=1, line_end=25."
+        }
+      ],
+      "rg_search": [
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_1",
+          "style_bucket": "imperative_general",
+          "prompt_chars": 165,
+          "prompt": "Use rg_search to find \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_1",
+          "style_bucket": "imperative_general",
+          "prompt_chars": 165,
+          "prompt": "Use rg_search to find \"def create_app\" in /mnt/services/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_1",
+          "style_bucket": "imperative_general",
+          "prompt_chars": 171,
+          "prompt": "Use rg_search to find regex \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+        }
+      ]
+    },
+    "samples_by_style_bucket": {
+      "constrained_output": [
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 184,
+          "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return only the structured tool invocation needed to gather evidence."
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_2",
+          "tool": "read_file",
+          "prompt_chars": 198,
+          "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name. Return only the structured tool invocation needed to gather evidence."
+        }
+      ],
+      "imperative_general": [
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_1",
+          "tool": "rg_search",
+          "prompt_chars": 165,
+          "prompt": "Use rg_search to find \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_1",
+          "tool": "rg_search",
+          "prompt_chars": 165,
+          "prompt": "Use rg_search to find \"def create_app\" in /mnt/services/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+        }
+      ],
+      "imperative_line_scoped": [
+        {
+          "source_case_id": "i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 274,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only. Disambiguation: call read_file with path=/mnt/services/runtimes/assistant-runtime/server/service.py, line_start=1, line_end=25."
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 274,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only. Disambiguation: call read_file with path=/mnt/services/runtimes/assistant-runtime/server/service.py, line_start=1, line_end=25."
+        }
+      ],
+      "task_narrative": [
+        {
+          "source_case_id": "i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 150,
+          "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 150,
+          "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+        }
+      ]
+    }
+  },
+  "commitment_conversion_telemetry": {
+    "status": "ok",
+    "rows_analyzed": 2471,
+    "intervention_rows": 102,
+    "conversion_ids_count": 102,
+    "exact_valid_by_failure_family_conversion_source": [
+      {
+        "conversion_source_family": "semantic_substitution_conversion_pairs",
+        "rows": 64,
+        "source_exact_valid_rows_i8": 0,
+        "source_exact_valid_rate_i8": 0.0,
+        "post_eval_exact_valid_rate_i9": null
+      },
+      {
+        "conversion_source_family": "near_miss_wrapper_envelope_repair_pairs",
+        "rows": 28,
+        "source_exact_valid_rows_i8": 0,
+        "source_exact_valid_rate_i8": 0.0,
+        "post_eval_exact_valid_rate_i9": null
+      },
+      {
+        "conversion_source_family": "uncertainty_conditioned_canonical_fallback",
+        "rows": 10,
+        "source_exact_valid_rows_i8": 0,
+        "source_exact_valid_rate_i8": 0.0,
+        "post_eval_exact_valid_rate_i9": null
+      }
+    ],
+    "wrapper_envelope_repair_success_rate": {
+      "status": "pending_post_eval",
+      "note": "Computed after canonical eval by tracking i9 intervention_source_family=near_miss_wrapper_envelope_repair_pairs."
+    },
+    "semantic_substitution_conversion_success_rate": {
+      "status": "pending_post_eval",
+      "note": "Computed after canonical eval by tracking i9 intervention_source_family=semantic_substitution_conversion_pairs."
+    },
+    "anchor_dominance_ratio": {
+      "literal_tool_calls_anchor_rows": 12,
+      "intervention_rows": 102,
+      "ratio": 0.117647,
+      "threshold": 0.7,
+      "flag": false,
+      "anchor_bucket_distribution": {
+        "no_anchor_phrase": 70,
+        "paraphrastic_tool_call": 20,
+        "literal_tool_calls": 12
+      }
+    },
+    "paraphrastic_canonical_success_distribution": {
+      "status": "baseline_from_i8",
+      "distribution": {
+        "pattern_coerce_tool_arguments_literal": {
+          "total": 4,
+          "exact_valid": 0,
+          "exact_valid_rate": 0.0
+        },
+        "pattern_contract_violation_literal": {
+          "total": 9,
+          "exact_valid": 0,
+          "exact_valid_rate": 0.0
+        },
+        "pattern_def_create_app_literal": {
+          "total": 9,
+          "exact_valid": 0,
+          "exact_valid_rate": 0.0
+        },
+        "pattern_regex_complex": {
+          "total": 8,
+          "exact_valid": 0,
+          "exact_valid_rate": 0.0
+        },
+        "pattern_tool_calls_literal": {
+          "total": 6,
+          "exact_valid": 4,
+          "exact_valid_rate": 0.666667
+        },
+        "pattern_tool_parse_mode_literal": {
+          "total": 8,
+          "exact_valid": 0,
+          "exact_valid_rate": 0.0
+        },
+        "pattern_validate_tool_arguments_literal": {
+          "total": 8,
+          "exact_valid": 0,
+          "exact_valid_rate": 0.0
+        }
+      }
+    },
+    "top1_behavioral_category_share": {
+      "top1_behavioral_category": "direct_scalar_answer_substitution",
+      "top1_behavioral_category_share": 0.352941,
+      "threshold": 0.7,
+      "flag": false
+    },
+    "canonical_commitment_diversity_metrics": {
+      "targeted_prompt_entropy_bits": 7.071742,
+      "targeted_prompt_uniqueness_ratio": 0.222989,
+      "source_family_distribution": {
+        "semantic_substitution_conversion_pairs": 64,
+        "near_miss_wrapper_envelope_repair_pairs": 28,
+        "uncertainty_conditioned_canonical_fallback": 10
+      },
+      "source_behavior_distribution": {
+        "direct_scalar_answer_substitution": 36,
+        "token_scalar_substitution": 32,
+        "wrapper_key_drift": 14,
+        "semantic_textual_substitution": 12,
+        "envelope_omission": 4,
+        "object_missing_commitment_envelope": 4
+      },
+      "source_tool_distribution": {
+        "rg_search": 64,
+        "read_file": 38
+      }
+    },
+    "near_canonical_to_exact_conversion_ratio": {
+      "baseline_near_canonical_rows_i8": 37,
+      "baseline_exact_valid_rows_i8": 4,
+      "baseline_ratio": 9.25,
+      "status": "baseline_only_pre_eval"
+    },
+    "scalar_substitution_rebound_detection": {
+      "baseline_scalar_substitution_share_i8": 0.2647058823529412,
+      "max_allowed_rebound_delta": 0.05,
+      "trigger_definition": "flag if i9_eval_scalar_substitution_share > baseline + delta",
+      "status": "pending_post_eval"
+    },
+    "behavioral_monoculture_detection": {
+      "top1_behavioral_category": "direct_scalar_answer_substitution",
+      "top1_behavioral_category_share": 0.352941,
+      "threshold": 0.7,
+      "flag": false
+    },
+    "collapse_watch_conditions": {
+      "abort_or_halt_recommendation_if": [
+        "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+        "top1_behavioral_category_share > 0.70",
+        "scalar_or_direct_answer_substitutions rise materially",
+        "no_call_correctness regresses",
+        "wrapper_leakage > 0",
+        "single-anchor canonical dependence strengthens",
+        "paraphrastic canonical success narrows"
+      ],
+      "status": "pre_eval_monitoring_spec_ready"
+    }
+  },
+  "risk_flags": {
+    "diversity": {
+      "status": "ok",
+      "style_bucket_count_targeted": 4,
+      "dominant_style_share_targeted": 0.462069,
+      "unique_skeletons_targeted": 129,
+      "top1_skeleton_share_targeted": 0.044828,
+      "risk_flags": [],
+      "pass": true
+    },
+    "anti_homogenization": {
+      "status": "ok",
+      "forbidden_hits_total": 0,
+      "targeted_top1_skeleton_share": 0.044828,
+      "targeted_top3_skeleton_share": 0.131034,
+      "dominant_style_share": 0.462069,
+      "risk_signals": [],
+      "pass": true
+    },
+    "behavioral_monoculture": {
+      "top1_behavioral_category": "direct_scalar_answer_substitution",
+      "top1_behavioral_category_share": 0.352941,
+      "threshold": 0.7,
+      "flag": false
+    },
+    "anchor_dominance": {
+      "literal_tool_calls_anchor_rows": 12,
+      "intervention_rows": 102,
+      "ratio": 0.117647,
+      "threshold": 0.7,
+      "flag": false,
+      "anchor_bucket_distribution": {
+        "no_anchor_phrase": 70,
+        "paraphrastic_tool_call": 20,
+        "literal_tool_calls": 12
+      }
+    }
+  },
+  "interpretation_guidance": [
+    "If top1 behavioral source share exceeds 0.70, treat as local conversion monoculture risk.",
+    "If literal anchor dominance rises above threshold, treat as brittle token-trigger overfitting risk.",
+    "If ambiguity hard blocks are non-zero, invalidate candidate package before training review.",
+    "If scalar substitution rebound rises in post-eval, halt and reassess intervention pressure."
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_promote": false
+  }
+}

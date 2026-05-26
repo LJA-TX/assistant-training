@@ -1,0 +1,419 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T19:38:10Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "goal": "commitment_conversion_taxonomy_for_i9_design",
+  "non_exact_tool_rows": 136,
+  "taxonomy_classes": [
+    {
+      "class_id": "semantic_substitution_family",
+      "subclasses": [
+        "semantic_textual_substitution",
+        "direct_scalar_answer_substitution",
+        "token_scalar_substitution",
+        "code_excerpt_substitution",
+        "nonobject_substitution"
+      ],
+      "count": 94,
+      "semantic_competence_signal": "high",
+      "commitment_competence_signal": "low",
+      "interpretation": "Task intent often preserved, but canonical serialization is bypassed in favor of direct result output."
+    },
+    {
+      "class_id": "near_canonical_structure_family",
+      "subclasses": [
+        "wrapper_key_drift",
+        "envelope_omission",
+        "object_missing_commitment_envelope",
+        "partial_canonical_truncated",
+        "partial_canonical_unclosed"
+      ],
+      "count": 37,
+      "semantic_competence_signal": "medium_to_high",
+      "commitment_competence_signal": "medium_but_incomplete",
+      "interpretation": "Model frequently emits function/argument scaffolding but misses canonical envelope/keying discipline."
+    },
+    {
+      "class_id": "uncertainty_evasive_family",
+      "subclasses": [
+        "uncertainty_refusal_substitution"
+      ],
+      "count": 0,
+      "semantic_competence_signal": "unclear",
+      "commitment_competence_signal": "very_low",
+      "interpretation": "Explicit refusal patterns are currently rare; evasion manifests more as answer-substitution than refusal text."
+    }
+  ],
+  "behavior_counts": {
+    "semantic_textual_substitution": 58,
+    "wrapper_key_drift": 19,
+    "direct_scalar_answer_substitution": 25,
+    "malformed_nonjson_other": 5,
+    "envelope_omission": 16,
+    "object_missing_commitment_envelope": 2,
+    "token_scalar_substitution": 11
+  },
+  "repairability_ranking": [
+    {
+      "behavior": "semantic_textual_substitution",
+      "count": 58,
+      "rate_within_non_exact": 0.426471,
+      "mean_latent_structure_score": 0.0129,
+      "on_task_marker_rate": 0.896552,
+      "decode_cap_pressure_rate": 0.12069,
+      "repairability_tier": "moderate_to_hard"
+    },
+    {
+      "behavior": "direct_scalar_answer_substitution",
+      "count": 25,
+      "rate_within_non_exact": 0.183824,
+      "mean_latent_structure_score": 0.0,
+      "on_task_marker_rate": 0.0,
+      "decode_cap_pressure_rate": 0.0,
+      "repairability_tier": "moderate_to_hard"
+    },
+    {
+      "behavior": "wrapper_key_drift",
+      "count": 19,
+      "rate_within_non_exact": 0.139706,
+      "mean_latent_structure_score": 0.9175,
+      "on_task_marker_rate": 1.0,
+      "decode_cap_pressure_rate": 0.368421,
+      "repairability_tier": "easiest"
+    },
+    {
+      "behavior": "envelope_omission",
+      "count": 16,
+      "rate_within_non_exact": 0.117647,
+      "mean_latent_structure_score": 0.7406,
+      "on_task_marker_rate": 1.0,
+      "decode_cap_pressure_rate": 0.0,
+      "repairability_tier": "easiest"
+    },
+    {
+      "behavior": "token_scalar_substitution",
+      "count": 11,
+      "rate_within_non_exact": 0.080882,
+      "mean_latent_structure_score": 0.0,
+      "on_task_marker_rate": 0.0,
+      "decode_cap_pressure_rate": 0.0,
+      "repairability_tier": "moderate_to_hard"
+    },
+    {
+      "behavior": "malformed_nonjson_other",
+      "count": 5,
+      "rate_within_non_exact": 0.036765,
+      "mean_latent_structure_score": 0.0,
+      "on_task_marker_rate": 0.0,
+      "decode_cap_pressure_rate": 0.0,
+      "repairability_tier": "uncertain"
+    },
+    {
+      "behavior": "object_missing_commitment_envelope",
+      "count": 2,
+      "rate_within_non_exact": 0.014706,
+      "mean_latent_structure_score": 0.1,
+      "on_task_marker_rate": 0.0,
+      "decode_cap_pressure_rate": 0.0,
+      "repairability_tier": "moderate"
+    }
+  ],
+  "example_groups": {
+    "semantic_substitution": [
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 1,
+        "tool": "read_file",
+        "behavior": "semantic_textual_substitution",
+        "schema_reason": "payload_not_parsed",
+        "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name.",
+        "generated_text_preview": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:1080-1104:line_numbers,functions"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 4,
+        "tool": "rg_search",
+        "behavior": "semantic_textual_substitution",
+        "schema_reason": "payload_not_parsed",
+        "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name.",
+        "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 6,
+        "tool": "rg_search",
+        "behavior": "direct_scalar_answer_substitution",
+        "schema_reason": "payload_not_object",
+        "prompt": "Use rg_search to find \"def create_app\" in /mnt/services/runtimes/assistant-runtime/server/service.py and report match_count only.",
+        "generated_text_preview": "3"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 7,
+        "tool": "rg_search",
+        "behavior": "direct_scalar_answer_substitution",
+        "schema_reason": "payload_not_object",
+        "prompt": "Find in /opt/ai-stack/runtimes/assistant-runtime/server/agent.py for pattern \"tool_calls\" and report match_count only.",
+        "generated_text_preview": "1"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 8,
+        "tool": "read_file",
+        "behavior": "semantic_textual_substitution",
+        "schema_reason": "payload_not_parsed",
+        "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name.",
+        "generated_text_preview": "function get_service_path():\\n    return os.path.join(os.path.dirname(os.path.abspath(__file__)), '..','service.py')\\n\\n"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 9,
+        "tool": "rg_search",
+        "behavior": "direct_scalar_answer_substitution",
+        "schema_reason": "payload_not_object",
+        "prompt": "Use rg_search to find regex \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only.",
+        "generated_text_preview": "3"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 10,
+        "tool": "rg_search",
+        "behavior": "semantic_textual_substitution",
+        "schema_reason": "payload_not_parsed",
+        "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name.",
+        "generated_text_preview": "function main"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 11,
+        "tool": "read_file",
+        "behavior": "semantic_textual_substitution",
+        "schema_reason": "payload_not_parsed",
+        "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/agent.py line range 1500-1560 and report whether _coerce_tool_arguments appears in that range.",
+        "generated_text_preview": "Yes, _coerce_tool_arguments appears in /mnt/services/runtimes/assistant-runtime/server/agent.py line range 1500-1560."
+      }
+    ],
+    "wrapper_drift": [
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 3,
+        "tool": "read_file",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/agent.py lines 1500-1560 and report whether _coerce_tool_arguments appears in that range.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"line_end\":1560,\"line_start\":1500,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 12,
+        "tool": "list_tools",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use list_tools with include_parameters true and report count only.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"include_parameters\":true},\"name\":\"list_tools\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 17,
+        "tool": "rg_search",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use rg_search in /opt/ai-stack/runtimes/assistant-runtime/server/agent.py for pattern \"Contract violation: all tool calls were invalid; no valid tool execution occurred.\" and report whether match_count is zero or non-zero.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 19,
+        "tool": "service_control",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use service_control with action status, service assistant-runtime, and timeout_s 20. Report running only.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"action\":\"status\",\"service\":\"assistant-runtime\",\"timeout_s\":20},\"name\":\"service_control\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 21,
+        "tool": "write_file",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "payload_not_parsed",
+        "prompt": "Use write_file to create /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp with content \"alpha\\n\" and overwrite true, then confirm success.",
+        "generated_text_preview": "{\"tool_functions\":{\"write_file\":{\"arguments\":{\"content\":\"alpha\\n\",\"overwrite\":true,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp\"},\"name\":\"write_file\"},\"tool_module\":{\"arguments\":{},\"name\":\"os\"},\"t"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 27,
+        "tool": "rg_search",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use rg_search in /mnt/services/runtimes/assistant-runtime/server/agent.py for pattern \"Contract violation: all tool calls were invalid; no valid tool execution occurred.\" and report whether match_count is zero or non-zero.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/mnt/services/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 35,
+        "tool": "test_run",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use test_run with path server, timeout_s 120, and max_failures 1. Report status only.",
+        "generated_text_preview": "{\"tool_function\":{\"arguments\":{\"max_failures\":1,\"path\":\"server\",\"timeout_s\":120},\"name\":\"test_run\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 38,
+        "tool": "write_file",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "payload_not_parsed",
+        "prompt": "Use write_file to append content \"beta\\n\" to /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp and overwrite false, then confirm success.",
+        "generated_text_preview": "{\"tool_functions\":{\"write_file\":{\"arguments\":{\"content\":\"beta\\n\",\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp\",\"overwrite\":false},\"name\":\"write_file\"},\"tool_module\":{\"arguments\":{},\"name\":\"os\"},\"t"
+      }
+    ],
+    "envelope_omission": [
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 29,
+        "tool": "run_command",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use run_command to execute pwd and report stdout only.",
+        "generated_text_preview": "{\"function\":{\"arguments\":{\"command\":\"pwd\"},\"name\":\"run_command\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 73,
+        "tool": "run_command",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use run_command to execute whoami and report stdout only.",
+        "generated_text_preview": "{\"function\":{\"arguments\":{\"command\":\"whoami\"},\"name\":\"run_command\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 86,
+        "tool": "read_file",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 contents and report one symbol name.",
+        "generated_text_preview": "{\"function\":{\"arguments\":{\"line_end\":1104,\"line_start\":1080,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 97,
+        "tool": "read_file",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 contents and report one symbol name.",
+        "generated_text_preview": "{\"function\":{\"arguments\":{\"line_end\":1104,\"line_start\":1080,\"path\":\"/mnt/services/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 7,
+        "tool": "check_service_health",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use check_service_health on http://127.0.0.1:8100/health and report ok/status only.",
+        "generated_text_preview": "{\"function\":{\"arguments\":{\"url\":\"http://127.0.0.1:8100/health\"},\"name\":\"check_service_health\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 9,
+        "tool": "check_service_health",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use check_service_health on http://127.0.0.1:8100/health and report ok/status only.",
+        "generated_text_preview": "{\"function\":{\"arguments\":{\"url\":\"http://127.0.0.1:8100/health\"},\"name\":\"check_service_health\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 15,
+        "tool": "debug_tools",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use debug_tools and report enabled_tools count only.",
+        "generated_text_preview": "{\"enabled_tools\":{\"debug_tools\":{\"function\":{\"arguments\":{},\"name\":\"debug_tools\"},\"type\":\"function\"},\"type\":\"object\"},\"function\":{\"arguments\":{},\"name\":\"debug_tools\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 16,
+        "tool": "check_service_health",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use check_service_health on http://127.0.0.1:8100/health and report ok/status only.",
+        "generated_text_preview": "{\"function\":{\"arguments\":{\"url\":\"http://127.0.0.1:8100/health\"},\"name\":\"check_service_health\"},\"type\":\"function\"}"
+      }
+    ],
+    "partial_canonical_attempt": [
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 3,
+        "tool": "read_file",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/agent.py lines 1500-1560 and report whether _coerce_tool_arguments appears in that range.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"line_end\":1560,\"line_start\":1500,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 12,
+        "tool": "list_tools",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use list_tools with include_parameters true and report count only.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"include_parameters\":true},\"name\":\"list_tools\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 17,
+        "tool": "rg_search",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use rg_search in /opt/ai-stack/runtimes/assistant-runtime/server/agent.py for pattern \"Contract violation: all tool calls were invalid; no valid tool execution occurred.\" and report whether match_count is zero or non-zero.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 19,
+        "tool": "service_control",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use service_control with action status, service assistant-runtime, and timeout_s 20. Report running only.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"action\":\"status\",\"service\":\"assistant-runtime\",\"timeout_s\":20},\"name\":\"service_control\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 21,
+        "tool": "write_file",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "payload_not_parsed",
+        "prompt": "Use write_file to create /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp with content \"alpha\\n\" and overwrite true, then confirm success.",
+        "generated_text_preview": "{\"tool_functions\":{\"write_file\":{\"arguments\":{\"content\":\"alpha\\n\",\"overwrite\":true,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp\"},\"name\":\"write_file\"},\"tool_module\":{\"arguments\":{},\"name\":\"os\"},\"t"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 27,
+        "tool": "rg_search",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use rg_search in /mnt/services/runtimes/assistant-runtime/server/agent.py for pattern \"Contract violation: all tool calls were invalid; no valid tool execution occurred.\" and report whether match_count is zero or non-zero.",
+        "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/mnt/services/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 29,
+        "tool": "run_command",
+        "behavior": "envelope_omission",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use run_command to execute pwd and report stdout only.",
+        "generated_text_preview": "{\"function\":{\"arguments\":{\"command\":\"pwd\"},\"name\":\"run_command\"},\"type\":\"function\"}"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 35,
+        "tool": "test_run",
+        "behavior": "wrapper_key_drift",
+        "schema_reason": "missing_tool_calls",
+        "prompt": "Use test_run with path server, timeout_s 120, and max_failures 1. Report status only.",
+        "generated_text_preview": "{\"tool_function\":{\"arguments\":{\"max_failures\":1,\"path\":\"server\",\"timeout_s\":120},\"name\":\"test_run\"},\"type\":\"function\"}"
+      }
+    ]
+  }
+}

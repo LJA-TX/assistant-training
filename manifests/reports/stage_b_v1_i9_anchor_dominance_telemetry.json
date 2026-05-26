@@ -1,0 +1,12 @@
+{
+  "literal_tool_calls_anchor_rows": 12,
+  "intervention_rows": 102,
+  "ratio": 0.117647,
+  "threshold": 0.7,
+  "flag": false,
+  "anchor_bucket_distribution": {
+    "no_anchor_phrase": 70,
+    "paraphrastic_tool_call": 20,
+    "literal_tool_calls": 12
+  }
+}

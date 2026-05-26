@@ -1,0 +1,67 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T19:38:10Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9_design_input",
+  "design_principles": [
+    "Localized intervention scope on dominant failure tools first (rg_search/read_file).",
+    "Preserve prompt-style diversity and avoid imperative homogenization.",
+    "Use positive canonical commitment exemplars instead of negation-heavy policing.",
+    "Retain contamination, no-call, and wrapper-leak invariants unchanged."
+  ],
+  "candidate_patterns": [
+    {
+      "pattern_id": "nmr_01_wrapper_key_normalization",
+      "family": "near_miss_to_canonical_repair",
+      "input_behavior": "wrapper_key_drift",
+      "conversion_goal": "tool_functions/tool_function/function-call variants -> strict tool_calls array object",
+      "boundedness": "tool-family-localized; no global rewrites",
+      "risk_controls": [
+        "maintain style bucket diversity",
+        "limit per-family concentration",
+        "forbid blacklist templates"
+      ]
+    },
+    {
+      "pattern_id": "ssc_01_semantic_result_to_call",
+      "family": "semantic_substitution_conversion",
+      "input_behavior": "semantic_textual_substitution + direct_scalar_answer_substitution",
+      "conversion_goal": "answer-content outputs -> canonical call payload retaining original tool/args intent",
+      "boundedness": "intent-preserving pairs; avoid semantic narrowing",
+      "risk_controls": [
+        "pair coverage across diverse prompt intents",
+        "preserve edge-case variants",
+        "monitor skeleton concentration"
+      ]
+    },
+    {
+      "pattern_id": "ucf_01_uncertain_but_canonical",
+      "family": "uncertainty_conditioned_fallback",
+      "input_behavior": "evasive non-commitment under uncertainty",
+      "conversion_goal": "teach \"if uncertain about result, still emit canonical tool call for evidence gathering\"",
+      "boundedness": "localized exemplars; no global imperative directives",
+      "risk_controls": [
+        "no refusal suppression hacks",
+        "no-call/adversarial rows unchanged",
+        "spill metrics co-primary"
+      ]
+    },
+    {
+      "pattern_id": "lag_01_anchor_generalization",
+      "family": "lexical_anchor_generalization",
+      "input_behavior": "token-triggered exact-valid on literal \"tool_calls\" only",
+      "conversion_goal": "generalize canonical commitment across paraphrastic prompts without strict anchor dependency",
+      "boundedness": "small-scope targeted perturbations",
+      "risk_controls": [
+        "track anchor dominance ratio",
+        "abort on rising template concentration",
+        "avoid single-token trigger overfitting"
+      ]
+    }
+  ],
+  "explicitly_forbidden": [
+    "global negation-heavy schema policing",
+    "wrapper blacklist flooding",
+    "single-template imperative rewrites",
+    "broad semantic flattening"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "generated_utc": "TEMPLATE_PENDING",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "status": "draft_template_not_generated",
+  "lineage": {
+    "parent_dataset_iteration": "stage_b_llama31_8b_base_v1_i8",
+    "parent_checkpoint": "stage_b_llama31_8b_base_v1_i3",
+    "objective": "commitment_conversion_behavior_repair"
+  },
+  "policy": {
+    "localized_intervention_only": true,
+    "targeted_tools": [
+      "rg_search",
+      "read_file"
+    ],
+    "forbidden_global_pressures": [
+      "global_negation_heavy_schema_pressure",
+      "global_imperative_template_rewrites",
+      "wrapper_key_blacklist_flooding",
+      "semantic_flattening",
+      "lexical_trigger_memorization_campaign"
+    ],
+    "approved_to_run": false
+  },
+  "composition": {
+    "parent_train_rows": null,
+    "parent_val_rows": null,
+    "candidate_train_rows": null,
+    "candidate_val_rows": null,
+    "rows_added_total": null
+  },
+  "overlap_audit": {
+    "heldout_validation": {
+      "prompt_overlap": null,
+      "target_overlap": null,
+      "source_case_id_overlap": null
+    },
+    "tool_holdout": {
+      "prompt_overlap": null,
+      "target_overlap": null,
+      "source_case_id_overlap": null
+    }
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

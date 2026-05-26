@@ -1,0 +1,68 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T20:30:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "status": "bounded_pre_execution_risk_assessment",
+  "primary_risks": [
+    {
+      "risk_id": "anchor_dominance_brittleness",
+      "severity": "high",
+      "description": "Literal tool_calls anchor may dominate and produce brittle canonical behavior instead of generalized commitment."
+    },
+    {
+      "risk_id": "behavioral_monoculture",
+      "severity": "high",
+      "description": "One conversion family may over-dominate intervention rows and recreate local template coercion dynamics."
+    },
+    {
+      "risk_id": "semantic_flattening_local",
+      "severity": "medium",
+      "description": "Conversion cues may narrow prompt semantics even without global rewrite pressure."
+    },
+    {
+      "risk_id": "spill_tradeoff_regression",
+      "severity": "high",
+      "description": "Parseability improvements could regress payload_not_object/missing_tool_calls coupling if commitment pressure is miscalibrated."
+    },
+    {
+      "risk_id": "scalar_substitution_rebound",
+      "severity": "medium",
+      "description": "Direct scalar/text substitution may rebound under uncertainty despite structural repair exemplars."
+    }
+  ],
+  "mitigations": [
+    "Hard ambiguity blocks on prompt/target/tool/arguments",
+    "Deterministic contamination overlap blocking on heldout/tool_holdout",
+    "Intervention-family quotas with diversity caps",
+    "Anchor dominance telemetry with threshold checks",
+    "Behavioral monoculture telemetry with threshold checks",
+    "Collapse-watch conditions codified pre-execution"
+  ],
+  "residual_risks": [
+    "Near-miss repair may overfit wrapper normalization without semantic commitment generalization",
+    "Uncertainty-conditioned fallback exemplars may still be too sparse for robust behavior conversion",
+    "Metrics may overstate progress if gains are anchor-triggered rather than generalized"
+  ],
+  "recommendation_logic": {
+    "proceed_to_bounded_training_review_if": [
+      "all hard blocks pass",
+      "anchor dominance ratio <= threshold",
+      "top1 behavioral category share <= threshold",
+      "contamination overlaps remain zero"
+    ],
+    "further_dataset_revision_needed_if": [
+      "hard blocks pass but monoculture/anchor warnings trigger",
+      "family concentration risk increases materially"
+    ],
+    "abort_i9_direction_if": [
+      "hard blocks fail",
+      "collapse-watch proxy signals indicate coercive convergence"
+    ]
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

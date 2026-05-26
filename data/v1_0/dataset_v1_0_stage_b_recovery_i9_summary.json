@@ -1,0 +1,418 @@
+{
+  "generated_utc": "2026-05-26T20:01:25Z",
+  "seed": 20260526,
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "lineage": {
+    "parent_dataset_iteration": "stage_b_llama31_8b_base_v1_i8",
+    "parent_checkpoint": "stage_b_llama31_8b_base_v1_i3",
+    "objective": "commitment_conversion_behavior_repair",
+    "targeted_tools": [
+      "rg_search",
+      "read_file"
+    ]
+  },
+  "inputs": {
+    "parent_train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_train.jsonl",
+    "parent_val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_val.jsonl",
+    "parent_summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_summary.json",
+    "eval_comparison_rows_jsonl": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T172855Z/comparison_rows.jsonl",
+    "i8_behavioral_analysis_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_parseability_behavioral_analysis.json",
+    "i9_recon_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_commitment_conversion_reconnaissance.json",
+    "i9_taxonomy_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_commitment_conversion_taxonomy.json",
+    "i9_risk_matrix_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_intervention_risk_matrix.json"
+  },
+  "policy": {
+    "localized_intervention_only": true,
+    "forbidden_global_pressures": [
+      "global_negation_heavy_schema_pressure",
+      "global_imperative_template_rewrites",
+      "wrapper_key_blacklist_flooding",
+      "semantic_flattening",
+      "lexical_trigger_memorization_campaign"
+    ],
+    "global_eval_semantics_modified": false,
+    "approval_gates_opened": false,
+    "approved_to_run": false
+  },
+  "composition": {
+    "parent_train_rows": 2129,
+    "parent_val_rows": 240,
+    "candidate_train_rows": 2217,
+    "candidate_val_rows": 254,
+    "rows_added_train": 88,
+    "rows_added_val": 14,
+    "rows_added_total": 102
+  },
+  "intervention_selection": {
+    "train": {
+      "quotas": {
+        "near_miss_wrapper_envelope_repair_pairs": 24,
+        "semantic_substitution_conversion_pairs": 56,
+        "uncertainty_conditioned_canonical_fallback": 8
+      },
+      "pool_sizes": {
+        "near_miss_wrapper_envelope_repair_pairs": 76,
+        "semantic_substitution_conversion_pairs": 366,
+        "uncertainty_conditioned_canonical_fallback": 75
+      },
+      "selected_by_family": {
+        "semantic_substitution_conversion_pairs": 56,
+        "near_miss_wrapper_envelope_repair_pairs": 24,
+        "uncertainty_conditioned_canonical_fallback": 8
+      },
+      "selected_by_tool": {
+        "rg_search": 56,
+        "read_file": 32
+      },
+      "selected_by_behavior": {
+        "direct_scalar_answer_substitution": 30,
+        "token_scalar_substitution": 28,
+        "wrapper_key_drift": 12,
+        "semantic_textual_substitution": 10,
+        "envelope_omission": 4,
+        "object_missing_commitment_envelope": 4
+      },
+      "selected_by_transform_mode": {
+        "append_ec916ee02d78": 21,
+        "append_f03bc6ba6e0e": 15,
+        "append_f6113fc2673f": 11,
+        "append_94f50d4076dc": 9,
+        "append_64f1caecafc3": 7,
+        "append_c5675a87301a": 7,
+        "append_3141ee07bd0d": 6,
+        "append_422d3fe5de4a": 4,
+        "append_436fcd7109cb": 4,
+        "append_5a879cfdc67f": 4
+      },
+      "selected_by_anchor_bucket": {
+        "no_anchor_phrase": 62,
+        "paraphrastic_tool_call": 16,
+        "literal_tool_calls": 10
+      },
+      "skipped_due_conflict": 0,
+      "skipped_due_diversity_caps": 83,
+      "families_not_filled": []
+    },
+    "val": {
+      "quotas": {
+        "near_miss_wrapper_envelope_repair_pairs": 4,
+        "semantic_substitution_conversion_pairs": 8,
+        "uncertainty_conditioned_canonical_fallback": 2
+      },
+      "pool_sizes": {
+        "near_miss_wrapper_envelope_repair_pairs": 10,
+        "semantic_substitution_conversion_pairs": 47,
+        "uncertainty_conditioned_canonical_fallback": 7
+      },
+      "selected_by_family": {
+        "semantic_substitution_conversion_pairs": 8,
+        "near_miss_wrapper_envelope_repair_pairs": 4,
+        "uncertainty_conditioned_canonical_fallback": 2
+      },
+      "selected_by_tool": {
+        "rg_search": 8,
+        "read_file": 6
+      },
+      "selected_by_behavior": {
+        "direct_scalar_answer_substitution": 6,
+        "token_scalar_substitution": 4,
+        "semantic_textual_substitution": 2,
+        "wrapper_key_drift": 2
+      },
+      "selected_by_transform_mode": {
+        "append_422d3fe5de4a": 3,
+        "append_ec916ee02d78": 3,
+        "append_3858a5ef9a8b": 2,
+        "append_94f50d4076dc": 2,
+        "append_f6113fc2673f": 2,
+        "append_c5675a87301a": 1,
+        "append_f03bc6ba6e0e": 1
+      },
+      "selected_by_anchor_bucket": {
+        "no_anchor_phrase": 8,
+        "paraphrastic_tool_call": 4,
+        "literal_tool_calls": 2
+      },
+      "skipped_due_conflict": 0,
+      "skipped_due_diversity_caps": 0,
+      "families_not_filled": []
+    },
+    "added_rows_total": 102,
+    "added_rows_train": 88,
+    "added_rows_val": 14
+  },
+  "overlap_audit": {
+    "train": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    },
+    "val": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    },
+    "combined": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    }
+  },
+  "diagnostics_highlights": {
+    "diversity_review_summary": {
+      "status": "ok",
+      "style_bucket_count_targeted": 4,
+      "dominant_style_share_targeted": 0.462069,
+      "unique_skeletons_targeted": 129,
+      "top1_skeleton_share_targeted": 0.044828,
+      "risk_flags": [],
+      "pass": true
+    },
+    "anti_homogenization_summary": {
+      "status": "ok",
+      "forbidden_hits_total": 0,
+      "targeted_top1_skeleton_share": 0.044828,
+      "targeted_top3_skeleton_share": 0.131034,
+      "dominant_style_share": 0.462069,
+      "risk_signals": [],
+      "pass": true
+    },
+    "commitment_conversion_telemetry": {
+      "status": "ok",
+      "rows_analyzed": 2471,
+      "intervention_rows": 102,
+      "conversion_ids_count": 102,
+      "exact_valid_by_failure_family_conversion_source": [
+        {
+          "conversion_source_family": "semantic_substitution_conversion_pairs",
+          "rows": 64,
+          "source_exact_valid_rows_i8": 0,
+          "source_exact_valid_rate_i8": 0.0,
+          "post_eval_exact_valid_rate_i9": null
+        },
+        {
+          "conversion_source_family": "near_miss_wrapper_envelope_repair_pairs",
+          "rows": 28,
+          "source_exact_valid_rows_i8": 0,
+          "source_exact_valid_rate_i8": 0.0,
+          "post_eval_exact_valid_rate_i9": null
+        },
+        {
+          "conversion_source_family": "uncertainty_conditioned_canonical_fallback",
+          "rows": 10,
+          "source_exact_valid_rows_i8": 0,
+          "source_exact_valid_rate_i8": 0.0,
+          "post_eval_exact_valid_rate_i9": null
+        }
+      ],
+      "wrapper_envelope_repair_success_rate": {
+        "status": "pending_post_eval",
+        "note": "Computed after canonical eval by tracking i9 intervention_source_family=near_miss_wrapper_envelope_repair_pairs."
+      },
+      "semantic_substitution_conversion_success_rate": {
+        "status": "pending_post_eval",
+        "note": "Computed after canonical eval by tracking i9 intervention_source_family=semantic_substitution_conversion_pairs."
+      },
+      "anchor_dominance_ratio": {
+        "literal_tool_calls_anchor_rows": 12,
+        "intervention_rows": 102,
+        "ratio": 0.117647,
+        "threshold": 0.7,
+        "flag": false,
+        "anchor_bucket_distribution": {
+          "no_anchor_phrase": 70,
+          "paraphrastic_tool_call": 20,
+          "literal_tool_calls": 12
+        }
+      },
+      "paraphrastic_canonical_success_distribution": {
+        "status": "baseline_from_i8",
+        "distribution": {
+          "pattern_coerce_tool_arguments_literal": {
+            "total": 4,
+            "exact_valid": 0,
+            "exact_valid_rate": 0.0
+          },
+          "pattern_contract_violation_literal": {
+            "total": 9,
+            "exact_valid": 0,
+            "exact_valid_rate": 0.0
+          },
+          "pattern_def_create_app_literal": {
+            "total": 9,
+            "exact_valid": 0,
+            "exact_valid_rate": 0.0
+          },
+          "pattern_regex_complex": {
+            "total": 8,
+            "exact_valid": 0,
+            "exact_valid_rate": 0.0
+          },
+          "pattern_tool_calls_literal": {
+            "total": 6,
+            "exact_valid": 4,
+            "exact_valid_rate": 0.666667
+          },
+          "pattern_tool_parse_mode_literal": {
+            "total": 8,
+            "exact_valid": 0,
+            "exact_valid_rate": 0.0
+          },
+          "pattern_validate_tool_arguments_literal": {
+            "total": 8,
+            "exact_valid": 0,
+            "exact_valid_rate": 0.0
+          }
+        }
+      },
+      "top1_behavioral_category_share": {
+        "top1_behavioral_category": "direct_scalar_answer_substitution",
+        "top1_behavioral_category_share": 0.352941,
+        "threshold": 0.7,
+        "flag": false
+      },
+      "canonical_commitment_diversity_metrics": {
+        "targeted_prompt_entropy_bits": 7.071742,
+        "targeted_prompt_uniqueness_ratio": 0.222989,
+        "source_family_distribution": {
+          "semantic_substitution_conversion_pairs": 64,
+          "near_miss_wrapper_envelope_repair_pairs": 28,
+          "uncertainty_conditioned_canonical_fallback": 10
+        },
+        "source_behavior_distribution": {
+          "direct_scalar_answer_substitution": 36,
+          "token_scalar_substitution": 32,
+          "wrapper_key_drift": 14,
+          "semantic_textual_substitution": 12,
+          "envelope_omission": 4,
+          "object_missing_commitment_envelope": 4
+        },
+        "source_tool_distribution": {
+          "rg_search": 64,
+          "read_file": 38
+        }
+      },
+      "near_canonical_to_exact_conversion_ratio": {
+        "baseline_near_canonical_rows_i8": 37,
+        "baseline_exact_valid_rows_i8": 4,
+        "baseline_ratio": 9.25,
+        "status": "baseline_only_pre_eval"
+      },
+      "scalar_substitution_rebound_detection": {
+        "baseline_scalar_substitution_share_i8": 0.2647058823529412,
+        "max_allowed_rebound_delta": 0.05,
+        "trigger_definition": "flag if i9_eval_scalar_substitution_share > baseline + delta",
+        "status": "pending_post_eval"
+      },
+      "behavioral_monoculture_detection": {
+        "top1_behavioral_category": "direct_scalar_answer_substitution",
+        "top1_behavioral_category_share": 0.352941,
+        "threshold": 0.7,
+        "flag": false
+      },
+      "collapse_watch_conditions": {
+        "abort_or_halt_recommendation_if": [
+          "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+          "top1_behavioral_category_share > 0.70",
+          "scalar_or_direct_answer_substitutions rise materially",
+          "no_call_correctness regresses",
+          "wrapper_leakage > 0",
+          "single-anchor canonical dependence strengthens",
+          "paraphrastic canonical success narrows"
+        ],
+        "status": "pre_eval_monitoring_spec_ready"
+      }
+    },
+    "prompt_ambiguity_hard_blocks": {
+      "prompt_to_multiple_targets": false,
+      "prompt_to_multiple_tools": false,
+      "prompt_tool_to_multiple_arguments": false
+    }
+  },
+  "outputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_val.jsonl",
+    "summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_summary.json",
+    "diagnostics_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_dataset_diagnostics.json",
+    "contamination_audit_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_contamination_audit.json",
+    "prompt_ambiguity_audit_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_prompt_ambiguity_audit.json",
+    "collapse_watch_telemetry_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_collapse_watch_telemetry.json",
+    "anchor_dominance_telemetry_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_anchor_dominance_telemetry.json",
+    "review_package_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_human_review_package.json"
+  },
+  "hashes": {
+    "train_sha256": "1e3f1ffc2c85a18e428a6ad6737d29f0853a6312a4e4d6f8e4f1f78caaf49594",
+    "val_sha256": "890bb3401b4803761449bf4b0bef278443fb423f483b660923664e6d167f1959"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_promote": false
+  }
+}

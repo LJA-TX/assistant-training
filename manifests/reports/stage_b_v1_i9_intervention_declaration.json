@@ -1,0 +1,62 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T20:30:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "lineage_branch_from": "stage_b_llama31_8b_base_v1_i3",
+  "parent_dataset_iteration": "stage_b_llama31_8b_base_v1_i8",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json"
+  },
+  "PRIMARY_INTERVENTION_VARIABLE": "Convert commitment failures into canonical tool-call envelope emission through bounded localized repair pairs.",
+  "SCOPE": {
+    "topology": "hybrid_localized",
+    "targeted_tools": [
+      "rg_search",
+      "read_file"
+    ],
+    "families": [
+      "near_miss_wrapper_envelope_repair_pairs",
+      "semantic_substitution_conversion_pairs",
+      "uncertainty_conditioned_canonical_fallback"
+    ],
+    "global_invariants_fixed": true
+  },
+  "NON_OBJECTIVES": [
+    "Do not run broad lexical-anchor generalization campaigns",
+    "Do not apply global schema policing",
+    "Do not mutate canonical eval semantics or thresholds",
+    "Do not alter no-call or wrapper-leak governance"
+  ],
+  "FORBIDDEN_PRESSURES": [
+    "global negation-heavy schema pressure",
+    "wrapper-key blacklist flooding",
+    "global imperative template rewrites",
+    "semantic flattening or monoculture coercion"
+  ],
+  "SUCCESS_CRITERIA_INTERPRETATION": [
+    "exact_tool_call_json_valid improves with stable/no worse spill-composite pressure",
+    "payload_not_parsed decreases without payload_not_object + missing_tool_calls rebound",
+    "no_call_correctness remains 1.0",
+    "wrapper_leakage remains 0.0",
+    "heldout/tool_holdout contamination overlap remains zero"
+  ],
+  "COLLAPSE_WATCH_CONDITIONS": [
+    "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+    "top1 behavioral category share exceeds 0.70",
+    "scalar/direct-answer substitutions increase materially",
+    "no_call correctness regresses",
+    "wrapper leakage appears",
+    "single-anchor canonical dependence strengthens",
+    "paraphrastic canonical success narrows"
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  },
+  "template_status": "bounded_i9_implementation"
+}

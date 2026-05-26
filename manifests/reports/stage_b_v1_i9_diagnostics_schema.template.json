@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "status": "draft_schema_not_executed",
+  "sections": {
+    "style_bucket_analysis": {
+      "description": "Prompt-style bucket distribution inside targeted tool families.",
+      "required_fields": [
+        "bucket_name",
+        "tool_family",
+        "row_count",
+        "share"
+      ]
+    },
+    "prompt_skeleton_concentration": {
+      "description": "Concentration analysis to detect hidden prompt homogenization.",
+      "required_fields": [
+        "tool_family",
+        "skeleton_id",
+        "row_count",
+        "share",
+        "dominance_flag"
+      ]
+    },
+    "targeted_tool_distribution": {
+      "description": "Distribution checks for rg_search/read_file targeting while holding global composition stable.",
+      "required_fields": [
+        "tool",
+        "row_count",
+        "share",
+        "expected_share",
+        "deviation"
+      ]
+    },
+    "forbidden_pattern_scan": {
+      "description": "Scan for prohibited schema-pressure and lexical homogenization patterns.",
+      "required_fields": [
+        "pattern_id",
+        "pattern",
+        "hit_count",
+        "sample_source_case_ids"
+      ]
+    },
+    "prompt_ambiguity_audit": {
+      "description": "Hard-block ambiguity audit for prompt->target/tool/argument contradictions.",
+      "required_fields": [
+        "duplicate_prompt_groups_different_target_count",
+        "duplicate_prompt_groups_different_tool_count",
+        "duplicate_prompt_tool_groups_different_arguments_count",
+        "hard_block_candidates"
+      ]
+    },
+    "commitment_conversion_telemetry": {
+      "description": "i9 commitment-conversion specific telemetry and collapse-watch proxies.",
+      "required_fields": [
+        "exact_valid_by_failure_family_conversion_source",
+        "wrapper_envelope_repair_success_rate",
+        "semantic_substitution_conversion_success_rate",
+        "top1_behavioral_category_share",
+        "near_canonical_to_exact_conversion_ratio",
+        "scalar_substitution_rebound_detection",
+        "behavioral_monoculture_detection"
+      ]
+    },
+    "anchor_dominance_telemetry": {
+      "description": "Anti-anchor dominance telemetry and paraphrastic anchor distribution.",
+      "required_fields": [
+        "literal_tool_calls_anchor_rows",
+        "ratio",
+        "threshold",
+        "anchor_bucket_distribution"
+      ]
+    }
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  },
+  "template_status": "bounded_i9_planning_only"
+}
