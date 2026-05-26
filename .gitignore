@@ -1,0 +1,36 @@
+# Python caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Test/runtime caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local env files
+.venv/
+venv/
+.env
+.env.*
+
+# Training/eval heavy generated artifacts
+artifacts/
+adapters/
+checkpoints/
+
+# Evaluation run dumps (high churn)
+evals/runs/
+
+# General caches/temp
+.cache/
+*.log
+tmp/
+
+# Model/checkpoint binaries (defense-in-depth)
+*.pt
+*.bin
+*.safetensors
+
+# Jupyter
+.ipynb_checkpoints/
