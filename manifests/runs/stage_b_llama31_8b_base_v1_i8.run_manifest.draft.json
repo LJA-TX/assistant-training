@@ -14,7 +14,9 @@
     "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_summary.json",
     "dataset_leakage_report": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_leakage_report.json",
     "intervention_declaration": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_intervention_declaration.template.json",
-    "preflight_validation_plan": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_preflight_validation_plan.template.json"
+    "preflight_validation_plan": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_preflight_validation_plan.template.json",
+    "prompt_ambiguity_audit": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_prompt_ambiguity_audit.json",
+    "human_review_checklist": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_human_review_checklist.template.md"
   },
   "expected_outputs": {
     "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i8",

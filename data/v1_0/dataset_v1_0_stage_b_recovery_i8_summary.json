@@ -1,0 +1,481 @@
+{
+  "generated_utc": "2026-05-26T16:04:20Z",
+  "seed": 20260526,
+  "inputs": {
+    "parent_train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i3_train.jsonl",
+    "parent_val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i3_val.jsonl",
+    "parent_summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i3_summary.json",
+    "eval_paths": {
+      "heldout_validation": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/heldout_validation.jsonl",
+      "tool_holdout": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/tool_holdout.jsonl",
+      "no_call": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/no_call.jsonl",
+      "adversarial": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/adversarial.jsonl",
+      "direct_answer": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/direct_answer.jsonl"
+    }
+  },
+  "policy": {
+    "fixed_row_count": true,
+    "train_rows": 2160,
+    "val_rows": 240,
+    "targeted_recovery": "localized parse-anchor shaping on rg_search/read_file from i3 parent baseline",
+    "localized_intervention_only": true,
+    "forbidden_global_pressures": [
+      "global_negation_heavy_schema_pressure",
+      "global_imperative_template_rewrites",
+      "wrapper_key_blacklist_flooding",
+      "semantic_flattening"
+    ],
+    "canonical_eval_rows_used_for_training": false,
+    "approved_to_run": false
+  },
+  "parent_invariants": {
+    "status": "ok",
+    "train_rows": 2160,
+    "val_rows": 240,
+    "non_tool_train": 756,
+    "non_tool_val": 84,
+    "tool_train": 1404,
+    "tool_val": 156
+  },
+  "outputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_val.jsonl",
+    "summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_summary.json",
+    "diagnostics_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_dataset_diagnostics.json",
+    "contamination_audit_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_contamination_audit.json",
+    "prompt_ambiguity_audit_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_prompt_ambiguity_audit.json",
+    "review_package_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_human_review_package.json"
+  },
+  "composition": {
+    "train_categories": {
+      "adversarial_malformed": 65,
+      "no_call_direct": 216,
+      "refusal_policy": 151,
+      "runtime_alignment": 324,
+      "tool_positive": 1404
+    },
+    "val_categories": {
+      "adversarial_malformed": 7,
+      "no_call_direct": 24,
+      "refusal_policy": 17,
+      "runtime_alignment": 36,
+      "tool_positive": 156
+    },
+    "train_tool_counts": {
+      "apply_unified_diff": 20,
+      "archive_create": 35,
+      "archive_extract": 30,
+      "check_service_health": 55,
+      "copy_path": 30,
+      "debug_tools": 110,
+      "find_files": 120,
+      "get_system_datetime": 45,
+      "get_system_version": 8,
+      "git_diff": 8,
+      "git_status": 8,
+      "http_request": 10,
+      "json_edit": 10,
+      "list_active_ports": 10,
+      "list_tools": 10,
+      "read_file": 249,
+      "rg_search": 470,
+      "run_command": 70,
+      "service_control": 8,
+      "sha256_file": 10,
+      "stat_path": 35,
+      "test_run": 8,
+      "write_file": 45
+    },
+    "val_tool_counts": {
+      "apply_unified_diff": 2,
+      "archive_create": 4,
+      "archive_extract": 3,
+      "check_service_health": 6,
+      "copy_path": 4,
+      "debug_tools": 12,
+      "find_files": 13,
+      "get_system_datetime": 5,
+      "get_system_version": 1,
+      "git_diff": 1,
+      "git_status": 1,
+      "http_request": 1,
+      "json_edit": 1,
+      "list_active_ports": 1,
+      "list_tools": 1,
+      "read_file": 28,
+      "rg_search": 52,
+      "run_command": 8,
+      "service_control": 1,
+      "sha256_file": 1,
+      "stat_path": 4,
+      "test_run": 1,
+      "write_file": 5
+    }
+  },
+  "intervention": {
+    "targeted_tools": [
+      "rg_search",
+      "read_file"
+    ],
+    "train": {
+      "targeted_rows": 719,
+      "targeted_rows_prompt_changed": 51,
+      "anchor_mode_counts": {
+        "append": 24,
+        "append_compact": 10,
+        "existing_anchor_signal": 629,
+        "prepend": 17,
+        "unchanged_diversity_preserve": 39
+      },
+      "ambiguity_remediation": {
+        "applied": true,
+        "details": {
+          "rows_changed": 55,
+          "rows_touched_by_mode": {
+            "append_clause": 55
+          },
+          "rows_touched_by_tool": {
+            "read_file": 12,
+            "rg_search": 43
+          },
+          "conflicting_prompt_groups_input": 1
+        }
+      }
+    },
+    "val": {
+      "targeted_rows": 80,
+      "targeted_rows_prompt_changed": 7,
+      "anchor_mode_counts": {
+        "append": 4,
+        "append_compact": 2,
+        "existing_anchor_signal": 69,
+        "prepend": 1,
+        "unchanged_diversity_preserve": 4
+      },
+      "ambiguity_remediation": {
+        "applied": true,
+        "details": {
+          "rows_changed": 55,
+          "rows_touched_by_mode": {
+            "append_clause": 55
+          },
+          "rows_touched_by_tool": {
+            "read_file": 12,
+            "rg_search": 43
+          },
+          "conflicting_prompt_groups_input": 1
+        }
+      }
+    }
+  },
+  "overlap_audit": {
+    "train": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    },
+    "val": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    },
+    "combined": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    }
+  },
+  "diagnostics_highlights": {
+    "diversity_review_summary": {
+      "status": "ok",
+      "style_bucket_count_targeted": 3,
+      "dominant_style_share_targeted": 0.484355,
+      "unique_skeletons_targeted": 54,
+      "top1_skeleton_share_targeted": 0.052566,
+      "risk_flags": [],
+      "pass": true
+    },
+    "anti_homogenization_summary": {
+      "status": "ok",
+      "forbidden_hits_total": 0,
+      "targeted_top1_skeleton_share": 0.052566,
+      "targeted_top3_skeleton_share": 0.147685,
+      "dominant_style_share": 0.484355,
+      "risk_signals": [],
+      "pass": true
+    },
+    "targeted_distribution": {
+      "status": "ok",
+      "total_tool_rows": 1560,
+      "targeted_rows": 799,
+      "non_targeted_rows": 761,
+      "targeted_share": 0.512179,
+      "by_tool": [
+        {
+          "tool": "rg_search",
+          "row_count": 522,
+          "share": 0.334615,
+          "expected_share": 0.5,
+          "deviation": -0.165385,
+          "is_targeted": true
+        },
+        {
+          "tool": "read_file",
+          "row_count": 277,
+          "share": 0.177564,
+          "expected_share": 0.5,
+          "deviation": -0.322436,
+          "is_targeted": true
+        },
+        {
+          "tool": "find_files",
+          "row_count": 133,
+          "share": 0.085256,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "debug_tools",
+          "row_count": 122,
+          "share": 0.078205,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "run_command",
+          "row_count": 78,
+          "share": 0.05,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "check_service_health",
+          "row_count": 61,
+          "share": 0.039103,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "get_system_datetime",
+          "row_count": 50,
+          "share": 0.032051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "write_file",
+          "row_count": 50,
+          "share": 0.032051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "archive_create",
+          "row_count": 39,
+          "share": 0.025,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "stat_path",
+          "row_count": 39,
+          "share": 0.025,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "copy_path",
+          "row_count": 34,
+          "share": 0.021795,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "archive_extract",
+          "row_count": 33,
+          "share": 0.021154,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "apply_unified_diff",
+          "row_count": 22,
+          "share": 0.014103,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "http_request",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "json_edit",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "list_active_ports",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "list_tools",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "sha256_file",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "get_system_version",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "git_diff",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "git_status",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "service_control",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "test_run",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        }
+      ]
+    },
+    "prompt_ambiguity_hard_blocks": {
+      "prompt_to_multiple_targets": false,
+      "prompt_to_multiple_tools": false,
+      "prompt_tool_to_multiple_arguments": false
+    },
+    "prompt_ambiguity_counts": {
+      "duplicate_prompt_groups_different_target_count": 0,
+      "duplicate_prompt_groups_different_tool_count": 0,
+      "duplicate_prompt_tool_groups_different_arguments_count": 0
+    }
+  },
+  "hashes": {
+    "train_sha256": "16aeba5ab0a79ff68ef4a0301d3d61598c4699d218192f2e299e701451012001",
+    "val_sha256": "d5b102675668d90510a158aab659659288d7e5dbdbe4d7812cc4a47a0637bfba"
+  }
+}

@@ -51,6 +51,26 @@
         "intervention_tags",
         "is_targeted_family"
       ]
+    },
+    "prompt_length_delta": {
+      "description": "Prompt length delta tracking to detect overconstraint-inducing inflation.",
+      "required_fields": [
+        "reference_targeted",
+        "candidate_targeted",
+        "delta_targeted"
+      ]
+    },
+    "prompt_ambiguity_audit": {
+      "description": "Hard-block ambiguity audit for prompt->target/tool/argument contradictions.",
+      "required_fields": [
+        "duplicate_prompt_groups_different_target_count",
+        "duplicate_prompt_groups_different_tool_count",
+        "duplicate_prompt_tool_groups_different_arguments_count",
+        "high_frequency_prompt_reuse",
+        "high_frequency_skeleton_reuse",
+        "source_case_divergence_groups",
+        "hard_block_candidates"
+      ]
     }
   },
   "spill_guard_support": {

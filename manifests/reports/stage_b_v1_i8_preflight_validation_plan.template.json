@@ -48,11 +48,31 @@
         "payload_not_parsed_vs_payload_not_object_shift",
         "missing_tool_calls_coupling_shift"
       ]
+    },
+    {
+      "name": "prompt_ambiguity_hard_block_audit",
+      "blocking": true,
+      "status": "planned_not_run",
+      "required_reports": [
+        "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_prompt_ambiguity_audit.json"
+      ],
+      "required_subchecks": [
+        "prompt_to_multiple_targets_false",
+        "prompt_to_multiple_tools_false",
+        "prompt_tool_to_multiple_arguments_false"
+      ]
     }
   ],
   "approval_state": {
     "approved_to_generate_dataset": false,
     "approved_to_run": false,
     "approved_to_promote": false
+  },
+  "human_review_support_hooks": {
+    "checklist_template": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_human_review_checklist.template.md",
+    "intervention_budget_summary_source": "diagnostics.review_support.intervention_budget_summary",
+    "targeted_prompt_samples_source": "diagnostics.review_support.targeted_prompt_samples",
+    "diversity_summary_source": "diagnostics.review_support.diversity_review_summary",
+    "anti_homogenization_summary_source": "diagnostics.review_support.anti_homogenization_summary"
   }
 }

@@ -16,3 +16,13 @@ Boundaries preserved:
 - No dataset generation in this phase.
 - No training in this phase.
 - Approval gates remain closed.
+
+Implementation-completion additions:
+- Builder flow now includes explicit overlap guard, intervention annotation flow, anti-overconstraint scan hooks, and fail-fast pre-generation stop.
+- Diagnostics now include style buckets, skeleton concentration, targeted-tool distribution, forbidden-pattern scans, intervention coverage, and prompt-length delta analysis.
+- Preflight now validates draft artifacts + doctrine invariants and emits human-review support outputs without opening execution gates.
+
+Ambiguity corrective additions:
+- Added hard-block prompt-ambiguity audit for conflicting prompt->target/tool/argument mappings.
+- Added explicit artifact output `stage_b_v1_i8_prompt_ambiguity_audit.json`.
+- Added bounded remediation pass for targeted-family prompt disambiguation when ambiguity hard-blocks are detected.

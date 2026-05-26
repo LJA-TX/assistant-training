@@ -1,0 +1,1850 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T16:04:45Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "status": "analysis_completed",
+  "policy": {
+    "targeted_tools": [
+      "rg_search",
+      "read_file"
+    ],
+    "forbidden_patterns": [
+      "never return",
+      "must not output",
+      "forbidden wrapper key",
+      "always include tool_calls key regardless of request"
+    ],
+    "max_allowed_skeleton_concentration": 0.0,
+    "min_required_style_buckets": 2,
+    "min_required_unique_skeletons": 8
+  },
+  "checks": {
+    "style_bucket_analysis": {
+      "status": "ok",
+      "rows_analyzed": 2400,
+      "overall": [
+        {
+          "bucket_name": "imperative_general",
+          "row_count": 1139,
+          "share": 0.474583
+        },
+        {
+          "bucket_name": "task_narrative",
+          "row_count": 830,
+          "share": 0.345833
+        },
+        {
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 431,
+          "share": 0.179583
+        }
+      ],
+      "by_tool": [
+        {
+          "tool_family": "",
+          "bucket_name": "task_narrative",
+          "row_count": 768,
+          "share": 0.914286
+        },
+        {
+          "tool_family": "",
+          "bucket_name": "imperative_general",
+          "row_count": 72,
+          "share": 0.085714
+        },
+        {
+          "tool_family": "apply_unified_diff",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 22,
+          "share": 1.0
+        },
+        {
+          "tool_family": "archive_create",
+          "bucket_name": "imperative_general",
+          "row_count": 39,
+          "share": 1.0
+        },
+        {
+          "tool_family": "archive_extract",
+          "bucket_name": "imperative_general",
+          "row_count": 33,
+          "share": 1.0
+        },
+        {
+          "tool_family": "check_service_health",
+          "bucket_name": "imperative_general",
+          "row_count": 61,
+          "share": 1.0
+        },
+        {
+          "tool_family": "copy_path",
+          "bucket_name": "imperative_general",
+          "row_count": 34,
+          "share": 1.0
+        },
+        {
+          "tool_family": "debug_tools",
+          "bucket_name": "imperative_general",
+          "row_count": 122,
+          "share": 1.0
+        },
+        {
+          "tool_family": "find_files",
+          "bucket_name": "imperative_general",
+          "row_count": 133,
+          "share": 1.0
+        },
+        {
+          "tool_family": "get_system_datetime",
+          "bucket_name": "imperative_general",
+          "row_count": 50,
+          "share": 1.0
+        },
+        {
+          "tool_family": "get_system_version",
+          "bucket_name": "imperative_general",
+          "row_count": 9,
+          "share": 1.0
+        },
+        {
+          "tool_family": "git_diff",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 5,
+          "share": 0.555556
+        },
+        {
+          "tool_family": "git_diff",
+          "bucket_name": "imperative_general",
+          "row_count": 4,
+          "share": 0.444444
+        },
+        {
+          "tool_family": "git_status",
+          "bucket_name": "imperative_general",
+          "row_count": 9,
+          "share": 1.0
+        },
+        {
+          "tool_family": "http_request",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "json_edit",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "list_active_ports",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "list_tools",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "read_file",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 233,
+          "share": 0.841155
+        },
+        {
+          "tool_family": "read_file",
+          "bucket_name": "task_narrative",
+          "row_count": 44,
+          "share": 0.158845
+        },
+        {
+          "tool_family": "rg_search",
+          "bucket_name": "imperative_general",
+          "row_count": 350,
+          "share": 0.670498
+        },
+        {
+          "tool_family": "rg_search",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 154,
+          "share": 0.295019
+        },
+        {
+          "tool_family": "rg_search",
+          "bucket_name": "task_narrative",
+          "row_count": 18,
+          "share": 0.034483
+        },
+        {
+          "tool_family": "run_command",
+          "bucket_name": "imperative_general",
+          "row_count": 78,
+          "share": 1.0
+        },
+        {
+          "tool_family": "service_control",
+          "bucket_name": "imperative_general",
+          "row_count": 9,
+          "share": 1.0
+        },
+        {
+          "tool_family": "sha256_file",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "stat_path",
+          "bucket_name": "imperative_general",
+          "row_count": 39,
+          "share": 1.0
+        },
+        {
+          "tool_family": "test_run",
+          "bucket_name": "imperative_general",
+          "row_count": 9,
+          "share": 1.0
+        },
+        {
+          "tool_family": "write_file",
+          "bucket_name": "imperative_general",
+          "row_count": 33,
+          "share": 0.66
+        },
+        {
+          "tool_family": "write_file",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 17,
+          "share": 0.34
+        }
+      ],
+      "targeted_only": [
+        {
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 387,
+          "share": 0.484355
+        },
+        {
+          "bucket_name": "imperative_general",
+          "row_count": 350,
+          "share": 0.438048
+        },
+        {
+          "bucket_name": "task_narrative",
+          "row_count": 62,
+          "share": 0.077597
+        }
+      ]
+    },
+    "prompt_skeleton_concentration": {
+      "status": "ok",
+      "max_allowed_concentration": 0.0,
+      "global": {
+        "group": "global",
+        "rows": 2400,
+        "unique_skeletons": 127,
+        "top1_share": 0.050833,
+        "top3_share": 0.097917,
+        "top_skeletons": [
+          {
+            "skeleton_id": "77f2bcc076c5",
+            "row_count": 122,
+            "share": 0.050833,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "eda6ede9db3d",
+            "row_count": 57,
+            "share": 0.02375,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "3d4c35372642",
+            "row_count": 56,
+            "share": 0.023333,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "61804e8e5477",
+            "row_count": 56,
+            "share": 0.023333,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "0356ce3a8616",
+            "row_count": 53,
+            "share": 0.022083,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "4c2064512bed",
+            "row_count": 51,
+            "share": 0.02125,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "d3ed4e768734",
+            "row_count": 51,
+            "share": 0.02125,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "abb490d0ee5c",
+            "row_count": 50,
+            "share": 0.020833,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "22972110dca3",
+            "row_count": 49,
+            "share": 0.020417,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "d165dd55b1ed",
+            "row_count": 46,
+            "share": 0.019167,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "618e455c7f4c",
+            "row_count": 45,
+            "share": 0.01875,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "5b2dfe2fc187",
+            "row_count": 43,
+            "share": 0.017917,
+            "dominance_flag": false
+          }
+        ]
+      },
+      "targeted": {
+        "group": "targeted_tools",
+        "rows": 799,
+        "unique_skeletons": 54,
+        "top1_share": 0.052566,
+        "top3_share": 0.147685,
+        "top_skeletons": [
+          {
+            "skeleton_id": "7bf04fd7509e",
+            "row_count": 42,
+            "share": 0.052566,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "a195264dd90c",
+            "row_count": 40,
+            "share": 0.050063,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "49e8a004f19b",
+            "row_count": 36,
+            "share": 0.045056,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "b5346fe71f24",
+            "row_count": 32,
+            "share": 0.04005,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "52c9c7295b06",
+            "row_count": 30,
+            "share": 0.037547,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "3d04e2e8f9fb",
+            "row_count": 23,
+            "share": 0.028786,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "4ea5a9d3e1aa",
+            "row_count": 22,
+            "share": 0.027534,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "4b6c95f32e2c",
+            "row_count": 20,
+            "share": 0.025031,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "612a971c4bf5",
+            "row_count": 20,
+            "share": 0.025031,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "1fe8b9d6152b",
+            "row_count": 17,
+            "share": 0.021277,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "893cddcb0d09",
+            "row_count": 17,
+            "share": 0.021277,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "a7adbd6c63ca",
+            "row_count": 17,
+            "share": 0.021277,
+            "dominance_flag": false
+          }
+        ]
+      },
+      "per_tool": [
+        {
+          "group": "",
+          "rows": 840,
+          "unique_skeletons": 40,
+          "top1_share": 0.067857,
+          "top3_share": 0.20119,
+          "top_skeletons": [
+            {
+              "skeleton_id": "eda6ede9db3d",
+              "row_count": 57,
+              "share": 0.067857,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "3d4c35372642",
+              "row_count": 56,
+              "share": 0.066667,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "61804e8e5477",
+              "row_count": 56,
+              "share": 0.066667,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "0356ce3a8616",
+              "row_count": 53,
+              "share": 0.063095,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "4c2064512bed",
+              "row_count": 51,
+              "share": 0.060714,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "d3ed4e768734",
+              "row_count": 51,
+              "share": 0.060714,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "618e455c7f4c",
+              "row_count": 45,
+              "share": 0.053571,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "7f0910c3ada5",
+              "row_count": 42,
+              "share": 0.05,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "5a75ba7a7b9a",
+              "row_count": 41,
+              "share": 0.04881,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "e67afb879eec",
+              "row_count": 40,
+              "share": 0.047619,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "734649a5b04f",
+              "row_count": 38,
+              "share": 0.045238,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "525fe2389d60",
+              "row_count": 35,
+              "share": 0.041667,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "apply_unified_diff",
+          "rows": 22,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "e5a8c6e86842",
+              "row_count": 22,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "archive_create",
+          "rows": 39,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "92957ef11929",
+              "row_count": 39,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "archive_extract",
+          "rows": 33,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "f0a144d1fc16",
+              "row_count": 33,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "check_service_health",
+          "rows": 61,
+          "unique_skeletons": 2,
+          "top1_share": 0.508197,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "a0496dda695a",
+              "row_count": 31,
+              "share": 0.508197,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "56a80faf0ac0",
+              "row_count": 30,
+              "share": 0.491803,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "copy_path",
+          "rows": 34,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "17fbbd59cb8e",
+              "row_count": 34,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "debug_tools",
+          "rows": 122,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "77f2bcc076c5",
+              "row_count": 122,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "find_files",
+          "rows": 133,
+          "unique_skeletons": 3,
+          "top1_share": 0.368421,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "22972110dca3",
+              "row_count": 49,
+              "share": 0.368421,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "5b2dfe2fc187",
+              "row_count": 43,
+              "share": 0.323308,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "105f905150e5",
+              "row_count": 41,
+              "share": 0.308271,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "get_system_datetime",
+          "rows": 50,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "abb490d0ee5c",
+              "row_count": 50,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "get_system_version",
+          "rows": 9,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "775f0d2faf78",
+              "row_count": 9,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "git_diff",
+          "rows": 9,
+          "unique_skeletons": 2,
+          "top1_share": 0.555556,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "f1baa4eb8aa1",
+              "row_count": 5,
+              "share": 0.555556,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "f9d984878b18",
+              "row_count": 4,
+              "share": 0.444444,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "git_status",
+          "rows": 9,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "c4269674d8eb",
+              "row_count": 9,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "http_request",
+          "rows": 11,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "cec7e5aa99f4",
+              "row_count": 11,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "json_edit",
+          "rows": 11,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "11e699b43ec7",
+              "row_count": 11,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "list_active_ports",
+          "rows": 11,
+          "unique_skeletons": 2,
+          "top1_share": 0.545455,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "baba4efd1d5a",
+              "row_count": 6,
+              "share": 0.545455,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "b40bc338d3c4",
+              "row_count": 5,
+              "share": 0.454545,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "list_tools",
+          "rows": 11,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "b381c9f52078",
+              "row_count": 11,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "read_file",
+          "rows": 277,
+          "unique_skeletons": 23,
+          "top1_share": 0.072202,
+          "top3_share": 0.191336,
+          "top_skeletons": [
+            {
+              "skeleton_id": "612a971c4bf5",
+              "row_count": 20,
+              "share": 0.072202,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "893cddcb0d09",
+              "row_count": 17,
+              "share": 0.061372,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "48686176673c",
+              "row_count": 16,
+              "share": 0.057762,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "70e1cfb8493b",
+              "row_count": 16,
+              "share": 0.057762,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "eef4e19e6d48",
+              "row_count": 16,
+              "share": 0.057762,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "111efe0b6cd4",
+              "row_count": 14,
+              "share": 0.050542,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "da057fa561b2",
+              "row_count": 14,
+              "share": 0.050542,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "1d2226af48b8",
+              "row_count": 13,
+              "share": 0.046931,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "4c41f82b777c",
+              "row_count": 13,
+              "share": 0.046931,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "7e3509f5c88e",
+              "row_count": 13,
+              "share": 0.046931,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "3be926427765",
+              "row_count": 12,
+              "share": 0.043321,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "872aea9f3ee0",
+              "row_count": 12,
+              "share": 0.043321,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "rg_search",
+          "rows": 522,
+          "unique_skeletons": 31,
+          "top1_share": 0.08046,
+          "top3_share": 0.226054,
+          "top_skeletons": [
+            {
+              "skeleton_id": "7bf04fd7509e",
+              "row_count": 42,
+              "share": 0.08046,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "a195264dd90c",
+              "row_count": 40,
+              "share": 0.076628,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "49e8a004f19b",
+              "row_count": 36,
+              "share": 0.068966,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "b5346fe71f24",
+              "row_count": 32,
+              "share": 0.061303,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "52c9c7295b06",
+              "row_count": 30,
+              "share": 0.057471,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "3d04e2e8f9fb",
+              "row_count": 23,
+              "share": 0.044061,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "4ea5a9d3e1aa",
+              "row_count": 22,
+              "share": 0.042146,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "4b6c95f32e2c",
+              "row_count": 20,
+              "share": 0.038314,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "1fe8b9d6152b",
+              "row_count": 17,
+              "share": 0.032567,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "a7adbd6c63ca",
+              "row_count": 17,
+              "share": 0.032567,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "9383807f75fe",
+              "row_count": 16,
+              "share": 0.030651,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "0710921773e0",
+              "row_count": 15,
+              "share": 0.028736,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "run_command",
+          "rows": 78,
+          "unique_skeletons": 4,
+          "top1_share": 0.589744,
+          "top3_share": 0.871795,
+          "top_skeletons": [
+            {
+              "skeleton_id": "d165dd55b1ed",
+              "row_count": 46,
+              "share": 0.589744,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "e0e9f3302254",
+              "row_count": 12,
+              "share": 0.153846,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "013ba093b5ff",
+              "row_count": 10,
+              "share": 0.128205,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "c6ef2961907c",
+              "row_count": 10,
+              "share": 0.128205,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "service_control",
+          "rows": 9,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "957cb1b437d7",
+              "row_count": 9,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "sha256_file",
+          "rows": 11,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "c14521885684",
+              "row_count": 11,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "stat_path",
+          "rows": 39,
+          "unique_skeletons": 2,
+          "top1_share": 0.538462,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "62186f84cf37",
+              "row_count": 21,
+              "share": 0.538462,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "df717d260730",
+              "row_count": 18,
+              "share": 0.461538,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "test_run",
+          "rows": 9,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "59bd75887069",
+              "row_count": 9,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "write_file",
+          "rows": 50,
+          "unique_skeletons": 4,
+          "top1_share": 0.34,
+          "top3_share": 0.86,
+          "top_skeletons": [
+            {
+              "skeleton_id": "447288c73d58",
+              "row_count": 17,
+              "share": 0.34,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "0ceda04da990",
+              "row_count": 15,
+              "share": 0.3,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "96711cd7438f",
+              "row_count": 11,
+              "share": 0.22,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "139ba96e6de7",
+              "row_count": 7,
+              "share": 0.14,
+              "dominance_flag": false
+            }
+          ]
+        }
+      ]
+    },
+    "targeted_tool_distribution": {
+      "status": "ok",
+      "total_tool_rows": 1560,
+      "targeted_rows": 799,
+      "non_targeted_rows": 761,
+      "targeted_share": 0.512179,
+      "by_tool": [
+        {
+          "tool": "rg_search",
+          "row_count": 522,
+          "share": 0.334615,
+          "expected_share": 0.5,
+          "deviation": -0.165385,
+          "is_targeted": true
+        },
+        {
+          "tool": "read_file",
+          "row_count": 277,
+          "share": 0.177564,
+          "expected_share": 0.5,
+          "deviation": -0.322436,
+          "is_targeted": true
+        },
+        {
+          "tool": "find_files",
+          "row_count": 133,
+          "share": 0.085256,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "debug_tools",
+          "row_count": 122,
+          "share": 0.078205,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "run_command",
+          "row_count": 78,
+          "share": 0.05,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "check_service_health",
+          "row_count": 61,
+          "share": 0.039103,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "get_system_datetime",
+          "row_count": 50,
+          "share": 0.032051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "write_file",
+          "row_count": 50,
+          "share": 0.032051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "archive_create",
+          "row_count": 39,
+          "share": 0.025,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "stat_path",
+          "row_count": 39,
+          "share": 0.025,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "copy_path",
+          "row_count": 34,
+          "share": 0.021795,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "archive_extract",
+          "row_count": 33,
+          "share": 0.021154,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "apply_unified_diff",
+          "row_count": 22,
+          "share": 0.014103,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "http_request",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "json_edit",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "list_active_ports",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "list_tools",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "sha256_file",
+          "row_count": 11,
+          "share": 0.007051,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "get_system_version",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "git_diff",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "git_status",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "service_control",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "test_run",
+          "row_count": 9,
+          "share": 0.005769,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        }
+      ]
+    },
+    "forbidden_pattern_scan": {
+      "status": "ok",
+      "patterns_checked": 4,
+      "total_hits": 0,
+      "results": [
+        {
+          "pattern_id": "fp_001",
+          "pattern": "never return",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        },
+        {
+          "pattern_id": "fp_002",
+          "pattern": "must not output",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        },
+        {
+          "pattern_id": "fp_003",
+          "pattern": "forbidden wrapper key",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        },
+        {
+          "pattern_id": "fp_004",
+          "pattern": "always include tool_calls key regardless of request",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        }
+      ]
+    },
+    "intervention_coverage": {
+      "status": "ok",
+      "rows": 2400,
+      "targeted_rows": 799,
+      "targeted_share": 0.332917,
+      "tag_counts": {
+        "imperative_surface": 1570,
+        "non_targeted_family": 1601,
+        "non_tool": 840,
+        "parse_anchor_candidate": 55,
+        "parse_anchor_present": 744,
+        "targeted_tool_family": 799,
+        "tool_positive": 1560
+      },
+      "tool_counts": {
+        "apply_unified_diff": 22,
+        "archive_create": 39,
+        "archive_extract": 33,
+        "check_service_health": 61,
+        "copy_path": 34,
+        "debug_tools": 122,
+        "find_files": 133,
+        "get_system_datetime": 50,
+        "get_system_version": 9,
+        "git_diff": 9,
+        "git_status": 9,
+        "http_request": 11,
+        "json_edit": 11,
+        "list_active_ports": 11,
+        "list_tools": 11,
+        "read_file": 277,
+        "rg_search": 522,
+        "run_command": 78,
+        "service_control": 9,
+        "sha256_file": 11,
+        "stat_path": 39,
+        "test_run": 9,
+        "write_file": 50
+      }
+    },
+    "prompt_length_delta": {
+      "status": "ok",
+      "reference_all": {
+        "chars": {
+          "count": 2400.0,
+          "mean": 121.97708333333334,
+          "median": 120.0,
+          "p95": 221.0,
+          "max": 345.0
+        },
+        "words": {
+          "count": 2400.0,
+          "mean": 14.325,
+          "median": 14.0,
+          "p95": 20.0,
+          "max": 43.0
+        }
+      },
+      "candidate_all": {
+        "chars": {
+          "count": 2400.0,
+          "mean": 126.40375,
+          "median": 122.0,
+          "p95": 256.0,
+          "max": 345.0
+        },
+        "words": {
+          "count": 2400.0,
+          "mean": 14.692916666666667,
+          "median": 14.0,
+          "p95": 25.0,
+          "max": 43.0
+        }
+      },
+      "delta_all": {
+        "chars_mean_delta": 4.426667,
+        "chars_p95_delta": 35.0,
+        "words_mean_delta": 0.367917,
+        "words_p95_delta": 5.0
+      },
+      "reference_targeted": {
+        "chars": {
+          "count": 799.0,
+          "mean": 169.1602002503129,
+          "median": 162.0,
+          "p95": 256.0,
+          "max": 258.0
+        },
+        "words": {
+          "count": 799.0,
+          "mean": 17.81351689612015,
+          "median": 17.0,
+          "p95": 31.0,
+          "max": 31.0
+        }
+      },
+      "candidate_targeted": {
+        "chars": {
+          "count": 799.0,
+          "mean": 182.45682102628285,
+          "median": 165.0,
+          "p95": 273.0,
+          "max": 296.0
+        },
+        "words": {
+          "count": 799.0,
+          "mean": 18.918648310387987,
+          "median": 17.0,
+          "p95": 31.0,
+          "max": 36.0
+        }
+      },
+      "delta_targeted": {
+        "chars_mean_delta": 13.296621,
+        "chars_p95_delta": 17.0,
+        "words_mean_delta": 1.105131,
+        "words_p95_delta": 0.0
+      }
+    },
+    "prompt_ambiguity_audit": {
+      "status": "ok",
+      "rows_analyzed": 2400,
+      "duplicate_prompt_groups_identical_target_count": 333,
+      "duplicate_prompt_groups_different_target_count": 0,
+      "duplicate_prompt_groups_different_tool_count": 0,
+      "duplicate_prompt_tool_groups_different_arguments_count": 0,
+      "rows_in_conflicting_prompt_groups": 0,
+      "conflicting_prompt_groups": [],
+      "conflicting_prompt_tool_groups": [],
+      "high_frequency_prompt_reuse": [
+        {
+          "prompt": "Use get_system_datetime to report local_iso only for runtime diagnostics.",
+          "rows": 50
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime/server and pattern *.py. Report match_count only. Return strict JSON tool_calls only.",
+          "rows": 49
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime and pattern agent.py. Report match_count only. Return strict JSON tool_calls only.",
+          "rows": 43
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime/server and pattern *.py. Report match_count only. [i3_train_variant]",
+          "rows": 41
+        },
+        {
+          "prompt": "Use archive_create with output_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.zip, format zip, overwrite true, and sources from .tool_ft_tmp.moved and .tool_ft_tmp.json.",
+          "rows": 39
+        },
+        {
+          "prompt": "Use copy_path to copy /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.moved to /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.copy with overwrite true.",
+          "rows": 34
+        },
+        {
+          "prompt": "Use archive_extract with archive_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.zip and destination_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.extract, format zip, overwrite true.",
+          "rows": 33
+        },
+        {
+          "prompt": "Use check_service_health on http://127.0.0.1:8100/v1/models and report ok/status only. Return strict JSON tool_calls only.",
+          "rows": 31
+        },
+        {
+          "prompt": "Use check_service_health on http://127.0.0.1:8100/health and report ok/status only. [i3_train_variant]",
+          "rows": 30
+        },
+        {
+          "prompt": "Use apply_unified_diff in dry_run mode with a minimal two-line patch and report success only.",
+          "rows": 22
+        },
+        {
+          "prompt": "Call tool stat_path (tool name must be exactly stat_path) with path /opt/ai-stack/runtimes/assistant-runtime/.state. Report exists/type only. Return strict JSON tool_calls only.",
+          "rows": 21
+        }
+      ],
+      "high_frequency_skeleton_reuse": [
+        {
+          "skeleton_id": "77f2bcc076c5",
+          "rows": 122
+        },
+        {
+          "skeleton_id": "eda6ede9db3d",
+          "rows": 57
+        },
+        {
+          "skeleton_id": "3d4c35372642",
+          "rows": 56
+        },
+        {
+          "skeleton_id": "61804e8e5477",
+          "rows": 56
+        },
+        {
+          "skeleton_id": "0356ce3a8616",
+          "rows": 53
+        },
+        {
+          "skeleton_id": "4c2064512bed",
+          "rows": 51
+        },
+        {
+          "skeleton_id": "d3ed4e768734",
+          "rows": 51
+        },
+        {
+          "skeleton_id": "abb490d0ee5c",
+          "rows": 50
+        }
+      ],
+      "source_case_divergence_groups": [
+        {
+          "source_case_id": "i3_adapt_p0_read_file_1",
+          "rows": 122,
+          "distinct_targets": 7,
+          "distinct_tools": 2,
+          "distinct_prompts": 15,
+          "distinct_tool_argument_pairs": 7
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_4",
+          "rows": 99,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_2",
+          "rows": 88,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 16,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_1",
+          "rows": 87,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 12,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_3",
+          "rows": 81,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_2",
+          "rows": 79,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_3",
+          "rows": 72,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_5",
+          "rows": 70,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        }
+      ],
+      "hard_block_candidates": {
+        "prompt_to_multiple_targets": false,
+        "prompt_to_multiple_tools": false,
+        "prompt_tool_to_multiple_arguments": false
+      }
+    }
+  },
+  "review_support": {
+    "review_checklist": [
+      "Confirm targeted tools are limited to rg_search/read_file for localized shaping.",
+      "Confirm no single prompt skeleton dominates targeted rows.",
+      "Confirm no forbidden lexical/schema pressure patterns are present.",
+      "Confirm no identical prompts map to conflicting targets/tools/arguments.",
+      "Confirm targeted prompt styles remain semantically diverse.",
+      "Confirm prompt-length inflation is bounded and not forcing template collapse."
+    ],
+    "intervention_budget_summary": {
+      "candidate_rows": 2400,
+      "reference_rows": 2400,
+      "targeted_rows": 799,
+      "targeted_share": 0.332917,
+      "tool_counts": {
+        "apply_unified_diff": 22,
+        "archive_create": 39,
+        "archive_extract": 33,
+        "check_service_health": 61,
+        "copy_path": 34,
+        "debug_tools": 122,
+        "find_files": 133,
+        "get_system_datetime": 50,
+        "get_system_version": 9,
+        "git_diff": 9,
+        "git_status": 9,
+        "http_request": 11,
+        "json_edit": 11,
+        "list_active_ports": 11,
+        "list_tools": 11,
+        "read_file": 277,
+        "rg_search": 522,
+        "run_command": 78,
+        "service_control": 9,
+        "sha256_file": 11,
+        "stat_path": 39,
+        "test_run": 9,
+        "write_file": 50
+      }
+    },
+    "targeted_prompt_samples": {
+      "status": "ok",
+      "targeted_rows": 799,
+      "samples_by_tool": {
+        "read_file": [
+          {
+            "source_case_id": "i3_adapt_p0_read_file_1",
+            "style_bucket": "imperative_line_scoped",
+            "prompt_chars": 146,
+            "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          },
+          {
+            "source_case_id": "i3_adapt_p0_read_file_1",
+            "style_bucket": "imperative_line_scoped",
+            "prompt_chars": 146,
+            "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          },
+          {
+            "source_case_id": "i3_adapt_p0_read_file_1",
+            "style_bucket": "imperative_line_scoped",
+            "prompt_chars": 146,
+            "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          }
+        ],
+        "rg_search": [
+          {
+            "source_case_id": "i3_adapt_p0_rg_search_1",
+            "style_bucket": "imperative_general",
+            "prompt_chars": 165,
+            "prompt": "Use rg_search to find \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+          },
+          {
+            "source_case_id": "i3_adapt_p0_rg_search_1",
+            "style_bucket": "imperative_general",
+            "prompt_chars": 165,
+            "prompt": "Use rg_search to find \"def create_app\" in /mnt/services/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+          },
+          {
+            "source_case_id": "i3_adapt_p0_rg_search_1",
+            "style_bucket": "imperative_general",
+            "prompt_chars": 171,
+            "prompt": "Use rg_search to find regex \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+          }
+        ]
+      },
+      "samples_by_style_bucket": {
+        "imperative_general": [
+          {
+            "source_case_id": "i3_adapt_p0_rg_search_1",
+            "tool": "rg_search",
+            "prompt_chars": 165,
+            "prompt": "Use rg_search to find \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+          },
+          {
+            "source_case_id": "i3_adapt_p0_rg_search_1",
+            "tool": "rg_search",
+            "prompt_chars": 165,
+            "prompt": "Use rg_search to find \"def create_app\" in /mnt/services/runtimes/assistant-runtime/server/service.py and report match_count only. Return strict JSON tool_calls only."
+          }
+        ],
+        "imperative_line_scoped": [
+          {
+            "source_case_id": "i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 146,
+            "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          },
+          {
+            "source_case_id": "i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 146,
+            "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          }
+        ],
+        "task_narrative": [
+          {
+            "source_case_id": "i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 150,
+            "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          },
+          {
+            "source_case_id": "i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 150,
+            "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return strict JSON tool_calls only."
+          }
+        ]
+      }
+    },
+    "diversity_review_summary": {
+      "status": "ok",
+      "style_bucket_count_targeted": 3,
+      "dominant_style_share_targeted": 0.484355,
+      "unique_skeletons_targeted": 54,
+      "top1_skeleton_share_targeted": 0.052566,
+      "risk_flags": [],
+      "pass": true
+    },
+    "anti_homogenization_summary": {
+      "status": "ok",
+      "forbidden_hits_total": 0,
+      "targeted_top1_skeleton_share": 0.052566,
+      "targeted_top3_skeleton_share": 0.147685,
+      "dominant_style_share": 0.484355,
+      "risk_signals": [],
+      "pass": true
+    },
+    "ambiguity_hotspots": {
+      "conflicting_prompt_groups": [],
+      "conflicting_prompt_tool_groups": [],
+      "high_frequency_prompt_reuse": [
+        {
+          "prompt": "Use get_system_datetime to report local_iso only for runtime diagnostics.",
+          "rows": 50
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime/server and pattern *.py. Report match_count only. Return strict JSON tool_calls only.",
+          "rows": 49
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime and pattern agent.py. Report match_count only. Return strict JSON tool_calls only.",
+          "rows": 43
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime/server and pattern *.py. Report match_count only. [i3_train_variant]",
+          "rows": 41
+        },
+        {
+          "prompt": "Use archive_create with output_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.zip, format zip, overwrite true, and sources from .tool_ft_tmp.moved and .tool_ft_tmp.json.",
+          "rows": 39
+        },
+        {
+          "prompt": "Use copy_path to copy /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.moved to /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.copy with overwrite true.",
+          "rows": 34
+        },
+        {
+          "prompt": "Use archive_extract with archive_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.zip and destination_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.extract, format zip, overwrite true.",
+          "rows": 33
+        },
+        {
+          "prompt": "Use check_service_health on http://127.0.0.1:8100/v1/models and report ok/status only. Return strict JSON tool_calls only.",
+          "rows": 31
+        },
+        {
+          "prompt": "Use check_service_health on http://127.0.0.1:8100/health and report ok/status only. [i3_train_variant]",
+          "rows": 30
+        },
+        {
+          "prompt": "Use apply_unified_diff in dry_run mode with a minimal two-line patch and report success only.",
+          "rows": 22
+        },
+        {
+          "prompt": "Call tool stat_path (tool name must be exactly stat_path) with path /opt/ai-stack/runtimes/assistant-runtime/.state. Report exists/type only. Return strict JSON tool_calls only.",
+          "rows": 21
+        }
+      ],
+      "high_frequency_skeleton_reuse": [
+        {
+          "skeleton_id": "77f2bcc076c5",
+          "rows": 122
+        },
+        {
+          "skeleton_id": "eda6ede9db3d",
+          "rows": 57
+        },
+        {
+          "skeleton_id": "3d4c35372642",
+          "rows": 56
+        },
+        {
+          "skeleton_id": "61804e8e5477",
+          "rows": 56
+        },
+        {
+          "skeleton_id": "0356ce3a8616",
+          "rows": 53
+        },
+        {
+          "skeleton_id": "4c2064512bed",
+          "rows": 51
+        },
+        {
+          "skeleton_id": "d3ed4e768734",
+          "rows": 51
+        },
+        {
+          "skeleton_id": "abb490d0ee5c",
+          "rows": 50
+        }
+      ],
+      "source_case_divergence_groups": [
+        {
+          "source_case_id": "i3_adapt_p0_read_file_1",
+          "rows": 122,
+          "distinct_targets": 7,
+          "distinct_tools": 2,
+          "distinct_prompts": 15,
+          "distinct_tool_argument_pairs": 7
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_4",
+          "rows": 99,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_2",
+          "rows": 88,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 16,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_1",
+          "rows": 87,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 12,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_3",
+          "rows": 81,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_2",
+          "rows": 79,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_3",
+          "rows": 72,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_5",
+          "rows": 70,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        }
+      ]
+    }
+  },
+  "gate_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}
