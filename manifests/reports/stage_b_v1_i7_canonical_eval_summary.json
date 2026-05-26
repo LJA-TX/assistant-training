@@ -1,0 +1,241 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T12:08:08Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i7",
+  "lineage": "fresh_clean_branch_from_stage_b_llama31_8b_base_v1_i3",
+  "intervention_declaration": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i7_intervention_declaration.json",
+  "canonical_eval_run": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T115513Z",
+  "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "adapter_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i7",
+  "metrics": {
+    "baseline_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 1.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i3_heldout": {
+      "exact_json_validity": 0.05,
+      "invalid_json": 0.43,
+      "tool_name_accuracy": 0.05,
+      "argument_accuracy": 0.05,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i4_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.6,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i5_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.61,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i6_heldout": {
+      "exact_json_validity": 0.01,
+      "invalid_json": 0.39,
+      "tool_name_accuracy": 0.01,
+      "argument_accuracy": 0.01,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i7_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.66,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i7_aggregate": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.405,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    }
+  },
+  "deltas_pp": {
+    "stage_b_i7_vs_baseline_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": -34.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i7_vs_stage_b_i3_heldout": {
+      "exact_json_validity": -5.0,
+      "invalid_json": 23.0,
+      "tool_name_accuracy": -5.0,
+      "argument_accuracy": -5.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i7_vs_stage_b_i4_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 6.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i7_vs_stage_b_i5_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 5.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i7_vs_stage_b_i6_heldout": {
+      "exact_json_validity": -1.0,
+      "invalid_json": 27.0,
+      "tool_name_accuracy": -1.0,
+      "argument_accuracy": -1.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    }
+  },
+  "failure_profile": {
+    "tool_expected_class_counts": {
+      "invalid_json": 81,
+      "invalid_schema": 59
+    },
+    "schema_reasons": {
+      "payload_not_parsed": 81,
+      "tool_call_0_type_not_function": 2,
+      "payload_not_object": 39,
+      "missing_tool_calls": 18
+    },
+    "parse_modes": {
+      "invalid": 81,
+      "strict": 59
+    },
+    "noncanonical_key_token_hits": {
+      "tool_call": 3,
+      "tools": 8
+    },
+    "top_failing_expected_tools": [
+      {
+        "tool": "rg_search",
+        "count": 52
+      },
+      {
+        "tool": "read_file",
+        "count": 27
+      },
+      {
+        "tool": "find_files",
+        "count": 12
+      },
+      {
+        "tool": "debug_tools",
+        "count": 7
+      },
+      {
+        "tool": "check_service_health",
+        "count": 6
+      },
+      {
+        "tool": "get_system_datetime",
+        "count": 6
+      },
+      {
+        "tool": "archive_create",
+        "count": 4
+      },
+      {
+        "tool": "write_file",
+        "count": 3
+      },
+      {
+        "tool": "run_command",
+        "count": 3
+      },
+      {
+        "tool": "copy_path",
+        "count": 3
+      },
+      {
+        "tool": "archive_extract",
+        "count": 3
+      },
+      {
+        "tool": "stat_path",
+        "count": 2
+      }
+    ],
+    "per_split_tool_expected_class_counts": {
+      "heldout_validation": {
+        "invalid_json": 66,
+        "invalid_schema": 34
+      },
+      "tool_holdout": {
+        "invalid_schema": 25,
+        "invalid_json": 15
+      }
+    }
+  },
+  "contamination_audit": {
+    "heldout_validation": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "tool_holdout": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "status": "clean_for_evaluation"
+  },
+  "success_criteria_evaluation": {
+    "payload_not_object_decreased_vs_i6": true,
+    "heldout_invalid_json_not_regressed_gt_5pp_vs_i6": false,
+    "no_call_correctness_eq_1": true,
+    "wrapper_leakage_eq_0": true,
+    "heldout_tool_holdout_overlap_zero": true,
+    "passed_count": 4,
+    "total_boolean_checks": 5
+  },
+  "payload_not_object_vs_missing_tool_calls_independence": {
+    "payload_not_object": {
+      "i6": 58,
+      "i7": 39,
+      "delta": -19
+    },
+    "missing_tool_calls": {
+      "i6": 30,
+      "i7": 18,
+      "delta": -12
+    },
+    "combined_payload_not_object_plus_missing_tool_calls": {
+      "i6": 88,
+      "i7": 57,
+      "delta": -31
+    },
+    "payload_not_object_share_of_pair": {
+      "i6": 0.659,
+      "i7": 0.684
+    },
+    "assessment": {
+      "behaved_independently": false,
+      "reason": "payload_not_object improved (58 -> 39) but missing_tool_calls also moved materially (30 -> 18); both shifted together, indicating coupled schema dynamics rather than clean independence."
+    }
+  },
+  "interpretability_assessment": {
+    "improved": true,
+    "reason": "The isolated intervention yielded a clear directional effect on payload_not_object but also revealed coupling with missing_tool_calls and a strong adverse shift in payload_not_parsed, clarifying next isolation priority."
+  }
+}

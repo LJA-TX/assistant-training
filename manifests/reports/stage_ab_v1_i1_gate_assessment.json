@@ -1,0 +1,155 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T01:58:00Z",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md"
+  },
+  "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "canonical_target_model": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+  "sources": {
+    "baseline_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_baseline_llama31_8b_base_20260526T0044Z/summary.json",
+    "stage_a_eval_summary": "/opt/ai-stack/assistant-training/evals/runs/stage_a_llama31_8b_base_v1_i1_eval_20260526T0114Z/summary.json",
+    "stage_b_eval_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T013637Z/summary.json",
+    "stage_a_train_summary": "/opt/ai-stack/assistant-training/artifacts/stage_a_llama31_8b_base_v1_i1/training_summary.json",
+    "stage_b_train_summary": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i1/training_summary.json"
+  },
+  "gate_thresholds_appendix_a_v3a": {
+    "minimum_promising_vs_base": {
+      "heldout_exact_json_validity_delta_pp": 10.0,
+      "heldout_tool_name_accuracy_delta_pp": 5.0,
+      "invalid_json_must_decrease": true,
+      "wrapper_leakage_worsening_limit_pp": 5.0,
+      "no_call_correctness_degradation_limit_pp": 10.0
+    },
+    "strong_candidate": {
+      "exact_json_validity_min_percent": 50.0,
+      "tool_name_accuracy_min_percent": 35.0,
+      "argument_accuracy_min_percent": 25.0
+    }
+  },
+  "metrics": {
+    "baseline": {
+      "heldout": {
+        "exact_json_validity": 0.0,
+        "invalid_json": 1.0,
+        "tool_name_accuracy": 0.0,
+        "argument_accuracy": 0.0,
+        "wrapper_leakage": 0.0
+      },
+      "aggregate": {
+        "exact_json_validity": 0.0,
+        "invalid_json": 0.7,
+        "tool_name_accuracy": 0.0,
+        "argument_accuracy": 0.0,
+        "wrapper_leakage": 0.0,
+        "no_call_correctness": 1.0
+      }
+    },
+    "stage_a": {
+      "heldout": {
+        "exact_json_validity": 0.03,
+        "invalid_json": 0.7,
+        "tool_name_accuracy": 0.08,
+        "argument_accuracy": 0.03,
+        "wrapper_leakage": 0.0
+      },
+      "aggregate": {
+        "exact_json_validity": 0.015,
+        "invalid_json": 0.5,
+        "tool_name_accuracy": 0.05714285714285714,
+        "argument_accuracy": 0.02142857142857143,
+        "wrapper_leakage": 0.0,
+        "no_call_correctness": 1.0
+      }
+    },
+    "stage_b": {
+      "heldout": {
+        "exact_json_validity": 0.02,
+        "invalid_json": 0.62,
+        "tool_name_accuracy": 0.04,
+        "argument_accuracy": 0.08,
+        "wrapper_leakage": 0.0
+      },
+      "aggregate": {
+        "exact_json_validity": 0.01,
+        "invalid_json": 0.46,
+        "tool_name_accuracy": 0.02857142857142857,
+        "argument_accuracy": 0.05714285714285714,
+        "wrapper_leakage": 0.0,
+        "no_call_correctness": 1.0
+      }
+    }
+  },
+  "deltas_vs_baseline": {
+    "stage_a_heldout": {
+      "exact_json_validity_delta_pp": 3.0,
+      "invalid_json_delta_pp": -30.0,
+      "tool_name_accuracy_delta_pp": 8.0,
+      "argument_accuracy_delta_pp": 3.0,
+      "wrapper_leakage_delta_pp": 0.0,
+      "no_call_correctness_delta_pp": 0.0
+    },
+    "stage_b_heldout": {
+      "exact_json_validity_delta_pp": 2.0,
+      "invalid_json_delta_pp": -38.0,
+      "tool_name_accuracy_delta_pp": 4.0,
+      "argument_accuracy_delta_pp": 8.0,
+      "wrapper_leakage_delta_pp": 0.0,
+      "no_call_correctness_delta_pp": 0.0
+    },
+    "stage_b_minus_stage_a_aggregate": {
+      "exact_json_validity_delta_pp": -0.5,
+      "invalid_json_delta_pp": -4.0,
+      "tool_name_accuracy_delta_pp": -2.857142857142857,
+      "argument_accuracy_delta_pp": 3.5714285714285716,
+      "wrapper_leakage_delta_pp": 0.0,
+      "no_call_correctness_delta_pp": 0.0
+    }
+  },
+  "gate_results": {
+    "stage_a_minimum_promising": {
+      "heldout_exact_json_validity_delta_pp_ge_10": false,
+      "heldout_tool_name_accuracy_delta_pp_ge_5": true,
+      "invalid_json_decreased": true,
+      "wrapper_leakage_not_worse_by_gt_5pp": true,
+      "no_call_not_degraded_by_gt_10pp": true,
+      "overall_pass": false,
+      "blocking_reasons": [
+        "heldout exact_json_validity delta +3.0pp < required +10.0pp"
+      ]
+    },
+    "stage_b_minimum_promising": {
+      "heldout_exact_json_validity_delta_pp_ge_10": false,
+      "heldout_tool_name_accuracy_delta_pp_ge_5": false,
+      "invalid_json_decreased": true,
+      "wrapper_leakage_not_worse_by_gt_5pp": true,
+      "no_call_not_degraded_by_gt_10pp": true,
+      "overall_pass": false,
+      "blocking_reasons": [
+        "heldout exact_json_validity delta +2.0pp < required +10.0pp",
+        "heldout tool_name_accuracy delta +4.0pp < required +5.0pp"
+      ]
+    }
+  },
+  "budget_status": {
+    "serious_runs_per_stage_limit": 5,
+    "serious_runs_observed": {
+      "stage_a": 1,
+      "stage_b": 1
+    },
+    "consecutive_no_progress_limit": 3,
+    "consecutive_no_progress_observed": 2,
+    "dataset_growth_limit_per_iteration_percent": 20,
+    "dataset_growth_observation": "No dataset expansion iteration occurred after v1.0 build in this loop.",
+    "gpu_hours_per_day_limit": 24,
+    "observed_runtime_note": "Measured train+trainer-eval runtime is ~0.19 hours total across Stage A/B; canonical eval wallclock from run timestamps remains well below daily limit."
+  },
+  "promotion_decision": {
+    "stage_a": "reject_for_now",
+    "stage_b": "reject_for_now",
+    "autonomous_promotion_allowed": false,
+    "reason": "Appendix A minimum promising gates not met. Continue experimentation or escalate for human exception review."
+  }
+}

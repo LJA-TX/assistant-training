@@ -1,0 +1,271 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T11:05:31Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i5",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md"
+  },
+  "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "canonical_target_model": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+  "sources": {
+    "baseline_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_baseline_llama31_8b_base_20260526T0044Z/summary.json",
+    "stage_b_i3_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T033138Z/summary.json",
+    "stage_b_i4_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T100946Z/summary.json",
+    "stage_b_i5_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T105249Z/summary.json",
+    "stage_b_i5_dataset_summary": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i5_summary.json",
+    "stage_b_i5_train_summary": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i5/training_summary.json",
+    "stage_b_i4_gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i4_schema_recovery_gate_assessment.json"
+  },
+  "governance_notes": {
+    "stage_b_i2_contamination_audit": {
+      "heldout_prompt_overlap": 90,
+      "heldout_target_overlap": 37,
+      "heldout_source_case_overlap": 29,
+      "tool_holdout_prompt_overlap": 8,
+      "tool_holdout_target_overlap": 8,
+      "tool_holdout_source_case_overlap": 8,
+      "status": "not_promotion_eligible"
+    },
+    "stage_b_i3_overlap_audit": {
+      "heldout_prompt_overlap": 0,
+      "heldout_target_overlap": 0,
+      "heldout_source_case_overlap": 0,
+      "tool_holdout_prompt_overlap": 0,
+      "tool_holdout_target_overlap": 0,
+      "tool_holdout_source_case_overlap": 0,
+      "status": "clean_for_evaluation"
+    },
+    "stage_b_i4_overlap_audit": {
+      "heldout_prompt_overlap": 0,
+      "heldout_target_overlap": 0,
+      "heldout_source_case_overlap": 0,
+      "tool_holdout_prompt_overlap": 0,
+      "tool_holdout_target_overlap": 0,
+      "tool_holdout_source_case_overlap": 0,
+      "status": "clean_for_evaluation"
+    },
+    "stage_b_i5_overlap_audit": {
+      "heldout_prompt_overlap": 0,
+      "heldout_target_overlap": 0,
+      "heldout_source_case_overlap": 0,
+      "tool_holdout_prompt_overlap": 0,
+      "tool_holdout_target_overlap": 0,
+      "tool_holdout_source_case_overlap": 0,
+      "status": "clean_for_evaluation"
+    }
+  },
+  "gate_thresholds_appendix_a_v3a": {
+    "minimum_promising_vs_base": {
+      "heldout_exact_json_validity_delta_pp": 10.0,
+      "heldout_tool_name_accuracy_delta_pp": 5.0,
+      "invalid_json_must_decrease": true,
+      "wrapper_leakage_worsening_limit_pp": 5.0,
+      "no_call_correctness_degradation_limit_pp": 10.0
+    },
+    "strong_candidate_suggested": {
+      "exact_json_validity_min_percent": 50.0,
+      "tool_name_accuracy_min_percent": 35.0,
+      "argument_accuracy_min_percent": 25.0
+    }
+  },
+  "metrics": {
+    "baseline_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 1.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i3_heldout": {
+      "exact_json_validity": 0.05,
+      "invalid_json": 0.43,
+      "tool_name_accuracy": 0.05,
+      "argument_accuracy": 0.05,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i4_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.6,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i5_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.61,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i5_aggregate": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.355,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    }
+  },
+  "deltas_pp": {
+    "stage_b_i5_vs_baseline_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": -39.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i5_vs_stage_b_i4_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 1.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i5_vs_stage_b_i3_heldout": {
+      "exact_json_validity": -5.0,
+      "invalid_json": 18.0,
+      "tool_name_accuracy": -5.0,
+      "argument_accuracy": -5.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    }
+  },
+  "stage_b_i5_failure_profile": {
+    "tool_expected_class_counts": {
+      "invalid_json": 71,
+      "invalid_schema": 69
+    },
+    "schema_reasons": {
+      "payload_not_parsed": 71,
+      "payload_not_object": 37,
+      "missing_tool_calls": 32
+    },
+    "parse_modes": {
+      "invalid": 71,
+      "strict": 69
+    },
+    "noncanonical_key_token_hits": {
+      "tools": 8
+    },
+    "top_failing_expected_tools": [
+      {
+        "tool": "rg_search",
+        "count": 52
+      },
+      {
+        "tool": "read_file",
+        "count": 27
+      },
+      {
+        "tool": "find_files",
+        "count": 12
+      },
+      {
+        "tool": "debug_tools",
+        "count": 7
+      },
+      {
+        "tool": "check_service_health",
+        "count": 6
+      },
+      {
+        "tool": "get_system_datetime",
+        "count": 6
+      },
+      {
+        "tool": "archive_create",
+        "count": 4
+      },
+      {
+        "tool": "write_file",
+        "count": 3
+      },
+      {
+        "tool": "run_command",
+        "count": 3
+      },
+      {
+        "tool": "copy_path",
+        "count": 3
+      },
+      {
+        "tool": "archive_extract",
+        "count": 3
+      },
+      {
+        "tool": "stat_path",
+        "count": 2
+      }
+    ],
+    "per_split_tool_expected_class_counts": {
+      "heldout_validation": {
+        "invalid_json": 61,
+        "invalid_schema": 39
+      },
+      "tool_holdout": {
+        "invalid_schema": 30,
+        "invalid_json": 10
+      }
+    }
+  },
+  "gate_results": {
+    "stage_b_i5_minimum_promising": {
+      "heldout_exact_json_validity_delta_pp_ge_10": false,
+      "heldout_tool_name_accuracy_delta_pp_ge_5": false,
+      "invalid_json_decreased": true,
+      "wrapper_leakage_not_worse_by_gt_5pp": true,
+      "no_call_not_degraded_by_gt_10pp": true,
+      "overall_pass": false,
+      "blocking_reasons": [
+        "heldout exact_json_validity delta +0.0pp < required +10.0pp",
+        "heldout tool_name_accuracy delta +0.0pp < required +5.0pp"
+      ]
+    },
+    "stage_b_i5_strong_candidate_suggested": {
+      "exact_json_validity_ge_50": false,
+      "tool_name_accuracy_ge_35": false,
+      "argument_accuracy_ge_25": false,
+      "overall_pass": false
+    }
+  },
+  "budget_status": {
+    "serious_runs_per_stage_limit": 5,
+    "serious_runs_observed": {
+      "stage_a": 1,
+      "stage_b": 5
+    },
+    "consecutive_no_progress_limit": 3,
+    "consecutive_no_progress_observed": 3,
+    "dataset_growth_limit_per_iteration_percent": 20,
+    "dataset_growth_this_iteration_percent": 0,
+    "gpu_hours_per_day_limit": 24,
+    "observed_runtime_note": "Stage B i5 training runtime ~0.10 hours; canonical eval completed within daily budget envelope."
+  },
+  "promotion_decision": {
+    "stage_b_i5": "reject_for_now",
+    "autonomous_promotion_allowed": false,
+    "reason": "Minimum promising gate not met; runtime discipline preserved but canonical positive generation remains collapsed.",
+    "recommended_current_best_clean": "stage_b_llama31_8b_base_v1_i3",
+    "lineage_recommendation": {
+      "recommendation": "fresh_clean_lineage_advisable",
+      "reason": "Two successive post-i3 attempts (i4, i5) retained runtime discipline but remained at 0% heldout exact-valid/tool-name accuracy; recovery stagnation suggests resetting from clean i3 baseline with a new constrained objective schedule.",
+      "continue_current_lineage": false,
+      "suggested_restart_point": "stage_b_llama31_8b_base_v1_i3"
+    }
+  },
+  "next_iteration_direction": {
+    "priority": [
+      "Restart clean branch from i3 and isolate one failure class per run (payload_not_parsed first)",
+      "Use short canonical call-only prompts without result-report phrasing in adapted source rows",
+      "Keep strict overlap controls and unchanged governance gates; avoid additional stage-b runs on current i4/i5 branch without reset"
+    ]
+  }
+}

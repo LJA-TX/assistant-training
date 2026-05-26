@@ -1,0 +1,168 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T03:48:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i3",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md"
+  },
+  "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "canonical_target_model": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+  "sources": {
+    "baseline_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_baseline_llama31_8b_base_20260526T0044Z/summary.json",
+    "stage_a_i1_summary": "/opt/ai-stack/assistant-training/evals/runs/stage_a_llama31_8b_base_v1_i1_eval_20260526T0114Z/summary.json",
+    "stage_b_i1_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T013637Z/summary.json",
+    "stage_b_i2_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T022518Z/summary.json",
+    "stage_b_i2_dataset_summary": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i2_summary.json",
+    "stage_b_i3_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T033138Z/summary.json",
+    "stage_b_i3_dataset_summary": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i3_summary.json",
+    "stage_b_i3_train_summary": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i3/training_summary.json"
+  },
+  "governance_notes": {
+    "stage_b_i2_contamination_audit": {
+      "heldout_prompt_overlap": 90,
+      "heldout_target_overlap": 37,
+      "heldout_source_case_overlap": 29,
+      "tool_holdout_prompt_overlap": 8,
+      "tool_holdout_target_overlap": 8,
+      "tool_holdout_source_case_overlap": 8,
+      "status": "not_promotion_eligible"
+    },
+    "stage_b_i3_overlap_audit": {
+      "heldout_prompt_overlap": 0,
+      "heldout_target_overlap": 0,
+      "heldout_source_case_overlap": 0,
+      "tool_holdout_prompt_overlap": 0,
+      "tool_holdout_target_overlap": 0,
+      "tool_holdout_source_case_overlap": 0,
+      "status": "clean_for_evaluation"
+    }
+  },
+  "gate_thresholds_appendix_a_v3a": {
+    "minimum_promising_vs_base": {
+      "heldout_exact_json_validity_delta_pp": 10.0,
+      "heldout_tool_name_accuracy_delta_pp": 5.0,
+      "invalid_json_must_decrease": true,
+      "wrapper_leakage_worsening_limit_pp": 5.0,
+      "no_call_correctness_degradation_limit_pp": 10.0
+    },
+    "strong_candidate_suggested": {
+      "exact_json_validity_min_percent": 50.0,
+      "tool_name_accuracy_min_percent": 35.0,
+      "argument_accuracy_min_percent": 25.0
+    }
+  },
+  "metrics": {
+    "baseline_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 1.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i2_heldout": {
+      "exact_json_validity": 0.49,
+      "invalid_json": 0.47,
+      "tool_name_accuracy": 0.49,
+      "argument_accuracy": 0.49,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0,
+      "promotion_eligibility": "blocked_by_contamination"
+    },
+    "stage_b_i3_heldout": {
+      "exact_json_validity": 0.05,
+      "invalid_json": 0.43,
+      "tool_name_accuracy": 0.05,
+      "argument_accuracy": 0.05,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i3_aggregate": {
+      "exact_json_validity": 0.025,
+      "invalid_json": 0.275,
+      "tool_name_accuracy": 0.03571428571428571,
+      "argument_accuracy": 0.03571428571428571,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    }
+  },
+  "deltas_pp": {
+    "stage_b_i3_vs_baseline_heldout": {
+      "exact_json_validity": 5.0,
+      "invalid_json": -57.0,
+      "tool_name_accuracy": 5.0,
+      "argument_accuracy": 5.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i3_vs_stage_b_i1_heldout": {
+      "exact_json_validity": 3.0,
+      "invalid_json": -19.0,
+      "tool_name_accuracy": 1.0,
+      "argument_accuracy": -3.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    }
+  },
+  "stage_b_i3_failure_profile": {
+    "tool_expected_class_counts": {
+      "exact_valid": 5,
+      "invalid_json": 55,
+      "invalid_schema": 80
+    },
+    "dominant_invalid_schema_reasons": {
+      "missing_tool_calls": 44,
+      "payload_not_object": 36
+    },
+    "interpretation": "Model frequently emits non-canonical wrapper keys (tool_function/tool_functions) or scalar outputs, causing schema failures despite preserved no-call and leakage behavior."
+  },
+  "gate_results": {
+    "stage_b_i3_minimum_promising": {
+      "heldout_exact_json_validity_delta_pp_ge_10": false,
+      "heldout_tool_name_accuracy_delta_pp_ge_5": true,
+      "invalid_json_decreased": true,
+      "wrapper_leakage_not_worse_by_gt_5pp": true,
+      "no_call_not_degraded_by_gt_10pp": true,
+      "overall_pass": false,
+      "blocking_reasons": [
+        "heldout exact_json_validity delta +5.0pp < required +10.0pp"
+      ]
+    },
+    "stage_b_i3_strong_candidate_suggested": {
+      "exact_json_validity_ge_50": false,
+      "tool_name_accuracy_ge_35": false,
+      "argument_accuracy_ge_25": false,
+      "overall_pass": false
+    }
+  },
+  "budget_status": {
+    "serious_runs_per_stage_limit": 5,
+    "serious_runs_observed": {
+      "stage_a": 1,
+      "stage_b": 3
+    },
+    "consecutive_no_progress_limit": 3,
+    "consecutive_no_progress_observed": 1,
+    "dataset_growth_limit_per_iteration_percent": 20,
+    "dataset_growth_this_iteration_percent": 0,
+    "gpu_hours_per_day_limit": 24,
+    "observed_runtime_note": "Stage B i3 training runtime ~0.10 hours; canonical eval completed within daily budget envelope."
+  },
+  "promotion_decision": {
+    "stage_b_i3": "reject_for_now",
+    "autonomous_promotion_allowed": false,
+    "reason": "Minimum promising gate not met for clean i3 run. Stage B i2 remains high-performing but not promotion-eligible due contamination risk.",
+    "recommended_current_best": "stage_b_llama31_8b_base_v1_i2 (diagnostic-only, contamination-flagged)",
+    "recommended_clean_baseline_for_next_iter": "stage_b_llama31_8b_base_v1_i1"
+  },
+  "next_iteration_direction": {
+    "priority": [
+      "Constrain exact top-level key to tool_calls via stricter canonical target templates",
+      "Retain clean overlap controls from i3 dataset builder",
+      "Reinforce debug_tools and run_command canonical-name rows without introducing holdout prompt overlap",
+      "Avoid schema-variant key patterns (tool_function/tool_functions) in synthetic prompts/targets"
+    ]
+  }
+}

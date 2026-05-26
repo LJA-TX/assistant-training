@@ -1,0 +1,54 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T11:17:30Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i6",
+  "lineage_branch_from": "stage_b_llama31_8b_base_v1_i3",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json"
+  },
+  "experimental_isolation_methodology": {
+    "core_rule": "exactly_one_primary_corrective_objective_per_iteration",
+    "PRIMARY_INTERVENTION_VARIABLE": "payload_not_parsed recovery via concise output-format anchor appended to tool-positive prompts: \"Return one valid JSON object with top-level key tool_calls.\"",
+    "INVARIANTS": [
+      "Overlap doctrine unchanged (heldout/tool_holdout prompt-target-case overlap must remain zero)",
+      "Dataset scale held stable at 2160 train / 240 val",
+      "No-call envelope preserved from stage_b_i1 split (756 train / 84 val non-tool rows)",
+      "Tool target distribution unchanged from i3 template (1404 train / 156 val tool-positive)",
+      "Wrapper leakage controls unchanged (system prompt + strict eval contract, no wrapper-specific suppression added)",
+      "Evaluation topology unchanged (canonical_eval_manifest_v1.json, decode defaults unchanged)",
+      "Canonical gating thresholds unchanged (Appendix A v3a)"
+    ],
+    "EXPECTED_FAILURE_CLASSES": [
+      "payload_not_parsed expected to remain dominant but should decrease versus i3",
+      "payload_not_object and missing_tool_calls may move secondarily but are not primary targets",
+      "no_call refusal_expected classes should remain stable",
+      "wrapper_leakage should remain zero"
+    ],
+    "SUCCESS_CRITERIA": [
+      "Heldout invalid_json_rate improves versus i3 (target <= 0.38 from i3=0.43)",
+      "Tool-expected payload_not_parsed count decreases versus i3 comparison_rows",
+      "no_call_correctness remains 1.0",
+      "wrapper_leakage_rate remains 0.0",
+      "heldout/tool_holdout contamination overlap remains zero"
+    ],
+    "ABORT_CONDITIONS": [
+      "Any heldout/tool_holdout prompt or target overlap > 0 before training",
+      "Training/eval config drift from canonical manifest contract",
+      "Post-eval no_call_correctness < 1.0",
+      "Post-eval wrapper_leakage_rate > 0.0",
+      "Evidence of multi-variable intervention beyond payload_not_parsed objective"
+    ]
+  },
+  "inputs": {
+    "dataset_summary": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i6_summary.json",
+    "train_dataset_hash": "81b6411255ec9d00560a33a9795a9ba6fbb07320b6b7dd3cf9f67e02846efc4d",
+    "val_dataset_hash": "b2a032da37222fb393d299b14188b458db84559ee06ccd8afad3cc304881275d",
+    "train_rows": 2160,
+    "val_rows": 240,
+    "training_config": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_i6.config.json",
+    "run_manifest": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_i6.run_manifest.json"
+  }
+}

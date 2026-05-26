@@ -1,0 +1,102 @@
+{
+  "manifest_version": "1.0",
+  "name": "lora_probe_llama_3_2_3b_instruct_toolcall_v0_2",
+  "generated_utc": "2026-05-05T10:44:19Z",
+  "status": "prepared_not_started",
+  "training_started": false,
+  "training_started_utc": null,
+  "training_completed_utc": null,
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/lora_probe_llama_3_2_3b_instruct_toolcall_v0_2.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2_train_grouped.jsonl",
+    "val_jsonl": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2_val_grouped.jsonl",
+    "split_manifest": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_1_split_manifest.json",
+    "split_audit": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_1_split_audit.json",
+    "v0_2_dataset_summary": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2.summary.json",
+    "v0_2_train_schema_validation": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2_train_grouped.schema_validation.json",
+    "v0_2_val_schema_validation": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2_val_grouped.schema_validation.json",
+    "v0_2_train_semantic_consistency": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2_train_grouped.semantic_consistency.json",
+    "v0_2_val_semantic_consistency": "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_v0_2_val_grouped.semantic_consistency.json"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/lora_probe_llama_3_2_3b_instruct_toolcall_v0_2",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/lora_probe_llama_3_2_3b_instruct_toolcall_v0_2",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/lora_probe_llama_3_2_3b_instruct_toolcall_v0_2",
+    "merge_output_expected": false
+  },
+  "launch_template": {
+    "description": "Template command only. Do not run until review sign-off.",
+    "command": "/home/roy/.venvs/llama/bin/accelerate launch --num_processes 1 /opt/ai-stack/assistant-training/scripts/train_lora_sft.py --config /opt/ai-stack/assistant-training/configs/lora/lora_probe_llama_3_2_3b_instruct_toolcall_v0_2.config.json",
+    "notes": [
+      "Uses QLoRA (4-bit NF4) with LoRA rank=16 alpha=32 dropout=0.05.",
+      "Configured for 3-epoch probe with learning_rate=1e-4.",
+      "Assistant-completion-only loss requested via assistant_only_loss/completion_only_loss/train_on_inputs=false.",
+      "Adapter-only save enabled; adapter merge explicitly disabled.",
+      "Execution remains blocked until review_gate.approved_to_run=true."
+    ]
+  },
+  "preflight_checklist": [
+    {
+      "id": "dataset_exists",
+      "description": "Train and val JSONL files exist and are readable.",
+      "required": true
+    },
+    {
+      "id": "canonical_json_verified",
+      "description": "Schema/canonical JSON checks passed for all rows.",
+      "required": true
+    },
+    {
+      "id": "semantic_consistency_verified",
+      "description": "Semantic consistency diagnostics pass with zero blocking mismatches.",
+      "required": true
+    },
+    {
+      "id": "model_path_available",
+      "description": "Local model mirror path exists or approved fallback remote model is reachable.",
+      "required": true
+    },
+    {
+      "id": "trainer_supports_assistant_only_loss",
+      "description": "Trainer supports assistant-only / completion-only masking fields; otherwise stop.",
+      "required": true
+    },
+    {
+      "id": "disk_headroom",
+      "description": "Sufficient free disk for checkpoints and logs.",
+      "required": true
+    },
+    {
+      "id": "gpu_memory_headroom",
+      "description": "Sufficient VRAM for Llama-3.2-3B QLoRA with configured batch/sequence.",
+      "required": true
+    }
+  ],
+  "post_train_diagnostic_plan": [
+    {
+      "id": "train10_exact_row_eval",
+      "description": "Run base vs adapter on 10 training rows; verify exact-tool-call JSON emission and exact target match tendency.",
+      "required": true
+    },
+    {
+      "id": "train40_eval",
+      "description": "Run base vs adapter on 40 training rows with standard prompt framing.",
+      "required": true
+    },
+    {
+      "id": "val40_eval",
+      "description": "Run base vs adapter on 40 validation rows with standard prompt framing.",
+      "required": true
+    },
+    {
+      "id": "val40_strong_prompt_eval_if_needed",
+      "description": "If standard val40 still collapses to invalid_json, rerun val40 with strong system prompt override.",
+      "required": false
+    }
+  ],
+  "review_gate": {
+    "approved_to_run": false,
+    "approved_by": null,
+    "approved_utc": null
+  }
+}
