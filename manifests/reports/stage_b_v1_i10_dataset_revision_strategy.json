@@ -1,0 +1,97 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:52:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "bounded_dataset_revision_planning_only",
+  "primary_objective": "Reduce legacy ritualized dominance sufficiently to improve micro-probe interpretability without procedural drift or lineage break.",
+  "constraints": {
+    "no_dataset_mutation_in_this_phase": true,
+    "no_training": true,
+    "no_eval_reruns": true,
+    "no_topology_changes": true,
+    "no_hidden_weighting_by_proxy": true,
+    "no_broad_deletion": true
+  },
+  "strategy_name": "deterministic_family_thinning_with_contrastive_floors",
+  "recommended_scenario": "S2_balanced_recommended",
+  "recommended_retention_policy": {
+    "i10_conversion_families": {
+      "action": "retain_full",
+      "factor": 1.0
+    },
+    "i9_conversion_families": {
+      "action": "retain_full",
+      "factor": 1.0
+    },
+    "legacy_risky_families": {
+      "action": "thin_to_contrastive_anchor_only",
+      "factor": 0.30,
+      "family_floor_rows": 2,
+      "family_cap_rows": 4
+    },
+    "broader_i3_adapt_families": {
+      "action": "thin_with_per_family_caps",
+      "factor": 0.55,
+      "family_floor_rows": 28,
+      "family_cap_rows": 52,
+      "tool_balance_guardrail": "retain read_file and rg_search legacy coverage across all p0 families"
+    }
+  },
+  "projected_outcome": {
+    "targeted_rows_total": 601,
+    "projected_shares": {
+      "legacy_total": 0.660566,
+      "healthy_conversion_total": 0.339434
+    },
+    "effective_exposure_proxy_improvement_vs_current": {
+      "weighted_prompt_uniqueness_ratio_delta": 0.090859,
+      "weighted_skeleton_uniqueness_ratio_delta": 0.081203,
+      "weighted_unique_tool_args_ratio_delta": 0.011165
+    }
+  },
+  "interpretability_preservation": {
+    "lineage_continuity": "preserved (all family classes retained)",
+    "contrastive_stress": "preserved via thin anchors in dangerous legacy slices",
+    "uncertainty_exposure": "preserved via retained i3_adapt + i9/i10 conversion families",
+    "no_call_and_wrapper_invariants": "preserved by leaving non-targeted and no-call data untouched"
+  },
+  "anti_drift_guards": [
+    "No semantic rewrites during thinning",
+    "No synthetic augmentation in this revision step",
+    "No change to canonical evaluation contract",
+    "Publish pre/post family and tool distribution audits before any training request"
+  ],
+  "explicit_answers": {
+    "1_most_dangerous_legacy_families": [
+      "i3_read_literal_*",
+      "i3_rg_readstyle_*",
+      "i3_long_rg_*",
+      "high-share i3_adapt_p0_* families with semantic variation ~0"
+    ],
+    "2_valuable_legacy_robustness_families": [
+      "broader i3_adapt_* (thinned)",
+      "i3_adapt_p0_read_file_1 multi-tool lineage stress slice"
+    ],
+    "3_minimum_viable_retained_legacy_exposure": "~0.64 to 0.69 share of targeted rows for first bounded revision",
+    "4_best_strategy_for_interpretability": "deterministic family thinning with explicit floors/caps and full retention of i9/i10 conversion families",
+    "5_best_strategy_for_ritualization_reduction": "heavy thinning of read_literal/readstyle/long_rg to contrastive-anchor-only exposure",
+    "6_cleaner_signal_than_current_unweighted": true,
+    "7_principal_risk_of_over_revision": "losing robustness/uncertainty pressure and weakening lineage comparability",
+    "8_next_step_after_planning": "bounded_dataset_revision"
+  },
+  "next_step_recommendation": {
+    "status": "go_for_revision_planning_execution_not_training",
+    "recommended_next_action": "bounded_dataset_revision",
+    "not_recommended_next_action": [
+      "micro-probe execution on current unweighted mix",
+      "halt/redesign"
+    ],
+    "alternative_path": "weighted sampler implementation if and only if auditable deterministic support is added"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

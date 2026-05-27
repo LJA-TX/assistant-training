@@ -1,0 +1,122 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T00:54:26Z",
+  "iteration_target": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "bounded_semantic_commitment_intervention_risk_assessment",
+  "collapse_watch_context": {
+    "active_i9_trigger": "scalar_direct_substitution_rebound",
+    "must_preserve": [
+      "no_call_correctness == 1.0",
+      "wrapper_leakage == 0",
+      "ambiguity_hard_blocks == clean",
+      "contamination heldout/tool_holdout overlap == 0"
+    ]
+  },
+  "interventions": [
+    {
+      "id": "i10_a_read_file_semantic_conversion_pairs",
+      "family": "semantic_substitution_to_canonical_call_conversion",
+      "scope": "localized (read_file-first, rg_search-secondary)",
+      "expected_upside": "High",
+      "risk_level": "Medium",
+      "why": "Directly targets dominant residual class and known read_file pathology.",
+      "primary_risks": [
+        "local template homogenization",
+        "benchmark-facing narrow prompt overfitting"
+      ],
+      "safety_controls": [
+        "enforce style/skeleton diversity quotas within read_file archetypes",
+        "preserve ambiguity-remediated exemplars and edge-case coverage",
+        "limit per-family concentration growth"
+      ],
+      "early_collapse_signals": [
+        "top-1 behavioral category share rising toward 0.70",
+        "read_file outputs converging to one short response shell",
+        "exact-valid gains limited to one lexical anchor cluster"
+      ],
+      "admissibility": "recommended_primary"
+    },
+    {
+      "id": "i10_b_uncertainty_conditioned_procedural_fallback",
+      "family": "positive_procedural_fallback_under_uncertainty",
+      "scope": "small-scale localized overlay",
+      "expected_upside": "Medium",
+      "risk_level": "Medium",
+      "why": "Can redirect uncertainty-conditioned substitution into tool-calling without hard prohibitions.",
+      "primary_risks": [
+        "procedural recitation",
+        "latent no-call cross-talk if over-applied"
+      ],
+      "safety_controls": [
+        "small budget relative to semantic-conversion base",
+        "no-call/adversarial splits untouched",
+        "strictly positive exemplars (no negation-heavy directives)"
+      ],
+      "early_collapse_signals": [
+        "new refusal/evasion pattern on no-call rows",
+        "sharp drop in paraphrastic success spread"
+      ],
+      "admissibility": "recommended_secondary"
+    },
+    {
+      "id": "i10_c_paraphrastic_canonical_diversification",
+      "family": "anchor_anti_ritualization_diversification",
+      "scope": "bounded augmentation of prompt wording diversity",
+      "expected_upside": "Medium",
+      "risk_level": "Low_to_Medium",
+      "why": "Reduces single-token dependence while preserving commitment focus.",
+      "primary_risks": [
+        "semantic dilution if over-rotated away from core archetypes"
+      ],
+      "safety_controls": [
+        "keep literal+paraphrastic anchor mix balanced",
+        "track anchor-dominance and exact-valid by paraphrase bucket"
+      ],
+      "early_collapse_signals": [
+        "literal-anchor exact share jumps > 0.70",
+        "paraphrastic exact-valid buckets collapse to one bucket"
+      ],
+      "admissibility": "recommended_tertiary"
+    },
+    {
+      "id": "forbidden_global_schema_policing",
+      "family": "global_coercive_schema_pressure",
+      "scope": "global",
+      "expected_upside": "Low",
+      "risk_level": "Very_High",
+      "why": "Historically linked to i4/i5-like collapse dynamics.",
+      "primary_risks": [
+        "overconstraint collapse",
+        "semantic flattening",
+        "procedural monoculture"
+      ],
+      "safety_controls": [
+        "forbidden by doctrine"
+      ],
+      "early_collapse_signals": [
+        "rapid exact-valid stagnation + invalid_json worsening + monotonic style collapse"
+      ],
+      "admissibility": "forbidden"
+    },
+    {
+      "id": "forbidden_negation_blacklist_campaign",
+      "family": "negation_heavy_policing_and_blacklist_flooding",
+      "scope": "global",
+      "expected_upside": "Low",
+      "risk_level": "Very_High",
+      "why": "Likely to induce brittle compliance and lexical ritualization instead of generalized commitment.",
+      "primary_risks": [
+        "anchor ritualization",
+        "benchmark gaming",
+        "generalization loss"
+      ],
+      "safety_controls": [
+        "forbidden by doctrine"
+      ],
+      "early_collapse_signals": [
+        "exact-valid isolated to narrow literal shells; read_file still failing"
+      ],
+      "admissibility": "forbidden"
+    }
+  ]
+}

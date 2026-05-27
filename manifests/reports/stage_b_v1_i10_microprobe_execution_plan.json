@@ -1,0 +1,76 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:45:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "single_bounded_microprobe_execution_preparation",
+  "single_run_constraint": true,
+  "objective": "Test whether procedural commitment generalization emerges without shell ritualization, scalar rebound, or monoculture.",
+  "parent_checkpoint_recommendation": "stage_b_llama31_8b_base_v1_i9",
+  "dataset_recommendation": "dataset_v1_0_stage_b_recovery_i10_{train,val}.jsonl (unchanged)",
+  "microprobe_parameterization": {
+    "num_train_epochs": 0.20,
+    "learning_rate": 0.0001,
+    "gradient_accumulation_steps": 16,
+    "batch_size_per_device": 1,
+    "seed": 42,
+    "decode_defaults": "canonical manifest unchanged",
+    "topology_changes": "none"
+  },
+  "rollback_posture": {
+    "retry_policy": "no_hidden_retries",
+    "rollback_unit": "discard_probe_adapter_and_return_to_parent_checkpoint",
+    "artifact_preservation": "full logs, resolved config, masking audit, eval reports retained"
+  },
+  "halt_conditions": [
+    "no_call_correctness < 1.0",
+    "wrapper_leakage > 0",
+    "scalar/direct substitution increases materially",
+    "top1_behavioral_category_share >= 0.70",
+    "literal-anchor dependence materially strengthens",
+    "paraphrastic success narrows"
+  ],
+  "acceptable_regression_envelopes": {
+    "no_call_correctness": "exactly 1.0",
+    "wrapper_leakage": "exactly 0.0",
+    "heldout_exact_validity": "no more than -0.02 absolute vs i9",
+    "heldout_invalid_json": "no more than +0.03 absolute vs i9",
+    "scalar_direct_substitution_share": "must not increase vs i9 baseline"
+  },
+  "false_progress_indicators": [
+    "Exact-valid up while read_file exact-valid remains 0",
+    "Exact-valid gains concentrated in literal shell bucket",
+    "Lexical diversity rises but procedural diversity remains low",
+    "Unseen-shell exact-valid remains near zero"
+  ],
+  "weighting_dependency": {
+    "weighted_exposure_required_for_clean_signal": true,
+    "native_support_present": false,
+    "if_not_available": "recommend_dataset_revision_before_training"
+  },
+  "execution_readiness_decision": {
+    "status": "conditional_go",
+    "go_if": [
+      "auditable weighted exposure control is implemented",
+      "or dataset is revised to reduce legacy dominance without doctrine drift"
+    ],
+    "no_go_if": [
+      "weighted exposure remains unsupported and dataset remains legacy-dominant"
+    ]
+  },
+  "explicit_answers": {
+    "safest_viable_microprobe_configuration": "single 0.20-epoch probe from i9 checkpoint, canonical eval unchanged, telemetry-first stop/rollback gates",
+    "most_reliable_generalization_vs_ritualization_telemetry": [
+      "unseen_shell_exact_valid_rate",
+      "read_file_exact_valid_emergence",
+      "anti_scalar_generalization_delta",
+      "anchor_independence_slices",
+      "procedural_diversity_success_ratio"
+    ],
+    "next_step_recommendation": "dataset_revision_or_weighting_instrumentation_before_execution"
+  },
+  "approval_state": {
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

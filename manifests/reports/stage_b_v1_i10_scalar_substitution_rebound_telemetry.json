@@ -1,0 +1,8 @@
+{
+  "i9_scalar_share_baseline": 0.4,
+  "i10_scalar_share_proxy": 0.45098,
+  "delta": 0.05098,
+  "threshold_delta": 0.05,
+  "flag": true,
+  "note": "Proxy from intervention-source annotations; final rebound evaluated post-canonical-eval."
+}

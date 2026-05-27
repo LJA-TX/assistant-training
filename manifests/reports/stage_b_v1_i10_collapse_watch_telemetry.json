@@ -1,0 +1,12 @@
+{
+  "abort_or_halt_recommendation_if": [
+    "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+    "top1_behavioral_category_share > 0.70",
+    "scalar_or_direct_answer_substitutions rise materially",
+    "no_call_correctness regresses",
+    "wrapper_leakage > 0",
+    "single-anchor canonical dependence strengthens",
+    "paraphrastic canonical success narrows"
+  ],
+  "status": "pre_eval_monitoring_spec_ready"
+}

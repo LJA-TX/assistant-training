@@ -1,0 +1,49 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T17:35:37Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "evidence": {
+    "stage_b_v1_i10r_microprobe_scalar_substitution_delta_analysis_json": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_scalar_substitution_delta_analysis.json",
+      "sha256": "df3065f10d00919ffb28ddb93108d5307caea500973215527d34919b50b9a3d3",
+      "line_count": 26,
+      "byte_count": 903
+    },
+    "stage_b_v1_i10r_microprobe_read_file_emergence_analysis_json": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_read_file_emergence_analysis.json",
+      "sha256": "25b2e36897d0c0c5d73dff1a1463ceb6b49e151cd1e3eec3481df9cea32d9463",
+      "line_count": 17,
+      "byte_count": 572
+    },
+    "stage_b_v1_i10r_microprobe_procedural_generalization_assessment_json": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_procedural_generalization_assessment.json",
+      "sha256": "5c16bc365c8024bfdd6f2206137a91667eb6fb86da834d99b62c146b7fdf0e28",
+      "line_count": 37,
+      "byte_count": 1121
+    },
+    "stage_b_v1_i10r_microprobe_collapse_watch_interpretation_json": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_collapse_watch_interpretation.json",
+      "sha256": "57e3fbfef7114364897d26c2c44fd68194b64675d7e5f651bde3ad94a4be4168",
+      "line_count": 40,
+      "byte_count": 957
+    },
+    "stage_b_v1_i10r_microprobe_canonical_eval_summary_json": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_canonical_eval_summary.json",
+      "sha256": "92ee75ccc0898e653a8407d2f48b7e03a29afa198510d67a3a810e69cf743f9c",
+      "line_count": 93,
+      "byte_count": 2878
+    },
+    "stage_b_v1_i10r_microprobe_eval_summary_raw_snapshot_json": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_eval_summary_raw.snapshot.json",
+      "sha256": "6563051380d7dd72bb66c7623d6861e1e6751be9f675de43812ce9bf90d9c242",
+      "line_count": 357,
+      "byte_count": 8498
+    },
+    "stage_b_v1_i10r_microprobe_comparison_rows_raw_snapshot_jsonl": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_comparison_rows_raw.snapshot.jsonl",
+      "sha256": "1e54641ddf5855af89096ac2f8921f52927978f8c89f59b33abe7b4ba5c221bf",
+      "line_count": 200,
+      "byte_count": 417977
+    }
+  }
+}

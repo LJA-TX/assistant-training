@@ -1,0 +1,70 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T17:35:20Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "objective": "forensic_preservation_hardening",
+  "dataset_integrity": {
+    "train": {
+      "path": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_train.jsonl",
+      "row_count": 1969,
+      "sha256": "2ebe6f459e4c153ae4c077effc8a85e3413f5a76ba5e4f61eefa8a2924f4448b"
+    },
+    "val": {
+      "path": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_val.jsonl",
+      "row_count": 233,
+      "sha256": "b30ae9f91c0b51fbccb789247a83240b47af447eb84d15fe466858047d7e220f"
+    },
+    "summary": {
+      "path": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_summary.json",
+      "sha256": "75b1770ccc500d1f2d37f34cfe3065f654be20781d820b561cc43fbc8df913ce"
+    }
+  },
+  "raw_eval_snapshot_integrity": {
+    "summary_json": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_eval_summary_raw.snapshot.json",
+      "sha256": "6563051380d7dd72bb66c7623d6861e1e6751be9f675de43812ce9bf90d9c242"
+    },
+    "comparison_rows_jsonl": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_comparison_rows_raw.snapshot.jsonl",
+      "line_count": 200,
+      "sha256": "1e54641ddf5855af89096ac2f8921f52927978f8c89f59b33abe7b4ba5c221bf"
+    }
+  },
+  "training_reproducibility_snapshot_integrity": {
+    "resolved_training_config": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_resolved_training_config_raw.snapshot.json",
+      "sha256": "ba4d0cf370102baad874c4b45eb64c5fc937a19f9e881d8929a7c0bb6bebe12e"
+    },
+    "masking_audit": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_masking_audit_raw.snapshot.json",
+      "sha256": "9fda9cba6ee480565eee4bbc977b7f56f84e5547f792318e3d26988e4b8fd98f"
+    },
+    "training_summary": {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_training_summary.json",
+      "sha256": "c117427798661ae64a1b8b65c44889b5c03717327be2aae6895007e2d6b06092"
+    },
+    "run_manifest": {
+      "path": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_i10r_microprobe.run_manifest.json",
+      "sha256": "27b2225262d12e65fb0f17c60a0924a04d8a281cdb3a25170db46406356547f1"
+    },
+    "finalized_config": {
+      "path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_i10r_microprobe.config.json",
+      "sha256": "d84ccad264787f1660c0709e4078c616b16ea4edda155f71269395c5f1859806"
+    }
+  },
+  "key_behavioral_outcomes_snapshot": {
+    "heldout_exact_valid": 0.66,
+    "heldout_invalid_json": 0.14,
+    "heldout_no_call_correctness": 1.0,
+    "aggregate_no_call_correctness": 0.9166666666666666,
+    "read_file_exact_valid_rate": 0.703704,
+    "scalar_substitution_share": 0.0,
+    "direct_answer_substitution_share": 0.226415,
+    "exact_valid_literal_anchor_share": 0.057471,
+    "exact_valid_no_anchor_share": 0.862069
+  },
+  "notes": [
+    "All preserved files are commit-eligible tracked-path snapshots.",
+    "Source artifacts under evals/runs and artifacts are gitignored and remain unmodified."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T01:10:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "status": "bounded_design_risk_assessment",
+  "primary_risks": [
+    {
+      "risk_id": "scalar_substitution_rebound_recurrence",
+      "severity": "high",
+      "description": "Scalar/direct substitution may remain dominant despite procedural conversion pairs."
+    },
+    {
+      "risk_id": "read_file_local_template_homogenization",
+      "severity": "high",
+      "description": "read_file-first targeting may collapse into local template recitation if diversity controls fail."
+    },
+    {
+      "risk_id": "anchor_ritualization",
+      "severity": "high",
+      "description": "Exact-valid gains may over-concentrate around literal lexical shells instead of generalized commitment."
+    },
+    {
+      "risk_id": "semantic_flattening",
+      "severity": "medium",
+      "description": "Over-regularized conversion prompts may narrow semantic flexibility and operational realism."
+    },
+    {
+      "risk_id": "no_call_cross_talk",
+      "severity": "high",
+      "description": "Positive procedural continuation patterns could bleed into no-call refusal contexts if unbounded."
+    },
+    {
+      "risk_id": "benchmark_facing_overfit",
+      "severity": "high",
+      "description": "Measured gains may reflect shell memorization rather than generalized procedural commitment."
+    }
+  ],
+  "mitigations": [
+    "Hard ambiguity blocks on prompt/target/tool/arguments",
+    "Deterministic contamination overlap blocking on heldout/tool_holdout",
+    "read_file archetype-level diversity controls (symbol/boolean/function-name)",
+    "Anchor-dominance telemetry with collapse-watch thresholding",
+    "Top-shell concentration telemetry (generalization vs recitation)",
+    "Strict no-call/adversarial split preservation"
+  ],
+  "residual_risks": [
+    "read_file may require multiple bounded iterations before exact-valid foothold stabilizes",
+    "Implicit uncertainty behavior may remain difficult to convert without over-regularization",
+    "Conversion pairs may still overrepresent a narrow subset of operational prompts"
+  ],
+  "recommendation_logic": {
+    "proceed_to_bounded_training_review_if": [
+      "all hard blocks pass",
+      "scalar substitution proxies trend down",
+      "anchor dominance and top-shell concentration remain below thresholds",
+      "read_file exact-valid emergence is observed in bounded eval"
+    ],
+    "further_dataset_revision_needed_if": [
+      "hard blocks pass but scalar rebound proxies remain elevated",
+      "read_file concentration or shell concentration warnings trigger"
+    ],
+    "abort_i10_direction_if": [
+      "collapse-watch triggers activate materially",
+      "no-call or wrapper invariants regress",
+      "exact-valid gains appear lexicalized and non-generalizing"
+    ]
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

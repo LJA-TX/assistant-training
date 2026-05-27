@@ -1,0 +1,76 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:45:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "bounded_microprobe_weighted_exposure_assessment",
+  "objective": "Reduce legacy ritualized family dominance while preserving robustness pressure and contrastive stressors.",
+  "current_targeted_composition_observed": {
+    "targeted_rows_total": 972,
+    "shares": {
+      "i3_adapt": 0.686214,
+      "i3_read_literal_plus_rg_readstyle_plus_long_rg": 0.103909,
+      "i9_conversion_families": 0.104938,
+      "i10_conversion_families": 0.104938
+    },
+    "risk_interpretation": "Legacy families dominate effective exposure; i9/i10 healthy families are likely underpowered without reweighting or revision."
+  },
+  "scientific_justification": {
+    "weighted_exposure_control_justified": true,
+    "reasoning": [
+      "Primary objective is procedural generalization under uncertainty, not shell-frequency imitation.",
+      "Legacy family concentration is high and semantically/procedurally low-diversity.",
+      "i9/i10 conversion families show materially better prompt/skeleton diversity and lower shell concentration."
+    ]
+  },
+  "operational_feasibility": {
+    "native_weighted_sampling_supported_in_current_trainer": false,
+    "evidence": "scripts/train_lora_sft.py currently constructs Trainer(train_dataset=...) with no weighted sampler hook or sample-weight ingestion path.",
+    "non_mutating_weighting_paths": [
+      {
+        "path": "trainer_sampler_extension",
+        "requires_code_change": true,
+        "requires_manifest_annotation": true,
+        "governance_delta": "medium",
+        "notes": "Add deterministic weighted sampler support with explicit seed, weight manifest, and resolved-config audit output."
+      },
+      {
+        "path": "loss_weighting_by_metadata",
+        "requires_code_change": true,
+        "governance_delta": "high",
+        "notes": "Higher interpretability risk; less preferred for this micro-probe."
+      }
+    ],
+    "forbidden_or_not_safe_now": [
+      "Implicit row duplication/rebalancing without declared dataset revision",
+      "Undocumented sampling heuristics",
+      "Any weighting that cannot be reconstructed from artifacts"
+    ]
+  },
+  "telemetry_interpretation_hazards": [
+    "Weighting changes effective exposure distribution; raw dataset composition ceases to reflect training exposure.",
+    "Cross-run comparability requires explicit weighted-exposure audit artifacts.",
+    "Unlogged dynamic sampling would create false confidence and invalidate lineage-level attribution."
+  ],
+  "recommended_effective_exposure_targets_for_microprobe": {
+    "legacy_risky_families_combined_max": 0.08,
+    "broader_i3_adapt_range": [0.30, 0.40],
+    "i9_conversion_range": [0.20, 0.30],
+    "i10_conversion_range": [0.25, 0.35],
+    "notes": "Targets are effective-sampling goals, not dataset mutation instructions."
+  },
+  "preferred_safety_posture": {
+    "if_weighting_extension_not_implemented_and_auditable": "recommend_dataset_revision_before_training",
+    "if_weighting_extension_implemented_with_full_auditability": "microprobe_execution_can_be_considered"
+  },
+  "explicit_answers": {
+    "is_weighted_exposure_scientifically_justified": true,
+    "is_weighted_exposure_operationally_safe_today": false,
+    "would_weighted_exposure_likely_improve_procedural_diversity": true
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

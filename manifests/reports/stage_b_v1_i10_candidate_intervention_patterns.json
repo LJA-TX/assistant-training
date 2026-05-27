@@ -1,0 +1,73 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T00:54:26Z",
+  "iteration_target": "stage_b_llama31_8b_base_v1_i10",
+  "objective": "semantic_scalar_substitution_conversion_under_uncertainty",
+  "prioritized_patterns": [
+    {
+      "pattern_id": "i10_ssc_read_file_archetype_conversion",
+      "priority": 1,
+      "family": "semantic_substitution_conversion_pairs",
+      "target_tool": "read_file",
+      "target_archetypes": [
+        "symbol_name_queries",
+        "boolean_presence_queries",
+        "first_function_name_queries"
+      ],
+      "design_note": "Convert semantically correct direct/scalar outputs into canonical read_file tool_calls without altering user-intent phrasing diversity.",
+      "do_not_do": [
+        "global rewrites",
+        "negation-heavy anti-answer directives",
+        "single-template coercion"
+      ]
+    },
+    {
+      "pattern_id": "i10_ssc_rg_search_scalar_conversion",
+      "priority": 2,
+      "family": "semantic_substitution_conversion_pairs",
+      "target_tool": "rg_search",
+      "target_archetypes": [
+        "match_count_queries",
+        "zero_nonzero_queries"
+      ],
+      "design_note": "Prioritize scalar/token outputs that indicate intent understood but procedure skipped.",
+      "do_not_do": [
+        "blanket suppression of numeric outputs without procedural alternatives"
+      ]
+    },
+    {
+      "pattern_id": "i10_ucf_positive_procedural_fallback",
+      "priority": 3,
+      "family": "uncertainty_conditioned_canonical_fallback",
+      "target_tool": "read_file_and_rg_search_localized",
+      "target_archetypes": [
+        "high-substitution prompts with short-output tendency"
+      ],
+      "design_note": "Teach positive procedural continuation: if uncertain about final result, still emit canonical call to gather evidence.",
+      "do_not_do": [
+        "refusal suppression hacks",
+        "no-call behavior mutation"
+      ]
+    },
+    {
+      "pattern_id": "i10_paraphrastic_anchor_balancing",
+      "priority": 4,
+      "family": "paraphrastic_canonicalization_diversification",
+      "target_tool": "localized",
+      "target_archetypes": [
+        "converted read_file + rg_search prompts"
+      ],
+      "design_note": "Ensure exact-valid improvements are not tied to one literal lexical shell.",
+      "do_not_do": [
+        "literal anchor flooding",
+        "single-anchor recitation drills"
+      ]
+    }
+  ],
+  "success_signals_predefined": [
+    "scalar/direct substitution share decreases versus i9",
+    "read_file exact-valid rises above zero with non-regressed no-call/wrapper invariants",
+    "anchor-dominance does not increase toward trigger threshold",
+    "top-1 behavioral category share remains below collapse threshold with stable diversity"
+  ]
+}

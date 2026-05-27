@@ -1,0 +1,48 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "generated_utc": "2026-05-27T13:37:07Z",
+  "status": "training_and_canonical_eval_completed",
+  "training_started": true,
+  "training_started_utc": "2026-05-27T13:37:29Z",
+  "training_completed_utc": "2026-05-27T13:41:06Z",
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_i10r_microprobe.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_summary.json",
+    "intervention_declaration": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_intervention_declaration.template.json",
+    "readiness_criteria": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_training_eval_readiness_criteria.json",
+    "risk_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_expected_risk_assessment.json",
+    "collapse_watch_plan": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_collapse_watch_plan.json",
+    "i10r_preflight_validation": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_preflight_validation.json",
+    "i10r_human_review_package": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_human_review_package.json"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "merge_output_expected": false
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "bounded_microprobe_execution_authorization_2026-05-27",
+    "approved_utc": "2026-05-27T13:37:07Z"
+  },
+  "scaffold_notes": {
+    "implementation_phase": "bounded_microprobe_training_and_eval_execution",
+    "dataset_generation_completed": true,
+    "training_started": false,
+    "canonical_eval_executed": true,
+    "single_run_only": true,
+    "auto_chain_disabled": true,
+    "hard_stop_triggered": true,
+    "auto_progression_halted": true
+  },
+  "canonical_eval_run": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_i10r_microprobe_eval_20260527T134117Z",
+  "canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_canonical_eval_summary.json",
+  "gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_gate_assessment.json",
+  "collapse_watch_interpretation": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_collapse_watch_interpretation.json",
+  "behavioral_review_package": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_behavioral_review_package.json"
+}

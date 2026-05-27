@@ -1,0 +1,43 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T13:13:22Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r",
+  "status": "completed",
+  "top1_behavioral_category_share": 0.45098,
+  "top1_behavioral_category": "scalar_substitution",
+  "anchor_dominance_ratio": 0.215686,
+  "scalar_substitution_rebound_proxy": {
+    "i9_scalar_share_baseline": 0.4,
+    "i10_scalar_share_proxy": 0.45098,
+    "delta": 0.05098,
+    "threshold_delta": 0.05,
+    "flag": true,
+    "note": "Proxy from intervention-source annotations; final rebound evaluated post-canonical-eval."
+  },
+  "paraphrastic_success_diversity": {
+    "anchor_bucket_distribution": {
+      "no_anchor_phrase": 76,
+      "literal_tool_calls": 22,
+      "paraphrastic_tool_call": 4
+    },
+    "prompt_uniqueness_ratio": 0.901961,
+    "prompt_entropy_bits": 6.468946,
+    "top_prompt_shell_share": 0.029412,
+    "status": "pre_eval_prompt_diversity_proxy"
+  },
+  "abort_or_halt_recommendation_if": [
+    "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+    "top1_behavioral_category_share > 0.70",
+    "scalar_or_direct_answer_substitutions rise materially",
+    "no_call_correctness regresses",
+    "wrapper_leakage > 0",
+    "single-anchor canonical dependence strengthens",
+    "paraphrastic canonical success narrows"
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "generated_utc": "2026-05-27T13:55:05Z",
+  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+  "adapter_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "decode_defaults": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "max_new_tokens": 64,
+    "seed": 1234
+  },
+  "base": {
+    "side": "base",
+    "per_split": {
+      "heldout_validation": {
+        "rows": 100,
+        "class_counts": {
+          "invalid_json": 100
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 1.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 100
+      },
+      "tool_holdout": {
+        "rows": 40,
+        "class_counts": {
+          "invalid_json": 40
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 1.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 40
+      },
+      "no_call": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "adversarial": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "direct_answer": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      }
+    },
+    "aggregate": {
+      "rows": 200,
+      "class_counts": {
+        "invalid_json": 140,
+        "refusal_expected": 60
+      },
+      "exact_json_validity": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "invalid_json_rate": 0.7,
+      "tool_name_accuracy": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "argument_accuracy": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrapper_leakage_rate": 0.0,
+      "no_call_correctness": {
+        "count": 60,
+        "rate": 1.0,
+        "expected_rows": 60
+      },
+      "tool_expected_rows": 140
+    }
+  },
+  "adapter": {
+    "side": "adapter",
+    "per_split": {
+      "heldout_validation": {
+        "rows": 100,
+        "class_counts": {
+          "exact_valid": 66,
+          "invalid_json": 14,
+          "wrong_arguments": 8,
+          "wrong_tool_name": 12
+        },
+        "exact_json_validity": {
+          "count": 66,
+          "rate": 0.66
+        },
+        "invalid_json_rate": 0.14,
+        "tool_name_accuracy": {
+          "count": 74,
+          "rate": 0.74
+        },
+        "argument_accuracy": {
+          "count": 70,
+          "rate": 0.7
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 100
+      },
+      "tool_holdout": {
+        "rows": 40,
+        "class_counts": {
+          "exact_valid": 21,
+          "invalid_json": 5,
+          "invalid_schema": 11,
+          "wrong_arguments": 3
+        },
+        "exact_json_validity": {
+          "count": 21,
+          "rate": 0.525
+        },
+        "invalid_json_rate": 0.125,
+        "tool_name_accuracy": {
+          "count": 24,
+          "rate": 0.6
+        },
+        "argument_accuracy": {
+          "count": 21,
+          "rate": 0.525
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 40
+      },
+      "no_call": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "adversarial": {
+        "rows": 20,
+        "class_counts": {
+          "invalid_schema": 5,
+          "refusal_expected": 15
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 15,
+          "rate": 0.75,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "direct_answer": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      }
+    },
+    "aggregate": {
+      "rows": 200,
+      "class_counts": {
+        "exact_valid": 87,
+        "invalid_json": 19,
+        "invalid_schema": 16,
+        "refusal_expected": 55,
+        "wrong_arguments": 11,
+        "wrong_tool_name": 12
+      },
+      "exact_json_validity": {
+        "count": 87,
+        "rate": 0.435
+      },
+      "invalid_json_rate": 0.095,
+      "tool_name_accuracy": {
+        "count": 98,
+        "rate": 0.7
+      },
+      "argument_accuracy": {
+        "count": 91,
+        "rate": 0.65
+      },
+      "wrapper_leakage_rate": 0.0,
+      "no_call_correctness": {
+        "count": 55,
+        "rate": 0.9166666666666666,
+        "expected_rows": 60
+      },
+      "tool_expected_rows": 140
+    }
+  },
+  "delta_adapter_minus_base": {
+    "exact_json_validity_rate": 0.435,
+    "invalid_json_rate": -0.605,
+    "tool_name_accuracy_rate": 0.7,
+    "argument_accuracy_rate": 0.65,
+    "wrapper_leakage_rate": 0.0,
+    "no_call_correctness_rate": -0.08333333333333337
+  }
+}

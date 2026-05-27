@@ -1,0 +1,18 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T14:02:12Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "signals": {
+    "exact_valid_increase_vs_i9_heldout": true,
+    "scalar_substitution_rebound_vs_i9": false,
+    "anchor_dependence_strengthened_materially": false,
+    "top1_shell_concentration_high": false,
+    "no_call_regression": true,
+    "wrapper_leakage_present": false
+  },
+  "verdict": "false_progress_risk_high",
+  "notes": [
+    "Exact-valid gains can be invalidated for progression when invariants regress.",
+    "No-call correctness regression is a hard-stop condition regardless of heldout exact-valid gains."
+  ]
+}

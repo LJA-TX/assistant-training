@@ -1,0 +1,88 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:45:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "post_microprobe_telemetry_first_eval_doctrine",
+  "canonical_eval_topology": "unchanged",
+  "primary_question": "Did procedural commitment generalize beyond known shells while reducing scalar/direct substitution?",
+  "required_primary_telemetry": [
+    {
+      "name": "read_file_exact_valid_emergence",
+      "definition": "Exact-valid rate on read_file expected-tool rows",
+      "success_signal": "rate > 0 with invariant preservation"
+    },
+    {
+      "name": "paraphrastic_exact_valid_rate",
+      "definition": "Exact-valid rate on paraphrastic anchor bucket",
+      "success_signal": "non-decreasing with broader bucket participation"
+    },
+    {
+      "name": "no_anchor_exact_valid_rate",
+      "definition": "Exact-valid rate on no-anchor prompts",
+      "success_signal": "non-decreasing; avoids shell dependence"
+    },
+    {
+      "name": "anti_scalar_generalization_delta",
+      "definition": "Change in scalar/direct substitution shares vs i9 baseline",
+      "success_signal": "both deltas negative"
+    },
+    {
+      "name": "unseen_shell_exact_valid_rate",
+      "definition": "Exact-valid rate for eval prompt skeletons absent from i10 intervention shells",
+      "success_signal": "non-zero and non-trivial"
+    }
+  ],
+  "required_secondary_telemetry": [
+    {
+      "name": "canonical_anchor_independence",
+      "definition": "Literal-anchor exact share among exact-valid outputs",
+      "guardrail": "must not rise materially and should remain below dependence boundary"
+    },
+    {
+      "name": "cross_family_transfer_index",
+      "definition": "Performance spread across read_file/rg_search archetypes and anchor buckets",
+      "guardrail": "avoid gains isolated to one archetype or one shell family"
+    },
+    {
+      "name": "procedural_diversity_success_ratio",
+      "definition": "Unique successful (tool,args) / successful rows",
+      "guardrail": "should not collapse while lexical diversity rises"
+    }
+  ],
+  "new_analysis_slices": {
+    "tool_archetype_slices": [
+      "read_file_boolean_presence",
+      "read_file_symbol_name",
+      "read_file_first_function_name",
+      "rg_search_match_count",
+      "rg_search_zero_nonzero",
+      "rg_search_other"
+    ],
+    "anchor_slices": [
+      "literal_tool_calls",
+      "paraphrastic_tool_call",
+      "no_anchor_phrase"
+    ],
+    "shell_generalization_slices": [
+      "seen_intervention_shell",
+      "unseen_intervention_shell"
+    ]
+  },
+  "false_progress_disambiguation": {
+    "lexical_diversity_signal": [
+      "prompt_uniqueness_ratio",
+      "prompt_entropy_bits"
+    ],
+    "procedural_diversity_signal": [
+      "unique_successful_tool_arguments_ratio",
+      "successful_target_payload_variety"
+    ],
+    "diagnosis_rule": "Lexical-up + procedural-flat/down => ritualization risk, not generalization"
+  },
+  "gating_usage": "diagnostic_and_halt_decisions_only; no gate relaxation",
+  "approval_state": {
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T13:13:22Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r",
+  "strategy_reference": "S2_balanced_recommended",
+  "target_envelope": {
+    "legacy_total_min": 0.64,
+    "legacy_total_max": 0.69,
+    "healthy_conversion_min": 0.31,
+    "healthy_conversion_max": 0.36
+  },
+  "before": {
+    "iteration": "stage_b_llama31_8b_base_v1_i10",
+    "targeted_total_rows": 972,
+    "group_counts": {
+      "i10_conversion": 102,
+      "i3_adapt": 667,
+      "i9_conversion": 102,
+      "legacy_risky": 101
+    },
+    "group_shares": {
+      "legacy_total": 0.790123,
+      "healthy_conversion_total": 0.209877
+    },
+    "effective_exposure_proxies": {
+      "targeted_rows": 972,
+      "prompt_uniqueness_ratio": 0.294239,
+      "skeleton_uniqueness_ratio": 0.217078,
+      "unique_tool_args_ratio": 0.028807
+    }
+  },
+  "after": {
+    "iteration": "stage_b_llama31_8b_base_v1_i10r",
+    "targeted_total_rows": 601,
+    "group_counts": {
+      "i10_conversion": 102,
+      "i3_adapt": 367,
+      "i9_conversion": 102,
+      "legacy_risky": 30
+    },
+    "group_shares": {
+      "legacy_total": 0.660566,
+      "healthy_conversion_total": 0.339434
+    },
+    "effective_exposure_proxies": {
+      "targeted_rows": 601,
+      "prompt_uniqueness_ratio": 0.472546,
+      "skeleton_uniqueness_ratio": 0.351082,
+      "unique_tool_args_ratio": 0.046589
+    }
+  },
+  "delta_after_minus_before": {
+    "targeted_rows": -371,
+    "legacy_total_share": -0.129558,
+    "healthy_conversion_share": 0.129558,
+    "prompt_uniqueness_ratio": 0.178307,
+    "skeleton_uniqueness_ratio": 0.134004,
+    "unique_tool_args_ratio": 0.017782
+  },
+  "envelope_assessment": {
+    "legacy_total_share": 0.660566,
+    "healthy_conversion_total_share": 0.339434,
+    "legacy_within_target": true,
+    "healthy_conversion_within_target": true
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

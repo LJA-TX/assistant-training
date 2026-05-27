@@ -1,0 +1,160 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T00:54:26Z",
+  "iteration_context": "stage_b_llama31_8b_base_v1_i9_post_eval_for_i10_design",
+  "scope": "semantic_substitution_taxonomy_for_i10_reconnaissance",
+  "sources": {
+    "i9_post_eval_checkpoint": "/opt/ai-stack/assistant-training/docs/lineages/i9_post_eval_checkpoint.md",
+    "i9_behavioral_review_package": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_behavioral_review_package.json",
+    "i9_gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_commitment_conversion_gate_assessment.json",
+    "i9_collapse_watch": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_collapse_watch_interpretation.json",
+    "i8_parseability_behavioral_analysis_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_parseability_behavioral_analysis.json",
+    "i8_parseability_behavioral_analysis_md": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_parseability_behavioral_analysis.md",
+    "i9_commitment_conversion_taxonomy": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_commitment_conversion_taxonomy.json",
+    "i9_candidate_intervention_patterns": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_candidate_intervention_patterns.json",
+    "i9_canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_canonical_eval_summary.json",
+    "i9_comparison_rows": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T232239Z/comparison_rows.jsonl"
+  },
+  "population": {
+    "tool_expected_rows": 140,
+    "exact_valid_rows": 15,
+    "non_exact_tool_rows": 125
+  },
+  "top_level_categories": [
+    {
+      "category": "scalar_substitution",
+      "count": 50,
+      "rate_within_non_exact": 0.4,
+      "semantic_competence_signal": "medium_to_high",
+      "procedural_competence_signal": "low",
+      "canonical_commitment_signal": "low",
+      "interpretation": "Model returns compressed result tokens instead of committing to canonical tool payload."
+    },
+    {
+      "category": "direct_answer_substitution",
+      "count": 42,
+      "rate_within_non_exact": 0.336,
+      "semantic_competence_signal": "high",
+      "procedural_competence_signal": "low",
+      "canonical_commitment_signal": "low",
+      "interpretation": "Model semantically answers user request directly, bypassing required tool call procedure."
+    },
+    {
+      "category": "pseudo_completion_substitution",
+      "count": 20,
+      "rate_within_non_exact": 0.16,
+      "semantic_competence_signal": "high",
+      "procedural_competence_signal": "low",
+      "canonical_commitment_signal": "low",
+      "interpretation": "Model emits path/excerpt style pseudo-results, suggesting inferred action but skipped execution contract."
+    },
+    {
+      "category": "partial_procedural_commitment",
+      "count": 13,
+      "rate_within_non_exact": 0.104,
+      "semantic_competence_signal": "medium_to_high",
+      "procedural_competence_signal": "medium",
+      "canonical_commitment_signal": "incomplete",
+      "interpretation": "Some structural commitment exists but canonical envelope/argument correctness still fails."
+    }
+  ],
+  "subtypes": {
+    "scalar_substitution": {
+      "numeric_match_count_substitution": 32,
+      "boolean_presence_substitution": 10,
+      "numeric_count_substitution": 5,
+      "numeric_scalar_substitution_other": 3
+    },
+    "direct_answer_substitution": {
+      "short_direct_answer": 17,
+      "symbol_name_answer": 11,
+      "first_function_name_answer": 10,
+      "match_count_answer_textual": 3,
+      "direct_answer_other": 1
+    },
+    "pseudo_completion_substitution": {
+      "path_range_excerpt_substitution": 15,
+      "path_excerpt_substitution": 5
+    },
+    "partial_procedural_commitment": {
+      "wrapper_key_drift": 7,
+      "malformed_partial_json": 3,
+      "wrong_arguments_structured": 3
+    }
+  },
+  "intent_vs_commitment": {
+    "semantic_substitution_rows": 112,
+    "intent_congruent_substitution_rows": 75,
+    "intent_congruent_rate_within_semantic_substitution": 0.67,
+    "implicit_uncertainty_signals": {
+      "very_short_outputs": 81,
+      "compressed_scalar_outputs": 50,
+      "explicit_uncertainty_refusal_markers": 0
+    },
+    "interpretation": "Dominant failure is commitment willingness/procedure selection, not core task-intent recognition."
+  },
+  "tool_specific": {
+    "read_file": {
+      "tool_expected_rows": 27,
+      "exact_valid_rows": 0,
+      "payload_not_parsed_rows": 27,
+      "parse_mode_invalid_rows": 27,
+      "archetypes": {
+        "symbol_name_queries": {
+          "rows": 13,
+          "output_style": {
+            "text_answer": 7,
+            "path_or_excerpt": 6
+          }
+        },
+        "boolean_presence_queries": {
+          "rows": 7,
+          "output_style": {
+            "scalar_token": 6,
+            "path_or_excerpt": 1
+          }
+        },
+        "first_function_name_queries": {
+          "rows": 7,
+          "output_style": {
+            "text_answer": 6,
+            "path_or_excerpt": 1
+          }
+        }
+      },
+      "diagnosis": "Tool is consistently bypassed in favor of direct result completion under all observed prompt archetypes."
+    },
+    "rg_search": {
+      "tool_expected_rows": 52,
+      "exact_valid_rows": 9,
+      "exact_valid_rate": 0.173077,
+      "dominant_failure_archetypes": {
+        "match_count_scalar_substitution": 20,
+        "direct_answer_or_excerpt_substitution": 18
+      },
+      "note": "Shows partial recoverability; retains both exact-valid and substitution behavior."
+    }
+  },
+  "representative_examples": {
+    "read_file_boolean_presence_bypass": {
+      "prompt": "Retrieve ... lines 1500-1560 and report whether _coerce_tool_arguments appears in that range.",
+      "output": "True",
+      "schema_reason": "payload_not_parsed"
+    },
+    "read_file_symbol_name_bypass": {
+      "prompt": "... report one symbol name.",
+      "output": "line_1080_1104",
+      "schema_reason": "payload_not_parsed"
+    },
+    "rg_search_match_count_bypass": {
+      "prompt": "Use rg_search ... report match_count only.",
+      "output": "1",
+      "schema_reason": "payload_not_object"
+    },
+    "partial_procedural_wrapper_drift": {
+      "prompt": "Use debug_tools and report enabled_tools count only.",
+      "output": "{\"enabled_tools\":[\"debug_tools\"],\"function_calls\":[...]}",
+      "schema_reason": "missing_tool_calls"
+    }
+  }
+}

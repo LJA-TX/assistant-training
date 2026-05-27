@@ -1,0 +1,66 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:52:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "bounded_dataset_revision_risk_assessment",
+  "principal_risks": [
+    {
+      "risk_id": "under_revision_confounding_persists",
+      "severity": "high",
+      "description": "If legacy dominance remains too high, micro-probe signal remains ambiguous and scalar rebound interpretation stays confounded."
+    },
+    {
+      "risk_id": "over_revision_lineage_break",
+      "severity": "high",
+      "description": "Aggressive pruning can sever continuity with earlier stages and weaken robustness stress behavior."
+    },
+    {
+      "risk_id": "hidden_weighting_by_proxy",
+      "severity": "high",
+      "description": "Undeclared balancing heuristics can mimic weighting and invalidate interpretability."
+    },
+    {
+      "risk_id": "procedural_narrowing_after_thinning",
+      "severity": "medium_high",
+      "description": "Excessive removal of legacy uncertainty cases may reduce behavioral breadth and inflate apparent gains."
+    },
+    {
+      "risk_id": "tool_mix_drift",
+      "severity": "medium",
+      "description": "Unbalanced thinning can unintentionally bias read_file/rg_search exposure and distort causal attribution."
+    }
+  ],
+  "risk_mitigations": [
+    "Deterministic per-family retention rules with explicit floors/caps",
+    "Preserve all family classes (no full class deletion)",
+    "Retain thin contrastive anchors from dangerous legacy slices",
+    "Keep i9/i10 conversion families untouched",
+    "Preserve no-call and non-targeted rows unchanged",
+    "Publish pre/post composition, tool-mix, and diversity telemetry before training"
+  ],
+  "minimum_viable_retained_legacy_exposure": {
+    "recommended_range": [0.64, 0.69],
+    "reasoning": "Below this range in a single revision risks over-revision; above this range likely preserves confounding legacy dominance."
+  },
+  "over_revision_primary_failure_mode": "loss_of_robustness_pressure_and_lineage_interpretability_despite cleaner apparent metrics",
+  "cleaner_signal_likelihood_vs_current_unweighted": {
+    "revision_expected_to_improve_signal": true,
+    "confidence": "moderate_high",
+    "reasoning": [
+      "Healthy conversion family share rises materially in projected balanced scenario.",
+      "Legacy ritualized shell pressure drops while remaining represented.",
+      "Procedural diversity proxies improve in projection without full legacy removal."
+    ]
+  },
+  "governance_notes": [
+    "Revision must be explicitly declared as exposure-correction, not objective drift.",
+    "No hidden balancing; all selection rules must be auditable and reproducible.",
+    "No gate relaxation and no canonical eval topology changes."
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

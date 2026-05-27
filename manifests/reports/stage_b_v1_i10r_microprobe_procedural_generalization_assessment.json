@@ -1,0 +1,37 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T14:02:12Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "anchor_distribution_exact_valid": {
+    "counts": {
+      "literal_tool_calls": 5,
+      "no_anchor_phrase": 75,
+      "paraphrastic_tool_call": 7
+    },
+    "shares": {
+      "literal_tool_calls": 0.057471,
+      "paraphrastic_tool_call": 0.08046,
+      "no_anchor_phrase": 0.862069
+    }
+  },
+  "anchor_comparison": {
+    "i9_literal_exact_share": 0.266667,
+    "i9_paraphrastic_exact_share": 0.333333,
+    "i9_no_anchor_exact_rate": 0.048,
+    "i10_planning_anchor_ratio_proxy": 0.215686,
+    "i10_planning_top_prompt_shell_proxy": 0.029412
+  },
+  "procedural_diversity": {
+    "exact_valid_tool_rows": 87,
+    "unique_skeletons_exact_valid": 49,
+    "unique_skeleton_ratio_exact_valid": 0.563218,
+    "top1_skeleton_share_exact_valid": 0.114943
+  },
+  "paraphrastic_no_anchor_success": {
+    "paraphrastic_exact_count": 7,
+    "no_anchor_exact_count": 75,
+    "paraphrastic_exact_share": 0.08046,
+    "no_anchor_exact_share": 0.862069
+  },
+  "generalization_assessment": "mixed"
+}

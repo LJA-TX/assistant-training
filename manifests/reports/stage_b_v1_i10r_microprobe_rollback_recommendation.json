@@ -1,0 +1,12 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T14:02:12Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "hard_stop_triggered": true,
+  "recommendation": "rollback_to_i9_baseline_and_do_not_continue_autonomously",
+  "reasoning": [
+    "Hard-stop doctrine enforces halt when no-call correctness regresses below 1.0.",
+    "This run is instrumentation-only and explicitly not promotion/canonization eligible."
+  ],
+  "suggested_next_action": "report_only_halt"
+}

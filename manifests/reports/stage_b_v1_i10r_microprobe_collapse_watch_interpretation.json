@@ -1,0 +1,40 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T14:02:12Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "active_triggers": [
+    "no_call_correctness_lt_1"
+  ],
+  "trigger_count": 1,
+  "conditions": {
+    "no_call_correctness": {
+      "value": 0.916667,
+      "threshold": 1.0,
+      "triggered": true
+    },
+    "wrapper_leakage": {
+      "value": 0.0,
+      "threshold": 0.0,
+      "triggered": false
+    },
+    "scalar_substitution_share_delta_vs_i9": {
+      "value": -0.4,
+      "threshold": 0.05,
+      "triggered": false
+    },
+    "literal_anchor_exact_share_delta_vs_i9": {
+      "value": -0.209196,
+      "threshold_delta": 0.1,
+      "triggered": false
+    },
+    "top1_skeleton_share_exact_valid": {
+      "value": 0.114943,
+      "threshold": 0.25,
+      "triggered": false
+    },
+    "exact_valid_up_while_diversity_collapses": {
+      "triggered": false
+    }
+  },
+  "status": "halt_progression_report_only"
+}

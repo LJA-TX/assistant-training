@@ -1,0 +1,395 @@
+{
+  "generated_utc": "2026-05-27T11:23:36Z",
+  "seed": 20260527,
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "lineage": {
+    "parent_dataset_iteration": "stage_b_llama31_8b_base_v1_i9",
+    "parent_checkpoint": "stage_b_llama31_8b_base_v1_i9",
+    "objective": "semantic_scalar_substitution_conversion_under_uncertainty",
+    "targeted_tools": [
+      "read_file",
+      "rg_search"
+    ]
+  },
+  "inputs": {
+    "parent_train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_train.jsonl",
+    "parent_val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_val.jsonl",
+    "parent_summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_summary.json",
+    "eval_comparison_rows_jsonl": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T232239Z/comparison_rows.jsonl",
+    "i9_behavioral_review_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_behavioral_review_package.json",
+    "i10_recon_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_semantic_commitment_reconnaissance.json",
+    "i10_taxonomy_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_semantic_substitution_taxonomy.json",
+    "i10_risk_matrix_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_intervention_risk_matrix.json",
+    "i10_candidate_patterns_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_candidate_intervention_patterns.json"
+  },
+  "policy": {
+    "localized_intervention_only": true,
+    "forbidden_global_pressures": [
+      "global_coercive_schema_policing",
+      "global_negation_heavy_template_pressure",
+      "blacklist_flooding",
+      "imperative_monoculture",
+      "broad_synthetic_flooding"
+    ],
+    "global_eval_semantics_modified": false,
+    "approval_gates_opened": false,
+    "approved_to_run": false
+  },
+  "composition": {
+    "parent_train_rows": 2217,
+    "parent_val_rows": 254,
+    "candidate_train_rows": 2305,
+    "candidate_val_rows": 268,
+    "rows_added_train": 88,
+    "rows_added_val": 14,
+    "rows_added_total": 102
+  },
+  "intervention_selection": {
+    "train": {
+      "quotas": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 52,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 28,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 8
+      },
+      "pool_sizes": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 191,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 271,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 92
+      },
+      "selected_by_family": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 52,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 28,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 8
+      },
+      "selected_by_tool": {
+        "read_file": 52,
+        "rg_search": 36
+      },
+      "selected_by_behavior": {
+        "scalar_substitution": 40,
+        "direct_answer_substitution": 30,
+        "pseudo_completion_substitution": 18
+      },
+      "selected_by_archetype": {
+        "rg_search_match_count": 29,
+        "read_file_boolean_presence": 18,
+        "read_file_symbol_name": 18,
+        "read_file_first_function_name": 16,
+        "rg_search_other": 7
+      },
+      "selected_by_transform_mode": {
+        "append_36eb456fbc8b": 10,
+        "append_f55bf5df12ef": 9,
+        "append_cf068e40f0df": 8,
+        "append_e83b275d3faa": 8,
+        "append_7ffbcd14bc52": 7,
+        "append_91abb41c765e": 7,
+        "append_a0df8787f009": 6,
+        "append_cc6a0229125a": 6,
+        "append_d993750774e4": 6,
+        "append_b3e6b6432371": 4,
+        "append_1a0ca21e1a88": 3,
+        "append_2ebf10eb2f9e": 3,
+        "append_49edae86ec5e": 3,
+        "append_6bc740042391": 3,
+        "append_4526995a3ab2": 2,
+        "append_ba9dfd4a1d07": 2,
+        "append_4ba8afe5ac5f": 1
+      },
+      "selected_by_anchor_bucket": {
+        "no_anchor_phrase": 67,
+        "literal_tool_calls": 18,
+        "paraphrastic_tool_call": 3
+      },
+      "skipped_due_conflict": 32,
+      "skipped_due_diversity_caps": 123,
+      "skipped_due_archetype_cap": 0,
+      "families_not_filled": [],
+      "primary_archetype_minimums": {
+        "read_file_boolean_presence": 12,
+        "read_file_symbol_name": 12,
+        "read_file_first_function_name": 8
+      }
+    },
+    "val": {
+      "quotas": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 8,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 4,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 2
+      },
+      "pool_sizes": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 27,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 33,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 11
+      },
+      "selected_by_family": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 8,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 4,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 2
+      },
+      "selected_by_tool": {
+        "read_file": 8,
+        "rg_search": 6
+      },
+      "selected_by_behavior": {
+        "scalar_substitution": 6,
+        "direct_answer_substitution": 4,
+        "pseudo_completion_substitution": 4
+      },
+      "selected_by_archetype": {
+        "rg_search_match_count": 5,
+        "read_file_symbol_name": 4,
+        "read_file_boolean_presence": 2,
+        "read_file_first_function_name": 2,
+        "rg_search_other": 1
+      },
+      "selected_by_transform_mode": {
+        "append_f55bf5df12ef": 3,
+        "append_49edae86ec5e": 2,
+        "append_e83b275d3faa": 2,
+        "append_36eb456fbc8b": 1,
+        "append_4526995a3ab2": 1,
+        "append_4ba8afe5ac5f": 1,
+        "append_6bc740042391": 1,
+        "append_7ffbcd14bc52": 1,
+        "append_91abb41c765e": 1,
+        "append_b3e6b6432371": 1
+      },
+      "selected_by_anchor_bucket": {
+        "no_anchor_phrase": 9,
+        "literal_tool_calls": 4,
+        "paraphrastic_tool_call": 1
+      },
+      "skipped_due_conflict": 4,
+      "skipped_due_diversity_caps": 0,
+      "skipped_due_archetype_cap": 0,
+      "families_not_filled": [],
+      "primary_archetype_minimums": {
+        "read_file_boolean_presence": 2,
+        "read_file_symbol_name": 2,
+        "read_file_first_function_name": 2
+      }
+    },
+    "added_rows_total": 102,
+    "added_rows_train": 88,
+    "added_rows_val": 14
+  },
+  "overlap_audit": {
+    "train": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    },
+    "val": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    },
+    "combined": {
+      "heldout_validation": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "tool_holdout": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      },
+      "no_call": {
+        "prompt_overlap": 0,
+        "target_overlap": 6,
+        "source_case_id_overlap": 0
+      },
+      "adversarial": {
+        "prompt_overlap": 0,
+        "target_overlap": 4,
+        "source_case_id_overlap": 0
+      },
+      "direct_answer": {
+        "prompt_overlap": 0,
+        "target_overlap": 0,
+        "source_case_id_overlap": 0
+      }
+    }
+  },
+  "diagnostics_highlights": {
+    "diversity_review_summary": {
+      "status": "ok",
+      "style_bucket_count_targeted": 4,
+      "dominant_style_share_targeted": 0.472222,
+      "unique_skeletons_targeted": 211,
+      "top1_skeleton_share_targeted": 0.040123,
+      "risk_flags": [],
+      "pass": true
+    },
+    "anti_homogenization_summary": {
+      "status": "ok",
+      "forbidden_hits_total": 0,
+      "targeted_top1_skeleton_share": 0.040123,
+      "targeted_top3_skeleton_share": 0.117284,
+      "dominant_style_share": 0.472222,
+      "risk_signals": [],
+      "pass": true
+    },
+    "semantic_commitment_telemetry": {
+      "status": "ok",
+      "rows_analyzed": 2573,
+      "intervention_rows": 102,
+      "conversion_ids_count": 102,
+      "source_family_distribution": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 60,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 32,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 10
+      },
+      "source_behavior_distribution": {
+        "scalar_substitution": 46,
+        "direct_answer_substitution": 34,
+        "pseudo_completion_substitution": 22
+      },
+      "query_archetype_distribution": {
+        "rg_search_match_count": 34,
+        "read_file_symbol_name": 22,
+        "read_file_boolean_presence": 20,
+        "read_file_first_function_name": 18,
+        "rg_search_other": 8
+      },
+      "source_tool_distribution": {
+        "read_file": 60,
+        "rg_search": 42
+      },
+      "scalar_substitution_rebound_proxy": {
+        "i9_scalar_share_baseline": 0.4,
+        "i10_scalar_share_proxy": 0.45098,
+        "delta": 0.05098,
+        "threshold_delta": 0.05,
+        "flag": true,
+        "note": "Proxy from intervention-source annotations; final rebound evaluated post-canonical-eval."
+      },
+      "direct_answer_substitution_proxy": {
+        "i10_direct_share_proxy": 0.54902,
+        "note": "Tracks risk of direct-answer dominance among intervention rows."
+      },
+      "anchor_dominance_ratio": {
+        "literal_tool_calls_anchor_rows": 22,
+        "intervention_rows": 102,
+        "ratio": 0.215686,
+        "threshold": 0.7,
+        "flag": false,
+        "anchor_bucket_distribution": {
+          "no_anchor_phrase": 76,
+          "literal_tool_calls": 22,
+          "paraphrastic_tool_call": 4
+        }
+      },
+      "paraphrastic_success_diversity": {
+        "anchor_bucket_distribution": {
+          "no_anchor_phrase": 76,
+          "literal_tool_calls": 22,
+          "paraphrastic_tool_call": 4
+        },
+        "prompt_uniqueness_ratio": 0.901961,
+        "prompt_entropy_bits": 6.468946,
+        "top_prompt_shell_share": 0.029412,
+        "status": "pre_eval_prompt_diversity_proxy"
+      },
+      "read_file_exact_valid_emergence": {
+        "target_rows_in_intervention": 60,
+        "status": "pending_post_eval",
+        "note": "Primary i10 success condition requires read_file exact-valid > 0 with invariant preservation."
+      },
+      "commitment_generalization_vs_recitation": {
+        "top1_behavioral_category": "scalar_substitution",
+        "top1_behavioral_category_share": 0.45098,
+        "top1_threshold": 0.7,
+        "top1_flag": false,
+        "prompt_uniqueness_ratio": 0.901961,
+        "top_prompt_shell_share": 0.029412,
+        "interpretation_hint": "High top_prompt_shell_share + low uniqueness may indicate lexical-shell memorization risk."
+      },
+      "collapse_watch_conditions": {
+        "abort_or_halt_recommendation_if": [
+          "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+          "top1_behavioral_category_share > 0.70",
+          "scalar_or_direct_answer_substitutions rise materially",
+          "no_call_correctness regresses",
+          "wrapper_leakage > 0",
+          "single-anchor canonical dependence strengthens",
+          "paraphrastic canonical success narrows"
+        ],
+        "status": "pre_eval_monitoring_spec_ready"
+      }
+    },
+    "prompt_ambiguity_hard_blocks": {
+      "prompt_to_multiple_targets": false,
+      "prompt_to_multiple_tools": false,
+      "prompt_tool_to_multiple_arguments": false
+    }
+  },
+  "outputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10_val.jsonl",
+    "summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10_summary.json",
+    "diagnostics_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_dataset_diagnostics.json",
+    "contamination_audit_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_contamination_audit.json",
+    "prompt_ambiguity_audit_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_prompt_ambiguity_audit.json",
+    "collapse_watch_telemetry_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_collapse_watch_telemetry.json",
+    "anchor_dominance_telemetry_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_anchor_dominance_telemetry.json",
+    "scalar_substitution_rebound_telemetry_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_scalar_substitution_rebound_telemetry.json",
+    "human_review_package_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_human_review_package.json",
+    "human_review_package_md": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10_human_review_package.md"
+  },
+  "hashes": {
+    "train_sha256": "881225b7eeb6757aa86a5011570802ae646b08740b50505bb6c27d892f61b887",
+    "val_sha256": "6d13b2eeb2135c4bde91d077327f657532685e741764759afd98e9b48db507c5"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_promote": false
+  }
+}

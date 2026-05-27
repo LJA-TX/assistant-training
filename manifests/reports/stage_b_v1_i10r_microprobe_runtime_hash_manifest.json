@@ -1,0 +1,99 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T17:37:03Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "adapter_files": [
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_microprobe/README.md",
+      "size_bytes": 5262,
+      "sha256": "c92c905c56ce221cfac292b278ad98c2c4556e7c88a246fb7d106645e2a7a48f"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_microprobe/adapter_config.json",
+      "size_bytes": 1085,
+      "sha256": "841a5942e21a561de226356263c87eff7eeb853a7278c1b91beccf2099f09687"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_microprobe/adapter_model.safetensors",
+      "size_bytes": 167832240,
+      "sha256": "a3f1bcbde988932f5a68c6a955a47050d66c46368dae6cdc720bd029b9866aa5"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_microprobe/special_tokens_map.json",
+      "size_bytes": 335,
+      "sha256": "849070cae53bd45439e64ce5b1ddd650a66081b1bd47895c5a58939a05055579"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_microprobe/tokenizer.json",
+      "size_bytes": 17209920,
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_microprobe/tokenizer_config.json",
+      "size_bytes": 50564,
+      "sha256": "0f0fe367120fe9a9d41169e1a55796238ff2ea0bfef8e5bbb75d846e8f90ee8a"
+    }
+  ],
+  "checkpoint_files": [
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/README.md",
+      "size_bytes": 5262,
+      "sha256": "c92c905c56ce221cfac292b278ad98c2c4556e7c88a246fb7d106645e2a7a48f"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/adapter_config.json",
+      "size_bytes": 1085,
+      "sha256": "841a5942e21a561de226356263c87eff7eeb853a7278c1b91beccf2099f09687"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/adapter_model.safetensors",
+      "size_bytes": 167832240,
+      "sha256": "a3f1bcbde988932f5a68c6a955a47050d66c46368dae6cdc720bd029b9866aa5"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/optimizer.pt",
+      "size_bytes": 85738087,
+      "sha256": "887c33611f8052dc368bedbff05800503e71d03677604cd724716d7433a55bb3"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/rng_state.pth",
+      "size_bytes": 14645,
+      "sha256": "677bb129705405ac2ef3c0b270dec6c10c4e82c95383f9fe1f44b3607bbb6c9e"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/scheduler.pt",
+      "size_bytes": 1465,
+      "sha256": "075e6714e638dfed9bbe03b7f9be6f9704b25d848abac26f5dac4093eb7a79d3"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/special_tokens_map.json",
+      "size_bytes": 335,
+      "sha256": "849070cae53bd45439e64ce5b1ddd650a66081b1bd47895c5a58939a05055579"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/tokenizer.json",
+      "size_bytes": 17209920,
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/tokenizer_config.json",
+      "size_bytes": 50564,
+      "sha256": "0f0fe367120fe9a9d41169e1a55796238ff2ea0bfef8e5bbb75d846e8f90ee8a"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/trainer_state.json",
+      "size_bytes": 1124,
+      "sha256": "89cd5b54e0200de44aff6eabb3c495ecc210e53f035f70e789f4a1c70853e80d"
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_microprobe/checkpoints/checkpoint-25/training_args.bin",
+      "size_bytes": 5905,
+      "sha256": "4ac7933fb0fff713ce56019415b194a3d296a125480ff7ca14c26de0655d9580"
+    }
+  ],
+  "adapter_file_count": 6,
+  "checkpoint_file_count": 11,
+  "notes": [
+    "Binary runtime artifacts remain gitignored; this manifest preserves verifiable identities."
+  ]
+}

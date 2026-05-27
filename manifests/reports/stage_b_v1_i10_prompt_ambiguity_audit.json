@@ -1,0 +1,260 @@
+{
+  "status": "ok",
+  "rows_analyzed": 2573,
+  "duplicate_prompt_groups_identical_target_count": 353,
+  "duplicate_prompt_groups_different_target_count": 0,
+  "duplicate_prompt_groups_different_tool_count": 0,
+  "duplicate_prompt_tool_groups_different_arguments_count": 0,
+  "rows_in_conflicting_prompt_groups": 0,
+  "conflicting_prompt_groups": [],
+  "conflicting_prompt_tool_groups": [],
+  "high_frequency_prompt_reuse": [
+    {
+      "prompt": "Use get_system_datetime to report local_iso only for runtime diagnostics.",
+      "rows": 50
+    },
+    {
+      "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime/server and pattern *.py. Report match_count only. Return strict JSON tool_calls only.",
+      "rows": 49
+    },
+    {
+      "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime and pattern agent.py. Report match_count only. Return strict JSON tool_calls only.",
+      "rows": 43
+    },
+    {
+      "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime/server and pattern *.py. Report match_count only. [i3_train_variant]",
+      "rows": 41
+    },
+    {
+      "prompt": "Use archive_create with output_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.zip, format zip, overwrite true, and sources from .tool_ft_tmp.moved and .tool_ft_tmp.json.",
+      "rows": 39
+    },
+    {
+      "prompt": "Use copy_path to copy /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.moved to /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.copy with overwrite true.",
+      "rows": 34
+    },
+    {
+      "prompt": "Use archive_extract with archive_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.zip and destination_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.extract, format zip, overwrite true.",
+      "rows": 33
+    },
+    {
+      "prompt": "Use check_service_health on http://127.0.0.1:8100/v1/models and report ok/status only. Return strict JSON tool_calls only.",
+      "rows": 31
+    },
+    {
+      "prompt": "Use check_service_health on http://127.0.0.1:8100/health and report ok/status only. [i3_train_variant]",
+      "rows": 30
+    },
+    {
+      "prompt": "Use apply_unified_diff in dry_run mode with a minimal two-line patch and report success only.",
+      "rows": 22
+    },
+    {
+      "prompt": "Call tool stat_path (tool name must be exactly stat_path) with path /opt/ai-stack/runtimes/assistant-runtime/.state. Report exists/type only. Return strict JSON tool_calls only.",
+      "rows": 21
+    }
+  ],
+  "high_frequency_skeleton_reuse": [
+    {
+      "skeleton_id": "77f2bcc076c5",
+      "rows": 122
+    },
+    {
+      "skeleton_id": "eda6ede9db3d",
+      "rows": 57
+    },
+    {
+      "skeleton_id": "3d4c35372642",
+      "rows": 56
+    },
+    {
+      "skeleton_id": "61804e8e5477",
+      "rows": 56
+    },
+    {
+      "skeleton_id": "0356ce3a8616",
+      "rows": 53
+    },
+    {
+      "skeleton_id": "4c2064512bed",
+      "rows": 51
+    },
+    {
+      "skeleton_id": "d3ed4e768734",
+      "rows": 51
+    },
+    {
+      "skeleton_id": "abb490d0ee5c",
+      "rows": 50
+    }
+  ],
+  "source_case_divergence_groups": [
+    {
+      "source_case_id": "i3_adapt_p0_read_file_1",
+      "rows": 95,
+      "distinct_targets": 7,
+      "distinct_tools": 2,
+      "distinct_prompts": 15,
+      "distinct_tool_argument_pairs": 7
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_4",
+      "rows": 95,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 10,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_read_file_2",
+      "rows": 88,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 16,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_1",
+      "rows": 87,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 12,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_3",
+      "rows": 81,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 10,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_2",
+      "rows": 79,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 10,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_read_file_3",
+      "rows": 72,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 10,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_5",
+      "rows": 70,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 10,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i9_conv_nmr_i3_adapt_p0_rg_search_5",
+      "rows": 14,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 13,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_1",
+      "rows": 14,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 13,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+      "rows": 13,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 13,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_2",
+      "rows": 13,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 13,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_2",
+      "rows": 13,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 11,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_3",
+      "rows": 12,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 12,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_4",
+      "rows": 12,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 10,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_4",
+      "rows": 12,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 11,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_3",
+      "rows": 11,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 9,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i9_conv_nmr_i3_adapt_p0_read_file_2",
+      "rows": 10,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 9,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i9_conv_ucf_i3_adapt_p0_read_file_3",
+      "rows": 10,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 9,
+      "distinct_tool_argument_pairs": 2
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+      "rows": 9,
+      "distinct_targets": 2,
+      "distinct_tools": 1,
+      "distinct_prompts": 9,
+      "distinct_tool_argument_pairs": 2
+    }
+  ],
+  "hard_block_candidates": {
+    "prompt_to_multiple_targets": false,
+    "prompt_to_multiple_tools": false,
+    "prompt_tool_to_multiple_arguments": false
+  },
+  "generated_utc": "2026-05-27T11:23:36Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10"
+}

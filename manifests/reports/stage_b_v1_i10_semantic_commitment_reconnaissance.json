@@ -1,0 +1,104 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T00:54:26Z",
+  "iteration_target": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "bounded_strategic_reconnaissance_only",
+  "sources": {
+    "i9_post_eval_checkpoint": "/opt/ai-stack/assistant-training/docs/lineages/i9_post_eval_checkpoint.md",
+    "i9_behavioral_review_package": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_behavioral_review_package.json",
+    "i9_gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_commitment_conversion_gate_assessment.json",
+    "i9_collapse_watch": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_collapse_watch_interpretation.json",
+    "i8_parseability_behavioral_analysis_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_parseability_behavioral_analysis.json",
+    "i8_parseability_behavioral_analysis_md": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_parseability_behavioral_analysis.md",
+    "i9_commitment_conversion_taxonomy": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_commitment_conversion_taxonomy.json",
+    "i9_candidate_intervention_patterns": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_candidate_intervention_patterns.json",
+    "i9_canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_canonical_eval_summary.json",
+    "i9_comparison_rows": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T232239Z/comparison_rows.jsonl"
+  },
+  "lineage_context_metrics": {
+    "i3": {
+      "exact_json_validity": 0.05,
+      "invalid_json": 0.43,
+      "tool_name_accuracy": 0.05,
+      "argument_accuracy": 0.05
+    },
+    "i6": {
+      "exact_json_validity": 0.01,
+      "invalid_json": 0.39,
+      "tool_name_accuracy": 0.01,
+      "argument_accuracy": 0.01
+    },
+    "i7": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.66,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0
+    },
+    "i8": {
+      "exact_json_validity": 0.04,
+      "invalid_json": 0.57,
+      "tool_name_accuracy": 0.04,
+      "argument_accuracy": 0.04
+    },
+    "i9": {
+      "exact_json_validity": 0.15,
+      "invalid_json": 0.58,
+      "tool_name_accuracy": 0.15,
+      "argument_accuracy": 0.15
+    }
+  },
+  "key_observations": {
+    "i9_exact_valid_gain_vs_i8_pp": 11.0,
+    "i9_wrapper_envelope_repair_signal": "positive (near-miss rate down 0.272 -> 0.056)",
+    "i9_runtime_invariants": {
+      "no_call_correctness": 1.0,
+      "wrapper_leakage": 0.0
+    },
+    "active_collapse_watch_trigger": "scalar_direct_substitution_rebound",
+    "semantic_substitution_dominance": {
+      "non_exact_tool_rows": 125,
+      "semantic_substitution_rows": 112,
+      "semantic_substitution_rate": 0.896,
+      "scalar_or_token_substitution_rows": 50,
+      "scalar_or_token_rate": 0.4
+    },
+    "read_file_pathology": {
+      "tool_expected_rows": 27,
+      "exact_valid_rows": 0,
+      "payload_not_parsed_rows": 27,
+      "parse_mode_invalid_rows": 27
+    }
+  },
+  "scientific_interpretation": {
+    "dominant_regime": "semantic competence with procedural/canonical commitment avoidance",
+    "uncertainty_expression_mode": "implicit compression/substitution (short scalar/direct outputs), not explicit refusal text",
+    "read_file_weakness_hypothesis": [
+      "prompt archetypes reward direct semantic closure (symbol/function/boolean answers)",
+      "model chooses completion of requested result instead of execution step",
+      "i9 semantic conversion coverage was skewed toward rg_search (50 rows) vs read_file (14 rows)",
+      "no observed read_file exact-valid foothold to reinforce canonical commitment behavior"
+    ]
+  },
+  "recommended_i10_direction": {
+    "primary_family": "read_file-first semantic_substitution_to_canonical_conversion_pairs",
+    "secondary_family": "small-scale uncertainty-conditioned positive procedural fallback",
+    "tertiary_family": "paraphrastic canonicalization diversification for anti-ritualization",
+    "explicitly_forbidden": [
+      "global coercive schema policing",
+      "negation-heavy imperative campaigns",
+      "blacklist flooding",
+      "large synthetic flooding / template monoculture"
+    ]
+  },
+  "explicit_conclusions": {
+    "1_dominant_residual_bottleneck": "Semantic/scalar substitution rebound (procedural commitment bypass) with read_file-specific collapse of canonical commitment.",
+    "2_primary_nature_of_scalar_substitution": "Primarily procedural avoidance with serialization aversion under uncertainty; less evidence for latent semantic ambiguity as primary driver.",
+    "3_why_read_file_uniquely_weak": "All read_file failures are payload_not_parsed direct/substitution outputs across three archetypes; conversion coverage and canonical footholds were insufficient compared with rg_search.",
+    "4_semantic_conversion_vs_wrapper_repair_roi": "Yes. Expected marginal return is higher for semantic-substitution conversion than additional wrapper repair.",
+    "5_most_promising_i10_family": "Localized read_file-first semantic-substitution conversion with rg_search scalar conversion as secondary.",
+    "6_most_dangerous_i10_family": "Global coercive schema-policing / negation-heavy blacklist-style interventions (i4/i5-like risk).",
+    "7_early_i10_collapse_signature": "Rising scalar/direct substitution share despite exact-valid stagnation, narrowing paraphrastic success, style/skeleton monoculture drift, and any no-call/wrapper invariant regression.",
+    "8_should_i10_exist": "Bounded continuation (not redesign, not halt) is justified if scoped narrowly to semantic-substitution conversion and collapse-watch constraints remain strict."
+  },
+  "recommendation": "proceed_to_bounded_i10_design"
+}

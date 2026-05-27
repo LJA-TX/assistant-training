@@ -1,0 +1,68 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:45:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "false_progress_detection_doctrine",
+  "principle": "Reject benchmark-facing structure gains that do not produce generalized procedural routing behavior.",
+  "first_class_failure_mode": "high_lexical_diversity_but_low_procedural_diversity",
+  "false_progress_indicators": [
+    {
+      "id": "fp_exact_up_scalar_flat_or_up",
+      "condition": "exact_valid rises while scalar_or_direct_substitution_share does not decrease",
+      "severity": "high",
+      "action": "halt_forward_progress_and_require_intervention_review"
+    },
+    {
+      "id": "fp_exact_up_read_file_zero",
+      "condition": "exact_valid rises but read_file exact_valid remains 0",
+      "severity": "high",
+      "action": "treat_as_non_generalizing_progress"
+    },
+    {
+      "id": "fp_anchor_shell_spike",
+      "condition": "literal_anchor_exact_share rises materially while no_anchor/paraphrastic exact rates stagnate",
+      "severity": "high",
+      "action": "rollback_recommendation"
+    },
+    {
+      "id": "fp_monoculture_shift",
+      "condition": "top1_behavioral_category_share approaches or exceeds 0.70",
+      "severity": "high",
+      "action": "immediate_halt"
+    },
+    {
+      "id": "fp_lexical_not_procedural",
+      "condition": "prompt_uniqueness remains high but successful unique (tool,args) diversity remains low/flat",
+      "severity": "medium_high",
+      "action": "flag_for_manual_review_and_no_promotion"
+    }
+  ],
+  "rollback_conditions": [
+    "no_call_correctness < 1.0",
+    "wrapper_leakage > 0",
+    "scalar_direct_substitution_rebound exceeds tolerance",
+    "paraphrastic exact-valid narrowing with literal-shell concentration"
+  ],
+  "immediate_halt_conditions": [
+    "runtime invariant breach (no-call or wrapper leakage)",
+    "collapse-watch trigger activation",
+    "contamination/ambiguity hard-block regression"
+  ],
+  "diagnostic_views_required": [
+    "exact_valid_by_anchor_bucket",
+    "exact_valid_by_tool_and_archetype",
+    "scalar_direct_substitution_by_tool",
+    "successful_unique_tool_args_ratio",
+    "unseen_shell_exact_valid_rate"
+  ],
+  "promotion_policy": {
+    "allow_promotion": false,
+    "require_manual_human_review": true,
+    "reason": "Micro-probe is diagnostic and rollback-oriented, not canonization-oriented."
+  },
+  "approval_state": {
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

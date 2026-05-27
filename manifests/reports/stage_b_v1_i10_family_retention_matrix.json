@@ -1,0 +1,152 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:52:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "legacy_and_conversion_family_retention_planning",
+  "classification_criteria": {
+    "structurally_dangerous": "low semantic variation (~0), high nearest-neighbor similarity (~1), low effective diversity, and/or shell concentration risk",
+    "weak_but_useful": "low procedural diversity but retains operational stress coverage or lineage continuity value",
+    "healthy": "high prompt/skeleton diversity with reduced shell concentration",
+    "irreplaceable": "directly tied to primary scientific objective (read_file commitment emergence) or critical lineage stress anchors"
+  },
+  "family_groups": [
+    {
+      "family_group": "i3_read_literal_*",
+      "rows": 38,
+      "share_of_targeted": 0.039095,
+      "procedural_diversity": {
+        "prompt_uniqueness_ratio": 0.105263,
+        "skeleton_uniqueness_ratio": 0.105263,
+        "unique_tool_args_ratio": 0.105263
+      },
+      "shell_concentration": {
+        "top_skeleton_share_within_group": 0.315789
+      },
+      "semantic_variation_estimate": 0.0,
+      "mean_nearest_neighbor_jaccard": 1.0,
+      "classification": "structurally_dangerous",
+      "retention_decision": "contrastive_anchor_only",
+      "recommended_action": "thin_heavily_with_floor",
+      "recommended_retention_factor": 0.30,
+      "recommended_retained_rows": 11,
+      "rationale": "Retain minimal stress exposure while reducing literal-shell ritualization pressure."
+    },
+    {
+      "family_group": "i3_rg_readstyle_*",
+      "rows": 42,
+      "share_of_targeted": 0.04321,
+      "procedural_diversity": {
+        "prompt_uniqueness_ratio": 0.095238,
+        "skeleton_uniqueness_ratio": 0.071429,
+        "unique_tool_args_ratio": 0.095238
+      },
+      "shell_concentration": {
+        "top_skeleton_share_within_group": 0.47619
+      },
+      "semantic_variation_estimate": 0.0,
+      "mean_nearest_neighbor_jaccard": 1.0,
+      "classification": "structurally_dangerous",
+      "retention_decision": "contrastive_anchor_only",
+      "recommended_action": "thin_heavily_with_floor",
+      "recommended_retention_factor": 0.30,
+      "recommended_retained_rows": 13,
+      "rationale": "High shell concentration and zero semantic variation; keep only thin stress anchors."
+    },
+    {
+      "family_group": "i3_long_rg_*",
+      "rows": 21,
+      "share_of_targeted": 0.021605,
+      "procedural_diversity": {
+        "prompt_uniqueness_ratio": 0.095238,
+        "skeleton_uniqueness_ratio": 0.095238,
+        "unique_tool_args_ratio": 0.095238
+      },
+      "shell_concentration": {
+        "top_skeleton_share_within_group": 0.619048
+      },
+      "semantic_variation_estimate": 0.0,
+      "mean_nearest_neighbor_jaccard": 1.0,
+      "classification": "structurally_dangerous",
+      "retention_decision": "contrastive_anchor_only",
+      "recommended_action": "thin_heavily_with_floor",
+      "recommended_retention_factor": 0.30,
+      "recommended_retained_rows": 6,
+      "rationale": "Most shell-concentrated legacy slice; retain only minimal contrastive pressure."
+    },
+    {
+      "family_group": "broader_i3_adapt_*",
+      "rows": 667,
+      "share_of_targeted": 0.686214,
+      "procedural_diversity": {
+        "prompt_uniqueness_ratio": 0.13943,
+        "skeleton_uniqueness_ratio": 0.067466,
+        "unique_tool_args_ratio": 0.031484
+      },
+      "shell_concentration": {
+        "top_skeleton_share_within_group": 0.058471,
+        "note": "Low aggregate top-skeleton share hides strong family-level ritualization and repeated routing shells."
+      },
+      "semantic_variation_estimate": 0.0,
+      "mean_nearest_neighbor_jaccard": 1.0,
+      "classification": "weak_but_useful",
+      "retention_decision": "thin_not_quarantine",
+      "recommended_action": "deterministic_family_caps_with_floor",
+      "recommended_retention_factor": 0.55,
+      "recommended_retained_rows": 367,
+      "rationale": "Retains operational realism and uncertainty stress, but reduces dominance that confounds micro-probe signal."
+    },
+    {
+      "family_group": "i9_conversion_families",
+      "rows": 102,
+      "share_of_targeted": 0.104938,
+      "procedural_diversity": {
+        "prompt_uniqueness_ratio": 0.892157,
+        "skeleton_uniqueness_ratio": 0.735294,
+        "unique_tool_args_ratio": 0.156863
+      },
+      "shell_concentration": {
+        "top_skeleton_share_within_group": 0.029412
+      },
+      "semantic_variation_estimate": 0.105617,
+      "mean_nearest_neighbor_jaccard": 0.894383,
+      "classification": "healthy",
+      "retention_decision": "remain_untouched",
+      "recommended_action": "retain_full",
+      "recommended_retention_factor": 1.0,
+      "recommended_retained_rows": 102,
+      "rationale": "Bridge lineage carrying non-legacy commitment conversion behavior."
+    },
+    {
+      "family_group": "i10_conversion_families",
+      "rows": 102,
+      "share_of_targeted": 0.104938,
+      "procedural_diversity": {
+        "prompt_uniqueness_ratio": 0.901961,
+        "skeleton_uniqueness_ratio": 0.803922,
+        "unique_tool_args_ratio": 0.156863
+      },
+      "shell_concentration": {
+        "top_skeleton_share_within_group": 0.029412
+      },
+      "semantic_variation_estimate": 0.205491,
+      "mean_nearest_neighbor_jaccard": 0.794509,
+      "classification": "healthy_irreplaceable",
+      "retention_decision": "remain_untouched",
+      "recommended_action": "retain_full",
+      "recommended_retention_factor": 1.0,
+      "recommended_retained_rows": 102,
+      "rationale": "Primary target family for non-ritualized read_file commitment emergence."
+    }
+  ],
+  "irreplaceable_slices": [
+    "i10_conv_ssc_rf_* (read_file semantic-substitution conversion)",
+    "i10_conv_ssc_rg_* (rg_search scalar conversion)",
+    "i3_adapt_p0_read_file_1 as multi-tool lineage stress anchor (retained but thinned)"
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

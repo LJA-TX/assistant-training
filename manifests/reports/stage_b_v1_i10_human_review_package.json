@@ -1,0 +1,389 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:23:36Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "status": "completed",
+  "question": "Are semantic-substitution conversions producing generalized procedural commitment or lexical-shell recitation?",
+  "conversion_selection_summary": {
+    "train": {
+      "quotas": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 52,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 28,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 8
+      },
+      "pool_sizes": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 191,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 271,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 92
+      },
+      "selected_by_family": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 52,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 28,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 8
+      },
+      "selected_by_tool": {
+        "read_file": 52,
+        "rg_search": 36
+      },
+      "selected_by_behavior": {
+        "scalar_substitution": 40,
+        "direct_answer_substitution": 30,
+        "pseudo_completion_substitution": 18
+      },
+      "selected_by_archetype": {
+        "rg_search_match_count": 29,
+        "read_file_boolean_presence": 18,
+        "read_file_symbol_name": 18,
+        "read_file_first_function_name": 16,
+        "rg_search_other": 7
+      },
+      "selected_by_transform_mode": {
+        "append_36eb456fbc8b": 10,
+        "append_f55bf5df12ef": 9,
+        "append_cf068e40f0df": 8,
+        "append_e83b275d3faa": 8,
+        "append_7ffbcd14bc52": 7,
+        "append_91abb41c765e": 7,
+        "append_a0df8787f009": 6,
+        "append_cc6a0229125a": 6,
+        "append_d993750774e4": 6,
+        "append_b3e6b6432371": 4,
+        "append_1a0ca21e1a88": 3,
+        "append_2ebf10eb2f9e": 3,
+        "append_49edae86ec5e": 3,
+        "append_6bc740042391": 3,
+        "append_4526995a3ab2": 2,
+        "append_ba9dfd4a1d07": 2,
+        "append_4ba8afe5ac5f": 1
+      },
+      "selected_by_anchor_bucket": {
+        "no_anchor_phrase": 67,
+        "literal_tool_calls": 18,
+        "paraphrastic_tool_call": 3
+      },
+      "skipped_due_conflict": 32,
+      "skipped_due_diversity_caps": 123,
+      "skipped_due_archetype_cap": 0,
+      "families_not_filled": [],
+      "primary_archetype_minimums": {
+        "read_file_boolean_presence": 12,
+        "read_file_symbol_name": 12,
+        "read_file_first_function_name": 8
+      }
+    },
+    "val": {
+      "quotas": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 8,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 4,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 2
+      },
+      "pool_sizes": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 27,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 33,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 11
+      },
+      "selected_by_family": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 8,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 4,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 2
+      },
+      "selected_by_tool": {
+        "read_file": 8,
+        "rg_search": 6
+      },
+      "selected_by_behavior": {
+        "scalar_substitution": 6,
+        "direct_answer_substitution": 4,
+        "pseudo_completion_substitution": 4
+      },
+      "selected_by_archetype": {
+        "rg_search_match_count": 5,
+        "read_file_symbol_name": 4,
+        "read_file_boolean_presence": 2,
+        "read_file_first_function_name": 2,
+        "rg_search_other": 1
+      },
+      "selected_by_transform_mode": {
+        "append_f55bf5df12ef": 3,
+        "append_49edae86ec5e": 2,
+        "append_e83b275d3faa": 2,
+        "append_36eb456fbc8b": 1,
+        "append_4526995a3ab2": 1,
+        "append_4ba8afe5ac5f": 1,
+        "append_6bc740042391": 1,
+        "append_7ffbcd14bc52": 1,
+        "append_91abb41c765e": 1,
+        "append_b3e6b6432371": 1
+      },
+      "selected_by_anchor_bucket": {
+        "no_anchor_phrase": 9,
+        "literal_tool_calls": 4,
+        "paraphrastic_tool_call": 1
+      },
+      "skipped_due_conflict": 4,
+      "skipped_due_diversity_caps": 0,
+      "skipped_due_archetype_cap": 0,
+      "families_not_filled": [],
+      "primary_archetype_minimums": {
+        "read_file_boolean_presence": 2,
+        "read_file_symbol_name": 2,
+        "read_file_first_function_name": 2
+      }
+    },
+    "added_rows_total": 102,
+    "added_rows_train": 88,
+    "added_rows_val": 14
+  },
+  "targeted_prompt_samples": {
+    "status": "ok",
+    "targeted_rows": 972,
+    "samples_by_tool": {
+      "read_file": [
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+          "style_bucket": "constrained_output",
+          "prompt_chars": 195,
+          "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Emit exactly one parseable call payload that retrieves the requested file range."
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_1",
+          "style_bucket": "constrained_output",
+          "prompt_chars": 184,
+          "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return only the structured tool invocation needed to gather evidence."
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_2",
+          "style_bucket": "constrained_output",
+          "prompt_chars": 198,
+          "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name. Return only the structured tool invocation needed to gather evidence."
+        }
+      ],
+      "rg_search": [
+        {
+          "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+          "style_bucket": "imperative_general",
+          "prompt_chars": 198,
+          "prompt": "Use rg_search to find regex \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Emit a single parseable call payload that performs the search."
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+          "style_bucket": "imperative_general",
+          "prompt_chars": 211,
+          "prompt": "Use rg_search to find \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Respond with the retrieval procedure payload rather than numeric shortcut output."
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+          "style_bucket": "imperative_general",
+          "prompt_chars": 193,
+          "prompt": "Search to find pattern \"def create_app\" in /mnt/services/runtimes/assistant-runtime/server/service.py and report match_count only. Emit a single parseable call payload that performs the search."
+        }
+      ]
+    },
+    "samples_by_style_bucket": {
+      "constrained_output": [
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 195,
+          "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Emit exactly one parseable call payload that retrieves the requested file range."
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 184,
+          "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return only the structured tool invocation needed to gather evidence."
+        }
+      ],
+      "imperative_general": [
+        {
+          "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+          "tool": "rg_search",
+          "prompt_chars": 198,
+          "prompt": "Use rg_search to find regex \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Emit a single parseable call payload that performs the search."
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+          "tool": "rg_search",
+          "prompt_chars": 211,
+          "prompt": "Use rg_search to find \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Respond with the retrieval procedure payload rather than numeric shortcut output."
+        }
+      ],
+      "imperative_line_scoped": [
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 184,
+          "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py line range 1-25 and report the first function name. Return one structured retrieval-call payload before any result text."
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 187,
+          "prompt": "Open /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Commit to the retrieval procedure payload first and stop after that payload."
+        }
+      ],
+      "task_narrative": [
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 191,
+          "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Commit to the retrieval procedure payload first and stop after that payload."
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+          "tool": "read_file",
+          "prompt_chars": 191,
+          "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Commit to the retrieval procedure payload first and stop after that payload."
+        }
+      ]
+    }
+  },
+  "semantic_commitment_telemetry": {
+    "status": "ok",
+    "rows_analyzed": 2573,
+    "intervention_rows": 102,
+    "conversion_ids_count": 102,
+    "source_family_distribution": {
+      "semantic_substitution_conversion_pairs_read_file_primary": 60,
+      "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 32,
+      "uncertainty_conditioned_procedural_continuation_smallscale": 10
+    },
+    "source_behavior_distribution": {
+      "scalar_substitution": 46,
+      "direct_answer_substitution": 34,
+      "pseudo_completion_substitution": 22
+    },
+    "query_archetype_distribution": {
+      "rg_search_match_count": 34,
+      "read_file_symbol_name": 22,
+      "read_file_boolean_presence": 20,
+      "read_file_first_function_name": 18,
+      "rg_search_other": 8
+    },
+    "source_tool_distribution": {
+      "read_file": 60,
+      "rg_search": 42
+    },
+    "scalar_substitution_rebound_proxy": {
+      "i9_scalar_share_baseline": 0.4,
+      "i10_scalar_share_proxy": 0.45098,
+      "delta": 0.05098,
+      "threshold_delta": 0.05,
+      "flag": true,
+      "note": "Proxy from intervention-source annotations; final rebound evaluated post-canonical-eval."
+    },
+    "direct_answer_substitution_proxy": {
+      "i10_direct_share_proxy": 0.54902,
+      "note": "Tracks risk of direct-answer dominance among intervention rows."
+    },
+    "anchor_dominance_ratio": {
+      "literal_tool_calls_anchor_rows": 22,
+      "intervention_rows": 102,
+      "ratio": 0.215686,
+      "threshold": 0.7,
+      "flag": false,
+      "anchor_bucket_distribution": {
+        "no_anchor_phrase": 76,
+        "literal_tool_calls": 22,
+        "paraphrastic_tool_call": 4
+      }
+    },
+    "paraphrastic_success_diversity": {
+      "anchor_bucket_distribution": {
+        "no_anchor_phrase": 76,
+        "literal_tool_calls": 22,
+        "paraphrastic_tool_call": 4
+      },
+      "prompt_uniqueness_ratio": 0.901961,
+      "prompt_entropy_bits": 6.468946,
+      "top_prompt_shell_share": 0.029412,
+      "status": "pre_eval_prompt_diversity_proxy"
+    },
+    "read_file_exact_valid_emergence": {
+      "target_rows_in_intervention": 60,
+      "status": "pending_post_eval",
+      "note": "Primary i10 success condition requires read_file exact-valid > 0 with invariant preservation."
+    },
+    "commitment_generalization_vs_recitation": {
+      "top1_behavioral_category": "scalar_substitution",
+      "top1_behavioral_category_share": 0.45098,
+      "top1_threshold": 0.7,
+      "top1_flag": false,
+      "prompt_uniqueness_ratio": 0.901961,
+      "top_prompt_shell_share": 0.029412,
+      "interpretation_hint": "High top_prompt_shell_share + low uniqueness may indicate lexical-shell memorization risk."
+    },
+    "collapse_watch_conditions": {
+      "abort_or_halt_recommendation_if": [
+        "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+        "top1_behavioral_category_share > 0.70",
+        "scalar_or_direct_answer_substitutions rise materially",
+        "no_call_correctness regresses",
+        "wrapper_leakage > 0",
+        "single-anchor canonical dependence strengthens",
+        "paraphrastic canonical success narrows"
+      ],
+      "status": "pre_eval_monitoring_spec_ready"
+    }
+  },
+  "risk_flags": {
+    "diversity": {
+      "status": "ok",
+      "style_bucket_count_targeted": 4,
+      "dominant_style_share_targeted": 0.472222,
+      "unique_skeletons_targeted": 211,
+      "top1_skeleton_share_targeted": 0.040123,
+      "risk_flags": [],
+      "pass": true
+    },
+    "anti_homogenization": {
+      "status": "ok",
+      "forbidden_hits_total": 0,
+      "targeted_top1_skeleton_share": 0.040123,
+      "targeted_top3_skeleton_share": 0.117284,
+      "dominant_style_share": 0.472222,
+      "risk_signals": [],
+      "pass": true
+    },
+    "generalization_vs_recitation": {
+      "top1_behavioral_category": "scalar_substitution",
+      "top1_behavioral_category_share": 0.45098,
+      "top1_threshold": 0.7,
+      "top1_flag": false,
+      "prompt_uniqueness_ratio": 0.901961,
+      "top_prompt_shell_share": 0.029412,
+      "interpretation_hint": "High top_prompt_shell_share + low uniqueness may indicate lexical-shell memorization risk."
+    },
+    "anchor_dominance": {
+      "literal_tool_calls_anchor_rows": 22,
+      "intervention_rows": 102,
+      "ratio": 0.215686,
+      "threshold": 0.7,
+      "flag": false,
+      "anchor_bucket_distribution": {
+        "no_anchor_phrase": 76,
+        "literal_tool_calls": 22,
+        "paraphrastic_tool_call": 4
+      }
+    },
+    "scalar_substitution_rebound_proxy": {
+      "i9_scalar_share_baseline": 0.4,
+      "i10_scalar_share_proxy": 0.45098,
+      "delta": 0.05098,
+      "threshold_delta": 0.05,
+      "flag": true,
+      "note": "Proxy from intervention-source annotations; final rebound evaluated post-canonical-eval."
+    }
+  },
+  "interpretation_guidance": [
+    "Prefer small read_file exact-valid footholds with paraphrastic spread over narrow literal-shell gains.",
+    "If top prompt shell share rises above threshold, treat as template coercion risk.",
+    "If ambiguity hard blocks are non-zero, invalidate candidate package before training review.",
+    "If scalar substitution rebound rises post-eval, halt forward progression."
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_promote": false
+  }
+}

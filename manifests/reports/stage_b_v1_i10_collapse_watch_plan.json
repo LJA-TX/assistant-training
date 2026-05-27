@@ -1,0 +1,52 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T01:10:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "status": "design_phase_monitoring_plan",
+  "thresholds": {
+    "max_top1_behavioral_category_share": 0.7,
+    "max_anchor_dominance_ratio": 0.7,
+    "max_scalar_substitution_rebound_delta": 0.05,
+    "max_top_prompt_shell_share": 0.25
+  },
+  "must_preserve_invariants": {
+    "no_call_correctness_eq_1": true,
+    "wrapper_leakage_eq_0": true,
+    "heldout_tool_holdout_overlap_zero": true,
+    "ambiguity_hard_blocks_zero": true
+  },
+  "telemetry_channels": [
+    "scalar_substitution_rebound_proxy",
+    "direct_answer_substitution_proxy",
+    "anchor_dominance_ratio",
+    "paraphrastic_success_diversity",
+    "read_file_exact_valid_emergence",
+    "commitment_generalization_vs_recitation"
+  ],
+  "abort_or_halt_recommendation_if": [
+    "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+    "top1_behavioral_category_share > 0.70",
+    "scalar_or_direct_answer_substitutions rise materially",
+    "no_call_correctness regresses",
+    "wrapper_leakage > 0",
+    "single-anchor canonical dependence strengthens",
+    "paraphrastic canonical success narrows"
+  ],
+  "healthy_generalization_signals": [
+    "scalar/direct substitution shares decline with stable invariants",
+    "read_file exact-valid emerges above zero",
+    "exact-valid gains spread across paraphrastic buckets",
+    "top prompt shell share remains below concentration threshold"
+  ],
+  "lexical_shell_memorization_risk_signals": [
+    "exact-valid gains isolate to one literal anchor shell",
+    "top prompt shell share rises materially",
+    "paraphrastic bucket success narrows despite exact-valid rise"
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

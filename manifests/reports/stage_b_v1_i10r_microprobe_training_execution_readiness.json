@@ -1,0 +1,38 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T13:37:07Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "status": "ready_for_single_bounded_microprobe_execution",
+  "checks": {
+    "i10r_preflight_validation_pass_fail": {
+      "pass": 14,
+      "warn": 0,
+      "fail": 0
+    },
+    "ambiguity_hard_blocks_clean": true,
+    "contamination_heldout_overlap_zero": true,
+    "contamination_tool_holdout_overlap_zero": true,
+    "approval_gates_for_execution": {
+      "config_approved_to_run": true,
+      "manifest_approved_to_run": true
+    },
+    "fixed_contracts_unchanged": {
+      "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+      "decode_defaults_source": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+      "trainer_script": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py"
+    },
+    "boundaries": {
+      "single_microprobe_only": true,
+      "hidden_retries": false,
+      "auto_continuation": false,
+      "topology_changes": false,
+      "dataset_mutation": false
+    }
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": true,
+    "approved_to_train": true,
+    "approved_to_promote": false
+  }
+}

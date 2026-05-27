@@ -1,0 +1,125 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T11:52:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "scope": "read_only_projection_from_current_i10_targeted_composition",
+  "current_baseline": {
+    "targeted_total_rows": 972,
+    "group_counts": {
+      "i3_adapt": 667,
+      "legacy_risky": 101,
+      "i9_conversion": 102,
+      "i10_conversion": 102
+    },
+    "group_shares": {
+      "legacy_total": 0.790123,
+      "healthy_conversion_total": 0.209877
+    },
+    "effective_exposure_proxies": {
+      "weighted_prompt_uniqueness_ratio": 0.294239,
+      "weighted_skeleton_uniqueness_ratio": 0.217078,
+      "weighted_unique_tool_args_ratio": 0.064815
+    }
+  },
+  "scenarios": [
+    {
+      "id": "S1_conservative",
+      "description": "Bounded thinning with high continuity bias.",
+      "retention_factors": {
+        "i3_adapt": 0.70,
+        "legacy_risky": 0.50,
+        "i9_conversion": 1.0,
+        "i10_conversion": 1.0
+      },
+      "projected_counts": {
+        "i3_adapt": 467,
+        "legacy_risky": 50,
+        "i9_conversion": 102,
+        "i10_conversion": 102,
+        "targeted_total": 721
+      },
+      "projected_shares": {
+        "legacy_total": 0.71706,
+        "healthy_conversion_total": 0.28294
+      },
+      "effective_exposure_proxies": {
+        "weighted_prompt_uniqueness_ratio": 0.350991,
+        "weighted_skeleton_uniqueness_ratio": 0.267631,
+        "weighted_unique_tool_args_ratio": 0.071642
+      },
+      "interpretation": "Likely safer operationally but may still be partially legacy-confounded."
+    },
+    {
+      "id": "S2_balanced_recommended",
+      "description": "Balanced signal-cleaning while preserving substantial legacy pressure.",
+      "retention_factors": {
+        "i3_adapt": 0.55,
+        "legacy_risky": 0.30,
+        "i9_conversion": 1.0,
+        "i10_conversion": 1.0
+      },
+      "projected_counts": {
+        "i3_adapt": 367,
+        "legacy_risky": 30,
+        "i9_conversion": 102,
+        "i10_conversion": 102,
+        "targeted_total": 601
+      },
+      "projected_shares": {
+        "legacy_total": 0.660566,
+        "healthy_conversion_total": 0.339434
+      },
+      "effective_exposure_proxies": {
+        "weighted_prompt_uniqueness_ratio": 0.385098,
+        "weighted_skeleton_uniqueness_ratio": 0.298281,
+        "weighted_unique_tool_args_ratio": 0.07598
+      },
+      "interpretation": "Improves signal quality materially while retaining legacy stress behavior across all legacy family classes."
+    },
+    {
+      "id": "S3_aggressive",
+      "description": "Strong dilution for maximal ritualization reduction.",
+      "retention_factors": {
+        "i3_adapt": 0.50,
+        "legacy_risky": 0.25,
+        "i9_conversion": 1.0,
+        "i10_conversion": 1.0
+      },
+      "projected_counts": {
+        "i3_adapt": 334,
+        "legacy_risky": 25,
+        "i9_conversion": 102,
+        "i10_conversion": 102,
+        "targeted_total": 563
+      },
+      "projected_shares": {
+        "legacy_total": 0.637655,
+        "healthy_conversion_total": 0.362345
+      },
+      "effective_exposure_proxies": {
+        "weighted_prompt_uniqueness_ratio": 0.412158,
+        "weighted_skeleton_uniqueness_ratio": 0.322845,
+        "weighted_unique_tool_args_ratio": 0.079913
+      },
+      "interpretation": "Cleaner signal but elevated over-revision risk and reduced lineage continuity."
+    }
+  ],
+  "recommendation": {
+    "preferred_scenario": "S2_balanced_recommended",
+    "reasoning": [
+      "Legacy dominance is reduced without clean-room redesign behavior.",
+      "All legacy classes remain represented for continuity and contrastive pressure.",
+      "Exposure shift is strong enough to improve interpretability over current unweighted mix."
+    ]
+  },
+  "notes": [
+    "These are planning projections only; no dataset mutation performed.",
+    "Proxies use current family-level diversity telemetry and should be re-measured post-revision if executed."
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

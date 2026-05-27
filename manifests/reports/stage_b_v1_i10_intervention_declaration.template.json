@@ -1,0 +1,65 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T01:10:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10",
+  "lineage_branch_from": "stage_b_llama31_8b_base_v1_i9",
+  "parent_dataset_iteration": "stage_b_llama31_8b_base_v1_i9",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json"
+  },
+  "PRIMARY_INTERVENTION_VARIABLE": "Convert semantically correct scalar/direct substitutions into canonical procedural commitment, read_file-first.",
+  "SCOPE": {
+    "topology": "hybrid_localized_read_file_first",
+    "targeted_tools": [
+      "read_file",
+      "rg_search"
+    ],
+    "families": [
+      "semantic_substitution_conversion_pairs_read_file_primary",
+      "semantic_substitution_conversion_pairs_rg_search_scalar_secondary",
+      "uncertainty_conditioned_procedural_continuation_smallscale",
+      "paraphrastic_canonicalization_diversification_guardrail"
+    ],
+    "global_invariants_fixed": true
+  },
+  "NON_OBJECTIVES": [
+    "Do not run broad hygiene campaigns",
+    "Do not run global schema-policing interventions",
+    "Do not alter canonical eval topology, semantics, or thresholds",
+    "Do not alter no-call or wrapper-leak governance"
+  ],
+  "FORBIDDEN_PRESSURES": [
+    "global coercive schema pressure",
+    "negation-heavy policing",
+    "blacklist flooding",
+    "imperative template monoculture",
+    "broad synthetic flooding"
+  ],
+  "SUCCESS_CRITERIA_INTERPRETATION": [
+    "scalar/direct substitution share decreases versus i9",
+    "read_file exact-valid emerges above zero",
+    "no_call_correctness remains 1.0",
+    "wrapper_leakage remains 0.0",
+    "heldout/tool_holdout contamination overlap remains zero",
+    "paraphrastic exact-valid spread does not collapse to a single lexical shell"
+  ],
+  "COLLAPSE_WATCH_CONDITIONS": [
+    "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+    "top1 behavioral category share exceeds 0.70",
+    "scalar/direct-answer substitutions increase materially",
+    "no_call correctness regresses",
+    "wrapper leakage appears",
+    "single-anchor canonical dependence strengthens",
+    "paraphrastic canonical success narrows"
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  },
+  "template_status": "bounded_i10_design_template"
+}

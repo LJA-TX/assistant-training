@@ -1,0 +1,31 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T14:02:12Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "gate_results": {
+    "runtime_invariants": {
+      "no_call_correctness_eq_1": false,
+      "wrapper_leakage_eq_0": true,
+      "overall_pass": false
+    },
+    "commitment_targets": {
+      "heldout_exact_validity_improved_vs_i9": true,
+      "read_file_exact_valid_emerged": true,
+      "scalar_substitution_not_rebounded_vs_i9": true,
+      "paraphrastic_or_no_anchor_success_nonzero": true,
+      "overall_pass": true
+    },
+    "collapse_watch": {
+      "active_triggers": [
+        "no_call_correctness_lt_1"
+      ],
+      "trigger_count": 1,
+      "overall_pass": false
+    }
+  },
+  "recommendation": {
+    "status": "halt_progression",
+    "promotion_authorized": false,
+    "canonicalization_authorized": false
+  }
+}
