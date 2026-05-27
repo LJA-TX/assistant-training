@@ -1,0 +1,40 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_i9",
+  "generated_utc": "2026-05-26T23:10:36Z",
+  "status": "training_and_canonical_eval_completed",
+  "training_started": true,
+  "training_started_utc": "2026-05-26T23:39:20Z",
+  "training_completed_utc": "2026-05-26T23:39:20Z",
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_i9.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_summary.json",
+    "dataset_leakage_report": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_leakage_report.json",
+    "intervention_declaration": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_intervention_declaration.json",
+    "readiness_criteria": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_training_eval_readiness_criteria.json",
+    "risk_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_expected_risk_assessment.json",
+    "prompt_ambiguity_audit": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_prompt_ambiguity_audit.json",
+    "collapse_watch_telemetry": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_collapse_watch_telemetry.json",
+    "anchor_dominance_telemetry": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_anchor_dominance_telemetry.json"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i9",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i9",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_i9",
+    "merge_output_expected": false
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "bounded_execution_authorization_2026-05-26",
+    "approved_utc": "2026-05-26T23:10:36Z"
+  },
+  "scaffold_notes": {
+    "implementation_phase": "bounded_training_and_eval_execution",
+    "dataset_generation_completed": true,
+    "training_started": true,
+    "canonical_eval_executed": true
+  }
+}

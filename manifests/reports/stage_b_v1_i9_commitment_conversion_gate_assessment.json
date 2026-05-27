@@ -1,0 +1,98 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T23:39:20Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md"
+  },
+  "sources": {
+    "canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_canonical_eval_summary.json",
+    "canonical_eval_rows": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T232239Z/comparison_rows.jsonl",
+    "i8_canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_canonical_eval_summary.json",
+    "i8_behavioral_analysis": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_parseability_behavioral_analysis.json",
+    "training_summary": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i9/training_summary.json"
+  },
+  "gate_results": {
+    "runtime_invariants": {
+      "no_call_correctness_eq_1": true,
+      "wrapper_leakage_eq_0": true,
+      "overall_pass": true
+    },
+    "commitment_conversion_targets": {
+      "heldout_exact_validity_improved_vs_i8": true,
+      "heldout_tool_name_accuracy_improved_vs_i8": true,
+      "semantic_substitution_share_reduced_vs_i8": false,
+      "near_canonical_to_exact_ratio_improved_vs_i8": true,
+      "overall_pass": true
+    },
+    "parseability_spill_guard": {
+      "payload_not_parsed_reduced_vs_i8": true,
+      "schema_spill_composite_not_regressed_vs_i8": true,
+      "heldout_invalid_json_not_worse_than_i8": false,
+      "overall_pass": false
+    }
+  },
+  "behavioral_shift": {
+    "i8_structural_near_miss_rate": 0.272059,
+    "i9_structural_near_miss_rate": 0.056,
+    "i8_semantic_substitution_rate": 0.705882,
+    "i9_semantic_substitution_rate": 0.896,
+    "i8_scalar_substitution_share": 0.264706,
+    "i9_scalar_substitution_share": 0.4,
+    "interpretation": "exact-valid improved with much lower near-canonical drift, but non-exact failures are now more dominated by semantic/scalar substitution."
+  },
+  "collapse_watch_summary": {
+    "active_triggers": [
+      "scalar_direct_substitution_rebound"
+    ],
+    "trigger_count": 1,
+    "trigger_details": {
+      "payload_not_parsed_rise_with_stagnant_exact": {
+        "i8_payload_not_parsed": 82,
+        "i9_payload_not_parsed": 75,
+        "i8_heldout_exact": 0.04,
+        "i9_heldout_exact": 0.15,
+        "triggered": false
+      },
+      "top1_behavioral_category_share_gt_0_70": {
+        "category": "textual_result_substitution",
+        "share": 0.496,
+        "threshold": 0.7,
+        "triggered": false
+      },
+      "scalar_direct_substitution_rebound": {
+        "i8_share": 0.264706,
+        "i9_share": 0.4,
+        "delta": 0.135294,
+        "threshold_delta": 0.05,
+        "triggered": true
+      },
+      "no_call_correctness_regressed": {
+        "i8": 1.0,
+        "i9": 1.0,
+        "triggered": false
+      },
+      "wrapper_leakage_appeared": {
+        "i8": 0.0,
+        "i9": 0.0,
+        "triggered": false
+      },
+      "single_anchor_dependence_strengthened": {
+        "literal_exact_share": 0.266667,
+        "threshold": 0.7,
+        "triggered": false
+      },
+      "paraphrastic_success_narrowed": {
+        "exact_success_buckets_nonzero": 3,
+        "triggered": false
+      }
+    }
+  },
+  "recommendation": {
+    "status": "continue_commitment_conversion_direction",
+    "promotion_authorized": false,
+    "reason": "Exact-valid and tool accuracy improved materially vs i8 while runtime invariants held; parseability remains weak and semantic substitution still dominant, so further bounded intervention is required before promotion consideration."
+  }
+}

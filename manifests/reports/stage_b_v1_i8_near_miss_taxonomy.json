@@ -1,0 +1,504 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T18:44:13Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "non_exact_tool_rows": 136,
+  "taxonomy": [
+    {
+      "category": "textual_result_substitution",
+      "count": 54,
+      "rate_within_non_exact_tool_rows": 0.397059,
+      "definition": "Model emits natural-language result statement instead of canonical serialization.",
+      "recoverability": "semantic_but_noncanonical",
+      "dominant_tools": [
+        {
+          "tool": "rg_search",
+          "count": 20
+        },
+        {
+          "tool": "read_file",
+          "count": 17
+        },
+        {
+          "tool": "find_files",
+          "count": 12
+        },
+        {
+          "tool": "archive_create",
+          "count": 4
+        },
+        {
+          "tool": "write_file",
+          "count": 1
+        }
+      ],
+      "sample_rows": [
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 1,
+          "expected_tool": "read_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:1080-1104:line_numbers,functions"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 8,
+          "expected_tool": "read_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "function get_service_path():\\n    return os.path.join(os.path.dirname(os.path.abspath(__file__)), '..','service.py')\\n\\n"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 10,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "function main"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 11,
+          "expected_tool": "read_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "Yes, _coerce_tool_arguments appears in /mnt/services/runtimes/assistant-runtime/server/agent.py line range 1500-1560."
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 14,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "match_count is 0"
+        }
+      ]
+    },
+    {
+      "category": "scalar_result_substitution_nonobject",
+      "count": 25,
+      "rate_within_non_exact_tool_rows": 0.183824,
+      "definition": "Model emits scalar result (count/exit-like value) instead of canonical tool payload object.",
+      "recoverability": "semantic_but_noncanonical",
+      "dominant_tools": [
+        {
+          "tool": "rg_search",
+          "count": 19
+        },
+        {
+          "tool": "archive_extract",
+          "count": 3
+        },
+        {
+          "tool": "git_status",
+          "count": 1
+        },
+        {
+          "tool": "git_diff",
+          "count": 1
+        },
+        {
+          "tool": "http_request",
+          "count": 1
+        }
+      ],
+      "sample_rows": [
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 6,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_object",
+          "parse_mode": "strict",
+          "generated_text_preview": "3"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 7,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_object",
+          "parse_mode": "strict",
+          "generated_text_preview": "1"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 9,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_object",
+          "parse_mode": "strict",
+          "generated_text_preview": "3"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 24,
+          "expected_tool": "git_status",
+          "schema_reason": "payload_not_object",
+          "parse_mode": "strict",
+          "generated_text_preview": "0"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 31,
+          "expected_tool": "git_diff",
+          "schema_reason": "payload_not_object",
+          "parse_mode": "strict",
+          "generated_text_preview": "120"
+        }
+      ]
+    },
+    {
+      "category": "near_canonical_wrapper_key_drift",
+      "count": 19,
+      "rate_within_non_exact_tool_rows": 0.139706,
+      "definition": "Model emits tool-like JSON with non-canonical top-level key (e.g., tool_function/tool_functions).",
+      "recoverability": "high_structural",
+      "dominant_tools": [
+        {
+          "tool": "rg_search",
+          "count": 5
+        },
+        {
+          "tool": "read_file",
+          "count": 3
+        },
+        {
+          "tool": "copy_path",
+          "count": 3
+        },
+        {
+          "tool": "write_file",
+          "count": 2
+        },
+        {
+          "tool": "apply_unified_diff",
+          "count": 2
+        },
+        {
+          "tool": "list_tools",
+          "count": 1
+        }
+      ],
+      "sample_rows": [
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 3,
+          "expected_tool": "read_file",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"line_end\":1560,\"line_start\":1500,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}]}"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 12,
+          "expected_tool": "list_tools",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"include_parameters\":true},\"name\":\"list_tools\"},\"type\":\"function\"}]}"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 17,
+          "expected_tool": "rg_search",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 19,
+          "expected_tool": "service_control",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"action\":\"status\",\"service\":\"assistant-runtime\",\"timeout_s\":20},\"name\":\"service_control\"},\"type\":\"function\"}]}"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 21,
+          "expected_tool": "write_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "{\"tool_functions\":{\"write_file\":{\"arguments\":{\"content\":\"alpha\\n\",\"overwrite\":true,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp\"},\"name\":\"write_file\"},\"tool_module\":{\"arguments\":{},\"name\":\"os\"},\"t"
+        }
+      ]
+    },
+    {
+      "category": "near_canonical_missing_tool_calls_envelope",
+      "count": 16,
+      "rate_within_non_exact_tool_rows": 0.117647,
+      "definition": "Model emits function/name/arguments object but omits required top-level tool_calls array envelope.",
+      "recoverability": "high_structural",
+      "dominant_tools": [
+        {
+          "tool": "debug_tools",
+          "count": 7
+        },
+        {
+          "tool": "check_service_health",
+          "count": 5
+        },
+        {
+          "tool": "run_command",
+          "count": 2
+        },
+        {
+          "tool": "read_file",
+          "count": 2
+        }
+      ],
+      "sample_rows": [
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 29,
+          "expected_tool": "run_command",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"function\":{\"arguments\":{\"command\":\"pwd\"},\"name\":\"run_command\"},\"type\":\"function\"}"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 73,
+          "expected_tool": "run_command",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"function\":{\"arguments\":{\"command\":\"whoami\"},\"name\":\"run_command\"},\"type\":\"function\"}"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 86,
+          "expected_tool": "read_file",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"function\":{\"arguments\":{\"line_end\":1104,\"line_start\":1080,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 97,
+          "expected_tool": "read_file",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"function\":{\"arguments\":{\"line_end\":1104,\"line_start\":1080,\"path\":\"/mnt/services/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}"
+        },
+        {
+          "split": "tool_holdout",
+          "row_index_1based": 7,
+          "expected_tool": "check_service_health",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"function\":{\"arguments\":{\"url\":\"http://127.0.0.1:8100/health\"},\"name\":\"check_service_health\"},\"type\":\"function\"}"
+        }
+      ]
+    },
+    {
+      "category": "scalar_or_token_result_substitution",
+      "count": 11,
+      "rate_within_non_exact_tool_rows": 0.080882,
+      "definition": "Model emits short scalar/token answer (version/hash/time/symbol) instead of tool payload.",
+      "recoverability": "semantic_but_noncanonical",
+      "dominant_tools": [
+        {
+          "tool": "get_system_datetime",
+          "count": 6
+        },
+        {
+          "tool": "read_file",
+          "count": 3
+        },
+        {
+          "tool": "sha256_file",
+          "count": 1
+        },
+        {
+          "tool": "run_command",
+          "count": 1
+        }
+      ],
+      "sample_rows": [
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 57,
+          "expected_tool": "read_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "_runtimes_assistant_runtime_server_agent_"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 60,
+          "expected_tool": "sha256_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "0e1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 63,
+          "expected_tool": "read_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "True"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 66,
+          "expected_tool": "run_command",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "2022-11-30 16:20:00"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 78,
+          "expected_tool": "read_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "__file__"
+        }
+      ]
+    },
+    {
+      "category": "code_excerpt_result_substitution",
+      "count": 6,
+      "rate_within_non_exact_tool_rows": 0.044118,
+      "definition": "Model emits code/file excerpt content instead of tool-call JSON.",
+      "recoverability": "semantic_but_noncanonical",
+      "dominant_tools": [
+        {
+          "tool": "rg_search",
+          "count": 4
+        },
+        {
+          "tool": "read_file",
+          "count": 2
+        }
+      ],
+      "sample_rows": [
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 4,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 15,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 41,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 74,
+          "expected_tool": "read_file",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "import os\\nimport sys\\nimport traceback\\n\\ndef main():\\n    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'agent.py')\\n    with open(path, 'r') as f:\\n        content = f.read()\\n    lines = content.spl"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 95,
+          "expected_tool": "rg_search",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+        }
+      ]
+    },
+    {
+      "category": "other_malformed_nonjson",
+      "count": 3,
+      "rate_within_non_exact_tool_rows": 0.022059,
+      "definition": "Malformed non-JSON output not clearly recoverable by simple wrapper/key repair.",
+      "recoverability": "low_or_unclear",
+      "dominant_tools": [
+        {
+          "tool": "stat_path",
+          "count": 2
+        },
+        {
+          "tool": "get_system_version",
+          "count": 1
+        }
+      ],
+      "sample_rows": [
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 13,
+          "expected_tool": "stat_path",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "True/regular file"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 42,
+          "expected_tool": "get_system_version",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "3.2.3"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 58,
+          "expected_tool": "stat_path",
+          "schema_reason": "payload_not_parsed",
+          "parse_mode": "invalid",
+          "generated_text_preview": "True/dict"
+        }
+      ]
+    },
+    {
+      "category": "noncanonical_object_missing_tool_calls",
+      "count": 2,
+      "rate_within_non_exact_tool_rows": 0.014706,
+      "definition": "Model emits JSON object missing canonical tool_calls semantics; partially structured but incomplete.",
+      "recoverability": "medium_structural",
+      "dominant_tools": [
+        {
+          "tool": "json_edit",
+          "count": 1
+        },
+        {
+          "tool": "check_service_health",
+          "count": 1
+        }
+      ],
+      "sample_rows": [
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 50,
+          "expected_tool": "json_edit",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"changed\":true,\"json\":{\"alpha\":1,\"items\":[1,2]},\"type\":\"object\"}"
+        },
+        {
+          "split": "heldout_validation",
+          "row_index_1based": 94,
+          "expected_tool": "check_service_health",
+          "schema_reason": "missing_tool_calls",
+          "parse_mode": "strict",
+          "generated_text_preview": "{\"health\":{\"models\":{\"http://127.0.0.1:8100/v1/models\":{\"status\":\"ok\"}}}}"
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "structural_near_miss_count": 37,
+    "structural_near_miss_rate": 0.272059,
+    "semantic_result_substitution_count": 96,
+    "semantic_result_substitution_rate": 0.705882,
+    "low_clarity_or_other_count": 3,
+    "low_clarity_or_other_rate": 0.022059
+  }
+}

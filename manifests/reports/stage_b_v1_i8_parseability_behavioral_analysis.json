@@ -1,0 +1,249 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T18:44:13Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "scope": "parseability_behavioral_forensics",
+  "sources": {
+    "i8_canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_canonical_eval_summary.json",
+    "i8_gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_parseability_spill_guard_gate_assessment.json",
+    "i8_eval_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T172855Z/summary.json",
+    "i8_comparison_rows": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T172855Z/comparison_rows.jsonl",
+    "i7_eval_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T115513Z/summary.json",
+    "i7_comparison_rows": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T115513Z/comparison_rows.jsonl"
+  },
+  "focus_tools": [
+    "rg_search",
+    "read_file"
+  ],
+  "dataset_freeze_confirmation": {
+    "no_dataset_mutation": true,
+    "no_training_executed": true,
+    "no_eval_rerun_executed": true
+  },
+  "core_metrics_context": {
+    "heldout_invalid_json": {
+      "i3": 0.43,
+      "i6": 0.39,
+      "i7": 0.66,
+      "i8": 0.57
+    },
+    "tool_expected_counts_i8": {
+      "payload_not_parsed": 82,
+      "payload_not_object": 25,
+      "missing_tool_calls": 29,
+      "spill_composite": 54
+    },
+    "parse_modes_i8": {
+      "invalid": 82,
+      "strict": 57,
+      "embedded": 1
+    }
+  },
+  "commitment_failure_modes": {
+    "non_exact_tool_rows": 136,
+    "category_counts": {
+      "textual_result_substitution": 54,
+      "near_canonical_wrapper_key_drift": 19,
+      "code_excerpt_result_substitution": 6,
+      "scalar_result_substitution_nonobject": 25,
+      "other_malformed_nonjson": 3,
+      "near_canonical_missing_tool_calls_envelope": 16,
+      "noncanonical_object_missing_tool_calls": 2,
+      "scalar_or_token_result_substitution": 11
+    },
+    "category_rates": {
+      "textual_result_substitution": 0.397059,
+      "near_canonical_wrapper_key_drift": 0.139706,
+      "code_excerpt_result_substitution": 0.044118,
+      "scalar_result_substitution_nonobject": 0.183824,
+      "other_malformed_nonjson": 0.022059,
+      "near_canonical_missing_tool_calls_envelope": 0.117647,
+      "noncanonical_object_missing_tool_calls": 0.014706,
+      "scalar_or_token_result_substitution": 0.080882
+    },
+    "structural_near_miss_count": 37,
+    "structural_near_miss_rate": 0.272059,
+    "semantic_result_substitution_count": 96,
+    "semantic_result_substitution_rate": 0.705882,
+    "refusal_like_count": 0,
+    "decode_cap_pressure": {
+      "max_new_tokens": 64,
+      "rows_at_or_near_cap": 14,
+      "rate": 0.102941
+    }
+  },
+  "parseability_vs_spill_tradeoff_signature": {
+    "i7_to_i8": {
+      "heldout_invalid_json_delta": -0.09,
+      "payload_not_parsed_delta": 1,
+      "payload_not_object_delta": -14,
+      "missing_tool_calls_delta": 11,
+      "spill_composite_delta": -3
+    },
+    "interpretation": "spill improved modestly via fewer payload_not_object errors, but parseability did not recover and missing_tool_calls increased."
+  },
+  "canonical_emission_confidence_signals": {
+    "exact_valid_rows": 4,
+    "exact_valid_tools": {
+      "rg_search": 4
+    },
+    "lexical_anchor_dependence_on_tool_calls_pattern": true,
+    "rg_search_pattern_success": {
+      "pattern_coerce_tool_arguments_literal": {
+        "total": 4,
+        "exact_valid": 0
+      },
+      "pattern_contract_violation_literal": {
+        "total": 9,
+        "exact_valid": 0
+      },
+      "pattern_def_create_app_literal": {
+        "total": 9,
+        "exact_valid": 0
+      },
+      "pattern_regex_complex": {
+        "total": 8,
+        "exact_valid": 0
+      },
+      "pattern_tool_calls_literal": {
+        "total": 6,
+        "exact_valid": 4
+      },
+      "pattern_tool_parse_mode_literal": {
+        "total": 8,
+        "exact_valid": 0
+      },
+      "pattern_validate_tool_arguments_literal": {
+        "total": 8,
+        "exact_valid": 0
+      }
+    },
+    "on_task_marker_rate_by_tool_failures": {
+      "rg_search": 0.541667,
+      "read_file": 0.851852
+    }
+  },
+  "i7_to_i8_behavioral_shift": [
+    {
+      "category": "code_excerpt_result_substitution",
+      "i7_count": 0,
+      "i8_count": 6,
+      "delta_count_i8_minus_i7": 6,
+      "i7_rate": 0.0,
+      "i8_rate": 0.044118,
+      "delta_rate": 0.044118
+    },
+    {
+      "category": "near_canonical_missing_tool_calls_envelope",
+      "i7_count": 2,
+      "i8_count": 16,
+      "delta_count_i8_minus_i7": 14,
+      "i7_rate": 0.014286,
+      "i8_rate": 0.117647,
+      "delta_rate": 0.103361
+    },
+    {
+      "category": "near_canonical_wrapper_key_drift",
+      "i7_count": 0,
+      "i8_count": 19,
+      "delta_count_i8_minus_i7": 19,
+      "i7_rate": 0.0,
+      "i8_rate": 0.139706,
+      "delta_rate": 0.139706
+    },
+    {
+      "category": "noncanonical_object_missing_tool_calls",
+      "i7_count": 16,
+      "i8_count": 2,
+      "delta_count_i8_minus_i7": -14,
+      "i7_rate": 0.114286,
+      "i8_rate": 0.014706,
+      "delta_rate": -0.09958
+    },
+    {
+      "category": "other_failure_mode",
+      "i7_count": 2,
+      "i8_count": 0,
+      "delta_count_i8_minus_i7": -2,
+      "i7_rate": 0.014286,
+      "i8_rate": 0.0,
+      "delta_rate": -0.014286
+    },
+    {
+      "category": "other_malformed_nonjson",
+      "i7_count": 10,
+      "i8_count": 3,
+      "delta_count_i8_minus_i7": -7,
+      "i7_rate": 0.071429,
+      "i8_rate": 0.022059,
+      "delta_rate": -0.04937
+    },
+    {
+      "category": "partial_json_truncated_at_decode_cap",
+      "i7_count": 1,
+      "i8_count": 0,
+      "delta_count_i8_minus_i7": -1,
+      "i7_rate": 0.007143,
+      "i8_rate": 0.0,
+      "delta_rate": -0.007143
+    },
+    {
+      "category": "scalar_or_token_result_substitution",
+      "i7_count": 34,
+      "i8_count": 11,
+      "delta_count_i8_minus_i7": -23,
+      "i7_rate": 0.242857,
+      "i8_rate": 0.080882,
+      "delta_rate": -0.161975
+    },
+    {
+      "category": "scalar_result_substitution_nonobject",
+      "i7_count": 39,
+      "i8_count": 25,
+      "delta_count_i8_minus_i7": -14,
+      "i7_rate": 0.278571,
+      "i8_rate": 0.183824,
+      "delta_rate": -0.094748
+    },
+    {
+      "category": "textual_result_substitution",
+      "i7_count": 36,
+      "i8_count": 54,
+      "delta_count_i8_minus_i7": 18,
+      "i7_rate": 0.257143,
+      "i8_rate": 0.397059,
+      "delta_rate": 0.139916
+    }
+  ],
+  "dominant_behavioral_hypothesis": {
+    "label": "serialization_inhibition_with_uncertainty_aversion",
+    "summary": "Model frequently outputs task-result content or near-canonical envelope variants instead of committing to canonical tool_calls serialization.",
+    "evidence_points": [
+      "High semantic substitution share in non-exact rows.",
+      "High structural near-miss share with correct tool-name literals.",
+      "Exact-valid success concentrated in lexically anchored rg_search pattern_tool_calls prompts.",
+      "Spill composite improved while payload_not_parsed remained high."
+    ]
+  },
+  "required_explicit_conclusions": {
+    "1_regime": "serialization inhibition with uncertainty-averse non-commitment; not primary task misunderstanding.",
+    "2_structural_vs_semantic": "failures are predominantly semantically on-task but non-canonical (result substitution), with substantial structural near-miss subset.",
+    "3_knows_what_to_do": "yes in many cases; outputs often contain expected tool names/arguments or plausible task results, but canonical envelope commitment fails.",
+    "4_metrics_hiding_near_success": "yes; invalid_json/invalid_schema aggregate hides near-canonical wrapper-key drift and semantically correct result-substitution attempts.",
+    "5_more_dataset_hygiene_help": "likely low-to-moderate marginal impact alone; hygiene already improved spill stability without parseability recovery.",
+    "6_most_likely_leverage_point": "target canonical-emission commitment training that rewards exact envelope serialization under uncertainty while preserving current spill/no-call invariants."
+  },
+  "recommended_next_direction": {
+    "phase": "bounded intervention-design",
+    "objective": "increase canonical payload commitment probability (tool_calls envelope + parser-safe emission) without reintroducing spill collapse",
+    "candidate_intervention_types": [
+      "commitment-focused near-miss repair curriculum (wrapper-key/key-path normalization exemplars)",
+      "uncertainty-conditioned canonical fallback exemplars (when uncertain, still emit syntactically valid tool_calls payload)",
+      "decode-cap stress probes and shorter canonical serialization anchors for long-output substitution cases"
+    ],
+    "do_not_do": [
+      "broad dataset hygiene rewrites as primary lever",
+      "global negation-heavy constraints likely to recreate overconstraint collapse"
+    ]
+  }
+}

@@ -1,0 +1,777 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T18:44:13Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "focus_tools": [
+    "rg_search",
+    "read_file"
+  ],
+  "clusters": {
+    "rg_search": {
+      "tool_expected_rows": 52,
+      "exact_valid_rows": 4,
+      "failure_rows": 48,
+      "exact_valid_rate": 0.076923,
+      "behavioral_category_counts": {
+        "code_excerpt_result_substitution": 4,
+        "scalar_result_substitution_nonobject": 19,
+        "textual_result_substitution": 20,
+        "near_canonical_wrapper_key_drift": 5
+      },
+      "prompt_intent_counts": {
+        "symbol_extraction": 8,
+        "match_count_only": 19,
+        "binary_presence_report": 9,
+        "other": 8,
+        "range_presence_check": 4
+      },
+      "argument_signature_counts": {
+        "pattern_regex_complex": 8,
+        "pattern_def_create_app_literal": 9,
+        "pattern_tool_calls_literal": 2,
+        "pattern_contract_violation_literal": 9,
+        "pattern_tool_parse_mode_literal": 8,
+        "pattern_validate_tool_arguments_literal": 8,
+        "pattern_coerce_tool_arguments_literal": 4
+      },
+      "ranked_clusters": [
+        {
+          "cluster_id": "rg_search:scalar_result_substitution_nonobject:match_count_only:pattern_def_create_app_literal",
+          "behavioral_category": "scalar_result_substitution_nonobject",
+          "prompt_intent": "match_count_only",
+          "argument_signature": "pattern_def_create_app_literal",
+          "count": 9,
+          "share_within_tool_failures": 0.1875,
+          "schema_reasons": {
+            "payload_not_object": 9
+          },
+          "parse_modes": {
+            "strict": 9
+          },
+          "token_length": {
+            "mean": 1,
+            "median": 1.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 0.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 6,
+              "generated_text_preview": "3"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 9,
+              "generated_text_preview": "3"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 34,
+              "generated_text_preview": "3"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 43,
+              "generated_text_preview": "1"
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:textual_result_substitution:other:pattern_validate_tool_arguments_literal",
+          "behavioral_category": "textual_result_substitution",
+          "prompt_intent": "other",
+          "argument_signature": "pattern_validate_tool_arguments_literal",
+          "count": 6,
+          "share_within_tool_failures": 0.125,
+          "schema_reasons": {
+            "payload_not_parsed": 6
+          },
+          "parse_modes": {
+            "invalid": 6
+          },
+          "token_length": {
+            "mean": 18,
+            "median": 16.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 22,
+              "generated_text_preview": "/mnt/services/runtimes/assistant-runtime/server/agent.py:100"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 44,
+              "generated_text_preview": "/mnt/services/runtimes/assistant-runtime/server/agent.py:100"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 65,
+              "generated_text_preview": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:100"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 70,
+              "generated_text_preview": "/mnt/services/runtimes/assistant-runtime/server/agent.py:1006"
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:scalar_result_substitution_nonobject:match_count_only:pattern_tool_parse_mode_literal",
+          "behavioral_category": "scalar_result_substitution_nonobject",
+          "prompt_intent": "match_count_only",
+          "argument_signature": "pattern_tool_parse_mode_literal",
+          "count": 6,
+          "share_within_tool_failures": 0.125,
+          "schema_reasons": {
+            "payload_not_object": 6
+          },
+          "parse_modes": {
+            "strict": 6
+          },
+          "token_length": {
+            "mean": 1,
+            "median": 1.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 0.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 39,
+              "generated_text_preview": "1"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 45,
+              "generated_text_preview": "1"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 47,
+              "generated_text_preview": "1"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 59,
+              "generated_text_preview": "1"
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:near_canonical_wrapper_key_drift:binary_presence_report:pattern_contract_violation_literal",
+          "behavioral_category": "near_canonical_wrapper_key_drift",
+          "prompt_intent": "binary_presence_report",
+          "argument_signature": "pattern_contract_violation_literal",
+          "count": 5,
+          "share_within_tool_failures": 0.104167,
+          "schema_reasons": {
+            "missing_tool_calls": 5
+          },
+          "parse_modes": {
+            "strict": 5
+          },
+          "token_length": {
+            "mean": 51.8,
+            "median": 51.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 1.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 17,
+              "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 27,
+              "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/mnt/services/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 93,
+              "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 96,
+              "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"path\":\"/mnt/services/runtimes/assistant-runtime/server/agent.py\",\"pattern\":\"Contract violation: all tool calls were invalid; no valid tool execution occurred.\"},\"name\":\"rg_se"
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:code_excerpt_result_substitution:symbol_extraction:pattern_regex_complex",
+          "behavioral_category": "code_excerpt_result_substitution",
+          "prompt_intent": "symbol_extraction",
+          "argument_signature": "pattern_regex_complex",
+          "count": 4,
+          "share_within_tool_failures": 0.083333,
+          "schema_reasons": {
+            "payload_not_parsed": 4
+          },
+          "parse_modes": {
+            "invalid": 4
+          },
+          "token_length": {
+            "mean": 63,
+            "median": 63.0,
+            "at_decode_cap_count": 4
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 0.75,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 4,
+              "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 15,
+              "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 41,
+              "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 95,
+              "generated_text_preview": "from __future__ import annotations\\nimport os\\nimport sys\\nimport typing\\nfrom typing import TYPE_CHECKING\\nif TYPE_CHECKING:\\n    from.agent import Agent\\n\\ndef read_file(path: str, line_count: int = 1) -> str:\\n    wit"
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:textual_result_substitution:symbol_extraction:pattern_regex_complex",
+          "behavioral_category": "textual_result_substitution",
+          "prompt_intent": "symbol_extraction",
+          "argument_signature": "pattern_regex_complex",
+          "count": 4,
+          "share_within_tool_failures": 0.083333,
+          "schema_reasons": {
+            "payload_not_parsed": 4
+          },
+          "parse_modes": {
+            "invalid": 4
+          },
+          "token_length": {
+            "mean": 2,
+            "median": 2.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 10,
+              "generated_text_preview": "function main"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 28,
+              "generated_text_preview": "function main"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 55,
+              "generated_text_preview": "function main"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 77,
+              "generated_text_preview": "function main"
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:textual_result_substitution:binary_presence_report:pattern_contract_violation_literal",
+          "behavioral_category": "textual_result_substitution",
+          "prompt_intent": "binary_presence_report",
+          "argument_signature": "pattern_contract_violation_literal",
+          "count": 4,
+          "share_within_tool_failures": 0.083333,
+          "schema_reasons": {
+            "payload_not_parsed": 4
+          },
+          "parse_modes": {
+            "invalid": 4
+          },
+          "token_length": {
+            "mean": 5,
+            "median": 5.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 14,
+              "generated_text_preview": "match_count is 0"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 30,
+              "generated_text_preview": "match_count is 0"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 68,
+              "generated_text_preview": "match_count is 0"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 75,
+              "generated_text_preview": "match_count is 0"
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:textual_result_substitution:range_presence_check:pattern_coerce_tool_arguments_literal",
+          "behavioral_category": "textual_result_substitution",
+          "prompt_intent": "range_presence_check",
+          "argument_signature": "pattern_coerce_tool_arguments_literal",
+          "count": 4,
+          "share_within_tool_failures": 0.083333,
+          "schema_reasons": {
+            "payload_not_parsed": 4
+          },
+          "parse_modes": {
+            "invalid": 4
+          },
+          "token_length": {
+            "mean": 30.5,
+            "median": 30.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 49,
+              "generated_text_preview": "Yes, _coerce_tool_arguments appears in /mnt/services/runtimes/assistant-runtime/server/agent.py lines 1500-1560."
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 53,
+              "generated_text_preview": "Yes, _coerce_tool_arguments appears in /mnt/services/runtimes/assistant-runtime/server/agent.py lines 1500-1560."
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 79,
+              "generated_text_preview": "Yes, _coerce_tool_arguments appears in /mnt/services/runtimes/assistant-runtime/server/agent.py lines 1500-1560."
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 84,
+              "generated_text_preview": "Yes, _coerce_tool_arguments appears in /opt/ai-stack/runtimes/assistant-runtime/server/agent.py lines 1500-1560."
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:scalar_result_substitution_nonobject:match_count_only:pattern_tool_calls_literal",
+          "behavioral_category": "scalar_result_substitution_nonobject",
+          "prompt_intent": "match_count_only",
+          "argument_signature": "pattern_tool_calls_literal",
+          "count": 2,
+          "share_within_tool_failures": 0.041667,
+          "schema_reasons": {
+            "payload_not_object": 2
+          },
+          "parse_modes": {
+            "strict": 2
+          },
+          "token_length": {
+            "mean": 1,
+            "median": 1.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 0.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 7,
+              "generated_text_preview": "1"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 32,
+              "generated_text_preview": "1"
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:textual_result_substitution:match_count_only:pattern_tool_parse_mode_literal",
+          "behavioral_category": "textual_result_substitution",
+          "prompt_intent": "match_count_only",
+          "argument_signature": "pattern_tool_parse_mode_literal",
+          "count": 2,
+          "share_within_tool_failures": 0.041667,
+          "schema_reasons": {
+            "payload_not_parsed": 2
+          },
+          "parse_modes": {
+            "invalid": 2
+          },
+          "token_length": {
+            "mean": 4,
+            "median": 4.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 0.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 18,
+              "generated_text_preview": "1 match found."
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 69,
+              "generated_text_preview": "1 match found."
+            }
+          ]
+        },
+        {
+          "cluster_id": "rg_search:scalar_result_substitution_nonobject:other:pattern_validate_tool_arguments_literal",
+          "behavioral_category": "scalar_result_substitution_nonobject",
+          "prompt_intent": "other",
+          "argument_signature": "pattern_validate_tool_arguments_literal",
+          "count": 2,
+          "share_within_tool_failures": 0.041667,
+          "schema_reasons": {
+            "payload_not_object": 2
+          },
+          "parse_modes": {
+            "strict": 2
+          },
+          "token_length": {
+            "mean": 1,
+            "median": 1.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 0.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 52,
+              "generated_text_preview": "1"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 64,
+              "generated_text_preview": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "read_file": {
+      "tool_expected_rows": 27,
+      "exact_valid_rows": 0,
+      "failure_rows": 27,
+      "exact_valid_rate": 0.0,
+      "behavioral_category_counts": {
+        "textual_result_substitution": 17,
+        "near_canonical_wrapper_key_drift": 3,
+        "scalar_or_token_result_substitution": 3,
+        "code_excerpt_result_substitution": 2,
+        "near_canonical_missing_tool_calls_envelope": 2
+      },
+      "prompt_intent_counts": {
+        "symbol_extraction": 20,
+        "range_presence_check": 7
+      },
+      "argument_signature_counts": {
+        "range_1080_1104": 13,
+        "range_1500_1560": 7,
+        "range_1_25": 7
+      },
+      "ranked_clusters": [
+        {
+          "cluster_id": "read_file:textual_result_substitution:symbol_extraction:range_1_25",
+          "behavioral_category": "textual_result_substitution",
+          "prompt_intent": "symbol_extraction",
+          "argument_signature": "range_1_25",
+          "count": 7,
+          "share_within_tool_failures": 0.259259,
+          "schema_reasons": {
+            "payload_not_parsed": 7
+          },
+          "parse_modes": {
+            "invalid": 7
+          },
+          "token_length": {
+            "mean": 9.286,
+            "median": 3.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 8,
+              "generated_text_preview": "function get_service_path():\\n    return os.path.join(os.path.dirname(os.path.abspath(__file__)), '..','service.py')\\n\\n"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 23,
+              "generated_text_preview": "function get_service_path():\\n    return \"/mnt/services/runtimes/assistant-runtime/server/service.py\""
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 25,
+              "generated_text_preview": "function main():"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 26,
+              "generated_text_preview": "function main"
+            }
+          ]
+        },
+        {
+          "cluster_id": "read_file:textual_result_substitution:symbol_extraction:range_1080_1104",
+          "behavioral_category": "textual_result_substitution",
+          "prompt_intent": "symbol_extraction",
+          "argument_signature": "range_1080_1104",
+          "count": 6,
+          "share_within_tool_failures": 0.222222,
+          "schema_reasons": {
+            "payload_not_parsed": 6
+          },
+          "parse_modes": {
+            "invalid": 6
+          },
+          "token_length": {
+            "mean": 20.833,
+            "median": 23.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.166667,
+          "on_task_marker_rate": 0.833333,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 1,
+              "generated_text_preview": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:1080-1104:line_numbers,functions"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 16,
+              "generated_text_preview": "/mnt/services/runtimes/assistant-runtime/server/agent.py:1080-1104:__init__"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 37,
+              "generated_text_preview": "def _read_file(path, line_count):"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 40,
+              "generated_text_preview": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:1080-1104:__init__"
+            }
+          ]
+        },
+        {
+          "cluster_id": "read_file:textual_result_substitution:range_presence_check:range_1500_1560",
+          "behavioral_category": "textual_result_substitution",
+          "prompt_intent": "range_presence_check",
+          "argument_signature": "range_1500_1560",
+          "count": 4,
+          "share_within_tool_failures": 0.148148,
+          "schema_reasons": {
+            "payload_not_parsed": 4
+          },
+          "parse_modes": {
+            "invalid": 4
+          },
+          "token_length": {
+            "mean": 39.25,
+            "median": 31.5,
+            "at_decode_cap_count": 1
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 11,
+              "generated_text_preview": "Yes, _coerce_tool_arguments appears in /mnt/services/runtimes/assistant-runtime/server/agent.py line range 1500-1560."
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 33,
+              "generated_text_preview": "Yes, _coerce_tool_arguments appears in /opt/ai-stack/runtimes/assistant-runtime/server/agent.py lines 1500-1560."
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 36,
+              "generated_text_preview": "Yes, _coerce_tool_arguments appears in /mnt/services/runtimes/assistant-runtime/server/agent.py lines 1500-1560."
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 56,
+              "generated_text_preview": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:1500-1560\\ndef _coerce_tool_arguments(self, tool_arguments):\\n    \"\"\"\\n    Coerce tool arguments to the expected type.\\n\\n    :param tool_arguments: Tool arguments"
+            }
+          ]
+        },
+        {
+          "cluster_id": "read_file:near_canonical_wrapper_key_drift:range_presence_check:range_1500_1560",
+          "behavioral_category": "near_canonical_wrapper_key_drift",
+          "prompt_intent": "range_presence_check",
+          "argument_signature": "range_1500_1560",
+          "count": 2,
+          "share_within_tool_failures": 0.074074,
+          "schema_reasons": {
+            "missing_tool_calls": 1,
+            "payload_not_parsed": 1
+          },
+          "parse_modes": {
+            "strict": 1,
+            "invalid": 1
+          },
+          "token_length": {
+            "mean": 55.5,
+            "median": 55.5,
+            "at_decode_cap_count": 1
+          },
+          "expected_tool_name_literal_in_output_rate": 1.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 3,
+              "generated_text_preview": "{\"tool_functions\":[{\"function\":{\"arguments\":{\"line_end\":1560,\"line_start\":1500,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}]}"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 87,
+              "generated_text_preview": "{\"tool_functions\":{\"coerce_tool_arguments\":{\"arguments\":{},\"function\":{\"arguments\":{},\"name\":\"coerce_tool_arguments\"},\"type\":\"function\"},\"read_file\":{\"arguments\":{\"path\":\"/mnt/services/runtimes/assistant-runtime/server/a"
+            }
+          ]
+        },
+        {
+          "cluster_id": "read_file:scalar_or_token_result_substitution:symbol_extraction:range_1080_1104",
+          "behavioral_category": "scalar_or_token_result_substitution",
+          "prompt_intent": "symbol_extraction",
+          "argument_signature": "range_1080_1104",
+          "count": 2,
+          "share_within_tool_failures": 0.074074,
+          "schema_reasons": {
+            "payload_not_parsed": 2
+          },
+          "parse_modes": {
+            "invalid": 2
+          },
+          "token_length": {
+            "mean": 6,
+            "median": 6.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 0.0,
+          "on_task_marker_rate": 0.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 57,
+              "generated_text_preview": "_runtimes_assistant_runtime_server_agent_"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 78,
+              "generated_text_preview": "__file__"
+            }
+          ]
+        },
+        {
+          "cluster_id": "read_file:code_excerpt_result_substitution:symbol_extraction:range_1080_1104",
+          "behavioral_category": "code_excerpt_result_substitution",
+          "prompt_intent": "symbol_extraction",
+          "argument_signature": "range_1080_1104",
+          "count": 2,
+          "share_within_tool_failures": 0.074074,
+          "schema_reasons": {
+            "payload_not_parsed": 2
+          },
+          "parse_modes": {
+            "invalid": 2
+          },
+          "token_length": {
+            "mean": 63.5,
+            "median": 63.5,
+            "at_decode_cap_count": 2
+          },
+          "expected_tool_name_literal_in_output_rate": 0.5,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 74,
+              "generated_text_preview": "import os\\nimport sys\\nimport traceback\\n\\ndef main():\\n    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'agent.py')\\n    with open(path, 'r') as f:\\n        content = f.read()\\n    lines = content.spl"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 98,
+              "generated_text_preview": "line 1080: def _read_file(path):\\nline 1081: with open(path, 'r') as f:\\nline 1082: return f.read()\\nline 1083:\\nline 1084: def read_file(path):\\nline 1085: return _read"
+            }
+          ]
+        },
+        {
+          "cluster_id": "read_file:near_canonical_missing_tool_calls_envelope:symbol_extraction:range_1080_1104",
+          "behavioral_category": "near_canonical_missing_tool_calls_envelope",
+          "prompt_intent": "symbol_extraction",
+          "argument_signature": "range_1080_1104",
+          "count": 2,
+          "share_within_tool_failures": 0.074074,
+          "schema_reasons": {
+            "missing_tool_calls": 2
+          },
+          "parse_modes": {
+            "strict": 2
+          },
+          "token_length": {
+            "mean": 42,
+            "median": 42.0,
+            "at_decode_cap_count": 0
+          },
+          "expected_tool_name_literal_in_output_rate": 1.0,
+          "on_task_marker_rate": 1.0,
+          "sample_rows": [
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 86,
+              "generated_text_preview": "{\"function\":{\"arguments\":{\"line_end\":1104,\"line_start\":1080,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}"
+            },
+            {
+              "split": "heldout_validation",
+              "row_index_1based": 97,
+              "generated_text_preview": "{\"function\":{\"arguments\":{\"line_end\":1104,\"line_start\":1080,\"path\":\"/mnt/services/runtimes/assistant-runtime/server/agent.py\"},\"name\":\"read_file\"},\"type\":\"function\"}"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cross_tool_observations": {
+    "rg_search_exact_valid_exists": true,
+    "read_file_exact_valid_exists": false,
+    "rg_search_dominant_failure": "textual_result_substitution",
+    "read_file_dominant_failure": "textual_result_substitution"
+  }
+}

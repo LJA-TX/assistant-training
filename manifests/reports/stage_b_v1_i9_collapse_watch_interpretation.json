@@ -1,0 +1,51 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T23:39:20Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "active_triggers": [
+    "scalar_direct_substitution_rebound"
+  ],
+  "trigger_count": 1,
+  "conditions": {
+    "payload_not_parsed_rise_with_stagnant_exact": {
+      "i8_payload_not_parsed": 82,
+      "i9_payload_not_parsed": 75,
+      "i8_heldout_exact": 0.04,
+      "i9_heldout_exact": 0.15,
+      "triggered": false
+    },
+    "top1_behavioral_category_share_gt_0_70": {
+      "category": "textual_result_substitution",
+      "share": 0.496,
+      "threshold": 0.7,
+      "triggered": false
+    },
+    "scalar_direct_substitution_rebound": {
+      "i8_share": 0.264706,
+      "i9_share": 0.4,
+      "delta": 0.135294,
+      "threshold_delta": 0.05,
+      "triggered": true
+    },
+    "no_call_correctness_regressed": {
+      "i8": 1.0,
+      "i9": 1.0,
+      "triggered": false
+    },
+    "wrapper_leakage_appeared": {
+      "i8": 0.0,
+      "i9": 0.0,
+      "triggered": false
+    },
+    "single_anchor_dependence_strengthened": {
+      "literal_exact_share": 0.266667,
+      "threshold": 0.7,
+      "triggered": false
+    },
+    "paraphrastic_success_narrowed": {
+      "exact_success_buckets_nonzero": 3,
+      "triggered": false
+    }
+  },
+  "status": "abort_or_halt_recommended"
+}

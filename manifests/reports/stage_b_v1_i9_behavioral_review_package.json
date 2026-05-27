@@ -1,0 +1,306 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T23:39:20Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "inputs": {
+    "comparison_rows": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T232239Z/comparison_rows.jsonl",
+    "canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_canonical_eval_summary.json",
+    "i8_behavioral_analysis": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_parseability_behavioral_analysis.json"
+  },
+  "commitment_failure_modes": {
+    "non_exact_tool_rows": 125,
+    "category_counts": {
+      "textual_result_substitution": 62,
+      "scalar_or_token_result_substitution": 50,
+      "malformed_partial_json": 3,
+      "wrong_arguments_structured": 3,
+      "near_canonical_wrapper_key_drift": 7
+    },
+    "category_rates": {
+      "textual_result_substitution": 0.496,
+      "scalar_or_token_result_substitution": 0.4,
+      "malformed_partial_json": 0.024,
+      "wrong_arguments_structured": 0.024,
+      "near_canonical_wrapper_key_drift": 0.056
+    },
+    "structural_near_miss_count": 7,
+    "structural_near_miss_rate": 0.056,
+    "semantic_result_substitution_count": 112,
+    "semantic_result_substitution_rate": 0.896,
+    "top1_behavioral_category": "textual_result_substitution",
+    "top1_behavioral_category_share": 0.496
+  },
+  "tool_specific_patterns": {
+    "rg_search": {
+      "tool_expected_rows": 52,
+      "exact_valid_rows": 9,
+      "exact_valid_rate": 0.173077,
+      "payload_not_parsed_rows": 22,
+      "payload_not_parsed_rate": 0.423077,
+      "payload_not_object_rows": 21,
+      "missing_tool_calls_rows": 0,
+      "top_behavior_categories": [
+        [
+          "scalar_or_token_result_substitution",
+          25
+        ],
+        [
+          "textual_result_substitution",
+          18
+        ]
+      ]
+    },
+    "read_file": {
+      "tool_expected_rows": 27,
+      "exact_valid_rows": 0,
+      "exact_valid_rate": 0.0,
+      "payload_not_parsed_rows": 27,
+      "payload_not_parsed_rate": 1.0,
+      "payload_not_object_rows": 0,
+      "missing_tool_calls_rows": 0,
+      "top_behavior_categories": [
+        [
+          "textual_result_substitution",
+          21
+        ],
+        [
+          "scalar_or_token_result_substitution",
+          6
+        ]
+      ]
+    }
+  },
+  "anchor_dependence": {
+    "bucket_totals": {
+      "no_anchor_phrase": 125,
+      "literal_tool_calls": 6,
+      "paraphrastic_tool_call": 9
+    },
+    "bucket_exact_counts": {
+      "literal_tool_calls": 4,
+      "no_anchor_phrase": 6,
+      "paraphrastic_tool_call": 5
+    },
+    "bucket_exact_rates": {
+      "no_anchor_phrase": 0.048,
+      "literal_tool_calls": 0.666667,
+      "paraphrastic_tool_call": 0.555556
+    },
+    "exact_valid_total": 15,
+    "exact_valid_literal_anchor_share": 0.266667,
+    "exact_valid_paraphrastic_anchor_share": 0.333333,
+    "exact_success_buckets_nonzero": 3
+  },
+  "near_miss_samples": {
+    "textual_result_substitution": [
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 1,
+        "expected_tool": "read_file",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:1080-1104:line_end"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 4,
+        "expected_tool": "rg_search",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "line_1080_1104"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 8,
+        "expected_tool": "read_file",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "/opt/ai-stack/runtimes/assistant-runtime/server/service.py:1: def service():\\n/opt/ai-stack/runtimes/assistant-runtime/server/service.py:2:     \"\"\"\\n/opt/ai-stack/runtimes/assistant-runtime/server/service.py:3:     Main "
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 10,
+        "expected_tool": "rg_search",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "function main"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 13,
+        "expected_tool": "stat_path",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "true/file"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 14,
+        "expected_tool": "rg_search",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "match_count is 0"
+      }
+    ],
+    "scalar_or_token_result_substitution": [
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 3,
+        "expected_tool": "read_file",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "True"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 6,
+        "expected_tool": "rg_search",
+        "schema_reason": "payload_not_object",
+        "parse_mode": "strict",
+        "generated_text_preview": "1"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 7,
+        "expected_tool": "rg_search",
+        "schema_reason": "payload_not_object",
+        "parse_mode": "strict",
+        "generated_text_preview": "1"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 9,
+        "expected_tool": "rg_search",
+        "schema_reason": "payload_not_object",
+        "parse_mode": "strict",
+        "generated_text_preview": "3"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 11,
+        "expected_tool": "read_file",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "True"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 18,
+        "expected_tool": "rg_search",
+        "schema_reason": "payload_not_object",
+        "parse_mode": "strict",
+        "generated_text_preview": "1"
+      }
+    ],
+    "malformed_partial_json": [
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 50,
+        "expected_tool": "json_edit",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"create_file_if_missing\":true,\"ops\":[{\"op\":\"set\",\"pointer\":\"/alpha\",\"value\":1},{\"op\":\"set\",\"pointer\":\"/items\",\"value\":[1,2]}],\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.sta"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 3,
+        "expected_tool": "apply_unified_diff",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"dry_run\":true,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.patch_new\",\"unified_diff\":\"--- /dev/null\\n+++ /opt/ai-stack/runtimes/assistant-runtime/.state/."
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 12,
+        "expected_tool": "apply_unified_diff",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "generated_text_preview": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"dry_run\":true,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.patch_new\",\"unified_diff\":\"--- /dev/null\\n+++ /opt/ai-stack/runtimes/assistant-runtime/.state/."
+      }
+    ],
+    "wrong_arguments_structured": [
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 11,
+        "expected_tool": "copy_path",
+        "schema_reason": "ok",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"overwrite\":true,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.moved\",\"path_dest\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.copy\"},\"name"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 20,
+        "expected_tool": "copy_path",
+        "schema_reason": "ok",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"overwrite\":true,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.moved\",\"path_dest\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.copy\"},\"name"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 31,
+        "expected_tool": "copy_path",
+        "schema_reason": "ok",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"overwrite\":true,\"path\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.moved\",\"path_dest\":\"/opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.copy\"},\"name"
+      }
+    ],
+    "near_canonical_wrapper_key_drift": [
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 15,
+        "expected_tool": "debug_tools",
+        "schema_reason": "missing_tool_calls",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"enabled_tools\":[\"debug_tools\"],\"function_calls\":[{\"function\":{\"arguments\":{},\"name\":\"get_enabled_tools\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 18,
+        "expected_tool": "debug_tools",
+        "schema_reason": "missing_tool_calls",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"enabled_tools\":[\"debug_tools\"],\"function_calls\":[{\"function\":{\"arguments\":{},\"name\":\"get_enabled_tools\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 22,
+        "expected_tool": "debug_tools",
+        "schema_reason": "missing_tool_calls",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"enabled_tools\":[\"debug_tools\"],\"function_calls\":[{\"function\":{\"arguments\":{},\"name\":\"get_enabled_tools\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 23,
+        "expected_tool": "debug_tools",
+        "schema_reason": "missing_tool_calls",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"enabled_tools\":[\"debug_tools\"],\"function_calls\":[{\"function\":{\"arguments\":{},\"name\":\"get_enabled_tools\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 26,
+        "expected_tool": "debug_tools",
+        "schema_reason": "missing_tool_calls",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"enabled_tools\":[\"debug_tools\"],\"function_calls\":[{\"function\":{\"arguments\":{},\"name\":\"get_enabled_tools\"},\"type\":\"function\"}]}"
+      },
+      {
+        "split": "tool_holdout",
+        "row_index_1based": 33,
+        "expected_tool": "debug_tools",
+        "schema_reason": "missing_tool_calls",
+        "parse_mode": "strict",
+        "generated_text_preview": "{\"enabled_tools\":[\"debug_tools\"],\"function_calls\":[{\"function\":{\"arguments\":{},\"name\":\"get_enabled_tools\"},\"type\":\"function\"}]}"
+      }
+    ]
+  },
+  "comparative_vs_i8": {
+    "i8_structural_near_miss_rate": 0.272059,
+    "i9_structural_near_miss_rate": 0.056,
+    "i8_semantic_substitution_rate": 0.705882,
+    "i9_semantic_substitution_rate": 0.896,
+    "i8_scalar_substitution_share": 0.264706,
+    "i9_scalar_substitution_share": 0.4
+  }
+}

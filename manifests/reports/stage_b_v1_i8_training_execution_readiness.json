@@ -1,0 +1,49 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T17:20:59Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "phase": "training_execution_readiness",
+  "required_documents_reread": [
+    "docs/lineages/i8_pre_training_governance_snapshot.md",
+    "manifests/reports/stage_b_v1_i8_ambiguity_review.md",
+    "manifests/reports/stage_b_v1_i8_family_concentration_review.md",
+    "manifests/reports/stage_b_v1_i8_surgical_rebalance_post_review.md",
+    "manifests/reports/stage_b_v1_i8_intervention_declaration.json",
+    "docs/appendix_a_operational_execution_contract_v3a.md",
+    "evals/canonical_eval_manifest_v1.json"
+  ],
+  "checks": {
+    "config_approved_to_run_true": true,
+    "manifest_approved_to_run_true": true,
+    "intervention_approved_to_run_true": true,
+    "promotion_not_approved": true,
+    "ambiguity_hard_blocks_clear": true,
+    "contamination_heldout_zero": true,
+    "contamination_tool_holdout_zero": true,
+    "preflight_no_failures": true,
+    "dataset_paths_match_manifest": true,
+    "dataset_hashes_match_intervention": true,
+    "run_root_absent_prelaunch": true,
+    "dataset_row_counts_match_intervention": true
+  },
+  "dataset": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_val.jsonl",
+    "train_rows": 2129,
+    "val_rows": 240,
+    "train_sha256": "60c1b222b4caad4b054cbc58fd0df5906062f593804d486a01b5c5480edfb2c0",
+    "val_sha256": "d5b102675668d90510a158aab659659288d7e5dbdbe4d7812cc4a47a0637bfba",
+    "summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_summary.json",
+    "summary_hashes": {
+      "train_sha256": "60c1b222b4caad4b054cbc58fd0df5906062f593804d486a01b5c5480edfb2c0",
+      "val_sha256": "d5b102675668d90510a158aab659659288d7e5dbdbe4d7812cc4a47a0637bfba"
+    }
+  },
+  "approval_state": {
+    "config_safety_approved_to_run": true,
+    "manifest_review_gate_approved_to_run": true,
+    "intervention_approved_to_run": true,
+    "intervention_approved_to_promote": false
+  },
+  "ready_for_bounded_training_execution": true
+}

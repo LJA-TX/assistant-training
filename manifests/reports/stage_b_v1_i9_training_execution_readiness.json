@@ -1,0 +1,67 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T23:11:19Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i9",
+  "phase": "training_execution_readiness",
+  "required_documents_reread": [
+    "/opt/ai-stack/assistant-training/docs/lineages/i9_commitment_conversion_implementation.md",
+    "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_intervention_declaration.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_expected_risk_assessment.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_training_eval_readiness_criteria.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_dataset_diagnostics.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_preflight_validation.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_collapse_watch_telemetry.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_anchor_dominance_telemetry.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i9_family_concentration_review.json",
+    "/opt/ai-stack/assistant-training/docs/appendix_a_operational_execution_contract_v3a.md",
+    "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json"
+  ],
+  "checks": {
+    "config_approved_to_run_true": true,
+    "manifest_approved_to_run_true": true,
+    "intervention_approved_to_run_true": true,
+    "readiness_criteria_approved_to_run_true": true,
+    "promotion_not_approved": true,
+    "ambiguity_hard_blocks_clear": true,
+    "contamination_heldout_zero": true,
+    "contamination_tool_holdout_zero": true,
+    "preflight_no_failures": true,
+    "preflight_no_warnings": true,
+    "dataset_paths_match_manifest": true,
+    "dataset_paths_match_config": true,
+    "dataset_hashes_match_summary": true,
+    "run_root_absent_prelaunch": true,
+    "anchor_dominance_below_threshold": true,
+    "monoculture_flag_inactive": true,
+    "anchor_flag_inactive": true,
+    "collapse_watch_no_active_trigger": true,
+    "no_stale_manifest_conflict": true
+  },
+  "dataset": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_val.jsonl",
+    "train_rows": 2217,
+    "val_rows": 254,
+    "train_sha256": "1e3f1ffc2c85a18e428a6ad6737d29f0853a6312a4e4d6f8e4f1f78caaf49594",
+    "val_sha256": "890bb3401b4803761449bf4b0bef278443fb423f483b660923664e6d167f1959",
+    "summary_json": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i9_summary.json",
+    "summary_hashes": {
+      "train_sha256": "1e3f1ffc2c85a18e428a6ad6737d29f0853a6312a4e4d6f8e4f1f78caaf49594",
+      "val_sha256": "890bb3401b4803761449bf4b0bef278443fb423f483b660923664e6d167f1959"
+    }
+  },
+  "approval_state": {
+    "config_safety_approved_to_run": true,
+    "manifest_review_gate_approved_to_run": true,
+    "intervention_approved_to_run": true,
+    "intervention_approved_to_promote": false
+  },
+  "collapse_watch_snapshot": {
+    "anchor_ratio": 0.117647,
+    "anchor_threshold": 0.7,
+    "top1_behavioral_category_share": 0.352941,
+    "top1_behavioral_threshold": 0.7,
+    "scalar_substitution_rebound_status": "pending_post_eval"
+  },
+  "ready_for_bounded_training_execution": true
+}

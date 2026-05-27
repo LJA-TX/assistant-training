@@ -1,0 +1,263 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T17:45:35Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "lineage": "fresh_clean_branch_from_stage_b_llama31_8b_base_v1_i3",
+  "intervention_declaration": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_intervention_declaration.json",
+  "canonical_eval_run": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T172855Z",
+  "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "adapter_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i8",
+  "metrics": {
+    "baseline_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 1.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i3_heldout": {
+      "exact_json_validity": 0.05,
+      "invalid_json": 0.43,
+      "tool_name_accuracy": 0.05,
+      "argument_accuracy": 0.05,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i4_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.6,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i5_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.61,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i6_heldout": {
+      "exact_json_validity": 0.01,
+      "invalid_json": 0.39,
+      "tool_name_accuracy": 0.01,
+      "argument_accuracy": 0.01,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i7_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.66,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i8_heldout": {
+      "exact_json_validity": 0.04,
+      "invalid_json": 0.57,
+      "tool_name_accuracy": 0.04,
+      "argument_accuracy": 0.04,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i8_aggregate": {
+      "exact_json_validity": 0.02,
+      "invalid_json": 0.41,
+      "tool_name_accuracy": 0.02857142857142857,
+      "argument_accuracy": 0.02857142857142857,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    }
+  },
+  "deltas_pp": {
+    "stage_b_i8_vs_baseline_heldout": {
+      "exact_json_validity": 4.0,
+      "invalid_json": -43.0,
+      "tool_name_accuracy": 4.0,
+      "argument_accuracy": 4.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i8_vs_stage_b_i3_heldout": {
+      "exact_json_validity": -1.0,
+      "invalid_json": 14.0,
+      "tool_name_accuracy": -1.0,
+      "argument_accuracy": -1.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i8_vs_stage_b_i6_heldout": {
+      "exact_json_validity": 3.0,
+      "invalid_json": 18.0,
+      "tool_name_accuracy": 3.0,
+      "argument_accuracy": 3.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i8_vs_stage_b_i7_heldout": {
+      "exact_json_validity": 4.0,
+      "invalid_json": -9.0,
+      "tool_name_accuracy": 4.0,
+      "argument_accuracy": 4.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    }
+  },
+  "failure_profile": {
+    "tool_expected_class_counts": {
+      "invalid_json": 82,
+      "exact_valid": 4,
+      "invalid_schema": 54
+    },
+    "schema_reasons": {
+      "payload_not_parsed": 82,
+      "ok": 4,
+      "missing_tool_calls": 29,
+      "payload_not_object": 25
+    },
+    "parse_modes": {
+      "invalid": 82,
+      "strict": 57,
+      "embedded": 1
+    },
+    "noncanonical_key_token_hits": {
+      "tool_call": 0,
+      "tools": 9
+    },
+    "top_failing_expected_tools": [
+      {
+        "tool": "rg_search",
+        "count": 48
+      },
+      {
+        "tool": "read_file",
+        "count": 27
+      },
+      {
+        "tool": "find_files",
+        "count": 12
+      },
+      {
+        "tool": "debug_tools",
+        "count": 7
+      },
+      {
+        "tool": "check_service_health",
+        "count": 6
+      },
+      {
+        "tool": "get_system_datetime",
+        "count": 6
+      },
+      {
+        "tool": "archive_create",
+        "count": 4
+      },
+      {
+        "tool": "write_file",
+        "count": 3
+      },
+      {
+        "tool": "run_command",
+        "count": 3
+      },
+      {
+        "tool": "copy_path",
+        "count": 3
+      },
+      {
+        "tool": "archive_extract",
+        "count": 3
+      },
+      {
+        "tool": "stat_path",
+        "count": 2
+      }
+    ],
+    "per_split_tool_expected_class_counts": {
+      "heldout_validation": {
+        "invalid_json": 57,
+        "exact_valid": 4,
+        "invalid_schema": 39
+      },
+      "tool_holdout": {
+        "invalid_json": 25,
+        "invalid_schema": 15
+      }
+    }
+  },
+  "contamination_audit": {
+    "heldout_validation": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "tool_holdout": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "status": "clean_for_evaluation"
+  },
+  "success_criteria_evaluation": {
+    "heldout_invalid_json_decreased_vs_i3": false,
+    "payload_not_parsed_decreased_vs_i3": false,
+    "payload_not_object_plus_missing_tool_calls_not_regressed_vs_i3": true,
+    "no_call_correctness_eq_1": true,
+    "wrapper_leakage_eq_0": true,
+    "heldout_tool_holdout_overlap_zero": true,
+    "passed_count": 4,
+    "total_boolean_checks": 6
+  },
+  "schema_failure_coupling_readout": {
+    "payload_not_parsed": {
+      "i3": 55,
+      "i6": 51,
+      "i7": 81,
+      "i8": 82,
+      "delta_i8_vs_i3": 27,
+      "delta_i8_vs_i7": 1
+    },
+    "payload_not_object": {
+      "i3": 36,
+      "i6": 58,
+      "i7": 39,
+      "i8": 25,
+      "delta_i8_vs_i3": -11,
+      "delta_i8_vs_i7": -14
+    },
+    "missing_tool_calls": {
+      "i3": 44,
+      "i6": 30,
+      "i7": 18,
+      "i8": 29,
+      "delta_i8_vs_i3": -15,
+      "delta_i8_vs_i7": 11
+    },
+    "combined_payload_not_object_plus_missing_tool_calls": {
+      "i3": 80,
+      "i6": 88,
+      "i7": 57,
+      "i8": 54,
+      "delta_i8_vs_i3": -26,
+      "delta_i8_vs_i7": -3
+    },
+    "invalid_json_alias_check": {
+      "expected_alias_of_payload_not_parsed": true,
+      "observed_match": true
+    }
+  },
+  "family_concentration_context": {
+    "max_family_share_pct": 12.369792,
+    "families_above_10pct": 6,
+    "top_family_share_target_after_rebalance_pct": 12.369792
+  },
+  "interpretability_assessment": {
+    "improved": true,
+    "reason": "i8 is measurably better than i7 on parseability and exact-valid recovery, but remains below i3/i6 parseability baselines and still exhibits coupled schema failure pressure."
+  }
+}

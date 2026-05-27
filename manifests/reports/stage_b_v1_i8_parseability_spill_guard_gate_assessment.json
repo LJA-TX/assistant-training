@@ -1,0 +1,270 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-26T17:45:35Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i8",
+  "binding_authority": {
+    "charter": "docs/goal_charter_v5a.md",
+    "appendix_a": "docs/appendix_a_operational_execution_contract_v3a.md",
+    "metric_spec": "docs/metric_specification_v1a.md"
+  },
+  "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "intervention_declaration": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_intervention_declaration.json",
+  "sources": {
+    "stage_b_i3_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T033138Z/summary.json",
+    "stage_b_i4_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T100946Z/summary.json",
+    "stage_b_i5_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T105249Z/summary.json",
+    "stage_b_i6_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T112440Z/summary.json",
+    "stage_b_i7_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T115513Z/summary.json",
+    "stage_b_i8_summary": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T172855Z/summary.json",
+    "stage_b_i8_eval_rows": "/opt/ai-stack/assistant-training/evals/runs/canonical_eval_20260526T172855Z/comparison_rows.jsonl",
+    "stage_b_i8_train_summary": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i8/training_summary.json",
+    "stage_b_i8_dataset_summary": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i8_summary.json",
+    "stage_b_i8_contamination_audit": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_contamination_audit.json",
+    "stage_b_i8_diagnostics_report": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_dataset_diagnostics.json",
+    "stage_b_i8_family_concentration_review": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_family_concentration_review.json",
+    "stage_b_i8_surgical_rebalance_post_review": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i8_surgical_rebalance_post_review.json",
+    "stage_b_i7_gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i7_payload_not_object_isolation_gate_assessment.json"
+  },
+  "metrics": {
+    "baseline_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 1.0,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i3_heldout": {
+      "exact_json_validity": 0.05,
+      "invalid_json": 0.43,
+      "tool_name_accuracy": 0.05,
+      "argument_accuracy": 0.05,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i4_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.6,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i5_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.61,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i6_heldout": {
+      "exact_json_validity": 0.01,
+      "invalid_json": 0.39,
+      "tool_name_accuracy": 0.01,
+      "argument_accuracy": 0.01,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i7_heldout": {
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.66,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i8_heldout": {
+      "exact_json_validity": 0.04,
+      "invalid_json": 0.57,
+      "tool_name_accuracy": 0.04,
+      "argument_accuracy": 0.04,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i8_aggregate": {
+      "exact_json_validity": 0.02,
+      "invalid_json": 0.41,
+      "tool_name_accuracy": 0.02857142857142857,
+      "argument_accuracy": 0.02857142857142857,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    }
+  },
+  "deltas_pp": {
+    "stage_b_i8_vs_baseline_heldout": {
+      "exact_json_validity": 4.0,
+      "invalid_json": -43.0,
+      "tool_name_accuracy": 4.0,
+      "argument_accuracy": 4.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i8_vs_stage_b_i3_heldout": {
+      "exact_json_validity": -1.0,
+      "invalid_json": 14.0,
+      "tool_name_accuracy": -1.0,
+      "argument_accuracy": -1.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i8_vs_stage_b_i6_heldout": {
+      "exact_json_validity": 3.0,
+      "invalid_json": 18.0,
+      "tool_name_accuracy": 3.0,
+      "argument_accuracy": 3.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    },
+    "stage_b_i8_vs_stage_b_i7_heldout": {
+      "exact_json_validity": 4.0,
+      "invalid_json": -9.0,
+      "tool_name_accuracy": 4.0,
+      "argument_accuracy": 4.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.0
+    }
+  },
+  "schema_failure_coupling_readout": {
+    "payload_not_parsed": {
+      "i3": 55,
+      "i6": 51,
+      "i7": 81,
+      "i8": 82,
+      "delta_i8_vs_i3": 27,
+      "delta_i8_vs_i7": 1
+    },
+    "payload_not_object": {
+      "i3": 36,
+      "i6": 58,
+      "i7": 39,
+      "i8": 25,
+      "delta_i8_vs_i3": -11,
+      "delta_i8_vs_i7": -14
+    },
+    "missing_tool_calls": {
+      "i3": 44,
+      "i6": 30,
+      "i7": 18,
+      "i8": 29,
+      "delta_i8_vs_i3": -15,
+      "delta_i8_vs_i7": 11
+    },
+    "combined_payload_not_object_plus_missing_tool_calls": {
+      "i3": 80,
+      "i6": 88,
+      "i7": 57,
+      "i8": 54,
+      "delta_i8_vs_i3": -26,
+      "delta_i8_vs_i7": -3
+    },
+    "invalid_json_alias_check": {
+      "expected_alias_of_payload_not_parsed": true,
+      "observed_match": true
+    }
+  },
+  "gate_results": {
+    "minimum_promising": {
+      "heldout_exact_json_validity_delta_pp_ge_10": false,
+      "heldout_tool_name_accuracy_delta_pp_ge_5": false,
+      "invalid_json_decreased": false,
+      "wrapper_leakage_not_worse_by_gt_5pp": true,
+      "no_call_not_degraded_by_gt_10pp": true,
+      "overall_pass": false
+    },
+    "strong_candidate_suggested": {
+      "exact_json_validity_ge_50": false,
+      "tool_name_accuracy_ge_35": false,
+      "argument_accuracy_ge_25": false,
+      "overall_pass": false
+    },
+    "spill_guard": {
+      "payload_not_object_not_regressed_vs_i3": true,
+      "missing_tool_calls_not_regressed_vs_i3": true,
+      "localized_homogenization_detected": false,
+      "overall_pass": true
+    }
+  },
+  "contamination_confirmation": {
+    "heldout_tool_holdout_zero_overlap": true,
+    "heldout_validation": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "tool_holdout": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "status": "clean_for_evaluation"
+  },
+  "lineage_trajectory": {
+    "heldout_exact_json_validity": {
+      "i3": 0.05,
+      "i4": 0.0,
+      "i5": 0.0,
+      "i6": 0.01,
+      "i7": 0.0,
+      "i8": 0.04
+    },
+    "heldout_invalid_json_rate": {
+      "i3": 0.43,
+      "i4": 0.6,
+      "i5": 0.61,
+      "i6": 0.39,
+      "i7": 0.66,
+      "i8": 0.57
+    },
+    "heldout_tool_name_accuracy": {
+      "i3": 0.05,
+      "i4": 0.0,
+      "i5": 0.0,
+      "i6": 0.01,
+      "i7": 0.0,
+      "i8": 0.04
+    },
+    "payload_not_parsed_counts_tool_expected": {
+      "i3": 55,
+      "i4": 77,
+      "i5": 71,
+      "i6": 51,
+      "i7": 81,
+      "i8": 82
+    },
+    "payload_not_object_counts_tool_expected": {
+      "i3": 36,
+      "i4": 45,
+      "i5": 37,
+      "i6": 58,
+      "i7": 39,
+      "i8": 25
+    },
+    "missing_tool_calls_counts_tool_expected": {
+      "i3": 44,
+      "i4": 18,
+      "i5": 32,
+      "i6": 30,
+      "i7": 18,
+      "i8": 29
+    }
+  },
+  "interpretive_assessment": {
+    "parseability_vs_i3": "regressed",
+    "parseability_vs_i6": "regressed",
+    "parseability_vs_i7": "improved",
+    "spill_dynamics": "improved_vs_i7_but_coupled_pressure_persists",
+    "semantic_flexibility_preserved_signal": true,
+    "renewed_overconstraint_signal": true,
+    "cosmetic_only_risk": true,
+    "behavior_regime": "locally_stabilizing_but_subbaseline",
+    "overall_improvement_character": "mixed_structural_progress_with_remaining_coercion_risk"
+  },
+  "recommendation": {
+    "decision": "continue_bounded_experimentation",
+    "autonomous_promotion_allowed": false,
+    "reason": "Spill-guard checks held, but minimum promising recovery gate remains unmet against i3 baseline.",
+    "recommended_current_best_clean": "stage_b_llama31_8b_base_v1_i3",
+    "next_action": "additional isolated-variable recovery tuning focused on parseability without schema spill, preserving current concentration controls"
+  }
+}
