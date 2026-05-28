@@ -1,0 +1,53 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T14:18:39Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced",
+  "parent_checkpoint_required": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "execution_stage": "design_only",
+  "pre_generation_must_pass": [
+    "parent_checkpoint_exact_match_i10r_microprobe",
+    "operation_mode_additions_only",
+    "total_new_rows_eq_16",
+    "nocall_rows_eq_10",
+    "read_file_symbol_name_rows_eq_6",
+    "uncertainty_conditioning_rows_eq_0",
+    "i10r_conversion_families_immutable_true",
+    "no_global_no_call_expansion",
+    "no_global_read_file_flooding",
+    "no_negation_heavy_policing"
+  ],
+  "post_generation_must_pass": [
+    "ambiguity_hard_blocks_zero",
+    "heldout_overlap_zero",
+    "tool_holdout_overlap_zero",
+    "forbidden_pattern_hits_zero",
+    "localized_diff_verification_pass",
+    "diversity_and_anti_homogenization_pass",
+    "counterbalance_block_distribution_exact"
+  ],
+  "post_run_hard_gates": {
+    "no_call_correctness_aggregate_eq": 1.0,
+    "no_call_correctness_adversarial_eq": 1.0,
+    "wrapper_leakage_eq": 0.0
+  },
+  "post_run_anti_regression_gates": {
+    "read_file_exact_valid_floor": 0.65,
+    "read_file_symbol_name_exact_valid_floor": 0.70,
+    "read_file_symbol_name_exact_drop_max_pp": 15.0,
+    "direct_answer_substitution_share_max_delta_vs_i10r": 0.05,
+    "scalar_substitution_share_ceiling": 0.05,
+    "no_anchor_exact_valid_share_floor": 0.75,
+    "literal_anchor_dependence_no_material_increase": true
+  },
+  "false_progress_flags": [
+    "no_call_recovers_but_read_file_symbol_name_exact_collapses",
+    "exact_valid_up_with_direct_answer_rebound",
+    "anchor_independence_preserved_but_procedural_commitment_erodes",
+    "no_call_pass_achieved_via_global_caution"
+  ],
+  "decision_logic": {
+    "go_to_dataset_generation_review": "all pre_generation_must_pass",
+    "go_to_training_review": "all post_generation_must_pass and all post_run_hard_gates and all post_run_anti_regression_gates",
+    "halt": "any hard gate fail or read_file_symbol_name floor fail"
+  }
+}

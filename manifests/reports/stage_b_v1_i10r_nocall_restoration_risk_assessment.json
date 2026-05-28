@@ -1,0 +1,92 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:09:00Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "risk_model": "bounded_localized_restoration",
+  "primary_risk_statement": "over-correcting a localized no-call failure could suppress newly recovered procedural commitment behavior",
+  "risk_vectors": [
+    {
+      "risk_id": "global_caution_drift",
+      "description": "localized no-call remediation unintentionally generalizes into broad tool-avoidant behavior",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigations": [
+        "additions-only localized scope",
+        "paired valid-commitment rows",
+        "strict row cap <= 20"
+      ],
+      "detection_signals": [
+        "read_file exact-valid drop",
+        "tool_name/argument accuracy drop across heldout"
+      ]
+    },
+    {
+      "risk_id": "scalar_substitution_rebound",
+      "description": "confidence damping reintroduces direct/scalar substitution behavior",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigations": [
+        "avoid broad confidence-calibration intervention",
+        "preserve i10r conversion families untouched",
+        "cap uncertainty-conditioning support rows"
+      ],
+      "detection_signals": [
+        "scalar substitution share > 0.05",
+        "direct-answer substitution delta > +0.05"
+      ]
+    },
+    {
+      "risk_id": "anchor_relapse",
+      "description": "boundary restoration narrows success toward lexical shell dependence",
+      "likelihood": "low_to_medium",
+      "impact": "medium_to_high",
+      "mitigations": [
+        "no-anchor phrasing dominance preserved in new rows",
+        "paraphrastic diversity requirements",
+        "top-shell concentration cap"
+      ],
+      "detection_signals": [
+        "no-anchor exact-valid share < 0.75",
+        "literal-anchor share material rise"
+      ]
+    },
+    {
+      "risk_id": "wrapper_leak_recurrence",
+      "description": "legacy wrapper or non-canonical envelope patterns leak into broader outputs",
+      "likelihood": "low",
+      "impact": "high",
+      "mitigations": [
+        "no wrapper-policing global rewrite",
+        "localized failure family targeting only",
+        "post-generation forbidden-pattern scan"
+      ],
+      "detection_signals": [
+        "wrapper_leakage > 0",
+        "missing_tool_calls rise beyond localized slice"
+      ]
+    },
+    {
+      "risk_id": "underpowered_fix",
+      "description": "too-small footprint fails to restore adversarial no-call integrity",
+      "likelihood": "medium",
+      "impact": "medium",
+      "mitigations": [
+        "contrastive pairs with matched valid boundary counterparts",
+        "retain optional +4 uncertainty rows",
+        "keep C2 fallback design candidate if C1 insufficient"
+      ],
+      "detection_signals": [
+        "adversarial no-call correctness remains < 1.0",
+        "same malformed-regex failure archetype persists"
+      ]
+    }
+  ],
+  "most_dangerous_actions": [
+    "broad_negative_example_restoration",
+    "global_anti_tool_suppression",
+    "broad_confidence_calibration",
+    "negation_heavy_policing"
+  ],
+  "safest_action": "targeted_no_call_contrastive_restoration_with_small_uncertainty_support",
+  "scientific_risk_balance": "favorable_if_localized_and_capped"
+}

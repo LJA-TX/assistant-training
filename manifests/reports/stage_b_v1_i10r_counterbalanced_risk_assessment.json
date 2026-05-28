@@ -1,0 +1,73 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T14:18:39Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced",
+  "baseline_parent": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "risk_register": [
+    {
+      "risk_id": "nocall_overcorrection_reappears",
+      "severity": "high",
+      "likelihood": "medium",
+      "description": "No-call boundary rows may again induce procedural hesitation in tool-expected slices.",
+      "mitigation": [
+        "remove unpaired uncertainty-conditioning rows",
+        "retain valid-search contrastive side",
+        "add explicit read_file symbol-name commitment counterbalance"
+      ]
+    },
+    {
+      "risk_id": "read_file_symbol_name_recollapse",
+      "severity": "high",
+      "likelihood": "medium",
+      "description": "Exact-valid read_file symbol-name may collapse into direct-answer fallback.",
+      "mitigation": [
+        "matched envelope preservation rows",
+        "strict anti-regression gates on read_file exact-valid",
+        "direct-answer share delta gate"
+      ]
+    },
+    {
+      "risk_id": "global_caution_drift",
+      "severity": "medium_to_high",
+      "likelihood": "low_to_medium",
+      "description": "Local no-call objective may generalize into global tool-commitment suppression.",
+      "mitigation": [
+        "family-localized additions only",
+        "no global anti-tool language",
+        "no broad no-call restoration expansion"
+      ]
+    },
+    {
+      "risk_id": "anti_scalar_regression",
+      "severity": "medium",
+      "likelihood": "low",
+      "description": "Scalar substitution may rebound while fixing no-call/read_file boundary.",
+      "mitigation": [
+        "preserve i10r conversion families untouched",
+        "enforce scalar share ceiling in post-run gates"
+      ]
+    },
+    {
+      "risk_id": "interpretability_loss",
+      "severity": "medium",
+      "likelihood": "low",
+      "description": "Remediation footprint too large or mixed could confound causal interpretation.",
+      "mitigation": [
+        "fixed 16-row cap",
+        "explicit block-level accounting",
+        "additions-only, no replacements/thinning"
+      ]
+    }
+  ],
+  "assessment": {
+    "previous_16_row_plan": "misbalanced_missing_read_file_counterbalance",
+    "proposed_16_row_plan": "counterbalanced_and_narrow",
+    "principal_residual_risk": "read_file_symbol_name_remains_narrowly_calibrated",
+    "most_dangerous_next_direction": "expanding no-call restoration without read_file-matched commitment safeguards"
+  },
+  "conclusion": {
+    "bounded_continuation_scientifically_justified": true,
+    "requires_rollback_first": true,
+    "requires_strict_post_run_gates": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:00:11Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "matrix": [
+    {
+      "intervention_family": "targeted_no_call_contrastive_restoration",
+      "description": "Small, failure-family-localized restoration pairs: near-identical prompts split by boundary validity (insufficient/malformed => refusal; sufficient => tool call).",
+      "expected_nocall_recovery": "high",
+      "risk_to_read_file_foothold": "low",
+      "risk_to_anti_scalar_gains": "low",
+      "risk_to_no_anchor_generalization": "low",
+      "risk_reintroduce_scalar_substitution": "low",
+      "collapse_risk": "low",
+      "safety_rank": 1
+    },
+    {
+      "intervention_family": "adversarial_uncertainty_conditioning",
+      "description": "Localized adversarial no-call exemplars for malformed/underspecified requests with explicit uncertainty handling in natural language refusals.",
+      "expected_nocall_recovery": "high",
+      "risk_to_read_file_foothold": "low",
+      "risk_to_anti_scalar_gains": "low_to_medium",
+      "risk_to_no_anchor_generalization": "low",
+      "risk_reintroduce_scalar_substitution": "low_to_medium",
+      "collapse_risk": "low_to_medium",
+      "safety_rank": 2
+    },
+    {
+      "intervention_family": "localized_refusal_boundary_reinforcement",
+      "description": "Boundary-specific refusal reinforcement around missing path/invalid pattern/tool-imperative-without-target slices.",
+      "expected_nocall_recovery": "medium_to_high",
+      "risk_to_read_file_foothold": "medium",
+      "risk_to_anti_scalar_gains": "medium",
+      "risk_to_no_anchor_generalization": "low_to_medium",
+      "risk_reintroduce_scalar_substitution": "medium",
+      "collapse_risk": "medium",
+      "safety_rank": 3
+    },
+    {
+      "intervention_family": "tool_commitment_hesitation_balancing",
+      "description": "Teach defer/clarify behavior before tool commitment in ambiguous contexts.",
+      "expected_nocall_recovery": "medium",
+      "risk_to_read_file_foothold": "medium",
+      "risk_to_anti_scalar_gains": "medium_to_high",
+      "risk_to_no_anchor_generalization": "medium",
+      "risk_reintroduce_scalar_substitution": "medium_to_high",
+      "collapse_risk": "medium_to_high",
+      "safety_rank": 4
+    },
+    {
+      "intervention_family": "procedural_confidence_calibration",
+      "description": "Calibration-focused exemplars to reduce overconfident tool emission when inputs are invalid/underspecified.",
+      "expected_nocall_recovery": "medium",
+      "risk_to_read_file_foothold": "medium_to_high",
+      "risk_to_anti_scalar_gains": "medium_to_high",
+      "risk_to_no_anchor_generalization": "medium",
+      "risk_reintroduce_scalar_substitution": "high",
+      "collapse_risk": "high_if_broad",
+      "safety_rank": 5
+    },
+    {
+      "intervention_family": "negative_example_restoration",
+      "description": "Broadly increase refusal-oriented negatives without tight localization.",
+      "expected_nocall_recovery": "medium",
+      "risk_to_read_file_foothold": "high",
+      "risk_to_anti_scalar_gains": "high",
+      "risk_to_no_anchor_generalization": "high",
+      "risk_reintroduce_scalar_substitution": "high",
+      "collapse_risk": "high",
+      "safety_rank": 7
+    },
+    {
+      "intervention_family": "mixed_adversarial_replay",
+      "description": "Wide adversarial replay bundle across families.",
+      "expected_nocall_recovery": "medium_to_high",
+      "risk_to_read_file_foothold": "medium_to_high",
+      "risk_to_anti_scalar_gains": "high",
+      "risk_to_no_anchor_generalization": "medium_to_high",
+      "risk_reintroduce_scalar_substitution": "medium_to_high",
+      "collapse_risk": "high_if_unbounded",
+      "safety_rank": 6
+    }
+  ],
+  "safest_intervention_family": "targeted_no_call_contrastive_restoration",
+  "most_dangerous_intervention_family": "negative_example_restoration",
+  "most_likely_to_damage_procedural_gains": "negative_example_restoration",
+  "most_likely_to_reintroduce_scalar_substitution": "procedural_confidence_calibration_or_negative_example_restoration_when_broad"
+}

@@ -1,0 +1,97 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:34:48Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_residual_nocall",
+  "status": "completed",
+  "train_overlap": {
+    "heldout_validation": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "tool_holdout": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "no_call": {
+      "prompt_overlap": 0,
+      "target_overlap": 6,
+      "source_case_id_overlap": 0
+    },
+    "adversarial": {
+      "prompt_overlap": 0,
+      "target_overlap": 4,
+      "source_case_id_overlap": 0
+    },
+    "direct_answer": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    }
+  },
+  "val_overlap": {
+    "heldout_validation": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "tool_holdout": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "no_call": {
+      "prompt_overlap": 0,
+      "target_overlap": 6,
+      "source_case_id_overlap": 0
+    },
+    "adversarial": {
+      "prompt_overlap": 0,
+      "target_overlap": 4,
+      "source_case_id_overlap": 0
+    },
+    "direct_answer": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    }
+  },
+  "combined_overlap": {
+    "heldout_validation": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "tool_holdout": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    },
+    "no_call": {
+      "prompt_overlap": 0,
+      "target_overlap": 6,
+      "source_case_id_overlap": 0
+    },
+    "adversarial": {
+      "prompt_overlap": 0,
+      "target_overlap": 4,
+      "source_case_id_overlap": 0
+    },
+    "direct_answer": {
+      "prompt_overlap": 0,
+      "target_overlap": 0,
+      "source_case_id_overlap": 0
+    }
+  },
+  "blocking_policy": {
+    "heldout_tool_holdout_max_allowed_overlap": 0,
+    "fail_fast": true
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

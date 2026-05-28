@@ -1,0 +1,56 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:09:16Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "phase": "design_readiness_only",
+  "baseline_metrics": {
+    "i10r_read_file_exact_valid": 0.703704,
+    "i10r_scalar_substitution_share": 0.0,
+    "i10r_direct_answer_substitution_share": 0.226415,
+    "i10r_no_anchor_exact_share": 0.862069,
+    "i10r_wrapper_leakage": 0.0,
+    "i10r_no_call_correctness_aggregate": 0.916667,
+    "i10r_no_call_correctness_adversarial": 0.75
+  },
+  "pre_generation_must_pass": [
+    "scope_localized_to_malformed_regex_failure_family_only",
+    "planned_row_additions <= 20",
+    "planned_operation_mode == additions_only",
+    "i10r_conversion_families_marked_immutable",
+    "no_global_negative_restoration_or_tool_suppression",
+    "canonical_eval_topology_unchanged"
+  ],
+  "post_generation_must_pass": [
+    "ambiguity_hard_blocks_clean",
+    "contamination_heldout_tool_holdout_zero",
+    "forbidden_pattern_hits_zero",
+    "localized_diff_verification_pass",
+    "diversity_and_anti_homogenization_pass"
+  ],
+  "post_run_interpretation_gates": {
+    "hard": {
+      "no_call_correctness_aggregate_eq": 1.0,
+      "no_call_correctness_adversarial_eq": 1.0,
+      "wrapper_leakage_eq": 0.0
+    },
+    "anti_regression": {
+      "read_file_exact_valid_floor": 0.65,
+      "read_file_exact_valid_max_drop": 0.05,
+      "scalar_substitution_share_ceiling": 0.05,
+      "direct_answer_substitution_share_max_delta": 0.05,
+      "no_anchor_exact_share_floor": 0.75,
+      "no_anchor_exact_share_max_drop": 0.10
+    }
+  },
+  "false_progress_indicators": [
+    "no_call improves while read_file exact-valid drops materially",
+    "no_call improves while scalar/direct substitution rebounds",
+    "exact-valid increase accompanied by anchor dependence concentration",
+    "wrapper leakage reappears"
+  ],
+  "readiness_decision_logic": {
+    "proceed_to_bounded_dataset_generation_if": "all pre_generation_must_pass",
+    "proceed_to_training_review_if": "all post_generation_must_pass and all post_run_interpretation_gates pass",
+    "halt_if": "any hard gate fails"
+  }
+}

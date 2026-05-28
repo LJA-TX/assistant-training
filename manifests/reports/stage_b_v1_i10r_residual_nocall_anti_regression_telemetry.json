@@ -1,0 +1,46 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:34:48Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_residual_nocall",
+  "status": "completed",
+  "baseline_metrics_from_i10r_counterbalanced_probe": {
+    "read_file_exact_valid_rate": 0.7037037037037037,
+    "read_file_symbol_name_exact_valid_rate": 0.9230769230769231,
+    "scalar_substitution_share": 0.0,
+    "direct_answer_substitution_share": 0.22916666666666666,
+    "no_anchor_exact_share": 0.8369565217391305,
+    "wrapper_leakage": 0.0
+  },
+  "dataset_addition_profile": {
+    "total_additions": 6,
+    "tool_rows": 3,
+    "refusal_rows": 3,
+    "anchor_distribution": {
+      "literal_tool_calls": 0,
+      "paraphrastic_tool_call": 0,
+      "no_anchor_phrase": 6
+    },
+    "literal_anchor_ratio": 0.0,
+    "top1_skeleton_share_additions": 0.166667,
+    "prompt_uniqueness_ratio_additions": 1.0
+  },
+  "anti_regression_risk_flags": {
+    "literal_anchor_ratio_high": false,
+    "top1_skeleton_share_high": false,
+    "unexpected_tool_mix": false,
+    "unexpected_refusal_mix": false,
+    "read_file_additions_present": false
+  },
+  "anti_regression_risk_pass": true,
+  "diagnostics_snapshot": {
+    "forbidden_pattern_hits": 0,
+    "diversity_pass": true,
+    "anti_homogenization_pass": true
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T14:18:39Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_remediation_design",
+  "phase": "design_scaffold_only",
+  "parent_constraints": {
+    "required_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "forbidden_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+    "enforcement": "fail_fast_if_parent_mismatch"
+  },
+  "objective": "restore malformed-regex adversarial no-call boundary while preserving read_file symbol-name procedural commitment",
+  "design_mode": "rollback_first_counterbalanced_additions_only",
+  "footprint": {
+    "operation_mode": "additions_only",
+    "total_new_rows": 16,
+    "replacements": 0,
+    "thinning": 0,
+    "blocks": [
+      {
+        "block_id": "nocall_boundary_contrastive_pairs",
+        "rows": 10,
+        "pairs": 5,
+        "composition": {
+          "malformed_regex_refusal_rows": 5,
+          "matched_valid_canonical_rg_search_rows": 5
+        }
+      },
+      {
+        "block_id": "read_file_symbol_name_commitment_preservation",
+        "rows": 6,
+        "composition": {
+          "exact_archetype_rows": 4,
+          "paraphrastic_variants": 2
+        },
+        "archetype": "read_file_symbol_name",
+        "path_line_envelope_policy": "match_failing_agent_py_symbol_rows"
+      }
+    ],
+    "uncertainty_conditioning_rows": {
+      "prior": 4,
+      "now": 0,
+      "decision": "remove"
+    }
+  },
+  "interpretation": {
+    "previous_16_row_package": "misbalanced_not_purely_oversized",
+    "failure_regime": "calibration_bifurcation",
+    "continuation_viability": "yes_with_rollback_and_counterbalance"
+  },
+  "immutability": {
+    "keep_i10r_conversion_families_unchanged": true,
+    "keep_non_target_no_call_rows_unchanged": true,
+    "keep_direct_answer_rows_outside_target_unchanged": true,
+    "canonical_eval_topology_unchanged": true,
+    "decode_defaults_unchanged": true,
+    "thresholds_unchanged": true
+  },
+  "go_no_go": {
+    "design_recommendation": "go_for_bounded_counterbalanced_dataset_generation_review",
+    "execution_authorized": false
+  }
+}

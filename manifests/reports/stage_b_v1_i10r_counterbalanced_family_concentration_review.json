@@ -1,0 +1,2789 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T14:44:20Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced",
+  "status": "completed",
+  "methodology": {
+    "effective_diversity_estimation": {
+      "prompt_uniqueness": "distinct_prompts / row_count",
+      "prompt_entropy_bits": "Shannon entropy over prompt frequency within family",
+      "effective_prompt_count": "2 ^ entropy_bits",
+      "effective_diversity_ratio": "effective_prompt_count / row_count",
+      "lexical_similarity": "pairwise and nearest-neighbor Jaccard overlap on token sets",
+      "semantic_variation_estimate": "1 - mean_nearest_neighbor_jaccard"
+    },
+    "risk_scoring": "warning-only composite of concentration share, effective-diversity shortfall, entropy shortfall, semantic-variation shortfall, and lineage ambiguity history",
+    "material_family_cutoff_rows": 5
+  },
+  "config": {
+    "concentration_share_warn": 0.1,
+    "low_effective_diversity_ratio_warn": 0.3,
+    "low_prompt_entropy_bits_warn": 2.0,
+    "low_semantic_variation_warn": 0.35,
+    "high_nn_similarity_warn": 0.65,
+    "top_n": 10
+  },
+  "dataset_scope": {
+    "targeted_tools": [
+      "rg_search",
+      "read_file"
+    ],
+    "targeted_rows_total": 612,
+    "material_families_count": 27
+  },
+  "per_family_metrics": [
+    {
+      "source_case_id": "i3_adapt_p0_read_file_1",
+      "row_count": 52,
+      "percent_of_targeted_dataset": 8.496732,
+      "tool_diversity": {
+        "distinct_tools": 2,
+        "tools": [
+          "read_file",
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 7
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 14,
+        "normalized_prompt_uniqueness": 0.269231
+      },
+      "unique_skeleton_count": 11,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.826923
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.644481,
+        "effective_prompt_count": 12.505413,
+        "effective_diversity_ratio": 0.240489,
+        "mean_pairwise_jaccard": 0.731471,
+        "mean_nearest_neighbor_jaccard": 0.998462,
+        "semantic_variation_estimate": 0.001538
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 30,
+        "share": 0.576923
+      },
+      "prior_multi_tool_divergence": true,
+      "prior_ambiguity_involvement": true,
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement",
+        "multi_tool_lineage_history",
+        "ambiguity_remediation_applied"
+      ],
+      "concentration_risk_score": 1.893975
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_4",
+      "row_count": 52,
+      "percent_of_targeted_dataset": 8.496732,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 10,
+        "normalized_prompt_uniqueness": 0.192308
+      },
+      "unique_skeleton_count": 5,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.244904,
+        "effective_prompt_count": 9.480113,
+        "effective_diversity_ratio": 0.18231,
+        "mean_pairwise_jaccard": 0.790296,
+        "mean_nearest_neighbor_jaccard": 1.0,
+        "semantic_variation_estimate": 0.0
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": true,
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "concentration_risk_score": 1.7923
+    },
+    {
+      "source_case_id": "i3_adapt_p0_read_file_2",
+      "row_count": 48,
+      "percent_of_targeted_dataset": 7.843137,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 15,
+        "normalized_prompt_uniqueness": 0.3125
+      },
+      "unique_skeleton_count": 8,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.875
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.800614,
+        "effective_prompt_count": 13.934736,
+        "effective_diversity_ratio": 0.290307,
+        "mean_pairwise_jaccard": 0.813288,
+        "mean_nearest_neighbor_jaccard": 0.998457,
+        "semantic_variation_estimate": 0.001543
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": true,
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "concentration_risk_score": 1.427901
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_1",
+      "row_count": 48,
+      "percent_of_targeted_dataset": 7.843137,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 12,
+        "normalized_prompt_uniqueness": 0.25
+      },
+      "unique_skeleton_count": 6,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.302361,
+        "effective_prompt_count": 9.865285,
+        "effective_diversity_ratio": 0.205527,
+        "mean_pairwise_jaccard": 0.836069,
+        "mean_nearest_neighbor_jaccard": 0.998299,
+        "semantic_variation_estimate": 0.001701
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": true,
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "concentration_risk_score": 1.71005
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_3",
+      "row_count": 45,
+      "percent_of_targeted_dataset": 7.352941,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 10,
+        "normalized_prompt_uniqueness": 0.222222
+      },
+      "unique_skeleton_count": 5,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.236654,
+        "effective_prompt_count": 9.426057,
+        "effective_diversity_ratio": 0.209468,
+        "mean_pairwise_jaccard": 0.767378,
+        "mean_nearest_neighbor_jaccard": 1.0,
+        "semantic_variation_estimate": 0.0
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": true,
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "concentration_risk_score": 1.701774
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_2",
+      "row_count": 43,
+      "percent_of_targeted_dataset": 7.026144,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 10,
+        "normalized_prompt_uniqueness": 0.232558
+      },
+      "unique_skeleton_count": 5,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.004056,
+        "effective_prompt_count": 8.022523,
+        "effective_diversity_ratio": 0.18657,
+        "mean_pairwise_jaccard": 0.80989,
+        "mean_nearest_neighbor_jaccard": 0.996417,
+        "semantic_variation_estimate": 0.003583
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": true,
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "concentration_risk_score": 1.767862
+    },
+    {
+      "source_case_id": "i3_adapt_p0_read_file_3",
+      "row_count": 40,
+      "percent_of_targeted_dataset": 6.535948,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 10,
+        "normalized_prompt_uniqueness": 0.25
+      },
+      "unique_skeleton_count": 5,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.85
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.189823,
+        "effective_prompt_count": 9.124989,
+        "effective_diversity_ratio": 0.228125,
+        "mean_pairwise_jaccard": 0.839082,
+        "mean_nearest_neighbor_jaccard": 0.998148,
+        "semantic_variation_estimate": 0.001852
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": true,
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "concentration_risk_score": 1.634293
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_5",
+      "row_count": 39,
+      "percent_of_targeted_dataset": 6.372549,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 10,
+        "normalized_prompt_uniqueness": 0.25641
+      },
+      "unique_skeleton_count": 5,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.20864,
+        "effective_prompt_count": 9.244788,
+        "effective_diversity_ratio": 0.237046,
+        "mean_pairwise_jaccard": 0.875897,
+        "mean_nearest_neighbor_jaccard": 1.0,
+        "semantic_variation_estimate": 0.0
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": true,
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "concentration_risk_score": 1.609847
+    },
+    {
+      "source_case_id": "i9_conv_nmr_i3_adapt_p0_rg_search_5",
+      "row_count": 14,
+      "percent_of_targeted_dataset": 2.287582,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 13,
+        "normalized_prompt_uniqueness": 0.928571
+      },
+      "unique_skeleton_count": 10,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.664498,
+        "effective_prompt_count": 12.680131,
+        "effective_diversity_ratio": 0.905724,
+        "mean_pairwise_jaccard": 0.734506,
+        "mean_nearest_neighbor_jaccard": 0.947808,
+        "semantic_variation_estimate": 0.052192
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.85088
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_1",
+      "row_count": 14,
+      "percent_of_targeted_dataset": 2.287582,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 13,
+        "normalized_prompt_uniqueness": 0.928571
+      },
+      "unique_skeleton_count": 11,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.664498,
+        "effective_prompt_count": 12.680131,
+        "effective_diversity_ratio": 0.905724,
+        "mean_pairwise_jaccard": 0.616728,
+        "mean_nearest_neighbor_jaccard": 0.910741,
+        "semantic_variation_estimate": 0.089259
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.744974
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+      "row_count": 13,
+      "percent_of_targeted_dataset": 2.124183,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 13,
+        "normalized_prompt_uniqueness": 1.0
+      },
+      "unique_skeleton_count": 11,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.769231
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.70044,
+        "effective_prompt_count": 13.0,
+        "effective_diversity_ratio": 1.0,
+        "mean_pairwise_jaccard": 0.519054,
+        "mean_nearest_neighbor_jaccard": 0.819349,
+        "semantic_variation_estimate": 0.180651
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.483856
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_2",
+      "row_count": 13,
+      "percent_of_targeted_dataset": 2.124183,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 13,
+        "normalized_prompt_uniqueness": 1.0
+      },
+      "unique_skeleton_count": 13,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.769231
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.70044,
+        "effective_prompt_count": 13.0,
+        "effective_diversity_ratio": 1.0,
+        "mean_pairwise_jaccard": 0.531278,
+        "mean_nearest_neighbor_jaccard": 0.744693,
+        "semantic_variation_estimate": 0.255307
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.270553
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_2",
+      "row_count": 13,
+      "percent_of_targeted_dataset": 2.124183,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 11,
+        "normalized_prompt_uniqueness": 0.846154
+      },
+      "unique_skeleton_count": 9,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.392747,
+        "effective_prompt_count": 10.50313,
+        "effective_diversity_ratio": 0.807933,
+        "mean_pairwise_jaccard": 0.57219,
+        "mean_nearest_neighbor_jaccard": 0.916775,
+        "semantic_variation_estimate": 0.083225
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.762216
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_3",
+      "row_count": 12,
+      "percent_of_targeted_dataset": 1.960784,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 12,
+        "normalized_prompt_uniqueness": 1.0
+      },
+      "unique_skeleton_count": 12,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.916667
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.584963,
+        "effective_prompt_count": 12.0,
+        "effective_diversity_ratio": 1.0,
+        "mean_pairwise_jaccard": 0.527805,
+        "mean_nearest_neighbor_jaccard": 0.810203,
+        "semantic_variation_estimate": 0.189797
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.457724
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_4",
+      "row_count": 12,
+      "percent_of_targeted_dataset": 1.960784,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 10,
+        "normalized_prompt_uniqueness": 0.833333
+      },
+      "unique_skeleton_count": 9,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.251629,
+        "effective_prompt_count": 9.524406,
+        "effective_diversity_ratio": 0.793701,
+        "mean_pairwise_jaccard": 0.576285,
+        "mean_nearest_neighbor_jaccard": 0.857898,
+        "semantic_variation_estimate": 0.142102
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.593994
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_4",
+      "row_count": 12,
+      "percent_of_targeted_dataset": 1.960784,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 11,
+        "normalized_prompt_uniqueness": 0.916667
+      },
+      "unique_skeleton_count": 10,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.418296,
+        "effective_prompt_count": 10.690785,
+        "effective_diversity_ratio": 0.890899,
+        "mean_pairwise_jaccard": 0.563267,
+        "mean_nearest_neighbor_jaccard": 0.900186,
+        "semantic_variation_estimate": 0.099814
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.714818
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_3",
+      "row_count": 11,
+      "percent_of_targeted_dataset": 1.797386,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 9,
+        "normalized_prompt_uniqueness": 0.818182
+      },
+      "unique_skeleton_count": 9,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.095795,
+        "effective_prompt_count": 8.549235,
+        "effective_diversity_ratio": 0.777203,
+        "mean_pairwise_jaccard": 0.518537,
+        "mean_nearest_neighbor_jaccard": 0.837266,
+        "semantic_variation_estimate": 0.162734
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.535046
+    },
+    {
+      "source_case_id": "i9_conv_nmr_i3_adapt_p0_read_file_2",
+      "row_count": 10,
+      "percent_of_targeted_dataset": 1.633987,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 9,
+        "normalized_prompt_uniqueness": 0.9
+      },
+      "unique_skeleton_count": 6,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.121928,
+        "effective_prompt_count": 8.705506,
+        "effective_diversity_ratio": 0.870551,
+        "mean_pairwise_jaccard": 0.632227,
+        "mean_nearest_neighbor_jaccard": 0.84667,
+        "semantic_variation_estimate": 0.15333
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.561914
+    },
+    {
+      "source_case_id": "i9_conv_ucf_i3_adapt_p0_read_file_3",
+      "row_count": 10,
+      "percent_of_targeted_dataset": 1.633987,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 9,
+        "normalized_prompt_uniqueness": 0.9
+      },
+      "unique_skeleton_count": 8,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.121928,
+        "effective_prompt_count": 8.705506,
+        "effective_diversity_ratio": 0.870551,
+        "mean_pairwise_jaccard": 0.608869,
+        "mean_nearest_neighbor_jaccard": 0.926825,
+        "semantic_variation_estimate": 0.073175
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.790928
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+      "row_count": 9,
+      "percent_of_targeted_dataset": 1.470588,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 9,
+        "normalized_prompt_uniqueness": 1.0
+      },
+      "unique_skeleton_count": 8,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 3.169925,
+        "effective_prompt_count": 9.0,
+        "effective_diversity_ratio": 1.0,
+        "mean_pairwise_jaccard": 0.614415,
+        "mean_nearest_neighbor_jaccard": 0.894886,
+        "semantic_variation_estimate": 0.105114
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.699674
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_1",
+      "row_count": 9,
+      "percent_of_targeted_dataset": 1.470588,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 8,
+        "normalized_prompt_uniqueness": 0.888889
+      },
+      "unique_skeleton_count": 7,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.666667
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 2.947703,
+        "effective_prompt_count": 7.715196,
+        "effective_diversity_ratio": 0.857244,
+        "mean_pairwise_jaccard": 0.634508,
+        "mean_nearest_neighbor_jaccard": 0.895114,
+        "semantic_variation_estimate": 0.104886
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.700326
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_3",
+      "row_count": 7,
+      "percent_of_targeted_dataset": 1.143791,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 6,
+        "normalized_prompt_uniqueness": 0.857143
+      },
+      "unique_skeleton_count": 6,
+      "dominant_style_bucket": {
+        "bucket": "imperative_general",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 2.521641,
+        "effective_prompt_count": 5.742347,
+        "effective_diversity_ratio": 0.820335,
+        "mean_pairwise_jaccard": 0.554862,
+        "mean_nearest_neighbor_jaccard": 0.865887,
+        "semantic_variation_estimate": 0.134113
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.616819
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i9_conv_ucf_i3_adapt_p0_read_file_3",
+      "row_count": 6,
+      "percent_of_targeted_dataset": 0.980392,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 6,
+        "normalized_prompt_uniqueness": 1.0
+      },
+      "unique_skeleton_count": 6,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 2.584963,
+        "effective_prompt_count": 6.0,
+        "effective_diversity_ratio": 1.0,
+        "mean_pairwise_jaccard": 0.517217,
+        "mean_nearest_neighbor_jaccard": 0.65167,
+        "semantic_variation_estimate": 0.34833
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.004771
+    },
+    {
+      "source_case_id": "i10_conv_ucp_i3_adapt_p0_rg_search_2",
+      "row_count": 6,
+      "percent_of_targeted_dataset": 0.980392,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "rg_search"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 6,
+        "normalized_prompt_uniqueness": 1.0
+      },
+      "unique_skeleton_count": 6,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 2.584963,
+        "effective_prompt_count": 6.0,
+        "effective_diversity_ratio": 1.0,
+        "mean_pairwise_jaccard": 0.54169,
+        "mean_nearest_neighbor_jaccard": 0.725746,
+        "semantic_variation_estimate": 0.274254
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.216416
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i9_conv_nmr_i3_adapt_p0_read_file_2",
+      "row_count": 5,
+      "percent_of_targeted_dataset": 0.816993,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 5,
+        "normalized_prompt_uniqueness": 1.0
+      },
+      "unique_skeleton_count": 5,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 1.0
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 2.321928,
+        "effective_prompt_count": 5.0,
+        "effective_diversity_ratio": 1.0,
+        "mean_pairwise_jaccard": 0.48526,
+        "mean_nearest_neighbor_jaccard": 0.581984,
+        "semantic_variation_estimate": 0.418016
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [],
+      "concentration_risk_score": 0.0
+    },
+    {
+      "source_case_id": "i10_conv_ssc_rf_i9_conv_ssc_i3_adapt_p0_read_file_1",
+      "row_count": 5,
+      "percent_of_targeted_dataset": 0.816993,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 4,
+        "normalized_prompt_uniqueness": 0.8
+      },
+      "unique_skeleton_count": 3,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.8
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 1.921928,
+        "effective_prompt_count": 3.789291,
+        "effective_diversity_ratio": 0.757858,
+        "mean_pairwise_jaccard": 0.576507,
+        "mean_nearest_neighbor_jaccard": 0.855484,
+        "semantic_variation_estimate": 0.144516
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_prompt_entropy",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.626133
+    },
+    {
+      "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_2",
+      "row_count": 5,
+      "percent_of_targeted_dataset": 0.816993,
+      "tool_diversity": {
+        "distinct_tools": 1,
+        "tools": [
+          "read_file"
+        ]
+      },
+      "target_diversity": {
+        "distinct_targets": 2
+      },
+      "prompt_diversity": {
+        "distinct_prompts": 5,
+        "normalized_prompt_uniqueness": 1.0
+      },
+      "unique_skeleton_count": 5,
+      "dominant_style_bucket": {
+        "bucket": "imperative_line_scoped",
+        "share": 0.6
+      },
+      "effective_diversity": {
+        "prompt_entropy_bits": 2.321928,
+        "effective_prompt_count": 5.0,
+        "effective_diversity_ratio": 1.0,
+        "mean_pairwise_jaccard": 0.637172,
+        "mean_nearest_neighbor_jaccard": 0.781737,
+        "semantic_variation_estimate": 0.218263
+      },
+      "ambiguity_remediation_involvement": {
+        "rows_with_remediation_flag": 0,
+        "share": 0.0
+      },
+      "prior_multi_tool_divergence": false,
+      "prior_ambiguity_involvement": false,
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "concentration_risk_score": 0.376392
+    }
+  ],
+  "ranked_summaries": {
+    "top_largest_families": [
+      {
+        "source_case_id": "i3_adapt_p0_read_file_1",
+        "row_count": 52,
+        "percent_of_targeted_dataset": 8.496732,
+        "tool_diversity": {
+          "distinct_tools": 2,
+          "tools": [
+            "read_file",
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 7
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 14,
+          "normalized_prompt_uniqueness": 0.269231
+        },
+        "unique_skeleton_count": 11,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.826923
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.644481,
+          "effective_prompt_count": 12.505413,
+          "effective_diversity_ratio": 0.240489,
+          "mean_pairwise_jaccard": 0.731471,
+          "mean_nearest_neighbor_jaccard": 0.998462,
+          "semantic_variation_estimate": 0.001538
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 30,
+          "share": 0.576923
+        },
+        "prior_multi_tool_divergence": true,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement",
+          "multi_tool_lineage_history",
+          "ambiguity_remediation_applied"
+        ],
+        "concentration_risk_score": 1.893975
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_4",
+        "row_count": 52,
+        "percent_of_targeted_dataset": 8.496732,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.192308
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.244904,
+          "effective_prompt_count": 9.480113,
+          "effective_diversity_ratio": 0.18231,
+          "mean_pairwise_jaccard": 0.790296,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.7923
+      },
+      {
+        "source_case_id": "i3_adapt_p0_read_file_2",
+        "row_count": 48,
+        "percent_of_targeted_dataset": 7.843137,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "read_file"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 15,
+          "normalized_prompt_uniqueness": 0.3125
+        },
+        "unique_skeleton_count": 8,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.875
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.800614,
+          "effective_prompt_count": 13.934736,
+          "effective_diversity_ratio": 0.290307,
+          "mean_pairwise_jaccard": 0.813288,
+          "mean_nearest_neighbor_jaccard": 0.998457,
+          "semantic_variation_estimate": 0.001543
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.427901
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_1",
+        "row_count": 48,
+        "percent_of_targeted_dataset": 7.843137,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 12,
+          "normalized_prompt_uniqueness": 0.25
+        },
+        "unique_skeleton_count": 6,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.302361,
+          "effective_prompt_count": 9.865285,
+          "effective_diversity_ratio": 0.205527,
+          "mean_pairwise_jaccard": 0.836069,
+          "mean_nearest_neighbor_jaccard": 0.998299,
+          "semantic_variation_estimate": 0.001701
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.71005
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_3",
+        "row_count": 45,
+        "percent_of_targeted_dataset": 7.352941,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.222222
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.236654,
+          "effective_prompt_count": 9.426057,
+          "effective_diversity_ratio": 0.209468,
+          "mean_pairwise_jaccard": 0.767378,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.701774
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_2",
+        "row_count": 43,
+        "percent_of_targeted_dataset": 7.026144,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.232558
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.004056,
+          "effective_prompt_count": 8.022523,
+          "effective_diversity_ratio": 0.18657,
+          "mean_pairwise_jaccard": 0.80989,
+          "mean_nearest_neighbor_jaccard": 0.996417,
+          "semantic_variation_estimate": 0.003583
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.767862
+      },
+      {
+        "source_case_id": "i3_adapt_p0_read_file_3",
+        "row_count": 40,
+        "percent_of_targeted_dataset": 6.535948,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "read_file"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.25
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.85
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.189823,
+          "effective_prompt_count": 9.124989,
+          "effective_diversity_ratio": 0.228125,
+          "mean_pairwise_jaccard": 0.839082,
+          "mean_nearest_neighbor_jaccard": 0.998148,
+          "semantic_variation_estimate": 0.001852
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.634293
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_5",
+        "row_count": 39,
+        "percent_of_targeted_dataset": 6.372549,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.25641
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.20864,
+          "effective_prompt_count": 9.244788,
+          "effective_diversity_ratio": 0.237046,
+          "mean_pairwise_jaccard": 0.875897,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.609847
+      },
+      {
+        "source_case_id": "i9_conv_nmr_i3_adapt_p0_rg_search_5",
+        "row_count": 14,
+        "percent_of_targeted_dataset": 2.287582,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 13,
+          "normalized_prompt_uniqueness": 0.928571
+        },
+        "unique_skeleton_count": 10,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.664498,
+          "effective_prompt_count": 12.680131,
+          "effective_diversity_ratio": 0.905724,
+          "mean_pairwise_jaccard": 0.734506,
+          "mean_nearest_neighbor_jaccard": 0.947808,
+          "semantic_variation_estimate": 0.052192
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": false,
+        "risk_flags": [
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity"
+        ],
+        "concentration_risk_score": 0.85088
+      },
+      {
+        "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_1",
+        "row_count": 14,
+        "percent_of_targeted_dataset": 2.287582,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 13,
+          "normalized_prompt_uniqueness": 0.928571
+        },
+        "unique_skeleton_count": 11,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.664498,
+          "effective_prompt_count": 12.680131,
+          "effective_diversity_ratio": 0.905724,
+          "mean_pairwise_jaccard": 0.616728,
+          "mean_nearest_neighbor_jaccard": 0.910741,
+          "semantic_variation_estimate": 0.089259
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": false,
+        "risk_flags": [
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity"
+        ],
+        "concentration_risk_score": 0.744974
+      }
+    ],
+    "top_lowest_diversity_families": [
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_4",
+        "row_count": 52,
+        "percent_of_targeted_dataset": 8.496732,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.192308
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.244904,
+          "effective_prompt_count": 9.480113,
+          "effective_diversity_ratio": 0.18231,
+          "mean_pairwise_jaccard": 0.790296,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.7923
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_2",
+        "row_count": 43,
+        "percent_of_targeted_dataset": 7.026144,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.232558
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.004056,
+          "effective_prompt_count": 8.022523,
+          "effective_diversity_ratio": 0.18657,
+          "mean_pairwise_jaccard": 0.80989,
+          "mean_nearest_neighbor_jaccard": 0.996417,
+          "semantic_variation_estimate": 0.003583
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.767862
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_1",
+        "row_count": 48,
+        "percent_of_targeted_dataset": 7.843137,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 12,
+          "normalized_prompt_uniqueness": 0.25
+        },
+        "unique_skeleton_count": 6,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.302361,
+          "effective_prompt_count": 9.865285,
+          "effective_diversity_ratio": 0.205527,
+          "mean_pairwise_jaccard": 0.836069,
+          "mean_nearest_neighbor_jaccard": 0.998299,
+          "semantic_variation_estimate": 0.001701
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.71005
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_3",
+        "row_count": 45,
+        "percent_of_targeted_dataset": 7.352941,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.222222
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.236654,
+          "effective_prompt_count": 9.426057,
+          "effective_diversity_ratio": 0.209468,
+          "mean_pairwise_jaccard": 0.767378,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.701774
+      },
+      {
+        "source_case_id": "i3_adapt_p0_read_file_3",
+        "row_count": 40,
+        "percent_of_targeted_dataset": 6.535948,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "read_file"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.25
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.85
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.189823,
+          "effective_prompt_count": 9.124989,
+          "effective_diversity_ratio": 0.228125,
+          "mean_pairwise_jaccard": 0.839082,
+          "mean_nearest_neighbor_jaccard": 0.998148,
+          "semantic_variation_estimate": 0.001852
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.634293
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_5",
+        "row_count": 39,
+        "percent_of_targeted_dataset": 6.372549,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.25641
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.20864,
+          "effective_prompt_count": 9.244788,
+          "effective_diversity_ratio": 0.237046,
+          "mean_pairwise_jaccard": 0.875897,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.609847
+      },
+      {
+        "source_case_id": "i3_adapt_p0_read_file_1",
+        "row_count": 52,
+        "percent_of_targeted_dataset": 8.496732,
+        "tool_diversity": {
+          "distinct_tools": 2,
+          "tools": [
+            "read_file",
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 7
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 14,
+          "normalized_prompt_uniqueness": 0.269231
+        },
+        "unique_skeleton_count": 11,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.826923
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.644481,
+          "effective_prompt_count": 12.505413,
+          "effective_diversity_ratio": 0.240489,
+          "mean_pairwise_jaccard": 0.731471,
+          "mean_nearest_neighbor_jaccard": 0.998462,
+          "semantic_variation_estimate": 0.001538
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 30,
+          "share": 0.576923
+        },
+        "prior_multi_tool_divergence": true,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement",
+          "multi_tool_lineage_history",
+          "ambiguity_remediation_applied"
+        ],
+        "concentration_risk_score": 1.893975
+      },
+      {
+        "source_case_id": "i3_adapt_p0_read_file_2",
+        "row_count": 48,
+        "percent_of_targeted_dataset": 7.843137,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "read_file"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 15,
+          "normalized_prompt_uniqueness": 0.3125
+        },
+        "unique_skeleton_count": 8,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.875
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.800614,
+          "effective_prompt_count": 13.934736,
+          "effective_diversity_ratio": 0.290307,
+          "mean_pairwise_jaccard": 0.813288,
+          "mean_nearest_neighbor_jaccard": 0.998457,
+          "semantic_variation_estimate": 0.001543
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.427901
+      },
+      {
+        "source_case_id": "i10_conv_ssc_rf_i9_conv_ssc_i3_adapt_p0_read_file_1",
+        "row_count": 5,
+        "percent_of_targeted_dataset": 0.816993,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "read_file"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 4,
+          "normalized_prompt_uniqueness": 0.8
+        },
+        "unique_skeleton_count": 3,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.8
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 1.921928,
+          "effective_prompt_count": 3.789291,
+          "effective_diversity_ratio": 0.757858,
+          "mean_pairwise_jaccard": 0.576507,
+          "mean_nearest_neighbor_jaccard": 0.855484,
+          "semantic_variation_estimate": 0.144516
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": false,
+        "risk_flags": [
+          "low_prompt_entropy",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity"
+        ],
+        "concentration_risk_score": 0.626133
+      },
+      {
+        "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_3",
+        "row_count": 11,
+        "percent_of_targeted_dataset": 1.797386,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 9,
+          "normalized_prompt_uniqueness": 0.818182
+        },
+        "unique_skeleton_count": 9,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.095795,
+          "effective_prompt_count": 8.549235,
+          "effective_diversity_ratio": 0.777203,
+          "mean_pairwise_jaccard": 0.518537,
+          "mean_nearest_neighbor_jaccard": 0.837266,
+          "semantic_variation_estimate": 0.162734
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": false,
+        "risk_flags": [
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity"
+        ],
+        "concentration_risk_score": 0.535046
+      }
+    ],
+    "top_highest_concentration_risk_families": [
+      {
+        "source_case_id": "i3_adapt_p0_read_file_1",
+        "row_count": 52,
+        "percent_of_targeted_dataset": 8.496732,
+        "tool_diversity": {
+          "distinct_tools": 2,
+          "tools": [
+            "read_file",
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 7
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 14,
+          "normalized_prompt_uniqueness": 0.269231
+        },
+        "unique_skeleton_count": 11,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.826923
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.644481,
+          "effective_prompt_count": 12.505413,
+          "effective_diversity_ratio": 0.240489,
+          "mean_pairwise_jaccard": 0.731471,
+          "mean_nearest_neighbor_jaccard": 0.998462,
+          "semantic_variation_estimate": 0.001538
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 30,
+          "share": 0.576923
+        },
+        "prior_multi_tool_divergence": true,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement",
+          "multi_tool_lineage_history",
+          "ambiguity_remediation_applied"
+        ],
+        "concentration_risk_score": 1.893975
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_4",
+        "row_count": 52,
+        "percent_of_targeted_dataset": 8.496732,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.192308
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.244904,
+          "effective_prompt_count": 9.480113,
+          "effective_diversity_ratio": 0.18231,
+          "mean_pairwise_jaccard": 0.790296,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.7923
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_2",
+        "row_count": 43,
+        "percent_of_targeted_dataset": 7.026144,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.232558
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.004056,
+          "effective_prompt_count": 8.022523,
+          "effective_diversity_ratio": 0.18657,
+          "mean_pairwise_jaccard": 0.80989,
+          "mean_nearest_neighbor_jaccard": 0.996417,
+          "semantic_variation_estimate": 0.003583
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.767862
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_1",
+        "row_count": 48,
+        "percent_of_targeted_dataset": 7.843137,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 12,
+          "normalized_prompt_uniqueness": 0.25
+        },
+        "unique_skeleton_count": 6,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.302361,
+          "effective_prompt_count": 9.865285,
+          "effective_diversity_ratio": 0.205527,
+          "mean_pairwise_jaccard": 0.836069,
+          "mean_nearest_neighbor_jaccard": 0.998299,
+          "semantic_variation_estimate": 0.001701
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.71005
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_3",
+        "row_count": 45,
+        "percent_of_targeted_dataset": 7.352941,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.222222
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.236654,
+          "effective_prompt_count": 9.426057,
+          "effective_diversity_ratio": 0.209468,
+          "mean_pairwise_jaccard": 0.767378,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.701774
+      },
+      {
+        "source_case_id": "i3_adapt_p0_read_file_3",
+        "row_count": 40,
+        "percent_of_targeted_dataset": 6.535948,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "read_file"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.25
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.85
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.189823,
+          "effective_prompt_count": 9.124989,
+          "effective_diversity_ratio": 0.228125,
+          "mean_pairwise_jaccard": 0.839082,
+          "mean_nearest_neighbor_jaccard": 0.998148,
+          "semantic_variation_estimate": 0.001852
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.634293
+      },
+      {
+        "source_case_id": "i3_adapt_p0_rg_search_5",
+        "row_count": 39,
+        "percent_of_targeted_dataset": 6.372549,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 10,
+          "normalized_prompt_uniqueness": 0.25641
+        },
+        "unique_skeleton_count": 5,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.20864,
+          "effective_prompt_count": 9.244788,
+          "effective_diversity_ratio": 0.237046,
+          "mean_pairwise_jaccard": 0.875897,
+          "mean_nearest_neighbor_jaccard": 1.0,
+          "semantic_variation_estimate": 0.0
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.609847
+      },
+      {
+        "source_case_id": "i3_adapt_p0_read_file_2",
+        "row_count": 48,
+        "percent_of_targeted_dataset": 7.843137,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "read_file"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 15,
+          "normalized_prompt_uniqueness": 0.3125
+        },
+        "unique_skeleton_count": 8,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 0.875
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.800614,
+          "effective_prompt_count": 13.934736,
+          "effective_diversity_ratio": 0.290307,
+          "mean_pairwise_jaccard": 0.813288,
+          "mean_nearest_neighbor_jaccard": 0.998457,
+          "semantic_variation_estimate": 0.001543
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": true,
+        "risk_flags": [
+          "low_effective_diversity_ratio",
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity",
+          "prior_ambiguity_involvement"
+        ],
+        "concentration_risk_score": 1.427901
+      },
+      {
+        "source_case_id": "i9_conv_nmr_i3_adapt_p0_rg_search_5",
+        "row_count": 14,
+        "percent_of_targeted_dataset": 2.287582,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "rg_search"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 13,
+          "normalized_prompt_uniqueness": 0.928571
+        },
+        "unique_skeleton_count": 10,
+        "dominant_style_bucket": {
+          "bucket": "imperative_general",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.664498,
+          "effective_prompt_count": 12.680131,
+          "effective_diversity_ratio": 0.905724,
+          "mean_pairwise_jaccard": 0.734506,
+          "mean_nearest_neighbor_jaccard": 0.947808,
+          "semantic_variation_estimate": 0.052192
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": false,
+        "risk_flags": [
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity"
+        ],
+        "concentration_risk_score": 0.85088
+      },
+      {
+        "source_case_id": "i9_conv_ucf_i3_adapt_p0_read_file_3",
+        "row_count": 10,
+        "percent_of_targeted_dataset": 1.633987,
+        "tool_diversity": {
+          "distinct_tools": 1,
+          "tools": [
+            "read_file"
+          ]
+        },
+        "target_diversity": {
+          "distinct_targets": 2
+        },
+        "prompt_diversity": {
+          "distinct_prompts": 9,
+          "normalized_prompt_uniqueness": 0.9
+        },
+        "unique_skeleton_count": 8,
+        "dominant_style_bucket": {
+          "bucket": "imperative_line_scoped",
+          "share": 1.0
+        },
+        "effective_diversity": {
+          "prompt_entropy_bits": 3.121928,
+          "effective_prompt_count": 8.705506,
+          "effective_diversity_ratio": 0.870551,
+          "mean_pairwise_jaccard": 0.608869,
+          "mean_nearest_neighbor_jaccard": 0.926825,
+          "semantic_variation_estimate": 0.073175
+        },
+        "ambiguity_remediation_involvement": {
+          "rows_with_remediation_flag": 0,
+          "share": 0.0
+        },
+        "prior_multi_tool_divergence": false,
+        "prior_ambiguity_involvement": false,
+        "risk_flags": [
+          "low_semantic_variation_estimate",
+          "high_nearest_neighbor_similarity"
+        ],
+        "concentration_risk_score": 0.790928
+      }
+    ]
+  },
+  "risk_flags_summary": {
+    "families_with_any_warning": 26,
+    "families_above_concentration_threshold": 0,
+    "families_with_low_effective_diversity": 8,
+    "families_with_prior_ambiguity": 8,
+    "families_with_multi_tool_history": 1
+  },
+  "memorization_risk_analysis": [
+    {
+      "source_case_id": "i3_adapt_p0_read_file_1",
+      "row_count": 52,
+      "risk_score": 1.893975,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": true,
+      "likely_memorization_prone": false,
+      "likely_safe": false,
+      "ambiguous_historically": true,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement",
+        "multi_tool_lineage_history",
+        "ambiguity_remediation_applied"
+      ],
+      "prompt_diversity": 14,
+      "target_diversity": 7
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_4",
+      "row_count": 52,
+      "risk_score": 1.7923,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": false,
+      "ambiguous_historically": true,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "prompt_diversity": 10,
+      "target_diversity": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_2",
+      "row_count": 43,
+      "risk_score": 1.767862,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": false,
+      "ambiguous_historically": true,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "prompt_diversity": 10,
+      "target_diversity": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_1",
+      "row_count": 48,
+      "risk_score": 1.71005,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": false,
+      "ambiguous_historically": true,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "prompt_diversity": 12,
+      "target_diversity": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_3",
+      "row_count": 45,
+      "risk_score": 1.701774,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": false,
+      "ambiguous_historically": true,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "prompt_diversity": 10,
+      "target_diversity": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_read_file_3",
+      "row_count": 40,
+      "risk_score": 1.634293,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": false,
+      "ambiguous_historically": true,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "prompt_diversity": 10,
+      "target_diversity": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_rg_search_5",
+      "row_count": 39,
+      "risk_score": 1.609847,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": false,
+      "ambiguous_historically": true,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "prompt_diversity": 10,
+      "target_diversity": 2
+    },
+    {
+      "source_case_id": "i3_adapt_p0_read_file_2",
+      "row_count": 48,
+      "risk_score": 1.427901,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": false,
+      "ambiguous_historically": true,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_effective_diversity_ratio",
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity",
+        "prior_ambiguity_involvement"
+      ],
+      "prompt_diversity": 15,
+      "target_diversity": 2
+    },
+    {
+      "source_case_id": "i9_conv_nmr_i3_adapt_p0_rg_search_5",
+      "row_count": 14,
+      "risk_score": 0.85088,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": true,
+      "ambiguous_historically": false,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "prompt_diversity": 13,
+      "target_diversity": 2
+    },
+    {
+      "source_case_id": "i9_conv_ucf_i3_adapt_p0_read_file_3",
+      "row_count": 10,
+      "risk_score": 0.790928,
+      "structurally_diverse": true,
+      "semantically_diverse": false,
+      "routing_diverse": false,
+      "likely_memorization_prone": false,
+      "likely_safe": true,
+      "ambiguous_historically": false,
+      "potentially_coercive": true,
+      "interpretation": "concentration present but effective diversity indicates bounded memorization risk",
+      "risk_flags": [
+        "low_semantic_variation_estimate",
+        "high_nearest_neighbor_similarity"
+      ],
+      "prompt_diversity": 9,
+      "target_diversity": 2
+    }
+  ],
+  "optional_concentration_simulation": {
+    "status": "read_only_simulation",
+    "simulated_caps": [
+      {
+        "cap_share": 0.2,
+        "cap_rows": 122,
+        "targeted_rows_removed": 0,
+        "targeted_rows_removed_percent": 0.0,
+        "targeted_rows_remaining": 612,
+        "families_capped": 0,
+        "family_entropy_pre": 4.309137,
+        "family_entropy_post": 4.309137,
+        "diversity_delta_family_entropy": 0.0,
+        "intervention_dilution_risk": "low"
+      },
+      {
+        "cap_share": 0.15,
+        "cap_rows": 91,
+        "targeted_rows_removed": 0,
+        "targeted_rows_removed_percent": 0.0,
+        "targeted_rows_remaining": 612,
+        "families_capped": 0,
+        "family_entropy_pre": 4.309137,
+        "family_entropy_post": 4.309137,
+        "diversity_delta_family_entropy": 0.0,
+        "intervention_dilution_risk": "low"
+      },
+      {
+        "cap_share": 0.12,
+        "cap_rows": 73,
+        "targeted_rows_removed": 0,
+        "targeted_rows_removed_percent": 0.0,
+        "targeted_rows_remaining": 612,
+        "families_capped": 0,
+        "family_entropy_pre": 4.309137,
+        "family_entropy_post": 4.309137,
+        "diversity_delta_family_entropy": 0.0,
+        "intervention_dilution_risk": "low"
+      },
+      {
+        "cap_share": 0.1,
+        "cap_rows": 61,
+        "targeted_rows_removed": 0,
+        "targeted_rows_removed_percent": 0.0,
+        "targeted_rows_remaining": 612,
+        "families_capped": 0,
+        "family_entropy_pre": 4.309137,
+        "family_entropy_post": 4.309137,
+        "diversity_delta_family_entropy": 0.0,
+        "intervention_dilution_risk": "low"
+      }
+    ]
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

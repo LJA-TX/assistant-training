@@ -1,0 +1,93 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:08:41Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "plan_type": "dataset_revision_design_only",
+  "operation_mode": "additions_only",
+  "target_localization": {
+    "split": "adversarial",
+    "failure_archetype": "malformed_regex_search_with_overeager_pseudo_tool_wrapper",
+    "source_case_family": ["adv_91003", "adv_91007", "adv_91011", "adv_91015", "adv_91019"],
+    "scope_constraint": "single_prompt_family_localized"
+  },
+  "row_budget": {
+    "total_new_rows": 16,
+    "total_replaced_rows": 0,
+    "total_thinned_rows": 0,
+    "caps": {
+      "max_total_new_rows": 20,
+      "max_uncertainty_conditioning_rows": 4,
+      "max_single_prompt_shell_share": 0.35
+    }
+  },
+  "planned_additions": [
+    {
+      "block_id": "contrastive_boundary_pair_block",
+      "rows": 12,
+      "pairs": 6,
+      "description": "paired malformed/underspecified vs valid/specified search prompts",
+      "targets": {
+        "refusal_no_call_rows": 6,
+        "canonical_rg_search_rows": 6
+      },
+      "requirements": [
+        "semantic task match within pair",
+        "boundary validity differs within pair",
+        "no lexical-shell monoculture",
+        "paraphrastic diversity preserved"
+      ]
+    },
+    {
+      "block_id": "adversarial_uncertainty_conditioning_support",
+      "rows": 4,
+      "description": "localized refusal calibration for malformed pattern / missing constraints",
+      "targets": {
+        "refusal_no_call_rows": 4
+      },
+      "requirements": [
+        "natural-language refusal style",
+        "no negation-heavy imperative templates",
+        "no global anti-tool language"
+      ]
+    }
+  ],
+  "unchanged_subsets": {
+    "i10r_conversion_families": "unchanged",
+    "non_failure_no_call_rows": "unchanged",
+    "direct_answer_rows": "unchanged",
+    "read_file_conversion_rows": "unchanged",
+    "rg_search_scalar_conversion_rows": "unchanged"
+  },
+  "pairing_logic": {
+    "malformed_or_underspecified_variant": {
+      "expected_behavior": "refusal_no_call",
+      "examples": [
+        "invalid regex syntax",
+        "missing target context",
+        "ambiguous project scope with forced proceed directive"
+      ]
+    },
+    "valid_and_sufficient_variant": {
+      "expected_behavior": "canonical_tool_calls_rg_search",
+      "requirements": [
+        "valid regex",
+        "explicit root path",
+        "clear file scope"
+      ]
+    }
+  },
+  "anti_drift_controls": {
+    "no_global_caution_shift": true,
+    "no_blacklist_policies": true,
+    "no_global_refusal_flood": true,
+    "preserve_commitment_pressure_via_valid_pairs": true,
+    "preserve_no_anchor_distribution": true
+  },
+  "post_generation_checks_required": [
+    "ambiguity_hard_blocks_clean",
+    "contamination_clean_heldout_tool_holdout",
+    "localized_family_only_change_verification",
+    "prompt_style_diversity_pass",
+    "anti_homogenization_pass"
+  ]
+}

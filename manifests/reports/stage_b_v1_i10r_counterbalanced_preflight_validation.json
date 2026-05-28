@@ -1,0 +1,79 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T14:44:20Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced",
+  "status": "preflight_validation_completed",
+  "summary": {
+    "pass": 12,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "name": "exactly_16_rows_added",
+      "status": "pass",
+      "detail": "actual_total_additions=16"
+    },
+    {
+      "name": "no_existing_rows_changed",
+      "status": "pass",
+      "detail": "existing_rows_changed={'train_changed_count': 0, 'val_changed_count': 0, 'train_changed_row_indices_sample': [], 'val_changed_row_indices_sample': [], 'pass': True}"
+    },
+    {
+      "name": "localized_family_only",
+      "status": "pass",
+      "detail": "localization={'all_rows_localized_family': True, 'localized_family_expected': ['malformed_regex_underspecified_search_adversarial_boundary', 'read_file_symbol_name_commitment_instability'], 'pass': True}"
+    },
+    {
+      "name": "contrastive_pairs_valid",
+      "status": "pass",
+      "detail": "pair_validation=5"
+    },
+    {
+      "name": "uncertainty_rows_eq_0",
+      "status": "pass",
+      "detail": "uncertainty={'expected_rows': 0, 'actual_rows': 0, 'pass': True}"
+    },
+    {
+      "name": "counterbalanced_block_distribution_exact",
+      "status": "pass",
+      "detail": "counterbalanced={'expected_nocall_contrastive_rows': 10, 'actual_nocall_contrastive_rows': 10, 'expected_read_file_symbol_rows': 6, 'actual_read_file_symbol_rows': 6, 'read_file_path_forms': {'mnt': 3, 'opt': 3}, 'read_file_style_variants': {'exact_envelope': 4, 'paraphrastic_envelope': 2}, 'read_file_line_window_pass': True, 'pass': True}"
+    },
+    {
+      "name": "ambiguity_hard_blocks_clean",
+      "status": "pass",
+      "detail": "hard_blocks={'prompt_to_multiple_targets': False, 'prompt_to_multiple_tools': False, 'prompt_tool_to_multiple_arguments': False}"
+    },
+    {
+      "name": "heldout_overlap_zero",
+      "status": "pass",
+      "detail": "heldout={'prompt_overlap': 0, 'target_overlap': 0, 'source_case_id_overlap': 0}"
+    },
+    {
+      "name": "tool_holdout_overlap_zero",
+      "status": "pass",
+      "detail": "tool_holdout={'prompt_overlap': 0, 'target_overlap': 0, 'source_case_id_overlap': 0}"
+    },
+    {
+      "name": "forbidden_pattern_hits_zero",
+      "status": "pass",
+      "detail": "total_hits=0"
+    },
+    {
+      "name": "diversity_pass",
+      "status": "pass",
+      "detail": "diversity_pass=True"
+    },
+    {
+      "name": "anti_homogenization_pass",
+      "status": "pass",
+      "detail": "anti_pass=True"
+    }
+  ],
+  "all_critical_checks_pass": true,
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

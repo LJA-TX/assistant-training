@@ -1,0 +1,1093 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T17:24:00Z",
+  "phase": "bounded_housekeeping_and_convergence_checkpoint",
+  "git_status_branch": "main...origin/main",
+  "inventory_total_paths": 116,
+  "inventory_by_category": {
+    "required_execution_artifacts": [
+      "manifests/reports/stage_b_v1_i10r_nocall_remediation_risk_matrix.json"
+    ],
+    "required_forensic_artifacts": [
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_next_step_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_residual_failure_taxonomy.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_residual_nocall_forensics.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_residual_nocall_forensics.md",
+      "manifests/reports/stage_b_v1_i10r_nocall_failure_forensics.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_failure_forensics.md",
+      "manifests/reports/stage_b_v1_i10r_nocall_failure_taxonomy.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_causal_interaction_analysis.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_failure_forensics.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_failure_forensics.md",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_next_step_recommendation.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_regression_taxonomy.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_rollback_recommendation.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_stability_assessment.json"
+    ],
+    "required_governance_lineage_artifacts": [
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_anti_regression_telemetry.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_contamination_audit.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_dataset_diagnostics.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_dataset_plan.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_family_concentration_review.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_family_concentration_review.md",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_human_review_package.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_human_review_package.md",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_localized_diff_verification.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_preflight_validation.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_prompt_ambiguity_audit.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_readiness_criteria.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_remediation_design.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_remediation_design.md",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_risk_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_anti_regression_telemetry.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_boundary_restoration_plan.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_contamination_audit.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_dataset_diagnostics.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_human_review_package.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_human_review_package.md",
+      "manifests/reports/stage_b_v1_i10r_nocall_intervention_candidates.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_localized_diff_verification.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_preflight_validation.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_prompt_ambiguity_audit.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_restoration_dataset_plan.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_restoration_design.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_restoration_design.md",
+      "manifests/reports/stage_b_v1_i10r_nocall_restoration_readiness_criteria.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_restoration_risk_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_anti_regression_telemetry.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_contamination_audit.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_dataset_diagnostics.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_human_review_package.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_human_review_package.md",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_localized_diff_verification.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_preflight_validation.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_prompt_ambiguity_audit.json"
+    ],
+    "reproducibility_artifacts": [
+      "configs/lora/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe.config.json",
+      "configs/lora/stage_b_llama31_8b_base_v1_i10r_nocall_probe.config.json",
+      "configs/lora/stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe.config.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_comparison_rows_raw.snapshot.jsonl",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_eval_summary_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_masking_audit_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_resolved_training_config_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_execution_readiness.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_eval_summary_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_masking_audit_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_resolved_training_config_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_eval_summary_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_masking_audit_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_resolved_training_config_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_training_execution_readiness.json",
+      "manifests/runs/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe.run_manifest.json",
+      "manifests/runs/stage_b_llama31_8b_base_v1_i10r_nocall_probe.run_manifest.json",
+      "manifests/runs/stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe.run_manifest.json"
+    ],
+    "finalized_datasets_worth_preserving": [
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_summary.json",
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_summary.json",
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_train.jsonl",
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_val.jsonl",
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_summary.json",
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_train.jsonl",
+      "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_val.jsonl"
+    ],
+    "finalized_probe_artifacts": [
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_anti_regression_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_behavioral_review_package.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_collapse_watch_interpretation.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_gate_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_no_call_restoration_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_procedural_generalization_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_read_file_symbol_name_preservation_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_scalar_substitution_delta_analysis.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_summary.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_anti_regression_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_behavioral_review_package.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_canonical_eval_summary.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_collapse_watch_interpretation.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_gate_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_no_call_restoration_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_procedural_generalization_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_scalar_substitution_delta_analysis.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_training_summary.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_anti_regression_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_behavioral_review_package.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_canonical_eval_summary.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_collapse_watch_interpretation.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_gate_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_procedural_generalization_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_read_file_preservation_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_residual_nocall_seam_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_scalar_substitution_delta_analysis.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_training_summary.json"
+    ],
+    "stale_drafts_superseded_by_finalized_artifacts": [
+      "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+      "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json"
+    ],
+    "obsolete_intermediate_generated_artifacts": [
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_execution_readiness.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_training_execution_readiness.json"
+    ],
+    "duplicate_generated_reports": [
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_human_review_package.md",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_anti_regression_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_scalar_substitution_delta_analysis.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_human_review_package.md",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_anti_regression_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_canonical_eval_summary.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_scalar_substitution_delta_analysis.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_human_review_package.md",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_anti_regression_assessment.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_canonical_eval_summary.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_scalar_substitution_delta_analysis.json"
+    ],
+    "intentionally_retain_untracked_candidates": [
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_comparison_rows_raw.snapshot.jsonl",
+      "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_eval_summary_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+      "manifests/reports/stage_b_v1_i10r_nocall_probe_eval_summary_raw.snapshot.json",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+      "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_eval_summary_raw.snapshot.json",
+      "scripts/build_stage_b_recovery_i10r_counterbalanced_dataset.py",
+      "scripts/build_stage_b_recovery_i10r_nocall_dataset.py",
+      "scripts/build_stage_b_recovery_i10r_residual_nocall_dataset.py"
+    ],
+    "safe_cleanup_candidates": [
+      "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+      "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json"
+    ]
+  },
+  "inventory_entries": [
+    {
+      "status": "??",
+      "path": "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+      "category": "stale_drafts_superseded_by_finalized_artifacts",
+      "tags": [
+        "safe_cleanup_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "configs/lora/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe.config.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "configs/lora/stage_b_llama31_8b_base_v1_i10r_nocall_probe.config.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "configs/lora/stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe.config.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_summary.json",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_summary.json",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_train.jsonl",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_val.jsonl",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_summary.json",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_train.jsonl",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_val.jsonl",
+      "category": "finalized_datasets_worth_preserving",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_anti_regression_telemetry.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_contamination_audit.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_dataset_diagnostics.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_dataset_plan.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_family_concentration_review.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_family_concentration_review.md",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_human_review_package.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_human_review_package.md",
+      "category": "required_governance_lineage_artifacts",
+      "tags": [
+        "duplicate_generated_report_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_localized_diff_verification.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_preflight_validation.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_anti_regression_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "derived_summary_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_behavioral_review_package.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "duplicate_generated_report_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_collapse_watch_interpretation.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_comparison_rows_raw.snapshot.jsonl",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_eval_summary_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_gate_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_masking_audit_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_next_step_assessment.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_no_call_restoration_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_procedural_generalization_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_read_file_symbol_name_preservation_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_residual_failure_taxonomy.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_residual_nocall_forensics.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_residual_nocall_forensics.md",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_resolved_training_config_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_scalar_substitution_delta_analysis.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "derived_summary_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_execution_readiness.json",
+      "category": "reproducibility_artifacts",
+      "tags": [
+        "intermediate_generated_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_summary.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_prompt_ambiguity_audit.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_readiness_criteria.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_remediation_design.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_remediation_design.md",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_counterbalanced_risk_assessment.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_anti_regression_telemetry.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_boundary_restoration_plan.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_contamination_audit.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_dataset_diagnostics.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_failure_forensics.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_failure_forensics.md",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_failure_taxonomy.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_human_review_package.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_human_review_package.md",
+      "category": "required_governance_lineage_artifacts",
+      "tags": [
+        "duplicate_generated_report_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_intervention_candidates.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_localized_diff_verification.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_preflight_validation.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_anti_regression_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "derived_summary_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_behavioral_review_package.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_canonical_eval_summary.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "duplicate_generated_report_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_causal_interaction_analysis.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_collapse_watch_interpretation.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_eval_summary_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_failure_forensics.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_failure_forensics.md",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_gate_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_masking_audit_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_next_step_recommendation.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_no_call_restoration_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_procedural_generalization_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_regression_taxonomy.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_resolved_training_config_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_rollback_recommendation.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_scalar_substitution_delta_analysis.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "derived_summary_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_stability_assessment.json",
+      "category": "required_forensic_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_probe_training_summary.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_prompt_ambiguity_audit.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_remediation_risk_matrix.json",
+      "category": "required_execution_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_restoration_dataset_plan.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_restoration_design.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_restoration_design.md",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_restoration_readiness_criteria.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_nocall_restoration_risk_assessment.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_anti_regression_telemetry.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_contamination_audit.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_dataset_diagnostics.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_human_review_package.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_human_review_package.md",
+      "category": "required_governance_lineage_artifacts",
+      "tags": [
+        "duplicate_generated_report_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_localized_diff_verification.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_preflight_validation.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_anti_regression_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "derived_summary_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_behavioral_review_package.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_canonical_eval_summary.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "duplicate_generated_report_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_collapse_watch_interpretation.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_eval_summary_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_gate_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_masking_audit_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_procedural_generalization_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_read_file_preservation_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_residual_nocall_seam_assessment.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_resolved_training_config_raw.snapshot.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_scalar_substitution_delta_analysis.json",
+      "category": "finalized_probe_artifacts",
+      "tags": [
+        "derived_summary_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_training_execution_readiness.json",
+      "category": "reproducibility_artifacts",
+      "tags": [
+        "intermediate_generated_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_training_summary.json",
+      "category": "finalized_probe_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/reports/stage_b_v1_i10r_residual_nocall_prompt_ambiguity_audit.json",
+      "category": "required_governance_lineage_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json",
+      "category": "stale_drafts_superseded_by_finalized_artifacts",
+      "tags": [
+        "safe_cleanup_candidate"
+      ]
+    },
+    {
+      "status": "??",
+      "path": "manifests/runs/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe.run_manifest.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/runs/stage_b_llama31_8b_base_v1_i10r_nocall_probe.run_manifest.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "manifests/runs/stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe.run_manifest.json",
+      "category": "reproducibility_artifacts",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "scripts/build_stage_b_recovery_i10r_counterbalanced_dataset.py",
+      "category": "intentionally_retain_untracked_candidates",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "scripts/build_stage_b_recovery_i10r_nocall_dataset.py",
+      "category": "intentionally_retain_untracked_candidates",
+      "tags": []
+    },
+    {
+      "status": "??",
+      "path": "scripts/build_stage_b_recovery_i10r_residual_nocall_dataset.py",
+      "category": "intentionally_retain_untracked_candidates",
+      "tags": []
+    }
+  ],
+  "minimum_reconstruction_set": {
+    "i10r_breakthrough": {
+      "files": [
+        "manifests/reports/stage_b_v1_i10r_microprobe_training_summary.json",
+        "manifests/reports/stage_b_v1_i10r_microprobe_eval_summary_raw.snapshot.json",
+        "manifests/reports/stage_b_v1_i10r_microprobe_comparison_rows_raw.snapshot.jsonl",
+        "manifests/reports/stage_b_v1_i10r_microprobe_behavioral_review_package.json",
+        "manifests/reports/stage_b_v1_i10r_microprobe_read_file_emergence_analysis.json"
+      ],
+      "present_in_current_delta": [],
+      "missing_from_current_delta": [
+        "manifests/reports/stage_b_v1_i10r_microprobe_training_summary.json",
+        "manifests/reports/stage_b_v1_i10r_microprobe_eval_summary_raw.snapshot.json",
+        "manifests/reports/stage_b_v1_i10r_microprobe_comparison_rows_raw.snapshot.jsonl",
+        "manifests/reports/stage_b_v1_i10r_microprobe_behavioral_review_package.json",
+        "manifests/reports/stage_b_v1_i10r_microprobe_read_file_emergence_analysis.json"
+      ]
+    },
+    "failed_nocall_restoration_probe": {
+      "files": [
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_training_summary.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_eval_summary_raw.snapshot.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_behavioral_review_package.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_gate_assessment.json"
+      ],
+      "present_in_current_delta": [
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_training_summary.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_eval_summary_raw.snapshot.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_behavioral_review_package.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_gate_assessment.json"
+      ],
+      "missing_from_current_delta": []
+    },
+    "calibration_bifurcation_diagnosis": {
+      "files": [
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_failure_forensics.md",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_failure_forensics.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_causal_interaction_analysis.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_stability_assessment.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_next_step_recommendation.json"
+      ],
+      "present_in_current_delta": [
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_failure_forensics.md",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_failure_forensics.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_causal_interaction_analysis.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_stability_assessment.json",
+        "manifests/reports/stage_b_v1_i10r_nocall_probe_next_step_recommendation.json"
+      ],
+      "missing_from_current_delta": []
+    },
+    "rollback_first_counterbalanced_recovery": {
+      "files": [
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_summary.json",
+        "manifests/reports/stage_b_v1_i10r_counterbalanced_localized_diff_verification.json",
+        "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_behavioral_review_package.json",
+        "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_gate_assessment.json"
+      ],
+      "present_in_current_delta": [
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_summary.json",
+        "manifests/reports/stage_b_v1_i10r_counterbalanced_localized_diff_verification.json",
+        "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_behavioral_review_package.json",
+        "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_gate_assessment.json"
+      ],
+      "missing_from_current_delta": []
+    },
+    "residual_seam_restoration_attempt": {
+      "files": [
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_train.jsonl",
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_val.jsonl",
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_summary.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_localized_diff_verification.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_behavioral_review_package.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_gate_assessment.json"
+      ],
+      "present_in_current_delta": [
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_train.jsonl",
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_val.jsonl",
+        "data/v1_0/dataset_v1_0_stage_b_recovery_i10r_residual_nocall_summary.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_localized_diff_verification.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_behavioral_review_package.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_gate_assessment.json"
+      ],
+      "missing_from_current_delta": []
+    },
+    "final_objective_interaction_interpretation": {
+      "files": [
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_collapse_watch_interpretation.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_read_file_preservation_assessment.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_residual_nocall_seam_assessment.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_anti_regression_assessment.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_procedural_generalization_assessment.json"
+      ],
+      "present_in_current_delta": [
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_collapse_watch_interpretation.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_read_file_preservation_assessment.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_residual_nocall_seam_assessment.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_anti_regression_assessment.json",
+        "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_procedural_generalization_assessment.json"
+      ],
+      "missing_from_current_delta": []
+    }
+  },
+  "stale_drafts_identified": [
+    "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+    "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json"
+  ],
+  "duplicate_or_derived_report_candidates": [
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_human_review_package.md",
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_anti_regression_assessment.json",
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_scalar_substitution_delta_analysis.json",
+    "manifests/reports/stage_b_v1_i10r_nocall_human_review_package.md",
+    "manifests/reports/stage_b_v1_i10r_nocall_probe_anti_regression_assessment.json",
+    "manifests/reports/stage_b_v1_i10r_nocall_probe_canonical_eval_summary.json",
+    "manifests/reports/stage_b_v1_i10r_nocall_probe_scalar_substitution_delta_analysis.json",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_human_review_package.md",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_anti_regression_assessment.json",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_canonical_eval_summary.json",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_scalar_substitution_delta_analysis.json"
+  ],
+  "obsolete_intermediate_candidates": [
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_execution_readiness.json",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_training_execution_readiness.json"
+  ],
+  "safe_cleanup_candidates": [
+    "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+    "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json"
+  ],
+  "commit_scope_strategy": {
+    "recommended_strategy": "partial_cleanup_then_checkpoint",
+    "rationale": "State is scientifically critical but commit scope is inflated (116 untracked files). Remove only stale drafts first, then checkpoint full forensic lineage in logical splits.",
+    "proposed_logical_split_commits": [
+      {
+        "name": "checkpoint_core_execution_and_forensics",
+        "include_categories": [
+          "finalized_datasets_worth_preserving",
+          "reproducibility_artifacts",
+          "finalized_probe_artifacts",
+          "required_forensic_artifacts"
+        ],
+        "notes": "Preserves run reproducibility and cross-probe comparisons end-to-end."
+      },
+      {
+        "name": "checkpoint_governance_and_design_context",
+        "include_categories": [
+          "required_governance_lineage_artifacts",
+          "intentionally_retain_untracked_candidates"
+        ],
+        "notes": "Preserves dataset-generation doctrine, diagnostics, and builders used to produce artifacts."
+      }
+    ],
+    "exclude_or_cleanup_before_checkpoint": [
+      "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+      "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json"
+    ],
+    "avoid_autocleanup": true
+  },
+  "next_phase_assessment": {
+    "recommended_mode": "convergence_analysis_documentation_only",
+    "immediate_experimentation_recommendation": "pause",
+    "option_assessment": {
+      "additional_behavioral_surgery": {
+        "recommendation": "defer",
+        "reason": "Repeated local fixes are causing cross-objective coupling regressions (no-call restored while read_file collapses)."
+      },
+      "altered_training_geometry": {
+        "recommendation": "primary_next",
+        "reason": "Evidence supports objective-interaction geometry issues; explore loss weighting/curriculum geometry before new surgery."
+      },
+      "weighting_instrumentation_work": {
+        "recommendation": "primary_next",
+        "reason": "Need auditable exposure/weight controls and objective interaction telemetry before next probe."
+      },
+      "adapter_capacity_changes": {
+        "recommendation": "secondary_optional",
+        "reason": "Could help if coupling stems from limited adaptation headroom, but should follow geometry analysis."
+      },
+      "runtime_assisted_enforcement": {
+        "recommendation": "not_primary",
+        "reason": "Would confound scientific interpretation of model-internal behavior; keep as downstream safeguard only."
+      },
+      "convergence_analysis_documentation_only": {
+        "recommendation": "immediate",
+        "reason": "Best risk-controlled step before any new training direction."
+      }
+    },
+    "recommended_immediate_next_action": "partial_cleanup_then_checkpoint"
+  }
+}

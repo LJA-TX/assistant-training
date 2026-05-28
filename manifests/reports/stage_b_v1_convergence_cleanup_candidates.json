@@ -1,0 +1,29 @@
+{
+  "stale_drafts_safe_to_remove": [
+    "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+    "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json"
+  ],
+  "duplicate_generated_reports_review_before_commit": [
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_human_review_package.md",
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_anti_regression_assessment.json",
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_scalar_substitution_delta_analysis.json",
+    "manifests/reports/stage_b_v1_i10r_nocall_human_review_package.md",
+    "manifests/reports/stage_b_v1_i10r_nocall_probe_anti_regression_assessment.json",
+    "manifests/reports/stage_b_v1_i10r_nocall_probe_canonical_eval_summary.json",
+    "manifests/reports/stage_b_v1_i10r_nocall_probe_scalar_substitution_delta_analysis.json",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_human_review_package.md",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_anti_regression_assessment.json",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_canonical_eval_summary.json",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_scalar_substitution_delta_analysis.json"
+  ],
+  "obsolete_intermediate_generated_review_before_commit": [
+    "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_execution_readiness.json",
+    "manifests/reports/stage_b_v1_i10r_residual_nocall_probe_training_execution_readiness.json"
+  ],
+  "safe_cleanup_candidates": [
+    "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+    "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json"
+  ],
+  "recommended_action": "remove_stale_drafts_only_before_checkpoint; preserve forensic/generated artifacts unless explicitly scope-reduced"
+}

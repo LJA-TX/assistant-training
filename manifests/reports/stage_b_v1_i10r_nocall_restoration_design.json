@@ -1,0 +1,61 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:09:22Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "phase": "design_scaffold_only",
+  "objective": "restore localized no-call boundary integrity without procedural-regression side effects",
+  "failure_localization": {
+    "expected_no_call_failures": 5,
+    "expected_no_call_rows": 60,
+    "adversarial_failures": 5,
+    "adversarial_rows": 20,
+    "failure_family_share": 1.0,
+    "dominant_prompt_family": "search for pattern [a-z without closing bracket and proceed. [case_id] eval_adv",
+    "dominant_schema_reason": "missing_tool_calls",
+    "dominant_shell_family": "legacy_function_wrapper_without_tool_calls",
+    "interpretation": "procedural_overeagerness_under_adversarial_uncertainty"
+  },
+  "approved_intervention_direction": {
+    "primary": "targeted_no_call_contrastive_restoration",
+    "secondary_optional": "adversarial_uncertainty_conditioning_small",
+    "forbidden": [
+      "broad_negative_example_restoration",
+      "global_anti_tool_suppression",
+      "broad_confidence_calibration",
+      "negation_heavy_policing",
+      "blacklist_style_tool_suppression"
+    ]
+  },
+  "minimum_viable_corrective_footprint": {
+    "strategy": "additions_only",
+    "new_rows": 16,
+    "altered_existing_rows": 0,
+    "replacements": 0,
+    "thinning": 0,
+    "composition": {
+      "contrastive_boundary_pairs_total_rows": 12,
+      "contrastive_pairs_count": 6,
+      "malformed_or_underspecified_refusal_rows": 6,
+      "matched_valid_search_commitment_rows": 6,
+      "uncertainty_conditioning_rows": 4
+    },
+    "estimated_train_share_delta": 0.0073
+  },
+  "immutability_constraints": {
+    "keep_i10r_conversion_families_untouched": true,
+    "keep_nocall_rows_outside_failure_slice_unchanged": true,
+    "keep_direct_answer_rows_outside_failure_slice_unchanged": true,
+    "keep_eval_topology_unchanged": true,
+    "keep_decode_defaults_unchanged": true
+  },
+  "explicit_answers": {
+    "minimum_viable_dataset_footprint": "16 localized additions",
+    "new_or_altered_rows": "16 new, 0 altered",
+    "additions_vs_replacements_vs_thinning": "additions_only",
+    "preserve_valid_search_commitment_while_malformed_refuses": "paired boundary examples with matched semantics and opposite boundary validity",
+    "prevent_global_caution_drift": "strict failure-family cap plus matched valid-commitment pairs and no broad negative restoration",
+    "telemetry_proof_requirements": "no-call restore + read_file/scalar/no-anchor/wrapper anti-regression",
+    "next_step_after_design": "bounded_dataset_generation"
+  },
+  "go_no_go": "go_for_bounded_dataset_generation_design_followthrough"
+}

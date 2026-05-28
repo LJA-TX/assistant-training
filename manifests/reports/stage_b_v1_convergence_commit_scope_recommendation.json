@@ -1,0 +1,29 @@
+{
+  "recommended_strategy": "partial_cleanup_then_checkpoint",
+  "rationale": "State is scientifically critical but commit scope is inflated (116 untracked files). Remove only stale drafts first, then checkpoint full forensic lineage in logical splits.",
+  "proposed_logical_split_commits": [
+    {
+      "name": "checkpoint_core_execution_and_forensics",
+      "include_categories": [
+        "finalized_datasets_worth_preserving",
+        "reproducibility_artifacts",
+        "finalized_probe_artifacts",
+        "required_forensic_artifacts"
+      ],
+      "notes": "Preserves run reproducibility and cross-probe comparisons end-to-end."
+    },
+    {
+      "name": "checkpoint_governance_and_design_context",
+      "include_categories": [
+        "required_governance_lineage_artifacts",
+        "intentionally_retain_untracked_candidates"
+      ],
+      "notes": "Preserves dataset-generation doctrine, diagnostics, and builders used to produce artifacts."
+    }
+  ],
+  "exclude_or_cleanup_before_checkpoint": [
+    "configs/lora/stage_b_llama31_8b_base_v1_i10.config.draft.json",
+    "manifests/runs/stage_b_llama31_8b_base_v1_i10.run_manifest.draft.json"
+  ],
+  "avoid_autocleanup": true
+}

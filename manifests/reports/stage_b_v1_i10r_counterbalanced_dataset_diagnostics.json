@@ -1,0 +1,1928 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T14:44:20Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced",
+  "status": "analysis_completed",
+  "policy": {
+    "targeted_tools": [
+      "read_file",
+      "rg_search"
+    ],
+    "forbidden_patterns": [
+      "never return",
+      "must not output",
+      "forbidden wrapper key",
+      "always include tool_calls key regardless of request",
+      "do not answer directly"
+    ],
+    "max_allowed_skeleton_concentration": 0.0,
+    "min_required_style_buckets": 2,
+    "min_required_unique_skeletons": 10
+  },
+  "checks": {
+    "style_bucket_analysis": {
+      "status": "ok",
+      "rows_analyzed": 2218,
+      "overall": [
+        {
+          "bucket_name": "imperative_general",
+          "row_count": 1072,
+          "share": 0.483318
+        },
+        {
+          "bucket_name": "task_narrative",
+          "row_count": 813,
+          "share": 0.366546
+        },
+        {
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 330,
+          "share": 0.148783
+        },
+        {
+          "bucket_name": "constrained_output",
+          "row_count": 3,
+          "share": 0.001353
+        }
+      ],
+      "by_tool": [
+        {
+          "tool_family": "",
+          "bucket_name": "task_narrative",
+          "row_count": 768,
+          "share": 0.908876
+        },
+        {
+          "tool_family": "",
+          "bucket_name": "imperative_general",
+          "row_count": 77,
+          "share": 0.091124
+        },
+        {
+          "tool_family": "apply_unified_diff",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 22,
+          "share": 1.0
+        },
+        {
+          "tool_family": "archive_create",
+          "bucket_name": "imperative_general",
+          "row_count": 39,
+          "share": 1.0
+        },
+        {
+          "tool_family": "archive_extract",
+          "bucket_name": "imperative_general",
+          "row_count": 33,
+          "share": 1.0
+        },
+        {
+          "tool_family": "check_service_health",
+          "bucket_name": "imperative_general",
+          "row_count": 61,
+          "share": 1.0
+        },
+        {
+          "tool_family": "copy_path",
+          "bucket_name": "imperative_general",
+          "row_count": 34,
+          "share": 1.0
+        },
+        {
+          "tool_family": "debug_tools",
+          "bucket_name": "imperative_general",
+          "row_count": 122,
+          "share": 1.0
+        },
+        {
+          "tool_family": "find_files",
+          "bucket_name": "imperative_general",
+          "row_count": 133,
+          "share": 1.0
+        },
+        {
+          "tool_family": "get_system_datetime",
+          "bucket_name": "imperative_general",
+          "row_count": 50,
+          "share": 1.0
+        },
+        {
+          "tool_family": "get_system_version",
+          "bucket_name": "imperative_general",
+          "row_count": 9,
+          "share": 1.0
+        },
+        {
+          "tool_family": "git_diff",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 5,
+          "share": 0.555556
+        },
+        {
+          "tool_family": "git_diff",
+          "bucket_name": "imperative_general",
+          "row_count": 4,
+          "share": 0.444444
+        },
+        {
+          "tool_family": "git_status",
+          "bucket_name": "imperative_general",
+          "row_count": 9,
+          "share": 1.0
+        },
+        {
+          "tool_family": "http_request",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "json_edit",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "list_active_ports",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "list_tools",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "read_file",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 188,
+          "share": 0.813853
+        },
+        {
+          "tool_family": "read_file",
+          "bucket_name": "task_narrative",
+          "row_count": 40,
+          "share": 0.17316
+        },
+        {
+          "tool_family": "read_file",
+          "bucket_name": "constrained_output",
+          "row_count": 3,
+          "share": 0.012987
+        },
+        {
+          "tool_family": "rg_search",
+          "bucket_name": "imperative_general",
+          "row_count": 278,
+          "share": 0.729659
+        },
+        {
+          "tool_family": "rg_search",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 98,
+          "share": 0.257218
+        },
+        {
+          "tool_family": "rg_search",
+          "bucket_name": "task_narrative",
+          "row_count": 5,
+          "share": 0.013123
+        },
+        {
+          "tool_family": "run_command",
+          "bucket_name": "imperative_general",
+          "row_count": 78,
+          "share": 1.0
+        },
+        {
+          "tool_family": "service_control",
+          "bucket_name": "imperative_general",
+          "row_count": 9,
+          "share": 1.0
+        },
+        {
+          "tool_family": "sha256_file",
+          "bucket_name": "imperative_general",
+          "row_count": 11,
+          "share": 1.0
+        },
+        {
+          "tool_family": "stat_path",
+          "bucket_name": "imperative_general",
+          "row_count": 39,
+          "share": 1.0
+        },
+        {
+          "tool_family": "test_run",
+          "bucket_name": "imperative_general",
+          "row_count": 9,
+          "share": 1.0
+        },
+        {
+          "tool_family": "write_file",
+          "bucket_name": "imperative_general",
+          "row_count": 33,
+          "share": 0.66
+        },
+        {
+          "tool_family": "write_file",
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 17,
+          "share": 0.34
+        }
+      ],
+      "targeted_only": [
+        {
+          "bucket_name": "imperative_line_scoped",
+          "row_count": 286,
+          "share": 0.46732
+        },
+        {
+          "bucket_name": "imperative_general",
+          "row_count": 278,
+          "share": 0.454248
+        },
+        {
+          "bucket_name": "task_narrative",
+          "row_count": 45,
+          "share": 0.073529
+        },
+        {
+          "bucket_name": "constrained_output",
+          "row_count": 3,
+          "share": 0.004902
+        }
+      ]
+    },
+    "prompt_skeleton_concentration": {
+      "status": "ok",
+      "max_allowed_concentration": 0.0,
+      "global": {
+        "group": "global",
+        "rows": 2218,
+        "unique_skeletons": 297,
+        "top1_share": 0.055005,
+        "top3_share": 0.105951,
+        "top_skeletons": [
+          {
+            "skeleton_id": "77f2bcc076c5",
+            "row_count": 122,
+            "share": 0.055005,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "eda6ede9db3d",
+            "row_count": 57,
+            "share": 0.025699,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "3d4c35372642",
+            "row_count": 56,
+            "share": 0.025248,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "61804e8e5477",
+            "row_count": 56,
+            "share": 0.025248,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "0356ce3a8616",
+            "row_count": 53,
+            "share": 0.023895,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "4c2064512bed",
+            "row_count": 51,
+            "share": 0.022994,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "d3ed4e768734",
+            "row_count": 51,
+            "share": 0.022994,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "abb490d0ee5c",
+            "row_count": 50,
+            "share": 0.022543,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "22972110dca3",
+            "row_count": 49,
+            "share": 0.022092,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "d165dd55b1ed",
+            "row_count": 46,
+            "share": 0.020739,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "618e455c7f4c",
+            "row_count": 45,
+            "share": 0.020289,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "5b2dfe2fc187",
+            "row_count": 43,
+            "share": 0.019387,
+            "dominance_flag": false
+          }
+        ]
+      },
+      "targeted": {
+        "group": "targeted_tools",
+        "rows": 612,
+        "unique_skeletons": 219,
+        "top1_share": 0.039216,
+        "top3_share": 0.104575,
+        "top_skeletons": [
+          {
+            "skeleton_id": "7bf04fd7509e",
+            "row_count": 24,
+            "share": 0.039216,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "49e8a004f19b",
+            "row_count": 20,
+            "share": 0.03268,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "b5346fe71f24",
+            "row_count": 20,
+            "share": 0.03268,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "a195264dd90c",
+            "row_count": 17,
+            "share": 0.027778,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "52c9c7295b06",
+            "row_count": 16,
+            "share": 0.026144,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "4ea5a9d3e1aa",
+            "row_count": 15,
+            "share": 0.02451,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "3d04e2e8f9fb",
+            "row_count": 12,
+            "share": 0.019608,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "0710921773e0",
+            "row_count": 10,
+            "share": 0.01634,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "1a220eb9ecce",
+            "row_count": 10,
+            "share": 0.01634,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "4e7ada1bcc57",
+            "row_count": 10,
+            "share": 0.01634,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "7e3509f5c88e",
+            "row_count": 10,
+            "share": 0.01634,
+            "dominance_flag": false
+          },
+          {
+            "skeleton_id": "9383807f75fe",
+            "row_count": 10,
+            "share": 0.01634,
+            "dominance_flag": false
+          }
+        ]
+      },
+      "per_tool": [
+        {
+          "group": "",
+          "rows": 845,
+          "unique_skeletons": 45,
+          "top1_share": 0.067456,
+          "top3_share": 0.2,
+          "top_skeletons": [
+            {
+              "skeleton_id": "eda6ede9db3d",
+              "row_count": 57,
+              "share": 0.067456,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "3d4c35372642",
+              "row_count": 56,
+              "share": 0.066272,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "61804e8e5477",
+              "row_count": 56,
+              "share": 0.066272,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "0356ce3a8616",
+              "row_count": 53,
+              "share": 0.062722,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "4c2064512bed",
+              "row_count": 51,
+              "share": 0.060355,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "d3ed4e768734",
+              "row_count": 51,
+              "share": 0.060355,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "618e455c7f4c",
+              "row_count": 45,
+              "share": 0.053254,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "7f0910c3ada5",
+              "row_count": 42,
+              "share": 0.049704,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "5a75ba7a7b9a",
+              "row_count": 41,
+              "share": 0.048521,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "e67afb879eec",
+              "row_count": 40,
+              "share": 0.047337,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "734649a5b04f",
+              "row_count": 38,
+              "share": 0.04497,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "525fe2389d60",
+              "row_count": 35,
+              "share": 0.04142,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "apply_unified_diff",
+          "rows": 22,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "e5a8c6e86842",
+              "row_count": 22,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "archive_create",
+          "rows": 39,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "92957ef11929",
+              "row_count": 39,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "archive_extract",
+          "rows": 33,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "f0a144d1fc16",
+              "row_count": 33,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "check_service_health",
+          "rows": 61,
+          "unique_skeletons": 2,
+          "top1_share": 0.508197,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "a0496dda695a",
+              "row_count": 31,
+              "share": 0.508197,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "56a80faf0ac0",
+              "row_count": 30,
+              "share": 0.491803,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "copy_path",
+          "rows": 34,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "17fbbd59cb8e",
+              "row_count": 34,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "debug_tools",
+          "rows": 122,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "77f2bcc076c5",
+              "row_count": 122,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "find_files",
+          "rows": 133,
+          "unique_skeletons": 3,
+          "top1_share": 0.368421,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "22972110dca3",
+              "row_count": 49,
+              "share": 0.368421,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "5b2dfe2fc187",
+              "row_count": 43,
+              "share": 0.323308,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "105f905150e5",
+              "row_count": 41,
+              "share": 0.308271,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "get_system_datetime",
+          "rows": 50,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "abb490d0ee5c",
+              "row_count": 50,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "get_system_version",
+          "rows": 9,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "775f0d2faf78",
+              "row_count": 9,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "git_diff",
+          "rows": 9,
+          "unique_skeletons": 2,
+          "top1_share": 0.555556,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "f1baa4eb8aa1",
+              "row_count": 5,
+              "share": 0.555556,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "f9d984878b18",
+              "row_count": 4,
+              "share": 0.444444,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "git_status",
+          "rows": 9,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "c4269674d8eb",
+              "row_count": 9,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "http_request",
+          "rows": 11,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "cec7e5aa99f4",
+              "row_count": 11,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "json_edit",
+          "rows": 11,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "11e699b43ec7",
+              "row_count": 11,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "list_active_ports",
+          "rows": 11,
+          "unique_skeletons": 2,
+          "top1_share": 0.545455,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "baba4efd1d5a",
+              "row_count": 6,
+              "share": 0.545455,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "b40bc338d3c4",
+              "row_count": 5,
+              "share": 0.454545,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "list_tools",
+          "rows": 11,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "b381c9f52078",
+              "row_count": 11,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "read_file",
+          "rows": 231,
+          "unique_skeletons": 101,
+          "top1_share": 0.04329,
+          "top3_share": 0.125541,
+          "top_skeletons": [
+            {
+              "skeleton_id": "7e3509f5c88e",
+              "row_count": 10,
+              "share": 0.04329,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "eef4e19e6d48",
+              "row_count": 10,
+              "share": 0.04329,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "893cddcb0d09",
+              "row_count": 9,
+              "share": 0.038961,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "da057fa561b2",
+              "row_count": 9,
+              "share": 0.038961,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "418c17b4fea5",
+              "row_count": 8,
+              "share": 0.034632,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "32234a701a31",
+              "row_count": 7,
+              "share": 0.030303,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "111efe0b6cd4",
+              "row_count": 6,
+              "share": 0.025974,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "1d2226af48b8",
+              "row_count": 6,
+              "share": 0.025974,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "208a3902557b",
+              "row_count": 6,
+              "share": 0.025974,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "3be926427765",
+              "row_count": 6,
+              "share": 0.025974,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "48686176673c",
+              "row_count": 6,
+              "share": 0.025974,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "70e1cfb8493b",
+              "row_count": 6,
+              "share": 0.025974,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "rg_search",
+          "rows": 381,
+          "unique_skeletons": 118,
+          "top1_share": 0.062992,
+          "top3_share": 0.167979,
+          "top_skeletons": [
+            {
+              "skeleton_id": "7bf04fd7509e",
+              "row_count": 24,
+              "share": 0.062992,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "49e8a004f19b",
+              "row_count": 20,
+              "share": 0.052493,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "b5346fe71f24",
+              "row_count": 20,
+              "share": 0.052493,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "a195264dd90c",
+              "row_count": 17,
+              "share": 0.044619,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "52c9c7295b06",
+              "row_count": 16,
+              "share": 0.041995,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "4ea5a9d3e1aa",
+              "row_count": 15,
+              "share": 0.03937,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "3d04e2e8f9fb",
+              "row_count": 12,
+              "share": 0.031496,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "0710921773e0",
+              "row_count": 10,
+              "share": 0.026247,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "1a220eb9ecce",
+              "row_count": 10,
+              "share": 0.026247,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "4e7ada1bcc57",
+              "row_count": 10,
+              "share": 0.026247,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "9383807f75fe",
+              "row_count": 10,
+              "share": 0.026247,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "4609c6cc16d9",
+              "row_count": 8,
+              "share": 0.020997,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "run_command",
+          "rows": 78,
+          "unique_skeletons": 4,
+          "top1_share": 0.589744,
+          "top3_share": 0.871795,
+          "top_skeletons": [
+            {
+              "skeleton_id": "d165dd55b1ed",
+              "row_count": 46,
+              "share": 0.589744,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "e0e9f3302254",
+              "row_count": 12,
+              "share": 0.153846,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "013ba093b5ff",
+              "row_count": 10,
+              "share": 0.128205,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "c6ef2961907c",
+              "row_count": 10,
+              "share": 0.128205,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "service_control",
+          "rows": 9,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "957cb1b437d7",
+              "row_count": 9,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "sha256_file",
+          "rows": 11,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "c14521885684",
+              "row_count": 11,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "stat_path",
+          "rows": 39,
+          "unique_skeletons": 2,
+          "top1_share": 0.538462,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "62186f84cf37",
+              "row_count": 21,
+              "share": 0.538462,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "df717d260730",
+              "row_count": 18,
+              "share": 0.461538,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "test_run",
+          "rows": 9,
+          "unique_skeletons": 1,
+          "top1_share": 1.0,
+          "top3_share": 1.0,
+          "top_skeletons": [
+            {
+              "skeleton_id": "59bd75887069",
+              "row_count": 9,
+              "share": 1.0,
+              "dominance_flag": false
+            }
+          ]
+        },
+        {
+          "group": "write_file",
+          "rows": 50,
+          "unique_skeletons": 4,
+          "top1_share": 0.34,
+          "top3_share": 0.86,
+          "top_skeletons": [
+            {
+              "skeleton_id": "447288c73d58",
+              "row_count": 17,
+              "share": 0.34,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "0ceda04da990",
+              "row_count": 15,
+              "share": 0.3,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "96711cd7438f",
+              "row_count": 11,
+              "share": 0.22,
+              "dominance_flag": false
+            },
+            {
+              "skeleton_id": "139ba96e6de7",
+              "row_count": 7,
+              "share": 0.14,
+              "dominance_flag": false
+            }
+          ]
+        }
+      ]
+    },
+    "targeted_tool_distribution": {
+      "status": "ok",
+      "total_tool_rows": 1373,
+      "targeted_rows": 612,
+      "non_targeted_rows": 761,
+      "targeted_share": 0.445739,
+      "by_tool": [
+        {
+          "tool": "rg_search",
+          "row_count": 381,
+          "share": 0.277495,
+          "expected_share": 0.5,
+          "deviation": -0.222505,
+          "is_targeted": true
+        },
+        {
+          "tool": "read_file",
+          "row_count": 231,
+          "share": 0.168245,
+          "expected_share": 0.5,
+          "deviation": -0.331755,
+          "is_targeted": true
+        },
+        {
+          "tool": "find_files",
+          "row_count": 133,
+          "share": 0.096868,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "debug_tools",
+          "row_count": 122,
+          "share": 0.088857,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "run_command",
+          "row_count": 78,
+          "share": 0.05681,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "check_service_health",
+          "row_count": 61,
+          "share": 0.044428,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "get_system_datetime",
+          "row_count": 50,
+          "share": 0.036417,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "write_file",
+          "row_count": 50,
+          "share": 0.036417,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "archive_create",
+          "row_count": 39,
+          "share": 0.028405,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "stat_path",
+          "row_count": 39,
+          "share": 0.028405,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "copy_path",
+          "row_count": 34,
+          "share": 0.024763,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "archive_extract",
+          "row_count": 33,
+          "share": 0.024035,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "apply_unified_diff",
+          "row_count": 22,
+          "share": 0.016023,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "http_request",
+          "row_count": 11,
+          "share": 0.008012,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "json_edit",
+          "row_count": 11,
+          "share": 0.008012,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "list_active_ports",
+          "row_count": 11,
+          "share": 0.008012,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "list_tools",
+          "row_count": 11,
+          "share": 0.008012,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "sha256_file",
+          "row_count": 11,
+          "share": 0.008012,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "get_system_version",
+          "row_count": 9,
+          "share": 0.006555,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "git_diff",
+          "row_count": 9,
+          "share": 0.006555,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "git_status",
+          "row_count": 9,
+          "share": 0.006555,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "service_control",
+          "row_count": 9,
+          "share": 0.006555,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        },
+        {
+          "tool": "test_run",
+          "row_count": 9,
+          "share": 0.006555,
+          "expected_share": null,
+          "deviation": null,
+          "is_targeted": false
+        }
+      ]
+    },
+    "forbidden_pattern_scan": {
+      "status": "ok",
+      "patterns_checked": 5,
+      "total_hits": 0,
+      "results": [
+        {
+          "pattern_id": "fp_001",
+          "pattern": "never return",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        },
+        {
+          "pattern_id": "fp_002",
+          "pattern": "must not output",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        },
+        {
+          "pattern_id": "fp_003",
+          "pattern": "forbidden wrapper key",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        },
+        {
+          "pattern_id": "fp_004",
+          "pattern": "always include tool_calls key regardless of request",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        },
+        {
+          "pattern_id": "fp_005",
+          "pattern": "do not answer directly",
+          "hit_count": 0,
+          "sample_source_case_ids": []
+        }
+      ]
+    },
+    "intervention_coverage": {
+      "status": "ok",
+      "rows": 2218,
+      "targeted_rows": 612,
+      "targeted_share": 0.275924,
+      "tag_counts": {
+        "imperative_surface": 1402,
+        "non_targeted_family": 1606,
+        "non_tool": 845,
+        "parse_anchor_candidate": 198,
+        "parse_anchor_present": 414,
+        "targeted_tool_family": 612,
+        "tool_positive": 1373
+      },
+      "tool_counts": {
+        "apply_unified_diff": 22,
+        "archive_create": 39,
+        "archive_extract": 33,
+        "check_service_health": 61,
+        "copy_path": 34,
+        "debug_tools": 122,
+        "find_files": 133,
+        "get_system_datetime": 50,
+        "get_system_version": 9,
+        "git_diff": 9,
+        "git_status": 9,
+        "http_request": 11,
+        "json_edit": 11,
+        "list_active_ports": 11,
+        "list_tools": 11,
+        "read_file": 231,
+        "rg_search": 381,
+        "run_command": 78,
+        "service_control": 9,
+        "sha256_file": 11,
+        "stat_path": 39,
+        "test_run": 9,
+        "write_file": 50
+      }
+    },
+    "prompt_length_delta": {
+      "status": "ok",
+      "reference_all": {
+        "chars": {
+          "count": 2202.0,
+          "mean": 123.62034514078111,
+          "median": 100.0,
+          "p95": 249.0,
+          "max": 345.0
+        },
+        "words": {
+          "count": 2202.0,
+          "mean": 14.695731153496821,
+          "median": 13.0,
+          "p95": 24.0,
+          "max": 43.0
+        }
+      },
+      "candidate_all": {
+        "chars": {
+          "count": 2218.0,
+          "mean": 123.79125338142471,
+          "median": 100.0,
+          "p95": 249.0,
+          "max": 345.0
+        },
+        "words": {
+          "count": 2218.0,
+          "mean": 14.69341749323715,
+          "median": 13.0,
+          "p95": 24.0,
+          "max": 43.0
+        }
+      },
+      "delta_all": {
+        "chars_mean_delta": 0.170908,
+        "chars_p95_delta": 0.0,
+        "words_mean_delta": -0.002314,
+        "words_p95_delta": 0.0
+      },
+      "reference_targeted": {
+        "chars": {
+          "count": 601.0,
+          "mean": 190.72545757071546,
+          "median": 180.0,
+          "p95": 273.0,
+          "max": 301.0
+        },
+        "words": {
+          "count": 601.0,
+          "mean": 20.321131447587355,
+          "median": 19.0,
+          "p95": 31.0,
+          "max": 36.0
+        }
+      },
+      "candidate_targeted": {
+        "chars": {
+          "count": 612.0,
+          "mean": 190.05718954248366,
+          "median": 180.0,
+          "p95": 273.0,
+          "max": 301.0
+        },
+        "words": {
+          "count": 612.0,
+          "mean": 20.236928104575163,
+          "median": 19.0,
+          "p95": 31.0,
+          "max": 36.0
+        }
+      },
+      "delta_targeted": {
+        "chars_mean_delta": -0.668268,
+        "chars_p95_delta": 0.0,
+        "words_mean_delta": -0.084203,
+        "words_p95_delta": 0.0
+      }
+    },
+    "prompt_ambiguity_audit": {
+      "status": "ok",
+      "rows_analyzed": 2218,
+      "duplicate_prompt_groups_identical_target_count": 344,
+      "duplicate_prompt_groups_different_target_count": 0,
+      "duplicate_prompt_groups_different_tool_count": 0,
+      "duplicate_prompt_tool_groups_different_arguments_count": 0,
+      "rows_in_conflicting_prompt_groups": 0,
+      "conflicting_prompt_groups": [],
+      "conflicting_prompt_tool_groups": [],
+      "high_frequency_prompt_reuse": [
+        {
+          "prompt": "Use get_system_datetime to report local_iso only for runtime diagnostics.",
+          "rows": 50
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime/server and pattern *.py. Report match_count only. Return strict JSON tool_calls only.",
+          "rows": 49
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime and pattern agent.py. Report match_count only. Return strict JSON tool_calls only.",
+          "rows": 43
+        },
+        {
+          "prompt": "Use find_files with root /opt/ai-stack/runtimes/assistant-runtime/server and pattern *.py. Report match_count only. [i3_train_variant]",
+          "rows": 41
+        },
+        {
+          "prompt": "Use archive_create with output_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.zip, format zip, overwrite true, and sources from .tool_ft_tmp.moved and .tool_ft_tmp.json.",
+          "rows": 39
+        },
+        {
+          "prompt": "Use copy_path to copy /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.moved to /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.copy with overwrite true.",
+          "rows": 34
+        },
+        {
+          "prompt": "Use archive_extract with archive_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.zip and destination_path /opt/ai-stack/runtimes/assistant-runtime/.state/.tool_ft_tmp.extract, format zip, overwrite true.",
+          "rows": 33
+        },
+        {
+          "prompt": "Use check_service_health on http://127.0.0.1:8100/v1/models and report ok/status only. Return strict JSON tool_calls only.",
+          "rows": 31
+        },
+        {
+          "prompt": "Use check_service_health on http://127.0.0.1:8100/health and report ok/status only. [i3_train_variant]",
+          "rows": 30
+        },
+        {
+          "prompt": "Use apply_unified_diff in dry_run mode with a minimal two-line patch and report success only.",
+          "rows": 22
+        },
+        {
+          "prompt": "Call tool stat_path (tool name must be exactly stat_path) with path /opt/ai-stack/runtimes/assistant-runtime/.state. Report exists/type only. Return strict JSON tool_calls only.",
+          "rows": 21
+        }
+      ],
+      "high_frequency_skeleton_reuse": [
+        {
+          "skeleton_id": "77f2bcc076c5",
+          "rows": 122
+        },
+        {
+          "skeleton_id": "eda6ede9db3d",
+          "rows": 57
+        },
+        {
+          "skeleton_id": "3d4c35372642",
+          "rows": 56
+        },
+        {
+          "skeleton_id": "61804e8e5477",
+          "rows": 56
+        },
+        {
+          "skeleton_id": "0356ce3a8616",
+          "rows": 53
+        },
+        {
+          "skeleton_id": "4c2064512bed",
+          "rows": 51
+        },
+        {
+          "skeleton_id": "d3ed4e768734",
+          "rows": 51
+        },
+        {
+          "skeleton_id": "abb490d0ee5c",
+          "rows": 50
+        }
+      ],
+      "source_case_divergence_groups": [
+        {
+          "source_case_id": "i3_adapt_p0_read_file_1",
+          "rows": 52,
+          "distinct_targets": 7,
+          "distinct_tools": 2,
+          "distinct_prompts": 14,
+          "distinct_tool_argument_pairs": 7
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_4",
+          "rows": 52,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_2",
+          "rows": 48,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 15,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_1",
+          "rows": 48,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 12,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_3",
+          "rows": 45,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_2",
+          "rows": 43,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_read_file_3",
+          "rows": 40,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i3_adapt_p0_rg_search_5",
+          "rows": 39,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i9_conv_nmr_i3_adapt_p0_rg_search_5",
+          "rows": 14,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 13,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_1",
+          "rows": 14,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 13,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+          "rows": 13,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 13,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_2",
+          "rows": 13,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 13,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_2",
+          "rows": 13,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 11,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_3",
+          "rows": 12,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 12,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_4",
+          "rows": 12,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 10,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_4",
+          "rows": 12,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 11,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i9_conv_ssc_i3_adapt_p0_rg_search_3",
+          "rows": 11,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 9,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i9_conv_nmr_i3_adapt_p0_read_file_2",
+          "rows": 10,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 9,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i9_conv_ucf_i3_adapt_p0_read_file_3",
+          "rows": 10,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 9,
+          "distinct_tool_argument_pairs": 2
+        },
+        {
+          "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+          "rows": 9,
+          "distinct_targets": 2,
+          "distinct_tools": 1,
+          "distinct_prompts": 9,
+          "distinct_tool_argument_pairs": 2
+        }
+      ],
+      "hard_block_candidates": {
+        "prompt_to_multiple_targets": false,
+        "prompt_to_multiple_tools": false,
+        "prompt_tool_to_multiple_arguments": false
+      }
+    },
+    "semantic_commitment_telemetry": {
+      "status": "ok",
+      "rows_analyzed": 2218,
+      "intervention_rows": 102,
+      "conversion_ids_count": 102,
+      "source_family_distribution": {
+        "semantic_substitution_conversion_pairs_read_file_primary": 60,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 32,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 10
+      },
+      "source_behavior_distribution": {
+        "scalar_substitution": 46,
+        "direct_answer_substitution": 34,
+        "pseudo_completion_substitution": 22
+      },
+      "query_archetype_distribution": {
+        "rg_search_match_count": 34,
+        "read_file_symbol_name": 22,
+        "read_file_boolean_presence": 20,
+        "read_file_first_function_name": 18,
+        "rg_search_other": 8
+      },
+      "source_tool_distribution": {
+        "read_file": 60,
+        "rg_search": 42
+      },
+      "scalar_substitution_rebound_proxy": {
+        "i9_scalar_share_baseline": 0.4,
+        "i10_scalar_share_proxy": 0.45098,
+        "delta": 0.05098,
+        "threshold_delta": 0.05,
+        "flag": true,
+        "note": "Proxy from intervention-source annotations; final rebound evaluated post-canonical-eval."
+      },
+      "direct_answer_substitution_proxy": {
+        "i10_direct_share_proxy": 0.54902,
+        "note": "Tracks risk of direct-answer dominance among intervention rows."
+      },
+      "anchor_dominance_ratio": {
+        "literal_tool_calls_anchor_rows": 22,
+        "intervention_rows": 102,
+        "ratio": 0.215686,
+        "threshold": 0.7,
+        "flag": false,
+        "anchor_bucket_distribution": {
+          "no_anchor_phrase": 76,
+          "literal_tool_calls": 22,
+          "paraphrastic_tool_call": 4
+        }
+      },
+      "paraphrastic_success_diversity": {
+        "anchor_bucket_distribution": {
+          "no_anchor_phrase": 76,
+          "literal_tool_calls": 22,
+          "paraphrastic_tool_call": 4
+        },
+        "prompt_uniqueness_ratio": 0.901961,
+        "prompt_entropy_bits": 6.468946,
+        "top_prompt_shell_share": 0.029412,
+        "status": "pre_eval_prompt_diversity_proxy"
+      },
+      "read_file_exact_valid_emergence": {
+        "target_rows_in_intervention": 60,
+        "status": "pending_post_eval",
+        "note": "Primary i10 success condition requires read_file exact-valid > 0 with invariant preservation."
+      },
+      "commitment_generalization_vs_recitation": {
+        "top1_behavioral_category": "scalar_substitution",
+        "top1_behavioral_category_share": 0.45098,
+        "top1_threshold": 0.7,
+        "top1_flag": false,
+        "prompt_uniqueness_ratio": 0.901961,
+        "top_prompt_shell_share": 0.029412,
+        "interpretation_hint": "High top_prompt_shell_share + low uniqueness may indicate lexical-shell memorization risk."
+      },
+      "collapse_watch_conditions": {
+        "abort_or_halt_recommendation_if": [
+          "payload_not_parsed rises materially while exact_valid stagnates_or_falls",
+          "top1_behavioral_category_share > 0.70",
+          "scalar_or_direct_answer_substitutions rise materially",
+          "no_call_correctness regresses",
+          "wrapper_leakage > 0",
+          "single-anchor canonical dependence strengthens",
+          "paraphrastic canonical success narrows"
+        ],
+        "status": "pre_eval_monitoring_spec_ready"
+      }
+    }
+  },
+  "review_support": {
+    "targeted_prompt_samples": {
+      "status": "ok",
+      "targeted_rows": 612,
+      "samples_by_tool": {
+        "read_file": [
+          {
+            "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+            "style_bucket": "constrained_output",
+            "prompt_chars": 195,
+            "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Emit exactly one parseable call payload that retrieves the requested file range."
+          },
+          {
+            "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_1",
+            "style_bucket": "constrained_output",
+            "prompt_chars": 184,
+            "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return only the structured tool invocation needed to gather evidence."
+          },
+          {
+            "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_2",
+            "style_bucket": "constrained_output",
+            "prompt_chars": 198,
+            "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name. Return only the structured tool invocation needed to gather evidence."
+          }
+        ],
+        "rg_search": [
+          {
+            "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+            "style_bucket": "imperative_general",
+            "prompt_chars": 198,
+            "prompt": "Use rg_search to find regex \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Emit a single parseable call payload that performs the search."
+          },
+          {
+            "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+            "style_bucket": "imperative_general",
+            "prompt_chars": 211,
+            "prompt": "Use rg_search to find \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Respond with the retrieval procedure payload rather than numeric shortcut output."
+          },
+          {
+            "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+            "style_bucket": "imperative_general",
+            "prompt_chars": 193,
+            "prompt": "Search to find pattern \"def create_app\" in /mnt/services/runtimes/assistant-runtime/server/service.py and report match_count only. Emit a single parseable call payload that performs the search."
+          }
+        ]
+      },
+      "samples_by_style_bucket": {
+        "constrained_output": [
+          {
+            "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 195,
+            "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Emit exactly one parseable call payload that retrieves the requested file range."
+          },
+          {
+            "source_case_id": "i9_conv_ssc_i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 184,
+            "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Return only the structured tool invocation needed to gather evidence."
+          }
+        ],
+        "imperative_general": [
+          {
+            "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+            "tool": "rg_search",
+            "prompt_chars": 198,
+            "prompt": "Use rg_search to find regex \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Emit a single parseable call payload that performs the search."
+          },
+          {
+            "source_case_id": "i10_conv_ssc_rg_i3_adapt_p0_rg_search_1",
+            "tool": "rg_search",
+            "prompt_chars": 211,
+            "prompt": "Use rg_search to find \"def create_app\" in /opt/ai-stack/runtimes/assistant-runtime/server/service.py and report match_count only. Respond with the retrieval procedure payload rather than numeric shortcut output."
+          }
+        ],
+        "imperative_line_scoped": [
+          {
+            "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 184,
+            "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/service.py line range 1-25 and report the first function name. Return one structured retrieval-call payload before any result text."
+          },
+          {
+            "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 187,
+            "prompt": "Open /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Commit to the retrieval procedure payload first and stop after that payload."
+          }
+        ],
+        "task_narrative": [
+          {
+            "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 191,
+            "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Commit to the retrieval procedure payload first and stop after that payload."
+          },
+          {
+            "source_case_id": "i10_conv_ssc_rf_i3_adapt_p0_read_file_1",
+            "tool": "read_file",
+            "prompt_chars": 191,
+            "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name. Commit to the retrieval procedure payload first and stop after that payload."
+          }
+        ]
+      }
+    },
+    "diversity_review_summary": {
+      "status": "ok",
+      "style_bucket_count_targeted": 4,
+      "dominant_style_share_targeted": 0.46732,
+      "unique_skeletons_targeted": 219,
+      "top1_skeleton_share_targeted": 0.039216,
+      "risk_flags": [],
+      "pass": true
+    },
+    "anti_homogenization_summary": {
+      "status": "ok",
+      "forbidden_hits_total": 0,
+      "targeted_top1_skeleton_share": 0.039216,
+      "targeted_top3_skeleton_share": 0.104575,
+      "dominant_style_share": 0.46732,
+      "risk_signals": [],
+      "pass": true
+    },
+    "collapse_watch_preview": {
+      "anchor_dominance_ratio": {
+        "literal_tool_calls_anchor_rows": 22,
+        "intervention_rows": 102,
+        "ratio": 0.215686,
+        "threshold": 0.7,
+        "flag": false,
+        "anchor_bucket_distribution": {
+          "no_anchor_phrase": 76,
+          "literal_tool_calls": 22,
+          "paraphrastic_tool_call": 4
+        }
+      },
+      "scalar_substitution_rebound_proxy": {
+        "i9_scalar_share_baseline": 0.4,
+        "i10_scalar_share_proxy": 0.45098,
+        "delta": 0.05098,
+        "threshold_delta": 0.05,
+        "flag": true,
+        "note": "Proxy from intervention-source annotations; final rebound evaluated post-canonical-eval."
+      },
+      "generalization_vs_recitation": {
+        "top1_behavioral_category": "scalar_substitution",
+        "top1_behavioral_category_share": 0.45098,
+        "top1_threshold": 0.7,
+        "top1_flag": false,
+        "prompt_uniqueness_ratio": 0.901961,
+        "top_prompt_shell_share": 0.029412,
+        "interpretation_hint": "High top_prompt_shell_share + low uniqueness may indicate lexical-shell memorization risk."
+      }
+    }
+  },
+  "gate_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  },
+  "revision_context": {
+    "parent_iteration": "stage_b_llama31_8b_base_v1_i10r",
+    "required_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "forbidden_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+    "restoration_mode": "counterbalanced_additions_only",
+    "expected_total_additions": 16,
+    "actual_total_additions": 16,
+    "expected_nocall_contrastive_rows": 10,
+    "expected_read_file_symbol_rows": 6,
+    "target_failure_families": [
+      "malformed_regex_underspecified_search_adversarial_boundary",
+      "read_file_symbol_name_commitment_instability"
+    ],
+    "preserve_existing_rows_unchanged": true
+  }
+}

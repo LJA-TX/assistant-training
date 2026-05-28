@@ -1,0 +1,38 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:00:11Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "candidate_packages": [
+    {
+      "candidate_id": "i10r_nocall_c1_surgical_regex_boundary_restore",
+      "scope": "single-family localized",
+      "primary_family": "targeted_no_call_contrastive_restoration",
+      "secondary_family": "adversarial_uncertainty_conditioning_small",
+      "target_slice": "adversarial regex-malformed search prompts mapping to legacy function wrapper output",
+      "design": "pair malformed/underspecified prompts with refusal outcomes while retaining matched valid-search prompts with canonical rg_search commitment",
+      "expected_effect": "restore adversarial no-call without global caution shift",
+      "risk": "lowest"
+    },
+    {
+      "candidate_id": "i10r_nocall_c2_boundary_plus_local_refusal_reinforcement",
+      "scope": "localized multi-slice",
+      "primary_family": "targeted_no_call_contrastive_restoration",
+      "secondary_family": "localized_refusal_boundary_reinforcement",
+      "target_slice": "regex-malformed + missing-target imperative no-call stressors",
+      "design": "small refusal-boundary bundle with strict coverage caps and diversity constraints",
+      "expected_effect": "higher no-call robustness than C1 but slightly higher procedural suppression risk",
+      "risk": "low_to_medium"
+    },
+    {
+      "candidate_id": "i10r_nocall_c3_mixed_adversarial_replay",
+      "scope": "broader adversarial",
+      "primary_family": "mixed_adversarial_replay",
+      "secondary_family": "procedural_confidence_calibration",
+      "target_slice": "multi-family adversarial no-call",
+      "design": "expanded replay across adversarial themes",
+      "expected_effect": "possible robustness gain but low signal clarity",
+      "risk": "high_not_recommended_for_next_step"
+    }
+  ],
+  "recommended_candidate": "i10r_nocall_c1_surgical_regex_boundary_restore"
+}

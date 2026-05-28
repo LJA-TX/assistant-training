@@ -1,0 +1,31 @@
+{
+  "recommended_mode": "convergence_analysis_documentation_only",
+  "immediate_experimentation_recommendation": "pause",
+  "option_assessment": {
+    "additional_behavioral_surgery": {
+      "recommendation": "defer",
+      "reason": "Repeated local fixes are causing cross-objective coupling regressions (no-call restored while read_file collapses)."
+    },
+    "altered_training_geometry": {
+      "recommendation": "primary_next",
+      "reason": "Evidence supports objective-interaction geometry issues; explore loss weighting/curriculum geometry before new surgery."
+    },
+    "weighting_instrumentation_work": {
+      "recommendation": "primary_next",
+      "reason": "Need auditable exposure/weight controls and objective interaction telemetry before next probe."
+    },
+    "adapter_capacity_changes": {
+      "recommendation": "secondary_optional",
+      "reason": "Could help if coupling stems from limited adaptation headroom, but should follow geometry analysis."
+    },
+    "runtime_assisted_enforcement": {
+      "recommendation": "not_primary",
+      "reason": "Would confound scientific interpretation of model-internal behavior; keep as downstream safeguard only."
+    },
+    "convergence_analysis_documentation_only": {
+      "recommendation": "immediate",
+      "reason": "Best risk-controlled step before any new training direction."
+    }
+  },
+  "recommended_immediate_next_action": "partial_cleanup_then_checkpoint"
+}
