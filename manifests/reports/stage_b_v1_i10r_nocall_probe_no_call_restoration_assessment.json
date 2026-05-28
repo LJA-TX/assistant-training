@@ -1,0 +1,21 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:57:04Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "objective": "restore aggregate and adversarial no_call_correctness to 1.0 without degrading i10r procedural gains",
+  "baseline_i10r_microprobe": {
+    "aggregate_no_call_correctness": 0.9166666666666666,
+    "adversarial_no_call_correctness": 0.75
+  },
+  "i10r_nocall_probe": {
+    "aggregate_no_call_correctness": 1.0,
+    "adversarial_no_call_correctness": 1.0,
+    "no_call_split_no_call": 1.0,
+    "wrapper_leakage": 0.0
+  },
+  "restoration_result": {
+    "aggregate_restored": true,
+    "adversarial_restored": true,
+    "localized_boundary_success": true
+  }
+}

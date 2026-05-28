@@ -1,0 +1,133 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:00:11Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "taxonomies": {
+    "required_categories": [
+      {
+        "category": "adversarial_coercion",
+        "count": 5
+      },
+      {
+        "category": "uncertainty_triggered_overcommitment",
+        "count": 5
+      },
+      {
+        "category": "pseudo_tool_plausibility",
+        "count": 5
+      },
+      {
+        "category": "benchmark_conditioned_overfitting",
+        "count": 5
+      },
+      {
+        "category": "instruction_following_overgeneralization",
+        "count": 5
+      },
+      {
+        "category": "procedural_confidence_overshoot",
+        "count": 5
+      },
+      {
+        "category": "latent_ambiguity_misresolution",
+        "count": 5
+      }
+    ],
+    "counts_and_shares": {
+      "over_failures": {
+        "adversarial_coercion": {
+          "count": 5,
+          "share": 1.0
+        },
+        "benchmark_conditioned_overfitting": {
+          "count": 5,
+          "share": 1.0
+        },
+        "instruction_following_overgeneralization": {
+          "count": 5,
+          "share": 1.0
+        },
+        "latent_ambiguity_misresolution": {
+          "count": 5,
+          "share": 1.0
+        },
+        "procedural_confidence_overshoot": {
+          "count": 5,
+          "share": 1.0
+        },
+        "pseudo_tool_plausibility": {
+          "count": 5,
+          "share": 1.0
+        },
+        "uncertainty_triggered_overcommitment": {
+          "count": 5,
+          "share": 1.0
+        }
+      },
+      "over_expected_no_call": {
+        "adversarial_coercion": {
+          "count": 5,
+          "share": 0.08333333333333333
+        },
+        "benchmark_conditioned_overfitting": {
+          "count": 5,
+          "share": 0.08333333333333333
+        },
+        "instruction_following_overgeneralization": {
+          "count": 5,
+          "share": 0.08333333333333333
+        },
+        "latent_ambiguity_misresolution": {
+          "count": 5,
+          "share": 0.08333333333333333
+        },
+        "procedural_confidence_overshoot": {
+          "count": 5,
+          "share": 0.08333333333333333
+        },
+        "pseudo_tool_plausibility": {
+          "count": 5,
+          "share": 0.08333333333333333
+        },
+        "uncertainty_triggered_overcommitment": {
+          "count": 5,
+          "share": 0.08333333333333333
+        }
+      }
+    }
+  },
+  "distributions": {
+    "split_distribution_failures": {
+      "adversarial": 5
+    },
+    "tool_distribution_failures": {
+      "search": 5
+    },
+    "shell_distribution_failures": {
+      "legacy_function_wrapper_without_tool_calls": 5
+    },
+    "anchor_distribution_failures": {
+      "no_anchor_phrase": 5
+    },
+    "parse_mode_distribution_failures": {
+      "strict": 5
+    },
+    "schema_reason_distribution_failures": {
+      "missing_tool_calls": 5
+    }
+  },
+  "paraphrastic_characteristics": {
+    "unique_normalized_prompt_count": 1,
+    "prompt_uniqueness_ratio": 0.2,
+    "mean_nearest_neighbor_jaccard": 1.0,
+    "top_prompt_share": 1.0,
+    "no_anchor_share": 1.0
+  },
+  "case_ids": [
+    "adv_91003",
+    "adv_91007",
+    "adv_91011",
+    "adv_91015",
+    "adv_91019"
+  ]
+}

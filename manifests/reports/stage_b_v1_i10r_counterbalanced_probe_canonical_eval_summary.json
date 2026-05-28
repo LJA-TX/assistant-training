@@ -1,0 +1,125 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:06:47Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "lineage": "bounded_rollback_first_counterbalanced_probe_from_stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "canonical_eval_run": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_i10r_counterbalanced_probe_eval_20260528T154857Z",
+  "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "adapter_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "metrics": {
+    "stage_b_i10r_microprobe": {
+      "exact_json_validity": 0.66,
+      "invalid_json": 0.14,
+      "tool_name_accuracy": 0.7,
+      "argument_accuracy": 0.65,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.9166666666666666
+    },
+    "stage_b_i10r_nocall_probe": {
+      "exact_json_validity": 0.53,
+      "invalid_json": 0.3,
+      "tool_name_accuracy": 0.6214285714285714,
+      "argument_accuracy": 0.5285714285714286,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0
+    },
+    "stage_b_i10r_counterbalanced_probe": {
+      "exact_json_validity": 0.73,
+      "invalid_json": 0.14,
+      "tool_name_accuracy": 0.6785714285714286,
+      "argument_accuracy": 0.6571428571428571,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.9666666666666667
+    },
+    "aggregate": {
+      "i10r_microprobe": {
+        "exact_json_validity": 0.435,
+        "invalid_json": 0.095,
+        "no_call_correctness": 0.9166666666666666
+      },
+      "i10r_nocall_probe": {
+        "exact_json_validity": 0.37,
+        "invalid_json": 0.175,
+        "no_call_correctness": 1.0
+      },
+      "i10r_counterbalanced_probe": {
+        "exact_json_validity": 0.46,
+        "invalid_json": 0.12,
+        "no_call_correctness": 0.9666666666666667
+      }
+    }
+  },
+  "deltas": {
+    "counterbalanced_minus_i10r_microprobe": {
+      "heldout_exact_json_validity_pp": 7.0,
+      "heldout_invalid_json_pp": 0.0,
+      "aggregate_exact_json_validity_pp": 2.5,
+      "aggregate_invalid_json_pp": 2.5
+    },
+    "counterbalanced_minus_i10r_nocall_probe": {
+      "heldout_exact_json_validity_pp": 20.0,
+      "heldout_invalid_json_pp": -16.0,
+      "aggregate_exact_json_validity_pp": 9.0,
+      "aggregate_invalid_json_pp": -5.5
+    }
+  },
+  "failure_profile": {
+    "tool_expected_rows": 140,
+    "non_exact_tool_rows": 48,
+    "schema_reasons": {
+      "missing_tool_calls": 13,
+      "ok": 103,
+      "payload_not_parsed": 24
+    },
+    "failure_categories_non_exact_tool_rows": {
+      "direct_answer_substitution": 11,
+      "scalar_substitution": 0,
+      "malformed_partial_json": 13,
+      "near_canonical_wrapper_or_envelope_drift": 24,
+      "other_non_exact": 0
+    },
+    "payload_not_parsed": {
+      "count": 24,
+      "rate": 0.17142857142857143
+    },
+    "read_file_exact_valid": {
+      "count": 19,
+      "rows": 27,
+      "rate": 0.7037037037037037
+    },
+    "read_file_symbol_name_exact_valid": {
+      "count": 12,
+      "rows": 13,
+      "rate": 0.9230769230769231
+    },
+    "anchor_exact_share": {
+      "literal_tool_calls": 0.06521739130434782,
+      "paraphrastic_tool_call": 0.09782608695652174,
+      "no_anchor_phrase": 0.8369565217391305
+    }
+  },
+  "hard_stop_evaluation": {
+    "active_triggers": [
+      "no_call_correctness_aggregate_lt_1_0",
+      "no_call_correctness_adversarial_lt_1_0"
+    ],
+    "trigger_count": 2,
+    "conditions": {
+      "no_call_correctness_aggregate_lt_1_0": true,
+      "no_call_correctness_adversarial_lt_1_0": true,
+      "wrapper_leakage_gt_0": false,
+      "read_file_exact_valid_lt_0_65": false,
+      "read_file_symbol_name_exact_valid_lt_0_60": false,
+      "scalar_substitution_share_gt_0_05": false,
+      "direct_answer_substitution_delta_gt_0_05_vs_i10r": false,
+      "no_anchor_exact_valid_share_lt_0_75": false
+    },
+    "status": "halt_progression_report_only"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": true,
+    "approved_to_train": true,
+    "approved_to_promote": false
+  }
+}

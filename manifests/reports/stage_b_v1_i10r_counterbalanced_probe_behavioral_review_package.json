@@ -1,0 +1,234 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:06:47Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "inputs": {
+    "training_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_summary.json",
+    "eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_eval_summary_raw.snapshot.json",
+    "comparison_rows": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_comparison_rows_raw.snapshot.jsonl",
+    "i10r_microprobe_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_canonical_eval_summary.json",
+    "i10r_nocall_probe_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_canonical_eval_summary.json"
+  },
+  "headline": {
+    "heldout_exact_valid_i10r_counterbalanced_probe": 0.73,
+    "heldout_invalid_json_i10r_counterbalanced_probe": 0.14,
+    "read_file_exact_valid_rate": 0.7037037037037037,
+    "read_file_symbol_name_exact_valid_rate": 0.9230769230769231,
+    "scalar_substitution_share": 0.0,
+    "direct_answer_substitution_share": 0.22916666666666666,
+    "no_call_correctness_aggregate": 0.9666666666666667,
+    "no_call_correctness_adversarial": 0.9,
+    "wrapper_leakage": 0.0,
+    "no_anchor_exact_valid_share": 0.8369565217391305,
+    "literal_anchor_exact_share": 0.06521739130434782
+  },
+  "comparative_context": {
+    "i10r_microprobe": {
+      "heldout_exact_valid": 0.66,
+      "heldout_invalid_json": 0.14,
+      "aggregate_exact_valid": 0.435,
+      "aggregate_invalid_json": 0.095,
+      "tool_name_accuracy": 0.7,
+      "argument_accuracy": 0.65,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness_aggregate": 0.9166666666666666,
+      "no_call_correctness_adversarial": 0.75,
+      "read_file_exact_valid_rate": 0.7037037037037037,
+      "read_file_exact_valid_count": 19,
+      "read_file_rows": 27,
+      "read_file_symbol_name_exact_valid_rate": 0.8461538461538461,
+      "read_file_symbol_name_exact_valid_count": 11,
+      "read_file_symbol_name_rows": 13,
+      "scalar_substitution_share": 0.0,
+      "direct_answer_substitution_share": 0.22641509433962265,
+      "near_canonical_wrapper_or_envelope_drift_share": 0.6415094339622641,
+      "non_exact_tool_rows": 53,
+      "failure_categories_non_exact_tool_rows": {
+        "direct_answer_substitution": 12,
+        "scalar_substitution": 0,
+        "malformed_partial_json": 7,
+        "near_canonical_wrapper_or_envelope_drift": 34,
+        "other_non_exact": 0
+      },
+      "payload_not_parsed_count": 19,
+      "payload_not_parsed_rate_tool_expected": 0.1357142857142857,
+      "anchor_exact_counts": {
+        "literal_tool_calls": 5,
+        "paraphrastic_tool_call": 7,
+        "no_anchor_phrase": 75
+      },
+      "anchor_exact_shares": {
+        "literal_tool_calls": 0.05747126436781609,
+        "paraphrastic_tool_call": 0.08045977011494253,
+        "no_anchor_phrase": 0.8620689655172413
+      },
+      "exact_tool_rows": 87,
+      "tool_expected_rows": 140,
+      "schema_reasons": {
+        "missing_tool_calls": 11,
+        "ok": 110,
+        "payload_not_parsed": 19
+      }
+    },
+    "i10r_nocall_probe": {
+      "heldout_exact_valid": 0.53,
+      "heldout_invalid_json": 0.3,
+      "aggregate_exact_valid": 0.37,
+      "aggregate_invalid_json": 0.175,
+      "tool_name_accuracy": 0.6214285714285714,
+      "argument_accuracy": 0.5285714285714286,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness_aggregate": 1.0,
+      "no_call_correctness_adversarial": 1.0,
+      "read_file_exact_valid_rate": 0.25925925925925924,
+      "read_file_exact_valid_count": 7,
+      "read_file_rows": 27,
+      "read_file_symbol_name_exact_valid_rate": 0.0,
+      "read_file_symbol_name_exact_valid_count": 0,
+      "read_file_symbol_name_rows": 13,
+      "scalar_substitution_share": 0.030303030303030304,
+      "direct_answer_substitution_share": 0.4393939393939394,
+      "near_canonical_wrapper_or_envelope_drift_share": 0.4393939393939394,
+      "non_exact_tool_rows": 66,
+      "failure_categories_non_exact_tool_rows": {
+        "direct_answer_substitution": 29,
+        "scalar_substitution": 2,
+        "malformed_partial_json": 6,
+        "near_canonical_wrapper_or_envelope_drift": 29,
+        "other_non_exact": 0
+      },
+      "payload_not_parsed_count": 35,
+      "payload_not_parsed_rate_tool_expected": 0.25,
+      "anchor_exact_counts": {
+        "literal_tool_calls": 4,
+        "paraphrastic_tool_call": 7,
+        "no_anchor_phrase": 63
+      },
+      "anchor_exact_shares": {
+        "literal_tool_calls": 0.05405405405405406,
+        "paraphrastic_tool_call": 0.0945945945945946,
+        "no_anchor_phrase": 0.8513513513513513
+      },
+      "exact_tool_rows": 74,
+      "tool_expected_rows": 140,
+      "schema_reasons": {
+        "missing_tool_calls": 12,
+        "ok": 91,
+        "payload_not_object": 2,
+        "payload_not_parsed": 35
+      }
+    },
+    "i10r_counterbalanced_probe": {
+      "heldout_exact_valid": 0.73,
+      "heldout_invalid_json": 0.14,
+      "aggregate_exact_valid": 0.46,
+      "aggregate_invalid_json": 0.12,
+      "tool_name_accuracy": 0.6785714285714286,
+      "argument_accuracy": 0.6571428571428571,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness_aggregate": 0.9666666666666667,
+      "no_call_correctness_adversarial": 0.9,
+      "read_file_exact_valid_rate": 0.7037037037037037,
+      "read_file_exact_valid_count": 19,
+      "read_file_rows": 27,
+      "read_file_symbol_name_exact_valid_rate": 0.9230769230769231,
+      "read_file_symbol_name_exact_valid_count": 12,
+      "read_file_symbol_name_rows": 13,
+      "scalar_substitution_share": 0.0,
+      "direct_answer_substitution_share": 0.22916666666666666,
+      "near_canonical_wrapper_or_envelope_drift_share": 0.5,
+      "non_exact_tool_rows": 48,
+      "failure_categories_non_exact_tool_rows": {
+        "direct_answer_substitution": 11,
+        "scalar_substitution": 0,
+        "malformed_partial_json": 13,
+        "near_canonical_wrapper_or_envelope_drift": 24,
+        "other_non_exact": 0
+      },
+      "payload_not_parsed_count": 24,
+      "payload_not_parsed_rate_tool_expected": 0.17142857142857143,
+      "anchor_exact_counts": {
+        "literal_tool_calls": 6,
+        "paraphrastic_tool_call": 9,
+        "no_anchor_phrase": 77
+      },
+      "anchor_exact_shares": {
+        "literal_tool_calls": 0.06521739130434782,
+        "paraphrastic_tool_call": 0.09782608695652174,
+        "no_anchor_phrase": 0.8369565217391305
+      },
+      "exact_tool_rows": 92,
+      "tool_expected_rows": 140,
+      "schema_reasons": {
+        "missing_tool_calls": 13,
+        "ok": 103,
+        "payload_not_parsed": 24
+      }
+    },
+    "delta_vs_i10r_microprobe": {
+      "heldout_exact_valid": 0.06999999999999995,
+      "heldout_invalid_json": 0.0,
+      "aggregate_exact_valid": 0.025000000000000022,
+      "aggregate_invalid_json": 0.024999999999999994,
+      "tool_name_accuracy": -0.021428571428571352,
+      "argument_accuracy": 0.0071428571428571175,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness_aggregate": 0.050000000000000044,
+      "no_call_correctness_adversarial": 0.15000000000000002,
+      "read_file_exact_valid_rate": 0.0,
+      "read_file_exact_valid_count": 0.0,
+      "read_file_rows": 0.0,
+      "read_file_symbol_name_exact_valid_rate": 0.07692307692307698,
+      "read_file_symbol_name_exact_valid_count": 1.0,
+      "read_file_symbol_name_rows": 0.0,
+      "scalar_substitution_share": 0.0,
+      "direct_answer_substitution_share": 0.0027515723270440107,
+      "near_canonical_wrapper_or_envelope_drift_share": -0.14150943396226412,
+      "non_exact_tool_rows": -5.0,
+      "payload_not_parsed_count": 5.0,
+      "payload_not_parsed_rate_tool_expected": 0.035714285714285726,
+      "exact_tool_rows": 5.0,
+      "tool_expected_rows": 0.0
+    },
+    "delta_vs_i10r_nocall_probe": {
+      "heldout_exact_valid": 0.19999999999999996,
+      "heldout_invalid_json": -0.15999999999999998,
+      "aggregate_exact_valid": 0.09000000000000002,
+      "aggregate_invalid_json": -0.05499999999999999,
+      "tool_name_accuracy": 0.05714285714285716,
+      "argument_accuracy": 0.12857142857142856,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness_aggregate": -0.033333333333333326,
+      "no_call_correctness_adversarial": -0.09999999999999998,
+      "read_file_exact_valid_rate": 0.4444444444444445,
+      "read_file_exact_valid_count": 12.0,
+      "read_file_rows": 0.0,
+      "read_file_symbol_name_exact_valid_rate": 0.9230769230769231,
+      "read_file_symbol_name_exact_valid_count": 12.0,
+      "read_file_symbol_name_rows": 0.0,
+      "scalar_substitution_share": -0.030303030303030304,
+      "direct_answer_substitution_share": -0.21022727272727273,
+      "near_canonical_wrapper_or_envelope_drift_share": 0.06060606060606061,
+      "non_exact_tool_rows": -18.0,
+      "payload_not_parsed_count": -11.0,
+      "payload_not_parsed_rate_tool_expected": -0.07857142857142857,
+      "exact_tool_rows": 18.0,
+      "tool_expected_rows": 0.0
+    }
+  },
+  "failure_taxonomy_non_exact_tool_rows": {
+    "direct_answer_substitution": 11,
+    "scalar_substitution": 0,
+    "malformed_partial_json": 13,
+    "near_canonical_wrapper_or_envelope_drift": 24,
+    "other_non_exact": 0
+  },
+  "hard_stop": {
+    "active_triggers": [
+      "no_call_correctness_aggregate_lt_1_0",
+      "no_call_correctness_adversarial_lt_1_0"
+    ],
+    "status": "halt_progression_report_only"
+  },
+  "overall_interpretation": "counterbalanced_probe_hard_stop_triggered"
+}

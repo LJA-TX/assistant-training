@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "train_rows": 1986,
+  "val_rows": 238,
+  "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe",
+  "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe",
+  "train_metrics": {
+    "train_runtime": 171.1503,
+    "train_samples_per_second": 2.321,
+    "train_steps_per_second": 0.146,
+    "total_flos": 1782449403691008.0,
+    "train_loss": 0.5288658905029296,
+    "epoch": 0.2014098690835851
+  },
+  "eval_metrics": {
+    "eval_loss": 0.5221285223960876,
+    "eval_runtime": 35.3043,
+    "eval_samples_per_second": 6.741,
+    "eval_steps_per_second": 6.741,
+    "epoch": 0.2014098690835851
+  },
+  "masking_audit_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe/masking_audit.json",
+  "resolved_config_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe/resolved_config.json"
+}

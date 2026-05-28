@@ -1,0 +1,35 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:57:04Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "anchor_distribution_exact_valid": {
+    "counts": {
+      "literal_tool_calls": 4,
+      "paraphrastic_tool_call": 7,
+      "no_anchor_phrase": 63
+    },
+    "shares": {
+      "literal_tool_calls": 0.05405405405405406,
+      "paraphrastic_tool_call": 0.0945945945945946,
+      "no_anchor_phrase": 0.8513513513513513
+    }
+  },
+  "anchor_comparison_vs_i10r_microprobe": {
+    "i10r_literal_exact_share": 0.057471,
+    "i10r_paraphrastic_exact_share": 0.08046,
+    "i10r_no_anchor_exact_share": 0.862069
+  },
+  "procedural_diversity": {
+    "exact_valid_tool_rows": 74,
+    "unique_skeletons_exact_valid": 39,
+    "unique_skeleton_ratio_exact_valid": 0.527027027027027,
+    "top1_skeleton_share_exact_valid": 0.13513513513513514
+  },
+  "paraphrastic_no_anchor_success": {
+    "paraphrastic_exact_count": 7,
+    "no_anchor_exact_count": 63,
+    "paraphrastic_exact_share": 0.0945945945945946,
+    "no_anchor_exact_share": 0.8513513513513513
+  },
+  "generalization_assessment": "mixed_regression_on_read_file_but_anchor_independence_preserved"
+}

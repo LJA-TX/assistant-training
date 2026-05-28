@@ -1,0 +1,46 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T19:13:50Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "regime_assessment": {
+    "is_i10r_gain_fundamentally_unstable": false,
+    "is_i10r_gain_narrowly_calibrated": true,
+    "evidence": {
+      "no_call_restored": true,
+      "wrapper_leakage_stable_zero": true,
+      "anchor_dependence_stable": true,
+      "read_file_symbol_name_collapse": {
+        "rows": 13,
+        "microprobe_exact_valid": 11,
+        "nocall_probe_exact_valid": 0,
+        "microprobe_rate": 0.8461538461538461,
+        "nocall_probe_rate": 0.0,
+        "hard_regressions": 11
+      },
+      "read_file_boolean_presence_stable": {
+        "rows": 7,
+        "microprobe_exact_valid": 7,
+        "nocall_probe_exact_valid": 7,
+        "microprobe_rate": 1.0,
+        "nocall_probe_rate": 1.0,
+        "hard_regressions": 0
+      }
+    },
+    "interpretation": "the regime remains recoverable but tightly calibrated; small no-call additions can induce large archetype-specific commitment drift."
+  },
+  "incremental_continuation_plausibility": {
+    "scientifically_plausible": true,
+    "from_current_checkpoint": false,
+    "recommended_parent_for_next_probe": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "reason": "current checkpoint fails read_file anti-regression hard floor and exhibits direct-answer rebound."
+  },
+  "diminishing_returns_risk": {
+    "level": "medium_to_high",
+    "driver": "cross-objective calibration interference (no-call boundary tightening vs read_file procedural commitment)",
+    "what_not_to_do": [
+      "broader refusal restoration",
+      "global uncertainty suppression directives",
+      "additional no-call additions without archetype-matched positive commitment counterbalance"
+    ]
+  }
+}

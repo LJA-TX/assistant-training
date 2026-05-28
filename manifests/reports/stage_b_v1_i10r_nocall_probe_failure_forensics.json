@@ -1,0 +1,303 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T19:13:50Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "inputs": {
+    "microprobe_eval_rows": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_comparison_rows_raw.snapshot.jsonl",
+    "nocall_probe_eval_rows": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+    "microprobe_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_canonical_eval_summary.json",
+    "nocall_probe_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_canonical_eval_summary.json",
+    "restoration_dataset_plan": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_restoration_dataset_plan.json"
+  },
+  "headline_deltas": {
+    "no_call_correctness_aggregate": {
+      "microprobe": 0.9166666666666666,
+      "nocall_probe": 1.0,
+      "delta": 0.08333333333333337
+    },
+    "no_call_correctness_adversarial": {
+      "microprobe": 0.75,
+      "nocall_probe": 1.0,
+      "delta": 0.25
+    },
+    "read_file_exact_valid_rate": {
+      "microprobe": 0.703704,
+      "nocall_probe": 0.25925925925925924,
+      "delta": -0.44444474074074075
+    },
+    "direct_answer_substitution_share": {
+      "microprobe": 0.226415,
+      "nocall_probe": 0.4393939393939394,
+      "delta": 0.2129789393939394
+    },
+    "invalid_json_overall": {
+      "microprobe": 0.095,
+      "nocall_probe": 0.175,
+      "delta": 0.07999999999999999
+    }
+  },
+  "transition_summary": {
+    "tool_expected_rows": 140,
+    "hard_regressions": 19,
+    "severity_regressions": 24,
+    "hard_regressions_by_tool": {
+      "read_file": 12,
+      "rg_search": 2,
+      "stat_path": 2,
+      "git_status": 1,
+      "git_diff": 1,
+      "get_system_version": 1
+    },
+    "severity_regressions_by_tool": {
+      "read_file": 13,
+      "rg_search": 6,
+      "stat_path": 2,
+      "git_status": 1,
+      "git_diff": 1,
+      "get_system_version": 1
+    },
+    "severity_regression_transitions_top": [
+      {
+        "transition": "exact_valid -> direct_answer_fallback",
+        "count": 12
+      },
+      {
+        "transition": "other_non_exact -> direct_answer_fallback",
+        "count": 4
+      },
+      {
+        "transition": "exact_valid -> other_non_exact",
+        "count": 4
+      },
+      {
+        "transition": "exact_valid -> scalar_substitution",
+        "count": 2
+      },
+      {
+        "transition": "exact_valid -> tool_commitment_suppression",
+        "count": 1
+      },
+      {
+        "transition": "parseability_degradation -> direct_answer_fallback",
+        "count": 1
+      }
+    ]
+  },
+  "read_file_focus": {
+    "rows": 27,
+    "microprobe_exact_valid": 19,
+    "nocall_probe_exact_valid": 7,
+    "hard_regressions": 12,
+    "archetype_stats": {
+      "read_file_boolean_presence": {
+        "rows": 7,
+        "microprobe_exact_valid": 7,
+        "nocall_probe_exact_valid": 7,
+        "microprobe_rate": 1.0,
+        "nocall_probe_rate": 1.0,
+        "hard_regressions": 0
+      },
+      "read_file_first_function_name": {
+        "rows": 7,
+        "microprobe_exact_valid": 1,
+        "nocall_probe_exact_valid": 0,
+        "microprobe_rate": 0.14285714285714285,
+        "nocall_probe_rate": 0.0,
+        "hard_regressions": 1
+      },
+      "read_file_symbol_name": {
+        "rows": 13,
+        "microprobe_exact_valid": 11,
+        "nocall_probe_exact_valid": 0,
+        "microprobe_rate": 0.8461538461538461,
+        "nocall_probe_rate": 0.0,
+        "hard_regressions": 11
+      }
+    },
+    "regressed_source_case_distribution": {
+      "p0_read_file_2": 11,
+      "p0_read_file_1": 1
+    },
+    "regressed_prompt_samples": [
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 1,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Show /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:1080-1104\\n    def _get_file_content(self, path, line_start, line_end):\\n        with open(path, 'r') a"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 8,
+        "source_case_id": "p0_read_file_1",
+        "archetype": "read_file_first_function_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/service.py lines 1-25 and report the first function name.",
+        "nocall_probe_output_excerpt": "function main\\n"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 16,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Retrieve /mnt/services/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "agent.py"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 37,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "line_1080_symbol_name"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 40,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Retrieve /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "/opt/ai-stack/runtimes/assistant-runtime/server/agent.py:1080-1104:__file__"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 48,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Open /mnt/services/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "agent.py"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 54,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/agent.py from line 1080 for 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "__file__"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 67,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> other_non_exact",
+        "prompt": "Show /mnt/services/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"end_line\":1104,\"line_end\":1104,\"line_start\":1080,\"path\":\"/mnt/services/runtimes/assistant-runtime/server/agent.py\",\"st"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 78,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/agent.py from line 1080 for 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "__file__"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 86,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 contents and report one symbol name.",
+        "nocall_probe_output_excerpt": "agent.py"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 97,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Read /mnt/services/runtimes/assistant-runtime/server/agent.py starting at line 1080 for 25 contents and report one symbol name.",
+        "nocall_probe_output_excerpt": "agent.py"
+      },
+      {
+        "split": "heldout_validation",
+        "row_index_1based": 98,
+        "source_case_id": "p0_read_file_2",
+        "archetype": "read_file_symbol_name",
+        "transition": "exact_valid -> direct_answer_fallback",
+        "prompt": "Read /opt/ai-stack/runtimes/assistant-runtime/server/agent.py starting at line 1080 through 25 lines and report one symbol name.",
+        "nocall_probe_output_excerpt": "agent.py"
+      }
+    ]
+  },
+  "no_call_boundary_objective": {
+    "no_call_rows_total": 60,
+    "microprobe_correct": 55,
+    "nocall_probe_correct": 60,
+    "improvements": 5,
+    "improvement_cases": [
+      {
+        "split": "adversarial",
+        "row_index_1based": 3,
+        "source_case_id": "adv_91003",
+        "prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91003] eval_adv",
+        "microprobe_schema_reason": "missing_tool_calls",
+        "nocall_probe_schema_reason": "payload_not_parsed"
+      },
+      {
+        "split": "adversarial",
+        "row_index_1based": 7,
+        "source_case_id": "adv_91007",
+        "prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91007] eval_adv",
+        "microprobe_schema_reason": "missing_tool_calls",
+        "nocall_probe_schema_reason": "payload_not_parsed"
+      },
+      {
+        "split": "adversarial",
+        "row_index_1based": 11,
+        "source_case_id": "adv_91011",
+        "prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91011] eval_adv",
+        "microprobe_schema_reason": "missing_tool_calls",
+        "nocall_probe_schema_reason": "payload_not_parsed"
+      },
+      {
+        "split": "adversarial",
+        "row_index_1based": 15,
+        "source_case_id": "adv_91015",
+        "prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91015] eval_adv",
+        "microprobe_schema_reason": "missing_tool_calls",
+        "nocall_probe_schema_reason": "payload_not_parsed"
+      },
+      {
+        "split": "adversarial",
+        "row_index_1based": 19,
+        "source_case_id": "adv_91019",
+        "prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91019] eval_adv",
+        "microprobe_schema_reason": "missing_tool_calls",
+        "nocall_probe_schema_reason": "payload_not_parsed"
+      }
+    ]
+  },
+  "interaction_proxies": {
+    "restoration_rows_total": 16,
+    "restoration_rows_by_block": {
+      "contrastive_pair": 12,
+      "uncertainty_conditioning": 4
+    },
+    "read_file_hard_regression_paths": {
+      "server/agent.py": 11,
+      "server/service.py": 1
+    },
+    "restoration_paths": {
+      "server/agent.py": 2,
+      "server/tools/io.py": 2,
+      "server/router.py": 2,
+      "other": 10
+    },
+    "read_file_regression_vs_restoration_jaccard": {
+      "min": 0.3125,
+      "avg": 0.41592261904761907,
+      "max": 0.5
+    }
+  },
+  "preliminary_causal_judgment": "calibration_bifurcation_with_read_file_symbol_extraction_instability"
+}

@@ -1,0 +1,189 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:23:02Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "scope": "bounded_post_counterbalanced_probe_residual_nocall_forensics_read_only",
+  "sources": {
+    "microprobe": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_comparison_rows_raw.snapshot.jsonl",
+    "nocall_probe": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_comparison_rows_raw.snapshot.jsonl",
+    "counterbalanced_probe": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_comparison_rows_raw.snapshot.jsonl",
+    "counterbalanced_diff": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_localized_diff_verification.json",
+    "counterbalanced_plan": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_dataset_plan.json"
+  },
+  "residual_nocall_failure_counts": {
+    "expected_no_call_rows_total": 60,
+    "remaining_failures_total": 2,
+    "remaining_failures_rate_over_expected_no_call": 0.03333333333333333,
+    "remaining_failures_by_split": {
+      "adversarial": 2
+    },
+    "adversarial_no_call_correctness": 0.9,
+    "aggregate_no_call_correctness": 0.9666666666666667
+  },
+  "residual_failures": [
+    {
+      "split": "adversarial",
+      "row_index_1based": 8,
+      "source_case_id": "adv_91008",
+      "prompt": "Find TODOs in code but do not provide the project path. [case 91008] eval_adv",
+      "normalized_prompt": "find todos in code but do not provide the project path. [case_id] eval_adv",
+      "primary_class": "invalid_schema",
+      "schema_reason": "missing_tool_calls",
+      "parse_mode": "strict",
+      "predicted_tool_names": [],
+      "generated_text": "{\"function\":{\"type\":\"function\",\"arguments\":{\"path\":\"/path/to/project\"},\"name\":\"rg_search\"},\"type\":\"function\"}",
+      "inferred_shell_family": "legacy_function_wrapper_without_tool_calls",
+      "inferred_explicit_tool_name": "rg_search",
+      "anchor_bucket": "no_anchor_phrase",
+      "adversarial_family": "underspecified_path_search_todo"
+    },
+    {
+      "split": "adversarial",
+      "row_index_1based": 16,
+      "source_case_id": "adv_91016",
+      "prompt": "Find TODOs in code but do not provide the project path. [case 91016] eval_adv",
+      "normalized_prompt": "find todos in code but do not provide the project path. [case_id] eval_adv",
+      "primary_class": "invalid_schema",
+      "schema_reason": "missing_tool_calls",
+      "parse_mode": "strict",
+      "predicted_tool_names": [],
+      "generated_text": "{\"function_calls\":[{\"function\":{\"arguments\":{\"path\":\"/path/to/project\"},\"name\":\"rg_search\"},\"type\":\"function\"}]}",
+      "inferred_shell_family": "legacy_function_calls_wrapper",
+      "inferred_explicit_tool_name": "rg_search",
+      "anchor_bucket": "no_anchor_phrase",
+      "adversarial_family": "underspecified_path_search_todo"
+    }
+  ],
+  "comparison_with_prior_runs_for_residual_ids": [
+    {
+      "source_case_id": "adv_91008",
+      "prompt": "Find TODOs in code but do not provide the project path. [case 91008] eval_adv",
+      "i10r_microprobe": {
+        "primary_class": "refusal_expected",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "predicted_tool_names": [],
+        "generated_text": "I can't find TODOs without a project path."
+      },
+      "i10r_nocall_probe": {
+        "primary_class": "refusal_expected",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "predicted_tool_names": [],
+        "generated_text": "I can't find TODOs without a project path."
+      },
+      "i10r_counterbalanced_probe": {
+        "primary_class": "invalid_schema",
+        "schema_reason": "missing_tool_calls",
+        "parse_mode": "strict",
+        "predicted_tool_names": [],
+        "generated_text": "{\"function\":{\"type\":\"function\",\"arguments\":{\"path\":\"/path/to/project\"},\"name\":\"rg_search\"},\"type\":\"function\"}"
+      }
+    },
+    {
+      "source_case_id": "adv_91016",
+      "prompt": "Find TODOs in code but do not provide the project path. [case 91016] eval_adv",
+      "i10r_microprobe": {
+        "primary_class": "refusal_expected",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "predicted_tool_names": [],
+        "generated_text": "I can't find TODOs without a project path."
+      },
+      "i10r_nocall_probe": {
+        "primary_class": "refusal_expected",
+        "schema_reason": "payload_not_parsed",
+        "parse_mode": "invalid",
+        "predicted_tool_names": [],
+        "generated_text": "I can't find TODOs without a project path."
+      },
+      "i10r_counterbalanced_probe": {
+        "primary_class": "invalid_schema",
+        "schema_reason": "missing_tool_calls",
+        "parse_mode": "strict",
+        "predicted_tool_names": [],
+        "generated_text": "{\"function_calls\":[{\"function\":{\"arguments\":{\"path\":\"/path/to/project\"},\"name\":\"rg_search\"},\"type\":\"function\"}]}"
+      }
+    }
+  ],
+  "prior_malformed_regex_failures_from_i10r_microprobe": {
+    "source_case_ids": [
+      "adv_91003",
+      "adv_91007",
+      "adv_91011",
+      "adv_91015",
+      "adv_91019"
+    ],
+    "count": 5,
+    "status_in_counterbalanced_probe": [
+      {
+        "source_case_id": "adv_91003",
+        "counterbalanced_primary_class": "refusal_expected",
+        "counterbalanced_schema_reason": "missing_tool_calls",
+        "counterbalanced_parse_mode": "strict",
+        "counterbalanced_generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"a-z\"},\"type\":\"function\"},\"type\":\"object\"}",
+        "counted_no_call_correct": true
+      },
+      {
+        "source_case_id": "adv_91007",
+        "counterbalanced_primary_class": "refusal_expected",
+        "counterbalanced_schema_reason": "missing_tool_calls",
+        "counterbalanced_parse_mode": "strict",
+        "counterbalanced_generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"a-z\"},\"type\":\"function\"},\"type\":\"object\"}",
+        "counted_no_call_correct": true
+      },
+      {
+        "source_case_id": "adv_91011",
+        "counterbalanced_primary_class": "refusal_expected",
+        "counterbalanced_schema_reason": "missing_tool_calls",
+        "counterbalanced_parse_mode": "strict",
+        "counterbalanced_generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"a-z\"},\"type\":\"function\"},\"type\":\"object\"}",
+        "counted_no_call_correct": true
+      },
+      {
+        "source_case_id": "adv_91015",
+        "counterbalanced_primary_class": "refusal_expected",
+        "counterbalanced_schema_reason": "missing_tool_calls",
+        "counterbalanced_parse_mode": "strict",
+        "counterbalanced_generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"a-z\"},\"type\":\"function\"},\"type\":\"object\"}",
+        "counted_no_call_correct": true
+      },
+      {
+        "source_case_id": "adv_91019",
+        "counterbalanced_primary_class": "refusal_expected",
+        "counterbalanced_schema_reason": "missing_tool_calls",
+        "counterbalanced_parse_mode": "strict",
+        "counterbalanced_generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"a-z\"},\"type\":\"function\"},\"type\":\"object\"}",
+        "counted_no_call_correct": true
+      }
+    ],
+    "fully_fixed_for_no_call_metric": true
+  },
+  "residual_family_assessment": {
+    "is_same_family_as_prior_malformed_regex": false,
+    "residual_family_distribution": {
+      "underspecified_path_search_todo": 2
+    },
+    "new_family_detected": true,
+    "dominant_family": "underspecified_path_search_todo"
+  },
+  "counterbalanced_addition_coverage": {
+    "approved_additions_total": 16,
+    "approved_additions_family_distribution": {
+      "malformed_regex_underspecified_search_adversarial_boundary": 10,
+      "read_file_symbol_name_commitment_instability": 6
+    },
+    "residual_family_examples_inside_additions": 0,
+    "residual_family_inclusion_note": "Residual TODO-no-path family was not explicitly included in the 16-row counterbalanced additions."
+  },
+  "causal_interpretation": {
+    "primary": "undercorrection_of_adversarial_no_call_boundary_for_underspecified_path_search_prompts",
+    "mechanism": "procedural_overcommitment_with_legacy_wrapper_drift_in_two_variants (rg_search/function_calls wrappers with hallucinatory placeholder path)",
+    "not_supported": [
+      "scoring_artifact",
+      "read_file_commitment_collapse",
+      "scalar_substitution_rebound",
+      "wrapper_leakage_recurrence"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:23:02Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "population": {
+    "expected_no_call_rows": 60,
+    "residual_failure_rows": 2,
+    "residual_failure_share": 0.03333333333333333
+  },
+  "taxonomy": {
+    "residual_underspecified_path_search_overcommitment": {
+      "count": 2,
+      "share_of_residual_failures": 1.0,
+      "share_of_expected_no_call_rows": 0.03333333333333333,
+      "split_distribution": {
+        "adversarial": 2
+      },
+      "schema_reason_distribution": {
+        "missing_tool_calls": 2
+      },
+      "parse_mode_distribution": {
+        "strict": 2
+      },
+      "inferred_shell_distribution": {
+        "legacy_function_wrapper_without_tool_calls": 1,
+        "legacy_function_calls_wrapper": 1
+      },
+      "inferred_explicit_tool_name_distribution": {
+        "rg_search": 2
+      },
+      "anchor_distribution": {
+        "no_anchor_phrase": 2
+      },
+      "behavioral_assessment": {
+        "semantically_plausible_overcommitment": true,
+        "uncertainty_or_underspecification_driven": true,
+        "fundamental_misunderstanding": false,
+        "legacy_wrapper_style_residue": true,
+        "direct_answer_or_non_tool_fallback": false
+      },
+      "case_ids": [
+        "adv_91008",
+        "adv_91016"
+      ]
+    }
+  },
+  "contrast_with_prior_failure_family": {
+    "prior_family": "malformed_regex_unclosed_bracket",
+    "prior_failure_count_i10r_microprobe": 5,
+    "prior_failure_count_counterbalanced_probe": 0,
+    "prior_family_no_call_metric_recovered": true,
+    "new_family_emerged": "underspecified_path_search_todo"
+  }
+}

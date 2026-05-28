@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "train_rows": 1982,
+  "val_rows": 236,
+  "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "train_metrics": {
+    "train_runtime": 170.9123,
+    "train_samples_per_second": 2.319,
+    "train_steps_per_second": 0.146,
+    "total_flos": 1731508046635008.0,
+    "train_loss": 0.5727131366729736,
+    "epoch": 0.20181634712411706
+  },
+  "eval_metrics": {
+    "eval_loss": 0.4290638566017151,
+    "eval_runtime": 34.9773,
+    "eval_samples_per_second": 6.747,
+    "eval_steps_per_second": 6.747,
+    "epoch": 0.20181634712411706
+  },
+  "masking_audit_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe/masking_audit.json",
+  "resolved_config_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe/resolved_config.json"
+}

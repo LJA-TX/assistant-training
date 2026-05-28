@@ -1,0 +1,42 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:06:47Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "anchor_distribution_exact_valid": {
+    "counts": {
+      "literal_tool_calls": 6,
+      "paraphrastic_tool_call": 9,
+      "no_anchor_phrase": 77
+    },
+    "shares": {
+      "literal_tool_calls": 0.06521739130434782,
+      "paraphrastic_tool_call": 0.09782608695652174,
+      "no_anchor_phrase": 0.8369565217391305
+    }
+  },
+  "anchor_comparison": {
+    "i10r_microprobe": {
+      "literal_tool_calls": 0.05747126436781609,
+      "paraphrastic_tool_call": 0.08045977011494253,
+      "no_anchor_phrase": 0.8620689655172413
+    },
+    "i10r_nocall_probe": {
+      "literal_tool_calls": 0.05405405405405406,
+      "paraphrastic_tool_call": 0.0945945945945946,
+      "no_anchor_phrase": 0.8513513513513513
+    },
+    "i10r_counterbalanced_probe": {
+      "literal_tool_calls": 0.06521739130434782,
+      "paraphrastic_tool_call": 0.09782608695652174,
+      "no_anchor_phrase": 0.8369565217391305
+    }
+  },
+  "procedural_diversity": {
+    "exact_valid_tool_rows": 92
+  },
+  "paraphrastic_no_anchor_success": {
+    "paraphrastic_exact_share": 0.09782608695652174,
+    "no_anchor_exact_share": 0.8369565217391305
+  },
+  "generalization_assessment": "no_anchor_generalization_preserved"
+}

@@ -1,0 +1,45 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T17:14:08Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe",
+  "baseline_i10r_microprobe": {
+    "read_file_exact_valid_rate": 0.7037037037037037,
+    "read_file_symbol_name_exact_valid_rate": 0.8461538461538461,
+    "scalar_substitution_share": 0.0,
+    "direct_answer_substitution_share": 0.22641509433962265,
+    "no_anchor_exact_share": 0.8620689655172413,
+    "literal_anchor_exact_share": 0.05747126436781609,
+    "wrapper_leakage": 0.0,
+    "exact_valid_overall": 0.435,
+    "invalid_json_overall": 0.095
+  },
+  "i10r_residual_nocall_probe": {
+    "read_file_exact_valid_rate": 0.25925925925925924,
+    "read_file_symbol_name_exact_valid_rate": 0.23076923076923078,
+    "scalar_substitution_share": 0.0,
+    "direct_answer_substitution_share": 0.13559322033898305,
+    "no_anchor_exact_share": 0.8148148148148148,
+    "literal_anchor_exact_share": 0.07407407407407407,
+    "wrapper_leakage": 0.0,
+    "exact_valid_overall": 0.405,
+    "invalid_json_overall": 0.13
+  },
+  "delta_vs_i10r_microprobe": {
+    "read_file_exact_valid_rate": -0.4444444444444445,
+    "read_file_symbol_name_exact_valid_rate": -0.6153846153846154,
+    "scalar_substitution_share": 0.0,
+    "direct_answer_substitution_share": -0.0908218740006396,
+    "no_anchor_exact_share": -0.047254150702426556,
+    "literal_anchor_exact_share": 0.01660280970625798,
+    "exact_valid_overall": -0.02999999999999997,
+    "invalid_json_overall": 0.035
+  },
+  "anti_regression_gate_results": {
+    "read_file_exact_valid_floor_0_65": false,
+    "read_file_symbol_name_exact_valid_floor_0_60": false,
+    "scalar_substitution_ceiling_0_05": true,
+    "direct_answer_delta_ceiling_0_05_vs_i10r": true,
+    "no_anchor_exact_share_floor_0_75": true,
+    "wrapper_leakage_eq_0": true
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "generated_utc": "2026-05-28T16:34:48Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_residual_nocall",
+  "lineage": {
+    "parent_dataset_iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced",
+    "required_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "forbidden_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+    "objective": "ultra_local_residual_adversarial_nocall_seam_restoration",
+    "targeted_families": [
+      "underspecified_path_search_todo"
+    ],
+    "operation_mode": "additions_only"
+  },
+  "composition": {
+    "parent_train_rows": 1982,
+    "parent_val_rows": 236,
+    "revised_train_rows": 1986,
+    "revised_val_rows": 238,
+    "rows_added_train": 4,
+    "rows_added_val": 2,
+    "rows_added_total": 6,
+    "rows_altered_existing": 0,
+    "rows_replaced": 0,
+    "rows_thinned": 0
+  },
+  "localized_diff_summary": {
+    "additions_exact_match": true,
+    "existing_rows_unchanged": true,
+    "localization_pass": true,
+    "pair_validation_pass": true,
+    "residual_block_pass": true,
+    "uncertainty_rows_eq_0_pass": true
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

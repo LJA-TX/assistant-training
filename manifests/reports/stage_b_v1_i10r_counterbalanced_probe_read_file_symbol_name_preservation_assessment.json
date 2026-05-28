@@ -1,0 +1,28 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:06:47Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "baseline_i10r_microprobe": {
+    "read_file_exact_valid_rate": 0.7037037037037037,
+    "read_file_symbol_name_exact_valid_rate": 0.8461538461538461,
+    "read_file_symbol_name_exact_valid_count": 11,
+    "read_file_symbol_name_rows": 13
+  },
+  "baseline_i10r_nocall_probe": {
+    "read_file_exact_valid_rate": 0.25925925925925924,
+    "read_file_symbol_name_exact_valid_rate": 0.0,
+    "read_file_symbol_name_exact_valid_count": 0,
+    "read_file_symbol_name_rows": 13
+  },
+  "i10r_counterbalanced_probe": {
+    "read_file_exact_valid_rate": 0.7037037037037037,
+    "read_file_symbol_name_exact_valid_rate": 0.9230769230769231,
+    "read_file_symbol_name_exact_valid_count": 12,
+    "read_file_symbol_name_rows": 13
+  },
+  "preservation_result": {
+    "read_file_floor_0_65_pass": true,
+    "symbol_name_floor_0_60_pass": true,
+    "delta_symbol_name_vs_i10r": 0.07692307692307698
+  }
+}

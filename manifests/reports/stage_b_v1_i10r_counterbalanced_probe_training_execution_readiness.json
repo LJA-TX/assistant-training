@@ -1,0 +1,57 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T15:44:58Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "status": "ready_for_single_bounded_counterbalanced_probe_execution",
+  "checks": {
+    "preflight_validation_pass_fail": {
+      "pass": 12,
+      "fail": 0
+    },
+    "lineage": {
+      "required_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+      "forbidden_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+      "microprobe_manifest_exists": true,
+      "forbidden_manifest_exists": true,
+      "checks": {
+        "parent_required": true,
+        "forbidden_excluded": true,
+        "dataset_iteration_counterbalanced": true
+      }
+    },
+    "ambiguity_hard_blocks_clean": true,
+    "contamination_heldout_overlap_zero": true,
+    "contamination_tool_holdout_overlap_zero": true,
+    "approval_gates_for_execution": {
+      "config_approved_to_run": true,
+      "manifest_approved_to_run": true
+    },
+    "fixed_contracts_unchanged": {
+      "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+      "decode_defaults": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "do_sample": false,
+        "repetition_penalty": 1.0,
+        "max_new_tokens": 64,
+        "seed": 1234
+      },
+      "trainer_script": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "evaluator_script": "/opt/ai-stack/assistant-training/scripts/eval_canonical_manifest.py"
+    },
+    "boundaries": {
+      "single_probe_only": true,
+      "hidden_retries": false,
+      "auto_continuation": false,
+      "topology_changes": false,
+      "dataset_mutation": false
+    },
+    "all_checks_pass": true
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": true,
+    "approved_to_train": true,
+    "approved_to_promote": false
+  }
+}

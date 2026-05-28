@@ -1,0 +1,51 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "generated_utc": "2026-05-27T18:57:04Z",
+  "status": "training_and_canonical_eval_completed",
+  "training_started": true,
+  "training_started_utc": "2026-05-27T18:34:55Z",
+  "training_completed_utc": "2026-05-27T18:38:33Z",
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_i10r_nocall_probe.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_nocall_summary.json",
+    "restoration_design": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_restoration_design.json",
+    "restoration_plan": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_restoration_dataset_plan.json",
+    "restoration_risk": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_restoration_risk_assessment.json",
+    "restoration_readiness": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_restoration_readiness_criteria.json",
+    "nocall_preflight": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_preflight_validation.json"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+    "merge_output_expected": false
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "bounded_post_remediation_probe_authorization_2026-05-27",
+    "approved_utc": "2026-05-27T18:34:02Z"
+  },
+  "scaffold_notes": {
+    "implementation_phase": "bounded_post_remediation_probe_execution",
+    "dataset_generation_completed": true,
+    "training_started": true,
+    "canonical_eval_executed": true,
+    "single_run_only": true,
+    "auto_chain_disabled": true,
+    "hard_stop_triggered": true,
+    "auto_progression_halted": true
+  },
+  "canonical_eval_run": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_i10r_nocall_probe_eval_20260527T184500Z",
+  "canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_canonical_eval_summary.json",
+  "gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_gate_assessment.json",
+  "collapse_watch_interpretation": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_collapse_watch_interpretation.json",
+  "behavioral_review_package": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_behavioral_review_package.json",
+  "no_call_restoration_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_no_call_restoration_assessment.json",
+  "anti_regression_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_anti_regression_assessment.json",
+  "procedural_generalization_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_procedural_generalization_assessment.json",
+  "rollback_recommendation": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_nocall_probe_rollback_recommendation.json"
+}

@@ -1,0 +1,68 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "generated_utc": "2026-05-28T15:43:35Z",
+  "status": "training_and_canonical_eval_completed",
+  "training_started": true,
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_summary.json",
+    "counterbalanced_design": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_remediation_design.json",
+    "counterbalanced_plan": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_dataset_plan.json",
+    "counterbalanced_risk": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_risk_assessment.json",
+    "counterbalanced_readiness": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_readiness_criteria.json",
+    "counterbalanced_preflight": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_preflight_validation.json",
+    "required_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "forbidden_parent_checkpoint": "stage_b_llama31_8b_base_v1_i10r_nocall_probe"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+    "merge_output_expected": false
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "bounded_rollback_first_counterbalanced_probe_authorization_2026-05-28",
+    "approved_utc": "2026-05-28T15:43:35Z"
+  },
+  "scaffold_notes": {
+    "implementation_phase": "single_bounded_rollback_first_counterbalanced_probe_execution",
+    "dataset_generation_completed": true,
+    "training_started": false,
+    "canonical_eval_executed": false,
+    "single_run_only": true,
+    "auto_chain_disabled": true,
+    "hard_stop_enforced": true,
+    "auto_progression_halted": true
+  },
+  "outputs_reports": {
+    "training_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_training_summary.json",
+    "masking_audit_snapshot": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_masking_audit_raw.snapshot.json",
+    "resolved_config_snapshot": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_resolved_training_config_raw.snapshot.json",
+    "canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "behavioral_review_package": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_behavioral_review_package.json",
+    "collapse_watch_interpretation": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_collapse_watch_interpretation.json",
+    "no_call_restoration_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_no_call_restoration_assessment.json",
+    "read_file_symbol_name_preservation_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_read_file_symbol_name_preservation_assessment.json",
+    "anti_regression_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_anti_regression_assessment.json",
+    "procedural_generalization_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_procedural_generalization_assessment.json",
+    "gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_gate_assessment.json",
+    "scalar_substitution_delta_analysis": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_scalar_substitution_delta_analysis.json"
+  },
+  "training_started_utc": "2026-05-28T16:06:47Z",
+  "training_completed_utc": "2026-05-28T16:06:47Z",
+  "canonical_eval_run": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_i10r_counterbalanced_probe_eval_20260528T154857Z",
+  "canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+  "gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_gate_assessment.json",
+  "collapse_watch_interpretation": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_collapse_watch_interpretation.json",
+  "behavioral_review_package": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_behavioral_review_package.json",
+  "no_call_restoration_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_no_call_restoration_assessment.json",
+  "read_file_symbol_name_preservation_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_read_file_symbol_name_preservation_assessment.json",
+  "anti_regression_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_anti_regression_assessment.json",
+  "procedural_generalization_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_procedural_generalization_assessment.json",
+  "scalar_substitution_delta_analysis": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_scalar_substitution_delta_analysis.json"
+}

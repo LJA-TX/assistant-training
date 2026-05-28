@@ -1,0 +1,27 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T19:13:50Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "go_no_go": {
+    "continue_from_current_checkpoint": "no",
+    "bounded_continuation_still_justified": "yes",
+    "overall_recommendation": "rollback_then_narrower_remediation"
+  },
+  "recommended_direction": {
+    "primary": "rollback_to_i10r_microprobe_and_design_ultra_narrow_read_file_symbol_name_commitment_preservation_pairs_within_nocall_boundary_family",
+    "secondary": "retain no-call contrastive objective but add matched read_file symbol-name commitment safeguards under identical path/wording envelopes",
+    "explicitly_avoid": [
+      "broader no-call restoration expansion",
+      "global caution/anti-tool pressure",
+      "architectural redesign at this stage"
+    ]
+  },
+  "most_dangerous_next_direction": "iterating additional no-call restoration additions on top of current checkpoint (likely amplifies direct-answer substitution and erodes read_file foothold).",
+  "rationale": {
+    "no_call_objective_met": true,
+    "read_file_foothold_broken": true,
+    "direct_answer_rebound_present": true,
+    "anchor_shell_collapse_absent": true,
+    "wrapper_invariant_preserved": true
+  }
+}

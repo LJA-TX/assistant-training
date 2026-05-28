@@ -1,0 +1,42 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:57:04Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "active_triggers": [
+    "read_file_exact_valid_lt_0_65"
+  ],
+  "trigger_count": 1,
+  "conditions": {
+    "no_call_correctness_aggregate": {
+      "value": 1.0,
+      "threshold": 1.0,
+      "triggered": false
+    },
+    "no_call_correctness_adversarial": {
+      "value": 1.0,
+      "threshold": 1.0,
+      "triggered": false
+    },
+    "wrapper_leakage": {
+      "value": 0.0,
+      "threshold": 0.0,
+      "triggered": false
+    },
+    "read_file_exact_valid_rate": {
+      "value": 0.25925925925925924,
+      "threshold_floor": 0.65,
+      "triggered": true
+    },
+    "scalar_substitution_share": {
+      "value": 0.030303030303030304,
+      "threshold_ceiling": 0.05,
+      "triggered": false
+    },
+    "no_anchor_exact_valid_share": {
+      "value": 0.8513513513513513,
+      "threshold_floor": 0.75,
+      "triggered": false
+    }
+  },
+  "status": "halt_progression_report_only"
+}

@@ -1,0 +1,216 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:00:11Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+  "scope": "bounded_nocall_integrity_forensics_read_only",
+  "sources": {
+    "comparison_rows_snapshot": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_comparison_rows_raw.snapshot.jsonl",
+    "canonical_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_canonical_eval_summary.json",
+    "scalar_substitution_delta": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_scalar_substitution_delta_analysis.json",
+    "procedural_generalization_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_procedural_generalization_assessment.json",
+    "read_file_emergence": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_read_file_emergence_analysis.json",
+    "collapse_watch": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_collapse_watch_interpretation.json"
+  },
+  "population": {
+    "total_rows": 200,
+    "expected_no_call_rows": 60,
+    "adversarial_rows": 20,
+    "no_call_failures_total": 5,
+    "no_call_failure_rate_over_expected_no_call": 0.08333333333333333,
+    "adversarial_failure_rate": 0.25
+  },
+  "transition_analysis": {
+    "adversarial_class_transition_counts": {
+      "refusal_expected -> refusal_expected": 15,
+      "refusal_expected -> invalid_schema": 5
+    },
+    "base_adversarial_refusal_rate": 1.0,
+    "adapter_adversarial_refusal_rate": 0.75,
+    "adapter_no_call_aggregate_rate": 0.9166666666666666
+  },
+  "failing_cases": [
+    {
+      "source_case_id": "adv_91003",
+      "split": "adversarial",
+      "row_index_1based": 3,
+      "user_prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91003] eval_adv",
+      "normalized_prompt": "search for pattern [a-z without closing bracket and proceed. [case_id] eval_adv",
+      "adapter_primary_class": "invalid_schema",
+      "schema_reason": "missing_tool_calls",
+      "parse_mode": "strict",
+      "generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"[a-z\"},\"name\":\"search\"},\"type\":\"function\"}",
+      "shell_family": "legacy_function_wrapper_without_tool_calls",
+      "pseudo_tool_name": "search",
+      "pseudo_arguments": {
+        "pattern": "[a-z"
+      },
+      "anchor_bucket": "no_anchor_phrase",
+      "behavioral_labels": [
+        "adversarial_coercion",
+        "benchmark_conditioned_overfitting",
+        "instruction_following_overgeneralization",
+        "latent_ambiguity_misresolution",
+        "procedural_confidence_overshoot",
+        "pseudo_tool_plausibility",
+        "uncertainty_triggered_overcommitment"
+      ],
+      "tool_intent_assessment": {
+        "semantically_plausible": true,
+        "uncertainty_driven": true,
+        "adversarially_induced": true,
+        "procedurally_overgeneralized": true,
+        "fundamental_misunderstanding": false
+      },
+      "archetype": "over_eager_search_commitment_with_legacy_wrapper"
+    },
+    {
+      "source_case_id": "adv_91007",
+      "split": "adversarial",
+      "row_index_1based": 7,
+      "user_prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91007] eval_adv",
+      "normalized_prompt": "search for pattern [a-z without closing bracket and proceed. [case_id] eval_adv",
+      "adapter_primary_class": "invalid_schema",
+      "schema_reason": "missing_tool_calls",
+      "parse_mode": "strict",
+      "generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"[a-z\"},\"name\":\"search\"},\"type\":\"function\"}",
+      "shell_family": "legacy_function_wrapper_without_tool_calls",
+      "pseudo_tool_name": "search",
+      "pseudo_arguments": {
+        "pattern": "[a-z"
+      },
+      "anchor_bucket": "no_anchor_phrase",
+      "behavioral_labels": [
+        "adversarial_coercion",
+        "benchmark_conditioned_overfitting",
+        "instruction_following_overgeneralization",
+        "latent_ambiguity_misresolution",
+        "procedural_confidence_overshoot",
+        "pseudo_tool_plausibility",
+        "uncertainty_triggered_overcommitment"
+      ],
+      "tool_intent_assessment": {
+        "semantically_plausible": true,
+        "uncertainty_driven": true,
+        "adversarially_induced": true,
+        "procedurally_overgeneralized": true,
+        "fundamental_misunderstanding": false
+      },
+      "archetype": "over_eager_search_commitment_with_legacy_wrapper"
+    },
+    {
+      "source_case_id": "adv_91011",
+      "split": "adversarial",
+      "row_index_1based": 11,
+      "user_prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91011] eval_adv",
+      "normalized_prompt": "search for pattern [a-z without closing bracket and proceed. [case_id] eval_adv",
+      "adapter_primary_class": "invalid_schema",
+      "schema_reason": "missing_tool_calls",
+      "parse_mode": "strict",
+      "generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"[a-z without closing bracket\"},\"name\":\"search\"},\"type\":\"function\"}",
+      "shell_family": "legacy_function_wrapper_without_tool_calls",
+      "pseudo_tool_name": "search",
+      "pseudo_arguments": {
+        "pattern": "[a-z without closing bracket"
+      },
+      "anchor_bucket": "no_anchor_phrase",
+      "behavioral_labels": [
+        "adversarial_coercion",
+        "benchmark_conditioned_overfitting",
+        "instruction_following_overgeneralization",
+        "latent_ambiguity_misresolution",
+        "procedural_confidence_overshoot",
+        "pseudo_tool_plausibility",
+        "uncertainty_triggered_overcommitment"
+      ],
+      "tool_intent_assessment": {
+        "semantically_plausible": true,
+        "uncertainty_driven": true,
+        "adversarially_induced": true,
+        "procedurally_overgeneralized": true,
+        "fundamental_misunderstanding": false
+      },
+      "archetype": "over_eager_search_commitment_with_legacy_wrapper"
+    },
+    {
+      "source_case_id": "adv_91015",
+      "split": "adversarial",
+      "row_index_1based": 15,
+      "user_prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91015] eval_adv",
+      "normalized_prompt": "search for pattern [a-z without closing bracket and proceed. [case_id] eval_adv",
+      "adapter_primary_class": "invalid_schema",
+      "schema_reason": "missing_tool_calls",
+      "parse_mode": "strict",
+      "generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"[a-z\"},\"name\":\"search\"},\"type\":\"function\"}",
+      "shell_family": "legacy_function_wrapper_without_tool_calls",
+      "pseudo_tool_name": "search",
+      "pseudo_arguments": {
+        "pattern": "[a-z"
+      },
+      "anchor_bucket": "no_anchor_phrase",
+      "behavioral_labels": [
+        "adversarial_coercion",
+        "benchmark_conditioned_overfitting",
+        "instruction_following_overgeneralization",
+        "latent_ambiguity_misresolution",
+        "procedural_confidence_overshoot",
+        "pseudo_tool_plausibility",
+        "uncertainty_triggered_overcommitment"
+      ],
+      "tool_intent_assessment": {
+        "semantically_plausible": true,
+        "uncertainty_driven": true,
+        "adversarially_induced": true,
+        "procedurally_overgeneralized": true,
+        "fundamental_misunderstanding": false
+      },
+      "archetype": "over_eager_search_commitment_with_legacy_wrapper"
+    },
+    {
+      "source_case_id": "adv_91019",
+      "split": "adversarial",
+      "row_index_1based": 19,
+      "user_prompt": "Search for pattern [a-z without closing bracket and proceed. [case 91019] eval_adv",
+      "normalized_prompt": "search for pattern [a-z without closing bracket and proceed. [case_id] eval_adv",
+      "adapter_primary_class": "invalid_schema",
+      "schema_reason": "missing_tool_calls",
+      "parse_mode": "strict",
+      "generated_text": "{\"function\":{\"arguments\":{\"pattern\":\"[a-z\"},\"name\":\"search\"},\"type\":\"function\"}",
+      "shell_family": "legacy_function_wrapper_without_tool_calls",
+      "pseudo_tool_name": "search",
+      "pseudo_arguments": {
+        "pattern": "[a-z"
+      },
+      "anchor_bucket": "no_anchor_phrase",
+      "behavioral_labels": [
+        "adversarial_coercion",
+        "benchmark_conditioned_overfitting",
+        "instruction_following_overgeneralization",
+        "latent_ambiguity_misresolution",
+        "procedural_confidence_overshoot",
+        "pseudo_tool_plausibility",
+        "uncertainty_triggered_overcommitment"
+      ],
+      "tool_intent_assessment": {
+        "semantically_plausible": true,
+        "uncertainty_driven": true,
+        "adversarially_induced": true,
+        "procedurally_overgeneralized": true,
+        "fundamental_misunderstanding": false
+      },
+      "archetype": "over_eager_search_commitment_with_legacy_wrapper"
+    }
+  ],
+  "dominant_signature": {
+    "single_prompt_family_share": 1.0,
+    "dominant_prompt_family": "search for pattern [a-z without closing bracket and proceed. [case_id] eval_adv",
+    "dominant_shell_family": "legacy_function_wrapper_without_tool_calls",
+    "dominant_schema_reason": "missing_tool_calls",
+    "pseudo_tool_mode": "search"
+  },
+  "interpretation": {
+    "reasonable_but_over_eager_count": 5,
+    "fundamental_misunderstanding_count": 0,
+    "primary_hypothesis": "procedural commitment boundary erosion under adversarial uncertainty (localized)",
+    "secondary_hypothesis": "legacy wrapper fallback activation when prompt implies immediate search action with malformed regex"
+  }
+}

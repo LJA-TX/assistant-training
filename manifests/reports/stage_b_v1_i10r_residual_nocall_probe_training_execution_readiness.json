@@ -1,0 +1,103 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:52:05Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe",
+  "phase": "training_execution_readiness",
+  "status": "ready_for_single_bounded_residual_seam_probe_execution",
+  "summary": {
+    "pass": 17,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "name": "config_name_matches_manifest",
+      "status": "pass",
+      "detail": "config=stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe manifest=stage_b_llama31_8b_base_v1_i10r_residual_nocall_probe"
+    },
+    {
+      "name": "manifest_status_prepared",
+      "status": "pass",
+      "detail": "status=prepared"
+    },
+    {
+      "name": "required_parent_checkpoint_manifest",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_microprobe"
+    },
+    {
+      "name": "forbidden_parent_checkpoint_manifest",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_nocall_probe"
+    },
+    {
+      "name": "config_parent_checkpoint",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_microprobe"
+    },
+    {
+      "name": "config_forbidden_parent",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_nocall_probe"
+    },
+    {
+      "name": "dataset_summary_iteration",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_residual_nocall"
+    },
+    {
+      "name": "dataset_summary_required_parent",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_microprobe"
+    },
+    {
+      "name": "dataset_summary_forbidden_parent",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_nocall_probe"
+    },
+    {
+      "name": "dataset_summary_additions_exact",
+      "status": "pass",
+      "detail": "True"
+    },
+    {
+      "name": "dataset_summary_residual_block_pass",
+      "status": "pass",
+      "detail": "True"
+    },
+    {
+      "name": "residual_preflight_pass",
+      "status": "pass",
+      "detail": "{'pass': 13, 'fail': 0}"
+    },
+    {
+      "name": "required_parent_manifest_name",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_microprobe"
+    },
+    {
+      "name": "forbidden_parent_manifest_name",
+      "status": "pass",
+      "detail": "stage_b_llama31_8b_base_v1_i10r_nocall_probe"
+    },
+    {
+      "name": "config_approved_to_run",
+      "status": "pass",
+      "detail": "True"
+    },
+    {
+      "name": "manifest_approved_to_run",
+      "status": "pass",
+      "detail": "True"
+    },
+    {
+      "name": "preflight_lora_run_exit_zero",
+      "status": "pass",
+      "detail": "model_path_exists: OK\ntokenizer_path_exists: OK\ntrain_exists: OK\nval_exists: OK\nassistant_only_fail_fast_configured: OK\nadapter_output_not_present: OK\n"
+    }
+  ],
+  "approval_state": {
+    "approved_to_run": true,
+    "approved_to_train": true,
+    "approved_to_promote": false
+  }
+}

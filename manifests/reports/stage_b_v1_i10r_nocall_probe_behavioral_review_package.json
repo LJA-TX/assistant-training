@@ -1,0 +1,59 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:57:04Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "inputs": {
+    "training_summary": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_i10r_nocall_probe/training_summary.json",
+    "eval_summary": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_i10r_nocall_probe_eval_20260527T184500Z/summary.json",
+    "comparison_rows": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_i10r_nocall_probe_eval_20260527T184500Z/comparison_rows.jsonl",
+    "i10r_microprobe_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_canonical_eval_summary.json",
+    "i10r_microprobe_behavioral_review": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_microprobe_behavioral_review_package.json"
+  },
+  "headline": {
+    "heldout_exact_valid_i10r_microprobe": 0.66,
+    "heldout_exact_valid_i10r_nocall_probe": 0.53,
+    "read_file_exact_valid_rate": 0.25925925925925924,
+    "scalar_substitution_share": 0.030303030303030304,
+    "direct_answer_substitution_share": 0.4393939393939394,
+    "no_call_correctness_aggregate": 1.0,
+    "no_call_correctness_adversarial": 1.0,
+    "wrapper_leakage": 0.0
+  },
+  "comparative_context": {
+    "i10r_microprobe": {
+      "heldout_exact_valid": 0.66,
+      "heldout_invalid_json": 0.14,
+      "read_file_exact_valid_rate": 0.703704,
+      "scalar_substitution_share": 0.0,
+      "direct_answer_substitution_share": 0.226415,
+      "literal_anchor_exact_share": 0.057471,
+      "no_anchor_exact_share": 0.862069,
+      "aggregate_no_call_correctness": 0.9166666666666666
+    },
+    "i10r_nocall_probe": {
+      "heldout_exact_valid": 0.53,
+      "heldout_invalid_json": 0.3,
+      "read_file_exact_valid_rate": 0.25925925925925924,
+      "scalar_substitution_share": 0.030303030303030304,
+      "direct_answer_substitution_share": 0.4393939393939394,
+      "literal_anchor_exact_share": 0.05405405405405406,
+      "no_anchor_exact_share": 0.8513513513513513,
+      "aggregate_no_call_correctness": 1.0,
+      "adversarial_no_call_correctness": 1.0
+    }
+  },
+  "failure_taxonomy_non_exact_tool_rows": {
+    "direct_answer_substitution": 29,
+    "scalar_substitution": 2,
+    "malformed_partial_json": 6,
+    "near_canonical_wrapper_or_envelope_drift": 12,
+    "other_non_exact": 17
+  },
+  "hard_stop": {
+    "active_triggers": [
+      "read_file_exact_valid_lt_0_65"
+    ],
+    "status": "halt_progression_report_only"
+  },
+  "overall_interpretation": "localized_no_call_restoration_success_with_tool_side_regression"
+}

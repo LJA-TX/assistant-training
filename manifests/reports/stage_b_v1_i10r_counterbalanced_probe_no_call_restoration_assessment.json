@@ -1,0 +1,24 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-28T16:06:47Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+  "objective": "preserve and restore no-call integrity while retaining i10r procedural gains",
+  "baseline_i10r_microprobe": {
+    "aggregate_no_call_correctness": 0.9166666666666666,
+    "adversarial_no_call_correctness": 0.75
+  },
+  "baseline_i10r_nocall_probe": {
+    "aggregate_no_call_correctness": 1.0,
+    "adversarial_no_call_correctness": 1.0
+  },
+  "i10r_counterbalanced_probe": {
+    "aggregate_no_call_correctness": 0.9666666666666667,
+    "adversarial_no_call_correctness": 0.9,
+    "wrapper_leakage": 0.0
+  },
+  "restoration_result": {
+    "aggregate_restored": false,
+    "adversarial_restored": false,
+    "wrapper_leakage_clean": true
+  }
+}

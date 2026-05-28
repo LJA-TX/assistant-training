@@ -1,0 +1,34 @@
+{
+  "generated_utc": "2026-05-27T18:21:39Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall",
+  "lineage": {
+    "parent_dataset_iteration": "stage_b_llama31_8b_base_v1_i10r",
+    "objective": "localized_nocall_boundary_restoration",
+    "targeted_family": "malformed_regex_underspecified_search_adversarial_boundary",
+    "operation_mode": "additions_only"
+  },
+  "composition": {
+    "parent_train_rows": 1969,
+    "parent_val_rows": 233,
+    "revised_train_rows": 1983,
+    "revised_val_rows": 235,
+    "rows_added_train": 14,
+    "rows_added_val": 2,
+    "rows_added_total": 16,
+    "rows_altered_existing": 0,
+    "rows_replaced": 0,
+    "rows_thinned": 0
+  },
+  "localized_diff_summary": {
+    "additions_exact_match": true,
+    "existing_rows_unchanged": true,
+    "localization_pass": true,
+    "pair_validation_pass": true
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

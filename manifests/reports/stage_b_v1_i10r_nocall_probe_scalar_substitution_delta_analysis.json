@@ -1,0 +1,22 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-27T18:57:04Z",
+  "iteration": "stage_b_llama31_8b_base_v1_i10r_nocall_probe",
+  "metric_definition": "share over non-exact expected-tool rows",
+  "i10r_microprobe_baseline": {
+    "scalar_substitution_share": 0.0,
+    "direct_answer_substitution_share": 0.226415
+  },
+  "i10r_nocall_probe_eval": {
+    "scalar_substitution_share": 0.030303030303030304,
+    "direct_answer_substitution_share": 0.4393939393939394,
+    "near_canonical_wrapper_or_envelope_drift_share": 0.18181818181818182,
+    "non_exact_tool_rows": 66
+  },
+  "delta_vs_i10r_microprobe": {
+    "scalar_substitution_share": 0.030303030303030304,
+    "direct_answer_substitution_share": 0.2129789393939394
+  },
+  "material_rebound_threshold_delta": 0.05,
+  "scalar_rebound_triggered": false
+}
