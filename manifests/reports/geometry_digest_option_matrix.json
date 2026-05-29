@@ -1,0 +1,136 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:00Z",
+  "question": "How should geometry_context_digest semantics be handled across mapping and detector stacks?",
+  "options": [
+    {
+      "option_id": "A",
+      "name": "HARMONIZE_TO_MAPPING",
+      "definition": "Use mapping digest payload (schema/sweep/cell/axis_levels/weighting_mode) as canonical digest everywhere, including detector outputs.",
+      "semantic_fit": {
+        "mapping_identity": "strong",
+        "detector_input_context_identity": "weak_to_medium"
+      },
+      "backward_compatibility_impact": {
+        "level": "medium",
+        "notes": [
+          "Detector output digest values change for contexts with extra keys.",
+          "Historical detector artifacts become non-comparable unless migration mapping is retained."
+        ]
+      },
+      "rehearsal_artifact_impact": {
+        "level": "low_positive",
+        "notes": [
+          "Current divergence check would pass after harmonization.",
+          "Artifact graph simplification."
+        ]
+      },
+      "future_probe_impact": {
+        "level": "medium_risk",
+        "notes": [
+          "Could hide detector-context differences that are not in mapping identity payload.",
+          "May under-specify gate lineage if detector receives richer context."
+        ]
+      },
+      "implementation_complexity": {
+        "level": "low_to_medium",
+        "notes": [
+          "Update detector to use mapping-style normalization before hashing.",
+          "Document canonical payload schema and missing-key behavior."
+        ]
+      },
+      "governance_implications": {
+        "strength": "cell_identity_governance",
+        "weakness": "context_fidelity_governance"
+      }
+    },
+    {
+      "option_id": "B",
+      "name": "HARMONIZE_TO_DETECTOR",
+      "definition": "Use full geometry_context object digest as canonical digest everywhere, including mapping artifacts.",
+      "semantic_fit": {
+        "mapping_identity": "medium",
+        "detector_input_context_identity": "strong"
+      },
+      "backward_compatibility_impact": {
+        "level": "high",
+        "notes": [
+          "All mapping artifacts would change digest behavior immediately.",
+          "Any additional key in geometry_context changes identity unexpectedly."
+        ]
+      },
+      "rehearsal_artifact_impact": {
+        "level": "low_positive",
+        "notes": [
+          "Current divergence check would pass after harmonization.",
+          "But digest stability across schema evolution may degrade."
+        ]
+      },
+      "future_probe_impact": {
+        "level": "high_risk",
+        "notes": [
+          "Experiment identity drift likely as non-core context fields are added.",
+          "Cross-run comparability may break when benign metadata changes."
+        ]
+      },
+      "implementation_complexity": {
+        "level": "medium",
+        "notes": [
+          "Update mapping digest constructor and all downstream expectations.",
+          "Potentially version-lock geometry_context shape."
+        ]
+      },
+      "governance_implications": {
+        "strength": "full_context_auditability",
+        "weakness": "stable_cell_identity"
+      }
+    },
+    {
+      "option_id": "C",
+      "name": "SPLIT_INTO_DISTINCT_DIGEST_TYPES",
+      "definition": "Keep both digest scopes with explicit names and contracts (e.g., geometry_mapping_identity_digest and geometry_context_input_digest).",
+      "semantic_fit": {
+        "mapping_identity": "strong",
+        "detector_input_context_identity": "strong"
+      },
+      "backward_compatibility_impact": {
+        "level": "low_to_medium",
+        "notes": [
+          "Existing geometry_context_digest can be retained temporarily as alias in one stack.",
+          "Additive field introduction allows phased migration."
+        ]
+      },
+      "rehearsal_artifact_impact": {
+        "level": "medium_positive",
+        "notes": [
+          "Rehearsal checks can validate both digests for intended semantics.",
+          "Divergence becomes expected/typed, not failure by default."
+        ]
+      },
+      "future_probe_impact": {
+        "level": "low_risk_positive",
+        "notes": [
+          "Supports deterministic cell identity and richer detector lineage simultaneously.",
+          "Allows explicit governance rules per digest type."
+        ]
+      },
+      "implementation_complexity": {
+        "level": "medium",
+        "notes": [
+          "Requires schema updates across emitted artifacts and docs.",
+          "Needs migration window and naming governance, but no forced semantic loss."
+        ]
+      },
+      "governance_implications": {
+        "strength": "explicit_lineage_modeling",
+        "weakness": "slightly_higher_schema_complexity"
+      }
+    }
+  ],
+  "comparative_summary": {
+    "best_for_stable_cell_identity": "A_or_C",
+    "best_for_detector_context_fidelity": "B_or_C",
+    "best_balance": "C",
+    "key_tradeoff": "single canonical digest is simpler but collapses distinct semantics"
+  }
+}

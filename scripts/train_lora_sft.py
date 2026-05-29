@@ -57,7 +57,7 @@ def _resolve_geometry_context(config: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _build_geometry_context_digest(geometry_context: dict[str, Any]) -> str:
+def _build_geometry_mapping_identity_digest(geometry_context: dict[str, Any]) -> str:
     digest_payload = {
         "geometry_schema_version": geometry_context.get("geometry_schema_version"),
         "sweep_id": geometry_context.get("sweep_id"),
@@ -66,6 +66,29 @@ def _build_geometry_context_digest(geometry_context: dict[str, Any]) -> str:
         "weighting_mode": geometry_context.get("weighting_mode"),
     }
     return _sha256_text(_canonical_json_text(digest_payload))
+
+
+def _build_geometry_context_input_digest(geometry_context: dict[str, Any]) -> str:
+    return _sha256_text(_canonical_json_text(geometry_context))
+
+
+def _build_geometry_context_digest(geometry_context: dict[str, Any]) -> str:
+    # Backward-compatible alias: legacy geometry_context_digest maps to mapping identity digest.
+    return _build_geometry_mapping_identity_digest(geometry_context)
+
+
+def _build_mapping_digest_fields(
+    *,
+    geometry_context: dict[str, Any],
+    geometry_mapping_identity_digest: str,
+) -> dict[str, Any]:
+    return {
+        "digest_contract_version": "1.0",
+        "geometry_mapping_identity_digest": geometry_mapping_identity_digest,
+        "geometry_context_input_digest": _build_geometry_context_input_digest(geometry_context),
+        "geometry_context_digest": geometry_mapping_identity_digest,
+        "geometry_context_digest_alias_of": "geometry_mapping_identity_digest",
+    }
 
 
 def _resolve_geometry_sampling_cfg(config: dict[str, Any], *, fallback_seed: int) -> dict[str, Any]:
@@ -541,7 +564,10 @@ def _build_declared_exposure_ledger(
             "val_jsonl": str(val_jsonl),
         },
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_context_digest,
+        ),
         "declaration": {
             "geometry_schema_version": geometry_context.get("geometry_schema_version"),
             "sweep_id": geometry_context.get("sweep_id"),
@@ -669,7 +695,10 @@ def _build_train_row_identity_sidecar(
             "train_jsonl": str(train_jsonl),
         },
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_context_digest,
+        ),
         "rows_digest_sha256": sidecar_rows_digest,
         "rows_total": len(rows_out),
         "rows": rows_out,
@@ -735,7 +764,10 @@ def _build_realized_exposure_ledger_default_path(
             "train_jsonl": str(train_jsonl),
         },
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_context_digest,
+        ),
         "capture_mode": "index_space_inferred_no_sampler_stream_capture",
         "confidence": "limited",
         "limitations": limitations,
@@ -855,7 +887,10 @@ def _build_exposure_drift_ledger(
         "config_path": str(config_path),
         "manifest_path": str(manifest_path) if manifest_path else None,
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_context_digest,
+        ),
         "comparison_basis": comparison_basis,
         "confidence": realized_confidence,
         "limitations": list(realized_ledger.get("limitations", [])),
@@ -964,7 +999,10 @@ def _build_realized_exposure_ledger_weighted_path(
             "train_jsonl": str(train_jsonl),
         },
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_context_digest,
+        ),
         "capture_mode": "runtime_weighted_sampler_stream_capture",
         "confidence": confidence,
         "limitations": limitations,
@@ -1126,7 +1164,10 @@ def _build_sampler_determinism_report(
         "config_path": str(config_path),
         "manifest_path": str(manifest_path) if manifest_path else None,
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_context_digest,
+        ),
         "geometry_sampling": geometry_sampling_summary,
         "runtime_capture": {
             "captured": captured,
@@ -1788,7 +1829,10 @@ def _run_masking_audit_only(
         val_items,
         geometry_trace={
             "geometry_context": geometry_context,
-            "geometry_context_digest": geometry_context_digest,
+            **_build_mapping_digest_fields(
+                geometry_context=geometry_context,
+                geometry_mapping_identity_digest=geometry_context_digest,
+            ),
             "declared_exposure_ledger_path": str(declared_ledger_path),
             "declared_exposure_summary": declared_summary,
             "row_identity_sidecar_path": str(row_identity_sidecar_path),
@@ -1811,7 +1855,10 @@ def _run_masking_audit_only(
         "approval_gate": gate_info,
         "resolved_prompt_template": prompt_template_cfg,
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_context_digest,
+        ),
         "declared_exposure_ledger_path": str(declared_ledger_path),
         "row_identity_sidecar_path": str(row_identity_sidecar_path),
         "realized_exposure_ledger_path": str(realized_ledger_path),
@@ -1844,7 +1891,7 @@ def main() -> int:
     manifest = _load_json(manifest_path) if manifest_path else None
     prompt_template_cfg = _resolve_prompt_template_cfg(config)
     geometry_context = _resolve_geometry_context(config)
-    geometry_context_digest = _build_geometry_context_digest(geometry_context)
+    geometry_mapping_identity_digest = _build_geometry_mapping_identity_digest(geometry_context)
 
     approved, gate_info = _resolve_run_gate(config, manifest)
 
@@ -1857,7 +1904,7 @@ def main() -> int:
             gate_info=gate_info,
             prompt_template_cfg=prompt_template_cfg,
             geometry_context=geometry_context,
-            geometry_context_digest=geometry_context_digest,
+            geometry_context_digest=geometry_mapping_identity_digest,
         )
 
     if not approved:
@@ -1893,7 +1940,7 @@ def main() -> int:
         train_jsonl=str(dataset_cfg["train_jsonl"]),
         val_jsonl=str(dataset_cfg["val_jsonl"]),
         geometry_context=geometry_context,
-        geometry_context_digest=geometry_context_digest,
+        geometry_context_digest=geometry_mapping_identity_digest,
         config_path=config_path,
         manifest_path=manifest_path,
     )
@@ -1902,7 +1949,7 @@ def main() -> int:
         train_rows=train_rows,
         train_jsonl=str(dataset_cfg["train_jsonl"]),
         geometry_context=geometry_context,
-        geometry_context_digest=geometry_context_digest,
+        geometry_context_digest=geometry_mapping_identity_digest,
         config_path=config_path,
         manifest_path=manifest_path,
     )
@@ -1918,7 +1965,7 @@ def main() -> int:
     sampler_determinism = _build_sampler_determinism_report(
         geometry_sampling_summary=geometry_sampling_summary,
         geometry_context=geometry_context,
-        geometry_context_digest=geometry_context_digest,
+        geometry_context_digest=geometry_mapping_identity_digest,
         config_path=config_path,
         manifest_path=manifest_path,
         runtime_capture=None,
@@ -1931,7 +1978,10 @@ def main() -> int:
         "approval_gate": gate_info,
         "resolved_prompt_template": prompt_template_cfg,
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_mapping_identity_digest,
+        ),
         "geometry_sampling": geometry_sampling_summary,
         "declared_exposure_ledger_path": str(declared_ledger_path),
         "row_identity_sidecar_path": str(row_identity_sidecar_path),
@@ -1946,7 +1996,7 @@ def main() -> int:
         row_identity_sidecar=row_identity_sidecar,
         train_jsonl=str(dataset_cfg["train_jsonl"]),
         geometry_context=geometry_context,
-        geometry_context_digest=geometry_context_digest,
+        geometry_context_digest=geometry_mapping_identity_digest,
         config_path=config_path,
         manifest_path=manifest_path,
         geometry_sampling_summary=geometry_sampling_summary,
@@ -1964,7 +2014,7 @@ def main() -> int:
         declared_ledger=declared_ledger,
         realized_ledger=realized_ledger,
         geometry_context=geometry_context,
-        geometry_context_digest=geometry_context_digest,
+        geometry_context_digest=geometry_mapping_identity_digest,
         config_path=config_path,
         manifest_path=manifest_path,
     )
@@ -2000,7 +2050,10 @@ def main() -> int:
         val_items,
         geometry_trace={
             "geometry_context": geometry_context,
-            "geometry_context_digest": geometry_context_digest,
+            **_build_mapping_digest_fields(
+                geometry_context=geometry_context,
+                geometry_mapping_identity_digest=geometry_mapping_identity_digest,
+            ),
             "declared_exposure_ledger_path": str(declared_ledger_path),
             "declared_exposure_summary": declared_summary,
             "row_identity_sidecar_path": str(row_identity_sidecar_path),
@@ -2089,7 +2142,7 @@ def main() -> int:
                 row_identity_sidecar=row_identity_sidecar,
                 train_jsonl=str(dataset_cfg["train_jsonl"]),
                 geometry_context=geometry_context,
-                geometry_context_digest=geometry_context_digest,
+                geometry_context_digest=geometry_mapping_identity_digest,
                 config_path=config_path,
                 manifest_path=manifest_path,
                 geometry_sampling_summary=geometry_sampling_summary,
@@ -2102,7 +2155,7 @@ def main() -> int:
                 row_identity_sidecar=row_identity_sidecar,
                 train_jsonl=str(dataset_cfg["train_jsonl"]),
                 geometry_context=geometry_context,
-                geometry_context_digest=geometry_context_digest,
+                geometry_context_digest=geometry_mapping_identity_digest,
                 config_path=config_path,
                 manifest_path=manifest_path,
                 geometry_sampling_summary=geometry_sampling_summary,
@@ -2115,7 +2168,7 @@ def main() -> int:
             declared_ledger=declared_ledger,
             realized_ledger=realized_ledger,
             geometry_context=geometry_context,
-            geometry_context_digest=geometry_context_digest,
+            geometry_context_digest=geometry_mapping_identity_digest,
             config_path=config_path,
             manifest_path=manifest_path,
         )
@@ -2124,7 +2177,7 @@ def main() -> int:
     sampler_determinism = _build_sampler_determinism_report(
         geometry_sampling_summary=geometry_sampling_summary,
         geometry_context=geometry_context,
-        geometry_context_digest=geometry_context_digest,
+        geometry_context_digest=geometry_mapping_identity_digest,
         config_path=config_path,
         manifest_path=manifest_path,
         runtime_capture=runtime_capture if geometry_sampling_plan.get("enabled") else None,
@@ -2145,7 +2198,10 @@ def main() -> int:
         "train_metrics": dict(train_result.metrics),
         "eval_metrics": dict(eval_metrics),
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_context_digest,
+        **_build_mapping_digest_fields(
+            geometry_context=geometry_context,
+            geometry_mapping_identity_digest=geometry_mapping_identity_digest,
+        ),
         "geometry_sampling": geometry_sampling_summary,
         "trainer_class": trainer_class_name,
         "sampler_determinism_path": str(sampler_determinism_path),

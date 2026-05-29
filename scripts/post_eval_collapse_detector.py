@@ -34,6 +34,42 @@ def _now_utc() -> str:
     return datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _build_geometry_context_input_digest(geometry_context: dict[str, Any]) -> str:
+    return _sha256_text(_canonical_json_text(geometry_context))
+
+
+def _build_geometry_mapping_identity_digest(geometry_context: dict[str, Any]) -> str:
+    digest_payload = {
+        "geometry_schema_version": geometry_context.get("geometry_schema_version"),
+        "sweep_id": geometry_context.get("sweep_id"),
+        "cell_id": geometry_context.get("cell_id"),
+        "axis_levels": geometry_context.get("axis_levels"),
+        "weighting_mode": geometry_context.get("weighting_mode"),
+    }
+    return _sha256_text(_canonical_json_text(digest_payload))
+
+
+def _build_detector_digest_fields(geometry_context: dict[str, Any] | None) -> dict[str, Any]:
+    if geometry_context is None:
+        return {
+            "digest_contract_version": "1.0",
+            "geometry_mapping_identity_digest": None,
+            "geometry_context_input_digest": None,
+            "geometry_context_digest": None,
+            "geometry_context_digest_alias_of": "geometry_context_input_digest",
+        }
+
+    mapping_digest = _build_geometry_mapping_identity_digest(geometry_context)
+    input_digest = _build_geometry_context_input_digest(geometry_context)
+    return {
+        "digest_contract_version": "1.0",
+        "geometry_mapping_identity_digest": mapping_digest,
+        "geometry_context_input_digest": input_digest,
+        "geometry_context_digest": input_digest,
+        "geometry_context_digest_alias_of": "geometry_context_input_digest",
+    }
+
+
 def _coerce_finite_number(value: Any, *, context: str) -> float:
     if isinstance(value, bool):
         raise RuntimeError(f"{context}: bool is not a numeric metric value")
@@ -503,7 +539,7 @@ def _run_detector(
     )
 
     profile_digest = _sha256_text(_canonical_json_text(threshold_profile))
-    geometry_digest = _sha256_text(_canonical_json_text(geometry_context)) if geometry_context is not None else None
+    digest_fields = _build_detector_digest_fields(geometry_context)
 
     collapse_watch = {
         "report_version": "1.0",
@@ -520,7 +556,7 @@ def _run_detector(
         "threshold_profile_schema_version": str(threshold_profile["profile_schema_version"]),
         "threshold_profile_digest": profile_digest,
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_digest,
+        **digest_fields,
         "metric_resolution": {
             "current": {k: {"path": v["resolved_path"], "value": v["value"]} for k, v in sorted(current_metrics.items())},
             "baseline": {k: {"path": v["resolved_path"], "value": v["value"]} for k, v in sorted(baseline_metrics.items())},
@@ -552,7 +588,7 @@ def _run_detector(
         "threshold_profile_id": str(threshold_profile["threshold_profile_id"]),
         "threshold_profile_digest": profile_digest,
         "geometry_context": geometry_context,
-        "geometry_context_digest": geometry_digest,
+        **digest_fields,
         "inputs": collapse_watch["inputs"],
         "decision_breakdown": {
             "hard_invariant_violation_count": len(hard_violations),

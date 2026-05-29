@@ -1,0 +1,196 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:00Z",
+  "scope": "stage_b_instrumentation_and_integration_rehearsal",
+  "mapping_stack": {
+    "constructor": {
+      "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "line": 60,
+      "function": "_build_geometry_context_digest"
+    },
+    "field_basis": [
+      "geometry_schema_version",
+      "sweep_id",
+      "cell_id",
+      "axis_levels",
+      "weighting_mode"
+    ],
+    "excluded_from_digest": [
+      "declared_exposure_units",
+      "geometry_sampling",
+      "run/eval paths",
+      "approval state",
+      "trainer settings"
+    ],
+    "semantic_label": "geometry_mapping_identity_digest"
+  },
+  "detector_stack": {
+    "constructor": {
+      "file": "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py",
+      "line": 506,
+      "expression": "_sha256_text(_canonical_json_text(geometry_context))"
+    },
+    "field_basis": [
+      "full geometry_context object as supplied to detector"
+    ],
+    "semantic_label": "detector_geometry_context_input_digest"
+  },
+  "emitters": [
+    {
+      "workflow": "train_lora_sft masking-audit-only",
+      "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "line_refs": [
+        1791,
+        1814
+      ],
+      "artifacts": [
+        "preflight/masking_audit.json geometry_trace.geometry_context_digest",
+        "preflight/resolved_config.json geometry_context_digest"
+      ]
+    },
+    {
+      "workflow": "train_lora_sft main training path",
+      "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "line_refs": [
+        1934,
+        2003,
+        2148
+      ],
+      "artifacts": [
+        "resolved_config.json geometry_context_digest",
+        "masking_audit.json geometry_trace.geometry_context_digest",
+        "training_summary.json geometry_context_digest"
+      ]
+    },
+    {
+      "workflow": "declared exposure ledger builder",
+      "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "line_refs": [
+        514,
+        544
+      ],
+      "artifacts": [
+        "exposure_ledger_declared.json geometry_context_digest"
+      ]
+    },
+    {
+      "workflow": "row identity sidecar builder",
+      "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "line_refs": [
+        611,
+        672
+      ],
+      "artifacts": [
+        "exposure_row_identity_sidecar.json geometry_context_digest"
+      ]
+    },
+    {
+      "workflow": "realized exposure ledger builders",
+      "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "line_refs": [
+        698,
+        738,
+        926,
+        967
+      ],
+      "artifacts": [
+        "exposure_ledger_realized.json geometry_context_digest"
+      ]
+    },
+    {
+      "workflow": "drift ledger builder",
+      "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "line_refs": [
+        808,
+        858
+      ],
+      "artifacts": [
+        "exposure_ledger_drift.json geometry_context_digest"
+      ]
+    },
+    {
+      "workflow": "sampler determinism report builder",
+      "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+      "line_refs": [
+        1101,
+        1129
+      ],
+      "artifacts": [
+        "sampler_determinism_report.json geometry_context_digest"
+      ]
+    },
+    {
+      "workflow": "post-eval collapse detector",
+      "file": "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py",
+      "line_refs": [
+        506,
+        523,
+        555
+      ],
+      "artifacts": [
+        "collapse_watch_interpretation.json geometry_context_digest",
+        "gate_assessment.json geometry_context_digest"
+      ]
+    }
+  ],
+  "artifact_examples_emitting_field": [
+    "/opt/ai-stack/assistant-training/manifests/reports/exposure_ledger_declared_example.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/exposure_ledger_realized_example.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/exposure_ledger_drift_example.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/sampler_determinism_report.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/collapse_watch_interpretation_example.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/gate_assessment_example.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/resolved_config.synthetic.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_declared.synthetic.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_row_identity_sidecar.synthetic.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_realized.synthetic.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_drift.synthetic.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/sampler_determinism_report.synthetic.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/collapse_watch_interpretation.synthetic.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/gate_assessment.synthetic.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/outputs/watch/collapse_watch_interpretation.json",
+    "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/outputs/watch/gate_assessment.json"
+  ],
+  "consumers": [
+    {
+      "consumer_type": "runtime code",
+      "name": "train_lora_sft emitters",
+      "consumes_field": "pass-through only",
+      "assumes_equivalence": false,
+      "notes": "Digest is computed once from mapping identity payload and copied into artifacts."
+    },
+    {
+      "consumer_type": "runtime code",
+      "name": "post_eval_collapse_detector",
+      "consumes_field": "computes and emits detector-side digest",
+      "assumes_equivalence": false,
+      "notes": "No comparison against mapping-stack digest."
+    },
+    {
+      "consumer_type": "reporting artifact",
+      "name": "integration_rehearsal_artifact_graph.json integrity_summary",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal_artifact_graph.json",
+      "assumes_equivalence": false,
+      "notes": "Records both digests explicitly and sets divergence flag."
+    },
+    {
+      "consumer_type": "reporting artifact",
+      "name": "integration_rehearsal_validation_results.md",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal_validation_results.md",
+      "assumes_equivalence": true,
+      "notes": "Marks cross-stack digest mismatch as FAIL."
+    },
+    {
+      "consumer_type": "reporting artifact",
+      "name": "stage_b_v1_integration_rehearsal.md",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_integration_rehearsal.md",
+      "assumes_equivalence": true,
+      "notes": "Treats divergence as readiness blocker for lineage reconstruction."
+    }
+  ],
+  "equivalence_assumption_summary": {
+    "hard_code_enforcement": "none",
+    "governance_reporting_enforcement": "present_in_rehearsal_reports",
+    "current_state": "semantic divergence is tolerated by code but treated as a governance gap by rehearsal analysis"
+  }
+}

@@ -3,7 +3,10 @@
   "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
   "status": "completed",
   "checks": {
-    "geometry_context_digest_consistent": false,
+    "mapping_identity_digest_consistent": true,
+    "context_input_digest_consistent": true,
+    "typed_digest_scope_valid": true,
+    "legacy_alias_behavior_consistent": true,
     "weight_digest_consistent": true,
     "sampled_stream_digest_consistent": true,
     "threshold_profile_digest_consistent": true,

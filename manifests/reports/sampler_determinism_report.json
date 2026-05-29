@@ -46,5 +46,9 @@
     "approved_to_run": false,
     "approved_to_train": false,
     "approved_to_promote": false
-  }
+  },
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": "2ddc4732820c1044d91d61593ddcf792dddb074e4f0811b42bd9d1979ac0736b",
+  "geometry_context_input_digest": "1206fb18dc38507cab6cfec4128960ebfd3049068571cf84d5690273e50af33d",
+  "geometry_context_digest_alias_of": "geometry_mapping_identity_digest"
 }
