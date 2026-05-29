@@ -1,0 +1,84 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:48:18Z",
+  "phase": "schema_convergence_phase2_validation",
+  "constraints_observed": {
+    "no_training": true,
+    "no_eval_rerun": true,
+    "no_eval_output_modification": true,
+    "no_threshold_change_in_phase2": true,
+    "no_governance_policy_change": true,
+    "no_alias_creation": true,
+    "no_proxy_creation": true,
+    "no_metric_reconstruction": true,
+    "no_metric_inference": true,
+    "no_baseline_modification": true
+  },
+  "detector_run": {
+    "command": "python scripts/post_eval_collapse_detector.py --eval-summary /opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_mh_eval/summary.json --threshold-profile /opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json --baseline-summary /opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json --geometry-context /opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_geometry_context_input.json --collapse-watch-output /opt/ai-stack/assistant-training/manifests/reports/stage_b_schema_convergence_phase2_collapse_watch_interpretation.json --gate-assessment-output /opt/ai-stack/assistant-training/manifests/reports/stage_b_schema_convergence_phase2_gate_assessment.json",
+    "exit_code": 0,
+    "collapse_watch_output": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_schema_convergence_phase2_collapse_watch_interpretation.json",
+    "gate_assessment_output": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_schema_convergence_phase2_gate_assessment.json"
+  },
+  "computability_results": {
+    "metrics_now_computable_eval_summary": [
+      "invalid_json_overall",
+      "no_call_correctness_adversarial",
+      "no_call_correctness_aggregate",
+      "wrapper_leakage_overall"
+    ],
+    "metrics_noncomputable_eval_summary": [
+      "direct_answer_substitution_count",
+      "no_anchor_exact_valid_share",
+      "read_file_exact_valid_rate",
+      "read_file_symbol_name_exact_valid_rate"
+    ],
+    "classification_counts": {
+      "safe_path_update_candidate": 0,
+      "eval_redesign_required": 4,
+      "uncertain_requires_human_review": 0
+    },
+    "restored_rule_count": 4,
+    "remaining_noncomputable_rule_count": 5,
+    "remaining_governance_blockers": [
+      "direct_answer_substitution_count absent from live eval schema",
+      "no_anchor_exact_valid_share absent from live eval schema",
+      "read_file_exact_valid_rate absent as explicit live metric",
+      "read_file_symbol_name_exact_valid_rate absent as explicit live metric"
+    ]
+  },
+  "governance_outcome": {
+    "status": "halt_progression",
+    "progression_allowed": false,
+    "halt_recommended": true,
+    "decision_breakdown": {
+      "hard_invariant_violation_count": 2,
+      "catastrophic_trigger_count": 0,
+      "tradeoff_watch_warning_count": 0,
+      "noncomputable_rule_count": 5
+    },
+    "hard_invariant_violations": [
+      "no_call_correctness_aggregate_lt_1_0",
+      "wrapper_leakage_gt_0"
+    ],
+    "catastrophic_triggers": [],
+    "tradeoff_watch_warnings": [],
+    "noncomputable_rules": [
+      "read_file_exact_valid_rate_lt_0_40",
+      "read_file_symbol_name_exact_valid_rate_lt_0_40",
+      "read_file_exact_valid_rate_lt_0_70",
+      "no_anchor_exact_valid_share_lt_0_75",
+      "direct_answer_substitution_delta_gt_3"
+    ]
+  },
+  "validation_checks": {
+    "single_detector_run_completed": true,
+    "safe_candidate_count_zero": true,
+    "no_phase2_mapping_updates_applied": true,
+    "eval_redesign_metrics_remain_noncomputable": true,
+    "no_forbidden_alias_proxy_inference": true,
+    "governance_conservatism_preserved": true
+  },
+  "all_checks_pass": true,
+  "final_recommendation": "EVAL_REDESIGN_REQUIRED"
+}

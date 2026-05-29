@@ -1,0 +1,60 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:47:51Z",
+  "phase": "schema_convergence_phase2_metric_mapping",
+  "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+  "threshold_profile_digest_sha256": "9c1098f4b60031fa8b0f9c136ec9fe1d1748dda3a7fd1b9f9d4f3a94f8863142",
+  "inventory_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_schema_convergence_phase2_inventory.json",
+  "safe_candidates_identified": 0,
+  "safe_candidate_ids": [],
+  "applied_updates": [],
+  "unchanged_remaining_mappings": [
+    {
+      "metric_id": "direct_answer_substitution_count",
+      "classification": "eval_redesign_required",
+      "catalog_mapping": {
+        "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution"
+      },
+      "reason_unchanged": "No one-to-one live-schema equivalent; mapping update would require alias/proxy/reconstruction, which is prohibited in Phase 2."
+    },
+    {
+      "metric_id": "no_anchor_exact_valid_share",
+      "classification": "eval_redesign_required",
+      "catalog_mapping": {
+        "path": "failure_profile.anchor_exact_share.no_anchor_phrase"
+      },
+      "reason_unchanged": "No one-to-one live-schema equivalent; mapping update would require alias/proxy/reconstruction, which is prohibited in Phase 2."
+    },
+    {
+      "metric_id": "read_file_exact_valid_rate",
+      "classification": "eval_redesign_required",
+      "catalog_mapping": {
+        "path": "failure_profile.read_file_exact_valid.rate"
+      },
+      "reason_unchanged": "No one-to-one live-schema equivalent; mapping update would require alias/proxy/reconstruction, which is prohibited in Phase 2."
+    },
+    {
+      "metric_id": "read_file_symbol_name_exact_valid_rate",
+      "classification": "eval_redesign_required",
+      "catalog_mapping": {
+        "path": "failure_profile.read_file_symbol_name_exact_valid.rate"
+      },
+      "reason_unchanged": "No one-to-one live-schema equivalent; mapping update would require alias/proxy/reconstruction, which is prohibited in Phase 2."
+    }
+  ],
+  "post_run_metric_resolution_snapshot": {
+    "computable_eval_metrics": [
+      "invalid_json_overall",
+      "no_call_correctness_adversarial",
+      "no_call_correctness_aggregate",
+      "wrapper_leakage_overall"
+    ],
+    "noncomputable_eval_metrics": [
+      "direct_answer_substitution_count",
+      "no_anchor_exact_valid_share",
+      "read_file_exact_valid_rate",
+      "read_file_symbol_name_exact_valid_rate"
+    ]
+  },
+  "phase2_mapping_outcome": "no_additional_safe_updates_applied"
+}

@@ -1,0 +1,196 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:47:15Z",
+  "phase": "schema_convergence_phase2_inventory",
+  "inputs": {
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "phase1_collapse_watch_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_schema_convergence_phase1_collapse_watch_interpretation.json",
+    "live_eval_summary_path": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_mh_eval/summary.json",
+    "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json"
+  },
+  "remaining_noncomputable_metric_count": 4,
+  "remaining_noncomputable_metrics": [
+    "direct_answer_substitution_count",
+    "no_anchor_exact_valid_share",
+    "read_file_exact_valid_rate",
+    "read_file_symbol_name_exact_valid_rate"
+  ],
+  "classification_counts": {
+    "safe_path_update_candidate": 0,
+    "eval_redesign_required": 4,
+    "uncertain_requires_human_review": 0
+  },
+  "inventory": [
+    {
+      "metric_id": "direct_answer_substitution_count",
+      "current_catalog_mapping": {
+        "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution"
+      },
+      "current_noncomputable_reason": "eval_summary: required metric 'direct_answer_substitution_count' not found in summary",
+      "candidate_live_schema_locations": [
+        {
+          "path": "adapter.aggregate.class_counts.*",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "class_counts enumerate output outcome classes (exact_valid, invalid_json, wrong_tool_name, etc.) and do not encode direct-answer substitution category."
+        },
+        {
+          "path": "adapter.per_split.direct_answer.*",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "direct_answer split tracks split-level behavior, not substitution count within non-exact tool rows."
+        },
+        {
+          "path": "comparison_rows.jsonl adapter.eval.primary_class/secondary_annotations",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "would require defining a new mapping from row labels to legacy substitution category; this is reconstruction/inference, not one-to-one field correspondence."
+        }
+      ],
+      "semantic_equivalence_assessment": {
+        "notes": [
+          "Baseline metric is a specific failure-category count in legacy failure_profile.",
+          "Live eval summary has no dedicated substitution-count field."
+        ],
+        "safe_candidate_conditions": {
+          "exists_in_live_schema": false,
+          "exists_in_baseline_schema": true,
+          "one_to_one_semantic_match": false,
+          "no_transformation_required": false,
+          "no_aggregation_required": false,
+          "no_reconstruction_required": false,
+          "no_inference_required": false,
+          "no_aliasing_required": false,
+          "no_proxy_required": false
+        },
+        "one_to_one_semantic_match_established": false
+      },
+      "expected_computability_outcome": "remain_noncomputable",
+      "classification": "eval_redesign_required"
+    },
+    {
+      "metric_id": "no_anchor_exact_valid_share",
+      "current_catalog_mapping": {
+        "path": "failure_profile.anchor_exact_share.no_anchor_phrase"
+      },
+      "current_noncomputable_reason": "eval_summary: required metric 'no_anchor_exact_valid_share' not found in summary",
+      "candidate_live_schema_locations": [
+        {
+          "path": "adapter.aggregate.*",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "live summary has no anchor-phrase attribution fields."
+        },
+        {
+          "path": "comparison_rows.jsonl generated_text",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "would require text-analysis reconstruction to determine anchor/no-anchor attribution."
+        }
+      ],
+      "semantic_equivalence_assessment": {
+        "notes": [
+          "Legacy metric is attribution share among non-exact tool rows by anchor taxonomy.",
+          "No anchor taxonomy field exists in live schema."
+        ],
+        "safe_candidate_conditions": {
+          "exists_in_live_schema": false,
+          "exists_in_baseline_schema": true,
+          "one_to_one_semantic_match": false,
+          "no_transformation_required": false,
+          "no_aggregation_required": false,
+          "no_reconstruction_required": false,
+          "no_inference_required": false,
+          "no_aliasing_required": false,
+          "no_proxy_required": false
+        },
+        "one_to_one_semantic_match_established": false
+      },
+      "expected_computability_outcome": "remain_noncomputable",
+      "classification": "eval_redesign_required"
+    },
+    {
+      "metric_id": "read_file_exact_valid_rate",
+      "current_catalog_mapping": {
+        "path": "failure_profile.read_file_exact_valid.rate"
+      },
+      "current_noncomputable_reason": "eval_summary: required metric 'read_file_exact_valid_rate' not found in summary",
+      "candidate_live_schema_locations": [
+        {
+          "path": "adapter.per_split.tool_holdout.exact_json_validity.rate",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "tool_holdout aggregates multiple tools; not read_file-specific."
+        },
+        {
+          "path": "comparison_rows.jsonl filtered expected_tool_names contains read_file",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "requires filtering and recomputation across rows; aggregation/reconstruction required."
+        }
+      ],
+      "semantic_equivalence_assessment": {
+        "notes": [
+          "Legacy metric is read_file-specific exact-valid rate.",
+          "Live summary provides split-level aggregates but not tool-specific read_file exact-valid metric."
+        ],
+        "safe_candidate_conditions": {
+          "exists_in_live_schema": false,
+          "exists_in_baseline_schema": true,
+          "one_to_one_semantic_match": false,
+          "no_transformation_required": false,
+          "no_aggregation_required": false,
+          "no_reconstruction_required": false,
+          "no_inference_required": false,
+          "no_aliasing_required": false,
+          "no_proxy_required": false
+        },
+        "one_to_one_semantic_match_established": false
+      },
+      "expected_computability_outcome": "remain_noncomputable",
+      "classification": "eval_redesign_required"
+    },
+    {
+      "metric_id": "read_file_symbol_name_exact_valid_rate",
+      "current_catalog_mapping": {
+        "path": "failure_profile.read_file_symbol_name_exact_valid.rate"
+      },
+      "current_noncomputable_reason": "eval_summary: required metric 'read_file_symbol_name_exact_valid_rate' not found in summary",
+      "candidate_live_schema_locations": [
+        {
+          "path": "adapter.per_split.tool_holdout.*",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "no symbol-name archetype breakdown exists."
+        },
+        {
+          "path": "comparison_rows.jsonl source_case_id/read_file subsets",
+          "exists": true,
+          "semantic_match": "no",
+          "reason": "requires case-level reconstruction/inference to isolate symbol-name subset."
+        }
+      ],
+      "semantic_equivalence_assessment": {
+        "notes": [
+          "Legacy metric is a narrow read_file symbol-name subset rate.",
+          "Live schema has no explicit symbol-name submetric field."
+        ],
+        "safe_candidate_conditions": {
+          "exists_in_live_schema": false,
+          "exists_in_baseline_schema": true,
+          "one_to_one_semantic_match": false,
+          "no_transformation_required": false,
+          "no_aggregation_required": false,
+          "no_reconstruction_required": false,
+          "no_inference_required": false,
+          "no_aliasing_required": false,
+          "no_proxy_required": false
+        },
+        "one_to_one_semantic_match_established": false
+      },
+      "expected_computability_outcome": "remain_noncomputable",
+      "classification": "eval_redesign_required"
+    }
+  ],
+  "phase2_safe_candidate_set": []
+}
