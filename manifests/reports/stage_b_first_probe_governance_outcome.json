@@ -1,43 +1,26 @@
 {
-  "report_version": "2.0",
-  "generated_utc": "2026-05-29T14:58:29Z",
-  "artifact": "stage_b_first_probe_governance_outcome",
-  "probe_identity": {
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T16:37:47Z",
+  "probe": {
     "sweep_id": "stage_b_v1_geometry_first_live_probe",
-    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
-    "authorized_package_commit": "d66522edd64b96acb27aa22b546bd8310efe5ae5"
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1"
   },
-  "execution_checks": {
-    "head_matches_authorized_commit": true,
+  "execution_status": "failed_at_collapse_detector",
+  "detector": {
+    "status": "failed",
+    "error": "RuntimeError: eval_summary: required metric 'direct_answer_substitution_count' not found in summary"
+  },
+  "gate_assessment": {
+    "status": "not_computed",
+    "reason": "detector_failed_before_output_generation"
+  },
+  "collapse_watch": {
+    "status": "not_computed",
+    "reason": "detector_failed_before_output_generation"
+  },
+  "authorization_state": {
     "manifest_review_gate_approved_to_run": true,
-    "runtime_gate_approved": true,
-    "preflight_passed": true,
-    "hidden_retries_observed": false
-  },
-  "failure_event": {
-    "stage": "training",
-    "error_class": "TypeError",
-    "error_message": "_GeometrySamplingTrainer._get_train_sampler() takes 1 positional argument but 2 were given",
-    "retry_performed": false,
-    "halt_policy_followed": true
-  },
-  "detector_pipeline": {
-    "executed": false,
-    "threshold_profile_used": null,
-    "baseline_summary_used": null,
-    "geometry_context_input_used": null,
-    "collapse_watch_interpretation_emitted": false,
-    "gate_assessment_emitted": false,
-    "status_level": "not_run"
-  },
-  "governance_decision": {
-    "state": "NOT_READY",
-    "rationale": [
-      "Training failed before completion due runtime trainer integration bug.",
-      "Canonical eval and collapse detector were not executed by policy after failure.",
-      "Behavioral and governance metrics requiring eval output are unavailable."
-    ],
-    "allowed_next_step": "Repair trainer sampler hook compatibility and rerun single attempt from clean state after authorization remains valid."
+    "runtime_gate_approved": true
   },
   "final_recommendation": "NOT_READY"
 }

@@ -1,0 +1,110 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:27:39Z",
+  "scope": "Schema-convergence strategy options for Stage B collapse-detector metric contract.",
+  "noncomputable_metric_ids": [
+    "direct_answer_substitution_count",
+    "invalid_json_overall",
+    "no_anchor_exact_valid_share",
+    "no_call_correctness_adversarial",
+    "no_call_correctness_aggregate",
+    "read_file_exact_valid_rate",
+    "read_file_symbol_name_exact_valid_rate",
+    "wrapper_leakage_overall"
+  ],
+  "metric_partition": {
+    "safe_path_update_candidates": [
+      "invalid_json_overall",
+      "no_call_correctness_adversarial",
+      "no_call_correctness_aggregate",
+      "wrapper_leakage_overall"
+    ],
+    "eval_redesign_required": [
+      "direct_answer_substitution_count",
+      "no_anchor_exact_valid_share",
+      "read_file_exact_valid_rate",
+      "read_file_symbol_name_exact_valid_rate"
+    ]
+  },
+  "options": [
+    {
+      "option_id": "A",
+      "label": "threshold_profile_update_only",
+      "summary": "Update threshold profile metric_catalog paths to live eval-summary fields where exact equivalents exist; keep missing metrics noncomputable.",
+      "resolves_immediately": [
+        "invalid_json_overall",
+        "no_call_correctness_adversarial",
+        "no_call_correctness_aggregate",
+        "wrapper_leakage_overall"
+      ],
+      "still_noncomputable": [
+        "direct_answer_substitution_count",
+        "no_anchor_exact_valid_share",
+        "read_file_exact_valid_rate",
+        "read_file_symbol_name_exact_valid_rate"
+      ],
+      "governance_risk": "medium_high",
+      "risk_notes": [
+        "Leaves 4 core metrics noncomputable (read_file exact, read_file symbol-name, no_anchor share, direct_answer substitution).",
+        "Can create false sense of closure because detector runs but remains partially blind."
+      ],
+      "maintenance_burden": "low",
+      "backward_compatibility": "medium",
+      "scientific_reproducibility_impact": "medium_negative"
+    },
+    {
+      "option_id": "B",
+      "label": "detector_alias_layer",
+      "summary": "Add detector-level alias mapping from legacy metric IDs to live schema IDs (and possibly proxies) without changing profile or eval outputs.",
+      "resolves_immediately": "potentially_4_exact_metrics; 4_metrics_require_proxy_or_missing",
+      "governance_risk": "high",
+      "risk_notes": [
+        "Alias/proxy logic can hide semantic drift if mappings are not one-to-one.",
+        "Harder to audit than explicit profile/eval contract updates."
+      ],
+      "maintenance_burden": "high",
+      "backward_compatibility": "high",
+      "scientific_reproducibility_impact": "medium_negative"
+    },
+    {
+      "option_id": "C",
+      "label": "eval_summary_emission_expansion",
+      "summary": "Expand canonical eval summary emission to include the missing governance metrics explicitly (read_file exact-valid, symbol-name exact-valid, no-anchor share, direct-answer substitution count).",
+      "resolves_immediately": "after_eval_pipeline_update_and_new_eval_outputs",
+      "governance_risk": "low",
+      "risk_notes": [
+        "Preserves metric semantics explicitly instead of inferring proxies.",
+        "Requires evaluator changes and regeneration of summaries for full utility."
+      ],
+      "maintenance_burden": "medium",
+      "backward_compatibility": "high_if_additive",
+      "scientific_reproducibility_impact": "high_positive"
+    },
+    {
+      "option_id": "D",
+      "label": "hybrid_convergence",
+      "summary": "Short-term profile path updates for exact live equivalents plus medium-term eval emission expansion for missing semantic metrics; keep noncomputable governance halting until full convergence.",
+      "phase_1_resolves": [
+        "invalid_json_overall",
+        "no_call_correctness_adversarial",
+        "no_call_correctness_aggregate",
+        "wrapper_leakage_overall"
+      ],
+      "phase_2_resolves": [
+        "direct_answer_substitution_count",
+        "no_anchor_exact_valid_share",
+        "read_file_exact_valid_rate",
+        "read_file_symbol_name_exact_valid_rate"
+      ],
+      "governance_risk": "low_medium",
+      "risk_notes": [
+        "Avoids proxy shortcuts while restoring partial computability quickly.",
+        "Retains conservative noncomputable halt behavior during transition."
+      ],
+      "maintenance_burden": "medium",
+      "backward_compatibility": "high",
+      "scientific_reproducibility_impact": "high_positive"
+    }
+  ],
+  "recommended_option": "HYBRID_CONVERGENCE"
+}

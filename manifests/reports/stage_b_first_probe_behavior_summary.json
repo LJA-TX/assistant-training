@@ -1,64 +1,66 @@
 {
-  "report_version": "2.0",
-  "generated_utc": "2026-05-29T14:58:16Z",
-  "artifact": "stage_b_first_probe_behavior_summary",
-  "probe_identity": {
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T16:37:47Z",
+  "probe": {
     "sweep_id": "stage_b_v1_geometry_first_live_probe",
     "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
-    "authorized_package_commit": "d66522edd64b96acb27aa22b546bd8310efe5ae5"
+    "authorized_package_commit": "ae559bacef10648250f56b20b5303bd91bc3f820"
   },
-  "execution_outcome": {
-    "status": "failed",
-    "failed_stage": "training",
-    "failed_before_trainer_loop": false,
-    "any_command_failed": true,
-    "failed_command": "/home/roy/.venvs/llama/bin/accelerate launch --num_processes 1 /opt/ai-stack/assistant-training/scripts/train_lora_sft.py --config /opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_geometry_probe_mh.config.json",
-    "failed_command_exit_code": 1,
-    "failure_reason": "TypeError in custom geometry sampling trainer hook: _get_train_sampler signature mismatch",
-    "retry_occurred": false,
-    "hidden_retry_occurred": false
+  "execution_status": {
+    "status": "failed_at_collapse_detector",
+    "failure_stage": "collapse_detector",
+    "failure_reason": "RuntimeError: eval_summary: required metric 'direct_answer_substitution_count' not found in summary",
+    "training_executed": true,
+    "eval_executed": true,
+    "detector_executed": false,
+    "retry_count": 0,
+    "hidden_retries": false
   },
-  "declared_exposure_summary": {
-    "source": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_declared.json",
-    "rows_train": 1982,
-    "rows_val": 236,
-    "rows_combined": 2218,
-    "train_family_counts": {
-      "unspecified": 1881,
-      "semantic_substitution_conversion_pairs_read_file_primary": 52,
-      "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 28,
-      "malformed_regex_underspecified_search_adversarial_boundary": 8,
-      "uncertainty_conditioned_procedural_continuation_smallscale": 8,
-      "read_file_symbol_name_commitment_instability": 5
+  "exposure": {
+    "declared_exposure_summary": {
+      "rows_total": 2218,
+      "rows_train": 1982,
+      "rows_val": 236,
+      "unique_families": 6,
+      "unique_archetypes": 6,
+      "rows_with_metadata": 2218
+    },
+    "realized_exposure_summary": {
+      "rows_total": 1982,
+      "sampled_rows_total": 401,
+      "unique_families": 2,
+      "unique_archetypes": 2,
+      "status": "realized_exposure_weighted_sampler_stream_captured",
+      "capture_mode": "runtime_weighted_sampler_stream_capture",
+      "confidence": "high"
+    },
+    "declared_vs_realized_drift": {
+      "confidence": "high",
+      "max_abs_delta_any_dimension": 1881,
+      "exact_match_all_dimensions": false
     }
   },
-  "realized_exposure_summary": {
-    "status": "realized_exposure_weighted_configured_runtime_not_captured",
-    "capture_mode": "index_space_inferred_no_sampler_stream_capture",
-    "confidence": "limited",
-    "rows_total": null,
-    "note": "no sampled stream capture due training failure before training loop"
-  },
-  "declared_vs_realized_drift": {
-    "status": "declared_vs_realized_comparison_default_path_inferred",
-    "confidence": "limited",
-    "max_abs_delta_any_dimension": null,
-    "exact_match_all_dimensions": null
-  },
   "behavior_metrics": {
-    "no_call_aggregate": null,
-    "no_call_adversarial": null,
-    "read_file_exact_valid": null,
-    "read_file_symbol_name_exact_valid": null,
-    "wrapper_leakage": null,
-    "invalid_json": null,
+    "no_call_aggregate": 0.9333333333333333,
+    "no_call_adversarial": 1.0,
+    "read_file_exact_valid": 0.25,
+    "read_file_symbol_name_exact_valid": 0.32,
+    "wrapper_leakage": 0.015,
+    "invalid_json": 0.23,
     "direct_answer_substitution_delta": null,
-    "availability": "unavailable_eval_not_run"
+    "direct_answer_substitution_delta_note": "metric unavailable in canonical eval summary; detector failed on missing direct_answer_substitution_count"
   },
-  "governance": {
-    "detector_status": "not_run",
-    "gate_assessment_status": "not_run",
-    "collapse_watch_status": "not_run"
+  "comparison": {
+    "base_no_call_aggregate": 1.0,
+    "adapter_no_call_aggregate": 0.9333333333333333,
+    "delta_reported_in_eval_summary": {
+      "exact_json_validity_rate": 0.21,
+      "invalid_json_rate": -0.47,
+      "tool_name_accuracy_rate": 0.4,
+      "argument_accuracy_rate": 0.4857142857142857,
+      "wrapper_leakage_rate": 0.015,
+      "no_call_correctness_rate": -0.06666666666666665
+    }
   },
   "final_recommendation": "NOT_READY"
 }

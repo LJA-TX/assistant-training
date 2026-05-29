@@ -1,0 +1,288 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:04:31Z",
+  "inputs": {
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "live_eval_summary_path": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_mh_eval/summary.json",
+    "collapse_watch_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_collapse_watch_interpretation.json"
+  },
+  "threshold_profile_metric_catalog_ids": [
+    "direct_answer_substitution_count",
+    "invalid_json_overall",
+    "no_anchor_exact_valid_share",
+    "no_call_correctness_adversarial",
+    "no_call_correctness_aggregate",
+    "read_file_exact_valid_rate",
+    "read_file_symbol_name_exact_valid_rate",
+    "wrapper_leakage_overall"
+  ],
+  "noncomputable_metric_ids": [
+    "direct_answer_substitution_count",
+    "invalid_json_overall",
+    "no_anchor_exact_valid_share",
+    "no_call_correctness_adversarial",
+    "no_call_correctness_aggregate",
+    "read_file_exact_valid_rate",
+    "read_file_symbol_name_exact_valid_rate",
+    "wrapper_leakage_overall"
+  ],
+  "schema_overview": {
+    "baseline_schema_family": "legacy metrics/failure_profile schema",
+    "live_eval_schema_family": "base/adapter/delta with aggregate/per_split rates"
+  },
+  "noncomputable_metric_inventory": [
+    {
+      "metric_id": "direct_answer_substitution_count",
+      "threshold_profile_source": {
+        "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution"
+      },
+      "baseline_availability": {
+        "resolvable": true,
+        "resolved_path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "value": 11.0,
+        "error": null
+      },
+      "live_eval_summary_availability": {
+        "resolvable_under_current_profile": false,
+        "error": "eval_summary: required metric 'direct_answer_substitution_count' not found in summary"
+      },
+      "live_eval_summary_equivalents": {
+        "exact_equivalent_exists": false,
+        "exact_equivalent_path": null,
+        "approximate_equivalent_exists": false,
+        "approximate_equivalent_candidates": [],
+        "no_equivalent_exists": true
+      },
+      "classification": "eval_redesign_required",
+      "classification_tags": [
+        "eval_redesign_required"
+      ]
+    },
+    {
+      "metric_id": "invalid_json_overall",
+      "threshold_profile_source": {
+        "candidate_paths": [
+          "metrics.aggregate.invalid_json",
+          "metrics.stage_b_i10r_microprobe_aggregate.invalid_json",
+          "metrics.stage_b_i10r_counterbalanced_probe.invalid_json"
+        ]
+      },
+      "baseline_availability": {
+        "resolvable": true,
+        "resolved_path": "metrics.stage_b_i10r_counterbalanced_probe.invalid_json",
+        "value": 0.14,
+        "error": null
+      },
+      "live_eval_summary_availability": {
+        "resolvable_under_current_profile": false,
+        "error": "eval_summary: required metric 'invalid_json_overall' not found in summary"
+      },
+      "live_eval_summary_equivalents": {
+        "exact_equivalent_exists": true,
+        "exact_equivalent_path": "adapter.aggregate.invalid_json_rate",
+        "approximate_equivalent_exists": false,
+        "approximate_equivalent_candidates": [],
+        "no_equivalent_exists": false
+      },
+      "classification": "safe_path_update_candidate",
+      "classification_tags": [
+        "safe_path_update_candidate"
+      ]
+    },
+    {
+      "metric_id": "no_anchor_exact_valid_share",
+      "threshold_profile_source": {
+        "path": "failure_profile.anchor_exact_share.no_anchor_phrase"
+      },
+      "baseline_availability": {
+        "resolvable": true,
+        "resolved_path": "failure_profile.anchor_exact_share.no_anchor_phrase",
+        "value": 0.8369565217391305,
+        "error": null
+      },
+      "live_eval_summary_availability": {
+        "resolvable_under_current_profile": false,
+        "error": "eval_summary: required metric 'no_anchor_exact_valid_share' not found in summary"
+      },
+      "live_eval_summary_equivalents": {
+        "exact_equivalent_exists": false,
+        "exact_equivalent_path": null,
+        "approximate_equivalent_exists": false,
+        "approximate_equivalent_candidates": [],
+        "no_equivalent_exists": true
+      },
+      "classification": "eval_redesign_required",
+      "classification_tags": [
+        "eval_redesign_required"
+      ]
+    },
+    {
+      "metric_id": "no_call_correctness_adversarial",
+      "threshold_profile_source": {
+        "candidate_paths": [
+          "metrics.probes.no_call_adversarial.no_call_correctness",
+          "metrics.stage_b_i10r_nocall_probe.no_call_correctness"
+        ]
+      },
+      "baseline_availability": {
+        "resolvable": true,
+        "resolved_path": "metrics.stage_b_i10r_nocall_probe.no_call_correctness",
+        "value": 1.0,
+        "error": null
+      },
+      "live_eval_summary_availability": {
+        "resolvable_under_current_profile": false,
+        "error": "eval_summary: required metric 'no_call_correctness_adversarial' not found in summary"
+      },
+      "live_eval_summary_equivalents": {
+        "exact_equivalent_exists": true,
+        "exact_equivalent_path": "adapter.per_split.adversarial.no_call_correctness.rate",
+        "approximate_equivalent_exists": false,
+        "approximate_equivalent_candidates": [],
+        "no_equivalent_exists": false
+      },
+      "classification": "safe_path_update_candidate",
+      "classification_tags": [
+        "safe_path_update_candidate"
+      ]
+    },
+    {
+      "metric_id": "no_call_correctness_aggregate",
+      "threshold_profile_source": {
+        "candidate_paths": [
+          "metrics.aggregate.no_call_correctness",
+          "metrics.stage_b_i10r_microprobe_aggregate.no_call_correctness",
+          "metrics.aggregate.i10r_counterbalanced_probe.no_call_correctness"
+        ]
+      },
+      "baseline_availability": {
+        "resolvable": true,
+        "resolved_path": "metrics.aggregate.i10r_counterbalanced_probe.no_call_correctness",
+        "value": 0.9666666666666667,
+        "error": null
+      },
+      "live_eval_summary_availability": {
+        "resolvable_under_current_profile": false,
+        "error": "eval_summary: required metric 'no_call_correctness_aggregate' not found in summary"
+      },
+      "live_eval_summary_equivalents": {
+        "exact_equivalent_exists": true,
+        "exact_equivalent_path": "adapter.aggregate.no_call_correctness.rate",
+        "approximate_equivalent_exists": false,
+        "approximate_equivalent_candidates": [],
+        "no_equivalent_exists": false
+      },
+      "classification": "safe_path_update_candidate",
+      "classification_tags": [
+        "safe_path_update_candidate"
+      ]
+    },
+    {
+      "metric_id": "read_file_exact_valid_rate",
+      "threshold_profile_source": {
+        "path": "failure_profile.read_file_exact_valid.rate"
+      },
+      "baseline_availability": {
+        "resolvable": true,
+        "resolved_path": "failure_profile.read_file_exact_valid.rate",
+        "value": 0.7037037037037037,
+        "error": null
+      },
+      "live_eval_summary_availability": {
+        "resolvable_under_current_profile": false,
+        "error": "eval_summary: required metric 'read_file_exact_valid_rate' not found in summary"
+      },
+      "live_eval_summary_equivalents": {
+        "exact_equivalent_exists": false,
+        "exact_equivalent_path": null,
+        "approximate_equivalent_exists": true,
+        "approximate_equivalent_candidates": [
+          "adapter.per_split.tool_holdout.exact_json_validity.rate (mixed-tool proxy, not read_file-specific)"
+        ],
+        "no_equivalent_exists": false
+      },
+      "classification": "eval_redesign_required",
+      "classification_tags": [
+        "eval_redesign_required"
+      ]
+    },
+    {
+      "metric_id": "read_file_symbol_name_exact_valid_rate",
+      "threshold_profile_source": {
+        "path": "failure_profile.read_file_symbol_name_exact_valid.rate"
+      },
+      "baseline_availability": {
+        "resolvable": true,
+        "resolved_path": "failure_profile.read_file_symbol_name_exact_valid.rate",
+        "value": 0.9230769230769231,
+        "error": null
+      },
+      "live_eval_summary_availability": {
+        "resolvable_under_current_profile": false,
+        "error": "eval_summary: required metric 'read_file_symbol_name_exact_valid_rate' not found in summary"
+      },
+      "live_eval_summary_equivalents": {
+        "exact_equivalent_exists": false,
+        "exact_equivalent_path": null,
+        "approximate_equivalent_exists": false,
+        "approximate_equivalent_candidates": [],
+        "no_equivalent_exists": true
+      },
+      "classification": "eval_redesign_required",
+      "classification_tags": [
+        "eval_redesign_required"
+      ]
+    },
+    {
+      "metric_id": "wrapper_leakage_overall",
+      "threshold_profile_source": {
+        "candidate_paths": [
+          "metrics.aggregate.wrapper_leakage",
+          "metrics.stage_b_i10r_microprobe_aggregate.wrapper_leakage",
+          "metrics.stage_b_i10r_nocall_probe.wrapper_leakage",
+          "metrics.stage_b_i10r_counterbalanced_probe.wrapper_leakage"
+        ]
+      },
+      "baseline_availability": {
+        "resolvable": false,
+        "resolved_path": null,
+        "value": null,
+        "error": "baseline_summary: metric 'wrapper_leakage_overall' is ambiguous; matched multiple candidates ['metrics.stage_b_i10r_nocall_probe.wrapper_leakage', 'metrics.stage_b_i10r_counterbalanced_probe.wrapper_leakage']"
+      },
+      "live_eval_summary_availability": {
+        "resolvable_under_current_profile": false,
+        "error": "eval_summary: required metric 'wrapper_leakage_overall' not found in summary"
+      },
+      "live_eval_summary_equivalents": {
+        "exact_equivalent_exists": true,
+        "exact_equivalent_path": "adapter.aggregate.wrapper_leakage_rate",
+        "approximate_equivalent_exists": false,
+        "approximate_equivalent_candidates": [],
+        "no_equivalent_exists": false
+      },
+      "classification": "safe_path_update_candidate",
+      "classification_tags": [
+        "safe_path_update_candidate",
+        "profile_redesign_required"
+      ],
+      "classification_notes": [
+        "Current baseline candidate-path set is ambiguous; use explicit single path per schema version."
+      ]
+    }
+  ],
+  "classification_vocabulary": [
+    "safe_alias_candidate",
+    "safe_path_update_candidate",
+    "profile_redesign_required",
+    "baseline_redesign_required",
+    "eval_redesign_required"
+  ],
+  "classification_tag_counts": {
+    "safe_alias_candidate": 0,
+    "safe_path_update_candidate": 4,
+    "profile_redesign_required": 1,
+    "baseline_redesign_required": 0,
+    "eval_redesign_required": 4
+  }
+}

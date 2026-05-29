@@ -1,0 +1,104 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:05:43Z",
+  "artifact": "stage_b_first_probe_detector_noncomputable_validation",
+  "scope": "Detector noncomputable-metric handling validation using synthetic fixtures and existing live eval summary only.",
+  "constraints": {
+    "no_training": true,
+    "no_eval_rerun": true,
+    "no_eval_output_mutation": true,
+    "no_threshold_profile_mutation": true,
+    "no_baseline_mutation": true,
+    "no_proxy_metric_substitutions": true
+  },
+  "compile_validation": {
+    "command": "python -m py_compile scripts/post_eval_collapse_detector.py",
+    "passed": true
+  },
+  "synthetic_validation": {
+    "fixtures_root": "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/fixtures",
+    "cases": [
+      {
+        "case_id": "pass_control",
+        "command": "python scripts/post_eval_collapse_detector.py --eval-summary manifests/reports/phase4_validation/fixtures/summary_pass.json --threshold-profile manifests/reports/stage_b_v1_threshold_profile.json --baseline-summary manifests/reports/phase4_validation/fixtures/summary_baseline.json --collapse-watch-output manifests/reports/stage_b_first_probe_detector_noncomputable_validation/outputs/pass_control/collapse_watch.json --gate-assessment-output manifests/reports/stage_b_first_probe_detector_noncomputable_validation/outputs/pass_control/gate_assessment.json",
+        "exit_code": 0,
+        "observed_status": "pass",
+        "observed_noncomputable_rule_count": 0,
+        "expected": {
+          "status": "pass",
+          "noncomputable_rule_count": 0
+        },
+        "pass": true
+      },
+      {
+        "case_id": "missing_metric_noncomputable",
+        "command": "python scripts/post_eval_collapse_detector.py --eval-summary manifests/reports/phase4_validation/fixtures/summary_missing_metric.json --threshold-profile manifests/reports/stage_b_v1_threshold_profile.json --baseline-summary manifests/reports/phase4_validation/fixtures/summary_baseline.json --collapse-watch-output manifests/reports/stage_b_first_probe_detector_noncomputable_validation/outputs/missing_metric_noncomputable/collapse_watch.json --gate-assessment-output manifests/reports/stage_b_first_probe_detector_noncomputable_validation/outputs/missing_metric_noncomputable/gate_assessment.json",
+        "exit_code": 0,
+        "observed_status": "halt_progression",
+        "observed_noncomputable_rule_count": 1,
+        "observed_noncomputable_metric_ids_eval": [
+          "no_call_correctness_adversarial"
+        ],
+        "expected": {
+          "status": "halt_progression",
+          "noncomputable_rule_count_min": 1
+        },
+        "pass": true
+      }
+    ]
+  },
+  "live_eval_summary_validation": {
+    "command": "python scripts/post_eval_collapse_detector.py --eval-summary /opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_mh_eval/summary.json --threshold-profile /opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json --baseline-summary /opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json --geometry-context /opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_geometry_context_input.json --collapse-watch-output /opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_collapse_watch_interpretation.json --gate-assessment-output /opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_gate_assessment.json",
+    "exit_code": 0,
+    "collapse_watch_output_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_collapse_watch_interpretation.json",
+    "gate_assessment_output_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_gate_assessment.json",
+    "observed_status": "halt_progression",
+    "observed_gate_status": "halt_progression",
+    "observed_noncomputable_rule_count": 9,
+    "observed_noncomputable_metric_counts": {
+      "eval_summary": 8,
+      "baseline_summary": 0
+    },
+    "observed_noncomputable_metric_ids_eval": [
+      "direct_answer_substitution_count",
+      "invalid_json_overall",
+      "no_anchor_exact_valid_share",
+      "no_call_correctness_adversarial",
+      "no_call_correctness_aggregate",
+      "read_file_exact_valid_rate",
+      "read_file_symbol_name_exact_valid_rate",
+      "wrapper_leakage_overall"
+    ],
+    "observed_noncomputable_metric_ids_baseline": [],
+    "policy_applied": {
+      "missing_baseline_policy": "fail_fast",
+      "noncomputable_status": "halt_progression",
+      "noncomputable_rule_count": 9,
+      "noncomputable_metric_count": 8
+    },
+    "conservative_status_check": {
+      "is_not_pass": true,
+      "is_halt_or_catastrophic": true,
+      "progression_allowed": false,
+      "halt_recommended": true
+    },
+    "no_proxy_substitution_evidence": {
+      "resolved_current_metric_count": 0,
+      "resolved_current_metric_ids": [],
+      "catalog_specs_preserved_in_noncomputable_entries": true,
+      "alias_mapping_used": false
+    },
+    "noncomputable_rule_shape_check": {
+      "all_noncomputable_status": true,
+      "all_triggered_null": true,
+      "all_have_missing_metric_ids": true
+    }
+  },
+  "missing_metric_reporting_completeness": {
+    "noncomputable_metrics_present": true,
+    "noncomputable_rules_present": true,
+    "noncomputable_policy_applied_present": true
+  },
+  "overall_pass": true,
+  "final_recommendation": "NOT_READY"
+}

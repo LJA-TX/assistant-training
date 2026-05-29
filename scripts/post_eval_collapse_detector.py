@@ -302,66 +302,125 @@ def _collect_rules(profile: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
     }
 
 
+def _build_metric_dependency_maps(
+    rules_by_group: dict[str, list[dict[str, Any]]],
+) -> tuple[dict[str, list[dict[str, Any]]], dict[str, list[dict[str, Any]]]]:
+    current_metric_deps: dict[str, list[dict[str, Any]]] = {}
+    baseline_metric_deps: dict[str, list[dict[str, Any]]] = {}
+
+    for group, rules in rules_by_group.items():
+        for rule in rules:
+            rule_id = str(rule["rule_id"])
+            metric_id = str(rule["metric_id"])
+            basis = str(rule["basis"])
+
+            current_metric_deps.setdefault(metric_id, []).append(
+                {
+                    "group": group,
+                    "rule_id": rule_id,
+                    "usage": "current_metric",
+                    "basis": basis,
+                }
+            )
+
+            if basis == "delta_vs_baseline":
+                baseline_metric_id_raw = rule.get("baseline_metric_id")
+                baseline_metric_id = (
+                    str(baseline_metric_id_raw)
+                    if isinstance(baseline_metric_id_raw, str) and baseline_metric_id_raw.strip()
+                    else metric_id
+                )
+                baseline_metric_deps.setdefault(baseline_metric_id, []).append(
+                    {
+                        "group": group,
+                        "rule_id": rule_id,
+                        "usage": "baseline_metric",
+                        "basis": basis,
+                    }
+                )
+
+    return current_metric_deps, baseline_metric_deps
+
+
 def _resolve_required_metrics(
     *,
-    rules_by_group: dict[str, list[dict[str, Any]]],
+    metric_dependencies: dict[str, list[dict[str, Any]]],
     metric_catalog: dict[str, Any],
     summary: dict[str, Any],
     summary_label: str,
-) -> dict[str, dict[str, Any]]:
-    metric_ids: set[str] = set()
-    for rules in rules_by_group.values():
-        for rule in rules:
-            metric_ids.add(str(rule["metric_id"]))
-
+) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
     resolved: dict[str, dict[str, Any]] = {}
-    for metric_id in sorted(metric_ids):
-        resolved[metric_id] = _resolve_metric_from_catalog(
-            metric_id=metric_id,
-            metric_catalog=metric_catalog,
-            summary=summary,
-            summary_label=summary_label,
-        )
-    return resolved
+    unresolved: dict[str, dict[str, Any]] = {}
+    for metric_id in sorted(metric_dependencies.keys()):
+        try:
+            resolved[metric_id] = _resolve_metric_from_catalog(
+                metric_id=metric_id,
+                metric_catalog=metric_catalog,
+                summary=summary,
+                summary_label=summary_label,
+            )
+        except Exception as exc:
+            affected_rules = list(metric_dependencies.get(metric_id, []))
+            unresolved[metric_id] = {
+                "metric_id": metric_id,
+                "summary_side": summary_label,
+                "reason": str(exc),
+                "catalog_spec": metric_catalog.get(metric_id),
+                "affected_rules": affected_rules,
+                "affected_rule_ids": sorted({str(x["rule_id"]) for x in affected_rules}),
+            }
+    return resolved, unresolved
 
 
 def _resolve_baseline_metrics_if_needed(
     *,
-    rules_by_group: dict[str, list[dict[str, Any]]],
+    metric_dependencies: dict[str, list[dict[str, Any]]],
     metric_catalog: dict[str, Any],
     baseline_summary: dict[str, Any] | None,
     missing_baseline_policy: str,
-) -> tuple[dict[str, dict[str, Any]], set[str]]:
-    required_baseline_metric_ids: set[str] = set()
-    for rules in rules_by_group.values():
-        for rule in rules:
-            if str(rule["basis"]) != "delta_vs_baseline":
-                continue
-            baseline_metric_id = rule.get("baseline_metric_id")
-            if isinstance(baseline_metric_id, str) and baseline_metric_id.strip():
-                required_baseline_metric_ids.add(baseline_metric_id.strip())
-            else:
-                required_baseline_metric_ids.add(str(rule["metric_id"]))
-
-    if not required_baseline_metric_ids:
-        return {}, set()
+) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
+    if not metric_dependencies:
+        return {}, {}
 
     if baseline_summary is None:
         if missing_baseline_policy == "fail_fast":
             raise RuntimeError(
                 "baseline summary is required because threshold profile includes delta_vs_baseline rules"
             )
-        return {}, required_baseline_metric_ids
+        unresolved_missing: dict[str, dict[str, Any]] = {}
+        for metric_id in sorted(metric_dependencies.keys()):
+            affected_rules = list(metric_dependencies.get(metric_id, []))
+            unresolved_missing[metric_id] = {
+                "metric_id": metric_id,
+                "summary_side": "baseline_summary",
+                "reason": "baseline_summary_missing_mark_noncomputable",
+                "catalog_spec": metric_catalog.get(metric_id),
+                "affected_rules": affected_rules,
+                "affected_rule_ids": sorted({str(x["rule_id"]) for x in affected_rules}),
+            }
+        return {}, unresolved_missing
 
     resolved: dict[str, dict[str, Any]] = {}
-    for metric_id in sorted(required_baseline_metric_ids):
-        resolved[metric_id] = _resolve_metric_from_catalog(
-            metric_id=metric_id,
-            metric_catalog=metric_catalog,
-            summary=baseline_summary,
-            summary_label="baseline_summary",
-        )
-    return resolved, set()
+    unresolved: dict[str, dict[str, Any]] = {}
+    for metric_id in sorted(metric_dependencies.keys()):
+        try:
+            resolved[metric_id] = _resolve_metric_from_catalog(
+                metric_id=metric_id,
+                metric_catalog=metric_catalog,
+                summary=baseline_summary,
+                summary_label="baseline_summary",
+            )
+        except Exception as exc:
+            affected_rules = list(metric_dependencies.get(metric_id, []))
+            unresolved[metric_id] = {
+                "metric_id": metric_id,
+                "summary_side": "baseline_summary",
+                "reason": str(exc),
+                "catalog_spec": metric_catalog.get(metric_id),
+                "affected_rules": affected_rules,
+                "affected_rule_ids": sorted({str(x["rule_id"]) for x in affected_rules}),
+            }
+    return resolved, unresolved
 
 
 def _evaluate_rules(
@@ -369,8 +428,8 @@ def _evaluate_rules(
     rules: list[dict[str, Any]],
     current_metrics: dict[str, dict[str, Any]],
     baseline_metrics: dict[str, dict[str, Any]],
-    baseline_missing_metric_ids: set[str],
-    missing_baseline_policy: str,
+    unresolved_current_metrics: dict[str, dict[str, Any]],
+    unresolved_baseline_metrics: dict[str, dict[str, Any]],
     group: str,
 ) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
@@ -388,54 +447,83 @@ def _evaluate_rules(
             else metric_id
         )
 
-        current = current_metrics[metric_id]
-        current_value = float(current["value"])
-        current_path = str(current["resolved_path"])
-
         record: dict[str, Any] = {
             "group": group,
             "rule_id": rule_id,
             "description": str(rule.get("description", "")),
             "metric_id": metric_id,
-            "metric_path": current_path,
+            "metric_path": None,
             "basis": basis,
             "comparator": comparator,
             "threshold": threshold,
             "tolerance": tolerance,
-            "current_value": current_value,
+            "current_value": None,
             "baseline_metric_id": baseline_metric_id if basis == "delta_vs_baseline" else None,
             "baseline_metric_path": None,
             "baseline_value": None,
             "evaluated_value": None,
-            "triggered": False,
-            "computable": True,
+            "triggered": None,
+            "computable": False,
+            "status": "noncomputable",
             "reason": "",
+            "missing_metric_ids": [],
+            "missing_metric_sides": [],
         }
 
-        if basis == "absolute":
-            evaluated_value = current_value
+        noncomputable_reasons: list[str] = []
+        if metric_id in unresolved_current_metrics:
+            noncomputable_reasons.append(str(unresolved_current_metrics[metric_id]["reason"]))
+            record["missing_metric_ids"].append(metric_id)
+            record["missing_metric_sides"].append("eval_summary")
+        elif metric_id not in current_metrics:
+            noncomputable_reasons.append("eval_summary metric unresolved")
+            record["missing_metric_ids"].append(metric_id)
+            record["missing_metric_sides"].append("eval_summary")
         else:
-            if baseline_metric_id in baseline_missing_metric_ids:
-                if missing_baseline_policy == "fail_fast":
-                    raise RuntimeError(
-                        f"rule '{rule_id}' requires baseline metric '{baseline_metric_id}' but no baseline was supplied"
-                    )
-                record["computable"] = False
-                record["reason"] = "baseline_missing_noncomputable"
-                out.append(record)
-                continue
-            if baseline_metric_id not in baseline_metrics:
-                raise RuntimeError(
-                    f"rule '{rule_id}' requires baseline metric '{baseline_metric_id}' which could not be resolved"
-                )
-            baseline = baseline_metrics[baseline_metric_id]
-            baseline_value = float(baseline["value"])
-            record["baseline_metric_path"] = str(baseline["resolved_path"])
-            record["baseline_value"] = baseline_value
-            evaluated_value = current_value - baseline_value
+            current = current_metrics[metric_id]
+            current_value = float(current["value"])
+            record["metric_path"] = str(current["resolved_path"])
+            record["current_value"] = current_value
+
+        evaluated_value: float | None = None
+        if basis == "delta_vs_baseline":
+            if baseline_metric_id in unresolved_baseline_metrics:
+                noncomputable_reasons.append(str(unresolved_baseline_metrics[baseline_metric_id]["reason"]))
+                record["missing_metric_ids"].append(baseline_metric_id)
+                record["missing_metric_sides"].append("baseline_summary")
+            elif baseline_metric_id not in baseline_metrics:
+                noncomputable_reasons.append("baseline_summary metric unresolved")
+                record["missing_metric_ids"].append(baseline_metric_id)
+                record["missing_metric_sides"].append("baseline_summary")
+            else:
+                baseline = baseline_metrics[baseline_metric_id]
+                baseline_value = float(baseline["value"])
+                record["baseline_metric_path"] = str(baseline["resolved_path"])
+                record["baseline_value"] = baseline_value
+                if record["current_value"] is not None:
+                    evaluated_value = float(record["current_value"]) - baseline_value
+        else:
+            if record["current_value"] is not None:
+                evaluated_value = float(record["current_value"])
+
+        if noncomputable_reasons:
+            record["reason"] = "; ".join(noncomputable_reasons)
+            # Stable ordering for easier auditing/diffing.
+            unique_pairs = sorted(set(zip(record["missing_metric_ids"], record["missing_metric_sides"])))
+            record["missing_metric_ids"] = [m for m, _ in unique_pairs]
+            record["missing_metric_sides"] = [s for _, s in unique_pairs]
+            out.append(record)
+            continue
+
+        if evaluated_value is None:
+            record["reason"] = "internal_noncomputable_unresolved_evaluated_value"
+            out.append(record)
+            continue
 
         record["evaluated_value"] = evaluated_value
         record["triggered"] = _compare(evaluated_value, comparator, threshold, tolerance=tolerance)
+        record["computable"] = True
+        record["status"] = "evaluated"
         out.append(record)
     return out
 
@@ -484,16 +572,17 @@ def _run_detector(
     _validate_threshold_profile(threshold_profile)
     metric_catalog = threshold_profile["metric_catalog"]
     rules_by_group = _collect_rules(threshold_profile)
+    current_metric_deps, baseline_metric_deps = _build_metric_dependency_maps(rules_by_group)
     missing_baseline_policy = str(threshold_profile.get("missing_baseline_policy", "fail_fast"))
 
-    current_metrics = _resolve_required_metrics(
-        rules_by_group=rules_by_group,
+    current_metrics, unresolved_current_metrics = _resolve_required_metrics(
+        metric_dependencies=current_metric_deps,
         metric_catalog=metric_catalog,
         summary=eval_summary,
         summary_label="eval_summary",
     )
-    baseline_metrics, baseline_missing_metric_ids = _resolve_baseline_metrics_if_needed(
-        rules_by_group=rules_by_group,
+    baseline_metrics, unresolved_baseline_metrics = _resolve_baseline_metrics_if_needed(
+        metric_dependencies=baseline_metric_deps,
         metric_catalog=metric_catalog,
         baseline_summary=baseline_summary,
         missing_baseline_policy=missing_baseline_policy,
@@ -503,29 +592,34 @@ def _run_detector(
         rules=rules_by_group["hard_invariants"],
         current_metrics=current_metrics,
         baseline_metrics=baseline_metrics,
-        baseline_missing_metric_ids=baseline_missing_metric_ids,
-        missing_baseline_policy=missing_baseline_policy,
+        unresolved_current_metrics=unresolved_current_metrics,
+        unresolved_baseline_metrics=unresolved_baseline_metrics,
         group="hard_invariants",
     )
     catastrophic_results = _evaluate_rules(
         rules=rules_by_group["catastrophic_thresholds"],
         current_metrics=current_metrics,
         baseline_metrics=baseline_metrics,
-        baseline_missing_metric_ids=baseline_missing_metric_ids,
-        missing_baseline_policy=missing_baseline_policy,
+        unresolved_current_metrics=unresolved_current_metrics,
+        unresolved_baseline_metrics=unresolved_baseline_metrics,
         group="catastrophic_thresholds",
     )
     watch_results = _evaluate_rules(
         rules=rules_by_group["tradeoff_watch_thresholds"],
         current_metrics=current_metrics,
         baseline_metrics=baseline_metrics,
-        baseline_missing_metric_ids=baseline_missing_metric_ids,
-        missing_baseline_policy=missing_baseline_policy,
+        unresolved_current_metrics=unresolved_current_metrics,
+        unresolved_baseline_metrics=unresolved_baseline_metrics,
         group="tradeoff_watch_thresholds",
     )
 
     all_results = hard_results + catastrophic_results + watch_results
-    noncomputable_rules = [r["rule_id"] for r in all_results if not r.get("computable", True)]
+    noncomputable_rule_records = [r for r in all_results if not r.get("computable", True)]
+    noncomputable_rules = [r["rule_id"] for r in noncomputable_rule_records]
+    noncomputable_metrics = {
+        "eval_summary": [unresolved_current_metrics[k] for k in sorted(unresolved_current_metrics.keys())],
+        "baseline_summary": [unresolved_baseline_metrics[k] for k in sorted(unresolved_baseline_metrics.keys())],
+    }
     hard_violations = [r["rule_id"] for r in hard_results if r.get("triggered")]
     catastrophic_triggers = [r["rule_id"] for r in catastrophic_results if r.get("triggered")]
     tradeoff_watch_warnings = [r["rule_id"] for r in watch_results if r.get("triggered")]
@@ -560,6 +654,22 @@ def _run_detector(
         "metric_resolution": {
             "current": {k: {"path": v["resolved_path"], "value": v["value"]} for k, v in sorted(current_metrics.items())},
             "baseline": {k: {"path": v["resolved_path"], "value": v["value"]} for k, v in sorted(baseline_metrics.items())},
+        },
+        "noncomputable_metrics": noncomputable_metrics,
+        "noncomputable_rules": noncomputable_rule_records,
+        "noncomputable_policy_applied": {
+            "missing_baseline_policy": missing_baseline_policy,
+            "noncomputable_status": str(
+                threshold_profile.get("status_decision_rules", {}).get(
+                    "noncomputable_status",
+                    threshold_profile.get("status_decision_rules", {}).get(
+                        "hard_invariant_violation_status",
+                        "halt_progression",
+                    ),
+                )
+            ),
+            "noncomputable_rule_count": len(noncomputable_rule_records),
+            "noncomputable_metric_count": sum(len(v) for v in noncomputable_metrics.values()),
         },
         "rule_evaluation": {
             "hard_invariants": hard_results,
@@ -596,6 +706,9 @@ def _run_detector(
             "tradeoff_watch_warning_count": len(tradeoff_watch_warnings),
             "noncomputable_rule_count": len(noncomputable_rules),
         },
+        "noncomputable_metrics": noncomputable_metrics,
+        "noncomputable_rules": noncomputable_rule_records,
+        "noncomputable_policy_applied": collapse_watch["noncomputable_policy_applied"],
         "active_rule_ids": {
             "hard_invariant_violations": hard_violations,
             "catastrophic_triggers": catastrophic_triggers,

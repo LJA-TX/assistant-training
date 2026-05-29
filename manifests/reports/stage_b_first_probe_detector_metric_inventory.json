@@ -1,0 +1,1221 @@
+{
+  "report_version": "1.0",
+  "profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+  "eval_summary_path": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_mh_eval/summary.json",
+  "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+  "metric_resolvability": {
+    "direct_answer_substitution_count": {
+      "catalog_spec": {
+        "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution"
+      },
+      "referenced_by_rules": [
+        {
+          "group": "tradeoff_watch_thresholds",
+          "rule_id": "direct_answer_substitution_delta_gt_3",
+          "basis": "delta_vs_baseline"
+        }
+      ],
+      "eval_summary": {
+        "resolvable": false,
+        "error": "eval_summary: required metric 'direct_answer_substitution_count' not found in summary"
+      },
+      "baseline_summary": {
+        "resolvable": true,
+        "resolved_path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "value": 11.0
+      }
+    },
+    "invalid_json_overall": {
+      "catalog_spec": {
+        "candidate_paths": [
+          "metrics.aggregate.invalid_json",
+          "metrics.stage_b_i10r_microprobe_aggregate.invalid_json",
+          "metrics.stage_b_i10r_counterbalanced_probe.invalid_json"
+        ]
+      },
+      "referenced_by_rules": [
+        {
+          "group": "catastrophic_thresholds",
+          "rule_id": "invalid_json_overall_gte_0_35",
+          "basis": "absolute"
+        }
+      ],
+      "eval_summary": {
+        "resolvable": false,
+        "error": "eval_summary: required metric 'invalid_json_overall' not found in summary"
+      },
+      "baseline_summary": {
+        "resolvable": true,
+        "resolved_path": "metrics.stage_b_i10r_counterbalanced_probe.invalid_json",
+        "value": 0.14
+      }
+    },
+    "no_anchor_exact_valid_share": {
+      "catalog_spec": {
+        "path": "failure_profile.anchor_exact_share.no_anchor_phrase"
+      },
+      "referenced_by_rules": [
+        {
+          "group": "tradeoff_watch_thresholds",
+          "rule_id": "no_anchor_exact_valid_share_lt_0_75",
+          "basis": "absolute"
+        }
+      ],
+      "eval_summary": {
+        "resolvable": false,
+        "error": "eval_summary: required metric 'no_anchor_exact_valid_share' not found in summary"
+      },
+      "baseline_summary": {
+        "resolvable": true,
+        "resolved_path": "failure_profile.anchor_exact_share.no_anchor_phrase",
+        "value": 0.8369565217391305
+      }
+    },
+    "no_call_correctness_adversarial": {
+      "catalog_spec": {
+        "candidate_paths": [
+          "metrics.probes.no_call_adversarial.no_call_correctness",
+          "metrics.stage_b_i10r_nocall_probe.no_call_correctness"
+        ]
+      },
+      "referenced_by_rules": [
+        {
+          "group": "hard_invariants",
+          "rule_id": "no_call_correctness_adversarial_lt_1_0",
+          "basis": "absolute"
+        }
+      ],
+      "eval_summary": {
+        "resolvable": false,
+        "error": "eval_summary: required metric 'no_call_correctness_adversarial' not found in summary"
+      },
+      "baseline_summary": {
+        "resolvable": true,
+        "resolved_path": "metrics.stage_b_i10r_nocall_probe.no_call_correctness",
+        "value": 1.0
+      }
+    },
+    "no_call_correctness_aggregate": {
+      "catalog_spec": {
+        "candidate_paths": [
+          "metrics.aggregate.no_call_correctness",
+          "metrics.stage_b_i10r_microprobe_aggregate.no_call_correctness",
+          "metrics.aggregate.i10r_counterbalanced_probe.no_call_correctness"
+        ]
+      },
+      "referenced_by_rules": [
+        {
+          "group": "hard_invariants",
+          "rule_id": "no_call_correctness_aggregate_lt_1_0",
+          "basis": "absolute"
+        }
+      ],
+      "eval_summary": {
+        "resolvable": false,
+        "error": "eval_summary: required metric 'no_call_correctness_aggregate' not found in summary"
+      },
+      "baseline_summary": {
+        "resolvable": true,
+        "resolved_path": "metrics.aggregate.i10r_counterbalanced_probe.no_call_correctness",
+        "value": 0.9666666666666667
+      }
+    },
+    "read_file_exact_valid_rate": {
+      "catalog_spec": {
+        "path": "failure_profile.read_file_exact_valid.rate"
+      },
+      "referenced_by_rules": [
+        {
+          "group": "catastrophic_thresholds",
+          "rule_id": "read_file_exact_valid_rate_lt_0_40",
+          "basis": "absolute"
+        },
+        {
+          "group": "tradeoff_watch_thresholds",
+          "rule_id": "read_file_exact_valid_rate_lt_0_70",
+          "basis": "absolute"
+        }
+      ],
+      "eval_summary": {
+        "resolvable": false,
+        "error": "eval_summary: required metric 'read_file_exact_valid_rate' not found in summary"
+      },
+      "baseline_summary": {
+        "resolvable": true,
+        "resolved_path": "failure_profile.read_file_exact_valid.rate",
+        "value": 0.7037037037037037
+      }
+    },
+    "read_file_symbol_name_exact_valid_rate": {
+      "catalog_spec": {
+        "path": "failure_profile.read_file_symbol_name_exact_valid.rate"
+      },
+      "referenced_by_rules": [
+        {
+          "group": "catastrophic_thresholds",
+          "rule_id": "read_file_symbol_name_exact_valid_rate_lt_0_40",
+          "basis": "absolute"
+        }
+      ],
+      "eval_summary": {
+        "resolvable": false,
+        "error": "eval_summary: required metric 'read_file_symbol_name_exact_valid_rate' not found in summary"
+      },
+      "baseline_summary": {
+        "resolvable": true,
+        "resolved_path": "failure_profile.read_file_symbol_name_exact_valid.rate",
+        "value": 0.9230769230769231
+      }
+    },
+    "wrapper_leakage_overall": {
+      "catalog_spec": {
+        "candidate_paths": [
+          "metrics.aggregate.wrapper_leakage",
+          "metrics.stage_b_i10r_microprobe_aggregate.wrapper_leakage",
+          "metrics.stage_b_i10r_nocall_probe.wrapper_leakage",
+          "metrics.stage_b_i10r_counterbalanced_probe.wrapper_leakage"
+        ]
+      },
+      "referenced_by_rules": [
+        {
+          "group": "hard_invariants",
+          "rule_id": "wrapper_leakage_gt_0",
+          "basis": "absolute"
+        }
+      ],
+      "eval_summary": {
+        "resolvable": false,
+        "error": "eval_summary: required metric 'wrapper_leakage_overall' not found in summary"
+      },
+      "baseline_summary": {
+        "resolvable": false,
+        "error": "baseline_summary: metric 'wrapper_leakage_overall' is ambiguous; matched multiple candidates ['metrics.stage_b_i10r_nocall_probe.wrapper_leakage', 'metrics.stage_b_i10r_counterbalanced_probe.wrapper_leakage']"
+      }
+    }
+  },
+  "eval_summary_relevant_numeric_paths": [
+    {
+      "path": "base.per_split.heldout_validation.class_counts.invalid_json",
+      "value": 100
+    },
+    {
+      "path": "base.per_split.heldout_validation.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.heldout_validation.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.heldout_validation.invalid_json_rate",
+      "value": 1.0
+    },
+    {
+      "path": "base.per_split.heldout_validation.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.heldout_validation.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.heldout_validation.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.heldout_validation.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.heldout_validation.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.heldout_validation.no_call_correctness.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.heldout_validation.no_call_correctness.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.heldout_validation.no_call_correctness.expected_rows",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.tool_holdout.class_counts.invalid_json",
+      "value": 40
+    },
+    {
+      "path": "base.per_split.tool_holdout.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.tool_holdout.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.tool_holdout.invalid_json_rate",
+      "value": 1.0
+    },
+    {
+      "path": "base.per_split.tool_holdout.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.tool_holdout.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.tool_holdout.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.tool_holdout.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.tool_holdout.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.tool_holdout.no_call_correctness.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.tool_holdout.no_call_correctness.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.tool_holdout.no_call_correctness.expected_rows",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.no_call.rows",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.no_call.class_counts.refusal_expected",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.no_call.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.no_call.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.no_call.invalid_json_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.no_call.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.no_call.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.no_call.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.no_call.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.no_call.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.no_call.no_call_correctness.count",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.no_call.no_call_correctness.rate",
+      "value": 1.0
+    },
+    {
+      "path": "base.per_split.no_call.no_call_correctness.expected_rows",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.no_call.tool_expected_rows",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.adversarial.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.adversarial.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.adversarial.invalid_json_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.adversarial.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.adversarial.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.adversarial.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.adversarial.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.adversarial.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.adversarial.no_call_correctness.count",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.adversarial.no_call_correctness.rate",
+      "value": 1.0
+    },
+    {
+      "path": "base.per_split.adversarial.no_call_correctness.expected_rows",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.rows",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.class_counts.refusal_expected",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.direct_answer.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.invalid_json_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.direct_answer.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.direct_answer.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.no_call_correctness.count",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.no_call_correctness.rate",
+      "value": 1.0
+    },
+    {
+      "path": "base.per_split.direct_answer.no_call_correctness.expected_rows",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.tool_expected_rows",
+      "value": 0
+    },
+    {
+      "path": "base.aggregate.class_counts.invalid_json",
+      "value": 140
+    },
+    {
+      "path": "base.aggregate.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "base.aggregate.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.aggregate.invalid_json_rate",
+      "value": 0.7
+    },
+    {
+      "path": "base.aggregate.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.aggregate.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.aggregate.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.aggregate.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.aggregate.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.aggregate.no_call_correctness.count",
+      "value": 60
+    },
+    {
+      "path": "base.aggregate.no_call_correctness.rate",
+      "value": 1.0
+    },
+    {
+      "path": "base.aggregate.no_call_correctness.expected_rows",
+      "value": 60
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.class_counts.invalid_json",
+      "value": 15
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.class_counts.wrapper_leakage",
+      "value": 3
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.exact_json_validity.count",
+      "value": 32
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.exact_json_validity.rate",
+      "value": 0.32
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.invalid_json_rate",
+      "value": 0.15
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.tool_name_accuracy.count",
+      "value": 43
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.tool_name_accuracy.rate",
+      "value": 0.43
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.argument_accuracy.count",
+      "value": 58
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.argument_accuracy.rate",
+      "value": 0.58
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.wrapper_leakage_rate",
+      "value": 0.03
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.no_call_correctness.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.no_call_correctness.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.heldout_validation.no_call_correctness.expected_rows",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.class_counts.invalid_json",
+      "value": 27
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.exact_json_validity.count",
+      "value": 10
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.exact_json_validity.rate",
+      "value": 0.25
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.invalid_json_rate",
+      "value": 0.675
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.tool_name_accuracy.count",
+      "value": 13
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.tool_name_accuracy.rate",
+      "value": 0.325
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.argument_accuracy.count",
+      "value": 10
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.argument_accuracy.rate",
+      "value": 0.25
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.no_call_correctness.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.no_call_correctness.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.tool_holdout.no_call_correctness.expected_rows",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.no_call.rows",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.no_call.class_counts.invalid_json",
+      "value": 4
+    },
+    {
+      "path": "adapter.per_split.no_call.class_counts.refusal_expected",
+      "value": 16
+    },
+    {
+      "path": "adapter.per_split.no_call.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.no_call.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.no_call.invalid_json_rate",
+      "value": 0.2
+    },
+    {
+      "path": "adapter.per_split.no_call.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.no_call.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.no_call.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.no_call.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.no_call.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.no_call.no_call_correctness.count",
+      "value": 16
+    },
+    {
+      "path": "adapter.per_split.no_call.no_call_correctness.rate",
+      "value": 0.8
+    },
+    {
+      "path": "adapter.per_split.no_call.no_call_correctness.expected_rows",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.no_call.tool_expected_rows",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.adversarial.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.adversarial.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.adversarial.invalid_json_rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.adversarial.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.adversarial.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.adversarial.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.adversarial.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.adversarial.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.adversarial.no_call_correctness.count",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.adversarial.no_call_correctness.rate",
+      "value": 1.0
+    },
+    {
+      "path": "adapter.per_split.adversarial.no_call_correctness.expected_rows",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.rows",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.class_counts.refusal_expected",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.invalid_json_rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.no_call_correctness.count",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.no_call_correctness.rate",
+      "value": 1.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.no_call_correctness.expected_rows",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.tool_expected_rows",
+      "value": 0
+    },
+    {
+      "path": "adapter.aggregate.class_counts.invalid_json",
+      "value": 46
+    },
+    {
+      "path": "adapter.aggregate.class_counts.wrapper_leakage",
+      "value": 3
+    },
+    {
+      "path": "adapter.aggregate.exact_json_validity.count",
+      "value": 42
+    },
+    {
+      "path": "adapter.aggregate.exact_json_validity.rate",
+      "value": 0.21
+    },
+    {
+      "path": "adapter.aggregate.invalid_json_rate",
+      "value": 0.23
+    },
+    {
+      "path": "adapter.aggregate.tool_name_accuracy.count",
+      "value": 56
+    },
+    {
+      "path": "adapter.aggregate.tool_name_accuracy.rate",
+      "value": 0.4
+    },
+    {
+      "path": "adapter.aggregate.argument_accuracy.count",
+      "value": 68
+    },
+    {
+      "path": "adapter.aggregate.argument_accuracy.rate",
+      "value": 0.4857142857142857
+    },
+    {
+      "path": "adapter.aggregate.wrapper_leakage_rate",
+      "value": 0.015
+    },
+    {
+      "path": "adapter.aggregate.no_call_correctness.count",
+      "value": 56
+    },
+    {
+      "path": "adapter.aggregate.no_call_correctness.rate",
+      "value": 0.9333333333333333
+    },
+    {
+      "path": "adapter.aggregate.no_call_correctness.expected_rows",
+      "value": 60
+    },
+    {
+      "path": "delta_adapter_minus_base.exact_json_validity_rate",
+      "value": 0.21
+    },
+    {
+      "path": "delta_adapter_minus_base.invalid_json_rate",
+      "value": -0.47
+    },
+    {
+      "path": "delta_adapter_minus_base.tool_name_accuracy_rate",
+      "value": 0.4
+    },
+    {
+      "path": "delta_adapter_minus_base.argument_accuracy_rate",
+      "value": 0.4857142857142857
+    },
+    {
+      "path": "delta_adapter_minus_base.wrapper_leakage_rate",
+      "value": 0.015
+    },
+    {
+      "path": "delta_adapter_minus_base.no_call_correctness_rate",
+      "value": -0.06666666666666665
+    }
+  ],
+  "baseline_summary_relevant_numeric_paths": [
+    {
+      "path": "metrics.stage_b_i10r_microprobe.exact_json_validity",
+      "value": 0.66
+    },
+    {
+      "path": "metrics.stage_b_i10r_microprobe.invalid_json",
+      "value": 0.14
+    },
+    {
+      "path": "metrics.stage_b_i10r_microprobe.tool_name_accuracy",
+      "value": 0.7
+    },
+    {
+      "path": "metrics.stage_b_i10r_microprobe.argument_accuracy",
+      "value": 0.65
+    },
+    {
+      "path": "metrics.stage_b_i10r_microprobe.wrapper_leakage",
+      "value": 0.0
+    },
+    {
+      "path": "metrics.stage_b_i10r_microprobe.no_call_correctness",
+      "value": 0.9166666666666666
+    },
+    {
+      "path": "metrics.stage_b_i10r_nocall_probe.exact_json_validity",
+      "value": 0.53
+    },
+    {
+      "path": "metrics.stage_b_i10r_nocall_probe.invalid_json",
+      "value": 0.3
+    },
+    {
+      "path": "metrics.stage_b_i10r_nocall_probe.tool_name_accuracy",
+      "value": 0.6214285714285714
+    },
+    {
+      "path": "metrics.stage_b_i10r_nocall_probe.argument_accuracy",
+      "value": 0.5285714285714286
+    },
+    {
+      "path": "metrics.stage_b_i10r_nocall_probe.wrapper_leakage",
+      "value": 0.0
+    },
+    {
+      "path": "metrics.stage_b_i10r_nocall_probe.no_call_correctness",
+      "value": 1.0
+    },
+    {
+      "path": "metrics.stage_b_i10r_counterbalanced_probe.exact_json_validity",
+      "value": 0.73
+    },
+    {
+      "path": "metrics.stage_b_i10r_counterbalanced_probe.invalid_json",
+      "value": 0.14
+    },
+    {
+      "path": "metrics.stage_b_i10r_counterbalanced_probe.tool_name_accuracy",
+      "value": 0.6785714285714286
+    },
+    {
+      "path": "metrics.stage_b_i10r_counterbalanced_probe.argument_accuracy",
+      "value": 0.6571428571428571
+    },
+    {
+      "path": "metrics.stage_b_i10r_counterbalanced_probe.wrapper_leakage",
+      "value": 0.0
+    },
+    {
+      "path": "metrics.stage_b_i10r_counterbalanced_probe.no_call_correctness",
+      "value": 0.9666666666666667
+    },
+    {
+      "path": "metrics.aggregate.i10r_microprobe.exact_json_validity",
+      "value": 0.435
+    },
+    {
+      "path": "metrics.aggregate.i10r_microprobe.invalid_json",
+      "value": 0.095
+    },
+    {
+      "path": "metrics.aggregate.i10r_microprobe.no_call_correctness",
+      "value": 0.9166666666666666
+    },
+    {
+      "path": "metrics.aggregate.i10r_nocall_probe.exact_json_validity",
+      "value": 0.37
+    },
+    {
+      "path": "metrics.aggregate.i10r_nocall_probe.invalid_json",
+      "value": 0.175
+    },
+    {
+      "path": "metrics.aggregate.i10r_nocall_probe.no_call_correctness",
+      "value": 1.0
+    },
+    {
+      "path": "metrics.aggregate.i10r_counterbalanced_probe.exact_json_validity",
+      "value": 0.46
+    },
+    {
+      "path": "metrics.aggregate.i10r_counterbalanced_probe.invalid_json",
+      "value": 0.12
+    },
+    {
+      "path": "metrics.aggregate.i10r_counterbalanced_probe.no_call_correctness",
+      "value": 0.9666666666666667
+    },
+    {
+      "path": "deltas.counterbalanced_minus_i10r_microprobe.heldout_exact_json_validity_pp",
+      "value": 7.0
+    },
+    {
+      "path": "deltas.counterbalanced_minus_i10r_microprobe.heldout_invalid_json_pp",
+      "value": 0.0
+    },
+    {
+      "path": "deltas.counterbalanced_minus_i10r_microprobe.aggregate_exact_json_validity_pp",
+      "value": 2.5
+    },
+    {
+      "path": "deltas.counterbalanced_minus_i10r_microprobe.aggregate_invalid_json_pp",
+      "value": 2.5
+    },
+    {
+      "path": "deltas.counterbalanced_minus_i10r_nocall_probe.heldout_exact_json_validity_pp",
+      "value": 20.0
+    },
+    {
+      "path": "deltas.counterbalanced_minus_i10r_nocall_probe.heldout_invalid_json_pp",
+      "value": -16.0
+    },
+    {
+      "path": "deltas.counterbalanced_minus_i10r_nocall_probe.aggregate_exact_json_validity_pp",
+      "value": 9.0
+    },
+    {
+      "path": "deltas.counterbalanced_minus_i10r_nocall_probe.aggregate_invalid_json_pp",
+      "value": -5.5
+    },
+    {
+      "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+      "value": 11
+    },
+    {
+      "path": "failure_profile.failure_categories_non_exact_tool_rows.scalar_substitution",
+      "value": 0
+    },
+    {
+      "path": "failure_profile.failure_categories_non_exact_tool_rows.near_canonical_wrapper_or_envelope_drift",
+      "value": 24
+    },
+    {
+      "path": "failure_profile.read_file_exact_valid.count",
+      "value": 19
+    },
+    {
+      "path": "failure_profile.read_file_exact_valid.rows",
+      "value": 27
+    },
+    {
+      "path": "failure_profile.read_file_exact_valid.rate",
+      "value": 0.7037037037037037
+    },
+    {
+      "path": "failure_profile.read_file_symbol_name_exact_valid.count",
+      "value": 12
+    },
+    {
+      "path": "failure_profile.read_file_symbol_name_exact_valid.rows",
+      "value": 13
+    },
+    {
+      "path": "failure_profile.read_file_symbol_name_exact_valid.rate",
+      "value": 0.9230769230769231
+    },
+    {
+      "path": "failure_profile.anchor_exact_share.literal_tool_calls",
+      "value": 0.06521739130434782
+    },
+    {
+      "path": "failure_profile.anchor_exact_share.paraphrastic_tool_call",
+      "value": 0.09782608695652174
+    },
+    {
+      "path": "failure_profile.anchor_exact_share.no_anchor_phrase",
+      "value": 0.8369565217391305
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.no_call_correctness_aggregate_lt_1_0",
+      "value": true
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.no_call_correctness_adversarial_lt_1_0",
+      "value": true
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.wrapper_leakage_gt_0",
+      "value": false
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.read_file_exact_valid_lt_0_65",
+      "value": false
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.read_file_symbol_name_exact_valid_lt_0_60",
+      "value": false
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.scalar_substitution_share_gt_0_05",
+      "value": false
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.direct_answer_substitution_delta_gt_0_05_vs_i10r",
+      "value": false
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.no_anchor_exact_valid_share_lt_0_75",
+      "value": false
+    }
+  ],
+  "direct_answer_related_eval_paths": [
+    {
+      "path": "base.per_split.direct_answer.rows",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.class_counts.refusal_expected",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.direct_answer.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.invalid_json_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.direct_answer.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "base.per_split.direct_answer.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "base.per_split.direct_answer.no_call_correctness.count",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.no_call_correctness.rate",
+      "value": 1.0
+    },
+    {
+      "path": "base.per_split.direct_answer.no_call_correctness.expected_rows",
+      "value": 20
+    },
+    {
+      "path": "base.per_split.direct_answer.tool_expected_rows",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.rows",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.class_counts.refusal_expected",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.exact_json_validity.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.exact_json_validity.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.invalid_json_rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.tool_name_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.tool_name_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.argument_accuracy.count",
+      "value": 0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.argument_accuracy.rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.wrapper_leakage_rate",
+      "value": 0.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.no_call_correctness.count",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.no_call_correctness.rate",
+      "value": 1.0
+    },
+    {
+      "path": "adapter.per_split.direct_answer.no_call_correctness.expected_rows",
+      "value": 20
+    },
+    {
+      "path": "adapter.per_split.direct_answer.tool_expected_rows",
+      "value": 0
+    }
+  ],
+  "direct_answer_related_baseline_paths": [
+    {
+      "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+      "value": 11
+    },
+    {
+      "path": "failure_profile.failure_categories_non_exact_tool_rows.scalar_substitution",
+      "value": 0
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.scalar_substitution_share_gt_0_05",
+      "value": false
+    },
+    {
+      "path": "hard_stop_evaluation.conditions.direct_answer_substitution_delta_gt_0_05_vs_i10r",
+      "value": false
+    }
+  ],
+  "candidate_equivalents": {
+    "direct_answer_substitution_count": {
+      "threshold_profile_path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+      "present_in_eval_summary": false,
+      "present_in_baseline_summary": true,
+      "eval_summary_nearest_fields": [
+        "adapter.per_split.direct_answer.class_counts.refusal_expected",
+        "adapter.per_split.direct_answer.no_call_correctness.count",
+        "adapter.per_split.direct_answer.no_call_correctness.rate",
+        "adapter.per_split.direct_answer.invalid_json_rate"
+      ],
+      "equivalence_assessment": "no_strict_equivalent_in_eval_summary",
+      "notes": "Eval summary tracks direct_answer refusal behavior, not direct-answer substitution among non-exact tool rows."
+    }
+  },
+  "summary": {
+    "profile_metric_count": 8,
+    "resolvable_in_eval_count": 0,
+    "resolvable_in_baseline_count": 7,
+    "non_resolvable_in_eval_metric_ids": [
+      "direct_answer_substitution_count",
+      "invalid_json_overall",
+      "no_anchor_exact_valid_share",
+      "no_call_correctness_adversarial",
+      "no_call_correctness_aggregate",
+      "read_file_exact_valid_rate",
+      "read_file_symbol_name_exact_valid_rate",
+      "wrapper_leakage_overall"
+    ],
+    "non_resolvable_in_baseline_metric_ids": [
+      "wrapper_leakage_overall"
+    ]
+  }
+}

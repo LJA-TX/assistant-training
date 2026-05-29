@@ -1,0 +1,102 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:04:24Z",
+  "status": "halt_progression",
+  "threshold_profile_id": "stage_b_v1_geometry_mapping_collapse_profile",
+  "threshold_profile_digest": "9ca7b94f73667d6a779be0df03cde14c9afe8f2aaf827d0de8fea96db0e2c7e7",
+  "geometry_context": null,
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": null,
+  "geometry_context_input_digest": null,
+  "geometry_context_digest": null,
+  "geometry_context_digest_alias_of": "geometry_context_input_digest",
+  "inputs": {
+    "eval_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/fixtures/summary_missing_metric.json",
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/fixtures/summary_baseline.json",
+    "geometry_context_path": null
+  },
+  "decision_breakdown": {
+    "hard_invariant_violation_count": 0,
+    "catastrophic_trigger_count": 0,
+    "tradeoff_watch_warning_count": 0,
+    "noncomputable_rule_count": 1
+  },
+  "noncomputable_metrics": {
+    "eval_summary": [
+      {
+        "metric_id": "no_call_correctness_adversarial",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'no_call_correctness_adversarial' not found in summary",
+        "catalog_spec": {
+          "candidate_paths": [
+            "metrics.probes.no_call_adversarial.no_call_correctness",
+            "metrics.stage_b_i10r_nocall_probe.no_call_correctness"
+          ]
+        },
+        "affected_rules": [
+          {
+            "group": "hard_invariants",
+            "rule_id": "no_call_correctness_adversarial_lt_1_0",
+            "usage": "current_metric",
+            "basis": "absolute"
+          }
+        ],
+        "affected_rule_ids": [
+          "no_call_correctness_adversarial_lt_1_0"
+        ]
+      }
+    ],
+    "baseline_summary": []
+  },
+  "noncomputable_rules": [
+    {
+      "group": "hard_invariants",
+      "rule_id": "no_call_correctness_adversarial_lt_1_0",
+      "description": "No-call adversarial correctness must remain exactly 1.0.",
+      "metric_id": "no_call_correctness_adversarial",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 1.0,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'no_call_correctness_adversarial' not found in summary",
+      "missing_metric_ids": [
+        "no_call_correctness_adversarial"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    }
+  ],
+  "noncomputable_policy_applied": {
+    "missing_baseline_policy": "fail_fast",
+    "noncomputable_status": "halt_progression",
+    "noncomputable_rule_count": 1,
+    "noncomputable_metric_count": 1
+  },
+  "active_rule_ids": {
+    "hard_invariant_violations": [],
+    "catastrophic_triggers": [],
+    "tradeoff_watch_warnings": [],
+    "noncomputable_rules": [
+      "no_call_correctness_adversarial_lt_1_0"
+    ]
+  },
+  "progression_allowed": false,
+  "halt_recommended": true,
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

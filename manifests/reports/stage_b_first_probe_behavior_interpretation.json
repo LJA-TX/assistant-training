@@ -1,0 +1,180 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:04:31Z",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_first_live_probe",
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+    "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay"
+  },
+  "artifacts_used": {
+    "exposure_ledger_declared": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_declared.json",
+    "exposure_ledger_realized": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_realized.json",
+    "exposure_ledger_drift": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_drift.json",
+    "eval_summary": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_mh_eval/summary.json",
+    "comparison_rows": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_mh_eval/comparison_rows.jsonl",
+    "baseline_summary": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_gate_assessment.json"
+  },
+  "governance_outcome": {
+    "status": "halt_progression",
+    "progression_allowed": false,
+    "halt_recommended": true,
+    "noncomputable_metric_count_eval_summary": 8,
+    "noncomputable_rule_count": 9
+  },
+  "exposure_accounting": {
+    "declared_vs_realized": {
+      "declared_train_rows": 1982,
+      "realized_sampled_rows": 401,
+      "realized_unique_indices": 13,
+      "drift_family_total_abs_delta": 2357,
+      "drift_family_max_abs_delta": 1881,
+      "drift_note": "Raw-count drift is expected because declared ledger covers full train split while realized ledger captures sampled subset for a 0.2 epoch weighted run."
+    },
+    "realized_composition": {
+      "family_counts": {
+        "malformed_regex_underspecified_search_adversarial_boundary": 287,
+        "read_file_symbol_name_commitment_instability": 114
+      },
+      "family_shares": {
+        "malformed_regex_underspecified_search_adversarial_boundary": 0.71571072319202,
+        "read_file_symbol_name_commitment_instability": 0.28428927680798005
+      },
+      "archetype_counts": {
+        "unspecified": 287,
+        "read_file_symbol_name": 114
+      },
+      "pair_counts": {
+        "pair_01": 83,
+        "pair_04": 76,
+        "pair_03": 71,
+        "pair_02": 57
+      }
+    },
+    "weighted_plan_conformance": {
+      "weights_summary": {
+        "weights_count": 1982,
+        "weights_sum": 36.0,
+        "weights_min": 0.0,
+        "weights_max": 3.25,
+        "zero_weight_rows": 1969,
+        "positive_weight_rows": 13
+      },
+      "expected_family_counts_from_weights": {
+        "malformed_regex_underspecified_search_adversarial_boundary": 289.6111111111111,
+        "read_file_symbol_name_commitment_instability": 111.3888888888889
+      },
+      "realized_minus_expected_family_counts": {
+        "read_file_symbol_name_commitment_instability": 2.6111111111111,
+        "malformed_regex_underspecified_search_adversarial_boundary": -2.611111111111086
+      },
+      "absolute_family_count_error": {
+        "read_file_symbol_name_commitment_instability": 2.6111111111111,
+        "malformed_regex_underspecified_search_adversarial_boundary": 2.611111111111086
+      },
+      "conformance_interpretation": "Realized family mix closely matches weighted expectations despite large raw declared-vs-realized count drift."
+    },
+    "intended_geometry_alignment": {
+      "axis_levels": {
+        "no_call_pressure": "medium",
+        "read_file_counterweight": "high",
+        "rg_search_contrastive": "medium",
+        "uncertainty_conditioning": "zero"
+      },
+      "declared_exposure_units": {
+        "no_call_adversarial_family": 13,
+        "read_file_symbol_name_family": 10,
+        "valid_rg_search_contrastive_family": 13,
+        "uncertainty_conditioning_family": 0
+      },
+      "observed_active_families": [
+        "malformed_regex_underspecified_search_adversarial_boundary",
+        "read_file_symbol_name_commitment_instability"
+      ],
+      "alignment_assessment": "partial_alignment",
+      "alignment_rationale": [
+        "No-call adversarial and read-file symbol-name families are both realized at substantial frequency.",
+        "RG-search contrastive and uncertainty-conditioning families are absent in realized stream (0 rows)."
+      ]
+    }
+  },
+  "behavior_assessment": {
+    "no_call": {
+      "live_aggregate_rate": 0.9333333333333333,
+      "live_adversarial_rate": 1.0,
+      "live_no_call_split_rate": 0.8,
+      "baseline_aggregate_rate": 0.9666666666666667,
+      "baseline_adversarial_rate": 1.0,
+      "delta_aggregate_live_minus_baseline": -0.033333333333333326,
+      "delta_adversarial_live_minus_baseline": 0.0
+    },
+    "read_file": {
+      "derivation": "computed from comparison_rows where expected_tool_names contains read_file",
+      "live_exact_valid": {
+        "count": 10,
+        "rows": 27,
+        "rate": 0.37037037037037035
+      },
+      "live_symbol_name_exact_valid": {
+        "count": 9,
+        "rows": 13,
+        "rate": 0.6923076923076923,
+        "symbol_name_case_id": "p0_read_file_2"
+      },
+      "baseline_exact_valid_rate": 0.7037037037037037,
+      "baseline_symbol_name_exact_valid_rate": 0.9230769230769231,
+      "delta_exact_valid_live_minus_baseline": -0.33333333333333337,
+      "delta_symbol_name_live_minus_baseline": -0.23076923076923084,
+      "by_source_case_rows": {
+        "p0_read_file_2": 13,
+        "p0_read_file_3": 7,
+        "p0_read_file_1": 7
+      },
+      "by_source_case_exact_valid": {
+        "p0_read_file_2": 9,
+        "p0_read_file_1": 1
+      }
+    },
+    "wrapper_leakage": {
+      "live_rate": 0.015,
+      "live_count": 3,
+      "baseline_rate": 0.0,
+      "delta_live_minus_baseline": 0.015
+    },
+    "invalid_json": {
+      "live_rate": 0.23,
+      "live_count": 46,
+      "baseline_rate": 0.14,
+      "delta_live_minus_baseline": 0.09
+    },
+    "other_observations": {
+      "adapter_exact_json_validity_rate": 0.21,
+      "adapter_tool_name_accuracy_rate": 0.4,
+      "adapter_argument_accuracy_rate": 0.4857142857142857,
+      "tool_expected_primary_class_counts": {
+        "exact_valid": 42,
+        "wrong_tool_name": 30,
+        "invalid_schema": 10,
+        "invalid_json": 42,
+        "wrapper_leakage": 3,
+        "wrong_arguments": 13
+      }
+    }
+  },
+  "hypothesis_assessment": {
+    "evidence_supporting_geometry_coupling": [
+      "Adversarial no-call remains perfect (1.0) while read_file exact-valid materially degrades versus baseline (-0.333 rate delta).",
+      "Read-file symbol-name performance degrades despite dedicated exposure family presence, indicating nontrivial coupling tension.",
+      "Exposure plan concentrated almost entirely on two families, yielding a clear tradeoff signal rather than diffuse multi-family noise."
+    ],
+    "evidence_against_or_limiting_geometry_coupling_claim": [
+      "Realized exposure lacks rg_search contrastive family entirely, so full 4-axis geometry was not actually exercised.",
+      "Raw declared-vs-realized drift is high and must be normalized before causal interpretation.",
+      "Detector metric noncomputability prevents direct governance evaluation of several intended collapse-watch dimensions."
+    ],
+    "cell_scientific_usefulness": "useful_but_incomplete",
+    "should_repeat_cell_unchanged": false,
+    "repeat_unchanged_rationale": "The run produced informative signal, but schema nonconvergence and incomplete axis activation (missing rg_search exposure) make an unchanged repeat low-yield relative to repair-and-reevaluate."
+  },
+  "scientific_recommendation": "REPAIR_AND_REEVALUATE"
+}

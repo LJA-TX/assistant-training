@@ -1,0 +1,102 @@
+{
+  "report_version": "1.0",
+  "context": "Stage B first live probe collapse-detector schema mismatch",
+  "failure": "RuntimeError: eval_summary: required metric 'direct_answer_substitution_count' not found in summary",
+  "options": [
+    {
+      "option_id": "A",
+      "label": "Add metric emission to canonical eval summary",
+      "summary": "Extend canonical evaluator output schema to emit old-style failure_profile metrics (or equivalent typed metrics) needed by threshold profile.",
+      "advantages": [
+        "Long-term alignment between evaluator and detector",
+        "Eliminates detector-side schema guesswork"
+      ],
+      "disadvantages": [
+        "Does not repair already-produced summary unless eval is rerun or a trusted post-hoc reconstruction is added",
+        "Requires evaluator code change and regression validation"
+      ],
+      "governance_impact": "low_to_medium (improves explicitness)",
+      "compatibility_impact": "medium (new summary fields/versioning needed)",
+      "risk_hiding_real_failure": "low",
+      "allows_detector_on_existing_summary_without_rerun": false,
+      "implementation_complexity": "medium"
+    },
+    {
+      "option_id": "B",
+      "label": "Update detector metric mapping to current eval-summary fields",
+      "summary": "Map required metrics directly to current adapter/base aggregate/per_split fields.",
+      "advantages": [
+        "Can use existing eval summary immediately for metrics that do exist",
+        "No evaluator rerun required"
+      ],
+      "disadvantages": [
+        "Several required metrics have no strict equivalent (direct_answer_substitution_count, no_anchor_exact_valid_share, read_file_symbol_name_exact_valid_rate)",
+        "Proxy mapping can silently alter scientific meaning"
+      ],
+      "governance_impact": "medium_to_high if proxies are used",
+      "compatibility_impact": "medium",
+      "risk_hiding_real_failure": "medium_to_high if semantic proxies replace missing metrics",
+      "allows_detector_on_existing_summary_without_rerun": "partial",
+      "implementation_complexity": "medium"
+    },
+    {
+      "option_id": "C",
+      "label": "Update threshold profile to reference available metrics",
+      "summary": "Retarget threshold profile metric_catalog and rules to fields present in current eval summary.",
+      "advantages": [
+        "Can allow immediate detector run against existing summary",
+        "No detector code change required"
+      ],
+      "disadvantages": [
+        "Changes governance contract and thresholds semantics",
+        "Dropping/replacing unavailable metrics may weaken intended safeguards"
+      ],
+      "governance_impact": "high (policy-level change)",
+      "compatibility_impact": "medium",
+      "risk_hiding_real_failure": "medium",
+      "allows_detector_on_existing_summary_without_rerun": true,
+      "implementation_complexity": "low_to_medium"
+    },
+    {
+      "option_id": "D",
+      "label": "Add explicit metric alias mapping",
+      "summary": "Add a typed alias layer in detector so old metric IDs can resolve to new schema paths when semantically equivalent.",
+      "advantages": [
+        "Preserves threshold profile IDs/rules",
+        "Can recover many metrics without changing eval outputs"
+      ],
+      "disadvantages": [
+        "Still cannot resolve metrics that have no semantic equivalent in current summary",
+        "Needs careful alias governance and versioning"
+      ],
+      "governance_impact": "medium",
+      "compatibility_impact": "medium_to_high (backward + forward schema support)",
+      "risk_hiding_real_failure": "low_to_medium if aliases are strict and documented",
+      "allows_detector_on_existing_summary_without_rerun": "partial (full only with noncomputable handling for unmatched metrics)",
+      "implementation_complexity": "medium"
+    },
+    {
+      "option_id": "E",
+      "label": "Mark metric non-computable when absent, governance-safe",
+      "summary": "Change detector missing-metric behavior from fail-fast runtime exception to per-rule noncomputable accounting with explicit status handling.",
+      "advantages": [
+        "Detector can run immediately on existing summary",
+        "Does not invent proxy metrics",
+        "With current profile, noncomputable_status=halt_progression preserves safety"
+      ],
+      "disadvantages": [
+        "Outputs are less informative until schema alignment is completed",
+        "Requires clear reporting to avoid false sense of pass"
+      ],
+      "governance_impact": "low_if_noncomputable_halts",
+      "compatibility_impact": "low_to_medium",
+      "risk_hiding_real_failure": "low (if noncomputable forces halt/watch as configured)",
+      "allows_detector_on_existing_summary_without_rerun": true,
+      "implementation_complexity": "low_to_medium"
+    }
+  ],
+  "cross_cutting_observation": {
+    "baseline_schema_ambiguity": "wrapper_leakage_overall currently resolves ambiguously on baseline under existing candidate_paths",
+    "implication": "Any repair should also disambiguate wrapper leakage metric resolution to avoid next failure after direct-answer fix"
+  }
+}

@@ -1,0 +1,734 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T17:04:31Z",
+  "status": "halt_progression",
+  "script": "post_eval_collapse_detector.py",
+  "inputs": {
+    "eval_summary_path": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_mh_eval/summary.json",
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "geometry_context_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_geometry_context_input.json"
+  },
+  "threshold_profile_id": "stage_b_v1_geometry_mapping_collapse_profile",
+  "threshold_profile_schema_version": "1.0",
+  "threshold_profile_digest": "9ca7b94f73667d6a779be0df03cde14c9afe8f2aaf827d0de8fea96db0e2c7e7",
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_first_live_probe",
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+    "axis_levels": {
+      "no_call_pressure": "medium",
+      "read_file_counterweight": "high",
+      "rg_search_contrastive": "medium",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 13,
+      "read_file_symbol_name_family": 10,
+      "valid_rg_search_contrastive_family": 13,
+      "uncertainty_conditioning_family": 0
+    }
+  },
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+  "geometry_context_input_digest": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8",
+  "geometry_context_digest": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8",
+  "geometry_context_digest_alias_of": "geometry_context_input_digest",
+  "metric_resolution": {
+    "current": {},
+    "baseline": {
+      "direct_answer_substitution_count": {
+        "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "value": 11.0
+      }
+    }
+  },
+  "noncomputable_metrics": {
+    "eval_summary": [
+      {
+        "metric_id": "direct_answer_substitution_count",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'direct_answer_substitution_count' not found in summary",
+        "catalog_spec": {
+          "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution"
+        },
+        "affected_rules": [
+          {
+            "group": "tradeoff_watch_thresholds",
+            "rule_id": "direct_answer_substitution_delta_gt_3",
+            "usage": "current_metric",
+            "basis": "delta_vs_baseline"
+          }
+        ],
+        "affected_rule_ids": [
+          "direct_answer_substitution_delta_gt_3"
+        ]
+      },
+      {
+        "metric_id": "invalid_json_overall",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'invalid_json_overall' not found in summary",
+        "catalog_spec": {
+          "candidate_paths": [
+            "metrics.aggregate.invalid_json",
+            "metrics.stage_b_i10r_microprobe_aggregate.invalid_json",
+            "metrics.stage_b_i10r_counterbalanced_probe.invalid_json"
+          ]
+        },
+        "affected_rules": [
+          {
+            "group": "catastrophic_thresholds",
+            "rule_id": "invalid_json_overall_gte_0_35",
+            "usage": "current_metric",
+            "basis": "absolute"
+          }
+        ],
+        "affected_rule_ids": [
+          "invalid_json_overall_gte_0_35"
+        ]
+      },
+      {
+        "metric_id": "no_anchor_exact_valid_share",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'no_anchor_exact_valid_share' not found in summary",
+        "catalog_spec": {
+          "path": "failure_profile.anchor_exact_share.no_anchor_phrase"
+        },
+        "affected_rules": [
+          {
+            "group": "tradeoff_watch_thresholds",
+            "rule_id": "no_anchor_exact_valid_share_lt_0_75",
+            "usage": "current_metric",
+            "basis": "absolute"
+          }
+        ],
+        "affected_rule_ids": [
+          "no_anchor_exact_valid_share_lt_0_75"
+        ]
+      },
+      {
+        "metric_id": "no_call_correctness_adversarial",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'no_call_correctness_adversarial' not found in summary",
+        "catalog_spec": {
+          "candidate_paths": [
+            "metrics.probes.no_call_adversarial.no_call_correctness",
+            "metrics.stage_b_i10r_nocall_probe.no_call_correctness"
+          ]
+        },
+        "affected_rules": [
+          {
+            "group": "hard_invariants",
+            "rule_id": "no_call_correctness_adversarial_lt_1_0",
+            "usage": "current_metric",
+            "basis": "absolute"
+          }
+        ],
+        "affected_rule_ids": [
+          "no_call_correctness_adversarial_lt_1_0"
+        ]
+      },
+      {
+        "metric_id": "no_call_correctness_aggregate",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'no_call_correctness_aggregate' not found in summary",
+        "catalog_spec": {
+          "candidate_paths": [
+            "metrics.aggregate.no_call_correctness",
+            "metrics.stage_b_i10r_microprobe_aggregate.no_call_correctness",
+            "metrics.aggregate.i10r_counterbalanced_probe.no_call_correctness"
+          ]
+        },
+        "affected_rules": [
+          {
+            "group": "hard_invariants",
+            "rule_id": "no_call_correctness_aggregate_lt_1_0",
+            "usage": "current_metric",
+            "basis": "absolute"
+          }
+        ],
+        "affected_rule_ids": [
+          "no_call_correctness_aggregate_lt_1_0"
+        ]
+      },
+      {
+        "metric_id": "read_file_exact_valid_rate",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'read_file_exact_valid_rate' not found in summary",
+        "catalog_spec": {
+          "path": "failure_profile.read_file_exact_valid.rate"
+        },
+        "affected_rules": [
+          {
+            "group": "catastrophic_thresholds",
+            "rule_id": "read_file_exact_valid_rate_lt_0_40",
+            "usage": "current_metric",
+            "basis": "absolute"
+          },
+          {
+            "group": "tradeoff_watch_thresholds",
+            "rule_id": "read_file_exact_valid_rate_lt_0_70",
+            "usage": "current_metric",
+            "basis": "absolute"
+          }
+        ],
+        "affected_rule_ids": [
+          "read_file_exact_valid_rate_lt_0_40",
+          "read_file_exact_valid_rate_lt_0_70"
+        ]
+      },
+      {
+        "metric_id": "read_file_symbol_name_exact_valid_rate",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'read_file_symbol_name_exact_valid_rate' not found in summary",
+        "catalog_spec": {
+          "path": "failure_profile.read_file_symbol_name_exact_valid.rate"
+        },
+        "affected_rules": [
+          {
+            "group": "catastrophic_thresholds",
+            "rule_id": "read_file_symbol_name_exact_valid_rate_lt_0_40",
+            "usage": "current_metric",
+            "basis": "absolute"
+          }
+        ],
+        "affected_rule_ids": [
+          "read_file_symbol_name_exact_valid_rate_lt_0_40"
+        ]
+      },
+      {
+        "metric_id": "wrapper_leakage_overall",
+        "summary_side": "eval_summary",
+        "reason": "eval_summary: required metric 'wrapper_leakage_overall' not found in summary",
+        "catalog_spec": {
+          "candidate_paths": [
+            "metrics.aggregate.wrapper_leakage",
+            "metrics.stage_b_i10r_microprobe_aggregate.wrapper_leakage",
+            "metrics.stage_b_i10r_nocall_probe.wrapper_leakage",
+            "metrics.stage_b_i10r_counterbalanced_probe.wrapper_leakage"
+          ]
+        },
+        "affected_rules": [
+          {
+            "group": "hard_invariants",
+            "rule_id": "wrapper_leakage_gt_0",
+            "usage": "current_metric",
+            "basis": "absolute"
+          }
+        ],
+        "affected_rule_ids": [
+          "wrapper_leakage_gt_0"
+        ]
+      }
+    ],
+    "baseline_summary": []
+  },
+  "noncomputable_rules": [
+    {
+      "group": "hard_invariants",
+      "rule_id": "no_call_correctness_aggregate_lt_1_0",
+      "description": "No-call aggregate correctness must remain exactly 1.0.",
+      "metric_id": "no_call_correctness_aggregate",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 1.0,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'no_call_correctness_aggregate' not found in summary",
+      "missing_metric_ids": [
+        "no_call_correctness_aggregate"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    },
+    {
+      "group": "hard_invariants",
+      "rule_id": "no_call_correctness_adversarial_lt_1_0",
+      "description": "No-call adversarial correctness must remain exactly 1.0.",
+      "metric_id": "no_call_correctness_adversarial",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 1.0,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'no_call_correctness_adversarial' not found in summary",
+      "missing_metric_ids": [
+        "no_call_correctness_adversarial"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    },
+    {
+      "group": "hard_invariants",
+      "rule_id": "wrapper_leakage_gt_0",
+      "description": "Wrapper leakage must remain zero.",
+      "metric_id": "wrapper_leakage_overall",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "gt",
+      "threshold": 0.0,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'wrapper_leakage_overall' not found in summary",
+      "missing_metric_ids": [
+        "wrapper_leakage_overall"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    },
+    {
+      "group": "catastrophic_thresholds",
+      "rule_id": "invalid_json_overall_gte_0_35",
+      "description": "Invalid JSON above this threshold is catastrophic.",
+      "metric_id": "invalid_json_overall",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "gte",
+      "threshold": 0.35,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'invalid_json_overall' not found in summary",
+      "missing_metric_ids": [
+        "invalid_json_overall"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    },
+    {
+      "group": "catastrophic_thresholds",
+      "rule_id": "read_file_exact_valid_rate_lt_0_40",
+      "description": "Read-file exact-valid collapse threshold.",
+      "metric_id": "read_file_exact_valid_rate",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 0.4,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'read_file_exact_valid_rate' not found in summary",
+      "missing_metric_ids": [
+        "read_file_exact_valid_rate"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    },
+    {
+      "group": "catastrophic_thresholds",
+      "rule_id": "read_file_symbol_name_exact_valid_rate_lt_0_40",
+      "description": "Read-file symbol-name exact-valid collapse threshold.",
+      "metric_id": "read_file_symbol_name_exact_valid_rate",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 0.4,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'read_file_symbol_name_exact_valid_rate' not found in summary",
+      "missing_metric_ids": [
+        "read_file_symbol_name_exact_valid_rate"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    },
+    {
+      "group": "tradeoff_watch_thresholds",
+      "rule_id": "read_file_exact_valid_rate_lt_0_70",
+      "description": "Read-file exact-valid watch threshold.",
+      "metric_id": "read_file_exact_valid_rate",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 0.7,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'read_file_exact_valid_rate' not found in summary",
+      "missing_metric_ids": [
+        "read_file_exact_valid_rate"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    },
+    {
+      "group": "tradeoff_watch_thresholds",
+      "rule_id": "no_anchor_exact_valid_share_lt_0_75",
+      "description": "No-anchor exact-valid share below this level enters watch.",
+      "metric_id": "no_anchor_exact_valid_share",
+      "metric_path": null,
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 0.75,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": null,
+      "baseline_metric_path": null,
+      "baseline_value": null,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'no_anchor_exact_valid_share' not found in summary",
+      "missing_metric_ids": [
+        "no_anchor_exact_valid_share"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    },
+    {
+      "group": "tradeoff_watch_thresholds",
+      "rule_id": "direct_answer_substitution_delta_gt_3",
+      "description": "Material rebound in direct-answer substitution versus baseline.",
+      "metric_id": "direct_answer_substitution_count",
+      "metric_path": null,
+      "basis": "delta_vs_baseline",
+      "comparator": "gt",
+      "threshold": 3.0,
+      "tolerance": 1e-12,
+      "current_value": null,
+      "baseline_metric_id": "direct_answer_substitution_count",
+      "baseline_metric_path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+      "baseline_value": 11.0,
+      "evaluated_value": null,
+      "triggered": null,
+      "computable": false,
+      "status": "noncomputable",
+      "reason": "eval_summary: required metric 'direct_answer_substitution_count' not found in summary",
+      "missing_metric_ids": [
+        "direct_answer_substitution_count"
+      ],
+      "missing_metric_sides": [
+        "eval_summary"
+      ]
+    }
+  ],
+  "noncomputable_policy_applied": {
+    "missing_baseline_policy": "fail_fast",
+    "noncomputable_status": "halt_progression",
+    "noncomputable_rule_count": 9,
+    "noncomputable_metric_count": 8
+  },
+  "rule_evaluation": {
+    "hard_invariants": [
+      {
+        "group": "hard_invariants",
+        "rule_id": "no_call_correctness_aggregate_lt_1_0",
+        "description": "No-call aggregate correctness must remain exactly 1.0.",
+        "metric_id": "no_call_correctness_aggregate",
+        "metric_path": null,
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 1.0,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'no_call_correctness_aggregate' not found in summary",
+        "missing_metric_ids": [
+          "no_call_correctness_aggregate"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      },
+      {
+        "group": "hard_invariants",
+        "rule_id": "no_call_correctness_adversarial_lt_1_0",
+        "description": "No-call adversarial correctness must remain exactly 1.0.",
+        "metric_id": "no_call_correctness_adversarial",
+        "metric_path": null,
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 1.0,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'no_call_correctness_adversarial' not found in summary",
+        "missing_metric_ids": [
+          "no_call_correctness_adversarial"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      },
+      {
+        "group": "hard_invariants",
+        "rule_id": "wrapper_leakage_gt_0",
+        "description": "Wrapper leakage must remain zero.",
+        "metric_id": "wrapper_leakage_overall",
+        "metric_path": null,
+        "basis": "absolute",
+        "comparator": "gt",
+        "threshold": 0.0,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'wrapper_leakage_overall' not found in summary",
+        "missing_metric_ids": [
+          "wrapper_leakage_overall"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      }
+    ],
+    "catastrophic_thresholds": [
+      {
+        "group": "catastrophic_thresholds",
+        "rule_id": "invalid_json_overall_gte_0_35",
+        "description": "Invalid JSON above this threshold is catastrophic.",
+        "metric_id": "invalid_json_overall",
+        "metric_path": null,
+        "basis": "absolute",
+        "comparator": "gte",
+        "threshold": 0.35,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'invalid_json_overall' not found in summary",
+        "missing_metric_ids": [
+          "invalid_json_overall"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      },
+      {
+        "group": "catastrophic_thresholds",
+        "rule_id": "read_file_exact_valid_rate_lt_0_40",
+        "description": "Read-file exact-valid collapse threshold.",
+        "metric_id": "read_file_exact_valid_rate",
+        "metric_path": null,
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 0.4,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'read_file_exact_valid_rate' not found in summary",
+        "missing_metric_ids": [
+          "read_file_exact_valid_rate"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      },
+      {
+        "group": "catastrophic_thresholds",
+        "rule_id": "read_file_symbol_name_exact_valid_rate_lt_0_40",
+        "description": "Read-file symbol-name exact-valid collapse threshold.",
+        "metric_id": "read_file_symbol_name_exact_valid_rate",
+        "metric_path": null,
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 0.4,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'read_file_symbol_name_exact_valid_rate' not found in summary",
+        "missing_metric_ids": [
+          "read_file_symbol_name_exact_valid_rate"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      }
+    ],
+    "tradeoff_watch_thresholds": [
+      {
+        "group": "tradeoff_watch_thresholds",
+        "rule_id": "read_file_exact_valid_rate_lt_0_70",
+        "description": "Read-file exact-valid watch threshold.",
+        "metric_id": "read_file_exact_valid_rate",
+        "metric_path": null,
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 0.7,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'read_file_exact_valid_rate' not found in summary",
+        "missing_metric_ids": [
+          "read_file_exact_valid_rate"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      },
+      {
+        "group": "tradeoff_watch_thresholds",
+        "rule_id": "no_anchor_exact_valid_share_lt_0_75",
+        "description": "No-anchor exact-valid share below this level enters watch.",
+        "metric_id": "no_anchor_exact_valid_share",
+        "metric_path": null,
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 0.75,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'no_anchor_exact_valid_share' not found in summary",
+        "missing_metric_ids": [
+          "no_anchor_exact_valid_share"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      },
+      {
+        "group": "tradeoff_watch_thresholds",
+        "rule_id": "direct_answer_substitution_delta_gt_3",
+        "description": "Material rebound in direct-answer substitution versus baseline.",
+        "metric_id": "direct_answer_substitution_count",
+        "metric_path": null,
+        "basis": "delta_vs_baseline",
+        "comparator": "gt",
+        "threshold": 3.0,
+        "tolerance": 1e-12,
+        "current_value": null,
+        "baseline_metric_id": "direct_answer_substitution_count",
+        "baseline_metric_path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "baseline_value": 11.0,
+        "evaluated_value": null,
+        "triggered": null,
+        "computable": false,
+        "status": "noncomputable",
+        "reason": "eval_summary: required metric 'direct_answer_substitution_count' not found in summary",
+        "missing_metric_ids": [
+          "direct_answer_substitution_count"
+        ],
+        "missing_metric_sides": [
+          "eval_summary"
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "hard_invariant_violations": [],
+    "catastrophic_triggers": [],
+    "tradeoff_watch_warnings": [],
+    "noncomputable_rules": [
+      "no_call_correctness_aggregate_lt_1_0",
+      "no_call_correctness_adversarial_lt_1_0",
+      "wrapper_leakage_gt_0",
+      "invalid_json_overall_gte_0_35",
+      "read_file_exact_valid_rate_lt_0_40",
+      "read_file_symbol_name_exact_valid_rate_lt_0_40",
+      "read_file_exact_valid_rate_lt_0_70",
+      "no_anchor_exact_valid_share_lt_0_75",
+      "direct_answer_substitution_delta_gt_3"
+    ],
+    "missing_baseline_policy": "fail_fast"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}
