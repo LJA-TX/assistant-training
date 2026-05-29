@@ -1,0 +1,175 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "iteration": "stage_b_v1_geometry_sweep_matrix",
+  "phase": "design_only_readonly",
+  "axes": {
+    "no_call_pressure": {
+      "levels": {
+        "low": {
+          "exposure_units": 10,
+          "unit": "contrastive_no_call_rows_equivalent"
+        },
+        "medium": {
+          "exposure_units": 13,
+          "unit": "contrastive_no_call_rows_equivalent"
+        },
+        "high": {
+          "exposure_units": 16,
+          "unit": "contrastive_no_call_rows_equivalent"
+        }
+      }
+    },
+    "read_file_counterweight": {
+      "levels": {
+        "low": {
+          "exposure_units": 0,
+          "unit": "read_file_symbol_name_rows"
+        },
+        "medium": {
+          "exposure_units": 6,
+          "unit": "read_file_symbol_name_rows"
+        },
+        "high": {
+          "exposure_units": 10,
+          "unit": "read_file_symbol_name_rows"
+        }
+      }
+    },
+    "valid_rg_search_contrastive": {
+      "level_policy": "derived_from_no_call_pressure",
+      "pairing_rule": "malformed_to_valid_1_to_1",
+      "exposure_units_formula": "equal_to_no_call_exposure_units"
+    },
+    "uncertainty_conditioning": {
+      "default_level": "zero",
+      "exposure_units": 0,
+      "inclusion_rule": "only_if_explicitly_approved"
+    }
+  },
+  "full_conceptual_grid": [
+    {
+      "cell_id": "L_L",
+      "no_call_level": "low",
+      "read_file_level": "low"
+    },
+    {
+      "cell_id": "L_M",
+      "no_call_level": "low",
+      "read_file_level": "medium"
+    },
+    {
+      "cell_id": "L_H",
+      "no_call_level": "low",
+      "read_file_level": "high"
+    },
+    {
+      "cell_id": "M_L",
+      "no_call_level": "medium",
+      "read_file_level": "low"
+    },
+    {
+      "cell_id": "M_M",
+      "no_call_level": "medium",
+      "read_file_level": "medium"
+    },
+    {
+      "cell_id": "M_H",
+      "no_call_level": "medium",
+      "read_file_level": "high"
+    },
+    {
+      "cell_id": "H_L",
+      "no_call_level": "high",
+      "read_file_level": "low"
+    },
+    {
+      "cell_id": "H_M",
+      "no_call_level": "high",
+      "read_file_level": "medium"
+    },
+    {
+      "cell_id": "H_H",
+      "no_call_level": "high",
+      "read_file_level": "high"
+    }
+  ],
+  "smallest_useful_sweep": {
+    "strategy": "threshold_bracketing_then_counterweight_stress",
+    "execution_order": [
+      "L_H",
+      "M_H",
+      "H_H",
+      "H_M",
+      "H_L"
+    ],
+    "cells": [
+      {
+        "cell_id": "L_H",
+        "exposures": {
+          "no_call": 10,
+          "read_file_symbol_name": 10,
+          "rg_valid_contrastive": 10,
+          "uncertainty": 0
+        },
+        "expected_signal": "read_file-safe anchor point with likely no-call under-restoration"
+      },
+      {
+        "cell_id": "M_H",
+        "exposures": {
+          "no_call": 13,
+          "read_file_symbol_name": 10,
+          "rg_valid_contrastive": 13,
+          "uncertainty": 0
+        },
+        "expected_signal": "probable threshold-near regime"
+      },
+      {
+        "cell_id": "H_H",
+        "exposures": {
+          "no_call": 16,
+          "read_file_symbol_name": 10,
+          "rg_valid_contrastive": 16,
+          "uncertainty": 0
+        },
+        "expected_signal": "tests whether high counterweight can neutralize high no-call pressure"
+      },
+      {
+        "cell_id": "H_M",
+        "exposures": {
+          "no_call": 16,
+          "read_file_symbol_name": 6,
+          "rg_valid_contrastive": 16,
+          "uncertainty": 0
+        },
+        "expected_signal": "tests current counterbalanced-like counterweight adequacy at high no-call"
+      },
+      {
+        "cell_id": "H_L",
+        "exposures": {
+          "no_call": 16,
+          "read_file_symbol_name": 0,
+          "rg_valid_contrastive": 16,
+          "uncertainty": 0
+        },
+        "expected_signal": "high-risk collapse control consistent with prior nocall-like behavior"
+      }
+    ]
+  },
+  "catastrophic_halt_triggers": {
+    "invalid_json_overall_gt": 0.3,
+    "wrapper_leakage_gt": 0.0,
+    "read_file_exact_valid_lt": 0.3,
+    "read_file_symbol_name_exact_valid_lt": 0.2
+  },
+  "notes": {
+    "read_file_as_dependent_variable": "Read_file exact-valid is measured as dependent variable during sweep; not a hard-stop unless catastrophic trigger fires.",
+    "uncertainty_default": "zero_for_stage_b_v1_geometry_mapping"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

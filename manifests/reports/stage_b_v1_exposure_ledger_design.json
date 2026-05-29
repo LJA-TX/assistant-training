@@ -1,0 +1,143 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "iteration": "stage_b_v1_exposure_ledger_design",
+  "phase": "reconnaissance_design_only",
+  "objective": "Design auditable declared-vs-realized exposure accounting for geometry mapping runs.",
+  "current_state": {
+    "declared_exposure_ledger_exists": false,
+    "realized_exposure_ledger_exists": false,
+    "available_inputs": [
+      "train_rows_and_val_rows_loaded_pre_training (scripts/train_lora_sft.py:651-652)",
+      "row_metadata_present_in_dataset_jsonl",
+      "config_and_manifest_provenance_available"
+    ],
+    "missing_inputs": [
+      "normalized_geometry_metadata_contract",
+      "sampler_index_capture",
+      "drift_detection_between_declared_and_realized"
+    ]
+  },
+  "recommendations": {
+    "ledger_artifacts": [
+      {
+        "artifact": "exposure_ledger_declared.json",
+        "purpose": "Record intended exposure budget by axis/family/archetype at run start.",
+        "required_fields": [
+          "geometry_schema_version",
+          "sweep_id",
+          "cell_id",
+          "weighting_mode",
+          "declared_exposure_units_total",
+          "declared_exposure_by_axis",
+          "declared_exposure_by_family",
+          "declared_exposure_by_archetype",
+          "declared_pair_integrity_checks"
+        ]
+      },
+      {
+        "artifact": "exposure_ledger_realized.json",
+        "purpose": "Record actual sampled exposure realized by training sampler.",
+        "required_fields": [
+          "sampler_type",
+          "sampler_seed",
+          "num_samples_per_epoch",
+          "realized_exposure_by_axis",
+          "realized_exposure_by_family",
+          "realized_exposure_by_archetype",
+          "realized_pair_integrity_checks",
+          "epoch_rollups"
+        ]
+      },
+      {
+        "artifact": "exposure_ledger_drift.json",
+        "purpose": "Compare declared and realized exposures with threshold-based drift flags.",
+        "required_fields": [
+          "declared_vs_realized_axis_delta",
+          "declared_vs_realized_family_delta",
+          "declared_vs_realized_archetype_delta",
+          "max_abs_delta",
+          "drift_flags",
+          "drift_policy"
+        ]
+      }
+    ],
+    "computation_model": {
+      "declared": {
+        "source": "dataset_rows_and_geometry_weights_before_trainer_init",
+        "granularity": "row_level_then_aggregate",
+        "index_binding": "stable_train_index_0based"
+      },
+      "realized": {
+        "source": "sampler_output_indices",
+        "granularity": "per_step_optional_per_epoch_required",
+        "aggregation": "index_to_geometry_lookup_then_groupby"
+      },
+      "drift": {
+        "formula": "(realized_share - declared_share)",
+        "recommended_flag_threshold_abs": 0.02
+      }
+    },
+    "normalization_strategy": {
+      "need": "current metadata keys are iteration-specific",
+      "proposal": "build_normalized_geometry_view(row.metadata)",
+      "fallback_order_examples": [
+        "family: geometry_family -> i10r_counterbalanced_family -> i10r_residual_nocall_family -> intervention_i10_family -> intervention_targeted_family",
+        "archetype: geometry_archetype -> i10r_counterbalanced_query_archetype -> i10r_residual_nocall_query_archetype -> intervention_i10_query_archetype"
+      ]
+    },
+    "artifact_integration_points": [
+      {
+        "path": "resolved_config.json",
+        "add": [
+          "declared_exposure_ledger_path",
+          "geometry_context_hash"
+        ]
+      },
+      {
+        "path": "training_summary.json",
+        "add": [
+          "realized_exposure_ledger_path",
+          "exposure_drift_ledger_path",
+          "max_exposure_drift_abs",
+          "exposure_drift_flag"
+        ]
+      }
+    ]
+  },
+  "implementation_complexity": {
+    "overall": "medium",
+    "declared_ledger": "low",
+    "realized_ledger": "medium",
+    "drift_analysis": "low_to_medium",
+    "normalization_adapter": "medium"
+  },
+  "reproducibility_risks": [
+    {
+      "risk": "unstable_index_binding_after_row_reordering",
+      "impact": "high",
+      "mitigation": "hash_row_content_and_store_row_hash_per_index"
+    },
+    {
+      "risk": "mixed legacy metadata schemas",
+      "impact": "medium",
+      "mitigation": "schema versioning and explicit fallback precedence"
+    },
+    {
+      "risk": "partial realized logging under failures",
+      "impact": "medium",
+      "mitigation": "flush epoch rollups and last-known counters atomically"
+    }
+  ],
+  "doctrine_concerns": [
+    "geometry claims without realized exposure evidence are non-defensible",
+    "drift thresholds must be predeclared, not tuned post hoc",
+    "pair integrity (malformed vs valid contrastive balance) must be audited explicitly"
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

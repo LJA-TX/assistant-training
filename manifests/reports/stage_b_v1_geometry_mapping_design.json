@@ -1,0 +1,200 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "iteration": "stage_b_v1_geometry_mapping_design",
+  "phase": "design_only_readonly",
+  "execution_authorized": false,
+  "scientific_question": "Estimate minimum no-call adversarial exposure for no_call_correctness==1.0 and required read_file symbol-name counterweight to prevent read_file collapse.",
+  "baseline_evidence": {
+    "i10r_microprobe": {
+      "no_call_correctness_aggregate": 0.9166666666666666,
+      "no_call_correctness_adversarial": 0.75,
+      "read_file_exact_valid": 0.7037037037037037,
+      "read_file_symbol_name_exact_valid": 0.8461538461538461
+    },
+    "i10r_nocall_probe": {
+      "no_call_correctness_aggregate": 1.0,
+      "no_call_correctness_adversarial": 1.0,
+      "read_file_exact_valid": 0.25925925925925924,
+      "read_file_symbol_name_exact_valid": 0.0
+    },
+    "i10r_counterbalanced_probe": {
+      "no_call_correctness_aggregate": 0.9666666666666667,
+      "no_call_correctness_adversarial": 0.9,
+      "read_file_exact_valid": 0.7037037037037037,
+      "read_file_symbol_name_exact_valid": 0.9230769230769231
+    },
+    "i10r_residual_nocall_probe": {
+      "no_call_correctness_aggregate": 1.0,
+      "no_call_correctness_adversarial": 1.0,
+      "read_file_exact_valid": 0.25925925925925924,
+      "read_file_symbol_name_exact_valid": 0.23076923076923078
+    }
+  },
+  "interpretation": {
+    "geometry_mapping_scientifically_justified": true,
+    "primary_regime": "calibration_coupling_between_no_call_integrity_and_read_file_procedural_commitment",
+    "not_primary_regime": "ordinary_data_deficiency"
+  },
+  "sweep_variables": {
+    "independent": [
+      "no_call_adversarial_family_exposure",
+      "read_file_symbol_name_exposure",
+      "valid_rg_search_contrastive_exposure",
+      "uncertainty_conditioning_exposure"
+    ],
+    "dependent": [
+      "read_file_exact_valid",
+      "read_file_symbol_name_exact_valid",
+      "direct_answer_substitution_share",
+      "exact_valid_overall",
+      "invalid_json_overall"
+    ],
+    "uncertainty_conditioning_default": 0,
+    "uncertainty_conditioning_inclusion_policy": "must_be_explicitly_justified"
+  },
+  "grid_definition": {
+    "no_call_pressure_levels": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "read_file_counterweight_levels": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  "minimum_useful_sweep": {
+    "strategy": "five_point_bracketed_sweep",
+    "cells": [
+      "L_H",
+      "M_H",
+      "H_H",
+      "H_M",
+      "H_L"
+    ],
+    "reasoning": "Brackets no-call threshold then stress-tests counterweight sufficiency with minimal run count and clear attribution."
+  },
+  "exposure_levels_design_targets": {
+    "no_call_adversarial_family_exposure": {
+      "low": 10,
+      "medium": 13,
+      "high": 16,
+      "unit": "contrastive_no_call_rows_equivalent"
+    },
+    "read_file_symbol_name_exposure": {
+      "low": 0,
+      "medium": 6,
+      "high": 10,
+      "unit": "symbol_name_counterweight_rows"
+    },
+    "valid_rg_search_contrastive_exposure": {
+      "policy": "maintain_1_to_1_pairing_with_no_call_rows",
+      "unit": "valid_contrastive_rows"
+    },
+    "uncertainty_conditioning_exposure": {
+      "default": 0,
+      "unit": "rows"
+    }
+  },
+  "weighting_options_assessment": {
+    "sampler_weighting": {
+      "recommended": true,
+      "requires_trainer_change": true,
+      "notes": "Preferred long-term for clean exposure geometry."
+    },
+    "row_duplication": {
+      "recommended": "temporary_only",
+      "requires_trainer_change": false,
+      "notes": "Acceptable only with strict cap and explicit exposure-accounting artifacts."
+    },
+    "curriculum_staging": {
+      "recommended": "secondary",
+      "requires_trainer_change": false,
+      "notes": "Useful after first threshold localization."
+    },
+    "loss_weighting": {
+      "recommended": false,
+      "requires_trainer_change": true,
+      "notes": "Higher interpretability risk; defer."
+    },
+    "dataset_composition_variants": {
+      "recommended": true,
+      "requires_trainer_change": false,
+      "notes": "Most operationally compatible immediately."
+    }
+  },
+  "required_trainer_or_instrumentation_changes": {
+    "trainer_current_limits": [
+      "no_weighted_sampler_hook",
+      "no_sample_weight_ingestion",
+      "no_realized_exposure_logging_by_family"
+    ],
+    "design_changes": [
+      "add_optional_deterministic_weighted_sampler",
+      "add_geometry_weight_ingestion_from_metadata_or_sidecar",
+      "emit_effective_exposure_by_axis_and_family_per_epoch",
+      "emit_cell_manifest_linkage_in_resolved_config_and_training_summary"
+    ]
+  },
+  "safest_first_implementation_path": {
+    "step_1": "Implement exposure instrumentation and audit artifacts with no training.",
+    "step_2": "If weighting hook unavailable, execute smallest sweep via declared composition variants or capped duplication.",
+    "step_3": "After weighting hook exists, repeat same sweep topology using sampler weighting for cleaner attribution."
+  },
+  "hard_invariants": [
+    "wrapper_leakage_eq_0",
+    "contamination_overlap_heldout_and_tool_holdout_eq_0",
+    "canonical_eval_topology_unchanged",
+    "uncertainty_conditioning_default_zero_unless_approved",
+    "catastrophic_invalid_json_overall_gt_0_30_triggers_halt"
+  ],
+  "measured_tradeoff_variables": [
+    "no_call_correctness_aggregate",
+    "no_call_correctness_adversarial",
+    "read_file_exact_valid",
+    "read_file_symbol_name_exact_valid",
+    "direct_answer_substitution_share",
+    "no_anchor_exact_valid_share",
+    "exact_valid_overall",
+    "invalid_json_overall"
+  ],
+  "explicit_answers": {
+    "1_is_geometry_mapping_scientifically_justified_now": true,
+    "2_smallest_useful_sweep": "five_point_bracketed_sweep_L_H_M_H_H_H_H_M_H_L",
+    "3_missing_instrumentation": [
+      "effective_exposure_ledger",
+      "declared_vs_realized_exposure_tracking",
+      "cell_id_axis_metadata_propagation",
+      "automated_pareto_metrics_bundle",
+      "catastrophic_collapse_detector"
+    ],
+    "4_should_sampler_or_loss_weighting_be_implemented_before_another_run": "sampler_weighting_yes_if_feasible_loss_weighting_no",
+    "5_is_row_duplication_acceptable_temporary": "yes_but_confounded_use_temporarily_with_strict_caps_and_audit",
+    "6_stable_pareto_improvement_definition": "no_call_aggregate_and_adversarial_eq_1_with_read_file_floors_no_wrapper_leakage_and_overall_metrics_within_bounds_reproducible",
+    "7_hard_invariants": [
+      "wrapper_leakage_eq_0",
+      "contamination_eq_0",
+      "eval_topology_unchanged",
+      "uncertainty_default_zero",
+      "catastrophic_parse_halt"
+    ],
+    "8_measured_tradeoff_variables": [
+      "no_call_correctness",
+      "read_file_exact_valid",
+      "read_file_symbol_name_exact_valid",
+      "direct_answer_substitution",
+      "no_anchor_exact_valid",
+      "exact_valid_overall",
+      "invalid_json_overall"
+    ],
+    "9_recommended_next_executable_phase": "instrumentation_implementation_only_no_training"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

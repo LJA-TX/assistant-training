@@ -1,0 +1,179 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "iteration": "stage_b_v1_exposure_weighting_instrumentation_plan",
+  "phase": "design_only_readonly",
+  "objective": "Define auditable exposure-accounting and weighting instrumentation for no-call/read_file geometry mapping.",
+  "constraints": {
+    "no_training": true,
+    "no_eval_rerun": true,
+    "no_dataset_mutation": true,
+    "no_trainer_code_edit_in_this_phase": true
+  },
+  "current_state": {
+    "trainer_weighted_sampler_supported": false,
+    "trainer_sample_weight_ingestion_supported": false,
+    "effective_exposure_logging_supported": false,
+    "evidence": "scripts/train_lora_sft.py constructs Trainer(train_dataset=...) without weighted sampler or per-sample weighting path."
+  },
+  "instrumentation_gaps": [
+    {
+      "gap_id": "effective_exposure_accounting",
+      "description": "No run artifact reports declared and realized exposure by axis/family/archetype."
+    },
+    {
+      "gap_id": "cell_traceability",
+      "description": "No standardized cell identifier linking sweep design cell to run outputs."
+    },
+    {
+      "gap_id": "weighting_traceability",
+      "description": "No manifest-level declaration of weighting mode, multipliers, and deterministic seed behavior."
+    },
+    {
+      "gap_id": "dependent_variable_safeguard",
+      "description": "No automatic catastrophic-collapse detector for read_file dependent-variable handling during geometry mapping."
+    },
+    {
+      "gap_id": "pareto_bundle",
+      "description": "No single artifact consolidating all Pareto frontier metrics for each sweep cell."
+    }
+  ],
+  "proposed_artifacts": [
+    {
+      "artifact": "geometry_sweep_manifest.json",
+      "purpose": "Declare per-cell intended exposures, weighting mode, and invariants.",
+      "required_fields": [
+        "sweep_id",
+        "cell_id",
+        "no_call_level",
+        "read_file_level",
+        "rg_contrastive_level",
+        "uncertainty_level",
+        "weighting_mode",
+        "intended_exposure_units",
+        "hard_invariants"
+      ]
+    },
+    {
+      "artifact": "row_exposure_schema",
+      "purpose": "Standardize row-level geometry tags for compositional or weighted execution.",
+      "required_fields": [
+        "geometry_axis_tags",
+        "geometry_cell_candidates",
+        "geometry_family",
+        "geometry_archetype",
+        "geometry_base_weight",
+        "geometry_duplication_factor"
+      ]
+    },
+    {
+      "artifact": "exposure_audit_summary.json",
+      "purpose": "Capture declared vs realized exposure counts and shares by axis/family.",
+      "required_fields": [
+        "declared_exposure_by_axis",
+        "realized_exposure_by_axis",
+        "declared_exposure_by_family",
+        "realized_exposure_by_family",
+        "exposure_drift_flags",
+        "sampler_seed",
+        "epoch_level_rollup"
+      ]
+    },
+    {
+      "artifact": "geometry_cell_metrics.json",
+      "purpose": "One-cell metrics bundle used for Pareto comparison.",
+      "required_fields": [
+        "cell_id",
+        "no_call_correctness_aggregate",
+        "no_call_correctness_adversarial",
+        "read_file_exact_valid",
+        "read_file_symbol_name_exact_valid",
+        "scalar_substitution_share",
+        "direct_answer_substitution_share",
+        "no_anchor_exact_valid_share",
+        "wrapper_leakage",
+        "exact_valid_overall",
+        "invalid_json_overall",
+        "catastrophic_flags"
+      ]
+    }
+  ],
+  "implementation_modes": {
+    "sampler_weighting": {
+      "supported_now": false,
+      "design": {
+        "sampler": "deterministic_weighted_random_sampler",
+        "weights_source": "row_metadata_or_sidecar",
+        "logging": "per_epoch_realized_indices_and_family_rollup"
+      },
+      "priority": 1
+    },
+    "row_duplication": {
+      "supported_now": true,
+      "design_constraints": {
+        "max_duplication_factor_per_row": 2,
+        "must_preserve_contrastive_pair_balance": true,
+        "must_emit_declared_exposure_manifest": true,
+        "must_emit_duplication_lineage_metadata": true
+      },
+      "priority": 2
+    },
+    "curriculum_staging": {
+      "supported_now": true,
+      "design_constraints": {
+        "stage_order_fixed_per_cell": true,
+        "stage_transition_logging_required": true,
+        "no_hidden_dynamic_stage_transitions": true
+      },
+      "priority": 3
+    },
+    "loss_weighting": {
+      "supported_now": false,
+      "design_status": "defer",
+      "reason": "High interpretability risk and stronger confounding with optimization dynamics."
+    },
+    "dataset_composition_variants": {
+      "supported_now": true,
+      "design_constraints": {
+        "family_localization_required": true,
+        "no_global_rewrites": true,
+        "declared_row_budget_required": true
+      },
+      "priority": 1
+    }
+  },
+  "catastrophic_collapse_policy": {
+    "read_file_exact_valid_catastrophic_floor": 0.3,
+    "read_file_symbol_name_exact_valid_catastrophic_floor": 0.2,
+    "invalid_json_overall_catastrophic_ceiling": 0.3,
+    "action_if_triggered": "halt_cell_progression_and_mark_cell_non_comparable"
+  },
+  "safest_first_path": {
+    "recommended": "instrumentation_then_composition_sweep_then_sampler_weighting",
+    "sequence": [
+      "Add exposure-ledger and cell-traceability artifacts (no training).",
+      "Run smallest geometry sweep with declared composition variants or capped duplication if sampler not yet available.",
+      "Implement sampler weighting and repeat same sweep topology for cleaner attribution."
+    ]
+  },
+  "recommended_next_executable_phase": {
+    "phase_name": "stage_b_v1_geometry_instrumentation_implementation",
+    "scope": "code_only_instrumentation",
+    "allowed_actions": [
+      "trainer_instrumentation_changes",
+      "manifest_schema_additions",
+      "reporting_script_updates"
+    ],
+    "disallowed_actions": [
+      "training",
+      "eval_reruns",
+      "dataset_generation_or_mutation"
+    ]
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

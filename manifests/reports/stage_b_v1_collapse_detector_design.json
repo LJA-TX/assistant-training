@@ -1,0 +1,139 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "iteration": "stage_b_v1_collapse_detector_design",
+  "phase": "reconnaissance_design_only",
+  "objective": "Define minimal architecture for catastrophic-threshold monitoring and standardized collapse/gate reporting.",
+  "current_state": {
+    "raw_metric_source": {
+      "script": "scripts/eval_canonical_manifest.py",
+      "outputs": [
+        "summary.json",
+        "comparison_rows.jsonl"
+      ],
+      "collapse_logic_embedded": false
+    },
+    "existing_collapse_outputs": {
+      "examples": [
+        "stage_b_v1_i10r_counterbalanced_probe_collapse_watch_interpretation.json",
+        "stage_b_v1_i10r_residual_nocall_probe_collapse_watch_interpretation.json"
+      ],
+      "generation_pattern": "artifact_present_but_no_single_reusable_engine_identified"
+    },
+    "threshold_policy_sources": [
+      "stage_b_v1_i10_collapse_watch_plan.json",
+      "probe-specific_readiness_criteria_json"
+    ]
+  },
+  "recommendations": {
+    "architecture": {
+      "component_1": {
+        "name": "collapse_threshold_profile",
+        "type": "versioned_json",
+        "contains": [
+          "hard_invariants",
+          "catastrophic_thresholds",
+          "tradeoff_metric_floors_or_ceilings",
+          "status_decision_rules"
+        ]
+      },
+      "component_2": {
+        "name": "post_eval_collapse_detector_reporter",
+        "type": "standalone_script",
+        "inputs": [
+          "canonical_eval_summary_json",
+          "optional_baseline_summary_json",
+          "threshold_profile_json",
+          "optional_geometry_context_json"
+        ],
+        "outputs": [
+          "collapse_watch_interpretation.json",
+          "gate_assessment.json"
+        ]
+      },
+      "component_3": {
+        "name": "manifest_linker",
+        "type": "report_index_update",
+        "purpose": "Attach detector outputs to run manifest for lineage traversal"
+      }
+    },
+    "minimal_threshold_set_for_geometry_phase": {
+      "hard_invariants": {
+        "wrapper_leakage_eq": 0.0,
+        "no_call_correctness_aggregate_eq": 1.0,
+        "no_call_correctness_adversarial_eq": 1.0
+      },
+      "catastrophic": {
+        "invalid_json_overall_gt": 0.3,
+        "read_file_exact_valid_lt": 0.3,
+        "read_file_symbol_name_exact_valid_lt": 0.2
+      },
+      "tradeoff_watch": {
+        "read_file_exact_valid_floor": 0.65,
+        "read_file_symbol_name_exact_valid_floor": 0.7,
+        "scalar_substitution_share_ceiling": 0.05,
+        "direct_answer_delta_ceiling_vs_baseline": 0.05,
+        "no_anchor_exact_valid_share_floor": 0.75
+      }
+    },
+    "insertion_points": [
+      {
+        "path": "scripts/eval_canonical_manifest.py",
+        "line_region": "686-698",
+        "change_type": "optionally_echo_threshold_profile_id_and_geometry_context",
+        "note": "keep_eval_script_non_gating"
+      },
+      {
+        "path": "new_post_eval_detector_script",
+        "change_type": "compute_triggers_and_emit_status",
+        "note": "recommended_primary_location_for_collapse_logic"
+      }
+    ],
+    "status_levels": [
+      "pass",
+      "watch",
+      "halt_progression",
+      "catastrophic_halt"
+    ],
+    "geometry_phase_policy": {
+      "read_file_role": "dependent_variable",
+      "default_behavior": "measured_tradeoff_not_immediate_hard_stop",
+      "exception": "catastrophic_threshold_trigger"
+    }
+  },
+  "implementation_complexity": {
+    "overall": "medium",
+    "threshold_profile_spec": "low",
+    "detector_reporter": "medium",
+    "manifest_linking": "low",
+    "backfill_for_historical_runs": "optional_medium"
+  },
+  "reproducibility_risks": [
+    {
+      "risk": "baseline_reference_ambiguity",
+      "impact": "high",
+      "mitigation": "require_explicit_baseline_path_or_manifest_pointer"
+    },
+    {
+      "risk": "threshold_profile_drift_across_runs",
+      "impact": "high",
+      "mitigation": "versioned_threshold_profile_id_and_hash"
+    },
+    {
+      "risk": "metric_name_mismatch_across_summary_formats",
+      "impact": "medium",
+      "mitigation": "strict_input_schema_validation"
+    }
+  ],
+  "doctrine_concerns": [
+    "collapse decisions must be policy-driven, explicit, and reproducible",
+    "do not silently convert tradeoff metrics into hard gates during geometry mapping",
+    "hard invariants (wrapper leakage, contamination, eval topology) remain fixed constraints"
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

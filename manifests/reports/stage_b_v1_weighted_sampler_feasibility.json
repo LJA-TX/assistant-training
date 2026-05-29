@@ -1,0 +1,109 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "iteration": "stage_b_v1_weighted_sampler_feasibility",
+  "phase": "reconnaissance_design_only",
+  "current_state": {
+    "trainer_script": "scripts/train_lora_sft.py",
+    "current_sampler_behavior": "default_transformers_trainer_sampler",
+    "evidence": [
+      "Trainer instantiated directly at scripts/train_lora_sft.py:725-732",
+      "No custom sampler arguments or subclass hooks present"
+    ],
+    "runtime_versions": {
+      "transformers": "5.9.0",
+      "torch": "2.12.0+cu130",
+      "peft": "0.19.1"
+    },
+    "trainer_extension_points_observed": {
+      "get_train_dataloader": "available",
+      "_get_train_sampler": "available",
+      "default_sampler_modes": [
+        "group_by_length",
+        "sequential",
+        "random"
+      ]
+    }
+  },
+  "feasibility_assessment": {
+    "deterministic_weighted_sampler_possible": true,
+    "minimal_approach": "subclass_Trainer_and_override__get_train_sampler",
+    "candidate_sampler": "torch.utils.data.WeightedRandomSampler",
+    "single_process_feasibility": "high",
+    "distributed_safe_feasibility": "moderate_with_additional_controls"
+  },
+  "recommended_design": {
+    "phase_1": {
+      "goal": "no_behavior_change_instrumentation",
+      "actions": [
+        "define_weight_source_contract",
+        "validate_weights_shape_and_nonnegativity",
+        "emit_declared_weight_digest"
+      ]
+    },
+    "phase_2": {
+      "goal": "deterministic_weighted_sampling_enablement",
+      "actions": [
+        "introduce_custom_trainer_class",
+        "inject_weighted_sampler_when_enabled",
+        "seed_sampler_generator_from_config_seed"
+      ]
+    },
+    "phase_3": {
+      "goal": "realized_exposure_audit",
+      "actions": [
+        "capture_sampled_index_counts",
+        "aggregate_by_geometry_family_and_archetype",
+        "emit_declared_vs_realized_drift_report"
+      ]
+    }
+  },
+  "implementation_complexity": {
+    "overall": "medium",
+    "components": {
+      "trainer_subclass_and_sampler_injection": "medium",
+      "sampler_seed_control": "low",
+      "realized_index_accounting": "medium",
+      "distributed_rank_safe_behavior": "medium_high"
+    },
+    "not_implemented_in_this_phase": true
+  },
+  "reproducibility_risks": [
+    {
+      "risk": "seed_scope_mismatch_between_python_torch_and_sampler_generator",
+      "impact": "high",
+      "mitigation": "explicit_single_seed_fanout_and_recorded_seed_manifest"
+    },
+    {
+      "risk": "replacement_sampling_changes_effective_epoch_semantics",
+      "impact": "medium",
+      "mitigation": "explicit_num_samples_policy_and_epoch_equivalence_reporting"
+    },
+    {
+      "risk": "distributed_duplicate_sampling_if_not_rank_aware",
+      "impact": "high",
+      "mitigation": "rank_sharded_weighted_sampling_or_single_process_guard"
+    },
+    {
+      "risk": "weight_file_or_metadata_drift",
+      "impact": "medium",
+      "mitigation": "weight_digest_hash_in_resolved_config_and_training_summary"
+    }
+  ],
+  "doctrine_concerns": [
+    "weighted sampling must be fully auditable; hidden dynamic weighting is non-compliant",
+    "loss weighting should remain deferred due to attribution confounding",
+    "geometry mapping requires declared-vs-realized exposure evidence before claims"
+  ],
+  "go_no_go_recommendation": {
+    "implement_before_next_run_if_feasible": true,
+    "fallback_if_not_ready": "temporary_row_duplication_with_strict_caps_and_full_exposure_audit",
+    "loss_weighting_before_sampler": false
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

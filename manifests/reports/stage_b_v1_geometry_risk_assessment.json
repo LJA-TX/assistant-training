@@ -1,0 +1,148 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "iteration": "stage_b_v1_geometry_risk_assessment",
+  "phase": "design_only_readonly",
+  "objective": "Assess risks in Stage B v1 no-call/read_file exposure-geometry mapping and define controls.",
+  "risk_matrix": [
+    {
+      "risk_id": "R1_read_file_collapse_under_high_nocall_pressure",
+      "likelihood": "high",
+      "impact": "high",
+      "evidence": "Observed in i10r_nocall_probe and i10r_residual_nocall_probe despite no-call restoration.",
+      "mitigations": [
+        "Treat read_file metrics as dependent variables during sweep with catastrophic floors.",
+        "Pair no-call pressure with valid rg_search contrastive exposure 1:1.",
+        "Include high counterweight cells in smallest sweep (L/H, M/H, H/H)."
+      ]
+    },
+    {
+      "risk_id": "R2_false_attribution_without_exposure_accounting",
+      "likelihood": "high",
+      "impact": "high",
+      "evidence": "Current trainer lacks weighted-sampler and realized exposure telemetry.",
+      "mitigations": [
+        "Implement exposure ledger before new runs if feasible.",
+        "Emit declared vs realized exposure by axis/family.",
+        "Attach cell_id and weighting mode in every run artifact."
+      ]
+    },
+    {
+      "risk_id": "R3_row_duplication_confounding",
+      "likelihood": "medium",
+      "impact": "medium_to_high",
+      "evidence": "Duplication can inflate lexical concentration and distort gradient budget.",
+      "mitigations": [
+        "Use duplication only as temporary approximation.",
+        "Cap per-row duplication factor to <=2.",
+        "Maintain matched contrastive pair duplication symmetry."
+      ]
+    },
+    {
+      "risk_id": "R4_uncertainty_conditioning_spillover",
+      "likelihood": "medium",
+      "impact": "high",
+      "evidence": "Prior package with uncertainty rows coincided with commitment collapse patterns.",
+      "mitigations": [
+        "Default uncertainty conditioning exposure to zero.",
+        "Require explicit justification and separate flag for any non-zero inclusion."
+      ]
+    },
+    {
+      "risk_id": "R5_frontier_instability_single_cell_success",
+      "likelihood": "medium",
+      "impact": "medium",
+      "evidence": "Single-point gains can be non-robust under calibration bifurcation regimes.",
+      "mitigations": [
+        "Require repeatability across repeated seed or neighboring cell.",
+        "Use tolerance-based stability criterion before declaring frontier."
+      ]
+    },
+    {
+      "risk_id": "R6_global_parseability_regression",
+      "likelihood": "low_to_medium",
+      "impact": "high",
+      "evidence": "Invalid JSON and payload_not_parsed shifts observed across probes.",
+      "mitigations": [
+        "Catastrophic ceiling invalid_json_overall <= 0.30.",
+        "Track direct-answer substitution and payload_not_parsed jointly per cell."
+      ]
+    }
+  ],
+  "hard_invariants": {
+    "must_hold": [
+      "wrapper_leakage_eq_0",
+      "contamination_overlap_heldout_tool_holdout_eq_0",
+      "canonical_eval_manifest_and_decode_defaults_unchanged",
+      "uncertainty_conditioning_default_zero_without_explicit_override",
+      "catastrophic_thresholds_enforced"
+    ],
+    "catastrophic_thresholds": {
+      "invalid_json_overall_gt": 0.3,
+      "read_file_exact_valid_lt": 0.3,
+      "read_file_symbol_name_exact_valid_lt": 0.2,
+      "wrapper_leakage_gt": 0.0
+    }
+  },
+  "measured_tradeoff_variables": {
+    "policy": "read_file_is_dependent_variable_during_geometry_mapping",
+    "variables": [
+      "no_call_correctness_aggregate",
+      "no_call_correctness_adversarial",
+      "read_file_exact_valid",
+      "read_file_symbol_name_exact_valid",
+      "direct_answer_substitution_share",
+      "no_anchor_exact_valid_share",
+      "exact_valid_overall",
+      "invalid_json_overall"
+    ]
+  },
+  "row_duplication_position": {
+    "acceptable_temporarily": true,
+    "status": "confounded_but_usable_with_controls",
+    "required_controls": [
+      "duplication_cap_le_2",
+      "pair_symmetry",
+      "declared_exposure_manifest",
+      "realized_exposure_audit"
+    ]
+  },
+  "sampler_loss_weighting_recommendation": {
+    "sampler_weighting_before_next_run": "recommended_if_implementation_effort_is_bounded",
+    "loss_weighting_before_next_run": "not_recommended",
+    "rationale": "Sampler weighting improves attribution with lower interpretability risk than loss weighting."
+  },
+  "stable_pareto_improvement_definition": {
+    "criteria": [
+      "no_call_aggregate_eq_1_and_no_call_adversarial_eq_1",
+      "read_file_exact_valid_gte_0.65",
+      "read_file_symbol_name_exact_valid_gte_0.70",
+      "wrapper_leakage_eq_0",
+      "scalar_substitution_share_lte_0.05",
+      "direct_answer_substitution_share_lte_baseline_plus_0.05",
+      "exact_valid_overall_gte_0.435",
+      "invalid_json_overall_lte_0.13",
+      "repeatability_confirmation"
+    ]
+  },
+  "recommended_next_executable_phase": {
+    "phase_name": "stage_b_v1_geometry_instrumentation_implementation",
+    "type": "implementation_without_execution",
+    "goals": [
+      "add_exposure_accounting_plumbing",
+      "add_cell_traceability_artifacts",
+      "prepare_weighting_paths_without_training"
+    ],
+    "prohibited": [
+      "training",
+      "eval_reruns",
+      "dataset_mutation"
+    ]
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

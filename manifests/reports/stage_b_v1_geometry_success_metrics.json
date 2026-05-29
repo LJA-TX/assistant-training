@@ -1,0 +1,156 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "iteration": "stage_b_v1_geometry_success_metrics",
+  "phase": "design_only_readonly",
+  "metric_bundle": {
+    "required_pareto_metrics": [
+      "no_call_aggregate",
+      "no_call_adversarial",
+      "read_file_exact_valid",
+      "read_file_symbol_name_exact_valid",
+      "scalar_substitution_share",
+      "direct_answer_substitution_share",
+      "no_anchor_exact_valid_share",
+      "wrapper_leakage",
+      "exact_valid_overall",
+      "invalid_json_overall"
+    ]
+  },
+  "baseline_reference": {
+    "baseline_iteration": "stage_b_llama31_8b_base_v1_i10r_microprobe",
+    "metrics": {
+      "no_call_aggregate": 0.9166666666666666,
+      "no_call_adversarial": 0.75,
+      "read_file_exact_valid": 0.7037037037037037,
+      "read_file_symbol_name_exact_valid": 0.8461538461538461,
+      "scalar_substitution_share": 0.0,
+      "direct_answer_substitution_share": 0.22641509433962265,
+      "no_anchor_exact_valid_share": 0.8620689655172413,
+      "wrapper_leakage": 0.0,
+      "exact_valid_overall": 0.435,
+      "invalid_json_overall": 0.095
+    }
+  },
+  "catastrophic_collapse_definition": {
+    "invalid_json_overall_gt": 0.3,
+    "wrapper_leakage_gt": 0.0,
+    "read_file_exact_valid_lt": 0.3,
+    "read_file_symbol_name_exact_valid_lt": 0.2,
+    "action": "halt_and_mark_cell_non_comparable"
+  },
+  "stable_pareto_improvement_criteria": {
+    "must_meet": {
+      "no_call_aggregate_eq": 1.0,
+      "no_call_adversarial_eq": 1.0,
+      "read_file_exact_valid_gte": 0.65,
+      "read_file_symbol_name_exact_valid_gte": 0.7,
+      "wrapper_leakage_eq": 0.0,
+      "scalar_substitution_share_lte": 0.05,
+      "direct_answer_substitution_share_lte": 0.27641509433962266,
+      "exact_valid_overall_gte": 0.435,
+      "invalid_json_overall_lte": 0.13,
+      "no_anchor_exact_valid_share_gte": 0.8
+    },
+    "stability_requirement": {
+      "repeatability": "same_cell_repeated_or_neighbor_cell_consistent",
+      "min_confirmations": 2,
+      "tolerance_abs": 0.02
+    }
+  },
+  "metric_roles": {
+    "hard_invariants": [
+      "wrapper_leakage",
+      "contamination_overlap",
+      "canonical_eval_topology"
+    ],
+    "tradeoff_variables": [
+      "no_call_aggregate",
+      "no_call_adversarial",
+      "read_file_exact_valid",
+      "read_file_symbol_name_exact_valid",
+      "direct_answer_substitution_share",
+      "no_anchor_exact_valid_share",
+      "exact_valid_overall",
+      "invalid_json_overall"
+    ],
+    "watchdog_variables": [
+      "scalar_substitution_share"
+    ]
+  },
+  "per_metric_objectives": [
+    {
+      "metric": "no_call_aggregate",
+      "direction": "maximize",
+      "target": 1.0
+    },
+    {
+      "metric": "no_call_adversarial",
+      "direction": "maximize",
+      "target": 1.0
+    },
+    {
+      "metric": "read_file_exact_valid",
+      "direction": "maximize",
+      "target_floor": 0.65
+    },
+    {
+      "metric": "read_file_symbol_name_exact_valid",
+      "direction": "maximize",
+      "target_floor": 0.7
+    },
+    {
+      "metric": "scalar_substitution_share",
+      "direction": "minimize",
+      "target_ceiling": 0.05
+    },
+    {
+      "metric": "direct_answer_substitution_share",
+      "direction": "minimize",
+      "target_ceiling": 0.27641509433962266
+    },
+    {
+      "metric": "no_anchor_exact_valid_share",
+      "direction": "maximize",
+      "target_floor": 0.8
+    },
+    {
+      "metric": "wrapper_leakage",
+      "direction": "minimize",
+      "target": 0.0
+    },
+    {
+      "metric": "exact_valid_overall",
+      "direction": "maximize",
+      "target_floor": 0.435
+    },
+    {
+      "metric": "invalid_json_overall",
+      "direction": "minimize",
+      "target_ceiling": 0.13
+    }
+  ],
+  "reporting_contract_per_cell": {
+    "required_fields": [
+      "cell_id",
+      "axis_levels",
+      "axis_exposure_units",
+      "all_required_pareto_metrics",
+      "catastrophic_flags",
+      "invariant_violations",
+      "pareto_status"
+    ],
+    "pareto_status_values": [
+      "dominated",
+      "non_dominated",
+      "catastrophic",
+      "candidate_frontier"
+    ]
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}
