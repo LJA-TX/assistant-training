@@ -1,0 +1,45 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T13:53:47Z",
+  "artifact": "stage_b_first_probe_governance_outcome",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_first_live_probe",
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1"
+  },
+  "preconditions": {
+    "human_authorization_go": true,
+    "start_state_checks_passed": true,
+    "preflight_passed": true,
+    "hidden_retries_permitted": false,
+    "hidden_retries_observed": false
+  },
+  "execution_gate_outcome": {
+    "status": "halted_before_eval",
+    "halt_stage": "training_startup_validation",
+    "halt_reason": "geometry_sampling sidecar geometry_mapping_identity_digest mismatch",
+    "retry_performed": false
+  },
+  "detector_pipeline": {
+    "threshold_profile_used": null,
+    "baseline_summary_used": null,
+    "geometry_context_input_used": null,
+    "collapse_watch_interpretation_emitted": false,
+    "gate_assessment_emitted": false,
+    "status_level": "not_run"
+  },
+  "governance_decision": {
+    "state": "NOT_READY",
+    "rationale": [
+      "Training did not complete; eval and detector governance stages were not executed.",
+      "Required run artifacts for realized exposure, drift, and gate assessment were not produced.",
+      "Probe packaging shows a typed digest mismatch between runtime geometry context and sidecar envelope."
+    ],
+    "allowed_next_step": "Fix sidecar/config digest contract alignment, then rerun preflight and execute one single attempt only."
+  },
+  "required_post_halt_actions": [
+    "Resolve mismatch between runtime geometry_mapping context and sidecar geometry digest envelope.",
+    "Revalidate fail-fast sidecar checks before relaunch.",
+    "Re-run full probe sequence from clean start state without hidden retries."
+  ],
+  "final_recommendation": "NOT_READY"
+}

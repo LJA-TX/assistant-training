@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
   "weight_provisioning_mode": "probe_specific_overlay_row_identity_rows",
-  "generated_utc": "2026-05-29T13:17:52Z",
+  "generated_utc": "2026-05-29T14:15:37Z",
   "source_paths": {
     "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
     "declared_exposure": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_declared_exposure.json",
     "geometry_context": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_geometry_context_input.json",
     "row_identity_sidecar": null
   },
-  "geometry_mapping_identity_digest": "e7e440b7083160fed25f418e529e67e677f443ddafaa61279fcd614673f7de3b",
-  "geometry_context_input_digest": "c7970bd92217d60eec0bc30dabce53d56ffd276ab9285a88313c41e059be5612",
+  "geometry_mapping_identity_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+  "geometry_context_input_digest": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8",
   "geometry_context": {
     "geometry_schema_version": "1.0",
     "sweep_id": "stage_b_v1_geometry_first_live_probe",
@@ -20,7 +20,7 @@
       "rg_search_contrastive": "medium",
       "uncertainty_conditioning": "zero"
     },
-    "weighting_mode": "deterministic_weighted_sampler_metadata",
+    "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay",
     "declared_exposure_units": {
       "no_call_adversarial_family": 13,
       "read_file_symbol_name_family": 10,

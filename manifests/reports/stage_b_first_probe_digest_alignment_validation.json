@@ -1,0 +1,78 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T14:21:08Z",
+  "artifact": "stage_b_first_probe_digest_alignment_validation",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_first_live_probe",
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1"
+  },
+  "canonical_alignment_target": {
+    "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay",
+    "enforced_in_runtime_geometry_mapping": true,
+    "enforced_in_geometry_context_input": true,
+    "enforced_in_sidecar_context": true
+  },
+  "digest_recompute": {
+    "geometry_mapping_identity_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+    "geometry_context_input_digest": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8",
+    "sidecar_payload_digest_sha256": "6c375747fb5b6676ec0c40f554f8799d767705d7d28622297c604db954491fac",
+    "row_identity_rows_digest_sha256": "1cb0a23a2038bb949b1e1be90b289eb02f1b05b776a8a2a11af44c961a993549",
+    "runtime_config_digest_contract_fields": {
+      "digest_contract_version": "1.0",
+      "geometry_mapping_identity_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+      "geometry_context_input_digest": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8",
+      "geometry_context_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+      "geometry_context_digest_alias_of": "geometry_mapping_identity_digest"
+    },
+    "resolved_config_digest_contract_fields": {
+      "digest_contract_version": "1.0",
+      "geometry_mapping_identity_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+      "geometry_context_input_digest": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8",
+      "geometry_context_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+      "geometry_context_digest_alias_of": "geometry_mapping_identity_digest"
+    },
+    "sidecar_envelope_fields": {
+      "geometry_mapping_identity_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+      "geometry_context_input_digest": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8"
+    }
+  },
+  "equality_proofs": {
+    "runtime_geometry_mapping_digest_matches_sidecar": true,
+    "runtime_context_input_digest_matches_sidecar": true,
+    "runtime_digest_contract_matches_recomputed": true,
+    "resolved_config_digest_contract_matches_recomputed": true
+  },
+  "sidecar_coverage_checks": {
+    "positive_weight_rows": 13,
+    "weights_sum": 36.0,
+    "positive_weight_rows_gte_13": true,
+    "weights_sum_eq_36_0": true
+  },
+  "sidecar_fail_fast_validation": {
+    "deterministic_resolution_weights_digest_equal": true,
+    "deterministic_resolution_weights_summary_equal": true,
+    "deterministic_resolution_weight_vector_equal": true,
+    "missing_weight_rows_fail_fast_raised": true,
+    "missing_weight_rows_fail_fast_message": "geometry_sampling sidecar missing 1 row weights",
+    "validation_pass": true
+  },
+  "preflight_validation": {
+    "command": "python /opt/ai-stack/assistant-training/scripts/preflight_lora_run.py /opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_geometry_probe_mh.run_manifest.json",
+    "exit_code": 0,
+    "stdout_lines": [
+      "model_path_exists: OK",
+      "tokenizer_path_exists: OK",
+      "train_exists: OK",
+      "val_exists: OK",
+      "assistant_only_fail_fast_configured: OK",
+      "adapter_output_not_present: OK"
+    ],
+    "passes": true
+  },
+  "run_manifest_gate_state": {
+    "approved_to_run": false,
+    "approved_by": null,
+    "approved_utc": null
+  },
+  "overall_pass": true
+}

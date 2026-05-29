@@ -8,7 +8,7 @@
     "rg_search_contrastive": "medium",
     "uncertainty_conditioning": "zero"
   },
-  "weighting_mode": "deterministic_weighted_sampler_metadata",
+  "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay",
   "declared_exposure_units": {
     "no_call_adversarial_family": 13,
     "read_file_symbol_name_family": 10,

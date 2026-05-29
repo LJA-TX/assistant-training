@@ -1,6 +1,6 @@
 {
   "report_version": "1.0",
-  "generated_utc": "2026-05-29T13:00:12Z",
+  "generated_utc": "2026-05-29T14:16:57Z",
   "artifact": "stage_b_first_probe_declared_exposure",
   "status": "planned_pre_execution",
   "probe_identity": {
@@ -12,7 +12,7 @@
       "rg_search_contrastive": "medium",
       "uncertainty_conditioning": "zero"
     },
-    "weighting_mode": "deterministic_weighted_sampler_metadata"
+    "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay"
   },
   "source_dataset": {
     "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
@@ -164,13 +164,13 @@
     }
   },
   "weighting_rationale": {
-    "policy": "metadata-driven strict mode (default_weight=0.0)",
+    "policy": "sidecar-overlay deterministic mode (default_weight=0.0 with explicit row coverage)",
     "reasoning": [
-      "Prevents accidental uniform weighted-sampler execution that would not reflect declared geometry pressure.",
-      "Forces explicit row-level metadata weights on targeted families before execution authorization.",
-      "Maintains deterministic replay once metadata weights are populated and validated."
+      "Preserves canonical dataset provenance while expressing probe-specific exposure via sidecar overlay.",
+      "Binds weighted sampling to explicit row identity and typed geometry digests.",
+      "Maintains deterministic replay with fail-fast sidecar validation."
     ],
-    "blocking_gap": "Current dataset has zero rows with numeric weight metadata keys; no-go until resolved."
+    "blocking_gap": "resolved_via_probe_specific_overlay_row_identity_sidecar"
   },
   "expected_runtime_artifacts": {
     "declared_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_declared.json",

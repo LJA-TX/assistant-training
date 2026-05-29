@@ -1,6 +1,6 @@
 {
   "report_version": "1.1",
-  "generated_utc": "2026-05-29T17:05:00Z",
+  "generated_utc": "2026-05-29T14:16:57Z",
   "artifact": "stage_b_first_probe_go_no_go_summary",
   "probe_identity": {
     "sweep_id": "stage_b_v1_geometry_first_live_probe",
@@ -47,9 +47,9 @@
     "weight_provisioning_status": "ready",
     "sidecar_overlay_readiness": {
       "sidecar_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_weights_sidecar.json",
-      "sidecar_payload_digest_sha256": "0553484014a19d51520321989f81eaedc28e2135756edfd0f7dc516d334446bf",
-      "geometry_mapping_identity_digest": "e7e440b7083160fed25f418e529e67e677f443ddafaa61279fcd614673f7de3b",
-      "geometry_context_input_digest": "c7970bd92217d60eec0bc30dabce53d56ffd276ab9285a88313c41e059be5612",
+      "sidecar_payload_digest_sha256": "6c375747fb5b6676ec0c40f554f8799d767705d7d28622297c604db954491fac",
+      "geometry_mapping_identity_digest": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+      "geometry_context_input_digest": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8",
       "row_identity_rows_digest_sha256": "1cb0a23a2038bb949b1e1be90b289eb02f1b05b776a8a2a11af44c961a993549",
       "weights_count": 1982,
       "positive_weight_rows": 13,
@@ -62,10 +62,10 @@
     "ready_for_final_human_go": true
   },
   "decision": {
-    "execution_authorization_state": "READY_FOR_FINAL_HUMAN_GO",
-    "recommended_next_action": "Complete final human execution checklist and set explicit run approval before any training command execution."
+    "execution_authorization_state": "READY_FOR_RETRY_SINGLE_ATTEMPT",
+    "recommended_next_action": "Run one explicit retry attempt from this repaired package with no hidden retries."
   },
-  "final_recommendation": "READY_FOR_FINAL_HUMAN_GO",
+  "final_recommendation": "READY_FOR_RETRY_SINGLE_ATTEMPT",
   "approval_state": {
     "approved_to_generate_dataset": false,
     "approved_to_run": false,

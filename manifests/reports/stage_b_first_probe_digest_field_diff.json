@@ -1,0 +1,216 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T14:11:46Z",
+  "artifact": "stage_b_first_probe_digest_field_diff",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_first_live_probe",
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1"
+  },
+  "digests": {
+    "expected_from_sidecar": {
+      "value": "e7e440b7083160fed25f418e529e67e677f443ddafaa61279fcd614673f7de3b",
+      "matches_sidecar_field": true,
+      "source_artifact": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_weights_sidecar.json",
+      "generated_utc": "2026-05-29T13:17:52Z",
+      "generated_via": {
+        "script": "/opt/ai-stack/assistant-training/scripts/provision_geometry_probe_weights.py",
+        "function": "_build_geometry_mapping_identity_digest",
+        "function_lines": "53-61",
+        "callsite_lines": "379-406",
+        "geometry_context_input_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_geometry_context_input.json"
+      },
+      "digest_payload": {
+        "geometry_schema_version": "1.0",
+        "sweep_id": "stage_b_v1_geometry_first_live_probe",
+        "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+        "axis_levels": {
+          "no_call_pressure": "medium",
+          "read_file_counterweight": "high",
+          "rg_search_contrastive": "medium",
+          "uncertainty_conditioning": "zero"
+        },
+        "weighting_mode": "deterministic_weighted_sampler_metadata"
+      },
+      "digest_payload_canonical_json": "{\"axis_levels\":{\"no_call_pressure\":\"medium\",\"read_file_counterweight\":\"high\",\"rg_search_contrastive\":\"medium\",\"uncertainty_conditioning\":\"zero\"},\"cell_id\":\"cell_live_mh_nocall_medium_readfile_high_v1\",\"geometry_schema_version\":\"1.0\",\"sweep_id\":\"stage_b_v1_geometry_first_live_probe\",\"weighting_mode\":\"deterministic_weighted_sampler_metadata\"}"
+    },
+    "observed_at_runtime": {
+      "value": "1a0f418214854dd4c1db33e7962169ae23002e1fa9979394860faf89837d4eee",
+      "matches_runtime_error_observed_value": true,
+      "runtime_emitted_artifact": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_declared.json",
+      "runtime_generated_utc": "2026-05-29T13:50:07Z",
+      "generated_via": {
+        "script": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+        "context_resolver_function": "_resolve_geometry_context",
+        "context_resolver_lines": "40-57",
+        "digest_function": "_build_geometry_mapping_identity_digest",
+        "digest_function_lines": "60-68",
+        "validation_check_lines": "386-403",
+        "main_digest_build_line": "2136"
+      },
+      "digest_payload": {
+        "geometry_schema_version": "1.0",
+        "sweep_id": "stage_b_v1_geometry_first_live_probe",
+        "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+        "axis_levels": {
+          "no_call_pressure": "medium",
+          "read_file_counterweight": "high",
+          "rg_search_contrastive": "medium",
+          "uncertainty_conditioning": "zero"
+        },
+        "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay"
+      },
+      "digest_payload_canonical_json": "{\"axis_levels\":{\"no_call_pressure\":\"medium\",\"read_file_counterweight\":\"high\",\"rg_search_contrastive\":\"medium\",\"uncertainty_conditioning\":\"zero\"},\"cell_id\":\"cell_live_mh_nocall_medium_readfile_high_v1\",\"geometry_schema_version\":\"1.0\",\"sweep_id\":\"stage_b_v1_geometry_first_live_probe\",\"weighting_mode\":\"deterministic_weighted_sampler_sidecar_overlay\"}"
+    },
+    "geometry_context_input_digest_pair": {
+      "expected_from_sidecar": "c7970bd92217d60eec0bc30dabce53d56ffd276ab9285a88313c41e059be5612",
+      "observed_at_runtime": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8",
+      "sidecar_field_value": "c7970bd92217d60eec0bc30dabce53d56ffd276ab9285a88313c41e059be5612",
+      "runtime_field_value": "9c4c59d1d495304adfb3c94c9c305d56b984fe4368fe4c7c3a9e5dadefacd3e8"
+    }
+  },
+  "mapping_identity_payload_fields": [
+    "geometry_schema_version",
+    "sweep_id",
+    "cell_id",
+    "axis_levels",
+    "weighting_mode"
+  ],
+  "field_comparison": [
+    {
+      "field": "geometry_schema_version",
+      "expected": "1.0",
+      "observed": "1.0",
+      "equal": true,
+      "contributes_to_geometry_mapping_identity_digest": true,
+      "contributes_to_geometry_context_input_digest": true
+    },
+    {
+      "field": "sweep_id",
+      "expected": "stage_b_v1_geometry_first_live_probe",
+      "observed": "stage_b_v1_geometry_first_live_probe",
+      "equal": true,
+      "contributes_to_geometry_mapping_identity_digest": true,
+      "contributes_to_geometry_context_input_digest": true
+    },
+    {
+      "field": "cell_id",
+      "expected": "cell_live_mh_nocall_medium_readfile_high_v1",
+      "observed": "cell_live_mh_nocall_medium_readfile_high_v1",
+      "equal": true,
+      "contributes_to_geometry_mapping_identity_digest": true,
+      "contributes_to_geometry_context_input_digest": true
+    },
+    {
+      "field": "axis_levels",
+      "expected": {
+        "no_call_pressure": "medium",
+        "read_file_counterweight": "high",
+        "rg_search_contrastive": "medium",
+        "uncertainty_conditioning": "zero"
+      },
+      "observed": {
+        "no_call_pressure": "medium",
+        "read_file_counterweight": "high",
+        "rg_search_contrastive": "medium",
+        "uncertainty_conditioning": "zero"
+      },
+      "equal": true,
+      "contributes_to_geometry_mapping_identity_digest": true,
+      "contributes_to_geometry_context_input_digest": true
+    },
+    {
+      "field": "weighting_mode",
+      "expected": "deterministic_weighted_sampler_metadata",
+      "observed": "deterministic_weighted_sampler_sidecar_overlay",
+      "equal": false,
+      "contributes_to_geometry_mapping_identity_digest": true,
+      "contributes_to_geometry_context_input_digest": true
+    },
+    {
+      "field": "declared_exposure_units",
+      "expected": {
+        "no_call_adversarial_family": 13,
+        "read_file_symbol_name_family": 10,
+        "valid_rg_search_contrastive_family": 13,
+        "uncertainty_conditioning_family": 0
+      },
+      "observed": {
+        "no_call_adversarial_family": 13,
+        "read_file_symbol_name_family": 10,
+        "valid_rg_search_contrastive_family": 13,
+        "uncertainty_conditioning_family": 0
+      },
+      "equal": true,
+      "contributes_to_geometry_mapping_identity_digest": false,
+      "contributes_to_geometry_context_input_digest": true
+    }
+  ],
+  "divergence": {
+    "differing_fields": [
+      "weighting_mode"
+    ],
+    "single_root_field": "weighting_mode",
+    "other_fields_equal": true,
+    "impact": {
+      "geometry_mapping_identity_digest": "changes because weighting_mode is in mapping identity payload",
+      "geometry_context_input_digest": "changes because weighting_mode is in full context payload"
+    }
+  },
+  "artifact_value_inventory": {
+    "deterministic_weighted_sampler_sidecar_overlay": [
+      "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_resolved_config.json:geometry_mapping.weighting_mode",
+      "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_geometry_probe_mh.config.json:geometry_mapping.weighting_mode",
+      "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_declared.json:geometry_context.weighting_mode"
+    ],
+    "deterministic_weighted_sampler_metadata": [
+      "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_geometry_context_input.json:weighting_mode",
+      "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_weights_sidecar.json:geometry_context.weighting_mode",
+      "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_declared_exposure.json:probe_identity.weighting_mode",
+      "/opt/ai-stack/assistant-training/manifests/reports/stage_b_first_probe_hypothesis.json:probe_identity.weighting_mode"
+    ]
+  },
+  "canonical_assessment": {
+    "recommended_canonical_weighting_mode_for_first_live_probe": "deterministic_weighted_sampler_sidecar_overlay",
+    "evidence": [
+      "Resolved probe package explicitly sets geometry_mapping.weighting_mode to sidecar_overlay.",
+      "geometry_sampling.weight_source.kind is sidecar in the live runtime config package.",
+      "final go/no-go refresh states sidecar overlay readiness criteria as execution basis."
+    ]
+  },
+  "diagnosis": {
+    "runtime_config_operational_geometry_context": "sidecar_overlay",
+    "runtime_config_digest_contract_fields": {
+      "digest_contract_version": "1.0",
+      "geometry_mapping_identity_digest": "e7e440b7083160fed25f418e529e67e677f443ddafaa61279fcd614673f7de3b",
+      "geometry_context_input_digest": "c7970bd92217d60eec0bc30dabce53d56ffd276ab9285a88313c41e059be5612",
+      "geometry_context_digest": "e7e440b7083160fed25f418e529e67e677f443ddafaa61279fcd614673f7de3b",
+      "geometry_context_digest_alias_of": "geometry_mapping_identity_digest"
+    },
+    "sidecar_geometry_context": {
+      "geometry_schema_version": "1.0",
+      "sweep_id": "stage_b_v1_geometry_first_live_probe",
+      "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+      "axis_levels": {
+        "no_call_pressure": "medium",
+        "read_file_counterweight": "high",
+        "rg_search_contrastive": "medium",
+        "uncertainty_conditioning": "zero"
+      },
+      "weighting_mode": "deterministic_weighted_sampler_metadata",
+      "declared_exposure_units": {
+        "no_call_adversarial_family": 13,
+        "read_file_symbol_name_family": 10,
+        "valid_rg_search_contrastive_family": 13,
+        "uncertainty_conditioning_family": 0
+      }
+    },
+    "classification": "mixed_context_artifacts_with_stale_digest_bindings",
+    "details": [
+      "Sidecar was generated from geometry_context_input JSON still set to metadata weighting mode.",
+      "Runtime package geometry_mapping was migrated to sidecar_overlay mode.",
+      "Runtime package digest_contract_fields were not recomputed to the sidecar_overlay context.",
+      "Trainer recomputes digest from geometry_mapping and does not trust packaged digest fields, triggering fail-fast mismatch against sidecar digest envelope."
+    ]
+  },
+  "recommended_action": "REGENERATE_BOTH"
+}

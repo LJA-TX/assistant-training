@@ -1,12 +1,8 @@
 {
-  "report_version": "1.0",
-  "generated_utc": "2026-05-29T14:16:57Z",
-  "artifact": "stage_b_first_probe_resolved_config",
-  "status": "execution_preparation_only",
-  "execution_authorized": false,
-  "config_path_planned": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_geometry_probe_mh.config.json",
-  "run_manifest_path_planned": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_geometry_probe_mh.run_manifest.json",
+  "config_version": "1.0",
   "name": "stage_b_llama31_8b_base_v1_geometry_probe_mh",
+  "generated_utc": "2026-05-29T14:16:57Z",
+  "status": "approved_for_single_live_probe_execution",
   "purpose": "Stage B first live geometry probe (M_H) with deterministic weighted sampling and full typed-digest lineage.",
   "lineage": {
     "parent_checkpoint_reference": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",

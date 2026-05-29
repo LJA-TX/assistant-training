@@ -11,8 +11,8 @@ No training, eval, or detector execution is performed by this package.
 ## Current Status
 - Weight provisioning mode: `probe_specific_overlay_row_identity_rows`.
 - Sidecar overlay provisioning is complete and validated.
-- Current package state: `READY_FOR_FINAL_HUMAN_GO`.
-- Manual authorization remains required before any execution command.
+- Current package state: `READY_FOR_RETRY_SINGLE_ATTEMPT`.
+- Single-attempt retry remains gated by explicit human authorization.
 
 Historical note:
 - Previous state before weight provisioning refresh: `NO_GO_PENDING_WEIGHT_COVERAGE_RESOLUTION`.
@@ -143,8 +143,8 @@ Required governance artifacts for review:
 - sidecar overlay artifact and digest checks
 
 ## Final Recommendation
-`READY_FOR_FINAL_HUMAN_GO`
+`READY_FOR_RETRY_SINGLE_ATTEMPT`
 
 Interpretation:
-- package is aligned and execution-ready at the artifact/governance level,
+- package is digest-aligned and execution-ready for a single retry attempt at the artifact/governance level,
 - explicit human signoff is still required before launch commands are run.
