@@ -1,0 +1,201 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:28:44Z",
+  "status": "declared_exposure_accounting_only",
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe.config.json",
+  "manifest_path": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe.run_manifest.json",
+  "dataset_paths": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl"
+  },
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "geometry_context_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "declaration": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "declared_exposure_by_split": {
+    "train": {
+      "rows_total": 1982,
+      "metadata_coverage": {
+        "rows_with_metadata": 1982,
+        "rows_with_family": 101,
+        "rows_with_archetype": 93,
+        "rows_with_geometry_axes": 0
+      },
+      "family_counts": {
+        "unspecified": 1881,
+        "semantic_substitution_conversion_pairs_read_file_primary": 52,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 28,
+        "malformed_regex_underspecified_search_adversarial_boundary": 8,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 8,
+        "read_file_symbol_name_commitment_instability": 5
+      },
+      "archetype_counts": {
+        "unspecified": 1889,
+        "rg_search_match_count": 29,
+        "read_file_symbol_name": 23,
+        "read_file_boolean_presence": 18,
+        "read_file_first_function_name": 16,
+        "rg_search_other": 7
+      },
+      "tool_counts": {
+        "non_tool": 760,
+        "rg_search": 336,
+        "read_file": 201,
+        "find_files": 120,
+        "debug_tools": 110,
+        "run_command": 70,
+        "check_service_health": 55,
+        "get_system_datetime": 45,
+        "write_file": 45,
+        "archive_create": 35,
+        "stat_path": 35,
+        "archive_extract": 30,
+        "copy_path": 30,
+        "apply_unified_diff": 20,
+        "http_request": 10,
+        "json_edit": 10,
+        "list_active_ports": 10,
+        "list_tools": 10,
+        "sha256_file": 10,
+        "get_system_version": 8,
+        "git_diff": 8,
+        "git_status": 8,
+        "service_control": 8,
+        "test_run": 8
+      },
+      "axis_signature_counts": {
+        "{}": 1982
+      },
+      "pair_id_counts": {}
+    },
+    "val": {
+      "rows_total": 236,
+      "metadata_coverage": {
+        "rows_with_metadata": 236,
+        "rows_with_family": 17,
+        "rows_with_archetype": 15,
+        "rows_with_geometry_axes": 0
+      },
+      "family_counts": {
+        "unspecified": 219,
+        "semantic_substitution_conversion_pairs_read_file_primary": 8,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 4,
+        "malformed_regex_underspecified_search_adversarial_boundary": 2,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 2,
+        "read_file_symbol_name_commitment_instability": 1
+      },
+      "archetype_counts": {
+        "unspecified": 221,
+        "read_file_symbol_name": 5,
+        "rg_search_match_count": 5,
+        "read_file_boolean_presence": 2,
+        "read_file_first_function_name": 2,
+        "rg_search_other": 1
+      },
+      "tool_counts": {
+        "non_tool": 85,
+        "rg_search": 45,
+        "read_file": 30,
+        "find_files": 13,
+        "debug_tools": 12,
+        "run_command": 8,
+        "check_service_health": 6,
+        "get_system_datetime": 5,
+        "write_file": 5,
+        "archive_create": 4,
+        "copy_path": 4,
+        "stat_path": 4,
+        "archive_extract": 3,
+        "apply_unified_diff": 2,
+        "get_system_version": 1,
+        "git_diff": 1,
+        "git_status": 1,
+        "http_request": 1,
+        "json_edit": 1,
+        "list_active_ports": 1,
+        "list_tools": 1,
+        "service_control": 1,
+        "sha256_file": 1,
+        "test_run": 1
+      },
+      "axis_signature_counts": {
+        "{}": 236
+      },
+      "pair_id_counts": {}
+    },
+    "combined": {
+      "rows_total": 2218,
+      "metadata_coverage": {
+        "rows_with_metadata": 2218,
+        "rows_with_family": 118,
+        "rows_with_archetype": 108,
+        "rows_with_geometry_axes": 0
+      },
+      "family_counts": {
+        "unspecified": 2100,
+        "semantic_substitution_conversion_pairs_read_file_primary": 60,
+        "semantic_substitution_conversion_pairs_rg_search_scalar_secondary": 32,
+        "malformed_regex_underspecified_search_adversarial_boundary": 10,
+        "uncertainty_conditioned_procedural_continuation_smallscale": 10,
+        "read_file_symbol_name_commitment_instability": 6
+      },
+      "archetype_counts": {
+        "unspecified": 2110,
+        "rg_search_match_count": 34,
+        "read_file_symbol_name": 28,
+        "read_file_boolean_presence": 20,
+        "read_file_first_function_name": 18,
+        "rg_search_other": 8
+      },
+      "tool_counts": {
+        "non_tool": 845,
+        "rg_search": 381,
+        "read_file": 231,
+        "find_files": 133,
+        "debug_tools": 122,
+        "run_command": 78,
+        "check_service_health": 61,
+        "get_system_datetime": 50,
+        "write_file": 50,
+        "archive_create": 39,
+        "stat_path": 39,
+        "copy_path": 34,
+        "archive_extract": 33,
+        "apply_unified_diff": 22,
+        "http_request": 11,
+        "json_edit": 11,
+        "list_active_ports": 11,
+        "list_tools": 11,
+        "sha256_file": 11,
+        "get_system_version": 9,
+        "git_diff": 9,
+        "git_status": 9,
+        "service_control": 9,
+        "test_run": 9
+      },
+      "axis_signature_counts": {
+        "{}": 2218
+      },
+      "pair_id_counts": {}
+    }
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

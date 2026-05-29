@@ -1,0 +1,126 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T10:32:45Z",
+  "iteration": "stage_b_v1_instrumentation_phase2_realized_exposure_design",
+  "phase": "implementation_phase2_realized_exposure_accounting_only",
+  "objective": "Add auditable realized-exposure accounting infrastructure without changing training behavior, sampler behavior, loss behavior, or tensor payload contract.",
+  "current_state_observations": {
+    "realized_accounting_mode": "default_path_inferred_from_train_index_space",
+    "runtime_sampler_stream_capture": "not_implemented",
+    "weighted_sampling": "not_implemented",
+    "row_identity_primitives": {
+      "stable_train_index": "implemented",
+      "row_content_hash_sha256": "implemented",
+      "normalized_geometry_metadata_view": "implemented"
+    },
+    "sidecar_mappings_available": [
+      "train_index_to_row_hash",
+      "train_index_to_geometry_family",
+      "train_index_to_geometry_archetype",
+      "train_index_to_geometry_axes_signature",
+      "train_index_to_pair_id_optional"
+    ],
+    "artifact_wiring": {
+      "resolved_config": "includes_paths_to_declared_row_identity_realized_drift_ledgers",
+      "masking_audit": "includes_geometry_trace_summaries_and_paths",
+      "training_summary": "includes_geometry_trace_summaries_and_paths"
+    }
+  },
+  "realized_ledger_schema": {
+    "artifact": "exposure_ledger_realized.json",
+    "status": "realized_exposure_default_path_inferred",
+    "required_fields": [
+      "report_version",
+      "generated_utc",
+      "status",
+      "config_path",
+      "manifest_path",
+      "dataset_paths.train_jsonl",
+      "geometry_context",
+      "geometry_context_digest",
+      "capture_mode",
+      "confidence",
+      "limitations",
+      "sampler_behavior_assumption",
+      "row_identity_reference",
+      "realized_exposure.family_counts",
+      "realized_exposure.archetype_counts",
+      "realized_exposure.axis_signature_counts",
+      "realized_exposure.pair_id_counts",
+      "approval_state"
+    ],
+    "future_sampler_capture_compatibility": {
+      "compatible": true,
+      "expected_extensions": [
+        "sampled_index_stream_trace",
+        "epoch_rollups",
+        "sampler_seed",
+        "sampler_class"
+      ],
+      "breaking_change_required": false
+    }
+  },
+  "drift_ledger_schema": {
+    "artifact": "exposure_ledger_drift.json",
+    "status": "declared_vs_realized_comparison_default_path_inferred",
+    "comparison_basis": "declared_train_split_vs_inferred_realized_index_space",
+    "confidence": "limited",
+    "required_dimensions": [
+      "family",
+      "archetype",
+      "axis_signature"
+    ],
+    "required_aggregate_fields": [
+      "max_abs_delta_any_dimension",
+      "exact_match_all_dimensions"
+    ]
+  },
+  "recommendations": {
+    "phase2_scope": [
+      "emit_realized_and_drift_ledgers_using_default_path_inference",
+      "mark_confidence_and_limitations_explicitly",
+      "keep_all_geometry_accounting_outside_model_tensors",
+      "preserve_existing_trainer_and_sampler_path"
+    ],
+    "phase3_readiness_hooks": [
+      "add_sampler_index_stream_capture_via_trainer_subclass",
+      "retain_current_row_identity_sidecar_as_join_key",
+      "promote_confidence_from_limited_to_high_only_after_stream_capture"
+    ]
+  },
+  "implementation_complexity": {
+    "overall": "low_to_medium",
+    "row_identity_sidecar": "low",
+    "realized_default_path_ledger": "low",
+    "drift_ledger_skeleton": "low",
+    "artifact_integration": "low"
+  },
+  "reproducibility_risks": [
+    {
+      "risk": "row_hash_instability_if_dataset_rows_are_mutated",
+      "impact": "high",
+      "mitigation": "bind identity to committed dataset content and canonical json hashing"
+    },
+    {
+      "risk": "overinterpretation_of_inferred_realized_counts_as_runtime_sampler_truth",
+      "impact": "high",
+      "mitigation": "explicitly label capture_mode/confidence/limitations in artifacts"
+    },
+    {
+      "risk": "metadata_schema_drift_across_dataset_generations",
+      "impact": "medium",
+      "mitigation": "normalize geometry metadata through ordered fallback keys"
+    }
+  ],
+  "doctrine_concerns": [
+    "Do not claim sampled-stream fidelity before deterministic sampler-index capture exists.",
+    "Do not introduce weighted sampling behavior in this phase.",
+    "Treat realized exposure as accountable telemetry, not optimization behavior, until explicitly approved."
+  ],
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

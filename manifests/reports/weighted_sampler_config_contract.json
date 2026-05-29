@@ -1,0 +1,127 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T10:40:30Z",
+  "phase": "stage_b_v1_instrumentation_phase3",
+  "objective": "Deterministic weighted sampler support behind an explicit disabled-by-default gate.",
+  "current_state": {
+    "default_behavior": "unchanged",
+    "default_sampler_path": "transformers_default_random_sampler_path",
+    "weighted_sampler_activation": "geometry_sampling.enabled == true"
+  },
+  "geometry_sampling_contract": {
+    "path": "config.geometry_sampling",
+    "type": "object",
+    "defaults": {
+      "enabled": false,
+      "sampler_type": "weighted_random",
+      "replacement": true,
+      "num_samples_policy": "dataset_length",
+      "num_samples": null,
+      "sampler_seed": "falls back to optimization.seed",
+      "capture_sampled_indices": true,
+      "weight_source": {
+        "kind": "metadata",
+        "metadata_weight_keys": [
+          "geometry_weight",
+          "sampling_weight",
+          "sample_weight",
+          "weight"
+        ],
+        "sidecar_weight_key_candidates": [
+          "weight",
+          "sampling_weight",
+          "geometry_weight"
+        ],
+        "default_weight": 1.0,
+        "sidecar_json_path": ""
+      }
+    },
+    "validation": {
+      "sampler_type": [
+        "weighted_random"
+      ],
+      "num_samples_policy": [
+        "dataset_length",
+        "explicit"
+      ],
+      "weight_source_kind": [
+        "metadata",
+        "sidecar"
+      ],
+      "num_samples_policy_explicit_requires_positive_num_samples": true,
+      "sidecar_kind_requires_sidecar_json_path": true,
+      "weight_vector_checks": {
+        "length_matches_train_dataset": true,
+        "numeric": true,
+        "finite": true,
+        "nonnegative": true,
+        "at_least_one_positive": true
+      }
+    }
+  },
+  "weight_source_contract": {
+    "metadata": {
+      "source_rows": "train_rows[*].metadata",
+      "resolution_order": "metadata_weight_keys first, then metadata.geometry_axes.weight, then default_weight"
+    },
+    "sidecar": {
+      "supported_structures": [
+        "list (index aligned)",
+        "object.weights list",
+        "object.weights_by_train_index map",
+        "object.rows with train_index_0based + weight key"
+      ]
+    }
+  },
+  "determinism_controls": {
+    "sampler_seed_source": "geometry_sampling.sampler_seed (fallback optimization.seed)",
+    "weight_digest": "sha256(canonical_json(weights))",
+    "sampled_stream_digest": "sha256(canonical_json(sampled_indices))",
+    "recorded_fields": [
+      "sampler_class",
+      "sampler_seed",
+      "replacement",
+      "num_samples_policy",
+      "num_samples",
+      "weights_digest_sha256"
+    ]
+  },
+  "artifact_integration": {
+    "resolved_config": [
+      "geometry_sampling",
+      "sampler_determinism_path"
+    ],
+    "realized_ledger": [
+      "geometry_sampling",
+      "capture_mode",
+      "confidence",
+      "sampler_runtime"
+    ],
+    "drift_ledger": [
+      "status",
+      "comparison_basis",
+      "confidence"
+    ],
+    "training_summary": [
+      "geometry_sampling",
+      "trainer_class",
+      "sampler_determinism_path",
+      "sampler_determinism_status"
+    ]
+  },
+  "reproducibility_risks": [
+    {
+      "risk": "relative sidecar path ambiguity",
+      "mitigation": "use repo-absolute or config-relative resolved paths in experiment configs"
+    },
+    {
+      "risk": "distributed runtime capture semantics not yet specialized",
+      "mitigation": "treat current runtime capture as single-process reference path"
+    }
+  ],
+  "doctrine_concerns": [
+    "Weighted path must remain explicitly gated and disabled by default.",
+    "Default path must not overclaim runtime sampled-stream fidelity.",
+    "Sampler metadata must be auditable from committed artifacts."
+  ]
+}

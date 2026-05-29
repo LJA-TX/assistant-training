@@ -1,0 +1,1 @@
+{"collapse_watch_output": "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/outputs/watch/collapse_watch_interpretation.json", "gate_assessment_output": "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/outputs/watch/gate_assessment.json"}

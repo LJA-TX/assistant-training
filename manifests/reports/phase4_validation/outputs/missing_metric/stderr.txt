@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 633, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 620, in main
+    collapse_watch, gate = _run_detector(
+                           ^^^^^^^^^^^^^^
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 456, in _run_detector
+    current_metrics = _resolve_required_metrics(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 286, in _resolve_required_metrics
+    resolved[metric_id] = _resolve_metric_from_catalog(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 153, in _resolve_metric_from_catalog
+    raise RuntimeError(f"{summary_label}: required metric '{metric_id}' not found in summary")
+RuntimeError: eval_summary: required metric 'no_call_correctness_adversarial' not found in summary

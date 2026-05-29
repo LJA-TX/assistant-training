@@ -1,0 +1,253 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T11:19:23Z",
+  "status": "catastrophic_halt",
+  "script": "post_eval_collapse_detector.py",
+  "inputs": {
+    "eval_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/fixtures/summary_catastrophic.json",
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/phase4_validation/fixtures/summary_baseline.json",
+    "geometry_context_path": null
+  },
+  "threshold_profile_id": "stage_b_v1_geometry_mapping_collapse_profile",
+  "threshold_profile_schema_version": "1.0",
+  "threshold_profile_digest": "9ca7b94f73667d6a779be0df03cde14c9afe8f2aaf827d0de8fea96db0e2c7e7",
+  "geometry_context": null,
+  "geometry_context_digest": null,
+  "metric_resolution": {
+    "current": {
+      "direct_answer_substitution_count": {
+        "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "value": 6.0
+      },
+      "invalid_json_overall": {
+        "path": "metrics.aggregate.invalid_json",
+        "value": 0.4
+      },
+      "no_anchor_exact_valid_share": {
+        "path": "failure_profile.anchor_exact_share.no_anchor_phrase",
+        "value": 0.8
+      },
+      "no_call_correctness_adversarial": {
+        "path": "metrics.probes.no_call_adversarial.no_call_correctness",
+        "value": 1.0
+      },
+      "no_call_correctness_aggregate": {
+        "path": "metrics.aggregate.no_call_correctness",
+        "value": 1.0
+      },
+      "read_file_exact_valid_rate": {
+        "path": "failure_profile.read_file_exact_valid.rate",
+        "value": 0.78
+      },
+      "read_file_symbol_name_exact_valid_rate": {
+        "path": "failure_profile.read_file_symbol_name_exact_valid.rate",
+        "value": 0.9
+      },
+      "wrapper_leakage_overall": {
+        "path": "metrics.aggregate.wrapper_leakage",
+        "value": 0.0
+      }
+    },
+    "baseline": {
+      "direct_answer_substitution_count": {
+        "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "value": 5.0
+      }
+    }
+  },
+  "rule_evaluation": {
+    "hard_invariants": [
+      {
+        "group": "hard_invariants",
+        "rule_id": "no_call_correctness_aggregate_lt_1_0",
+        "description": "No-call aggregate correctness must remain exactly 1.0.",
+        "metric_id": "no_call_correctness_aggregate",
+        "metric_path": "metrics.aggregate.no_call_correctness",
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 1.0,
+        "tolerance": 1e-12,
+        "current_value": 1.0,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": 1.0,
+        "triggered": false,
+        "computable": true,
+        "reason": ""
+      },
+      {
+        "group": "hard_invariants",
+        "rule_id": "no_call_correctness_adversarial_lt_1_0",
+        "description": "No-call adversarial correctness must remain exactly 1.0.",
+        "metric_id": "no_call_correctness_adversarial",
+        "metric_path": "metrics.probes.no_call_adversarial.no_call_correctness",
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 1.0,
+        "tolerance": 1e-12,
+        "current_value": 1.0,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": 1.0,
+        "triggered": false,
+        "computable": true,
+        "reason": ""
+      },
+      {
+        "group": "hard_invariants",
+        "rule_id": "wrapper_leakage_gt_0",
+        "description": "Wrapper leakage must remain zero.",
+        "metric_id": "wrapper_leakage_overall",
+        "metric_path": "metrics.aggregate.wrapper_leakage",
+        "basis": "absolute",
+        "comparator": "gt",
+        "threshold": 0.0,
+        "tolerance": 1e-12,
+        "current_value": 0.0,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": 0.0,
+        "triggered": false,
+        "computable": true,
+        "reason": ""
+      }
+    ],
+    "catastrophic_thresholds": [
+      {
+        "group": "catastrophic_thresholds",
+        "rule_id": "invalid_json_overall_gte_0_35",
+        "description": "Invalid JSON above this threshold is catastrophic.",
+        "metric_id": "invalid_json_overall",
+        "metric_path": "metrics.aggregate.invalid_json",
+        "basis": "absolute",
+        "comparator": "gte",
+        "threshold": 0.35,
+        "tolerance": 1e-12,
+        "current_value": 0.4,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": 0.4,
+        "triggered": true,
+        "computable": true,
+        "reason": ""
+      },
+      {
+        "group": "catastrophic_thresholds",
+        "rule_id": "read_file_exact_valid_rate_lt_0_40",
+        "description": "Read-file exact-valid collapse threshold.",
+        "metric_id": "read_file_exact_valid_rate",
+        "metric_path": "failure_profile.read_file_exact_valid.rate",
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 0.4,
+        "tolerance": 1e-12,
+        "current_value": 0.78,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": 0.78,
+        "triggered": false,
+        "computable": true,
+        "reason": ""
+      },
+      {
+        "group": "catastrophic_thresholds",
+        "rule_id": "read_file_symbol_name_exact_valid_rate_lt_0_40",
+        "description": "Read-file symbol-name exact-valid collapse threshold.",
+        "metric_id": "read_file_symbol_name_exact_valid_rate",
+        "metric_path": "failure_profile.read_file_symbol_name_exact_valid.rate",
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 0.4,
+        "tolerance": 1e-12,
+        "current_value": 0.9,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": 0.9,
+        "triggered": false,
+        "computable": true,
+        "reason": ""
+      }
+    ],
+    "tradeoff_watch_thresholds": [
+      {
+        "group": "tradeoff_watch_thresholds",
+        "rule_id": "read_file_exact_valid_rate_lt_0_70",
+        "description": "Read-file exact-valid watch threshold.",
+        "metric_id": "read_file_exact_valid_rate",
+        "metric_path": "failure_profile.read_file_exact_valid.rate",
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 0.7,
+        "tolerance": 1e-12,
+        "current_value": 0.78,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": 0.78,
+        "triggered": false,
+        "computable": true,
+        "reason": ""
+      },
+      {
+        "group": "tradeoff_watch_thresholds",
+        "rule_id": "no_anchor_exact_valid_share_lt_0_75",
+        "description": "No-anchor exact-valid share below this level enters watch.",
+        "metric_id": "no_anchor_exact_valid_share",
+        "metric_path": "failure_profile.anchor_exact_share.no_anchor_phrase",
+        "basis": "absolute",
+        "comparator": "lt",
+        "threshold": 0.75,
+        "tolerance": 1e-12,
+        "current_value": 0.8,
+        "baseline_metric_id": null,
+        "baseline_metric_path": null,
+        "baseline_value": null,
+        "evaluated_value": 0.8,
+        "triggered": false,
+        "computable": true,
+        "reason": ""
+      },
+      {
+        "group": "tradeoff_watch_thresholds",
+        "rule_id": "direct_answer_substitution_delta_gt_3",
+        "description": "Material rebound in direct-answer substitution versus baseline.",
+        "metric_id": "direct_answer_substitution_count",
+        "metric_path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "basis": "delta_vs_baseline",
+        "comparator": "gt",
+        "threshold": 3.0,
+        "tolerance": 1e-12,
+        "current_value": 6.0,
+        "baseline_metric_id": "direct_answer_substitution_count",
+        "baseline_metric_path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "baseline_value": 5.0,
+        "evaluated_value": 1.0,
+        "triggered": false,
+        "computable": true,
+        "reason": ""
+      }
+    ]
+  },
+  "summary": {
+    "hard_invariant_violations": [],
+    "catastrophic_triggers": [
+      "invalid_json_overall_gte_0_35"
+    ],
+    "tradeoff_watch_warnings": [],
+    "noncomputable_rules": [],
+    "missing_baseline_policy": "fail_fast"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

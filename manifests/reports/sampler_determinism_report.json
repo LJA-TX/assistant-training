@@ -1,0 +1,50 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T10:47:05Z",
+  "status": "geometry_sampling_weighted_runtime_stream_captured",
+  "config_path": "/tmp/synthetic.config.json",
+  "manifest_path": null,
+  "geometry_context": {
+    "axis_levels": {},
+    "geometry_schema_version": "1.0",
+    "sweep_id": "s",
+    "cell_id": "c",
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "geometry_context_digest": "2ddc4732820c1044d91d61593ddcf792dddb074e4f0811b42bd9d1979ac0736b",
+  "geometry_sampling": {
+    "enabled": true,
+    "sampler_type": "weighted_random",
+    "replacement": true,
+    "num_samples_policy": "dataset_length",
+    "sampler_seed": 777,
+    "capture_sampled_indices": true,
+    "weight_source_kind": "metadata",
+    "num_samples": 4,
+    "sampler_class": "torch.utils.data.WeightedRandomSampler",
+    "weights_digest_sha256": "cf6e19083eb2b3ae1323c5530d9853ce5b995d346c3181d8ab3412bf00e1b4cc",
+    "weights_summary": {
+      "weights_count": 4,
+      "weights_sum": 6.5,
+      "weights_min": 0.5,
+      "weights_max": 3.0,
+      "zero_weight_rows": 0,
+      "positive_weight_rows": 4
+    },
+    "row_identity_digest_sha256": "a77bbfeef3fb0fafe3e17e6df1248948764389dd329b93dde8fb7f64f15ff130",
+    "sidecar_path": null
+  },
+  "runtime_capture": {
+    "captured": true,
+    "sampled_index_stream_total": 4,
+    "sampled_index_stream_digest_sha256": "2474bddea848e2782c23cef286790988518cf195d48ec5922760902eb9685c7a",
+    "sampler_iteration_count": 1
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T00:00:04Z",
+  "artifact": "geometry_context_digest_design",
+  "phase": "stage_b_v1_instrumentation_phase_1",
+  "status": "implemented",
+  "current_state": {
+    "implementation_file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+    "resolver_function": "_resolve_geometry_context",
+    "digest_function": "_build_geometry_context_digest",
+    "hash_algorithm": "sha256",
+    "canonicalization": "json.dumps(sort_keys=True, separators=(\",\",\":\"), ensure_ascii=False)"
+  },
+  "required_digest_fields": [
+    "geometry_schema_version",
+    "sweep_id",
+    "cell_id",
+    "axis_levels",
+    "weighting_mode"
+  ],
+  "digest_payload_construction": {
+    "payload_source": "geometry_context",
+    "payload_projection": {
+      "geometry_schema_version": "geometry_context.geometry_schema_version",
+      "sweep_id": "geometry_context.sweep_id",
+      "cell_id": "geometry_context.cell_id",
+      "axis_levels": "geometry_context.axis_levels",
+      "weighting_mode": "geometry_context.weighting_mode"
+    },
+    "determinism_conditions": [
+      "sorted JSON keys",
+      "fixed separators",
+      "explicit default values when geometry_mapping is absent"
+    ]
+  },
+  "default_behavior_for_backward_compatibility": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "reproducibility_risks": [
+    {
+      "risk": "non-canonical JSON serialization",
+      "impact": "high",
+      "mitigation": "enforce canonical sorted-key JSON"
+    },
+    {
+      "risk": "mutable defaults or implicit null coercions",
+      "impact": "medium",
+      "mitigation": "explicit deterministic defaults in resolver"
+    },
+    {
+      "risk": "digest field drift over time",
+      "impact": "medium",
+      "mitigation": "freeze required field list and version with schema"
+    }
+  ],
+  "doctrine_concerns": [
+    "Digest must be computable from committed artifacts without hidden runtime state",
+    "Digest field set must remain minimal and stable for cross-run comparability",
+    "Digest should never include volatile runtime values (timestamps, host paths not in config lineage)"
+  ]
+}

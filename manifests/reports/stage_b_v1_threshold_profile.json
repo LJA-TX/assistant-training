@@ -1,0 +1,139 @@
+{
+  "profile_schema_version": "1.0",
+  "threshold_profile_id": "stage_b_v1_geometry_mapping_collapse_profile",
+  "generated_utc": "2026-05-29T11:05:00Z",
+  "description": "Stage B v1 geometry mapping collapse/watch profile with explicit hard invariants, catastrophic thresholds, and tradeoff-watch thresholds.",
+  "missing_baseline_policy": "fail_fast",
+  "metric_catalog": {
+    "no_call_correctness_aggregate": {
+      "candidate_paths": [
+        "metrics.aggregate.no_call_correctness",
+        "metrics.stage_b_i10r_microprobe_aggregate.no_call_correctness",
+        "metrics.aggregate.i10r_counterbalanced_probe.no_call_correctness"
+      ]
+    },
+    "no_call_correctness_adversarial": {
+      "candidate_paths": [
+        "metrics.probes.no_call_adversarial.no_call_correctness",
+        "metrics.stage_b_i10r_nocall_probe.no_call_correctness"
+      ]
+    },
+    "wrapper_leakage_overall": {
+      "candidate_paths": [
+        "metrics.aggregate.wrapper_leakage",
+        "metrics.stage_b_i10r_microprobe_aggregate.wrapper_leakage",
+        "metrics.stage_b_i10r_nocall_probe.wrapper_leakage",
+        "metrics.stage_b_i10r_counterbalanced_probe.wrapper_leakage"
+      ]
+    },
+    "invalid_json_overall": {
+      "candidate_paths": [
+        "metrics.aggregate.invalid_json",
+        "metrics.stage_b_i10r_microprobe_aggregate.invalid_json",
+        "metrics.stage_b_i10r_counterbalanced_probe.invalid_json"
+      ]
+    },
+    "read_file_exact_valid_rate": {
+      "path": "failure_profile.read_file_exact_valid.rate"
+    },
+    "read_file_symbol_name_exact_valid_rate": {
+      "path": "failure_profile.read_file_symbol_name_exact_valid.rate"
+    },
+    "no_anchor_exact_valid_share": {
+      "path": "failure_profile.anchor_exact_share.no_anchor_phrase"
+    },
+    "direct_answer_substitution_count": {
+      "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution"
+    }
+  },
+  "hard_invariants": [
+    {
+      "rule_id": "no_call_correctness_aggregate_lt_1_0",
+      "description": "No-call aggregate correctness must remain exactly 1.0.",
+      "metric_id": "no_call_correctness_aggregate",
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 1.0
+    },
+    {
+      "rule_id": "no_call_correctness_adversarial_lt_1_0",
+      "description": "No-call adversarial correctness must remain exactly 1.0.",
+      "metric_id": "no_call_correctness_adversarial",
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 1.0
+    },
+    {
+      "rule_id": "wrapper_leakage_gt_0",
+      "description": "Wrapper leakage must remain zero.",
+      "metric_id": "wrapper_leakage_overall",
+      "basis": "absolute",
+      "comparator": "gt",
+      "threshold": 0.0
+    }
+  ],
+  "catastrophic_thresholds": [
+    {
+      "rule_id": "invalid_json_overall_gte_0_35",
+      "description": "Invalid JSON above this threshold is catastrophic.",
+      "metric_id": "invalid_json_overall",
+      "basis": "absolute",
+      "comparator": "gte",
+      "threshold": 0.35
+    },
+    {
+      "rule_id": "read_file_exact_valid_rate_lt_0_40",
+      "description": "Read-file exact-valid collapse threshold.",
+      "metric_id": "read_file_exact_valid_rate",
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 0.4
+    },
+    {
+      "rule_id": "read_file_symbol_name_exact_valid_rate_lt_0_40",
+      "description": "Read-file symbol-name exact-valid collapse threshold.",
+      "metric_id": "read_file_symbol_name_exact_valid_rate",
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 0.4
+    }
+  ],
+  "tradeoff_watch_thresholds": [
+    {
+      "rule_id": "read_file_exact_valid_rate_lt_0_70",
+      "description": "Read-file exact-valid watch threshold.",
+      "metric_id": "read_file_exact_valid_rate",
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 0.7
+    },
+    {
+      "rule_id": "no_anchor_exact_valid_share_lt_0_75",
+      "description": "No-anchor exact-valid share below this level enters watch.",
+      "metric_id": "no_anchor_exact_valid_share",
+      "basis": "absolute",
+      "comparator": "lt",
+      "threshold": 0.75
+    },
+    {
+      "rule_id": "direct_answer_substitution_delta_gt_3",
+      "description": "Material rebound in direct-answer substitution versus baseline.",
+      "metric_id": "direct_answer_substitution_count",
+      "basis": "delta_vs_baseline",
+      "comparator": "gt",
+      "threshold": 3.0
+    }
+  ],
+  "status_decision_rules": {
+    "precedence": [
+      "catastrophic_halt",
+      "halt_progression",
+      "watch",
+      "pass"
+    ],
+    "catastrophic_trigger_status": "catastrophic_halt",
+    "hard_invariant_violation_status": "halt_progression",
+    "tradeoff_watch_status": "watch",
+    "noncomputable_status": "halt_progression"
+  }
+}

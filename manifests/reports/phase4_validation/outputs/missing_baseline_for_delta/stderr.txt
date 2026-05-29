@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 633, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 620, in main
+    collapse_watch, gate = _run_detector(
+                           ^^^^^^^^^^^^^^
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 462, in _run_detector
+    baseline_metrics, baseline_missing_metric_ids = _resolve_baseline_metrics_if_needed(
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py", line 318, in _resolve_baseline_metrics_if_needed
+    raise RuntimeError(
+RuntimeError: baseline summary is required because threshold profile includes delta_vs_baseline rules

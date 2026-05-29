@@ -1,0 +1,59 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T10:40:30Z",
+  "phase": "stage_b_v1_instrumentation_phase3",
+  "artifact": "exposure_ledger_realized.json",
+  "mode_design": {
+    "default_disabled_or_unexecuted_path": {
+      "status": "realized_exposure_default_path_inferred or realized_exposure_weighted_configured_runtime_not_captured",
+      "capture_mode": "index_space_inferred_no_sampler_stream_capture",
+      "confidence": "limited",
+      "expected_limitations": [
+        "Exact sampled index stream not captured.",
+        "Counts inferred from train index space."
+      ]
+    },
+    "weighted_runtime_captured_path": {
+      "status": "realized_exposure_weighted_sampler_stream_captured",
+      "capture_mode": "runtime_weighted_sampler_stream_capture",
+      "confidence": "high",
+      "required_fields": [
+        "geometry_sampling",
+        "sampler_runtime.sampler_iteration_count",
+        "sampler_runtime.sampled_index_stream_total",
+        "sampler_runtime.sampled_index_stream_digest_sha256",
+        "sampler_runtime.sampled_index_stream_unique_indices",
+        "sampler_runtime.sampled_index_stream",
+        "realized_exposure.family_counts",
+        "realized_exposure.archetype_counts",
+        "realized_exposure.axis_signature_counts",
+        "realized_exposure.pair_id_counts"
+      ]
+    }
+  },
+  "drift_ledger_coupling": {
+    "default_mode": {
+      "status": "declared_vs_realized_comparison_default_path_inferred",
+      "comparison_basis": "declared_train_split_vs_inferred_realized_index_space",
+      "confidence": "limited"
+    },
+    "weighted_mode": {
+      "status": "declared_vs_realized_comparison_weighted_stream_captured",
+      "comparison_basis": "declared_train_split_vs_runtime_weighted_sampler_index_stream",
+      "confidence": "high"
+    }
+  },
+  "schema_compatibility": {
+    "backward_compatible": true,
+    "new_fields_additive_only": true,
+    "existing_consumers_require_change": false
+  },
+  "limitations": [
+    "High-confidence mode depends on runtime sampled index stream capture path execution.",
+    "When weighted mode is configured but not executed, realized ledger remains limited-confidence inferred."
+  ],
+  "doctrine_notes": [
+    "Do not overclaim weighted realized exposure fidelity unless runtime sampled index capture is present.",
+    "Keep declared-vs-realized separation explicit in every mode."
+  ]
+}

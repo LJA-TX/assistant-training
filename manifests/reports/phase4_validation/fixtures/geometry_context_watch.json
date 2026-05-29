@@ -1,0 +1,10 @@
+{
+  "geometry_schema_version": "1.0",
+  "sweep_id": "stage_b_v1_geometry_sweep",
+  "cell_id": "cell_watch_01",
+  "axis_levels": {
+    "no_call_pressure": "medium",
+    "read_file_counterweight": "low"
+  },
+  "weighting_mode": "none"
+}
