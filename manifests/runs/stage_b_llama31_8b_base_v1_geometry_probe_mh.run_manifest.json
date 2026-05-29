@@ -20,7 +20,7 @@
     "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_geometry_probe_mh"
   },
   "review_gate": {
-    "approved_to_run": false,
+    "approved_to_run": true,
     "approved_by": null,
     "approved_utc": null
   },
