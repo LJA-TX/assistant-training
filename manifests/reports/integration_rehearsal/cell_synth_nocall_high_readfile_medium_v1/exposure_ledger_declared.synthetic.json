@@ -1,0 +1,148 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T11:37:19Z",
+  "status": "declared_exposure_accounting_only",
+  "config_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_config.json",
+  "manifest_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_manifest.json",
+  "dataset_paths": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_val.jsonl"
+  },
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_integration_rehearsal",
+    "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+    "axis_levels": {
+      "no_call_pressure": "high",
+      "read_file_counterweight": "medium",
+      "rg_search_contrastive": "low",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "metadata_weighted_random_sampler_probe",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 18,
+      "read_file_symbol_name_family": 14,
+      "rg_search_contrastive_family": 10,
+      "uncertainty_conditioned_family": 4
+    }
+  },
+  "geometry_context_digest": "1f35b81bfe3dfae09e675361b193620955d2a2c51e6d720ad3b0b8cea4f13348",
+  "declaration": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_integration_rehearsal",
+    "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+    "axis_levels": {
+      "no_call_pressure": "high",
+      "read_file_counterweight": "medium",
+      "rg_search_contrastive": "low",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "metadata_weighted_random_sampler_probe",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 18,
+      "read_file_symbol_name_family": 14,
+      "rg_search_contrastive_family": 10,
+      "uncertainty_conditioned_family": 4
+    }
+  },
+  "declared_exposure_by_split": {
+    "train": {
+      "rows_total": 12,
+      "metadata_coverage": {
+        "rows_with_metadata": 12,
+        "rows_with_family": 12,
+        "rows_with_archetype": 12,
+        "rows_with_geometry_axes": 12
+      },
+      "family_counts": {
+        "no_call_adversarial_family": 5,
+        "read_file_symbol_name_family": 4,
+        "rg_search_contrastive_family": 3
+      },
+      "archetype_counts": {
+        "no_call_adversarial": 5,
+        "read_file_symbol_name": 4,
+        "rg_search_match_count": 3
+      },
+      "tool_counts": {
+        "read_file": 8,
+        "rg_search": 4
+      },
+      "axis_signature_counts": {
+        "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}": 10,
+        "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"low\",\"rg_search_contrastive\":\"medium\",\"uncertainty_conditioning\":\"zero\"}": 2
+      },
+      "pair_id_counts": {
+        "pair_01": 2,
+        "pair_02": 2,
+        "pair_03": 2,
+        "pair_04": 2,
+        "pair_05": 2
+      }
+    },
+    "val": {
+      "rows_total": 4,
+      "metadata_coverage": {
+        "rows_with_metadata": 4,
+        "rows_with_family": 4,
+        "rows_with_archetype": 4,
+        "rows_with_geometry_axes": 4
+      },
+      "family_counts": {
+        "no_call_adversarial_family": 2,
+        "read_file_symbol_name_family": 2
+      },
+      "archetype_counts": {
+        "no_call_adversarial": 2,
+        "read_file_symbol_name": 2
+      },
+      "tool_counts": {
+        "read_file": 4
+      },
+      "axis_signature_counts": {
+        "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}": 4
+      },
+      "pair_id_counts": {}
+    },
+    "combined": {
+      "rows_total": 16,
+      "metadata_coverage": {
+        "rows_with_metadata": 16,
+        "rows_with_family": 16,
+        "rows_with_archetype": 16,
+        "rows_with_geometry_axes": 16
+      },
+      "family_counts": {
+        "no_call_adversarial_family": 7,
+        "read_file_symbol_name_family": 6,
+        "rg_search_contrastive_family": 3
+      },
+      "archetype_counts": {
+        "no_call_adversarial": 7,
+        "read_file_symbol_name": 6,
+        "rg_search_match_count": 3
+      },
+      "tool_counts": {
+        "read_file": 12,
+        "rg_search": 4
+      },
+      "axis_signature_counts": {
+        "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}": 14,
+        "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"low\",\"rg_search_contrastive\":\"medium\",\"uncertainty_conditioning\":\"zero\"}": 2
+      },
+      "pair_id_counts": {
+        "pair_01": 2,
+        "pair_02": 2,
+        "pair_03": 2,
+        "pair_04": 2,
+        "pair_05": 2
+      }
+    }
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

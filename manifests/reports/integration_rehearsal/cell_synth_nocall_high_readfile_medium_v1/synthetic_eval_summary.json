@@ -1,0 +1,30 @@
+{
+  "report_version": "1.0",
+  "synthetic": true,
+  "metrics": {
+    "aggregate": {
+      "no_call_correctness": 1.0,
+      "wrapper_leakage": 0.0,
+      "invalid_json": 0.11
+    },
+    "probes": {
+      "no_call_adversarial": {
+        "no_call_correctness": 1.0
+      }
+    }
+  },
+  "failure_profile": {
+    "read_file_exact_valid": {
+      "rate": 0.68
+    },
+    "read_file_symbol_name_exact_valid": {
+      "rate": 0.88
+    },
+    "anchor_exact_share": {
+      "no_anchor_phrase": 0.77
+    },
+    "failure_categories_non_exact_tool_rows": {
+      "direct_answer_substitution": 7
+    }
+  }
+}

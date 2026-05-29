@@ -1,0 +1,41 @@
+{
+  "geometry_mapping": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_integration_rehearsal",
+    "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+    "axis_levels": {
+      "no_call_pressure": "high",
+      "read_file_counterweight": "medium",
+      "rg_search_contrastive": "low",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "metadata_weighted_random_sampler_probe",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 18,
+      "read_file_symbol_name_family": 14,
+      "rg_search_contrastive_family": 10,
+      "uncertainty_conditioned_family": 4
+    }
+  },
+  "geometry_sampling": {
+    "enabled": true,
+    "sampler_type": "weighted_random",
+    "replacement": true,
+    "num_samples_policy": "dataset_length",
+    "sampler_seed": 314159,
+    "capture_sampled_indices": true,
+    "weight_source": {
+      "kind": "metadata",
+      "metadata_weight_keys": [
+        "sampling_weight"
+      ],
+      "default_weight": 1.0
+    }
+  },
+  "optimization": {
+    "seed": 271828
+  },
+  "outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1"
+  }
+}

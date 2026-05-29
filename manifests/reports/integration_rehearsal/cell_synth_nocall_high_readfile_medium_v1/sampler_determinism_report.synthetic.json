@@ -1,0 +1,60 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T11:37:19Z",
+  "status": "geometry_sampling_weighted_runtime_stream_captured",
+  "config_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_config.json",
+  "manifest_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_manifest.json",
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_integration_rehearsal",
+    "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+    "axis_levels": {
+      "no_call_pressure": "high",
+      "read_file_counterweight": "medium",
+      "rg_search_contrastive": "low",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "metadata_weighted_random_sampler_probe",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 18,
+      "read_file_symbol_name_family": 14,
+      "rg_search_contrastive_family": 10,
+      "uncertainty_conditioned_family": 4
+    }
+  },
+  "geometry_context_digest": "1f35b81bfe3dfae09e675361b193620955d2a2c51e6d720ad3b0b8cea4f13348",
+  "geometry_sampling": {
+    "enabled": true,
+    "sampler_type": "weighted_random",
+    "replacement": true,
+    "num_samples_policy": "dataset_length",
+    "sampler_seed": 314159,
+    "capture_sampled_indices": true,
+    "weight_source_kind": "metadata",
+    "num_samples": 12,
+    "sampler_class": "torch.utils.data.WeightedRandomSampler",
+    "weights_digest_sha256": "cfbb93ebccecec84ab5d8032a0561dc9d124cf2568cc5acc850c096d16ae00f3",
+    "weights_summary": {
+      "weights_count": 12,
+      "weights_sum": 23.4,
+      "weights_min": 1.0,
+      "weights_max": 3.0,
+      "zero_weight_rows": 0,
+      "positive_weight_rows": 12
+    },
+    "row_identity_digest_sha256": "5c67ff8f9bf36e71b6a26b7476d4350784c93e4ffc5fa6ac27fe44df165dc621",
+    "sidecar_path": null
+  },
+  "runtime_capture": {
+    "captured": true,
+    "sampled_index_stream_total": 12,
+    "sampled_index_stream_digest_sha256": "805dad485675166ff96c0270b193a6c132ef787e15eea0c338cb68cbe7a63bd4",
+    "sampler_iteration_count": 1
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

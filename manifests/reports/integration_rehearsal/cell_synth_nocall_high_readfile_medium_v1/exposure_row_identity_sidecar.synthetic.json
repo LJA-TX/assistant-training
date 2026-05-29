@@ -1,0 +1,266 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T11:37:19Z",
+  "status": "train_index_geometry_sidecar",
+  "config_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_config.json",
+  "manifest_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_manifest.json",
+  "dataset_paths": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_train.jsonl"
+  },
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_integration_rehearsal",
+    "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+    "axis_levels": {
+      "no_call_pressure": "high",
+      "read_file_counterweight": "medium",
+      "rg_search_contrastive": "low",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "metadata_weighted_random_sampler_probe",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 18,
+      "read_file_symbol_name_family": 14,
+      "rg_search_contrastive_family": 10,
+      "uncertainty_conditioned_family": 4
+    }
+  },
+  "geometry_context_digest": "1f35b81bfe3dfae09e675361b193620955d2a2c51e6d720ad3b0b8cea4f13348",
+  "rows_digest_sha256": "5c67ff8f9bf36e71b6a26b7476d4350784c93e4ffc5fa6ac27fe44df165dc621",
+  "rows_total": 12,
+  "rows": [
+    {
+      "train_index_0based": 0,
+      "train_index_1based": 1,
+      "row_hash_sha256": "4e322b917b4c2d9d41be0f8272527a47a46f5145e4b39d9bea211d8bb3e3a036",
+      "source_case_id": "synthetic_train_01",
+      "tool": "rg_search",
+      "geometry_family": "no_call_adversarial_family",
+      "geometry_archetype": "no_call_adversarial",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_01"
+    },
+    {
+      "train_index_0based": 1,
+      "train_index_1based": 2,
+      "row_hash_sha256": "8e3252274f38dcedd381d6e02a1ece7c030d0547c13c9283b6080c3a683994b7",
+      "source_case_id": "synthetic_train_02",
+      "tool": "read_file",
+      "geometry_family": "no_call_adversarial_family",
+      "geometry_archetype": "no_call_adversarial",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_01"
+    },
+    {
+      "train_index_0based": 2,
+      "train_index_1based": 3,
+      "row_hash_sha256": "322825e4a136af7b94fbbbc0346a3cf9ee8282fd8f9e5e36dc025886fb2f675c",
+      "source_case_id": "synthetic_train_03",
+      "tool": "read_file",
+      "geometry_family": "no_call_adversarial_family",
+      "geometry_archetype": "no_call_adversarial",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_02"
+    },
+    {
+      "train_index_0based": 3,
+      "train_index_1based": 4,
+      "row_hash_sha256": "cdc33b4523567ba779a484db0e844a0e8aba5d78a87bce548956f1b29f83df5a",
+      "source_case_id": "synthetic_train_04",
+      "tool": "rg_search",
+      "geometry_family": "no_call_adversarial_family",
+      "geometry_archetype": "no_call_adversarial",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_02"
+    },
+    {
+      "train_index_0based": 4,
+      "train_index_1based": 5,
+      "row_hash_sha256": "464a3c43ee63b4f9a11f13e8a3418b55deb9fe83249b48ac9d4ff4ea82d04077",
+      "source_case_id": "synthetic_train_05",
+      "tool": "read_file",
+      "geometry_family": "no_call_adversarial_family",
+      "geometry_archetype": "no_call_adversarial",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_03"
+    },
+    {
+      "train_index_0based": 5,
+      "train_index_1based": 6,
+      "row_hash_sha256": "78b1f9f25ffead5383037e776365ab7a53028a89453e0b1c92844ced80bb1995",
+      "source_case_id": "synthetic_train_06",
+      "tool": "read_file",
+      "geometry_family": "read_file_symbol_name_family",
+      "geometry_archetype": "read_file_symbol_name",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_03"
+    },
+    {
+      "train_index_0based": 6,
+      "train_index_1based": 7,
+      "row_hash_sha256": "9269cccb3e61deee4ab0c19cc22d6da541bbc19b7a33d71c2a9e0f54e617e33f",
+      "source_case_id": "synthetic_train_07",
+      "tool": "rg_search",
+      "geometry_family": "read_file_symbol_name_family",
+      "geometry_archetype": "read_file_symbol_name",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_04"
+    },
+    {
+      "train_index_0based": 7,
+      "train_index_1based": 8,
+      "row_hash_sha256": "d28213b8e459ce1e0b3dfa84d932c690ae2b914793306053d8f679462ad70746",
+      "source_case_id": "synthetic_train_08",
+      "tool": "read_file",
+      "geometry_family": "read_file_symbol_name_family",
+      "geometry_archetype": "read_file_symbol_name",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_04"
+    },
+    {
+      "train_index_0based": 8,
+      "train_index_1based": 9,
+      "row_hash_sha256": "6e9b0ace19363a3cb7770618ec1705bd3d38173075be8849c2756d76a8274f14",
+      "source_case_id": "synthetic_train_09",
+      "tool": "read_file",
+      "geometry_family": "read_file_symbol_name_family",
+      "geometry_archetype": "read_file_symbol_name",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_05"
+    },
+    {
+      "train_index_0based": 9,
+      "train_index_1based": 10,
+      "row_hash_sha256": "ec7f8de37d065a65be4fd6e3bd676169d120793af62b3b5153444fc79769d9f2",
+      "source_case_id": "synthetic_train_10",
+      "tool": "rg_search",
+      "geometry_family": "rg_search_contrastive_family",
+      "geometry_archetype": "rg_search_match_count",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "medium",
+        "rg_search_contrastive": "low",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": "pair_05"
+    },
+    {
+      "train_index_0based": 10,
+      "train_index_1based": 11,
+      "row_hash_sha256": "7e496b9b9e9270a35ffb57bd86c5f30cbc2c22d832e78be93f1013fa8bf59bc3",
+      "source_case_id": "synthetic_train_11",
+      "tool": "read_file",
+      "geometry_family": "rg_search_contrastive_family",
+      "geometry_archetype": "rg_search_match_count",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "low",
+        "rg_search_contrastive": "medium",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"low\",\"rg_search_contrastive\":\"medium\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": null
+    },
+    {
+      "train_index_0based": 11,
+      "train_index_1based": 12,
+      "row_hash_sha256": "427c6d9fc61f8a4400c8e07d4b235bd9cf371195481e7d05311ecee2a238882a",
+      "source_case_id": "synthetic_train_12",
+      "tool": "read_file",
+      "geometry_family": "rg_search_contrastive_family",
+      "geometry_archetype": "rg_search_match_count",
+      "geometry_axes": {
+        "no_call_pressure": "high",
+        "read_file_counterweight": "low",
+        "rg_search_contrastive": "medium",
+        "uncertainty_conditioning": "zero"
+      },
+      "geometry_axes_signature": "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"low\",\"rg_search_contrastive\":\"medium\",\"uncertainty_conditioning\":\"zero\"}",
+      "geometry_pair_id": null
+    }
+  ],
+  "summary": {
+    "unique_families": 3,
+    "unique_archetypes": 3,
+    "unique_axis_signatures": 2,
+    "rows_with_pair_id": 10
+  },
+  "counts": {
+    "family_counts": {
+      "no_call_adversarial_family": 5,
+      "read_file_symbol_name_family": 4,
+      "rg_search_contrastive_family": 3
+    },
+    "archetype_counts": {
+      "no_call_adversarial": 5,
+      "read_file_symbol_name": 4,
+      "rg_search_match_count": 3
+    },
+    "axis_signature_counts": {
+      "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"medium\",\"rg_search_contrastive\":\"low\",\"uncertainty_conditioning\":\"zero\"}": 10,
+      "{\"no_call_pressure\":\"high\",\"read_file_counterweight\":\"low\",\"rg_search_contrastive\":\"medium\",\"uncertainty_conditioning\":\"zero\"}": 2
+    },
+    "pair_id_counts": {
+      "pair_01": 2,
+      "pair_02": 2,
+      "pair_03": 2,
+      "pair_04": 2,
+      "pair_05": 2
+    }
+  }
+}

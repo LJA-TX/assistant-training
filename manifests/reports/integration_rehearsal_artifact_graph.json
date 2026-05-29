@@ -1,0 +1,175 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T11:40:00Z",
+  "rehearsal_id": "stage_b_v1_integration_rehearsal",
+  "sweep_id": "stage_b_v1_geometry_integration_rehearsal",
+  "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+  "nodes": [
+    {
+      "id": "cell_definition",
+      "artifact_type": "synthetic_geometry_cell_definition",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_geometry_cell_definition.json",
+      "digest": null,
+      "key_status": "source"
+    },
+    {
+      "id": "synthetic_config",
+      "artifact_type": "synthetic_config",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_config.json",
+      "digest": null,
+      "key_status": "source"
+    },
+    {
+      "id": "resolved_config",
+      "artifact_type": "resolved_config",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/resolved_config.synthetic.json",
+      "digest": "1f35b81bfe3dfae09e675361b193620955d2a2c51e6d720ad3b0b8cea4f13348",
+      "key_status": "derived"
+    },
+    {
+      "id": "declared_ledger",
+      "artifact_type": "exposure_ledger_declared",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_declared.synthetic.json",
+      "digest": "1f35b81bfe3dfae09e675361b193620955d2a2c51e6d720ad3b0b8cea4f13348",
+      "key_status": "derived"
+    },
+    {
+      "id": "row_identity_sidecar",
+      "artifact_type": "exposure_row_identity_sidecar",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_row_identity_sidecar.synthetic.json",
+      "digest": "5c67ff8f9bf36e71b6a26b7476d4350784c93e4ffc5fa6ac27fe44df165dc621",
+      "key_status": "derived"
+    },
+    {
+      "id": "sampler_determinism",
+      "artifact_type": "sampler_determinism_report",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/sampler_determinism_report.synthetic.json",
+      "digest": "805dad485675166ff96c0270b193a6c132ef787e15eea0c338cb68cbe7a63bd4",
+      "key_status": "geometry_sampling_weighted_runtime_stream_captured"
+    },
+    {
+      "id": "realized_ledger",
+      "artifact_type": "exposure_ledger_realized",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_realized.synthetic.json",
+      "digest": "805dad485675166ff96c0270b193a6c132ef787e15eea0c338cb68cbe7a63bd4",
+      "key_status": "realized_exposure_weighted_sampler_stream_captured"
+    },
+    {
+      "id": "drift_ledger",
+      "artifact_type": "exposure_ledger_drift",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_drift.synthetic.json",
+      "digest": "1f35b81bfe3dfae09e675361b193620955d2a2c51e6d720ad3b0b8cea4f13348",
+      "key_status": "declared_vs_realized_comparison_weighted_stream_captured"
+    },
+    {
+      "id": "threshold_profile",
+      "artifact_type": "threshold_profile",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+      "digest": "9ca7b94f73667d6a779be0df03cde14c9afe8f2aaf827d0de8fea96db0e2c7e7",
+      "key_status": "source"
+    },
+    {
+      "id": "synthetic_eval_summary",
+      "artifact_type": "synthetic_eval_summary",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_eval_summary.json",
+      "digest": null,
+      "key_status": "source"
+    },
+    {
+      "id": "synthetic_baseline_summary",
+      "artifact_type": "synthetic_baseline_summary",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_eval_baseline_summary.json",
+      "digest": null,
+      "key_status": "source"
+    },
+    {
+      "id": "collapse_watch",
+      "artifact_type": "collapse_watch_interpretation",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/collapse_watch_interpretation.synthetic.json",
+      "digest": "04a286d67a82dbd054ebcdc2c5ca485881534a0674a1241abcc64c4421797e9e",
+      "key_status": "watch"
+    },
+    {
+      "id": "gate_assessment",
+      "artifact_type": "gate_assessment",
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/gate_assessment.synthetic.json",
+      "digest": "04a286d67a82dbd054ebcdc2c5ca485881534a0674a1241abcc64c4421797e9e",
+      "key_status": "watch"
+    }
+  ],
+  "edges": [
+    {
+      "from": "cell_definition",
+      "to": "synthetic_config",
+      "relation": "instantiates_geometry_cell"
+    },
+    {
+      "from": "synthetic_config",
+      "to": "resolved_config",
+      "relation": "resolved_into"
+    },
+    {
+      "from": "resolved_config",
+      "to": "declared_ledger",
+      "relation": "declared_exposure_source"
+    },
+    {
+      "from": "resolved_config",
+      "to": "row_identity_sidecar",
+      "relation": "row_identity_source"
+    },
+    {
+      "from": "row_identity_sidecar",
+      "to": "sampler_determinism",
+      "relation": "weighting_and_capture_reference"
+    },
+    {
+      "from": "sampler_determinism",
+      "to": "realized_ledger",
+      "relation": "sampled_stream_digest_link"
+    },
+    {
+      "from": "declared_ledger",
+      "to": "drift_ledger",
+      "relation": "declared_component"
+    },
+    {
+      "from": "realized_ledger",
+      "to": "drift_ledger",
+      "relation": "realized_component"
+    },
+    {
+      "from": "threshold_profile",
+      "to": "collapse_watch",
+      "relation": "threshold_ingestion"
+    },
+    {
+      "from": "synthetic_eval_summary",
+      "to": "collapse_watch",
+      "relation": "detector_eval_input"
+    },
+    {
+      "from": "synthetic_baseline_summary",
+      "to": "collapse_watch",
+      "relation": "detector_baseline_input"
+    },
+    {
+      "from": "resolved_config",
+      "to": "collapse_watch",
+      "relation": "geometry_context_input_indirect"
+    },
+    {
+      "from": "collapse_watch",
+      "to": "gate_assessment",
+      "relation": "gate_compatibility"
+    }
+  ],
+  "integrity_summary": {
+    "mapping_geometry_context_digest": "1f35b81bfe3dfae09e675361b193620955d2a2c51e6d720ad3b0b8cea4f13348",
+    "detector_geometry_context_digest": "04a286d67a82dbd054ebcdc2c5ca485881534a0674a1241abcc64c4421797e9e",
+    "geometry_digest_contract_divergence": true,
+    "weight_digest": "cfbb93ebccecec84ab5d8032a0561dc9d124cf2568cc5acc850c096d16ae00f3",
+    "sampled_stream_digest": "805dad485675166ff96c0270b193a6c132ef787e15eea0c338cb68cbe7a63bd4",
+    "threshold_profile_digest": "9ca7b94f73667d6a779be0df03cde14c9afe8f2aaf827d0de8fea96db0e2c7e7"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T11:37:19Z",
+  "status": "watch",
+  "threshold_profile_id": "stage_b_v1_geometry_mapping_collapse_profile",
+  "threshold_profile_digest": "9ca7b94f73667d6a779be0df03cde14c9afe8f2aaf827d0de8fea96db0e2c7e7",
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_integration_rehearsal",
+    "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+    "axis_levels": {
+      "no_call_pressure": "high",
+      "read_file_counterweight": "medium",
+      "rg_search_contrastive": "low",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "metadata_weighted_random_sampler_probe",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 18,
+      "read_file_symbol_name_family": 14,
+      "rg_search_contrastive_family": 10,
+      "uncertainty_conditioned_family": 4
+    }
+  },
+  "geometry_context_digest": "04a286d67a82dbd054ebcdc2c5ca485881534a0674a1241abcc64c4421797e9e",
+  "inputs": {
+    "eval_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_eval_summary.json",
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_eval_baseline_summary.json",
+    "geometry_context_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/geometry_context.synthetic.json"
+  },
+  "decision_breakdown": {
+    "hard_invariant_violation_count": 0,
+    "catastrophic_trigger_count": 0,
+    "tradeoff_watch_warning_count": 1,
+    "noncomputable_rule_count": 0
+  },
+  "active_rule_ids": {
+    "hard_invariant_violations": [],
+    "catastrophic_triggers": [],
+    "tradeoff_watch_warnings": [
+      "read_file_exact_valid_rate_lt_0_70"
+    ],
+    "noncomputable_rules": []
+  },
+  "progression_allowed": true,
+  "halt_recommended": false,
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

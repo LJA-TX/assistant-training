@@ -1,0 +1,18 @@
+{
+  "geometry_schema_version": "1.0",
+  "sweep_id": "stage_b_v1_geometry_integration_rehearsal",
+  "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+  "axis_levels": {
+    "no_call_pressure": "high",
+    "read_file_counterweight": "medium",
+    "rg_search_contrastive": "low",
+    "uncertainty_conditioning": "zero"
+  },
+  "weighting_mode": "metadata_weighted_random_sampler_probe",
+  "declared_exposure_units": {
+    "no_call_adversarial_family": 18,
+    "read_file_symbol_name_family": 14,
+    "rg_search_contrastive_family": 10,
+    "uncertainty_conditioned_family": 4
+  }
+}

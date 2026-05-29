@@ -1,0 +1,35 @@
+{
+  "rehearsal_id": "stage_b_v1_integration_rehearsal",
+  "cell_id": "cell_synth_nocall_high_readfile_medium_v1",
+  "status": "completed",
+  "checks": {
+    "geometry_context_digest_consistent": false,
+    "weight_digest_consistent": true,
+    "sampled_stream_digest_consistent": true,
+    "threshold_profile_digest_consistent": true,
+    "declared_realized_drift_present": true,
+    "collapse_detector_outputs_present": true
+  },
+  "observed_status": {
+    "collapse_watch_status": "watch",
+    "gate_status": "watch",
+    "progression_allowed": true,
+    "halt_recommended": false,
+    "drift_status": "declared_vs_realized_comparison_weighted_stream_captured",
+    "realized_capture_mode": "runtime_weighted_sampler_stream_capture"
+  },
+  "artifact_paths": {
+    "cell_definition": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_geometry_cell_definition.json",
+    "resolved_config": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/resolved_config.synthetic.json",
+    "declared_ledger": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_declared.synthetic.json",
+    "row_identity_sidecar": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_row_identity_sidecar.synthetic.json",
+    "realized_ledger": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_realized.synthetic.json",
+    "drift_ledger": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/exposure_ledger_drift.synthetic.json",
+    "sampler_determinism_report": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/sampler_determinism_report.synthetic.json",
+    "threshold_profile": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "synthetic_eval_summary": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_eval_summary.json",
+    "synthetic_baseline_summary": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_eval_baseline_summary.json",
+    "collapse_watch_interpretation": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/collapse_watch_interpretation.synthetic.json",
+    "gate_assessment": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/gate_assessment.synthetic.json"
+  }
+}

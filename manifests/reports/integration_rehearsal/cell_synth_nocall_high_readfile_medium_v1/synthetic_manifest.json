@@ -1,0 +1,14 @@
+{
+  "manifest_version": "1.0",
+  "synthetic": true,
+  "config_path": "/opt/ai-stack/assistant-training/manifests/reports/integration_rehearsal/cell_synth_nocall_high_readfile_medium_v1/synthetic_config.json",
+  "lineage": {
+    "kind": "integration_rehearsal",
+    "parent": "none",
+    "note": "Synthetic cell rehearsal for Stage B instrumentation stack."
+  },
+  "approval_gate": {
+    "approved_to_run": false,
+    "approved_to_train": false
+  }
+}
