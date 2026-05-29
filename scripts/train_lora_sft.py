@@ -1337,10 +1337,10 @@ def _make_geometry_sampling_trainer_subclass(base_trainer_cls: Any):
             self._geometry_sampler_instance = None
             super().__init__(*args, **kwargs)
 
-        def _get_train_sampler(self):
+        def _get_train_sampler(self, train_dataset=None):
             plan = self._geometry_sampling_plan
             if not bool(plan.get("enabled", False)):
-                return super()._get_train_sampler()
+                return super()._get_train_sampler(train_dataset)
             if str(plan.get("sampler_type", "")) != "weighted_random":
                 raise RuntimeError("geometry sampling sampler_type unsupported for trainer subclass")
             weights = plan.get("weights")

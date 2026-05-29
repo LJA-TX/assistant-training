@@ -1,0 +1,56 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T15:05:38Z",
+  "artifact": "stage_b_first_probe_sampler_hook_signature_diff",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_first_live_probe",
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+    "authorized_package_commit": "d66522edd64b96acb27aa22b546bd8310efe5ae5"
+  },
+  "custom_trainer_hook": {
+    "file": "/opt/ai-stack/assistant-training/scripts/train_lora_sft.py",
+    "class_factory": "_make_geometry_sampling_trainer_subclass",
+    "class_name": "_GeometrySamplingTrainer",
+    "definition_lines": "1333-1359",
+    "hook_definition_line": 1340,
+    "implemented_signature": "_get_train_sampler(self)",
+    "invocation_behavior_when_enabled": "constructs and returns traceable WeightedRandomSampler",
+    "invocation_behavior_when_disabled": "delegates to super()._get_train_sampler()"
+  },
+  "base_trainer_hook": {
+    "transformers_version": "5.9.0",
+    "file": "/home/roy/.venvs/llama/lib/python3.12/site-packages/transformers/trainer.py",
+    "definition_lines": "1053-1080",
+    "implemented_signature": "_get_train_sampler(self, train_dataset: Dataset | None = None)",
+    "callsite_chain": {
+      "get_train_dataloader_lines": "1128-1146",
+      "_get_dataloader_lines": "1082-1126",
+      "sampler_invoke_line": 1109,
+      "sampler_invoke_expr": "sampler_fn(dataset)",
+      "supplied_argument": "dataset=self.train_dataset"
+    }
+  },
+  "observed_failure": {
+    "error_class": "TypeError",
+    "error_message": "_GeometrySamplingTrainer._get_train_sampler() takes 1 positional argument but 2 were given",
+    "failure_stage": "trainer.train() -> get_train_dataloader() -> _get_dataloader() sampler_fn(dataset)"
+  },
+  "signature_delta": {
+    "custom": ["self"],
+    "base": ["self", "train_dataset=None"],
+    "mismatch": "custom hook does not accept dataset positional arg passed by Transformers 5.9.0"
+  },
+  "fix_classification": {
+    "minimal_for_current_environment": "signature_only",
+    "call_site_change_required": false,
+    "version_wrapper_required": false,
+    "broader_refactor_required": false
+  },
+  "risk_assessment": {
+    "tensor_contract_impact": "none_expected (sampler hook only)",
+    "loss_path_impact": "none_expected (loss computation unchanged)",
+    "sampler_determinism_impact": "none_expected if sampler seed/generator path unchanged",
+    "exposure_accounting_impact": "low_positive (unblocks training loop so runtime sampled-stream capture can execute)"
+  },
+  "final_recommendation": "SIGNATURE_FIX_ONLY"
+}

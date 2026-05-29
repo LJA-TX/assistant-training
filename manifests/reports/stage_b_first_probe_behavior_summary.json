@@ -1,27 +1,28 @@
 {
-  "report_version": "1.0",
-  "generated_utc": "2026-05-29T13:53:34Z",
+  "report_version": "2.0",
+  "generated_utc": "2026-05-29T14:58:16Z",
   "artifact": "stage_b_first_probe_behavior_summary",
   "probe_identity": {
     "sweep_id": "stage_b_v1_geometry_first_live_probe",
-    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1"
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+    "authorized_package_commit": "d66522edd64b96acb27aa22b546bd8310efe5ae5"
   },
   "execution_outcome": {
     "status": "failed",
     "failed_stage": "training",
-    "failed_before_trainer_loop": true,
+    "failed_before_trainer_loop": false,
     "any_command_failed": true,
     "failed_command": "/home/roy/.venvs/llama/bin/accelerate launch --num_processes 1 /opt/ai-stack/assistant-training/scripts/train_lora_sft.py --config /opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_geometry_probe_mh.config.json",
     "failed_command_exit_code": 1,
-    "failure_reason": "geometry_sampling sidecar geometry_mapping_identity_digest mismatch",
+    "failure_reason": "TypeError in custom geometry sampling trainer hook: _get_train_sampler signature mismatch",
     "retry_occurred": false,
     "hidden_retry_occurred": false
   },
   "declared_exposure_summary": {
     "source": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_declared.json",
-    "train_rows_total": 1982,
-    "val_rows_total": 236,
-    "combined_rows_total": 2218,
+    "rows_train": 1982,
+    "rows_val": 236,
+    "rows_combined": 2218,
     "train_family_counts": {
       "unspecified": 1881,
       "semantic_substitution_conversion_pairs_read_file_primary": 52,
@@ -29,39 +30,35 @@
       "malformed_regex_underspecified_search_adversarial_boundary": 8,
       "uncertainty_conditioned_procedural_continuation_smallscale": 8,
       "read_file_symbol_name_commitment_instability": 5
-    },
-    "train_archetype_counts": {
-      "unspecified": 1889,
-      "rg_search_match_count": 29,
-      "read_file_symbol_name": 23,
-      "read_file_boolean_presence": 18,
-      "read_file_first_function_name": 16,
-      "rg_search_other": 7
     }
   },
   "realized_exposure_summary": {
-    "status": "not_available",
-    "reason": "training aborted before sampling/trainer execution; exposure_ledger_realized.json not emitted",
-    "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_realized.json"
+    "status": "realized_exposure_weighted_configured_runtime_not_captured",
+    "capture_mode": "index_space_inferred_no_sampler_stream_capture",
+    "confidence": "limited",
+    "rows_total": null,
+    "note": "no sampled stream capture due training failure before training loop"
   },
   "declared_vs_realized_drift": {
-    "status": "not_computable",
-    "reason": "realized exposure ledger missing due training failure",
-    "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_drift.json"
+    "status": "declared_vs_realized_comparison_default_path_inferred",
+    "confidence": "limited",
+    "max_abs_delta_any_dimension": null,
+    "exact_match_all_dimensions": null
   },
-  "metrics": {
+  "behavior_metrics": {
     "no_call_aggregate": null,
     "no_call_adversarial": null,
     "read_file_exact_valid": null,
     "read_file_symbol_name_exact_valid": null,
     "wrapper_leakage": null,
-    "invalid_json_overall": null,
+    "invalid_json": null,
     "direct_answer_substitution_delta": null,
     "availability": "unavailable_eval_not_run"
   },
-  "detector_status": {
-    "status": "not_run",
-    "reason": "eval outputs unavailable because training failed"
+  "governance": {
+    "detector_status": "not_run",
+    "gate_assessment_status": "not_run",
+    "collapse_watch_status": "not_run"
   },
   "final_recommendation": "NOT_READY"
 }

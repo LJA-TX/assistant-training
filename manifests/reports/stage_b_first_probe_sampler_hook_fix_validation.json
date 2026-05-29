@@ -1,0 +1,50 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T15:09:45Z",
+  "artifact": "stage_b_first_probe_sampler_hook_fix_validation",
+  "scope": "signature compatibility fix validation only; no training/eval/probe execution",
+  "static_compile_validation": {
+    "command": "python -m py_compile scripts/train_lora_sft.py",
+    "passed": true
+  },
+  "signature_validation": {
+    "transformers_version": "5.9.0",
+    "base_signature": "(self, train_dataset: torch.utils.data.dataset.Dataset | None = None) -> torch.utils.data.sampler.Sampler | None",
+    "custom_signature": "(self, train_dataset=None)",
+    "custom_accepts_train_dataset_param": true,
+    "custom_train_dataset_default_is_none": true,
+    "disabled_path_delegation_compatible": true
+  },
+  "synthetic_sampler_validation": {
+    "geometry_sampling_enabled": true,
+    "sampler_class": "torch.utils.data.WeightedRandomSampler",
+    "weights_count": 1982,
+    "weights_summary": {
+      "weights_count": 1982,
+      "weights_sum": 36.0,
+      "weights_min": 0.0,
+      "weights_max": 3.25,
+      "zero_weight_rows": 1969,
+      "positive_weight_rows": 13
+    },
+    "determinism_summary_equal": true,
+    "determinism_digest_equal": true,
+    "determinism_weight_vector_equal": true,
+    "sampler_prefix_equal_same_seed": true,
+    "sidecar_validation_pass": true,
+    "sidecar_validation_note": "pass: _resolve_geometry_sampling_plan completed twice with sidecar mode and matching deterministic outputs.",
+    "weight_source_details": {
+      "weight_source_structure": "rows",
+      "sidecar_payload_digest_sha256": "6c375747fb5b6676ec0c40f554f8799d767705d7d28622297c604db954491fac"
+    },
+    "row_identity_digest_sha256": "1cb0a23a2038bb949b1e1be90b289eb02f1b05b776a8a2a11af44c961a993549"
+  },
+  "non_regression_scope_assertions": {
+    "no_tensor_contract_change": "not modified in this fix; sampler hook signature only",
+    "no_loss_path_change": "not modified in this fix; sampler hook signature only",
+    "no_sampler_determinism_logic_change": "sampler seed/generator/replacement/num_samples path unchanged",
+    "no_exposure_accounting_logic_change": "ledger/report builders unchanged"
+  },
+  "overall_pass": true,
+  "final_recommendation": "READY_FOR_RETRY_SINGLE_ATTEMPT"
+}
