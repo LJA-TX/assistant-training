@@ -1,0 +1,187 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T13:00:12Z",
+  "artifact": "stage_b_first_probe_declared_exposure",
+  "status": "planned_pre_execution",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_first_live_probe",
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+    "axis_levels": {
+      "no_call_pressure": "medium",
+      "read_file_counterweight": "high",
+      "rg_search_contrastive": "medium",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "deterministic_weighted_sampler_metadata"
+  },
+  "source_dataset": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+    "train_rows_total": 1982,
+    "val_rows_total": 236,
+    "family_counts_train": {
+      "malformed_regex_underspecified_search_adversarial_boundary": 8,
+      "read_file_symbol_name_commitment_instability": 5,
+      "unspecified": 1969
+    },
+    "family_counts_val": {
+      "malformed_regex_underspecified_search_adversarial_boundary": 2,
+      "read_file_symbol_name_commitment_instability": 1,
+      "unspecified": 233
+    },
+    "family_shares_train": {
+      "malformed_regex_underspecified_search_adversarial_boundary": 0.004,
+      "read_file_symbol_name_commitment_instability": 0.0025,
+      "unspecified": 0.9934
+    },
+    "metadata_weight_keys_detected": {
+      "train": {},
+      "val": {}
+    }
+  },
+  "declared_exposure_plan": {
+    "unit_definition": "relative exposure pressure units within weighted sampled stream",
+    "total_units": 36,
+    "family_units": {
+      "no_call_adversarial_family": 13,
+      "read_file_symbol_name_family": 10,
+      "valid_rg_search_contrastive_family": 13,
+      "uncertainty_conditioning_family": 0
+    },
+    "family_shares": {
+      "no_call_adversarial_family": 0.361,
+      "read_file_symbol_name_family": 0.278,
+      "valid_rg_search_contrastive_family": 0.361,
+      "uncertainty_conditioning_family": 0.0
+    },
+    "family_selectors": {
+      "no_call_adversarial_family": {
+        "metadata_filters": {
+          "i10r_counterbalanced_family": "malformed_regex_underspecified_search_adversarial_boundary",
+          "i10r_counterbalanced_boundary_valid": false
+        },
+        "intended_tool_behavior": "no_call_refusal"
+      },
+      "valid_rg_search_contrastive_family": {
+        "metadata_filters": {
+          "i10r_counterbalanced_family": "malformed_regex_underspecified_search_adversarial_boundary",
+          "i10r_counterbalanced_boundary_valid": true,
+          "tool": "rg_search"
+        },
+        "intended_tool_behavior": "canonical_rg_search_commitment"
+      },
+      "read_file_symbol_name_family": {
+        "metadata_filters": {
+          "i10r_counterbalanced_family": "read_file_symbol_name_commitment_instability",
+          "tool": "read_file",
+          "i10r_counterbalanced_query_archetype": "read_file_symbol_name"
+        },
+        "intended_tool_behavior": "canonical_read_file_commitment"
+      },
+      "uncertainty_conditioning_family": {
+        "metadata_filters": {
+          "uncertainty_conditioning": true
+        },
+        "intended_tool_behavior": "none_expected"
+      }
+    }
+  },
+  "declared_exposure_ledger_planned": {
+    "report_version": "1.0",
+    "status": "planned_only_not_runtime_emitted",
+    "train_split": {
+      "rows_total": 1982,
+      "declared_family_units": {
+        "no_call_adversarial_family": 13,
+        "read_file_symbol_name_family": 10,
+        "valid_rg_search_contrastive_family": 13,
+        "uncertainty_conditioning_family": 0
+      },
+      "declared_family_shares": {
+        "no_call_adversarial_family": 0.361,
+        "read_file_symbol_name_family": 0.278,
+        "valid_rg_search_contrastive_family": 0.361,
+        "uncertainty_conditioning_family": 0.0
+      }
+    },
+    "val_split": {
+      "rows_total": 236,
+      "declared_family_units": "n/a_eval_only_split",
+      "declared_family_shares": "n/a_eval_only_split"
+    }
+  },
+  "expected_realized_exposure_ranges": {
+    "definition": "weighted sampler runtime stream ranges for N=dataset_length=1982",
+    "share_ranges": {
+      "no_call_adversarial_family": {
+        "min": 0.3,
+        "max": 0.42
+      },
+      "read_file_symbol_name_family": {
+        "min": 0.22,
+        "max": 0.33
+      },
+      "valid_rg_search_contrastive_family": {
+        "min": 0.3,
+        "max": 0.42
+      },
+      "uncertainty_conditioning_family": {
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "count_ranges_for_N_1982": {
+      "no_call_adversarial_family": {
+        "min": 595,
+        "max": 832
+      },
+      "read_file_symbol_name_family": {
+        "min": 436,
+        "max": 654
+      },
+      "valid_rg_search_contrastive_family": {
+        "min": 595,
+        "max": 832
+      },
+      "uncertainty_conditioning_family": {
+        "min": 0,
+        "max": 0
+      }
+    }
+  },
+  "drift_expectations": {
+    "metric": "max_abs_delta_any_dimension",
+    "acceptable_lte": 3,
+    "watch_band": {
+      "min": 4,
+      "max": 6
+    },
+    "halt_gt": 6,
+    "interpretation": {
+      "lte_3": "attribution_acceptable",
+      "4_to_6": "attribution_warning",
+      "gt_6": "attribution_not_defensible"
+    }
+  },
+  "weighting_rationale": {
+    "policy": "metadata-driven strict mode (default_weight=0.0)",
+    "reasoning": [
+      "Prevents accidental uniform weighted-sampler execution that would not reflect declared geometry pressure.",
+      "Forces explicit row-level metadata weights on targeted families before execution authorization.",
+      "Maintains deterministic replay once metadata weights are populated and validated."
+    ],
+    "blocking_gap": "Current dataset has zero rows with numeric weight metadata keys; no-go until resolved."
+  },
+  "expected_runtime_artifacts": {
+    "declared_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_declared.json",
+    "realized_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_realized.json",
+    "drift_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/exposure_ledger_drift.json",
+    "sampler_determinism_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_mh/sampler_determinism_report.json"
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

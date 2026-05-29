@@ -1,0 +1,86 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T12:47:22Z",
+  "artifact": "stage_b_first_probe_hypothesis",
+  "scope": "design_only_no_execution",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_first_live_probe",
+    "cell_id": "cell_live_mh_nocall_medium_readfile_high_v1",
+    "axis_levels": {
+      "no_call_pressure": "medium",
+      "read_file_counterweight": "high",
+      "rg_search_contrastive": "medium",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "deterministic_weighted_sampler_metadata"
+  },
+  "hypothesis": {
+    "statement": "A medium no-call pressure with high read_file symbol-name counterweight can preserve read_file procedural commitment while probing whether no-call correctness can approach or reach ceiling under live Stage B instrumentation.",
+    "success_conditions": [
+      "typed digest lineage and exposure ledgers are complete and reconstructable",
+      "no catastrophic collapse status",
+      "no wrapper leakage",
+      "read_file_exact_valid_rate and read_file_symbol_name_exact_valid_rate remain above catastrophic floors",
+      "no_call metrics show directional improvement versus the read_file-safe baseline"
+    ],
+    "failure_conditions": [
+      "instrumentation artifacts missing, inconsistent, or non-reconstructable",
+      "catastrophic_halt status",
+      "hard invariant violation leading to halt_progression",
+      "declared-vs-realized drift too high for attribution"
+    ]
+  },
+  "cell_justification": {
+    "no_call_pressure": "medium chosen as first live stress level to test coupling without immediate high-pressure collapse risk",
+    "read_file_counterweight": "high chosen to protect dependent variable during no-call pressure",
+    "rg_search_contrastive": "medium chosen with 1:1 pairing to no-call pressure for valid commitment counter-pressure",
+    "uncertainty_conditioning": "zero to remove confounding in first live attribution"
+  },
+  "declared_exposure_plan": {
+    "units": {
+      "no_call_adversarial_family": 13,
+      "read_file_symbol_name_family": 10,
+      "valid_rg_search_contrastive_family": 13,
+      "uncertainty_conditioning_family": 0
+    },
+    "share_targets": {
+      "no_call_adversarial_family": 0.361,
+      "read_file_symbol_name_family": 0.278,
+      "valid_rg_search_contrastive_family": 0.361,
+      "uncertainty_conditioning_family": 0.0
+    }
+  },
+  "expected_realized_exposure_range": {
+    "definition": "ranges are proportions over realized sampled stream size N",
+    "no_call_adversarial_family": {
+      "min_share": 0.30,
+      "max_share": 0.42
+    },
+    "read_file_symbol_name_family": {
+      "min_share": 0.22,
+      "max_share": 0.33
+    },
+    "valid_rg_search_contrastive_family": {
+      "min_share": 0.30,
+      "max_share": 0.42
+    },
+    "uncertainty_conditioning_family": {
+      "min_share": 0.0,
+      "max_share": 0.0
+    },
+    "drift_expectation": {
+      "acceptable_max_abs_delta_any_dimension": 3,
+      "watch_band": [
+        4,
+        6
+      ],
+      "halt_band_gt": 6
+    }
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

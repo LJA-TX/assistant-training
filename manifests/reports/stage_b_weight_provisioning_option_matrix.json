@@ -1,0 +1,70 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-05-29T16:35:00Z",
+  "objective": "Resolve Stage B first-probe metadata weight coverage gap without dataset mutation.",
+  "options": [
+    {
+      "option_id": "A_direct_dataset_metadata_weights",
+      "description": "Write probe weights directly into training dataset row metadata.",
+      "advantages": [
+        "Simple ingestion path (existing metadata mode).",
+        "No sidecar file required at runtime."
+      ],
+      "disadvantages": [
+        "Mutates dataset content for probe-specific intent.",
+        "Conflates base dataset provenance with experiment-time weighting.",
+        "Rollback requires dataset edits or branching copies."
+      ],
+      "provenance_implications": "High provenance contamination risk: weight intent becomes embedded in dataset rows.",
+      "reproducibility_implications": "Replay depends on exact mutated dataset variant; harder to audit against canonical corpus.",
+      "rollback_implications": "Potentially invasive; requires restoring dataset version or maintaining multiple weight-tagged copies.",
+      "implementation_complexity": "low",
+      "doctrine_fit": "poor"
+    },
+    {
+      "option_id": "B_sidecar_row_hash_to_weight",
+      "description": "External sidecar mapping row content hash -> weight.",
+      "advantages": [
+        "No dataset mutation.",
+        "Weight intent externalized and versionable.",
+        "Naturally replayable if row hashes and digest checks are stable."
+      ],
+      "disadvantages": [
+        "Hash collisions/duplicates create ambiguity for per-row attribution if different rows share a hash.",
+        "Requires row-identity validation logic in loader."
+      ],
+      "provenance_implications": "Good when paired with row-identity digest checks; ambiguous if hash collisions are unmanaged.",
+      "reproducibility_implications": "Strong if sidecar carries geometry + row-identity digests and loader validates both.",
+      "rollback_implications": "Excellent; delete/swap sidecar with no dataset mutation.",
+      "implementation_complexity": "medium",
+      "doctrine_fit": "good_with_collision_controls"
+    },
+    {
+      "option_id": "C_probe_specific_overlay_row_identity_rows",
+      "description": "Generate probe-specific sidecar overlay with explicit train_index + row_hash + weight rows and digest lineage.",
+      "advantages": [
+        "No dataset mutation.",
+        "Probe-specific and reversible artifact.",
+        "Avoids row-hash collision ambiguity via explicit train_index addressing.",
+        "Supports strict fail-fast row-hash cross-checks against runtime row-identity sidecar.",
+        "Direct compatibility with existing weighted sampler + exposure ledgers."
+      ],
+      "disadvantages": [
+        "Requires overlay generation step before execution.",
+        "Adds one more artifact to review/governance package."
+      ],
+      "provenance_implications": "Strong: dataset remains canonical; weighting intent isolated in auditable probe overlay.",
+      "reproducibility_implications": "Strong: deterministic row assignment from selectors + row hashes + digests.",
+      "rollback_implications": "Excellent: remove/replace sidecar only.",
+      "implementation_complexity": "medium",
+      "doctrine_fit": "best"
+    }
+  ],
+  "empirical_note": {
+    "train_rows_total": 1982,
+    "unique_row_hashes": 1785,
+    "row_hash_collision_count": 157,
+    "implication": "Pure hash-keyed mapping is usable only with explicit duplicate-handling semantics; row-identity rows overlay is safer as canonical first-probe path."
+  },
+  "selected_option_id": "C_probe_specific_overlay_row_identity_rows"
+}

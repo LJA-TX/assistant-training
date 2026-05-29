@@ -263,22 +263,219 @@ def _build_weight_vector_from_metadata(
     return weights
 
 
+def _build_row_hash_index_from_row_identity_sidecar(
+    *,
+    row_identity_sidecar: dict[str, Any],
+    expected_len: int,
+) -> dict[str, list[int]]:
+    rows = row_identity_sidecar.get("rows")
+    if not isinstance(rows, list):
+        raise RuntimeError(
+            "geometry_sampling sidecar row-hash mode requires row_identity_sidecar.rows list"
+        )
+    if len(rows) != expected_len:
+        raise RuntimeError(
+            "geometry_sampling sidecar row-hash mode row_identity rows length mismatch: "
+            f"expected {expected_len}, got {len(rows)}"
+        )
+
+    by_hash: dict[str, list[int]] = {}
+    seen_indices: set[int] = set()
+    for pos, row in enumerate(rows):
+        if not isinstance(row, dict):
+            raise RuntimeError(
+                "geometry_sampling sidecar row-hash mode row_identity row must be object: "
+                f"rows[{pos}]"
+            )
+        idx_raw = row.get("train_index_0based")
+        hash_raw = row.get("row_hash_sha256")
+        if idx_raw is None:
+            raise RuntimeError(
+                "geometry_sampling sidecar row-hash mode row_identity row missing "
+                f"train_index_0based: rows[{pos}]"
+            )
+        if not isinstance(hash_raw, str) or not hash_raw.strip():
+            raise RuntimeError(
+                "geometry_sampling sidecar row-hash mode row_identity row missing "
+                f"row_hash_sha256: rows[{pos}]"
+            )
+        try:
+            idx = int(idx_raw)
+        except Exception as exc:
+            raise RuntimeError(
+                "geometry_sampling sidecar row-hash mode row_identity train_index_0based "
+                f"invalid: {idx_raw}"
+            ) from exc
+        if idx < 0 or idx >= expected_len:
+            raise RuntimeError(
+                "geometry_sampling sidecar row-hash mode row_identity index out of range: "
+                f"{idx}"
+            )
+        if idx in seen_indices:
+            raise RuntimeError(
+                "geometry_sampling sidecar row-hash mode row_identity duplicate index: "
+                f"{idx}"
+            )
+        seen_indices.add(idx)
+        by_hash.setdefault(hash_raw, []).append(idx)
+
+    if len(seen_indices) != expected_len:
+        raise RuntimeError(
+            "geometry_sampling sidecar row-hash mode row_identity index coverage mismatch: "
+            f"expected {expected_len}, got {len(seen_indices)}"
+        )
+    return by_hash
+
+
 def _load_weights_from_sidecar(
     *,
     sidecar_json_path: str,
     expected_len: int,
     weight_key_candidates: list[str],
-) -> list[Any]:
+    row_identity_sidecar: dict[str, Any] | None = None,
+    geometry_context: dict[str, Any] | None = None,
+) -> tuple[list[Any], dict[str, Any]]:
     payload = _load_json(Path(sidecar_json_path))
+    payload_digest = _sha256_text(_canonical_json_text(payload))
     if isinstance(payload, list):
-        return payload
+        return payload, {
+            "weight_source_structure": "list",
+            "sidecar_payload_digest_sha256": payload_digest,
+        }
 
     if not isinstance(payload, dict):
         raise RuntimeError("geometry_sampling sidecar payload must be object or list")
 
+    # Optional provenance checks for sidecar envelopes.
+    row_identity_ref = payload.get("row_identity_reference")
+    if isinstance(row_identity_ref, dict):
+        rows_total_raw = row_identity_ref.get("rows_total")
+        if rows_total_raw is not None:
+            try:
+                rows_total = int(rows_total_raw)
+            except Exception as exc:
+                raise RuntimeError(
+                    "geometry_sampling sidecar row_identity_reference.rows_total invalid: "
+                    f"{rows_total_raw}"
+                ) from exc
+            if rows_total != expected_len:
+                raise RuntimeError(
+                    "geometry_sampling sidecar row_identity_reference.rows_total mismatch: "
+                    f"expected {expected_len}, got {rows_total}"
+                )
+
+        expected_rows_digest = row_identity_ref.get("rows_digest_sha256")
+        if expected_rows_digest is not None:
+            if not isinstance(expected_rows_digest, str) or not expected_rows_digest.strip():
+                raise RuntimeError(
+                    "geometry_sampling sidecar row_identity_reference.rows_digest_sha256 "
+                    "must be non-empty string when present"
+                )
+            if not isinstance(row_identity_sidecar, dict):
+                raise RuntimeError(
+                    "geometry_sampling sidecar declares row_identity_reference.rows_digest_sha256 "
+                    "but row_identity_sidecar is unavailable for validation"
+                )
+            actual_rows_digest = str(row_identity_sidecar.get("rows_digest_sha256") or "")
+            if actual_rows_digest != expected_rows_digest:
+                raise RuntimeError(
+                    "geometry_sampling sidecar row_identity_reference.rows_digest_sha256 mismatch: "
+                    f"expected {expected_rows_digest}, got {actual_rows_digest}"
+                )
+
+    expected_mapping_digest = payload.get("geometry_mapping_identity_digest")
+    if expected_mapping_digest is not None:
+        if not isinstance(expected_mapping_digest, str) or not expected_mapping_digest.strip():
+            raise RuntimeError(
+                "geometry_sampling sidecar geometry_mapping_identity_digest must be non-empty "
+                "string when present"
+            )
+        if geometry_context is None:
+            raise RuntimeError(
+                "geometry_sampling sidecar declares geometry_mapping_identity_digest but "
+                "geometry_context is unavailable for validation"
+            )
+        actual_mapping_digest = _build_geometry_mapping_identity_digest(geometry_context)
+        if actual_mapping_digest != expected_mapping_digest:
+            raise RuntimeError(
+                "geometry_sampling sidecar geometry_mapping_identity_digest mismatch: "
+                f"expected {expected_mapping_digest}, got {actual_mapping_digest}"
+            )
+
+    expected_context_digest = payload.get("geometry_context_input_digest")
+    if expected_context_digest is not None:
+        if not isinstance(expected_context_digest, str) or not expected_context_digest.strip():
+            raise RuntimeError(
+                "geometry_sampling sidecar geometry_context_input_digest must be non-empty "
+                "string when present"
+            )
+        if geometry_context is None:
+            raise RuntimeError(
+                "geometry_sampling sidecar declares geometry_context_input_digest but "
+                "geometry_context is unavailable for validation"
+            )
+        actual_context_digest = _build_geometry_context_input_digest(geometry_context)
+        if actual_context_digest != expected_context_digest:
+            raise RuntimeError(
+                "geometry_sampling sidecar geometry_context_input_digest mismatch: "
+                f"expected {expected_context_digest}, got {actual_context_digest}"
+            )
+
+    by_row_hash = payload.get("weights_by_row_hash")
+    if isinstance(by_row_hash, dict):
+        if not isinstance(row_identity_sidecar, dict):
+            raise RuntimeError(
+                "geometry_sampling sidecar weights_by_row_hash mode requires row_identity_sidecar"
+            )
+        row_hash_to_indices = _build_row_hash_index_from_row_identity_sidecar(
+            row_identity_sidecar=row_identity_sidecar,
+            expected_len=expected_len,
+        )
+        default_weight = _coerce_numeric_weight(
+            payload.get("default_weight", 0.0),
+            context="geometry_sampling.sidecar.default_weight",
+        )
+        require_all_rows_covered = bool(payload.get("require_all_rows_covered", False))
+        out = [default_weight] * expected_len
+        covered: set[int] = set()
+        for row_hash, value in by_row_hash.items():
+            if not isinstance(row_hash, str) or not row_hash.strip():
+                raise RuntimeError("geometry_sampling sidecar weights_by_row_hash key must be non-empty string")
+            idxs = row_hash_to_indices.get(row_hash)
+            if not idxs:
+                raise RuntimeError(
+                    "geometry_sampling sidecar weights_by_row_hash references unknown row hash: "
+                    f"{row_hash}"
+                )
+            for idx in idxs:
+                out[idx] = value
+                covered.add(idx)
+
+        if require_all_rows_covered and len(covered) != expected_len:
+            missing = expected_len - len(covered)
+            raise RuntimeError(
+                "geometry_sampling sidecar require_all_rows_covered=true but missing "
+                f"{missing} rows in weights_by_row_hash"
+            )
+
+        return out, {
+            "weight_source_structure": "weights_by_row_hash",
+            "sidecar_payload_digest_sha256": payload_digest,
+            "default_weight": float(default_weight),
+            "require_all_rows_covered": require_all_rows_covered,
+            "row_hash_weights_covered_rows": int(len(covered)),
+            "row_hash_unique_keys": int(len(by_row_hash)),
+            "row_hash_collisions_in_row_identity": int(
+                sum(1 for idxs in row_hash_to_indices.values() if len(idxs) > 1)
+            ),
+        }
+
     weights_list = payload.get("weights")
     if isinstance(weights_list, list):
-        return weights_list
+        return weights_list, {
+            "weight_source_structure": "weights_list_field",
+            "sidecar_payload_digest_sha256": payload_digest,
+        }
 
     by_index = payload.get("weights_by_train_index")
     if isinstance(by_index, dict):
@@ -294,10 +491,18 @@ def _load_weights_from_sidecar(
         if any(x is None for x in out):
             missing = sum(1 for x in out if x is None)
             raise RuntimeError(f"geometry_sampling sidecar missing {missing} train indices")
-        return out
+        return out, {
+            "weight_source_structure": "weights_by_train_index",
+            "sidecar_payload_digest_sha256": payload_digest,
+        }
 
     rows = payload.get("rows")
     if isinstance(rows, list):
+        sidecar_identity_rows = (
+            row_identity_sidecar.get("rows")
+            if isinstance(row_identity_sidecar, dict) and isinstance(row_identity_sidecar.get("rows"), list)
+            else None
+        )
         out = [None] * expected_len
         for row in rows:
             if not isinstance(row, dict):
@@ -314,6 +519,31 @@ def _load_weights_from_sidecar(
             if idx < 0 or idx >= expected_len:
                 raise RuntimeError(f"geometry_sampling sidecar row index out of range: {idx}")
 
+            expected_row_hash = row.get("row_hash_sha256")
+            if expected_row_hash is not None:
+                if not isinstance(expected_row_hash, str) or not expected_row_hash.strip():
+                    raise RuntimeError(
+                        "geometry_sampling sidecar row row_hash_sha256 must be non-empty string "
+                        "when present"
+                    )
+                if sidecar_identity_rows is None:
+                    raise RuntimeError(
+                        "geometry_sampling sidecar row includes row_hash_sha256 but row_identity_sidecar "
+                        "is unavailable for validation"
+                    )
+                identity_row = sidecar_identity_rows[idx]
+                if not isinstance(identity_row, dict):
+                    raise RuntimeError(
+                        "geometry_sampling row_identity_sidecar rows entry must be object: "
+                        f"rows[{idx}]"
+                    )
+                actual_row_hash = str(identity_row.get("row_hash_sha256") or "")
+                if actual_row_hash != expected_row_hash:
+                    raise RuntimeError(
+                        "geometry_sampling sidecar row row_hash_sha256 mismatch at "
+                        f"train_index_0based={idx}: expected {expected_row_hash}, got {actual_row_hash}"
+                    )
+
             found = False
             for key in weight_key_candidates:
                 if key in row:
@@ -329,11 +559,14 @@ def _load_weights_from_sidecar(
         if any(x is None for x in out):
             missing = sum(1 for x in out if x is None)
             raise RuntimeError(f"geometry_sampling sidecar missing {missing} row weights")
-        return out
+        return out, {
+            "weight_source_structure": "rows",
+            "sidecar_payload_digest_sha256": payload_digest,
+        }
 
     raise RuntimeError(
         "geometry_sampling sidecar unsupported structure; expected list, "
-        "'weights', 'weights_by_train_index', or 'rows'"
+        "'weights', 'weights_by_train_index', 'rows', or 'weights_by_row_hash'"
     )
 
 
@@ -385,6 +618,7 @@ def _resolve_geometry_sampling_plan(
         fallback_axis_levels = {}
 
     weight_source = cfg["weight_source"]
+    source_details: dict[str, Any] = {}
     if weight_source["kind"] == "metadata":
         raw_weights = _build_weight_vector_from_metadata(
             train_rows=train_rows,
@@ -392,11 +626,17 @@ def _resolve_geometry_sampling_plan(
             key_candidates=list(weight_source["metadata_weight_keys"]),
             default_weight=float(weight_source["default_weight"]),
         )
+        source_details = {
+            "weight_source_structure": "metadata",
+            "default_weight": float(weight_source["default_weight"]),
+        }
     else:
-        raw_weights = _load_weights_from_sidecar(
+        raw_weights, source_details = _load_weights_from_sidecar(
             sidecar_json_path=str(weight_source["sidecar_json_path"]),
             expected_len=rows_total,
             weight_key_candidates=list(weight_source["sidecar_weight_key_candidates"]),
+            row_identity_sidecar=row_identity_sidecar,
+            geometry_context=geometry_context,
         )
 
     weights = _validate_weight_vector(raw_weights, expected_len=rows_total)
@@ -416,6 +656,7 @@ def _resolve_geometry_sampling_plan(
         "weights": weights,
         "weights_digest_sha256": weights_digest,
         "weights_summary": weights_summary,
+        "weight_source_details": source_details,
     }
     summary = {
         **base_plan,
@@ -423,6 +664,7 @@ def _resolve_geometry_sampling_plan(
         "sampler_class": "torch.utils.data.WeightedRandomSampler",
         "weights_digest_sha256": weights_digest,
         "weights_summary": weights_summary,
+        "weight_source_details": source_details,
         "row_identity_digest_sha256": row_identity_sidecar.get("rows_digest_sha256"),
         "sidecar_path": weight_source.get("sidecar_json_path") or None,
     }

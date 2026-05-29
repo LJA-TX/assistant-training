@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "train_rows_total": 1982,
+  "row_identity_rows_digest_sha256": "1cb0a23a2038bb949b1e1be90b289eb02f1b05b776a8a2a11af44c961a993549",
+  "sidecar_row_identity_digest_match": true,
+  "resolve_plan_determinism": {
+    "weights_digest_equal": true,
+    "weights_summary_equal": true,
+    "weight_vector_equal": true
+  },
+  "positive_weight_coverage": {
+    "positive_weight_rows": 13,
+    "zero_weight_rows": 1969,
+    "weights_sum": 36.0
+  },
+  "weight_source_details": {
+    "weight_source_structure": "rows",
+    "sidecar_payload_digest_sha256": "0553484014a19d51520321989f81eaedc28e2135756edfd0f7dc516d334446bf"
+  },
+  "missing_weight_fail_fast": {
+    "raised": true,
+    "message": "geometry_sampling sidecar missing 1 row weights",
+    "removed_row_train_index_0based": 0
+  },
+  "row_hash_mismatch_fail_fast": {
+    "raised": true,
+    "message": "geometry_sampling sidecar row row_hash_sha256 mismatch at train_index_0based=0: expected 0000000000000000000000000000000000000000000000000000000000000000, got 0984ac86561b5d4a1f8117de8061666e5d3591b443c1afc526b1c882dce2631f"
+  },
+  "row_hash_mode_validation": {
+    "positive_weight_rows": 13,
+    "weight_source_structure": "weights_by_row_hash",
+    "row_hash_collisions_in_row_identity": 157
+  },
+  "exposure_compatibility": {
+    "realized_status": "realized_exposure_weighted_configured_runtime_not_captured",
+    "realized_capture_mode": "index_space_inferred_no_sampler_stream_capture",
+    "drift_status": "declared_vs_realized_comparison_default_path_inferred",
+    "drift_confidence": "limited",
+    "drift_max_abs_delta_any_dimension": 0
+  }
+}
