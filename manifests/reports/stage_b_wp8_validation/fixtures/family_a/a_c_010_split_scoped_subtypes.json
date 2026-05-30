@@ -1,0 +1,66 @@
+{
+  "fixture_id": "A-C-010",
+  "source_definition_id": "A-C-010",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Split-scoped subtype summaries",
+  "intended_subtype": "all approved subtypes, split-scoped",
+  "approved_subtypes_represented": [
+    "direct-answer substitution",
+    "scalar substitution",
+    "malformed output",
+    "wrapper/envelope drift",
+    "missing tool call",
+    "wrong tool name",
+    "wrong argument"
+  ],
+  "required_inputs": {
+    "complete_family_a_facts_emitted_across_active_split_scopes": true,
+    "split_scoped_subtype_summaries_present": true,
+    "failure_taxonomy_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "complete subtype facts across active splits",
+      "approved subtype assignments for all represented non-exact rows",
+      "split membership evidence",
+      "taxonomy marker"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": false
+  },
+  "precedence_expectations": [
+    "Split-scoped subtype assignment must follow the same subtype precedence as aggregate subtype assignment."
+  ],
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_split_scoped_summaries_only_as_emitted": true,
+    "synthesize_split_summary_from_aggregate": false,
+    "infer_missing_split_subtype": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "split_subtype_totals_reconcile_with_family_aggregate": true,
+    "split_summaries_reconcile_with_active_split_scope": true,
+    "aggregate_does_not_substitute_for_missing_split_summary": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if split-scoped subtype summaries are emitted and reconcile.",
+    "Fixture fails if aggregate subtype facts are used to synthesize split-scoped facts.",
+    "Fixture fails if split-scoped subtype precedence differs from aggregate subtype precedence."
+  ],
+  "rationale": "This fixture proves complete split-scoped Family A emission across all approved subtypes. Split summaries are consumed only as emitted, must reconcile with the family aggregate, and must preserve the same subtype precedence model."
+}

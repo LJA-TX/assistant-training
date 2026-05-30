@@ -1,0 +1,59 @@
+{
+  "fixture_id": "A-C-005",
+  "source_definition_id": "A-C-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Sibling subtype",
+  "intended_subtype": "wrapper/envelope drift",
+  "required_inputs": {
+    "eligible_tool_expected_non_exact_row": true,
+    "subtype_emitted": "wrapper/envelope drift",
+    "failure_taxonomy_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "tool-expected eligibility",
+      "non-exact status",
+      "recognizable tool-call-like attempt",
+      "envelope/wrapper failure evidence",
+      "taxonomy marker"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": false
+  },
+  "precedence_expectations": [
+    "Recognizable envelope failure takes precedence over malformed output.",
+    "Wrong tool name or wrong argument takes precedence when envelope is valid enough and is not primary."
+  ],
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_wrapper_drift_subtype": true,
+    "use_wrapper_leakage_proxy": false,
+    "inspect_serialized_output": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "wrapper_drift_count_increments": true,
+    "subtype_totals_reconcile_to_non_exact_denominator": true,
+    "wrapper_leakage_metric_not_used_as_substitute": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if wrapper/envelope drift is emitted from near-tool evidence.",
+    "Fixture fails if wrapper leakage aggregate substitutes for this subtype.",
+    "Fixture fails if malformed output absorbs recognizable near-tool envelope failure."
+  ],
+  "rationale": "This fixture preserves wrapper/envelope drift as a distinct sibling subtype for near-tool protocol failures. It prevents detector-side use of wrapper leakage metrics or serialized-output inspection as subtype evidence."
+}

@@ -1,0 +1,60 @@
+{
+  "fixture_id": "A-C-007",
+  "source_definition_id": "A-C-007",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Sibling subtype",
+  "intended_subtype": "wrong tool name",
+  "required_inputs": {
+    "eligible_tool_expected_non_exact_row": true,
+    "subtype_emitted": "wrong tool name",
+    "failure_taxonomy_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "tool-expected eligibility",
+      "non-exact status",
+      "parseable tool-call attempt",
+      "emitted tool name",
+      "expected tool identity",
+      "mismatch evidence",
+      "taxonomy marker"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": false
+  },
+  "precedence_expectations": [
+    "Wrong tool name takes precedence over wrong argument when tool identity is wrong."
+  ],
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_wrong_tool_name_subtype": true,
+    "inspect_tool_payload_to_infer_identity": false,
+    "infer_wrong_tool_name_from_generated_text": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "wrong_tool_name_count_increments": true,
+    "subtype_totals_reconcile_to_non_exact_denominator": true,
+    "wrong_argument_count_not_incremented_for_wrong_identity": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if wrong tool name is emitted from expected/emitted tool identity mismatch evidence.",
+    "Fixture fails if wrong argument is assigned while tool identity is wrong.",
+    "Fixture fails if detector infers tool identity by inspecting payloads."
+  ],
+  "rationale": "This fixture preserves wrong tool name as the primary subtype when a parseable tool-call attempt invokes the wrong tool identity. Argument comparison does not repair or replace wrong tool identity evidence."
+}

@@ -1,0 +1,59 @@
+{
+  "fixture_id": "A-C-003",
+  "source_definition_id": "A-C-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Sibling subtype",
+  "intended_subtype": "scalar substitution",
+  "required_inputs": {
+    "eligible_tool_expected_non_exact_row": true,
+    "subtype_emitted": "scalar substitution",
+    "failure_taxonomy_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "tool-expected eligibility",
+      "non-exact status",
+      "no valid required tool call",
+      "scalar-like replacement evidence",
+      "taxonomy marker"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": false
+  },
+  "precedence_expectations": [
+    "Bare scalar-like replacement is classified before direct-answer prose.",
+    "Wrong argument applies if scalar occurs inside a valid expected-tool call."
+  ],
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_scalar_subtype": true,
+    "relabel_scalar_as_direct_answer": false,
+    "infer_scalar_from_output_shape": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "scalar_count_increments": true,
+    "subtype_totals_reconcile_to_non_exact_denominator": true,
+    "direct_answer_count_unchanged": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if scalar substitution remains a sibling subtype.",
+    "Fixture fails if scalar output is relabeled as direct-answer substitution.",
+    "Fixture fails if detector classifies scalar substitution from output shape."
+  ],
+  "rationale": "This fixture preserves the boundary between scalar substitution and direct-answer substitution. A bare scalar-like replacement increments the scalar sibling subtype and must not be collapsed into the governed direct-answer subtype."
+}

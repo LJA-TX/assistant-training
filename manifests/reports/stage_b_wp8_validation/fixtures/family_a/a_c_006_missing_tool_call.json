@@ -1,0 +1,60 @@
+{
+  "fixture_id": "A-C-006",
+  "source_definition_id": "A-C-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Sibling subtype",
+  "intended_subtype": "missing tool call",
+  "required_inputs": {
+    "eligible_tool_expected_non_exact_row": true,
+    "subtype_emitted": "missing tool call",
+    "failure_taxonomy_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "tool-expected eligibility",
+      "non-exact status",
+      "no valid required tool call",
+      "tool-call absence evidence",
+      "no stronger direct-answer substitution evidence",
+      "no stronger scalar substitution evidence",
+      "taxonomy marker"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": false
+  },
+  "precedence_expectations": [
+    "Direct-answer and scalar substitution are considered before missing tool call when substitution evidence exists."
+  ],
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_missing_tool_call_subtype": true,
+    "infer_from_no_call_aggregate": false,
+    "use_as_generic_fallback": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "missing_tool_call_count_increments": true,
+    "subtype_totals_reconcile_to_non_exact_denominator": true,
+    "no_call_correctness_metric_not_used_as_substitute": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if clear absence evidence supports missing tool call.",
+    "Fixture fails if missing tool call is used as a fallback for ambiguous evidence.",
+    "Fixture fails if no-call correctness substitutes for the emitted subtype."
+  ],
+  "rationale": "This fixture preserves missing tool call as a sibling subtype only when tool-call absence evidence is clear and stronger substitution evidence is absent. It prevents missing tool call from becoming a generic fallback."
+}

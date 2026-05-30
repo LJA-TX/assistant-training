@@ -1,0 +1,56 @@
+{
+  "fixture_id": "A-C-009",
+  "source_definition_id": "A-C-009",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Exclusion handling",
+  "intended_subtype": null,
+  "control_status": "excluded-row control",
+  "required_inputs": {
+    "tool_expected_row_marked_excluded_before_aggregation": true,
+    "exclusion_reason_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "tool-expected row marked excluded before aggregation",
+      "exclusion reason emitted"
+    ],
+    "subtype_assignment_expected": false,
+    "missing_evidence_expected": false
+  },
+  "precedence_expectations": [
+    "Exclusion exits governed subtype classification before failure taxonomy assignment."
+  ],
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_exclusion_summary": true,
+    "count_excluded_row_in_governed_denominator": false,
+    "infer_exclusion_state": false,
+    "assign_failure_subtype": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "excluded_row_appears_in_exclusion_count": true,
+    "excluded_row_omitted_from_eligible_denominator": true,
+    "subtype_count_incremented": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if excluded rows do not enter governed denominators.",
+    "Fixture fails if excluded rows receive failure subtype assignment.",
+    "Fixture fails if detector infers exclusion state."
+  ],
+  "rationale": "This fixture proves exclusion handling for Family A. Excluded tool-expected rows are represented in exclusion summaries and do not enter governed denominators or failure-subtype assignment."
+}
