@@ -1,0 +1,77 @@
+{
+  "fixture_id": "B1-NI-004",
+  "source_definition_id": "B1-NI-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Symbol-name governed sub-slice",
+  "intended_subslice_or_state": "historical symbol-name rate must not become current-run evidence",
+  "required_inputs": {
+    "historical_symbol_name_rate_exists": true,
+    "current_subpopulation_marker_missing": true,
+    "current_symbol_name_denominator_absent": true,
+    "current_symbol_name_rate_absent": true,
+    "historical_baseline_available": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run symbol-name membership marker",
+      "current-run symbol-name denominator",
+      "current-run symbol-name rate",
+      "approved migration or comparison status"
+    ],
+    "emitted": [
+      "historical symbol-name rate"
+    ],
+    "missing": [
+      "current-run subpopulation marker",
+      "current-run symbol-name denominator",
+      "current-run symbol-name rate"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "bridge-required",
+    "noncomputability_reasons": [
+      "missing current subpopulation marker",
+      "historical symbol-name rate is not current-run evidence"
+    ]
+  },
+  "expected_detector_treatment": {
+    "block_comparison": true,
+    "use_historical_rate_as_current_fact": false,
+    "infer_current_symbol_name_membership_from_history": false,
+    "compute_current_symbol_name_rate_from_history": false,
+    "require_bridge_before_baseline_comparison": true
+  },
+  "expected_reconciliation_behavior": {
+    "historical_rate_may_be_reference_context": true,
+    "current_subpopulation_denominator_blocked": true,
+    "current_symbol_name_rate_reconciles": false,
+    "baseline_comparison_allowed": false,
+    "bridge_required": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if historical symbol-name rate remains non-current evidence.",
+    "Fixture fails if historical rate is used as current-run symbol-name rate.",
+    "Fixture fails if baseline comparison is allowed without current subpopulation marker and approved bridge."
+  ],
+  "rationale": "This fixture proves that historical symbol-name evidence is migration context only. Missing current subpopulation marker keeps the current run noncomputable and makes comparison bridge-required."
+}

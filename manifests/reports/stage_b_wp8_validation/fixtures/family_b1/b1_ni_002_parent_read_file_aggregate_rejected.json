@@ -1,0 +1,79 @@
+{
+  "fixture_id": "B1-NI-002",
+  "source_definition_id": "B1-NI-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Symbol-name governed sub-slice",
+  "intended_subslice_or_state": "parent read-file aggregate must not substitute for symbol-name sub-slice",
+  "required_inputs": {
+    "parent_read_file_aggregate_exists": true,
+    "symbol_name_subslice_absent": true,
+    "symbol_name_count_absent": true,
+    "symbol_name_denominator_absent": true,
+    "symbol_name_rate_absent": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "symbol-name governed sub-slice",
+      "symbol-name count",
+      "symbol-name denominator",
+      "symbol-name rate",
+      "parent read-file context"
+    ],
+    "emitted": [
+      "parent read-file aggregate"
+    ],
+    "missing": [
+      "symbol-name governed sub-slice",
+      "symbol-name count",
+      "symbol-name denominator",
+      "symbol-name rate"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing symbol-name governed sub-slice",
+      "parent aggregate is not sub-slice evidence"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_parent_read_file_aggregate_diagnostically": true,
+    "substitute_parent_aggregate_for_symbol_name": false,
+    "derive_symbol_name_count_from_parent": false,
+    "derive_symbol_name_denominator_from_parent": false,
+    "compute_symbol_name_rate_from_parent": false
+  },
+  "expected_reconciliation_behavior": {
+    "parent_read_file_aggregate_may_reconcile": true,
+    "symbol_name_reconciliation_possible": false,
+    "symbol_name_denominator_reconciles": false,
+    "symbol_name_rate_reconciliation_allowed": false,
+    "symbol_name_concept_remains_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if parent read-file aggregate does not satisfy symbol-name requirements.",
+    "Fixture fails if parent count, denominator, or rate is used as symbol-name evidence.",
+    "Fixture fails if missing symbol-name sub-slice is treated as zero or reconstructed from the parent."
+  ],
+  "rationale": "This fixture proves that the symbol-name governed sub-slice remains independently visible. A present parent read-file aggregate may be reviewed for its own concept but cannot repair missing symbol-name evidence."
+}

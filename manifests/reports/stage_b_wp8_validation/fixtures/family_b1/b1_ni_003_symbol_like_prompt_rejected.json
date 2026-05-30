@@ -1,0 +1,74 @@
+{
+  "fixture_id": "B1-NI-003",
+  "source_definition_id": "B1-NI-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Symbol-name governed sub-slice",
+  "intended_subslice_or_state": "symbol-like prompt text must not create symbol-name membership",
+  "required_inputs": {
+    "prompt_contains_symbol_like_text": true,
+    "symbol_name_marker_missing": true,
+    "symbol_name_denominator_absent": true,
+    "detector_has_prompt_text_access": true,
+    "parent_read_file_context_may_be_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "symbol-name membership marker",
+      "symbol-name denominator",
+      "parent read-file context"
+    ],
+    "emitted": [
+      "prompt text containing symbol-like content"
+    ],
+    "missing": [
+      "symbol-name membership marker",
+      "symbol-name denominator"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing symbol-name marker",
+      "prompt text is not membership evidence"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_symbol_name_marker": true,
+    "infer_symbol_name_membership_from_prompt_text": false,
+    "infer_symbol_name_membership_from_symbol_like_content": false,
+    "construct_symbol_name_denominator": false,
+    "classify_prompt_text": false
+  },
+  "expected_reconciliation_behavior": {
+    "symbol_name_denominator_blocked": true,
+    "symbol_name_rate_reconciliation_allowed": false,
+    "prompt_text_valid_membership_input": false,
+    "affected_subslice_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if symbol-like prompt text does not create symbol-name membership.",
+    "Fixture fails if detector classifies prompt text to construct symbol-name denominator membership.",
+    "Fixture fails if symbol-name rate reconciliation proceeds without emitted membership marker."
+  ],
+  "rationale": "This fixture proves that prompt content is not symbol-name membership evidence. Symbol-name membership must be emitted upstream and cannot be inferred by detector text inspection."
+}

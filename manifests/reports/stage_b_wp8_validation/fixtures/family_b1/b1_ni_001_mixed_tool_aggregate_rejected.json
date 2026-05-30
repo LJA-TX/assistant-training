@@ -1,0 +1,77 @@
+{
+  "fixture_id": "B1-NI-001",
+  "source_definition_id": "B1-NI-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Read-file aggregate",
+  "intended_subslice_or_state": "mixed-tool aggregate must not substitute for read-file aggregate",
+  "required_inputs": {
+    "mixed_tool_exact_valid_aggregate_exists": true,
+    "read_file_aggregate_absent": true,
+    "read_file_denominator_absent": true,
+    "read_file_numerator_absent": true,
+    "read_file_family_registered_active": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "read-file aggregate",
+      "read-file denominator",
+      "read-file numerator",
+      "read-file eligibility evidence"
+    ],
+    "emitted": [
+      "mixed-tool exact-valid aggregate"
+    ],
+    "missing": [
+      "read-file aggregate",
+      "read-file denominator",
+      "read-file numerator"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing read-file aggregate",
+      "mixed-tool aggregate is not read-file evidence"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_read_file_aggregate": true,
+    "substitute_mixed_tool_aggregate": false,
+    "compute_read_file_rate_from_mixed_tool": false,
+    "infer_read_file_denominator": false,
+    "use_proxy_or_reconstructed_metric": false
+  },
+  "expected_reconciliation_behavior": {
+    "mixed_tool_aggregate_may_reconcile_diagnostically": true,
+    "read_file_denominator_reconciles": false,
+    "read_file_numerator_reconciles": false,
+    "read_file_rate_reconciliation_allowed": false,
+    "read_file_concept_remains_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if mixed-tool exact-valid aggregate is rejected as read-file governed evidence.",
+    "Fixture fails if read-file count, denominator, or rate is reconstructed from mixed-tool aggregate.",
+    "Fixture fails if detector treats mixed-tool aggregate as a read-file substitute."
+  ],
+  "rationale": "This fixture proves the B1 no-proxy boundary for read-file aggregate evidence. Mixed-tool aggregate behavior cannot repair missing read-file numerator or denominator facts."
+}
