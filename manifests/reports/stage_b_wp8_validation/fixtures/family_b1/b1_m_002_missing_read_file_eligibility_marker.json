@@ -1,0 +1,71 @@
+{
+  "fixture_id": "B1-M-002",
+  "source_definition_id": "B1-M-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Read-file aggregate",
+  "intended_subslice_or_state": "read-file eligibility marker missing",
+  "required_inputs": {
+    "tool_expected_row_present": true,
+    "expected_tool_identity_may_be_present": true,
+    "read_file_eligibility_marker_absent": true,
+    "read_file_denominator_membership_unverified": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "expected tool identity",
+      "read-file eligibility marker",
+      "scorer exact-valid fact when row is eligible",
+      "read-file denominator membership"
+    ],
+    "emitted": [
+      "tool-expected row context"
+    ],
+    "missing": [
+      "read-file eligibility marker"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing read-file eligibility marker"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_read_file_eligibility": true,
+    "infer_read_file_membership": false,
+    "infer_read_file_membership_from_tool_name": false,
+    "infer_read_file_membership_from_prompt_text": false,
+    "construct_read_file_denominator": false
+  },
+  "expected_reconciliation_behavior": {
+    "read_file_denominator_can_be_constructed": false,
+    "read_file_rate_reconciles": false,
+    "symbol_name_parent_context_reconciles": false,
+    "affected_concept_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing read-file eligibility blocks read-file denominator construction.",
+    "Fixture fails if detector infers read-file membership from tool name, prompt text, or output text.",
+    "Fixture fails if the row enters read-file or symbol-name governed denominators."
+  ],
+  "rationale": "This fixture proves that read-file eligibility is an explicit membership fact. Missing eligibility marker makes read-file denominator membership noncomputable and blocks dependent symbol-name context."
+}

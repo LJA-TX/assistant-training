@@ -1,0 +1,72 @@
+{
+  "fixture_id": "B1-M-004",
+  "source_definition_id": "B1-M-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Symbol-name governed sub-slice",
+  "intended_subslice_or_state": "symbol-name membership marker missing",
+  "required_inputs": {
+    "read_file_row_present": true,
+    "read_file_eligibility_emitted": true,
+    "symbol_name_membership_marker_absent": true,
+    "prompt_may_contain_symbol_like_text": true,
+    "parent_read_file_context_may_be_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "read-file eligibility",
+      "symbol-name membership marker",
+      "symbol-name denominator membership",
+      "parent read-file context"
+    ],
+    "emitted": [
+      "read-file eligibility"
+    ],
+    "missing": [
+      "symbol-name membership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing symbol-name membership marker"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_symbol_name_membership": true,
+    "infer_symbol_name_membership_from_prompt": false,
+    "infer_symbol_name_membership_from_generated_text": false,
+    "substitute_parent_read_file_aggregate": false,
+    "construct_symbol_name_denominator": false
+  },
+  "expected_reconciliation_behavior": {
+    "symbol_name_denominator_can_be_constructed": false,
+    "symbol_name_rate_reconciles": false,
+    "parent_read_file_context_repairs_membership": false,
+    "affected_subslice_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing symbol-name membership blocks symbol-name denominator construction.",
+    "Fixture fails if detector infers membership from prompt or generated text.",
+    "Fixture fails if parent read-file context repairs missing symbol-name membership."
+  ],
+  "rationale": "This fixture proves that symbol-name membership is explicit upstream metadata. Prompt text and parent read-file context cannot reconstruct the governed sub-slice membership marker."
+}

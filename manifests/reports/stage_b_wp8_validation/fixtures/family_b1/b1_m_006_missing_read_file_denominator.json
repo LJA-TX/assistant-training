@@ -1,0 +1,71 @@
+{
+  "fixture_id": "B1-M-006",
+  "source_definition_id": "B1-M-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Read-file aggregate",
+  "intended_subslice_or_state": "read-file denominator missing",
+  "required_inputs": {
+    "read_file_count_or_numerator_may_be_present": true,
+    "read_file_denominator_absent": true,
+    "mixed_tool_denominator_may_be_present": true,
+    "historical_read_file_denominator_may_be_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "read-file count or numerator",
+      "read-file denominator",
+      "read-file eligibility evidence",
+      "expected tool identity"
+    ],
+    "emitted": [
+      "read-file numerator or diagnostic count may be present"
+    ],
+    "missing": [
+      "read-file denominator"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing read-file denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_read_file_denominator": true,
+    "compute_read_file_rate": false,
+    "use_mixed_tool_denominator": false,
+    "use_historical_denominator": false,
+    "derive_denominator_from_counts": false
+  },
+  "expected_reconciliation_behavior": {
+    "read_file_rate_reconciliation_blocked": true,
+    "read_file_denominator_reconciles": false,
+    "mixed_tool_denominator_valid_substitute": false,
+    "historical_denominator_valid_current_fact": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing read-file denominator blocks governed read-file rate computation.",
+    "Fixture fails if mixed-tool denominator is used as a read-file denominator.",
+    "Fixture fails if historical denominator or count-derived denominator repairs the current-run missing denominator."
+  ],
+  "rationale": "This fixture proves that read-file denominator is required current-run evidence. Mixed-tool, historical, and derived denominators cannot substitute for the emitted read-file denominator."
+}

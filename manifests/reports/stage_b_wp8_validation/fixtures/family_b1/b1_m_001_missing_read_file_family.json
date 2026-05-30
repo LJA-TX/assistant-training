@@ -1,0 +1,75 @@
+{
+  "fixture_id": "B1-M-001",
+  "source_definition_id": "B1-M-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Read-file aggregate",
+  "intended_subslice_or_state": "read-file family missing while registered active",
+  "required_inputs": {
+    "family_b1_registered_active": true,
+    "read_file_family_summary_absent": true,
+    "read_file_count_absent": true,
+    "read_file_denominator_absent": true,
+    "explicit_family_noncomputability_absent": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "active Family B1 registration",
+      "read-file family summary or explicit noncomputability state",
+      "read-file count",
+      "read-file denominator"
+    ],
+    "emitted": [
+      "active Family B1 registration"
+    ],
+    "missing": [
+      "read-file family summary",
+      "read-file count",
+      "read-file denominator"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing active read-file family summary"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_family": true,
+    "reconstruct_read_file_family_from_rows": false,
+    "reconstruct_read_file_family_from_history": false,
+    "use_mixed_tool_aggregate": false,
+    "compute_read_file_rate": false
+  },
+  "expected_reconciliation_behavior": {
+    "read_file_reconciliation_possible": false,
+    "symbol_name_reconciliation_possible": false,
+    "count_reconciliation_possible": false,
+    "denominator_reconciliation_possible": false,
+    "rate_reconciliation_possible": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the active missing B1 family is reported noncomputable.",
+    "Fixture fails if detector reconstructs read-file facts from rows, mixed-tool aggregates, or history.",
+    "Fixture fails if missing read-file family evidence is treated as zero."
+  ],
+  "rationale": "This fixture proves that an active Family B1 registration requires emitted family facts or explicit noncomputability. Missing read-file family emission blocks all read-file and symbol-name reconciliation."
+}

@@ -1,0 +1,71 @@
+{
+  "fixture_id": "B1-M-003",
+  "source_definition_id": "B1-M-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Read-file aggregate",
+  "intended_subslice_or_state": "expected tool identity missing for eligible row",
+  "required_inputs": {
+    "eligible_row_present": true,
+    "expected_tool_identity_absent": true,
+    "read_file_eligibility_unverified": true,
+    "tool_family_denominator_membership_unverified": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "expected tool identity",
+      "read-file eligibility marker",
+      "tool-family denominator membership",
+      "scorer exact-valid fact when eligible"
+    ],
+    "emitted": [
+      "eligible row context"
+    ],
+    "missing": [
+      "expected tool identity"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing expected-tool identity"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_expected_tool_identity": true,
+    "infer_expected_tool_identity": false,
+    "infer_read_file_membership": false,
+    "construct_tool_family_denominator": false,
+    "use_generated_tool_call_as_expected_identity": false
+  },
+  "expected_reconciliation_behavior": {
+    "tool_family_denominator_reconciliation_blocked": true,
+    "read_file_denominator_can_be_constructed": false,
+    "read_file_rate_reconciles": false,
+    "symbol_name_parent_context_reconciles": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing expected tool identity blocks tool-family denominator reconciliation.",
+    "Fixture fails if detector derives expected tool identity from generated tool calls or row text.",
+    "Fixture fails if read-file family membership is reconstructed without expected tool identity."
+  ],
+  "rationale": "This fixture proves that expected tool identity is required ownership evidence for the read-file family. Generated tool behavior cannot substitute for the expected tool identity marker."
+}

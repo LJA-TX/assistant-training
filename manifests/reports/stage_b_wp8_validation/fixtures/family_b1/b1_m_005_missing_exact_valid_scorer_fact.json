@@ -1,0 +1,72 @@
+{
+  "fixture_id": "B1-M-005",
+  "source_definition_id": "B1-M-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Read-file aggregate and symbol-name sub-slice",
+  "intended_subslice_or_state": "exact-valid scorer fact missing",
+  "required_inputs": {
+    "read_file_eligibility_may_be_present": true,
+    "symbol_name_membership_may_be_present": true,
+    "scorer_exact_valid_fact_absent": true,
+    "exact_non_exact_partition_unavailable": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "read-file eligibility",
+      "symbol-name membership when applicable",
+      "scorer exact-valid fact",
+      "exact/non-exact partition"
+    ],
+    "emitted": [
+      "membership context may be present"
+    ],
+    "missing": [
+      "scorer exact-valid fact",
+      "exact/non-exact partition"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing scorer exact-valid fact"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_scorer_fact": true,
+    "infer_exact_valid_status": false,
+    "infer_exact_valid_from_tool_call_shape": false,
+    "infer_exact_valid_from_generated_text": false,
+    "construct_exact_non_exact_partition": false
+  },
+  "expected_reconciliation_behavior": {
+    "read_file_numerator_reconciliation_blocked": true,
+    "symbol_name_numerator_reconciliation_blocked": true,
+    "exact_non_exact_partition_reconciles": false,
+    "affected_concepts_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing scorer fact blocks read-file and symbol-name numerator computation.",
+    "Fixture fails if detector infers exact-valid status from tool call shape or generated text.",
+    "Fixture fails if exact/non-exact partition reconciliation proceeds without scorer evidence."
+  ],
+  "rationale": "This fixture proves that scorer exact-valid status is required evidence for B1 numerators and exact/non-exact partitioning. Membership facts alone are insufficient."
+}
