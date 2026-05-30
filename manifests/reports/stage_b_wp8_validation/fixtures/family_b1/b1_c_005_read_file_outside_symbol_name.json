@@ -1,0 +1,67 @@
+{
+  "fixture_id": "B1-C-005",
+  "source_definition_id": "B1-C-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Read-file aggregate and symbol-name sub-slice",
+  "intended_subslice_or_state": "read-file row explicitly outside symbol-name sub-slice",
+  "required_inputs": {
+    "eligible_read_file_row": true,
+    "expected_tool_identity_emitted": "read_file",
+    "read_file_eligibility_emitted": true,
+    "symbol_name_membership_emitted": false,
+    "symbol_name_non_membership_explicit": true,
+    "parent_read_file_context_present": true,
+    "scorer_exact_valid_fact_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "expected tool identity",
+      "read-file eligibility",
+      "explicit symbol-name non-membership",
+      "scorer exact-valid fact",
+      "read-file denominator marker"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_read_file_aggregate": true,
+    "include_row_in_read_file_denominator": true,
+    "include_row_in_symbol_name_denominator": false,
+    "infer_symbol_name_membership": false,
+    "infer_symbol_name_from_prompt_text": false
+  },
+  "expected_reconciliation_behavior": {
+    "read_file_denominator_includes_row": true,
+    "symbol_name_denominator_excludes_row": true,
+    "parent_child_denominator_bounds_reconcile": true,
+    "symbol_name_rate_unaffected_by_non_member_row": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the row is included in read-file denominator and excluded from symbol-name denominator.",
+    "Fixture fails if prompt or generated text causes detector to assign symbol-name membership.",
+    "Fixture fails if explicit non-membership is treated as missing membership."
+  ],
+  "rationale": "This fixture proves that symbol-name denominator membership is explicit and narrower than read-file eligibility. A read-file row outside the sub-slice remains part of the parent aggregate only."
+}

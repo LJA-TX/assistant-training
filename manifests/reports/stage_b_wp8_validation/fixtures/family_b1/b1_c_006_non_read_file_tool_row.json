@@ -1,0 +1,62 @@
+{
+  "fixture_id": "B1-C-006",
+  "source_definition_id": "B1-C-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Read-file aggregate",
+  "intended_subslice_or_state": "non-read-file tool row",
+  "required_inputs": {
+    "tool_expected_row": true,
+    "expected_tool_identity_emitted": "non_read_file_tool",
+    "read_file_eligibility_emitted": false,
+    "explicit_non_read_file_identity_present": true,
+    "scorer_exact_valid_fact_may_be_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "expected tool identity",
+      "explicit non-read-file identity"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer when applicable",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_explicit_tool_identity": true,
+    "include_row_in_read_file_denominator": false,
+    "include_row_in_symbol_name_denominator": false,
+    "infer_read_file_membership": false,
+    "use_mixed_tool_denominator": false
+  },
+  "expected_reconciliation_behavior": {
+    "non_read_file_row_excluded_from_read_file_family_totals": true,
+    "read_file_denominator_unaffected": true,
+    "symbol_name_denominator_unaffected": true,
+    "mixed_tool_aggregate_not_substituted": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if non-read-file rows are excluded from read-file denominators.",
+    "Fixture fails if mixed-tool exact-valid evidence contributes to read-file aggregate.",
+    "Fixture fails if detector infers read-file membership from row text or output shape."
+  ],
+  "rationale": "This fixture proves the read-file family denominator boundary. Explicit non-read-file tool identity keeps the row outside read-file and symbol-name governed populations."
+}

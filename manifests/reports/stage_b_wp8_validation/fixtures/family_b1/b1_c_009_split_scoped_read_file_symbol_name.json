@@ -1,0 +1,64 @@
+{
+  "fixture_id": "B1-C-009",
+  "source_definition_id": "B1-C-009",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Split-scoped read-file and symbol-name summaries",
+  "intended_subslice_or_state": "complete split-scoped read-file and symbol-name coverage",
+  "required_inputs": {
+    "active_split_scopes_present": true,
+    "split_scoped_read_file_summaries_emitted": true,
+    "split_scoped_symbol_name_summaries_emitted": true,
+    "parent_read_file_context_present_for_symbol_name_summaries": true,
+    "split_membership_evidence_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "split membership evidence",
+      "read-file split summaries",
+      "symbol-name split summaries",
+      "parent read-file context for each symbol-name split summary"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "split_owner": "dataset metadata",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_split_scoped_summaries_only_as_emitted": true,
+    "synthesize_symbol_name_split_from_aggregate": false,
+    "synthesize_read_file_split_from_aggregate": false,
+    "infer_split_membership": false,
+    "substitute_parent_read_file_aggregate_for_symbol_name_split": false
+  },
+  "expected_reconciliation_behavior": {
+    "read_file_split_summaries_reconcile_with_aggregate": true,
+    "symbol_name_split_summaries_reconcile_with_subslice_total": true,
+    "symbol_name_split_summaries_carry_parent_context": true,
+    "active_split_scope_reconciles": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if read-file and symbol-name split-scoped summaries are emitted and reconcile.",
+    "Fixture fails if aggregate read-file or symbol-name summaries synthesize missing split facts.",
+    "Fixture fails if symbol-name split summaries lack parent read-file context."
+  ],
+  "rationale": "This fixture proves complete split-scoped B1 emission. Split summaries are consumed only as emitted and must preserve both read-file aggregate and symbol-name parent-context relationships."
+}

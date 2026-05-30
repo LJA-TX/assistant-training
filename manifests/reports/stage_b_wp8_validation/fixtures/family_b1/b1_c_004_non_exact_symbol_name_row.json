@@ -1,0 +1,70 @@
+{
+  "fixture_id": "B1-C-004",
+  "source_definition_id": "B1-C-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Symbol-name governed sub-slice",
+  "intended_subslice_or_state": "non-exact read-file symbol-name row",
+  "required_inputs": {
+    "eligible_read_file_row": true,
+    "expected_tool_identity_emitted": "read_file",
+    "read_file_eligibility_emitted": true,
+    "symbol_name_membership_emitted": true,
+    "parent_read_file_context_present": true,
+    "scorer_exact_valid_fact_emitted": true,
+    "scorer_exact_valid_value": false,
+    "symbol_name_denominator_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "expected tool identity",
+      "read-file eligibility",
+      "symbol-name membership",
+      "parent read-file context",
+      "scorer exact-valid fact",
+      "symbol-name denominator marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_symbol_name_non_exact_contribution": true,
+    "infer_symbol_name_membership": false,
+    "infer_exact_valid_status": false,
+    "substitute_parent_read_file_aggregate": false,
+    "use_historical_membership": false
+  },
+  "expected_reconciliation_behavior": {
+    "symbol_name_denominator_includes_row": true,
+    "symbol_name_exact_valid_numerator_increments": false,
+    "symbol_name_non_exact_partition_increments": true,
+    "symbol_name_partition_reconciles": true,
+    "parent_read_file_context_reconciles": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the non-exact symbol-name row enters the symbol-name denominator and non-exact partition.",
+    "Fixture fails if detector infers symbol-name membership from prompt text.",
+    "Fixture fails if parent read-file aggregate replaces symbol-name denominator or numerator evidence."
+  ],
+  "rationale": "This fixture proves the complete non-exact symbol-name governed sub-slice case. Explicit membership and parent context preserve sub-slice computability without detector inference."
+}

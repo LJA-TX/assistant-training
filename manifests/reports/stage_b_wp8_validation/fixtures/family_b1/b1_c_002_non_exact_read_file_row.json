@@ -1,0 +1,65 @@
+{
+  "fixture_id": "B1-C-002",
+  "source_definition_id": "B1-C-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Read-file aggregate",
+  "intended_subslice_or_state": "non-exact read-file row",
+  "required_inputs": {
+    "eligible_read_file_row": true,
+    "expected_tool_identity_emitted": "read_file",
+    "read_file_eligibility_emitted": true,
+    "scorer_exact_valid_fact_emitted": true,
+    "scorer_exact_valid_value": false,
+    "read_file_denominator_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "expected tool identity",
+      "read-file eligibility",
+      "scorer exact-valid fact",
+      "read-file denominator marker"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_read_file_non_exact_contribution": true,
+    "infer_read_file_membership": false,
+    "infer_exact_valid_status": false,
+    "use_mixed_tool_denominator": false,
+    "use_historical_membership": false
+  },
+  "expected_reconciliation_behavior": {
+    "read_file_denominator_includes_row": true,
+    "read_file_exact_valid_numerator_increments": false,
+    "read_file_non_exact_partition_increments": true,
+    "read_file_partition_reconciles_with_denominator": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the non-exact read-file row enters the read-file denominator and non-exact partition.",
+    "Fixture fails if exact-valid status is inferred or recomputed by detector.",
+    "Fixture fails if the row is excluded from read-file totals despite emitted read-file eligibility."
+  ],
+  "rationale": "This fixture proves the complete non-exact aggregate read-file case. The denominator remains explicit, and the non-exact contribution reconciles with the read-file partition."
+}

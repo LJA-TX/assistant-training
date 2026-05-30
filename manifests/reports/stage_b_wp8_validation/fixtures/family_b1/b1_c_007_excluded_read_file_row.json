@@ -1,0 +1,61 @@
+{
+  "fixture_id": "B1-C-007",
+  "source_definition_id": "B1-C-007",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Exclusion handling",
+  "intended_subslice_or_state": "excluded read-file row",
+  "required_inputs": {
+    "read_file_row_present": true,
+    "read_file_eligibility_emitted": true,
+    "exclusion_state_emitted_before_aggregation": true,
+    "exclusion_reason_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "read-file eligibility",
+      "pre-aggregation exclusion state",
+      "exclusion reason"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exclusion_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_exclusion_summary": true,
+    "count_excluded_row_in_read_file_denominator": false,
+    "count_excluded_row_in_symbol_name_denominator": false,
+    "infer_exclusion_state": false,
+    "override_exclusion_with_tool_identity": false
+  },
+  "expected_reconciliation_behavior": {
+    "excluded_read_file_row_appears_in_exclusion_count": true,
+    "excluded_read_file_row_omitted_from_governed_denominators": true,
+    "included_and_excluded_coverage_reconciles": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if excluded read-file rows appear in exclusion reporting and not governed denominators.",
+    "Fixture fails if detector infers or overrides exclusion state.",
+    "Fixture fails if excluded rows contribute to read-file or symbol-name rates."
+  ],
+  "rationale": "This fixture proves B1 exclusion handling. Read-file rows excluded before aggregation remain visible through exclusion summaries and do not enter governed denominators."
+}

@@ -1,0 +1,67 @@
+{
+  "fixture_id": "B1-C-008",
+  "source_definition_id": "B1-C-008",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Symbol-name governed sub-slice",
+  "intended_subslice_or_state": "small-denominator symbol-name set",
+  "required_inputs": {
+    "symbol_name_membership_emitted": true,
+    "parent_read_file_context_present": true,
+    "symbol_name_count_emitted": true,
+    "symbol_name_denominator_emitted": true,
+    "symbol_name_rate_emitted": true,
+    "small_denominator_visible": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "symbol-name membership",
+      "parent read-file context",
+      "symbol-name exact-valid count",
+      "symbol-name denominator",
+      "symbol-name rate"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_visible_count_and_denominator": true,
+    "hide_small_denominator": false,
+    "smooth_with_parent_read_file_rate": false,
+    "substitute_parent_read_file_aggregate": false,
+    "infer_symbol_name_membership": false
+  },
+  "expected_reconciliation_behavior": {
+    "symbol_name_count_reconciles": true,
+    "symbol_name_denominator_visible": true,
+    "symbol_name_rate_reconciles": true,
+    "small_denominator_volatility_visible": true,
+    "parent_read_file_context_reconciles": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if symbol-name count and denominator remain visible.",
+    "Fixture fails if small-denominator volatility is hidden by suppressing denominator visibility.",
+    "Fixture fails if parent read-file aggregate is used to smooth or replace symbol-name rate evidence."
+  ],
+  "rationale": "This fixture proves that small symbol-name denominators remain visible. Volatility is surfaced through explicit count and denominator rather than hidden or smoothed by the parent aggregate."
+}
