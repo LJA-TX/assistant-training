@@ -1,0 +1,71 @@
+{
+  "fixture_id": "A-NI-003",
+  "source_definition_id": "A-NI-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Direct-answer governed subtype",
+  "intended_subtype": "direct-answer substitution, historical-only evidence",
+  "required_inputs": {
+    "historical_direct_answer_count_present": true,
+    "current_taxonomy_marker_absent_or_current_denominator_absent": true,
+    "current_direct_answer_subtype_fact_absent": true,
+    "historical_baseline_available": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run direct-answer subtype fact",
+      "current-run taxonomy marker",
+      "current-run denominator"
+    ],
+    "emitted": [
+      "historical direct-answer count"
+    ],
+    "missing": [
+      "current-run direct-answer subtype fact",
+      "current-run taxonomy marker or current-run denominator"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Historical evidence is migration context, not current-run subtype evidence.",
+    "Current-run computability and historical baseline comparability remain separate states."
+  ],
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "bridge-required",
+    "noncomputability_reasons": [
+      "missing current-run taxonomy marker or denominator",
+      "historical-only direct-answer evidence"
+    ]
+  },
+  "expected_detector_treatment": {
+    "block_comparison": true,
+    "use_historical_count_as_current_fact": false,
+    "infer_current_direct_answer_subtype": false,
+    "bridge_required_before_baseline_comparison": true,
+    "compute_current_direct_answer_rate": false
+  },
+  "expected_reconciliation_behavior": {
+    "historical_count_may_be_reference_context": true,
+    "current_denominator_reconciles": false,
+    "current_taxonomy_reconciles": false,
+    "current_direct_answer_rate_reconciles": false,
+    "baseline_comparison_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if historical direct-answer count remains non-current evidence.",
+    "Fixture fails if historical count is used as a current-run subtype fact.",
+    "Fixture fails if baseline comparison is allowed before bridge requirements are satisfied."
+  ],
+  "rationale": "This fixture proves that historical direct-answer counts do not repair missing current-run facts. The current run remains noncomputable and baseline comparison remains bridge-required."
+}

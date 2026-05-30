@@ -1,0 +1,69 @@
+{
+  "fixture_id": "A-NI-001",
+  "source_definition_id": "A-NI-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Direct-answer governed subtype",
+  "intended_subtype": "direct-answer substitution candidate, missing evidence",
+  "required_inputs": {
+    "generated_text_appears_prose_like": true,
+    "direct_answer_subtype_emitted": false,
+    "scorer_subtype_assignment_absent": true,
+    "detector_has_generated_text_access": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "emitted direct-answer subtype assignment",
+      "taxonomy marker",
+      "eligible denominator",
+      "non-exact denominator"
+    ],
+    "emitted": [
+      "generated text payload only"
+    ],
+    "missing": [
+      "direct-answer subtype assignment"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Generated text appearance is not scorer-owned subtype evidence.",
+    "Detector cannot convert prose-like output into direct-answer substitution."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing emitted direct-answer subtype"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_subtype": true,
+    "classify_generated_text": false,
+    "infer_direct_answer_from_prose_like_output": false,
+    "assign_direct_answer_subtype": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "direct_answer_count_reconciliation_allowed": false,
+    "direct_answer_rate_reconciliation_allowed": false,
+    "subtype_distribution_reconciles": false,
+    "generated_text_valid_reconciliation_input": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if prose-like generated text does not become direct-answer subtype evidence.",
+    "Fixture fails if the detector increments direct-answer count from generated text shape.",
+    "Fixture fails if missing emitted subtype is treated as zero or converted to `other`."
+  ],
+  "rationale": "This fixture proves that prose-like generated text is not detector-owned direct-answer substitution evidence. The direct-answer governed subtype remains noncomputable unless the scorer emits the subtype fact."
+}

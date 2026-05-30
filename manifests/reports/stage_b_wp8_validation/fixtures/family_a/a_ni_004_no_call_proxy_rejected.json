@@ -1,0 +1,71 @@
+{
+  "fixture_id": "A-NI-004",
+  "source_definition_id": "A-NI-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Direct-answer governed subtype",
+  "intended_subtype": "direct-answer substitution candidate, no-call proxy rejected",
+  "required_inputs": {
+    "no_call_correctness_change_present": true,
+    "direct_answer_subtype_fact_absent": true,
+    "family_a_direct_answer_evidence_absent": true,
+    "separate_no_call_governance_signal_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run direct-answer subtype fact",
+      "taxonomy marker",
+      "eligible denominator",
+      "non-exact denominator"
+    ],
+    "emitted": [
+      "no-call correctness change"
+    ],
+    "missing": [
+      "direct-answer subtype fact"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "No-call correctness is a separate governance signal.",
+    "No-call correctness must not substitute for direct-answer substitution evidence."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing direct-answer subtype fact",
+      "proxy metric rejected"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_no_call_correctness_separately": true,
+    "reinterpret_no_call_correctness_as_direct_answer": false,
+    "infer_direct_answer_subtype": false,
+    "compute_direct_answer_from_no_call_signal": false,
+    "report_missing_direct_answer_subtype": true
+  },
+  "expected_reconciliation_behavior": {
+    "no_call_correctness_reconciles_separately": true,
+    "family_a_direct_answer_reconciliation_allowed": false,
+    "direct_answer_count_reconciliation_allowed": false,
+    "subtype_distribution_reconciles": false,
+    "proxy_reconciliation_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if no-call correctness remains separate from direct-answer substitution.",
+    "Fixture fails if no-call correctness is reinterpreted as direct-answer subtype evidence.",
+    "Fixture fails if Family A subtype reconciliation proceeds without direct-answer subtype facts."
+  ],
+  "rationale": "This fixture proves the no-proxy boundary for Family A. No-call correctness may remain a valid separate governance concern, but it cannot substitute for direct-answer substitution evidence."
+}

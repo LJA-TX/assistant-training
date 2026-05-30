@@ -1,0 +1,69 @@
+{
+  "fixture_id": "A-NI-002",
+  "source_definition_id": "A-NI-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Direct-answer governed subtype",
+  "intended_subtype": "scalar substitution candidate, missing evidence",
+  "required_inputs": {
+    "scalar_looking_output_present": true,
+    "scorer_subtype_assignment_absent": true,
+    "scalar_substitution_subtype_emitted": false,
+    "direct_answer_subtype_emitted": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "emitted scalar substitution subtype assignment or emitted direct-answer subtype assignment",
+      "taxonomy marker",
+      "eligible denominator",
+      "non-exact denominator"
+    ],
+    "emitted": [
+      "scalar-looking generated output only"
+    ],
+    "missing": [
+      "approved subtype assignment"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Scalar-looking output shape is not scorer-owned subtype evidence.",
+    "Detector cannot choose between scalar substitution and direct-answer substitution when subtype evidence is absent."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing emitted subtype assignment"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_subtype": true,
+    "infer_scalar_substitution_from_output_shape": false,
+    "infer_direct_answer_from_output_shape": false,
+    "choose_between_neighboring_subtypes": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "scalar_substitution_count_reconciliation_allowed": false,
+    "direct_answer_count_reconciliation_allowed": false,
+    "subtype_distribution_reconciles": false,
+    "output_shape_valid_reconciliation_input": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if scalar-looking output remains missing subtype evidence.",
+    "Fixture fails if the detector assigns scalar substitution from output shape.",
+    "Fixture fails if the detector assigns direct-answer substitution from output shape."
+  ],
+  "rationale": "This fixture proves that output shape cannot resolve neighboring subtype boundaries. Scalar substitution and direct-answer substitution both require scorer-emitted subtype evidence."
+}
