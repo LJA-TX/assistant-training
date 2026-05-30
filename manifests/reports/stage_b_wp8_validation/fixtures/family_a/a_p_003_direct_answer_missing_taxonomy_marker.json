@@ -1,0 +1,71 @@
+{
+  "fixture_id": "A-P-003",
+  "source_definition_id": "A-P-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Direct-answer governed subtype",
+  "intended_subtype": "direct-answer substitution",
+  "required_inputs": {
+    "direct_answer_count_emitted": true,
+    "eligible_denominator_present": true,
+    "non_exact_denominator_present": true,
+    "failure_taxonomy_marker_absent": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "direct-answer subtype count",
+      "eligible denominator",
+      "non-exact denominator",
+      "taxonomy marker"
+    ],
+    "emitted": [
+      "direct-answer subtype count",
+      "eligible denominator",
+      "non-exact denominator"
+    ],
+    "missing": [
+      "taxonomy marker"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Taxonomy marker is required before a subtype label can be treated as governed evidence.",
+    "Numeric counts and denominators may not substitute for taxonomy marker ownership."
+  ],
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing failure taxonomy marker"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_numeric_count_diagnostically": true,
+    "accept_direct_answer_as_governed_subtype": false,
+    "infer_taxonomy_marker": false,
+    "construct_taxonomy_from_subtype_label": false,
+    "mark_taxonomy_validation_failed": true
+  },
+  "expected_reconciliation_behavior": {
+    "count_and_denominator_may_reconcile_diagnostically": true,
+    "taxonomy_reconciles": false,
+    "direct_answer_governed_rate_reconciles": false,
+    "subtype_distribution_reconciles_against_taxonomy": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing taxonomy marker blocks governed direct-answer computability.",
+    "Fixture fails if numeric count and denominator are accepted as governed subtype evidence without taxonomy marker.",
+    "Fixture fails if the detector invents or infers the taxonomy marker."
+  ],
+  "rationale": "This fixture proves that taxonomy markers are governed evidence, not metadata decoration. Direct-answer count and denominator facts remain insufficient when the failure taxonomy marker is absent."
+}

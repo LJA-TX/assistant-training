@@ -1,0 +1,72 @@
+{
+  "fixture_id": "A-P-002",
+  "source_definition_id": "A-P-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Direct-answer governed subtype",
+  "intended_subtype": "direct-answer substitution",
+  "required_inputs": {
+    "direct_answer_count_emitted": true,
+    "eligible_denominator_absent": true,
+    "non_exact_denominator_absent": true,
+    "failure_taxonomy_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "direct-answer subtype count",
+      "eligible denominator",
+      "non-exact denominator",
+      "taxonomy marker"
+    ],
+    "emitted": [
+      "direct-answer subtype count",
+      "taxonomy marker"
+    ],
+    "missing": [
+      "eligible denominator",
+      "non-exact denominator"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Count-only direct-answer evidence is insufficient for governed rate computation.",
+    "Denominator facts must be emitted and may not be reconstructed from counts or row totals."
+  ],
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing eligible denominator",
+      "missing non-exact denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_direct_answer_count": true,
+    "compute_rate_from_count_only": false,
+    "infer_missing_denominator": false,
+    "derive_denominator_from_other_counts": false,
+    "mark_direct_answer_rate_noncomputable": true
+  },
+  "expected_reconciliation_behavior": {
+    "direct_answer_count_may_reconcile_diagnostically": true,
+    "direct_answer_rate_reconciles": false,
+    "eligible_denominator_reconciles": false,
+    "non_exact_denominator_reconciles": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if direct-answer governed rate is current-run noncomputable.",
+    "Fixture fails if any governed rate is computed from the emitted count alone.",
+    "Fixture fails if the detector derives either denominator from surrounding facts."
+  ],
+  "rationale": "This fixture proves that counts alone are not governed-rate evidence. Direct-answer substitution remains noncomputable when denominator bases are absent, even when the subtype count itself is emitted."
+}

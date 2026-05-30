@@ -1,0 +1,71 @@
+{
+  "fixture_id": "A-M-004",
+  "source_definition_id": "A-M-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Scorer primary outcome",
+  "intended_subtype": "affected subtype unknown",
+  "required_inputs": {
+    "eligible_row_present": true,
+    "tool_expected_row": true,
+    "scorer_primary_outcome_absent": true,
+    "row_level_subtype_assignment_absent": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "tool-expected eligibility",
+      "scorer primary outcome",
+      "exact/non-exact partition fact",
+      "subtype assignment for non-exact outcomes"
+    ],
+    "emitted": [
+      "tool-expected eligibility"
+    ],
+    "missing": [
+      "scorer primary outcome",
+      "exact/non-exact partition fact",
+      "row-level subtype assignment"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Primary scorer outcome precedes exact/non-exact partitioning.",
+    "Subtype assignment cannot occur before the row enters the non-exact partition."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing scorer primary outcome"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_scorer_fact": true,
+    "infer_primary_outcome_from_generated_output": false,
+    "infer_exact_valid_status": false,
+    "assign_failure_subtype": false,
+    "include_row_in_partition_reconciliation": false
+  },
+  "expected_reconciliation_behavior": {
+    "row_enters_exact_non_exact_partition": false,
+    "row_level_subtype_reconciles": false,
+    "aggregate_denominator_reconciliation_allowed": false,
+    "comparison_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the row is blocked from exact/non-exact partition reconciliation.",
+    "Fixture fails if the detector infers primary outcome from generated output or tool-call shape.",
+    "Fixture fails if a failure subtype is assigned without the primary scorer outcome."
+  ],
+  "rationale": "This fixture proves that the scorer primary outcome is prerequisite evidence. Without it, an eligible row cannot enter exact/non-exact partitioning or subtype assignment."
+}

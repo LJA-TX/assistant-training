@@ -1,0 +1,69 @@
+{
+  "fixture_id": "A-M-002",
+  "source_definition_id": "A-M-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Direct-answer governed subtype",
+  "intended_subtype": "direct-answer substitution",
+  "required_inputs": {
+    "family_aggregate_emitted": true,
+    "direct_answer_governed_subtype_registered": true,
+    "direct_answer_subtype_summary_absent": true,
+    "sibling_subtype_totals_may_be_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "Family A aggregate",
+      "direct-answer governed subtype registration",
+      "direct-answer subtype summary"
+    ],
+    "emitted": [
+      "Family A aggregate",
+      "direct-answer governed subtype registration"
+    ],
+    "missing": [
+      "direct-answer subtype summary"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Direct-answer governed subtype must be explicit.",
+    "Sibling subtype totals do not substitute for missing direct-answer subtype facts."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing direct-answer governed subtype summary"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_governed_subtype": true,
+    "use_sibling_totals_as_direct_answer": false,
+    "infer_direct_answer_count": false,
+    "create_other_subtype": false,
+    "mark_direct_answer_noncomputable": true
+  },
+  "expected_reconciliation_behavior": {
+    "family_aggregate_may_reconcile_diagnostically": true,
+    "direct_answer_reconciliation_possible": false,
+    "subtype_distribution_reconciles": false,
+    "missing_direct_answer_count_treated_as_zero": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing direct-answer subtype blocks the governed concept.",
+    "Fixture fails if sibling subtype totals are used to infer direct-answer facts.",
+    "Fixture fails if the absent direct-answer subtype is treated as zero."
+  ],
+  "rationale": "This fixture proves that the retained direct-answer governed subtype has its own emission requirement. A Family A aggregate and sibling subtype totals cannot replace the missing direct-answer subtype summary."
+}

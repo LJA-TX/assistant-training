@@ -1,0 +1,69 @@
+{
+  "fixture_id": "A-P-001",
+  "source_definition_id": "A-P-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Failure-subtype aggregate",
+  "intended_subtype": "affected approved subtype unknown or missing",
+  "required_inputs": {
+    "family_aggregate_emitted": true,
+    "approved_subtype_set_expected": true,
+    "one_required_approved_subtype_summary_absent": true,
+    "fallback_other_subtype_emitted": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "family aggregate summary",
+      "approved subtype set registration",
+      "summary for each required approved subtype"
+    ],
+    "emitted": [
+      "family aggregate summary"
+    ],
+    "missing": [
+      "one required approved subtype summary"
+    ],
+    "subtype_assignment_expected": false,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Approved subtype summaries must be explicit before subtype distribution is governed-computable.",
+    "No fallback subtype or `other` category is assumed when a required subtype summary is absent."
+  ],
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing required approved subtype summary",
+      "partial subtype distribution"
+    ]
+  },
+  "expected_detector_treatment": {
+    "mark_family_completeness_partial": true,
+    "mark_affected_subtype_noncomputable": true,
+    "infer_missing_subtype_summary": false,
+    "create_other_subtype": false,
+    "claim_subtype_distribution_reconciled": false
+  },
+  "expected_reconciliation_behavior": {
+    "family_aggregate_may_reconcile_diagnostically": true,
+    "subtype_distribution_reconciles": false,
+    "missing_subtype_count_treated_as_zero": false,
+    "aggregate_can_claim_governed_computability": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the family is marked partial and current-run noncomputable.",
+    "Fixture fails if the missing subtype summary is treated as zero.",
+    "Fixture fails if an `other` subtype is created or inferred."
+  ],
+  "rationale": "This fixture proves that a Family A aggregate alone cannot make the subtype distribution governed-computable. Every required approved subtype summary must be emitted explicitly, and detector reconstruction is disallowed."
+}

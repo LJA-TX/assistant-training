@@ -1,0 +1,74 @@
+{
+  "fixture_id": "A-M-006",
+  "source_definition_id": "A-M-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Non-exact subtype",
+  "intended_subtype": "affected approved subtype missing",
+  "required_inputs": {
+    "tool_expected_row": true,
+    "scorer_primary_outcome_present": true,
+    "exact_valid_fact_present": true,
+    "exact_valid_value": false,
+    "approved_subtype_assignment_absent": true,
+    "fallback_other_subtype_emitted": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "tool-expected eligibility",
+      "scorer primary outcome",
+      "exact-valid fact",
+      "approved non-exact subtype assignment"
+    ],
+    "emitted": [
+      "tool-expected eligibility",
+      "scorer primary outcome",
+      "exact-valid fact with non-exact value"
+    ],
+    "missing": [
+      "approved non-exact subtype assignment"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "A non-exact tool-expected row requires exactly one approved emitted subtype.",
+    "No `other` subtype is implied unless the scorer explicitly emits an approved `other` subtype."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing approved non-exact subtype assignment"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_subtype": true,
+    "assign_other_subtype": false,
+    "infer_subtype_from_generated_output": false,
+    "infer_subtype_from_error_shape": false,
+    "mark_affected_row_noncomputable": true
+  },
+  "expected_reconciliation_behavior": {
+    "row_enters_non_exact_denominator": true,
+    "row_level_subtype_reconciles": false,
+    "subtype_totals_reconcile_to_non_exact_denominator": false,
+    "missing_subtype_treated_as_zero": false,
+    "comparison_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the non-exact row is marked noncomputable because the approved subtype is missing.",
+    "Fixture fails if an `other` subtype is assigned without explicit scorer emission.",
+    "Fixture fails if subtype totals are reconciled to the non-exact denominator while the row lacks an approved subtype."
+  ],
+  "rationale": "This fixture proves that a non-exact tool-expected row requires an explicit approved subtype. The detector may report the missing subtype but must not invent `other` or classify the row from generated output or error shape."
+}

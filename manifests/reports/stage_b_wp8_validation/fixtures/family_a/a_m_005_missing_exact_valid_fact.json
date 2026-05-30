@@ -1,0 +1,71 @@
+{
+  "fixture_id": "A-M-005",
+  "source_definition_id": "A-M-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Exact-valid fact",
+  "intended_subtype": "affected subtype unknown",
+  "required_inputs": {
+    "tool_expected_row": true,
+    "scorer_primary_outcome_present": true,
+    "exact_valid_fact_absent": true,
+    "non_exact_subtype_assignment_absent": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "tool-expected eligibility",
+      "scorer primary outcome",
+      "exact-valid fact",
+      "non-exact subtype assignment when exact-valid is false"
+    ],
+    "emitted": [
+      "tool-expected eligibility",
+      "scorer primary outcome"
+    ],
+    "missing": [
+      "exact-valid fact",
+      "non-exact subtype assignment"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Exact-valid determination precedes failure-subtype assignment.",
+    "A row cannot be placed in the exact or non-exact denominator until exact-valid fact is emitted."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing exact-valid fact"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_exact_valid_fact": true,
+    "infer_exact_valid_from_tool_call_shape": false,
+    "infer_exact_valid_from_primary_outcome": false,
+    "assign_failure_subtype": false,
+    "include_row_in_exact_non_exact_denominator": false
+  },
+  "expected_reconciliation_behavior": {
+    "exact_non_exact_denominator_partition_reconciles": false,
+    "row_level_subtype_reconciles": false,
+    "subtype_totals_reconcile_to_non_exact_denominator": false,
+    "comparison_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing exact-valid fact blocks exact/non-exact denominator partitioning.",
+    "Fixture fails if exact-valid state is inferred from primary outcome or tool-call shape.",
+    "Fixture fails if the row receives a failure subtype without exact-valid evidence."
+  ],
+  "rationale": "This fixture proves that exact-valid evidence is a required partition fact. Missing exact-valid fact blocks both denominator reconciliation and downstream subtype assignment."
+}

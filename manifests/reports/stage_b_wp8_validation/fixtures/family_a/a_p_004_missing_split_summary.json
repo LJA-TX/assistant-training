@@ -1,0 +1,67 @@
+{
+  "fixture_id": "A-P-004",
+  "source_definition_id": "A-P-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Split-scoped subtype summaries",
+  "intended_subtype": "direct-answer substitution, split-scoped",
+  "required_inputs": {
+    "aggregate_direct_answer_summary_emitted": true,
+    "active_split_identifier_present": true,
+    "split_scoped_direct_answer_summary_absent": true,
+    "split_scope_governance_active": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "aggregate direct-answer summary",
+      "active split identifier",
+      "split-scoped direct-answer summary"
+    ],
+    "emitted": [
+      "aggregate direct-answer summary",
+      "active split identifier"
+    ],
+    "missing": [
+      "split-scoped direct-answer summary"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Split-scoped governance requires emitted split summaries.",
+    "Aggregate summaries do not substitute for active split-scoped summaries."
+  ],
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing active split-scoped subtype summary"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_aggregate_summary_diagnostically": true,
+    "synthesize_split_summary_from_aggregate": false,
+    "mark_split_scoped_subtype_noncomputable": true,
+    "claim_split_to_aggregate_reconciliation": false
+  },
+  "expected_reconciliation_behavior": {
+    "aggregate_direct_answer_summary_may_reconcile_diagnostically": true,
+    "split_to_aggregate_reconciliation_allowed": false,
+    "split_scoped_direct_answer_rate_reconciles": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if split-scoped direct-answer computability is blocked.",
+    "Fixture fails if aggregate direct-answer summary is used as a split summary.",
+    "Fixture fails if split-to-aggregate reconciliation is claimed without the split summary."
+  ],
+  "rationale": "This fixture proves that split-scoped Family A governance has explicit emission requirements. An aggregate direct-answer summary is not a replacement for an active split-scoped subtype summary."
+}

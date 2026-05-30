@@ -1,0 +1,71 @@
+{
+  "fixture_id": "A-P-005",
+  "source_definition_id": "A-P-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Failure-subtype aggregate",
+  "intended_subtype": "all approved subtype rates",
+  "required_inputs": {
+    "non_exact_denominator_present": true,
+    "eligible_tool_expected_denominator_absent": true,
+    "approved_subtype_counts_present": true,
+    "failure_taxonomy_marker_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "non-exact denominator",
+      "eligible tool-expected denominator",
+      "approved subtype counts",
+      "taxonomy marker"
+    ],
+    "emitted": [
+      "non-exact denominator",
+      "approved subtype counts",
+      "taxonomy marker"
+    ],
+    "missing": [
+      "eligible tool-expected denominator"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Failure-mix denominator and eligible-population denominator are separate denominator views.",
+    "Eligible-population rates require the eligible tool-expected denominator to be emitted."
+  ],
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing eligible tool-expected denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_failure_mix_diagnostic_reconciliation": true,
+    "compute_eligible_population_rate": false,
+    "infer_eligible_denominator": false,
+    "derive_eligible_denominator_from_non_exact_denominator": false,
+    "mark_eligible_population_rates_noncomputable": true
+  },
+  "expected_reconciliation_behavior": {
+    "failure_mix_denominator_may_reconcile": true,
+    "eligible_population_denominator_reconciles": false,
+    "eligible_population_rates_reconcile": false,
+    "subtype_counts_may_reconcile_diagnostically": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if eligible-population rates are noncomputable.",
+    "Fixture fails if the non-exact denominator is reused as the eligible denominator.",
+    "Fixture fails if subtype counts are treated as sufficient for eligible-population rate computation."
+  ],
+  "rationale": "This fixture proves that denominator views are not interchangeable. A present non-exact denominator can support diagnostic failure-mix reconciliation, but it cannot support governed eligible-population rates when the eligible denominator is missing."
+}

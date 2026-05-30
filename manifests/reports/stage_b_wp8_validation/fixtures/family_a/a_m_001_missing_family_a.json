@@ -1,0 +1,68 @@
+{
+  "fixture_id": "A-M-001",
+  "source_definition_id": "A-M-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Failure-subtype aggregate",
+  "intended_subtype": null,
+  "control_status": "missing-family control",
+  "required_inputs": {
+    "family_registry_declares_family_a_active": true,
+    "family_a_aggregate_absent": true,
+    "explicit_family_a_noncomputability_absent": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "active Family A registration",
+      "Family A aggregate emission or explicit noncomputability emission"
+    ],
+    "emitted": [
+      "active Family A registration"
+    ],
+    "missing": [
+      "Family A aggregate",
+      "explicit Family A noncomputability state"
+    ],
+    "subtype_assignment_expected": false,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "An active registered family requires either governed emission or explicit noncomputability emission.",
+    "Rows, history, or sibling governance families cannot reconstruct a missing Family A aggregate."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing active Family A aggregate"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_family": true,
+    "reconstruct_family_from_rows": false,
+    "reconstruct_family_from_history": false,
+    "compute_family_rates": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "count_reconciliation_possible": false,
+    "denominator_reconciliation_possible": false,
+    "rate_reconciliation_possible": false,
+    "subtype_distribution_reconciles": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if active Family A is reported missing and noncomputable.",
+    "Fixture fails if Family A counts, denominators, or rates are reconstructed.",
+    "Fixture fails if historical facts are used as current-run Family A facts."
+  ],
+  "rationale": "This fixture proves that an active governed family cannot silently disappear. Missing Family A emission blocks current-run computability and comparison rather than allowing detector reconstruction."
+}

@@ -1,0 +1,70 @@
+{
+  "fixture_id": "A-M-003",
+  "source_definition_id": "A-M-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP3_FAMILY_A_SCORER_EVIDENCE_CONTRACT.md",
+    "docs/convergence/STAGE_B_WP3_SCORER_EVIDENCE_OUTPUT_DESIGN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Failure taxonomy",
+  "intended_subtype": "all approved subtypes",
+  "required_inputs": {
+    "taxonomy_marker_absent": true,
+    "approved_subtype_set_absent": true,
+    "generated_output_may_be_present": true,
+    "family_a_context_active": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "taxonomy marker",
+      "approved subtype set",
+      "subtype assignment under approved taxonomy"
+    ],
+    "emitted": [
+      "Family A active context"
+    ],
+    "missing": [
+      "taxonomy marker",
+      "approved subtype set"
+    ],
+    "subtype_assignment_expected": true,
+    "missing_evidence_expected": true
+  },
+  "precedence_expectations": [
+    "Taxonomy marker is prerequisite for subtype validity.",
+    "Generated output content cannot be classified by the detector when taxonomy evidence is absent."
+  ],
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing taxonomy marker",
+      "missing approved subtype set"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_taxonomy": true,
+    "classify_generated_output": false,
+    "construct_approved_subtype_set": false,
+    "accept_subtype_distribution": false,
+    "create_other_subtype": false
+  },
+  "expected_reconciliation_behavior": {
+    "taxonomy_reconciles": false,
+    "subtype_distribution_reconciles_against_taxonomy": false,
+    "subtype_counts_may_reconcile": false,
+    "comparison_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing taxonomy blocks all governed Family A subtype distribution.",
+    "Fixture fails if generated output is classified by the detector.",
+    "Fixture fails if an approved subtype set is reconstructed from observed labels."
+  ],
+  "rationale": "This fixture proves that Family A subtype interpretation requires an emitted taxonomy marker and approved subtype set. Without them, subtype distribution is not governed-computable."
+}
