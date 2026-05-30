@@ -1,0 +1,48 @@
+{
+  "fixture_id": "WP8B-NI-003",
+  "source_definition_id": "WP8B-NI-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Detector non-inference: prompt or generated-text classification",
+  "required_inputs": {
+    "prompt_or_generated_text_appears_to_imply_governed_label": true,
+    "implied_label_examples": [
+      "failure subtype",
+      "symbol-name membership",
+      "no-anchor membership",
+      "anchor category"
+    ],
+    "required_emitted_label_or_marker_present": false
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing emitted label or marker"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "inspect_prompt_text_to_repair_missing_label": false,
+    "inspect_generated_text_to_repair_missing_label": false,
+    "report_missing_emitted_label_or_marker": true,
+    "classify_from_text": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "subtype_reconciliation_blocked": true,
+    "subslice_denominator_reconciliation_blocked": true,
+    "anchor_denominator_reconciliation_blocked": true,
+    "affected_concept_remains_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture fails if detector classifies from text.",
+    "Fixture passes only if affected concept remains noncomputable.",
+    "Fixture fails if prompt or generated-text appearance repairs a missing emitted label or marker."
+  ],
+  "rationale": "This fixture proves that detector classification from prompt text or generated text remains prohibited. Missing emitted subtype, sub-slice, anchor, or marker evidence must remain noncomputable even when the text appears to imply a label."
+}

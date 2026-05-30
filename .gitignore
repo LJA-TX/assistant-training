@@ -26,6 +26,7 @@ evals/runs/
 .cache/
 *.log
 tmp/
+local_review_bundles/
 
 # Model/checkpoint binaries (defense-in-depth)
 *.pt

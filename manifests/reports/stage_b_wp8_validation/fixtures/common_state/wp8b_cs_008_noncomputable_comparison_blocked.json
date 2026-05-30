@@ -1,0 +1,51 @@
+{
+  "fixture_id": "WP8B-CS-008",
+  "source_definition_id": "WP8B-CS-008",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Current-run noncomputable and comparison-blocked",
+  "required_inputs": {
+    "governed_concept_active": true,
+    "at_least_one_current_run_required_fact_missing": true,
+    "missing_fact_examples": [
+      "family",
+      "sub-slice",
+      "denominator",
+      "source fact",
+      "scorer fact",
+      "marker"
+    ],
+    "historical_baseline_may_be_present": true
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "current-run missing fact",
+      "comparison blocked"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "block_current_run_governed_evaluation_for_affected_concept": true,
+    "block_historical_comparison": true,
+    "preserve_conservative_noncomputability_behavior": true,
+    "use_historical_baseline_to_repair_current_run_noncomputability": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_blocked_at_missing_item": true,
+    "baseline_reconciliation_attempted_for_affected_concept": false,
+    "historical_baseline_repair_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if both current-run and comparison paths are blocked.",
+    "Fixture fails if historical baseline is used to repair current-run noncomputability.",
+    "Fixture fails if comparison proceeds while current-run facts are noncomputable."
+  ],
+  "rationale": "This fixture proves that current-run noncomputability blocks governed evaluation and also blocks historical comparison for the affected concept. A historical baseline may exist, but it cannot repair missing current-run facts."
+}

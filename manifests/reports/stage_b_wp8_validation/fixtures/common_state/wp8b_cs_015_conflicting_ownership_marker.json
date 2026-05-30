@@ -1,0 +1,48 @@
+{
+  "fixture_id": "WP8B-CS-015",
+  "source_definition_id": "WP8B-CS-015",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Conflicting ownership marker",
+  "required_inputs": {
+    "governed_concept_active": true,
+    "two_or_more_emitted_ownership_markers_conflict": true,
+    "conflicting_marker_examples": [
+      "taxonomy",
+      "subpopulation",
+      "anchor category",
+      "source fact"
+    ],
+    "approved_conflict_resolution_marker_emitted": false
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "conflicting ownership marker"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "report_ownership_conflict": true,
+    "pick_one_ownership_source": false,
+    "infer_resolved_marker": false,
+    "resolve_conflict_by_preference_order": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "numeric_reconciliation_may_be_present": true,
+    "numeric_reconciliation_governed_valid_while_conflict_remains": false,
+    "governed_use_blocked_until_conflict_resolution": true
+  },
+  "acceptance_criteria": [
+    "Fixture fails if detector resolves conflict by preference order.",
+    "Fixture passes only if affected governed concept is blocked.",
+    "Fixture fails if numeric reconciliation overrides conflicting ownership markers."
+  ],
+  "rationale": "This fixture proves that conflicting ownership markers block governed use. The detector must report the conflict rather than choosing a preferred source or inventing a resolved marker."
+}

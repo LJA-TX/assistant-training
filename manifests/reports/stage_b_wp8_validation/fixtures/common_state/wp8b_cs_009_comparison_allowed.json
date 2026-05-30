@@ -1,0 +1,42 @@
+{
+  "fixture_id": "WP8B-CS-009",
+  "source_definition_id": "WP8B-CS-009",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Comparison-allowed",
+  "required_inputs": {
+    "governed_concept_has_complete_current_run_facts": true,
+    "current_run_facts_reconcile": true,
+    "historical_baseline_facts_exist_for_same_governed_concept": true,
+    "migration_review_emits_comparison_allowed_for_specific_concept": true,
+    "population_denominator_scorer_taxonomy_or_subpopulation_split_rowset_and_exclusion_markers_compatible_or_bridged": true
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-allowed",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "run_comparison_for_approved_concept_only": true,
+    "apply_approval_to_sibling_concepts": false,
+    "apply_approval_to_subslices_without_separate_approval": false,
+    "infer_comparison_eligibility": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "baseline_comparability_reconciliation_passes_for_approved_markers": true,
+    "comparison_scope_is_concept_level": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if comparison is concept-scoped.",
+    "Fixture fails if family-level approval automatically approves sub-slices.",
+    "Fixture fails if detector infers comparison eligibility without emitted migration-review status."
+  ],
+  "rationale": "This fixture proves that historical comparison is allowed only when current-run facts are complete, baseline facts exist for the same governed concept, and migration review explicitly emits comparison-allowed for that concept. Approval is concept-scoped and must not flow automatically to siblings or sub-slices."
+}

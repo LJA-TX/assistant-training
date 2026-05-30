@@ -1,0 +1,47 @@
+{
+  "fixture_id": "WP8B-CS-014",
+  "source_definition_id": "WP8B-CS-014",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Missing scorer fact",
+  "required_inputs": {
+    "governed_concept_active": true,
+    "required_scorer_fact_present": false,
+    "missing_scorer_fact_examples": [
+      "exact-valid outcome",
+      "primary outcome",
+      "failure subtype"
+    ]
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing scorer fact"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "report_missing_scorer_fact": true,
+    "infer_scorer_outcome_from_generated_text": false,
+    "infer_scorer_outcome_from_parse_state": false,
+    "infer_scorer_outcome_from_other_metrics": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "numerator_reconciliation_blocked": true,
+    "exact_non_exact_partition_reconciliation_blocked": true,
+    "subtype_distribution_reconciliation_blocked": true,
+    "repair_missing_scorer_fact_from_generated_output_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture fails if detector or evaluator repairs missing scorer fact from generated output.",
+    "Fixture passes only if affected concept remains noncomputable.",
+    "Fixture fails if parse state or sibling metrics substitute for the missing scorer fact."
+  ],
+  "rationale": "This fixture proves that scorer-owned facts are required emitted evidence. Missing exact-valid, primary outcome, or subtype facts block the affected numerator, partition, or subtype distribution rather than being reconstructed downstream."
+}

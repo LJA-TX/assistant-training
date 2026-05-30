@@ -1,0 +1,45 @@
+{
+  "fixture_id": "WP8B-NI-002",
+  "source_definition_id": "WP8B-NI-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Detector non-inference: historical report-layer value",
+  "required_inputs": {
+    "current_run_governed_concept_complete": true,
+    "current_run_governed_concept_computable": true,
+    "historical_report_layer_value_exists": true,
+    "concept_level_migration_status": "reference-only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "reference-only",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "historical report-layer value lacks comparison-allowed status"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "run_comparison_unless_status_comparison_allowed": false,
+    "infer_comparability_from_artifact_name": false,
+    "infer_comparability_from_artifact_path": false,
+    "infer_comparability_from_metric_resemblance": false,
+    "allow_historical_value_to_affect_detector_outcome": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "historical_comparison_reconciliation_blocked_or_unavailable": true,
+    "current_run_and_comparison_states_remain_separate": true
+  },
+  "acceptance_criteria": [
+    "Fixture fails if historical value affects detector outcome without comparison-allowed status.",
+    "Fixture passes only if current-run and comparison states remain separate.",
+    "Fixture fails if artifact name, path, or metric resemblance creates comparability."
+  ],
+  "rationale": "This fixture proves that historical report-layer values are not comparable facts without concept-level migration approval. Current-run computation can proceed, but the historical value remains reference-only and cannot affect detector outcome."
+}

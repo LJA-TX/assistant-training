@@ -1,0 +1,53 @@
+{
+  "fixture_id": "WP8B-CS-011",
+  "source_definition_id": "WP8B-CS-011",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Reference-only",
+  "required_inputs": {
+    "governed_concept_has_complete_current_run_facts": true,
+    "historical_value_exists": true,
+    "historical_value_lacks_sufficient_evidence": true,
+    "insufficient_historical_evidence_examples": [
+      "denominator",
+      "marker",
+      "population",
+      "scorer",
+      "taxonomy",
+      "split",
+      "provenance"
+    ],
+    "migration_status": "reference-only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "reference-only",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "historical evidence is reference-only"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "run_comparative_rules_or_deltas": false,
+    "preserve_current_run_facts": true,
+    "report_reference_only_status": true,
+    "allow_historical_value_to_affect_detector_outcome": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "historical_comparison_reconciliation_allowed": false,
+    "reference_evidence_remains_non_comparative": true
+  },
+  "acceptance_criteria": [
+    "Fixture fails if reference-only historical values affect detector outcome.",
+    "Fixture passes only if reference evidence remains non-comparative.",
+    "Fixture fails if current-run facts are suppressed because historical evidence is reference-only."
+  ],
+  "rationale": "This fixture proves that historical values can remain visible for human review while staying unavailable to detector comparison. Current-run facts remain computable, but reference-only baseline evidence must not drive deltas or comparative governance behavior."
+}

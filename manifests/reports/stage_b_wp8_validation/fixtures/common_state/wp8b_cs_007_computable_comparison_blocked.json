@@ -1,0 +1,43 @@
+{
+  "fixture_id": "WP8B-CS-007",
+  "source_definition_id": "WP8B-CS-007",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Current-run computable and comparison-blocked",
+  "required_inputs": {
+    "governed_concept_has_complete_current_run_facts": true,
+    "count_denominator_and_rate_reconcile": true,
+    "required_migration_status_absent_or_comparison_blocked": true
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "Required migration status is absent or explicitly comparison-blocked."
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "permit_current_run_evaluation_where_applicable": true,
+    "block_historical_comparison_and_deltas": true,
+    "infer_comparison_eligibility": false,
+    "suppress_valid_current_run_facts_due_to_comparison_block": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "baseline_reconciliation_blocked_by_comparison_status": true,
+    "count_denominator_and_rate_reconcile": true
+  },
+  "acceptance_criteria": [
+    "Fixture fails if current-run computability automatically permits comparison.",
+    "Fixture fails if comparison-blocked state suppresses valid current-run facts.",
+    "Detector may consume current-run facts but must not compute historical deltas."
+  ],
+  "rationale": "This fixture proves that current-run computability and baseline comparability are independent state axes. The governed concept is complete and usable for current-run evaluation, but historical comparison remains blocked because migration status is absent or explicitly comparison-blocked."
+}

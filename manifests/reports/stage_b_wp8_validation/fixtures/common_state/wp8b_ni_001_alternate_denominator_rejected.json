@@ -1,0 +1,48 @@
+{
+  "fixture_id": "WP8B-NI-001",
+  "source_definition_id": "WP8B-NI-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Detector non-inference: alternate denominator",
+  "required_inputs": {
+    "governed_count_present": true,
+    "governed_denominator_present": false,
+    "related_alternate_denominator_present": true,
+    "alternate_denominator_examples": [
+      "parent denominator",
+      "sibling denominator",
+      "mixed-tool denominator",
+      "historical denominator"
+    ]
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "reject_alternate_denominator": true,
+    "compute_rate": false,
+    "report_missing_governed_denominator": true,
+    "use_parent_sibling_mixed_tool_or_historical_denominator": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "governed_rate_reconciliation_blocked": true,
+    "alternate_denominator_valid_reconciliation_input": false,
+    "affected_governed_concept_remains_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture fails if any alternate denominator produces a rate.",
+    "Fixture passes only if affected governed concept remains noncomputable.",
+    "Fixture fails if detector treats related denominator evidence as a substitute."
+  ],
+  "rationale": "This fixture proves that a governed denominator is not interchangeable with related parent, sibling, mixed-tool, or historical denominators. Missing governed denominator keeps the affected rate noncomputable."
+}

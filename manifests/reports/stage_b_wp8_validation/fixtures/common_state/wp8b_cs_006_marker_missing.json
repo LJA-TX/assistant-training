@@ -1,0 +1,56 @@
+{
+  "fixture_id": "WP8B-CS-006",
+  "source_definition_id": "WP8B-CS-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Marker missing",
+  "required_inputs": {
+    "governed_concept_active": true,
+    "counts_denominators_and_rates_may_be_present": true,
+    "required_current_run_semantics_marker_present": false,
+    "required_baseline_comparison_marker_present": false,
+    "missing_marker_kinds": [
+      "taxonomy",
+      "scorer semantics",
+      "population",
+      "migration"
+    ]
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing marker"
+    ],
+    "comparison_block_reasons": [
+      "comparison marker missing"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "report_missing_marker": true,
+    "infer_marker_from_artifact_name": false,
+    "infer_marker_from_prompt_text": false,
+    "infer_marker_from_generated_text": false,
+    "infer_marker_from_historical_report_shape": false,
+    "block_comparison_when_comparability_marker_absent": true,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "numeric_reconciliation_may_pass_diagnostically": true,
+    "governed_semantic_reconciliation_passes": false,
+    "comparison_reconciliation_passes": false,
+    "missing_marker_blocks_governed_interpretation": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if marker absence changes state as expected.",
+    "Fixture fails if detector treats marker absence as harmless.",
+    "Fixture fails if detector invents marker state from surrounding facts.",
+    "Fixture fails if numeric reconciliation alone is accepted as governed semantic reconciliation."
+  ],
+  "rationale": "This fixture proves that required markers are governed evidence, not decoration. Even if counts, denominators, and rates are present, missing taxonomy, scorer, population, or migration markers block governed interpretation or comparison according to marker role. The detector must report the missing marker and must not infer marker state from surrounding facts."
+}

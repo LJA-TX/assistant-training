@@ -1,0 +1,49 @@
+{
+  "fixture_id": "WP8B-CS-013",
+  "source_definition_id": "WP8B-CS-013",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Missing source row fact",
+  "required_inputs": {
+    "governed_concept_active": true,
+    "required_source_row_fact_present": false,
+    "missing_source_row_fact_examples": [
+      "family eligibility",
+      "sub-slice membership",
+      "anchor category",
+      "row identity",
+      "split membership",
+      "exclusion state"
+    ]
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing source row fact"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "report_missing_source_row_fact": true,
+    "inspect_raw_rows_to_infer_missing_fact": false,
+    "inspect_prompt_text_to_infer_missing_fact": false,
+    "construct_missing_source_fact": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "dependent_denominator_reconciliation_blocked": true,
+    "coverage_reconciliation_blocked": true,
+    "aggregation_using_inferred_source_facts_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture fails if aggregation proceeds using inferred source facts.",
+    "Fixture passes only if dependent governed concept remains noncomputable.",
+    "Fixture fails if detector repairs missing source-row facts from raw rows or prompt text."
+  ],
+  "rationale": "This fixture proves that required row-level source facts must be emitted by the proper owner before downstream governed aggregation can proceed. Missing source facts block denominators, coverage, and governed computation."
+}

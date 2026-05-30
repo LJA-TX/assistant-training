@@ -1,0 +1,46 @@
+{
+  "fixture_id": "WP8B-CS-004",
+  "source_definition_id": "WP8B-CS-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Missing governed sub-slice",
+  "required_inputs": {
+    "parent_family_active": true,
+    "parent_family_emitted": true,
+    "governed_subslice_registered_as_required": true,
+    "governed_subslice_summary_present": false
+  },
+  "expected_state": {
+    "parent_completeness": "complete",
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing governed sub-slice"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "consume_parent_family_for_independent_parent_review_only": true,
+    "block_subslice_governed_evaluation": true,
+    "substitute_parent_family_aggregate_for_subslice": false,
+    "construct_missing_subslice": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "parent_family_may_reconcile": true,
+    "subslice_count_reconciliation_blocked": true,
+    "subslice_denominator_reconciliation_blocked": true,
+    "subslice_rate_reconciliation_blocked": true,
+    "parent_child_reconciliation_blocked": true
+  },
+  "acceptance_criteria": [
+    "Fixture fails if parent aggregate satisfies sub-slice expectations.",
+    "Fixture passes only if sub-slice missing state is explicit.",
+    "Fixture fails if detector constructs the missing sub-slice from the parent family."
+  ],
+  "rationale": "This fixture proves that a required governed sub-slice remains independently required even when the parent family is emitted and may reconcile. Parent-family computability cannot substitute for the missing sub-slice."
+}

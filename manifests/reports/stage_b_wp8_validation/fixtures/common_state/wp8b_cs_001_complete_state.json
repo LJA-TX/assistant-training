@@ -1,0 +1,43 @@
+{
+  "fixture_id": "WP8B-CS-001",
+  "source_definition_id": "WP8B-CS-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Complete state and current-run computable",
+  "required_inputs": {
+    "active_family_or_governed_subslice_registered": true,
+    "required_source_row_facts_present": true,
+    "required_scorer_facts_present": true,
+    "required_count_denominator_and_rate_present_for_rate_like_metric": true,
+    "required_completeness_noncomputability_and_comparability_markers_present": true,
+    "reconciliation_evidence_present": true
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "treat_as_available_for_current_run_evaluation": true,
+    "infer_historical_comparison_eligibility": false,
+    "construct_missing_facts": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "count_denominator_and_rate_reconcile": true,
+    "coverage_count_reconciles_with_governed_denominator": true,
+    "split_summaries_reconcile_when_active": true,
+    "exclusions_visible_and_omitted_from_governed_denominators": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only when all required emitted facts and state markers are present.",
+    "Any missing required fact changes expected outcome to partial, missing, or noncomputable.",
+    "Current-run computability does not imply historical comparison eligibility."
+  ],
+  "rationale": "This fixture establishes the baseline complete-state case for WP8 Phase 1A. It represents a governed concept with all required inputs present, current-run computation allowed, no noncomputability reasons, and historical comparison still blocked unless a separate comparison-allowed fixture applies."
+}

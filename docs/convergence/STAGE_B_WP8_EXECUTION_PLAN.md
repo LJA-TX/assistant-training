@@ -152,6 +152,21 @@ Fixture authoring should include lightweight index files after the first common-
 
 The index files are fixture artifacts, not manifests for runtime behavior.
 
+### ZIP Review Bundles
+
+When a ZIP bundle is produced for downstream review or transport, it must be written under:
+
+- `local_review_bundles/`
+
+This directory is intentionally ignored by git. ZIP bundles are transport-only artifacts and must not replace or shadow the canonical fixture files in `manifests/reports/stage_b_wp8_validation/fixtures/`.
+
+Standard procedure:
+
+- Leave canonical fixture files in their repository locations.
+- Create ZIP bundles only under `local_review_bundles/`.
+- Report ZIP filename, local ignored location, included fixture filenames, and included repository paths.
+- Do not stage ZIP bundles with fixture artifacts.
+
 ## 3. Fixture Authoring Sequence
 
 ### Phase 1A: Common-State Baseline

@@ -1,0 +1,50 @@
+{
+  "fixture_id": "WP8B-CS-002",
+  "source_definition_id": "WP8B-CS-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Partial state",
+  "required_inputs": {
+    "active_family_or_governed_subslice_registered": true,
+    "some_required_aggregate_or_state_facts_present": true,
+    "at_least_one_required_fact_absent": true,
+    "absent_fact_examples": [
+      "governed sub-slice",
+      "denominator",
+      "marker",
+      "split summary",
+      "source coverage item",
+      "reconciliation item"
+    ]
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing required fact"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "report_partial_state": true,
+    "evaluate_only_independent_complete_concepts": true,
+    "promote_partial_to_complete": false,
+    "fill_missing_state_from_parent_or_sibling": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "available_facts_may_reconcile_locally": true,
+    "governed_concept_reconciliation_blocked_for_missing_item": true,
+    "parent_or_sibling_substitution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture fails if detector accepts partial emission as complete.",
+    "Fixture fails if a parent aggregate or sibling concept fills the missing state.",
+    "Fixture passes only when the affected governed concept remains partial and current-run noncomputable."
+  ],
+  "rationale": "This fixture proves that incomplete but present emission must remain partial. Some facts may be available and locally reconcilable, but a required missing fact prevents governed completeness and current-run computability for the affected concept."
+}

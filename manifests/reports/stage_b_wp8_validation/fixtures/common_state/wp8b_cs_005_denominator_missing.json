@@ -1,0 +1,46 @@
+{
+  "fixture_id": "WP8B-CS-005",
+  "source_definition_id": "WP8B-CS-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Denominator missing",
+  "required_inputs": {
+    "governed_concept_active": true,
+    "numerator_like_count_present": true,
+    "required_denominator_basis_present": false,
+    "approved_denominator_substitute_exists": false
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "treat_count_only_evidence_as_diagnostic_at_most": true,
+    "compute_rate_from_count": false,
+    "borrow_alternate_denominator": false,
+    "construct_missing_denominator": false,
+    "infer_comparison_eligibility": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "rate_reconciliation_blocked": true,
+    "count_may_remain_visible": true,
+    "count_satisfies_governed_rate_requirements": false,
+    "alternate_denominator_reconciliation_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture fails if any alternate denominator is used.",
+    "Fixture fails if count-only evidence is treated as complete.",
+    "Fixture fails if the detector derives a governed rate from the numerator-like count.",
+    "Fixture passes only when missing denominator blocks governed rate computation."
+  ],
+  "rationale": "This fixture proves that a visible count is insufficient for governed rate computation when the required denominator basis is absent. The affected rate-like concept is partial and current-run noncomputable, comparison remains blocked, and the detector must not reconstruct denominators or derive rates from counts."
+}

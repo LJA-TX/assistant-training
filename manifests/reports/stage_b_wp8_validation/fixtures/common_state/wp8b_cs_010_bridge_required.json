@@ -1,0 +1,51 @@
+{
+  "fixture_id": "WP8B-CS-010",
+  "source_definition_id": "WP8B-CS-010",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Bridge-required",
+  "required_inputs": {
+    "governed_concept_has_complete_current_run_facts": true,
+    "historical_value_appears_related_but_differs": true,
+    "historical_difference_examples": [
+      "taxonomy",
+      "subpopulation",
+      "denominator",
+      "scorer semantics",
+      "split",
+      "provenance"
+    ],
+    "migration_status": "bridge-required"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "bridge-required",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "bridge required for comparison"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "permit_current_run_evaluation_where_applicable": true,
+    "block_historical_comparison": true,
+    "report_bridge_required_status": true,
+    "treat_related_historical_evidence_as_equivalent_by_resemblance": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "baseline_comparison_reconciliation_unresolved": true,
+    "historical_bridge_approval_required_before_comparison": true
+  },
+  "acceptance_criteria": [
+    "Fixture fails if detector runs comparison before bridge approval.",
+    "Fixture fails if related historical evidence is treated as equivalent by resemblance.",
+    "Fixture passes only when current-run evaluation remains available and historical comparison remains blocked pending bridge review."
+  ],
+  "rationale": "This fixture proves that related historical evidence is not automatically comparable. Current-run facts are complete and computable, but baseline comparison remains blocked until bridge review approves comparability for the affected governed concept."
+}

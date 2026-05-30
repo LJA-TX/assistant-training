@@ -1,0 +1,45 @@
+{
+  "fixture_id": "WP8B-CS-003",
+  "source_definition_id": "WP8B-CS-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8B_COMMON_STATE_FIXTURES.md",
+    "docs/convergence/STAGE_B_WP8_EXECUTION_PLAN.md"
+  ],
+  "classification": "Required",
+  "primary_coverage": "Missing family",
+  "required_inputs": {
+    "family_registry_declares_governed_family_active": true,
+    "corresponding_family_summary_present": false,
+    "approved_non_emission_exemption_present": false
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing family"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_facts_and_states_only": true,
+    "report_missing_family": true,
+    "preserve_conservative_governance_behavior": true,
+    "infer_family_from_lower_level_rows": false,
+    "infer_family_from_sibling_families": false,
+    "infer_family_from_historical_artifacts": false,
+    "treat_missing_family_as_zero": false,
+    "use_proxy_or_reconstructed_metrics": false
+  },
+  "expected_reconciliation_behavior": {
+    "family_count_reconciliation_allowed": false,
+    "family_denominator_reconciliation_allowed": false,
+    "family_rate_reconciliation_allowed": false,
+    "subslice_reconciliation_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the missing family blocks dependent governed evaluation.",
+    "Fixture fails if the missing family is treated as zero, ignored, or reconstructed.",
+    "Fixture fails if detector infers the missing family from rows, sibling families, or historical artifacts."
+  ],
+  "rationale": "This fixture proves that an active governed family must either be emitted or explicitly represented as missing. The detector must report the missing family and preserve noncomputability rather than treating absence as zero or reconstructing the family from other evidence."
+}
