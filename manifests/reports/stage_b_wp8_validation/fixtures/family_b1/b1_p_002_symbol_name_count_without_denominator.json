@@ -1,0 +1,73 @@
+{
+  "fixture_id": "B1-P-002",
+  "source_definition_id": "B1-P-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Symbol-name governed sub-slice",
+  "intended_subslice_or_state": "symbol-name numerator present but denominator missing",
+  "required_inputs": {
+    "symbol_name_numerator_emitted": true,
+    "symbol_name_denominator_absent": true,
+    "symbol_name_membership_emitted": true,
+    "parent_read_file_context_may_be_present": true,
+    "read_file_parent_denominator_may_be_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "symbol-name exact-valid count",
+      "symbol-name denominator",
+      "symbol-name membership",
+      "parent read-file context"
+    ],
+    "emitted": [
+      "symbol-name exact-valid count",
+      "symbol-name membership"
+    ],
+    "missing": [
+      "symbol-name denominator"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing symbol-name denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_symbol_name_count_diagnostically": true,
+    "compute_symbol_name_rate": false,
+    "infer_symbol_name_denominator": false,
+    "derive_denominator_from_parent_read_file": false,
+    "use_historical_denominator": false
+  },
+  "expected_reconciliation_behavior": {
+    "symbol_name_count_may_reconcile_diagnostically": true,
+    "symbol_name_rate_reconciles": false,
+    "symbol_name_denominator_reconciles": false,
+    "parent_read_file_denominator_substitutes": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if count-only symbol-name evidence remains insufficient for governed rate computation.",
+    "Fixture fails if a symbol-name rate is computed without the symbol-name denominator.",
+    "Fixture fails if parent read-file or historical denominators are used as substitutes."
+  ],
+  "rationale": "This fixture proves that symbol-name count-only evidence is incomplete. The symbol-name governed sub-slice requires its own visible denominator before rate computation."
+}

@@ -1,0 +1,74 @@
+{
+  "fixture_id": "B1-P-003",
+  "source_definition_id": "B1-P-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Symbol-name governed sub-slice",
+  "intended_subslice_or_state": "symbol-name summary present without parent read-file context",
+  "required_inputs": {
+    "symbol_name_summary_emitted": true,
+    "symbol_name_count_present": true,
+    "symbol_name_denominator_present": true,
+    "parent_read_file_context_absent": true,
+    "read_file_parent_denominator_absent_or_unlinked": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "symbol-name summary",
+      "symbol-name count",
+      "symbol-name denominator",
+      "parent read-file context"
+    ],
+    "emitted": [
+      "symbol-name summary",
+      "symbol-name count",
+      "symbol-name denominator"
+    ],
+    "missing": [
+      "parent read-file context"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing parent read-file context"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_symbol_name_summary_diagnostically": true,
+    "accept_symbol_name_as_governed_computable": false,
+    "infer_parent_read_file_context": false,
+    "link_to_parent_by_name_or_path": false,
+    "compute_governed_symbol_name_rate": false
+  },
+  "expected_reconciliation_behavior": {
+    "symbol_name_count_and_denominator_may_reconcile_diagnostically": true,
+    "parent_child_denominator_reconciliation_allowed": false,
+    "symbol_name_governed_rate_reconciles": false,
+    "parent_context_required": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing parent read-file context blocks governed symbol-name use.",
+    "Fixture fails if the detector infers parent context from labels, paths, or aggregate names.",
+    "Fixture fails if parent-child denominator reconciliation is claimed without emitted parent context."
+  ],
+  "rationale": "This fixture proves that symbol-name summaries require emitted parent read-file context. Even visible symbol-name count and denominator are not enough for governed interpretation without the parent link."
+}

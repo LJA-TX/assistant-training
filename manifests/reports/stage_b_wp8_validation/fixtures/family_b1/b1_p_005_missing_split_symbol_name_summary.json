@@ -1,0 +1,75 @@
+{
+  "fixture_id": "B1-P-005",
+  "source_definition_id": "B1-P-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Split-scoped symbol-name summary",
+  "intended_subslice_or_state": "aggregate symbol-name summary present but active split-scoped summary missing",
+  "required_inputs": {
+    "aggregate_symbol_name_summary_emitted": true,
+    "active_split_scope_present": true,
+    "split_scoped_symbol_name_summary_absent": true,
+    "parent_read_file_context_for_aggregate_present": true,
+    "split_membership_evidence_required": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "aggregate symbol-name summary",
+      "active split scope",
+      "split-scoped symbol-name summary",
+      "split membership evidence",
+      "parent read-file context for split summary"
+    ],
+    "emitted": [
+      "aggregate symbol-name summary",
+      "active split scope"
+    ],
+    "missing": [
+      "split-scoped symbol-name summary",
+      "parent read-file context for split summary"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "split_owner": "dataset metadata",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing active split-scoped symbol-name summary"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_aggregate_symbol_name_summary_diagnostically": true,
+    "synthesize_split_summary_from_aggregate": false,
+    "infer_split_membership": false,
+    "substitute_parent_read_file_aggregate_for_split": false,
+    "claim_split_to_aggregate_reconciliation": false
+  },
+  "expected_reconciliation_behavior": {
+    "aggregate_symbol_name_summary_may_reconcile_diagnostically": true,
+    "split_scoped_symbol_name_rate_reconciles": false,
+    "split_to_aggregate_reconciliation_allowed": false,
+    "active_split_scope_requires_emitted_summary": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing split-scoped symbol-name summary blocks split-scoped governed computation.",
+    "Fixture fails if aggregate symbol-name summary is used to synthesize split-scoped facts.",
+    "Fixture fails if split-to-aggregate reconciliation is claimed without emitted split summary."
+  ],
+  "rationale": "This fixture proves that split-scoped symbol-name governance requires explicit split summaries. Aggregate symbol-name facts do not repair missing split-scoped evidence."
+}

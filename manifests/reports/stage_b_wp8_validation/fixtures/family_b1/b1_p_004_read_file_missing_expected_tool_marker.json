@@ -1,0 +1,74 @@
+{
+  "fixture_id": "B1-P-004",
+  "source_definition_id": "B1-P-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B1_SYMBOL_NAME_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Read-file aggregate",
+  "intended_subslice_or_state": "read-file aggregate present without expected-tool marker",
+  "required_inputs": {
+    "read_file_aggregate_emitted": true,
+    "read_file_count_present": true,
+    "read_file_denominator_present": true,
+    "expected_tool_marker_absent": true,
+    "read_file_membership_source_unverified": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "read-file aggregate summary",
+      "expected tool identity marker",
+      "read-file eligibility marker",
+      "read-file denominator"
+    ],
+    "emitted": [
+      "read-file aggregate summary",
+      "read-file count",
+      "read-file denominator"
+    ],
+    "missing": [
+      "expected tool identity marker"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata or evaluator-owned metadata preparation",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing expected-tool marker"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_read_file_aggregate_diagnostically": true,
+    "accept_read_file_denominator_as_governed": false,
+    "infer_read_file_membership": false,
+    "infer_expected_tool_identity": false,
+    "use_mixed_tool_denominator": false
+  },
+  "expected_reconciliation_behavior": {
+    "read_file_count_and_denominator_may_reconcile_diagnostically": true,
+    "read_file_denominator_source_validation_passes": false,
+    "read_file_rate_governed_computable": false,
+    "expected_tool_marker_required": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing expected-tool marker blocks governed read-file aggregation.",
+    "Fixture fails if detector infers read-file membership from row text, tool output, or aggregate label.",
+    "Fixture fails if mixed-tool denominator evidence repairs the missing expected-tool marker."
+  ],
+  "rationale": "This fixture proves that read-file denominator source validation requires an explicit expected-tool marker. Aggregate count and denominator evidence are incomplete when the tool-family marker is missing."
+}
