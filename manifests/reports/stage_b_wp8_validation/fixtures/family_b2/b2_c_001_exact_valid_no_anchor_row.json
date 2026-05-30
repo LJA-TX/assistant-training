@@ -1,0 +1,71 @@
+{
+  "fixture_id": "B2-C-001",
+  "source_definition_id": "B2-C-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "No-anchor governed sub-slice",
+  "intended_subslice_or_state": "exact-valid no-anchor row",
+  "required_inputs": {
+    "anchor_generalization_eligible_row": true,
+    "anchor_category_emitted": "no-anchor",
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "scorer_exact_valid_fact_emitted": true,
+    "scorer_exact_valid_value": true,
+    "no_anchor_denominator_marker_present": true,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor-generalization eligibility",
+      "no-anchor category assignment",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker",
+      "scorer exact-valid fact",
+      "no-anchor denominator marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_no_anchor_facts": true,
+    "infer_no_anchor_membership_from_prompt_text": false,
+    "infer_anchor_category_from_generated_text": false,
+    "substitute_anchor_family_aggregate_for_no_anchor": false,
+    "resolve_conflicting_ownership_markers": false
+  },
+  "expected_reconciliation_behavior": {
+    "no_anchor_denominator_includes_row": true,
+    "no_anchor_exact_valid_numerator_increments": true,
+    "no_anchor_rate_reconciles": true,
+    "ownership_and_taxonomy_markers_reconcile": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if no-anchor numerator, denominator, and rate reconcile as emitted.",
+    "Fixture fails if detector infers no-anchor membership from prompt or generated text.",
+    "Fixture fails if anchor-family aggregate evidence substitutes for no-anchor governed facts."
+  ],
+  "rationale": "This fixture proves the complete exact-valid no-anchor governed sub-slice case. No-anchor membership, taxonomy, ownership, scorer fact, and denominator evidence are explicit before detector consumption."
+}

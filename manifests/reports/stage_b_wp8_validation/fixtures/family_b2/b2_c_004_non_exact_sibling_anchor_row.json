@@ -1,0 +1,71 @@
+{
+  "fixture_id": "B2-C-004",
+  "source_definition_id": "B2-C-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Sibling anchor category",
+  "intended_subslice_or_state": "non-exact row in another approved anchor category",
+  "required_inputs": {
+    "anchor_generalization_eligible_row": true,
+    "anchor_category_emitted": "approved_sibling_category",
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "scorer_exact_valid_fact_emitted": true,
+    "scorer_exact_valid_value": false,
+    "sibling_category_denominator_marker_present": true,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor-generalization eligibility",
+      "approved sibling anchor category assignment",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker",
+      "scorer exact-valid fact",
+      "sibling category denominator marker"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_sibling_category_non_exact_contribution": true,
+    "infer_anchor_category_from_prompt_text": false,
+    "infer_exact_valid_status": false,
+    "substitute_anchor_family_rate_for_sibling_category": false,
+    "resolve_conflicting_ownership_markers": false
+  },
+  "expected_reconciliation_behavior": {
+    "sibling_category_denominator_includes_row": true,
+    "sibling_category_exact_valid_numerator_increments": false,
+    "sibling_category_non_exact_partition_increments": true,
+    "sibling_category_partition_reconciles": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if sibling-category non-exact contribution reconciles within the category partition.",
+    "Fixture fails if detector infers exact-valid status or category assignment.",
+    "Fixture fails if family aggregate behavior substitutes for sibling-category partition evidence."
+  ],
+  "rationale": "This fixture proves complete non-exact behavior in a sibling anchor category while maintaining explicit ownership and taxonomy provenance."
+}

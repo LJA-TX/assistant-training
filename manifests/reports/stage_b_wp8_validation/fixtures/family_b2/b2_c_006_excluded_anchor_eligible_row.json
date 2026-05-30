@@ -1,0 +1,70 @@
+{
+  "fixture_id": "B2-C-006",
+  "source_definition_id": "B2-C-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Exclusion handling",
+  "intended_subslice_or_state": "excluded anchor-eligible row",
+  "required_inputs": {
+    "anchor_generalization_eligible_row": true,
+    "anchor_category_emitted": "approved_anchor_category",
+    "exclusion_state_emitted_before_aggregation": true,
+    "exclusion_reason_emitted": true,
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor-generalization eligibility",
+      "anchor category assignment",
+      "pre-aggregation exclusion state",
+      "exclusion reason",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "eligibility_owner": "dataset metadata or approved evaluator-owned metadata preparation",
+    "exclusion_owner": "dataset metadata or approved evaluator-owned metadata preparation",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_exclusion_summary": true,
+    "count_excluded_row_in_anchor_family_denominator": false,
+    "count_excluded_row_in_no_anchor_or_sibling_denominators": false,
+    "infer_exclusion_state": false,
+    "override_exclusion_with_category_assignment": false
+  },
+  "expected_reconciliation_behavior": {
+    "excluded_row_appears_in_exclusion_count": true,
+    "excluded_row_omitted_from_anchor_denominators": true,
+    "included_and_excluded_coverage_reconciles": true,
+    "category_distribution_excludes_excluded_row": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if excluded anchor-eligible rows are reported and excluded from governed denominators.",
+    "Fixture fails if detector infers or overrides exclusion state.",
+    "Fixture fails if excluded rows contribute to no-anchor or sibling-category rates."
+  ],
+  "rationale": "This fixture proves B2 exclusion handling. Anchor-eligible rows excluded before aggregation remain visible through exclusion summaries and do not enter governed denominators."
+}

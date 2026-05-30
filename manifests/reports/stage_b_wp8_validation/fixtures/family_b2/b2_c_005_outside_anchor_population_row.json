@@ -1,0 +1,67 @@
+{
+  "fixture_id": "B2-C-005",
+  "source_definition_id": "B2-C-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Anchor-generalization aggregate",
+  "intended_subslice_or_state": "row outside anchor-generalization population",
+  "required_inputs": {
+    "anchor_generalization_eligible_row": false,
+    "outside_population_marker_emitted": true,
+    "exclusion_from_anchor_family_emitted": true,
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "outside-population marker",
+      "anchor-family exclusion marker",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "eligibility_owner": "dataset metadata or approved evaluator-owned metadata preparation",
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_outside_population_marker": true,
+    "include_row_in_anchor_family_denominator": false,
+    "include_row_in_no_anchor_denominator": false,
+    "infer_anchor_eligibility": false,
+    "resolve_conflicting_ownership_markers": false
+  },
+  "expected_reconciliation_behavior": {
+    "outside_row_excluded_from_anchor_family_denominator": true,
+    "outside_row_excluded_from_no_anchor_and_sibling_denominators": true,
+    "anchor_family_denominator_unaffected": true,
+    "outside_population_reporting_reconciles": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if outside-population rows remain excluded from anchor-family denominators.",
+    "Fixture fails if detector infers anchor eligibility from prompt text or tool shape.",
+    "Fixture fails if outside-population rows affect no-anchor or sibling-category rates."
+  ],
+  "rationale": "This fixture proves anchor-family population boundaries. Rows outside anchor-generalization population remain visible through exclusion markers and do not enter governed denominators."
+}

@@ -1,0 +1,69 @@
+{
+  "fixture_id": "B2-C-008",
+  "source_definition_id": "B2-C-008",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Split-scoped anchor summaries",
+  "intended_subslice_or_state": "complete split-scoped anchor and no-anchor coverage",
+  "required_inputs": {
+    "active_split_scopes_present": true,
+    "split_scoped_anchor_category_summaries_emitted": true,
+    "split_scoped_no_anchor_summary_emitted": true,
+    "split_membership_evidence_emitted": true,
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "split membership evidence",
+      "split-scoped category summaries",
+      "split-scoped no-anchor summary",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "split_owner": "dataset metadata",
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_split_scoped_summaries_only_as_emitted": true,
+    "synthesize_split_summary_from_aggregate": false,
+    "infer_split_membership": false,
+    "infer_anchor_categories_from_prompt_text": false,
+    "resolve_conflicting_ownership_markers": false
+  },
+  "expected_reconciliation_behavior": {
+    "split_category_summaries_reconcile_with_aggregate_totals": true,
+    "split_no_anchor_summaries_reconcile_with_aggregate_no_anchor_totals": true,
+    "active_split_scope_reconciles": true,
+    "ownership_and_taxonomy_markers_reconcile": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if split-scoped anchor summaries are emitted and reconcile with aggregate totals.",
+    "Fixture fails if aggregate anchor summaries synthesize missing split-scoped facts.",
+    "Fixture fails if detector infers split membership or category assignments from text."
+  ],
+  "rationale": "This fixture proves complete split-scoped B2 emission. Split-scoped no-anchor and sibling-category summaries are consumed only as emitted and reconcile with aggregate category totals."
+}

@@ -1,0 +1,71 @@
+{
+  "fixture_id": "B2-C-007",
+  "source_definition_id": "B2-C-007",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "Anchor-category distribution",
+  "intended_subslice_or_state": "multiple approved anchor categories emitted with full markers",
+  "required_inputs": {
+    "anchor_generalization_eligible_population_present": true,
+    "multiple_approved_anchor_categories_emitted": true,
+    "no_anchor_category_emitted": true,
+    "sibling_anchor_category_emitted": true,
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "anchor_family_denominator_emitted": true,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "approved anchor-category assignments",
+      "category-level exact-valid facts",
+      "category denominators",
+      "anchor-family denominator",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_category_distribution": true,
+    "infer_missing_category_counts": false,
+    "infer_anchor_categories_from_prompt_text": false,
+    "substitute_family_aggregate_for_category_distribution": false,
+    "resolve_conflicting_ownership_markers": false
+  },
+  "expected_reconciliation_behavior": {
+    "category_denominators_sum_to_anchor_family_denominator": true,
+    "category_numerators_reconcile_with_category_denominators": true,
+    "no_anchor_and_sibling_categories_reconcile_with_family_totals": true,
+    "ownership_and_taxonomy_markers_reconcile": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if anchor-category distribution reconciles to the family denominator.",
+    "Fixture fails if detector fills missing categories or infers category assignment.",
+    "Fixture fails if ownership or taxonomy markers are ignored during distribution interpretation."
+  ],
+  "rationale": "This fixture proves complete multi-category anchor distribution behavior. Category totals are consumed as emitted and reconcile under explicit ownership and taxonomy evidence."
+}
