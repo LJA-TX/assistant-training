@@ -1,0 +1,185 @@
+{
+  "family_aggregation": {
+    "family_id": "family_a",
+    "total_rows": 4,
+    "concept_summaries": [
+      {
+        "concept_id": "family_a_non_exact",
+        "numerator": 2,
+        "denominator": 3,
+        "rate": 0.6666666666666666,
+        "excluded_count": 1,
+        "row_count": 4,
+        "provenance_refs": [
+          "dataset:2026-05-31"
+        ],
+        "evidence_refs": [
+          "evidence:r1",
+          "evidence:r2",
+          "evidence:r3",
+          "evidence:r4"
+        ]
+      }
+    ],
+    "sub_slice_summaries": [
+      {
+        "concept_id": "family_a_non_exact",
+        "sub_slice_id": "direct-answer substitution",
+        "numerator": 1,
+        "denominator": 1,
+        "rate": 1.0,
+        "excluded_count": 0,
+        "row_count": 1,
+        "provenance_refs": [
+          "dataset:2026-05-31"
+        ],
+        "evidence_refs": [
+          "evidence:r1"
+        ]
+      },
+      {
+        "concept_id": "family_a_non_exact",
+        "sub_slice_id": "scalar substitution",
+        "numerator": 1,
+        "denominator": 1,
+        "rate": 1.0,
+        "excluded_count": 0,
+        "row_count": 1,
+        "provenance_refs": [
+          "dataset:2026-05-31"
+        ],
+        "evidence_refs": [
+          "evidence:r2"
+        ]
+      }
+    ],
+    "split_summaries": [
+      {
+        "concept_id": "family_a_non_exact",
+        "split_id": "train",
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0,
+        "excluded_count": 0,
+        "row_count": 2
+      },
+      {
+        "concept_id": "family_a_non_exact",
+        "split_id": "val",
+        "numerator": 0,
+        "denominator": 1,
+        "rate": 0.0,
+        "excluded_count": 1,
+        "row_count": 2
+      }
+    ]
+  },
+  "state_records": [
+    {
+      "concept_id": "family_a_non_exact",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "no approved migration marker emitted"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "family_a_direct_answer_subslice",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "reference-only",
+      "noncomputability_reasons": [
+        "missing required evidence field: subslice_denominator"
+      ],
+      "comparison_block_reasons": [
+        "historical value is reference-only"
+      ],
+      "missing_required_evidence_fields": [
+        "subslice_denominator"
+      ]
+    }
+  ],
+  "reconciliation": {
+    "total_checks": 4,
+    "pass_count": 4,
+    "fail_count": 0,
+    "blocked_count": 0,
+    "results": [
+      {
+        "check_id": "family_a_partition",
+        "check_type": "denominator_partition",
+        "result": "pass",
+        "evaluated_inputs": {
+          "parent_denominator": 3,
+          "partition_denominators": [
+            2,
+            1
+          ],
+          "partition_labels": [
+            "counted",
+            "not_counted"
+          ]
+        },
+        "reasons": []
+      },
+      {
+        "check_id": "family_a_subslice_boundary",
+        "check_type": "parent_subslice_boundary",
+        "result": "pass",
+        "evaluated_inputs": {
+          "parent_numerator": 2,
+          "parent_denominator": 3,
+          "subslice_numerators": [
+            1,
+            1
+          ],
+          "subslice_denominators": [
+            1,
+            1
+          ],
+          "subslice_labels": [
+            "direct-answer substitution",
+            "scalar substitution"
+          ]
+        },
+        "reasons": []
+      },
+      {
+        "check_id": "family_a_split_reconcile",
+        "check_type": "split_to_aggregate",
+        "result": "pass",
+        "evaluated_inputs": {
+          "aggregate_numerator": 2,
+          "aggregate_denominator": 3,
+          "split_numerators": [
+            2,
+            0
+          ],
+          "split_denominators": [
+            2,
+            1
+          ],
+          "split_labels": [
+            "train",
+            "val"
+          ]
+        },
+        "reasons": []
+      },
+      {
+        "check_id": "family_a_coverage",
+        "check_type": "coverage_arithmetic",
+        "result": "pass",
+        "evaluated_inputs": {
+          "covered_count": 3,
+          "uncovered_count": 1,
+          "total_count": 4
+        },
+        "reasons": []
+      }
+    ]
+  }
+}
