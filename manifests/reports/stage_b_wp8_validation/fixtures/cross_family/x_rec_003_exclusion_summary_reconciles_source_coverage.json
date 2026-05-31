@@ -1,0 +1,65 @@
+{
+  "fixture_id": "X-REC-003",
+  "source_definition_id": "X-REC-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Exclusion reconciliation",
+  "intended_subslice_or_state": "excluded rows emitted with exclusion summary",
+  "required_inputs": {
+    "included_row_count_emitted": true,
+    "excluded_row_count_emitted": true,
+    "exclusion_summary_emitted": true,
+    "source_coverage_total_emitted": true,
+    "exclusion_reason_markers_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "included row count",
+      "excluded row count",
+      "exclusion summary",
+      "source coverage total",
+      "exclusion reason markers"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "exclusion_owner": "evaluator pre-aggregation exclusion process",
+    "source_coverage_owner": "dataset metadata and evaluator coverage aggregation",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "exclude_excluded_rows_from_governed_denominators": true,
+    "count_excluded_rows_in_governed_denominator": false,
+    "reclassify_excluded_rows_as_included": false,
+    "infer_exclusion_reasons_when_missing": false,
+    "reconstruct_exclusion_summary": false
+  },
+  "expected_reconciliation_behavior": {
+    "included_plus_excluded_equals_source_coverage": true,
+    "governed_denominator_uses_included_population_only": true,
+    "exclusion_summary_reconciliation_passes": true,
+    "alternate_source_replacement_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if included and excluded counts reconcile to source coverage total.",
+    "Fixture fails if excluded rows are counted in governed denominators.",
+    "Fixture fails if exclusion summaries are reconstructed or replaced by alternate sources."
+  ],
+  "rationale": "This fixture enforces exclusion reconciliation doctrine: exclusion accounting must be explicit and numerically consistent with source coverage without substitution."
+}

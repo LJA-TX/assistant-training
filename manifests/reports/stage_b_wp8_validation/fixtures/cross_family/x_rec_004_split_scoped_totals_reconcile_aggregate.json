@@ -1,0 +1,63 @@
+{
+  "fixture_id": "X-REC-004",
+  "source_definition_id": "X-REC-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Split reconciliation",
+  "intended_subslice_or_state": "split-scoped summaries emitted for active split scope",
+  "required_inputs": {
+    "active_split_scope_marker_emitted": true,
+    "split_scoped_summaries_emitted": true,
+    "aggregate_summary_emitted": true,
+    "split_to_aggregate_mapping_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "active split scope marker",
+      "split-scoped summaries",
+      "aggregate summary",
+      "split-to-aggregate mapping"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "split_scope_owner": "evaluator aggregation with emitted split metadata",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_split_summaries_only_as_emitted": true,
+    "synthesize_missing_split_summary_from_aggregate": false,
+    "repartition_aggregate_into_splits_without_emission": false,
+    "infer_split_membership_from_names_or_paths": false,
+    "use_alternate_source_to_fill_split_gaps": false
+  },
+  "expected_reconciliation_behavior": {
+    "split_totals_equal_aggregate_totals": true,
+    "split_scope_coverage_reconciles": true,
+    "split_reconciliation_passes": true,
+    "historical_reconstruction_of_split_totals_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if emitted split totals reconcile to emitted aggregate totals.",
+    "Fixture fails if missing split summaries are synthesized from aggregate values.",
+    "Fixture fails if split membership is inferred from naming or path conventions."
+  ],
+  "rationale": "This fixture enforces split reconciliation doctrine by requiring explicit split emissions and exact split-to-aggregate reconciliation without reconstruction."
+}

@@ -1,0 +1,65 @@
+{
+  "fixture_id": "X-REC-006",
+  "source_definition_id": "X-REC-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_PHASE1E_FAMILY_A_PACKAGE_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_PHASE1E_FAMILY_A_COVERAGE_SUMMARY.md",
+    "docs/convergence/STAGE_B_WP8C_SCENARIO_TO_SUBTYPE_MAPPING.md",
+    "docs/convergence/STAGE_B_WP8C_FAMILY_A_SUBTYPE_BOUNDARY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md"
+  ],
+  "family": "Family A",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Failure-subtype reconciliation",
+  "intended_subslice_or_state": "Family A subtype counts emitted for non-exact eligible denominator",
+  "required_inputs": {
+    "family_a_non_exact_eligible_denominator_emitted": true,
+    "approved_family_a_subtype_counts_emitted": true,
+    "family_a_taxonomy_marker_emitted": true,
+    "subtype_boundary_approval_emitted": true,
+    "family_a_reconciliation_status_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "Family A non-exact eligible denominator",
+      "approved Family A subtype counts",
+      "Family A taxonomy marker",
+      "subtype boundary approval",
+      "reconciliation status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "subtype_assignment_owner": "scorer and approved taxonomy mapping",
+    "family_a_aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_family_a_subtype_counts_as_emitted": true,
+    "relabel_subtypes_from_prompt_or_output_shape": false,
+    "assign_unemitted_subtype_values": false,
+    "replace_family_a_denominator_with_cross_family_denominator": false,
+    "reconstruct_taxonomy_when_missing": false
+  },
+  "expected_reconciliation_behavior": {
+    "approved_subtype_counts_sum_to_non_exact_eligible_denominator": true,
+    "family_a_taxonomy_reconciliation_passes": true,
+    "family_a_subtype_reconciliation_passes": true,
+    "denominator_substitution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if approved Family A subtype counts reconcile to non-exact eligible denominator.",
+    "Fixture fails if subtype identities or counts are inferred from prompt text or generated output shape.",
+    "Fixture fails if denominators are replaced by alternate sources."
+  ],
+  "rationale": "This fixture enforces Family A subtype reconciliation doctrine in cross-family context with no subtype relabeling or denominator substitution."
+}

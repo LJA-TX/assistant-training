@@ -1,0 +1,65 @@
+{
+  "fixture_id": "X-REC-007",
+  "source_definition_id": "X-REC-007",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_B1_PACKAGE_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_B1_COVERAGE_SUMMARY.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_PARENT_CONTEXT_AND_DENOMINATOR_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md"
+  ],
+  "family": "Family B1",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Symbol-name reconciliation",
+  "intended_subslice_or_state": "symbol-name denominator and parent read-file denominator emitted",
+  "required_inputs": {
+    "symbol_name_denominator_emitted": true,
+    "parent_read_file_denominator_emitted": true,
+    "symbol_name_parent_context_emitted": true,
+    "symbol_name_membership_marker_emitted": true,
+    "reconciliation_status_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "symbol-name denominator",
+      "parent read-file denominator",
+      "symbol-name parent context",
+      "symbol-name membership marker",
+      "reconciliation status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "symbol_name_membership_owner": "dataset metadata and scorer/evaluator evidence",
+    "parent_context_owner": "evaluator aggregation outputs",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_parent_context_as_emitted": true,
+    "infer_symbol_name_membership_from_prompt_text": false,
+    "substitute_parent_read_file_aggregate_for_symbol_name_subslice": false,
+    "replace_symbol_name_denominator_with_parent_denominator": false,
+    "reconstruct_missing_parent_context": false
+  },
+  "expected_reconciliation_behavior": {
+    "symbol_name_denominator_reconciles_with_parent_context": true,
+    "symbol_name_parent_context_reconciliation_passes": true,
+    "symbol_name_scope_bounded_by_parent": true,
+    "denominator_substitution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if symbol-name denominator reconciles with emitted parent read-file context.",
+    "Fixture fails if parent aggregate substitutes for symbol-name sub-slice facts.",
+    "Fixture fails if symbol-name membership is inferred from prompt text or naming conventions."
+  ],
+  "rationale": "This fixture enforces Family B1 parent-context and symbol-name denominator reconciliation doctrine with explicit non-inference boundaries."
+}

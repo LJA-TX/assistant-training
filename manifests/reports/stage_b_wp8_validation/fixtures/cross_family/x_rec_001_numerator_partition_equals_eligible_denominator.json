@@ -1,0 +1,65 @@
+{
+  "fixture_id": "X-REC-001",
+  "source_definition_id": "X-REC-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Aggregate reconciliation",
+  "intended_subslice_or_state": "numerator and non-numerator partitions emitted for eligible denominator",
+  "required_inputs": {
+    "eligible_denominator_emitted": true,
+    "numerator_partition_count_emitted": true,
+    "non_numerator_partition_count_emitted": true,
+    "partition_semantics_emitted": true,
+    "reconciliation_status_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "eligible denominator",
+      "numerator partition count",
+      "non-numerator partition count",
+      "partition semantics",
+      "reconciliation status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "partition_owner": "evaluator aggregation outputs",
+    "denominator_owner": "evaluator aggregation outputs",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_reconciliation_status": true,
+    "recompute_partitions_from_raw_rows": false,
+    "substitute_alternate_denominator": false,
+    "reconstruct_missing_partition": false,
+    "infer_partition_semantics_from_report_layer": false
+  },
+  "expected_reconciliation_behavior": {
+    "partition_sum_equals_eligible_denominator": true,
+    "eligible_denominator_reconciles": true,
+    "partition_reconciliation_passes": true,
+    "precision_or_rounding_rules_respected": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if numerator plus non-numerator partitions exactly reconcile to eligible denominator.",
+    "Fixture fails if alternate denominators are used or partitions are reconstructed.",
+    "Fixture fails if reconciliation pass status is inferred rather than emitted."
+  ],
+  "rationale": "This fixture anchors aggregate reconciliation doctrine: emitted partition evidence must reconcile directly to the eligible denominator without substitution or reconstruction."
+}

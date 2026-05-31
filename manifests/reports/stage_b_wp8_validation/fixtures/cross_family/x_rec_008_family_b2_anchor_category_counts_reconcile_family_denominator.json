@@ -1,0 +1,66 @@
+{
+  "fixture_id": "X-REC-008",
+  "source_definition_id": "X-REC-008",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_B2_PACKAGE_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_B2_COVERAGE_SUMMARY.md",
+    "docs/convergence/STAGE_B_WP8_B2_RECONCILIATION_SUMMARY.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Anchor-category reconciliation",
+  "intended_subslice_or_state": "anchor category counts emitted for active taxonomy",
+  "required_inputs": {
+    "anchor_family_denominator_emitted": true,
+    "anchor_category_counts_emitted": true,
+    "anchor_taxonomy_marker_emitted": true,
+    "anchor_assignment_ownership_marker_emitted": true,
+    "reconciliation_status_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor family denominator",
+      "anchor category counts",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker",
+      "reconciliation status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata or explicitly approved evaluator-owned pre-aggregation assignment",
+    "taxonomy_owner": "approved anchor taxonomy authority",
+    "family_b2_aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_category_distribution_as_emitted": true,
+    "classify_prompts_to_assign_categories": false,
+    "infer_missing_category_counts": false,
+    "replace_anchor_denominator_with_alternate_population": false,
+    "resolve_ownership_gaps_by_detector_inference": false
+  },
+  "expected_reconciliation_behavior": {
+    "category_counts_sum_to_anchor_family_denominator": true,
+    "taxonomy_and_ownership_marker_reconciliation_passes": true,
+    "anchor_category_reconciliation_passes": true,
+    "denominator_substitution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if emitted anchor category counts reconcile to emitted anchor-family denominator.",
+    "Fixture fails if prompt classification is used to backfill category counts.",
+    "Fixture fails if ownership or taxonomy markers are inferred when absent."
+  ],
+  "rationale": "This fixture enforces Family B2 category reconciliation doctrine with explicit taxonomy, ownership, and non-inference boundaries."
+}

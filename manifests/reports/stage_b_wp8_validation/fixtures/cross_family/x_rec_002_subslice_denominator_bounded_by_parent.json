@@ -1,0 +1,63 @@
+{
+  "fixture_id": "X-REC-002",
+  "source_definition_id": "X-REC-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Sub-slice reconciliation",
+  "intended_subslice_or_state": "governed sub-slice denominator emitted with parent denominator",
+  "required_inputs": {
+    "parent_denominator_emitted": true,
+    "governed_subslice_denominator_emitted": true,
+    "parent_subslice_relationship_marker_emitted": true,
+    "reconciliation_status_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "parent denominator",
+      "governed sub-slice denominator",
+      "parent/sub-slice relationship marker",
+      "reconciliation status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "membership_owner": "approved family-specific ownership contracts",
+    "denominator_owner": "evaluator aggregation outputs",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_parent_subslice_relationship_as_emitted": true,
+    "infer_subslice_membership_from_prompt_text": false,
+    "replace_subslice_denominator_with_parent": false,
+    "repair_subslice_denominator_with_alternate_source": false,
+    "recompute_membership_from_report_layer": false
+  },
+  "expected_reconciliation_behavior": {
+    "subslice_denominator_bounded_by_parent_denominator": true,
+    "parent_subslice_reconciliation_passes": true,
+    "membership_scope_consistent": true,
+    "denominator_substitution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if governed sub-slice denominator is bounded by parent denominator and both are emitted.",
+    "Fixture fails if parent denominator replaces sub-slice denominator.",
+    "Fixture fails if sub-slice membership is inferred from prompt or report-layer artifacts."
+  ],
+  "rationale": "This fixture enforces parent/sub-slice reconciliation doctrine by requiring emitted bounded denominators and explicit relationship semantics."
+}

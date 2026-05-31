@@ -1,0 +1,66 @@
+{
+  "fixture_id": "X-REC-009",
+  "source_definition_id": "X-REC-009",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Rate reconciliation",
+  "intended_subslice_or_state": "count, denominator, and rate emitted for governed concept",
+  "required_inputs": {
+    "governed_count_emitted": true,
+    "governed_denominator_emitted": true,
+    "governed_rate_emitted": true,
+    "approved_rate_precision_rule_emitted": true,
+    "reconciliation_status_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "governed count",
+      "governed denominator",
+      "governed rate",
+      "approved rate precision rule",
+      "reconciliation status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "count_owner": "scorer/evaluator outputs",
+    "denominator_owner": "evaluator aggregation outputs",
+    "rate_owner": "evaluator calculation outputs",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_rate_after_reconciliation": true,
+    "recompute_rate_with_alternate_denominator": false,
+    "infer_rate_when_count_or_denominator_missing": false,
+    "replace_rate_from_historical_reports": false,
+    "apply_unapproved_precision_rules": false
+  },
+  "expected_reconciliation_behavior": {
+    "rate_equals_count_over_denominator_under_approved_precision": true,
+    "count_denominator_rate_reconciliation_passes": true,
+    "precision_rule_reconciliation_passes": true,
+    "denominator_substitution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if emitted rate reconciles to emitted count and denominator under approved precision rules.",
+    "Fixture fails if alternate denominators or unapproved precision rules are used.",
+    "Fixture fails if rate is reconstructed from historical or report-layer artifacts."
+  ],
+  "rationale": "This fixture enforces governed rate reconciliation doctrine with explicit precision governance and strict non-substitution boundaries."
+}

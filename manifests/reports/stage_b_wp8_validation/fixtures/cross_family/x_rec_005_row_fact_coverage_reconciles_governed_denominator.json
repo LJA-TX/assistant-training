@@ -1,0 +1,65 @@
+{
+  "fixture_id": "X-REC-005",
+  "source_definition_id": "X-REC-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Coverage reconciliation",
+  "intended_subslice_or_state": "row-fact coverage summary emitted for governed population",
+  "required_inputs": {
+    "governed_denominator_emitted": true,
+    "row_fact_coverage_summary_emitted": true,
+    "covered_row_count_emitted": true,
+    "uncovered_row_count_emitted": true,
+    "coverage_status_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "governed denominator",
+      "row-fact coverage summary",
+      "covered row count",
+      "uncovered row count",
+      "coverage status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "coverage_owner": "evaluator coverage accounting",
+    "denominator_owner": "evaluator aggregation outputs",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "use_emitted_coverage_status": true,
+    "inspect_raw_rows_to_rebuild_coverage": false,
+    "replace_coverage_summary_with_alternate_source": false,
+    "infer_coverage_from_rate_only": false,
+    "infer_missing_coverage_rows_from_names_or_paths": false
+  },
+  "expected_reconciliation_behavior": {
+    "coverage_count_reconciles_with_governed_denominator": true,
+    "covered_plus_uncovered_equals_governed_denominator": true,
+    "coverage_reconciliation_passes": true,
+    "alternate_source_replacement_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if row-fact coverage counts reconcile to governed denominator.",
+    "Fixture fails if coverage is reconstructed from raw-row inspection or alternate sources.",
+    "Fixture fails if coverage status is inferred from naming or path conventions."
+  ],
+  "rationale": "This fixture enforces coverage reconciliation doctrine: governed coverage must be emitted and arithmetically consistent with denominators without alternate-source replacement."
+}

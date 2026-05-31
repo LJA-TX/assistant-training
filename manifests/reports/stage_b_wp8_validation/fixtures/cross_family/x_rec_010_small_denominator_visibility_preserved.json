@@ -1,0 +1,66 @@
+{
+  "fixture_id": "X-REC-010",
+  "source_definition_id": "X-REC-010",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "reconciliation state",
+  "governed_concept": "Small-denominator visibility",
+  "intended_subslice_or_state": "governed sub-slice has small denominator with visible count and denominator",
+  "required_inputs": {
+    "small_governed_denominator_emitted": true,
+    "governed_count_emitted": true,
+    "governed_rate_emitted": true,
+    "small_denominator_visibility_marker_emitted": true,
+    "reconciliation_status_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "small governed denominator",
+      "governed count",
+      "governed rate",
+      "small denominator visibility marker",
+      "reconciliation status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "denominator_owner": "evaluator aggregation outputs",
+    "count_owner": "scorer/evaluator outputs",
+    "visibility_policy_owner": "governance and reporting policy",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "preserve_small_denominator_visibility": true,
+    "hide_count_or_denominator_due_to_small_n": false,
+    "replace_small_denominator_with_larger_proxy_population": false,
+    "downweight_or_suppress_rate_without_policy_marker": false,
+    "reconstruct_visibility_from_report_format": false
+  },
+  "expected_reconciliation_behavior": {
+    "rate_reconciles_with_visible_count_and_denominator": true,
+    "small_denominator_visibility_reconciliation_passes": true,
+    "count_denominator_rate_values_remain_explicit": true,
+    "denominator_substitution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if small denominators remain visible with explicit count and denominator.",
+    "Fixture fails if small denominator evidence is hidden or replaced by proxy populations.",
+    "Fixture fails if rate is reported without visible count and denominator evidence."
+  ],
+  "rationale": "This fixture enforces small-denominator visibility doctrine and prevents report-layer suppression or proxy substitution of governed evidence."
+}
