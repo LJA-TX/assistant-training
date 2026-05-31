@@ -1,0 +1,78 @@
+{
+  "fixture_id": "X-NI-001",
+  "source_definition_id": "X-NI-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Historical comparison",
+  "intended_subslice_or_state": "historical report-layer value exists without migration status",
+  "required_inputs": {
+    "current_run_facts_computable": true,
+    "historical_report_layer_value_present": true,
+    "migration_status_marker_present": false,
+    "comparison_allowed_marker_present": false,
+    "historical_artifact_name_or_path_contains_comparison_like_terms": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run complete and computable concept facts",
+      "historical report-layer value",
+      "migration/comparison status marker"
+    ],
+    "emitted": [
+      "current-run facts",
+      "historical report-layer value"
+    ],
+    "missing": [
+      "migration/comparison status marker"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "current_run_aggregation_owner": "evaluator",
+    "historical_report_owner": "historical reporting artifacts",
+    "comparison_status_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "comparison marker absent"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_current_run_evaluation": true,
+    "block_comparison": true,
+    "infer_comparison_status_from_artifact_name": false,
+    "infer_comparison_status_from_artifact_path": false,
+    "infer_comparison_status_from_report_naming_conventions": false,
+    "infer_comparison_status_from_historical_value_presence": false,
+    "infer_comparison_status_from_absence_of_markers": false,
+    "run_comparative_rule_or_delta": false,
+    "use_historical_report_value_as_comparable_baseline": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "comparison_marker_reconciliation_passes": false,
+    "comparison_reconciliation_passes": false,
+    "historical_reference_visibility_allowed": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if comparison remains blocked when migration/comparison markers are absent.",
+    "Fixture fails if detector infers comparison status from report naming, artifact paths, or historical-value presence.",
+    "Fixture fails if comparative rules run without emitted comparison eligibility markers."
+  ],
+  "rationale": "This fixture enforces non-inference boundaries for historical artifacts: neither naming conventions nor path conventions can create comparison eligibility without explicit emitted markers."
+}

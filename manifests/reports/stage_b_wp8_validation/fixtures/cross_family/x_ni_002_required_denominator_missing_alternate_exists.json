@@ -1,0 +1,77 @@
+{
+  "fixture_id": "X-NI-002",
+  "source_definition_id": "X-NI-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "Denominator construction",
+  "intended_subslice_or_state": "required denominator missing while another population denominator exists",
+  "required_inputs": {
+    "governed_count_present": true,
+    "required_governed_denominator_present": false,
+    "alternate_population_denominator_present": true,
+    "governed_rate_present": false,
+    "migration_or_comparison_status_for_substitution_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "governed count",
+      "required governed denominator",
+      "governed rate"
+    ],
+    "emitted": [
+      "governed count",
+      "alternate population denominator"
+    ],
+    "missing": [
+      "required governed denominator",
+      "governed rate"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "denominator_owner": "evaluator aggregation outputs",
+    "membership_owner": "approved family-specific ownership contracts",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "required denominator missing",
+      "alternate denominator substitution rejected"
+    ]
+  },
+  "expected_detector_treatment": {
+    "treat_count_as_diagnostic_only": true,
+    "report_missing_required_denominator": true,
+    "compute_rate": false,
+    "use_alternate_population_denominator": false,
+    "infer_required_denominator_from_other_populations": false,
+    "infer_membership_from_prompt_text": false,
+    "infer_membership_from_path_or_name_conventions": false,
+    "infer_denominator_from_absence_of_markers": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": false,
+    "governed_rate_reconciliation_passes": false,
+    "rate_reconciliation_blocked_by_missing_denominator": true,
+    "denominator_substitution_reconciliation_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing required denominator keeps the governed concept noncomputable.",
+    "Fixture fails if any alternate population denominator is used to compute the governed rate.",
+    "Fixture fails if denominator or membership is inferred from prompt text, paths, naming, or marker absence."
+  ],
+  "rationale": "This fixture enforces denominator and ownership non-inference doctrine: required denominators are concept-specific and cannot be substituted or inferred from alternate population artifacts."
+}
