@@ -1,0 +1,68 @@
+{
+  "fixture_id": "X-P-001",
+  "source_definition_id": "X-P-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Active family package",
+  "intended_subslice_or_state": "one family complete, one family partial, one family missing",
+  "required_inputs": {
+    "family_a_state": "complete and current-run computable",
+    "family_b1_state": "partial and current-run noncomputable",
+    "family_b2_state": "missing and current-run noncomputable",
+    "at_least_one_current_run_computable_concept_present": true,
+    "mix_of_partial_and_missing_family_states_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "one complete family package",
+      "one partial family package",
+      "one missing family package state",
+      "explicit noncomputability reasons for partial/missing families"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "family_membership_owner": "dataset metadata and evaluator-owned aggregation inputs",
+    "governed_subslice_membership_owner": "approved family-specific ownership contracts",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "partial family package present",
+      "missing family package present"
+    ]
+  },
+  "expected_detector_treatment": {
+    "evaluate_only_independent_computable_concepts": true,
+    "preserve_noncomputability_for_partial_and_missing_families": true,
+    "substitute_complete_family_for_missing_family": false,
+    "construct_cross_family_rollup_from_incomplete_inputs": false,
+    "infer_missing_family_facts_from_other_families": false
+  },
+  "expected_reconciliation_behavior": {
+    "complete_family_reconciliation_passes": true,
+    "partial_family_reconciliation_blocked_or_fails": true,
+    "missing_family_reconciliation_blocked": true,
+    "cross_family_rollup_reconciliation_passes": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if partial and missing family states remain noncomputable.",
+    "Fixture fails if complete-family facts are used as substitutes for partial or missing family facts.",
+    "Fixture fails if cross-family rollup reconciliation is reported as passing despite incomplete package states."
+  ],
+  "rationale": "This fixture proves mixed cross-family completeness handling. Computable concepts may still be reviewed, but noncomputability remains preserved for incomplete family packages."
+}

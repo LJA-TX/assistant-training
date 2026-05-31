@@ -1,0 +1,68 @@
+{
+  "fixture_id": "X-NC-002",
+  "source_definition_id": "X-NC-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "noncomputability state",
+  "governed_concept": "Parent and governed sub-slice relationship",
+  "intended_subslice_or_state": "parent family computable; required governed sub-slice noncomputable",
+  "required_inputs": {
+    "parent_family_current_run_computable": true,
+    "required_governed_subslice_active": true,
+    "governed_subslice_current_run_noncomputable": true,
+    "governed_subslice_missing_required_fact": true,
+    "independent_parent_review_available": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "parent family complete state",
+      "governed sub-slice state",
+      "explicit missing fact for governed sub-slice"
+    ],
+    "missing": [
+      "at least one required governed sub-slice fact"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "parent_aggregation_owner": "evaluator",
+    "governed_subslice_membership_owner": "approved family-specific ownership contracts",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "governed sub-slice missing required fact"
+    ]
+  },
+  "expected_detector_treatment": {
+    "permit_parent_current_run_review_only_where_independent": true,
+    "block_governed_subslice_rule": true,
+    "substitute_parent_family_for_governed_subslice": false,
+    "infer_governed_subslice_membership": false,
+    "repair_subslice_noncomputability_using_parent_state": false
+  },
+  "expected_reconciliation_behavior": {
+    "parent_family_reconciliation_passes": true,
+    "governed_subslice_reconciliation_passes": false,
+    "parent_subslice_substitution_allowed": false,
+    "cross_family_state_preserves_parent_subslice_divergence": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if parent and governed sub-slice states remain independently represented.",
+    "Fixture fails if parent-family computability is used to compute the noncomputable governed sub-slice.",
+    "Fixture fails if parent-subslice reconciliation is reported as passing without governed sub-slice required facts."
+  ],
+  "rationale": "This fixture enforces parent-versus-subslice independence across families. Parent computability cannot repair missing governed sub-slice evidence."
+}

@@ -1,0 +1,73 @@
+{
+  "fixture_id": "X-NC-001",
+  "source_definition_id": "X-NC-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "noncomputability state",
+  "governed_concept": "Count-only governed evidence",
+  "intended_subslice_or_state": "count emitted without required denominator for a governed rate",
+  "required_inputs": {
+    "governed_count_emitted": true,
+    "governed_denominator_emitted": false,
+    "governed_rate_emitted": false,
+    "related_alternate_denominator_present": true,
+    "governed_denominator_substitution_not_approved": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "governed count",
+      "governed denominator",
+      "governed rate"
+    ],
+    "emitted": [
+      "governed count",
+      "related alternate denominator"
+    ],
+    "missing": [
+      "governed denominator",
+      "governed rate"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "denominator_owner": "evaluator aggregation outputs",
+    "count_owner": "scorer/evaluator outputs",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing governed denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "treat_count_as_diagnostic_only": true,
+    "compute_governed_rate": false,
+    "use_alternate_denominator": false,
+    "report_missing_governed_denominator": true,
+    "promote_partial_to_complete": false
+  },
+  "expected_reconciliation_behavior": {
+    "governed_count_visibility_allowed": true,
+    "governed_denominator_reconciliation_passes": false,
+    "governed_rate_reconciliation_passes": false,
+    "rate_reconciliation_blocked_by_missing_denominator": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if count-only evidence remains diagnostic and the governed rate stays noncomputable.",
+    "Fixture fails if any alternate denominator is used to produce a governed rate.",
+    "Fixture fails if rate reconciliation is marked passing without an emitted governed denominator."
+  ],
+  "rationale": "This fixture enforces denominator doctrine at cross-family level: governed counts cannot produce governed rates without the governed denominator, even when related denominators are visible."
+}

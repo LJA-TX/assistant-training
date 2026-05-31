@@ -1,0 +1,71 @@
+{
+  "fixture_id": "X-C-001",
+  "source_definition_id": "X-C-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "complete emission",
+  "governed_concept": "All active families and governed sub-slices",
+  "intended_subslice_or_state": "Family A, B1, and B2 complete emissions present together",
+  "required_inputs": {
+    "family_a_complete_emission_present": true,
+    "family_b1_complete_emission_present": true,
+    "family_b2_complete_emission_present": true,
+    "family_a_governed_subslice_current_run_computable": true,
+    "family_b1_symbol_name_subslice_current_run_computable": true,
+    "family_b2_no_anchor_subslice_current_run_computable": true,
+    "required_denominator_and_marker_facts_present": true,
+    "family_level_and_subslice_reconciliation_summaries_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "Family A complete package facts",
+      "Family B1 complete package facts",
+      "Family B2 complete package facts",
+      "governed sub-slice facts for A/B1/B2",
+      "required denominator and marker evidence"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "family_membership_owner": "dataset metadata and evaluator-owned aggregation inputs",
+    "governed_subslice_membership_owner": "approved family-specific ownership contracts",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_family_facts_and_states_only": true,
+    "evaluate_current_run_for_all_complete_concepts": true,
+    "infer_missing_family_or_subslice_facts": false,
+    "reconstruct_denominators_or_markers": false,
+    "promote_to_comparison_allowed_without_explicit_migration_status": false
+  },
+  "expected_reconciliation_behavior": {
+    "family_a_reconciliation_passes": true,
+    "family_b1_reconciliation_passes": true,
+    "family_b2_reconciliation_passes": true,
+    "governed_subslice_reconciliation_passes": true,
+    "cross_family_slice_reconciliation_passes": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if all active family and governed sub-slice states are complete and current-run computable.",
+    "Fixture fails if any missing fact is reconstructed or inferred.",
+    "Fixture fails if current-run computability is incorrectly promoted to comparison-allowed."
+  ],
+  "rationale": "This fixture is the positive cross-family baseline. It validates that detector consumption of fully emitted family and governed sub-slice facts stays inference-free while keeping comparability blocked by default."
+}

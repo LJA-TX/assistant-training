@@ -1,0 +1,70 @@
+{
+  "fixture_id": "X-M-001",
+  "source_definition_id": "X-M-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Source fact dependency",
+  "intended_subslice_or_state": "shared required row-level source fact missing for an active concept",
+  "required_inputs": {
+    "active_governed_concept_present": true,
+    "shared_required_row_level_source_fact_present": false,
+    "row_text_or_related_context_present": true,
+    "dependent_denominator_and_rate_require_source_fact": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "shared row-level source fact",
+      "dependent governed denominator",
+      "dependent governed rate"
+    ],
+    "emitted": [
+      "row text or related context"
+    ],
+    "missing": [
+      "shared row-level source fact"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "source_fact_owner": "dataset metadata and scorer-produced row evidence",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing shared row-level source fact"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_source_fact": true,
+    "infer_source_fact_from_row_text": false,
+    "reconstruct_source_fact_from_related_families": false,
+    "compute_dependent_denominator_or_rate": false,
+    "treat_missing_source_fact_as_zero": false
+  },
+  "expected_reconciliation_behavior": {
+    "dependent_denominator_reconciliation_passes": false,
+    "dependent_rate_reconciliation_passes": false,
+    "affected_concept_reconciliation_blocked": true,
+    "row_text_valid_reconciliation_substitute": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing shared source fact is explicitly reported and blocks affected concept computation.",
+    "Fixture fails if row text or related context is treated as a substitute for the missing source fact.",
+    "Fixture fails if dependent denominator or rate reconciliation is reported as passing."
+  ],
+  "rationale": "This fixture enforces cross-family source-fact dependency rules. Required row-level source facts must be emitted and cannot be inferred from nearby context."
+}
