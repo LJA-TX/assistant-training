@@ -1,0 +1,74 @@
+{
+  "fixture_id": "B2-NI-003",
+  "source_definition_id": "B2-NI-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "No-anchor governed sub-slice",
+  "intended_subslice_or_state": "family aggregate exact-valid rate exists; no-anchor sub-slice absent",
+  "required_inputs": {
+    "anchor_family_exact_valid_rate_exists": true,
+    "no_anchor_subslice_emitted": false,
+    "no_anchor_denominator_emitted": false,
+    "anchor_taxonomy_marker_may_be_present": true,
+    "anchor_assignment_ownership_marker_may_be_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "no-anchor sub-slice summary",
+      "no-anchor denominator",
+      "no-anchor exact-valid rate"
+    ],
+    "emitted": [
+      "anchor-family exact-valid rate"
+    ],
+    "missing": [
+      "no-anchor sub-slice",
+      "no-anchor denominator",
+      "no-anchor rate"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing no-anchor governed sub-slice",
+      "family aggregate cannot substitute for no-anchor evidence"
+    ]
+  },
+  "expected_detector_treatment": {
+    "substitute_anchor_family_rate_for_no_anchor_rate": false,
+    "construct_no_anchor_denominator_from_family_denominator": false,
+    "infer_no_anchor_membership_from_family_mix": false,
+    "report_missing_no_anchor_subslice": true,
+    "report_missing_no_anchor_denominator": true
+  },
+  "expected_reconciliation_behavior": {
+    "anchor_family_reconciliation_may_pass": true,
+    "no_anchor_reconciliation_possible": false,
+    "no_anchor_rate_reconciliation_allowed": false,
+    "no_anchor_concept_remains_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if family aggregate exact-valid facts are rejected as no-anchor substitutes.",
+    "Fixture fails if no-anchor rate is reconstructed from family aggregate rates or denominators.",
+    "Fixture fails if detector treats family aggregate evidence as governed no-anchor evidence."
+  ],
+  "rationale": "This fixture proves no-anchor non-substitution doctrine. Family aggregate behavior cannot repair missing no-anchor governed facts."
+}

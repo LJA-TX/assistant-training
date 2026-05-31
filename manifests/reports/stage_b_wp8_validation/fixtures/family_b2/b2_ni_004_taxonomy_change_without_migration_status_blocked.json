@@ -1,0 +1,74 @@
+{
+  "fixture_id": "B2-NI-004",
+  "source_definition_id": "B2-NI-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "No-anchor governed sub-slice",
+  "intended_subslice_or_state": "anchor taxonomy changed; no approved migration status emitted",
+  "required_inputs": {
+    "current_no_anchor_subslice_emitted": true,
+    "current_no_anchor_denominator_emitted": true,
+    "current_no_anchor_rate_emitted": true,
+    "current_anchor_taxonomy_marker_present": true,
+    "historical_anchor_taxonomy_marker_present": true,
+    "taxonomy_changed_between_current_and_historical": true,
+    "approved_migration_status_emitted": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current no-anchor marker/denominator/rate",
+      "current anchor taxonomy marker",
+      "historical taxonomy context",
+      "approved migration status for taxonomy change"
+    ],
+    "emitted": [
+      "current no-anchor computable facts",
+      "taxonomy-change condition"
+    ],
+    "missing": [
+      "approved migration/comparison status"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "aggregation_owner": "evaluator",
+    "migration_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "consume_current_run_no_anchor_facts": true,
+    "allow_historical_comparison_without_migration_status": false,
+    "infer_comparison_allowed_from_metric_name_similarity": false,
+    "infer_bridge_approval_from_taxonomy_overlap": false,
+    "block_comparison_due_to_missing_migration_status": true
+  },
+  "expected_reconciliation_behavior": {
+    "current_no_anchor_reconciliation_passes": true,
+    "taxonomy_change_detected": true,
+    "historical_comparison_reconciliation_allowed": false,
+    "comparative_delta_computation_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if current-run no-anchor facts remain computable while historical comparison stays blocked.",
+    "Fixture fails if taxonomy change is ignored and comparison proceeds without migration approval.",
+    "Fixture fails if detector infers migration status from naming or partial marker overlap."
+  ],
+  "rationale": "This fixture proves comparison-blocking under taxonomy drift. Current-run no-anchor behavior can be computable while historical comparison remains blocked without explicit migration status."
+}

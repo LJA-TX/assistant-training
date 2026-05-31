@@ -1,0 +1,80 @@
+{
+  "fixture_id": "B2-NI-002",
+  "source_definition_id": "B2-NI-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "No-anchor governed sub-slice",
+  "intended_subslice_or_state": "historical share of exact-valid rows that are no-anchor exists; no-anchor exact-valid rate absent",
+  "required_inputs": {
+    "historical_no_anchor_share_exists": true,
+    "historical_denominator_semantics": "share_of_exact_valid_rows",
+    "current_no_anchor_exact_valid_rate_emitted": false,
+    "current_no_anchor_denominator_emitted": false,
+    "current_no_anchor_marker_emitted": false,
+    "migration_bridge_approval_emitted": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current no-anchor marker",
+      "current no-anchor denominator",
+      "current no-anchor exact-valid rate",
+      "approved bridge evidence for denominator compatibility"
+    ],
+    "emitted": [
+      "historical denominator-incompatible no-anchor share"
+    ],
+    "missing": [
+      "current no-anchor marker",
+      "current no-anchor denominator",
+      "current no-anchor exact-valid rate",
+      "approved bridge evidence"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "migration_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "bridge-required",
+    "noncomputability_reasons": [
+      "missing current no-anchor denominator-compatible rate",
+      "historical denominator-incompatible share is not current-run evidence"
+    ]
+  },
+  "expected_detector_treatment": {
+    "use_historical_share_as_current_rate": false,
+    "substitute_historical_share_for_current_denominator": false,
+    "allow_comparison_without_bridge": false,
+    "require_bridge_for_denominator_compatibility": true,
+    "report_bridge_required": true
+  },
+  "expected_reconciliation_behavior": {
+    "historical_share_may_be_reference_context": true,
+    "current_no_anchor_rate_reconciles": false,
+    "current_no_anchor_denominator_reconciles": false,
+    "comparison_allowed": false,
+    "bridge_required": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if denominator-incompatible historical share is not treated as current no-anchor rate evidence.",
+    "Fixture fails if historical share is substituted for missing current no-anchor denominator/rate facts.",
+    "Fixture fails if comparison is allowed without explicit bridge approval."
+  ],
+  "rationale": "This fixture proves denominator compatibility doctrine for historical no-anchor evidence. Historical share metrics cannot replace current denominator-based no-anchor rate without bridge approval."
+}

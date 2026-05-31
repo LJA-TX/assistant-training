@@ -1,0 +1,73 @@
+{
+  "fixture_id": "B2-NI-001",
+  "source_definition_id": "B2-NI-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "detector non-inference",
+  "governed_concept": "No-anchor governed sub-slice",
+  "intended_subslice_or_state": "prompt text lacks obvious anchor phrase; no-anchor marker missing",
+  "required_inputs": {
+    "prompt_text_lacks_obvious_anchor_phrase": true,
+    "no_anchor_membership_marker_emitted": false,
+    "no_anchor_denominator_emitted": false,
+    "anchor_taxonomy_marker_may_be_present": true,
+    "anchor_assignment_ownership_marker_may_be_present": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "explicit no-anchor membership marker",
+      "no-anchor denominator evidence"
+    ],
+    "emitted": [
+      "prompt text without obvious anchor phrase"
+    ],
+    "missing": [
+      "no-anchor membership marker",
+      "no-anchor denominator"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "membership_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing no-anchor marker",
+      "missing no-anchor denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "infer_no_anchor_from_prompt_text": false,
+    "classify_no_anchor_from_absence_of_anchor_phrasing": false,
+    "construct_no_anchor_denominator_from_prompt_scan": false,
+    "report_missing_no_anchor_marker": true,
+    "report_missing_no_anchor_denominator": true
+  },
+  "expected_reconciliation_behavior": {
+    "prompt_shape_supports_no_anchor_membership": false,
+    "no_anchor_denominator_reconciles": false,
+    "no_anchor_rate_reconciliation_allowed": false,
+    "no_anchor_concept_remains_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if detector does not infer no-anchor membership from prompt text.",
+    "Fixture fails if missing no-anchor marker is repaired by prompt-shape classification.",
+    "Fixture fails if no-anchor denominator is reconstructed from prompt-only evidence."
+  ],
+  "rationale": "This fixture proves prompt non-inference for no-anchor behavior. Prompt wording alone cannot create governed no-anchor membership or denominator evidence."
+}
