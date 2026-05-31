@@ -1,0 +1,413 @@
+{
+  "row_fact_count": 8,
+  "records": [
+    {
+      "row_id": "score-001",
+      "split_id": "all_splits",
+      "excluded": false,
+      "expected_tool_name": null,
+      "membership_markers": {
+        "family_a_tool_expected_eligible": false,
+        "family_b1_read_file_eligible": false,
+        "family_b1_symbol_name_member": null,
+        "family_b2_anchor_eligible": false,
+        "family_b2_no_anchor_member": null,
+        "family_b2_anchor_category": null
+      },
+      "ownership_markers": {
+        "symbol_name_membership_owner": null,
+        "anchor_assignment_owner": null,
+        "anchor_taxonomy_owner": null,
+        "conflicting_ownership_markers": false,
+        "ownership_conflict_reasons": []
+      },
+      "provenance": {
+        "row_source": "stage_c4_output_ingestion",
+        "dataset_id": "stage_c4_model_output_records",
+        "dataset_version": "contract-baseline",
+        "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+        "evidence_digest": "61d06dd866922e0a5192c49cf468a9b30eba965f31c63fbc86b6488218205f3b"
+      },
+      "denominator_provenance": {
+        "eligible_population_source": "stage_c4_output_record_population",
+        "non_exact_population_source": "stage_c4_output_record_population",
+        "read_file_population_source": null,
+        "symbol_name_population_source": null,
+        "anchor_population_source": null,
+        "no_anchor_population_source": null
+      },
+      "evidence": {
+        "fixture_reference": "A-C-001",
+        "source_definition_reference": "A-C-001",
+        "model_identifier": "score-model-v0",
+        "prompt_reference": "prompt://a-c-001",
+        "parse_status": "strict_json_object",
+        "tool_call_status": "tool_call_payload_present",
+        "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/a.txt\\\",\\\"line_start\\\":1,\\\"line_end\\\":2}\"}}]}",
+        "wrapper_or_prose_leakage": false,
+        "guardrail_flags": {
+          "inference_used": false,
+          "substitution_used": false,
+          "reconstruction_used": false
+        }
+      }
+    },
+    {
+      "row_id": "score-002",
+      "split_id": "all_splits",
+      "excluded": false,
+      "expected_tool_name": null,
+      "membership_markers": {
+        "family_a_tool_expected_eligible": false,
+        "family_b1_read_file_eligible": false,
+        "family_b1_symbol_name_member": null,
+        "family_b2_anchor_eligible": false,
+        "family_b2_no_anchor_member": null,
+        "family_b2_anchor_category": null
+      },
+      "ownership_markers": {
+        "symbol_name_membership_owner": null,
+        "anchor_assignment_owner": null,
+        "anchor_taxonomy_owner": null,
+        "conflicting_ownership_markers": false,
+        "ownership_conflict_reasons": []
+      },
+      "provenance": {
+        "row_source": "stage_c4_output_ingestion",
+        "dataset_id": "stage_c4_model_output_records",
+        "dataset_version": "contract-baseline",
+        "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+        "evidence_digest": "0be9a2d00cd685b8f54c396d38e129a84ff4dfc2212b018bd4c48ddeeec96393"
+      },
+      "denominator_provenance": {
+        "eligible_population_source": "stage_c4_output_record_population",
+        "non_exact_population_source": "stage_c4_output_record_population",
+        "read_file_population_source": null,
+        "symbol_name_population_source": null,
+        "anchor_population_source": null,
+        "no_anchor_population_source": null
+      },
+      "evidence": {
+        "fixture_reference": "A-C-004",
+        "source_definition_reference": "A-C-004",
+        "model_identifier": "score-model-v0",
+        "prompt_reference": "prompt://a-c-004",
+        "parse_status": "invalid_json",
+        "tool_call_status": "tool_call_unavailable_parse_failure",
+        "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/bad.json\\\"}\"}}]",
+        "wrapper_or_prose_leakage": false,
+        "guardrail_flags": {
+          "inference_used": false,
+          "substitution_used": false,
+          "reconstruction_used": false
+        }
+      }
+    },
+    {
+      "row_id": "score-003",
+      "split_id": "all_splits",
+      "excluded": false,
+      "expected_tool_name": null,
+      "membership_markers": {
+        "family_a_tool_expected_eligible": false,
+        "family_b1_read_file_eligible": false,
+        "family_b1_symbol_name_member": null,
+        "family_b2_anchor_eligible": false,
+        "family_b2_no_anchor_member": null,
+        "family_b2_anchor_category": null
+      },
+      "ownership_markers": {
+        "symbol_name_membership_owner": null,
+        "anchor_assignment_owner": null,
+        "anchor_taxonomy_owner": null,
+        "conflicting_ownership_markers": false,
+        "ownership_conflict_reasons": []
+      },
+      "provenance": {
+        "row_source": "stage_c4_output_ingestion",
+        "dataset_id": "stage_c4_model_output_records",
+        "dataset_version": "contract-baseline",
+        "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+        "evidence_digest": "3b9752c4ff89fc582b16b660d8fac3dba274185973bd84fbeb9a44735d36014e"
+      },
+      "denominator_provenance": {
+        "eligible_population_source": "stage_c4_output_record_population",
+        "non_exact_population_source": "stage_c4_output_record_population",
+        "read_file_population_source": null,
+        "symbol_name_population_source": null,
+        "anchor_population_source": null,
+        "no_anchor_population_source": null
+      },
+      "evidence": {
+        "fixture_reference": "A-C-006",
+        "source_definition_reference": "A-C-006",
+        "model_identifier": "score-model-v0",
+        "prompt_reference": "prompt://a-c-006",
+        "parse_status": "strict_json_object",
+        "tool_call_status": "tool_calls_key_missing",
+        "raw_model_response": "{\"message\":\"no tool call emitted\"}",
+        "wrapper_or_prose_leakage": false,
+        "guardrail_flags": {
+          "inference_used": false,
+          "substitution_used": false,
+          "reconstruction_used": false
+        }
+      }
+    },
+    {
+      "row_id": "score-004",
+      "split_id": "all_splits",
+      "excluded": false,
+      "expected_tool_name": null,
+      "membership_markers": {
+        "family_a_tool_expected_eligible": false,
+        "family_b1_read_file_eligible": false,
+        "family_b1_symbol_name_member": null,
+        "family_b2_anchor_eligible": false,
+        "family_b2_no_anchor_member": null,
+        "family_b2_anchor_category": null
+      },
+      "ownership_markers": {
+        "symbol_name_membership_owner": null,
+        "anchor_assignment_owner": null,
+        "anchor_taxonomy_owner": null,
+        "conflicting_ownership_markers": false,
+        "ownership_conflict_reasons": []
+      },
+      "provenance": {
+        "row_source": "stage_c4_output_ingestion",
+        "dataset_id": "stage_c4_model_output_records",
+        "dataset_version": "contract-baseline",
+        "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+        "evidence_digest": "2768e554f3eff30c191dc58e1c16691e5c61b9d219386c4729b3e9e834f5dd67"
+      },
+      "denominator_provenance": {
+        "eligible_population_source": "stage_c4_output_record_population",
+        "non_exact_population_source": "stage_c4_output_record_population",
+        "read_file_population_source": null,
+        "symbol_name_population_source": null,
+        "anchor_population_source": null,
+        "no_anchor_population_source": null
+      },
+      "evidence": {
+        "fixture_reference": "A-C-008",
+        "source_definition_reference": "A-C-008",
+        "model_identifier": "score-model-v0",
+        "prompt_reference": "prompt://a-c-008",
+        "parse_status": "strict_json_object",
+        "tool_call_status": "tool_call_payload_partial_or_invalid",
+        "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\"}}]}",
+        "wrapper_or_prose_leakage": false,
+        "guardrail_flags": {
+          "inference_used": false,
+          "substitution_used": false,
+          "reconstruction_used": false
+        }
+      }
+    },
+    {
+      "row_id": "score-005",
+      "split_id": "all_splits",
+      "excluded": false,
+      "expected_tool_name": null,
+      "membership_markers": {
+        "family_a_tool_expected_eligible": false,
+        "family_b1_read_file_eligible": false,
+        "family_b1_symbol_name_member": null,
+        "family_b2_anchor_eligible": false,
+        "family_b2_no_anchor_member": null,
+        "family_b2_anchor_category": null
+      },
+      "ownership_markers": {
+        "symbol_name_membership_owner": null,
+        "anchor_assignment_owner": null,
+        "anchor_taxonomy_owner": null,
+        "conflicting_ownership_markers": false,
+        "ownership_conflict_reasons": []
+      },
+      "provenance": {
+        "row_source": "stage_c4_output_ingestion",
+        "dataset_id": "stage_c4_model_output_records",
+        "dataset_version": "contract-baseline",
+        "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+        "evidence_digest": "ac7d7f8b382056d677d112661a5c8588791f387950f7ba98a2bcb475beadf1c1"
+      },
+      "denominator_provenance": {
+        "eligible_population_source": "stage_c4_output_record_population",
+        "non_exact_population_source": "stage_c4_output_record_population",
+        "read_file_population_source": null,
+        "symbol_name_population_source": null,
+        "anchor_population_source": null,
+        "no_anchor_population_source": null
+      },
+      "evidence": {
+        "fixture_reference": "A-C-007",
+        "source_definition_reference": "A-C-007",
+        "model_identifier": "score-model-v0",
+        "prompt_reference": "prompt://a-c-007",
+        "parse_status": "strict_json_object",
+        "tool_call_status": "tool_call_payload_present",
+        "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"list_dir\",\"arguments\":\"{\\\"path\\\":\\\"/tmp\\\"}\"}}]}",
+        "wrapper_or_prose_leakage": false,
+        "guardrail_flags": {
+          "inference_used": false,
+          "substitution_used": false,
+          "reconstruction_used": false
+        }
+      }
+    },
+    {
+      "row_id": "score-006",
+      "split_id": "all_splits",
+      "excluded": false,
+      "expected_tool_name": null,
+      "membership_markers": {
+        "family_a_tool_expected_eligible": false,
+        "family_b1_read_file_eligible": false,
+        "family_b1_symbol_name_member": null,
+        "family_b2_anchor_eligible": false,
+        "family_b2_no_anchor_member": null,
+        "family_b2_anchor_category": null
+      },
+      "ownership_markers": {
+        "symbol_name_membership_owner": null,
+        "anchor_assignment_owner": null,
+        "anchor_taxonomy_owner": null,
+        "conflicting_ownership_markers": false,
+        "ownership_conflict_reasons": []
+      },
+      "provenance": {
+        "row_source": "stage_c4_output_ingestion",
+        "dataset_id": "stage_c4_model_output_records",
+        "dataset_version": "contract-baseline",
+        "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+        "evidence_digest": "7a8c71bf15ff23d653a5dc660955178aea586dabc3b5496e191f047b86598d32"
+      },
+      "denominator_provenance": {
+        "eligible_population_source": "stage_c4_output_record_population",
+        "non_exact_population_source": "stage_c4_output_record_population",
+        "read_file_population_source": null,
+        "symbol_name_population_source": null,
+        "anchor_population_source": null,
+        "no_anchor_population_source": null
+      },
+      "evidence": {
+        "fixture_reference": "A-C-005",
+        "source_definition_reference": "A-C-005",
+        "model_identifier": "score-model-v0",
+        "prompt_reference": "prompt://a-c-005",
+        "parse_status": "invalid_json_with_embedded_object",
+        "tool_call_status": "tool_call_unavailable_parse_failure",
+        "raw_model_response": "Wrapper prefix {\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/wrapped.txt\\\"}\"}}]} wrapper suffix",
+        "wrapper_or_prose_leakage": true,
+        "guardrail_flags": {
+          "inference_used": false,
+          "substitution_used": false,
+          "reconstruction_used": false
+        }
+      }
+    },
+    {
+      "row_id": "score-007",
+      "split_id": "all_splits",
+      "excluded": false,
+      "expected_tool_name": null,
+      "membership_markers": {
+        "family_a_tool_expected_eligible": false,
+        "family_b1_read_file_eligible": false,
+        "family_b1_symbol_name_member": null,
+        "family_b2_anchor_eligible": false,
+        "family_b2_no_anchor_member": null,
+        "family_b2_anchor_category": null
+      },
+      "ownership_markers": {
+        "symbol_name_membership_owner": null,
+        "anchor_assignment_owner": null,
+        "anchor_taxonomy_owner": null,
+        "conflicting_ownership_markers": false,
+        "ownership_conflict_reasons": []
+      },
+      "provenance": {
+        "row_source": "stage_c4_output_ingestion",
+        "dataset_id": "stage_c4_model_output_records",
+        "dataset_version": "contract-baseline",
+        "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+        "evidence_digest": "220227c9824cec00ee38fc2c27f76d908113e9a43e627f632b7d5ac98dccb940"
+      },
+      "denominator_provenance": {
+        "eligible_population_source": "stage_c4_output_record_population",
+        "non_exact_population_source": "stage_c4_output_record_population",
+        "read_file_population_source": null,
+        "symbol_name_population_source": null,
+        "anchor_population_source": null,
+        "no_anchor_population_source": null
+      },
+      "evidence": {
+        "fixture_reference": "A-NI-004",
+        "source_definition_reference": "A-NI-004",
+        "model_identifier": "score-model-v0",
+        "prompt_reference": "prompt://a-ni-004",
+        "parse_status": "strict_json_object",
+        "tool_call_status": "no_tool_calls_emitted",
+        "raw_model_response": "{\"tool_calls\":[]}",
+        "wrapper_or_prose_leakage": false,
+        "guardrail_flags": {
+          "inference_used": false,
+          "substitution_used": false,
+          "reconstruction_used": false
+        }
+      }
+    },
+    {
+      "row_id": "score-008",
+      "split_id": "all_splits",
+      "excluded": false,
+      "expected_tool_name": null,
+      "membership_markers": {
+        "family_a_tool_expected_eligible": false,
+        "family_b1_read_file_eligible": false,
+        "family_b1_symbol_name_member": null,
+        "family_b2_anchor_eligible": false,
+        "family_b2_no_anchor_member": null,
+        "family_b2_anchor_category": null
+      },
+      "ownership_markers": {
+        "symbol_name_membership_owner": null,
+        "anchor_assignment_owner": null,
+        "anchor_taxonomy_owner": null,
+        "conflicting_ownership_markers": false,
+        "ownership_conflict_reasons": []
+      },
+      "provenance": {
+        "row_source": "stage_c4_output_ingestion",
+        "dataset_id": "stage_c4_model_output_records",
+        "dataset_version": "contract-baseline",
+        "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+        "evidence_digest": "a86a86ed3dd4216f3f13023bc8172262a2cfc95aed78ac11a5aa3d7c9f0fe54a"
+      },
+      "denominator_provenance": {
+        "eligible_population_source": "stage_c4_output_record_population",
+        "non_exact_population_source": "stage_c4_output_record_population",
+        "read_file_population_source": null,
+        "symbol_name_population_source": null,
+        "anchor_population_source": null,
+        "no_anchor_population_source": null
+      },
+      "evidence": {
+        "fixture_reference": "A-NI-004",
+        "source_definition_reference": "A-NI-004",
+        "model_identifier": "score-model-v0",
+        "prompt_reference": "prompt://a-ni-004b",
+        "parse_status": "strict_json_object",
+        "tool_call_status": "tool_call_payload_present",
+        "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/unexpected.txt\\\"}\"}}]}",
+        "wrapper_or_prose_leakage": false,
+        "guardrail_flags": {
+          "inference_used": false,
+          "substitution_used": false,
+          "reconstruction_used": false
+        }
+      }
+    }
+  ]
+}

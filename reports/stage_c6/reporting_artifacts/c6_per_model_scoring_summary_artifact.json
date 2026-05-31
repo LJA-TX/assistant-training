@@ -1,0 +1,52 @@
+{
+  "model_count": 1,
+  "records": [
+    {
+      "model_identifier": "score-model-v0",
+      "record_count": 8,
+      "pass_count": 2,
+      "fail_count": 6,
+      "parse_status_counts": {
+        "invalid_json": 1,
+        "invalid_json_with_embedded_object": 1,
+        "strict_json_object": 6
+      },
+      "tool_call_status_counts": {
+        "no_tool_calls_emitted": 1,
+        "tool_call_payload_partial_or_invalid": 1,
+        "tool_call_payload_present": 3,
+        "tool_call_unavailable_parse_failure": 2,
+        "tool_calls_key_missing": 1
+      },
+      "no_call_status_counts": {
+        "expected_no_call_emitted": 1,
+        "expected_no_call_not_emitted": 1,
+        "no_call_emission_unknown": 3,
+        "tool_call_emitted": 3
+      },
+      "wrapper_or_prose_leakage_count": 1,
+      "failure_reason_counts": {
+        "arguments unavailable: arguments_missing": 1,
+        "arguments unavailable: parsed_tool_call_payload_missing": 3,
+        "no-call expected but observed status=tool_call_payload_present": 1,
+        "no-call mismatch: observed=False, expected=True": 1,
+        "no-call mismatch: observed=None, expected=False": 3,
+        "observed tool name 'None' does not match expected 'read_file'": 3,
+        "observed tool name 'list_dir' does not match expected 'read_file'": 1,
+        "tool call required but status=tool_call_unavailable_parse_failure": 2,
+        "tool call required but status=tool_calls_key_missing": 1,
+        "wrapper/prose leakage detected": 1
+      },
+      "record_ids": [
+        "score-001",
+        "score-002",
+        "score-003",
+        "score-004",
+        "score-005",
+        "score-006",
+        "score-007",
+        "score-008"
+      ]
+    }
+  ]
+}

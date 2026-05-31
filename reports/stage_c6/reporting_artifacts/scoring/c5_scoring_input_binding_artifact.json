@@ -1,0 +1,481 @@
+{
+  "record_count": 8,
+  "records": [
+    {
+      "record_id": "score-001",
+      "fixture_id": "A-C-001",
+      "source_definition_id": "A-C-001",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-001",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/a.txt\\\",\\\"line_start\\\":1,\\\"line_end\\\":2}\"}}]}",
+      "parse_status": "strict_json_object",
+      "tool_call_status": "tool_call_payload_present",
+      "no_call_status": "tool_call_emitted",
+      "wrapper_or_prose_leakage": false,
+      "parsed_tool_call_payload": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "read_file",
+              "arguments": "{\"path\":\"/tmp/a.txt\",\"line_start\":1,\"line_end\":2}"
+            }
+          }
+        ]
+      },
+      "record_expectation": {
+        "expected_tool_name": "read_file",
+        "expected_argument_keys": [
+          "path",
+          "line_start",
+          "line_end"
+        ],
+        "expected_no_call": false,
+        "expected_strict_json_object": true,
+        "expected_tool_call_required": true,
+        "wrapper_prohibited": true
+      },
+      "fixture_expectation_hint": {
+        "scenario_type": "complete emission",
+        "intended_subtype": null,
+        "expected_behavior_hint": "exact_or_other_expected",
+        "scorer_evidence_expectations": {
+          "required": [
+            "tool-expected eligibility",
+            "exact-valid scorer outcome",
+            "taxonomy marker for family context"
+          ],
+          "subtype_assignment_expected": false,
+          "missing_evidence_expected": false
+        }
+      },
+      "state_axis": {
+        "concept_id": "score-001",
+        "completeness": "complete",
+        "current_run_computability": "current-run computable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ],
+        "missing_required_evidence_fields": []
+      },
+      "binding_generated_at_utc": "2026-05-31T22:04:29.010139Z"
+    },
+    {
+      "record_id": "score-002",
+      "fixture_id": "A-C-004",
+      "source_definition_id": "A-C-004",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-004",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/bad.json\\\"}\"}}]",
+      "parse_status": "invalid_json",
+      "tool_call_status": "tool_call_unavailable_parse_failure",
+      "no_call_status": "no_call_emission_unknown",
+      "wrapper_or_prose_leakage": false,
+      "parsed_tool_call_payload": null,
+      "record_expectation": {
+        "expected_tool_name": "read_file",
+        "expected_argument_keys": [
+          "path"
+        ],
+        "expected_no_call": false,
+        "expected_strict_json_object": false,
+        "expected_tool_call_required": true,
+        "wrapper_prohibited": true
+      },
+      "fixture_expectation_hint": {
+        "scenario_type": "complete emission",
+        "intended_subtype": "malformed output",
+        "expected_behavior_hint": "malformed_output_expected",
+        "scorer_evidence_expectations": {
+          "required": [
+            "tool-expected eligibility",
+            "non-exact status",
+            "parse/schema evidence showing malformed output",
+            "taxonomy marker"
+          ],
+          "subtype_assignment_expected": true,
+          "missing_evidence_expected": false
+        }
+      },
+      "state_axis": {
+        "concept_id": "score-002",
+        "completeness": "complete",
+        "current_run_computability": "current-run noncomputable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [
+          "parse status is invalid_json",
+          "tool call status is tool_call_unavailable_parse_failure"
+        ],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ],
+        "missing_required_evidence_fields": []
+      },
+      "binding_generated_at_utc": "2026-05-31T22:04:29.010170Z"
+    },
+    {
+      "record_id": "score-003",
+      "fixture_id": "A-C-006",
+      "source_definition_id": "A-C-006",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-006",
+      "raw_model_response": "{\"message\":\"no tool call emitted\"}",
+      "parse_status": "strict_json_object",
+      "tool_call_status": "tool_calls_key_missing",
+      "no_call_status": "no_call_emission_unknown",
+      "wrapper_or_prose_leakage": false,
+      "parsed_tool_call_payload": null,
+      "record_expectation": {
+        "expected_tool_name": "read_file",
+        "expected_argument_keys": [
+          "path"
+        ],
+        "expected_no_call": false,
+        "expected_strict_json_object": true,
+        "expected_tool_call_required": true,
+        "wrapper_prohibited": true
+      },
+      "fixture_expectation_hint": {
+        "scenario_type": "complete emission",
+        "intended_subtype": "missing tool call",
+        "expected_behavior_hint": "tool_call_expected_but_absent",
+        "scorer_evidence_expectations": {
+          "required": [
+            "tool-expected eligibility",
+            "non-exact status",
+            "no valid required tool call",
+            "tool-call absence evidence",
+            "no stronger direct-answer substitution evidence",
+            "no stronger scalar substitution evidence",
+            "taxonomy marker"
+          ],
+          "subtype_assignment_expected": true,
+          "missing_evidence_expected": false
+        }
+      },
+      "state_axis": {
+        "concept_id": "score-003",
+        "completeness": "complete",
+        "current_run_computability": "current-run noncomputable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [
+          "tool call status is tool_calls_key_missing"
+        ],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ],
+        "missing_required_evidence_fields": []
+      },
+      "binding_generated_at_utc": "2026-05-31T22:04:29.010187Z"
+    },
+    {
+      "record_id": "score-004",
+      "fixture_id": "A-C-008",
+      "source_definition_id": "A-C-008",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-008",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\"}}]}",
+      "parse_status": "strict_json_object",
+      "tool_call_status": "tool_call_payload_partial_or_invalid",
+      "no_call_status": "tool_call_emitted",
+      "wrapper_or_prose_leakage": false,
+      "parsed_tool_call_payload": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "read_file"
+            }
+          }
+        ]
+      },
+      "record_expectation": {
+        "expected_tool_name": "read_file",
+        "expected_argument_keys": [
+          "path"
+        ],
+        "expected_no_call": false,
+        "expected_strict_json_object": true,
+        "expected_tool_call_required": true,
+        "wrapper_prohibited": true
+      },
+      "fixture_expectation_hint": {
+        "scenario_type": "complete emission",
+        "intended_subtype": "wrong argument",
+        "expected_behavior_hint": "argument_mismatch_expected",
+        "scorer_evidence_expectations": {
+          "required": [
+            "tool-expected eligibility",
+            "non-exact status",
+            "parseable expected-tool call",
+            "comparable emitted arguments",
+            "expected arguments",
+            "argument mismatch evidence",
+            "taxonomy marker"
+          ],
+          "subtype_assignment_expected": true,
+          "missing_evidence_expected": false
+        }
+      },
+      "state_axis": {
+        "concept_id": "score-004",
+        "completeness": "complete",
+        "current_run_computability": "current-run noncomputable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [
+          "tool call status is tool_call_payload_partial_or_invalid"
+        ],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ],
+        "missing_required_evidence_fields": []
+      },
+      "binding_generated_at_utc": "2026-05-31T22:04:29.010198Z"
+    },
+    {
+      "record_id": "score-005",
+      "fixture_id": "A-C-007",
+      "source_definition_id": "A-C-007",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-007",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"list_dir\",\"arguments\":\"{\\\"path\\\":\\\"/tmp\\\"}\"}}]}",
+      "parse_status": "strict_json_object",
+      "tool_call_status": "tool_call_payload_present",
+      "no_call_status": "tool_call_emitted",
+      "wrapper_or_prose_leakage": false,
+      "parsed_tool_call_payload": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "list_dir",
+              "arguments": "{\"path\":\"/tmp\"}"
+            }
+          }
+        ]
+      },
+      "record_expectation": {
+        "expected_tool_name": "read_file",
+        "expected_argument_keys": [
+          "path"
+        ],
+        "expected_no_call": false,
+        "expected_strict_json_object": true,
+        "expected_tool_call_required": true,
+        "wrapper_prohibited": true
+      },
+      "fixture_expectation_hint": {
+        "scenario_type": "complete emission",
+        "intended_subtype": "wrong tool name",
+        "expected_behavior_hint": "tool_name_mismatch_expected",
+        "scorer_evidence_expectations": {
+          "required": [
+            "tool-expected eligibility",
+            "non-exact status",
+            "parseable tool-call attempt",
+            "emitted tool name",
+            "expected tool identity",
+            "mismatch evidence",
+            "taxonomy marker"
+          ],
+          "subtype_assignment_expected": true,
+          "missing_evidence_expected": false
+        }
+      },
+      "state_axis": {
+        "concept_id": "score-005",
+        "completeness": "complete",
+        "current_run_computability": "current-run computable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ],
+        "missing_required_evidence_fields": []
+      },
+      "binding_generated_at_utc": "2026-05-31T22:04:29.010211Z"
+    },
+    {
+      "record_id": "score-006",
+      "fixture_id": "A-C-005",
+      "source_definition_id": "A-C-005",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-005",
+      "raw_model_response": "Wrapper prefix {\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/wrapped.txt\\\"}\"}}]} wrapper suffix",
+      "parse_status": "invalid_json_with_embedded_object",
+      "tool_call_status": "tool_call_unavailable_parse_failure",
+      "no_call_status": "no_call_emission_unknown",
+      "wrapper_or_prose_leakage": true,
+      "parsed_tool_call_payload": null,
+      "record_expectation": {
+        "expected_tool_name": "read_file",
+        "expected_argument_keys": [
+          "path"
+        ],
+        "expected_no_call": false,
+        "expected_strict_json_object": false,
+        "expected_tool_call_required": true,
+        "wrapper_prohibited": true
+      },
+      "fixture_expectation_hint": {
+        "scenario_type": "complete emission",
+        "intended_subtype": "wrapper/envelope drift",
+        "expected_behavior_hint": "wrapper_leakage_expected",
+        "scorer_evidence_expectations": {
+          "required": [
+            "tool-expected eligibility",
+            "non-exact status",
+            "recognizable tool-call-like attempt",
+            "envelope/wrapper failure evidence",
+            "taxonomy marker"
+          ],
+          "subtype_assignment_expected": true,
+          "missing_evidence_expected": false
+        }
+      },
+      "state_axis": {
+        "concept_id": "score-006",
+        "completeness": "complete",
+        "current_run_computability": "current-run noncomputable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [
+          "parse status is invalid_json_with_embedded_object",
+          "tool call status is tool_call_unavailable_parse_failure"
+        ],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ],
+        "missing_required_evidence_fields": []
+      },
+      "binding_generated_at_utc": "2026-05-31T22:04:29.010225Z"
+    },
+    {
+      "record_id": "score-007",
+      "fixture_id": "A-NI-004",
+      "source_definition_id": "A-NI-004",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-ni-004",
+      "raw_model_response": "{\"tool_calls\":[]}",
+      "parse_status": "strict_json_object",
+      "tool_call_status": "no_tool_calls_emitted",
+      "no_call_status": "expected_no_call_emitted",
+      "wrapper_or_prose_leakage": false,
+      "parsed_tool_call_payload": {
+        "tool_calls": []
+      },
+      "record_expectation": {
+        "expected_tool_name": null,
+        "expected_argument_keys": null,
+        "expected_no_call": true,
+        "expected_strict_json_object": true,
+        "expected_tool_call_required": false,
+        "wrapper_prohibited": true
+      },
+      "fixture_expectation_hint": {
+        "scenario_type": "detector non-inference",
+        "intended_subtype": "direct-answer substitution candidate, no-call proxy rejected",
+        "expected_behavior_hint": "exact_or_other_expected",
+        "scorer_evidence_expectations": {
+          "required": [
+            "current-run direct-answer subtype fact",
+            "taxonomy marker",
+            "eligible denominator",
+            "non-exact denominator"
+          ],
+          "emitted": [
+            "no-call correctness change"
+          ],
+          "missing": [
+            "direct-answer subtype fact"
+          ],
+          "subtype_assignment_expected": true,
+          "missing_evidence_expected": true
+        }
+      },
+      "state_axis": {
+        "concept_id": "score-007",
+        "completeness": "complete",
+        "current_run_computability": "current-run computable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ],
+        "missing_required_evidence_fields": []
+      },
+      "binding_generated_at_utc": "2026-05-31T22:04:29.010234Z"
+    },
+    {
+      "record_id": "score-008",
+      "fixture_id": "A-NI-004",
+      "source_definition_id": "A-NI-004",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-ni-004b",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/unexpected.txt\\\"}\"}}]}",
+      "parse_status": "strict_json_object",
+      "tool_call_status": "tool_call_payload_present",
+      "no_call_status": "expected_no_call_not_emitted",
+      "wrapper_or_prose_leakage": false,
+      "parsed_tool_call_payload": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "read_file",
+              "arguments": "{\"path\":\"/tmp/unexpected.txt\"}"
+            }
+          }
+        ]
+      },
+      "record_expectation": {
+        "expected_tool_name": "read_file",
+        "expected_argument_keys": [
+          "path"
+        ],
+        "expected_no_call": true,
+        "expected_strict_json_object": true,
+        "expected_tool_call_required": false,
+        "wrapper_prohibited": true
+      },
+      "fixture_expectation_hint": {
+        "scenario_type": "detector non-inference",
+        "intended_subtype": "direct-answer substitution candidate, no-call proxy rejected",
+        "expected_behavior_hint": "exact_or_other_expected",
+        "scorer_evidence_expectations": {
+          "required": [
+            "current-run direct-answer subtype fact",
+            "taxonomy marker",
+            "eligible denominator",
+            "non-exact denominator"
+          ],
+          "emitted": [
+            "no-call correctness change"
+          ],
+          "missing": [
+            "direct-answer subtype fact"
+          ],
+          "subtype_assignment_expected": true,
+          "missing_evidence_expected": true
+        }
+      },
+      "state_axis": {
+        "concept_id": "score-008",
+        "completeness": "complete",
+        "current_run_computability": "current-run computable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ],
+        "missing_required_evidence_fields": []
+      },
+      "binding_generated_at_utc": "2026-05-31T22:04:29.010242Z"
+    }
+  ]
+}

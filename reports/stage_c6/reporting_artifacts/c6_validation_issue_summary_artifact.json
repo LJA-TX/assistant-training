@@ -1,0 +1,173 @@
+{
+  "c4_validation_issue_count": 6,
+  "c5_scoring_validation_issue_count": 17,
+  "combined_validation_issue_count": 23,
+  "combined_issue_counts_by_code": {
+    "parse_status_non_strict_object": 2,
+    "scoring_dimension_fail": 17,
+    "tool_call_status_not_clean": 4
+  },
+  "issues": [
+    {
+      "line_number": 2,
+      "record_id": "score-002",
+      "severity": "warning",
+      "issue_code": "parse_status_non_strict_object",
+      "message": "parse status is invalid_json"
+    },
+    {
+      "line_number": 2,
+      "record_id": "score-002",
+      "severity": "warning",
+      "issue_code": "tool_call_status_not_clean",
+      "message": "tool_call_status=tool_call_unavailable_parse_failure"
+    },
+    {
+      "line_number": 3,
+      "record_id": "score-003",
+      "severity": "warning",
+      "issue_code": "tool_call_status_not_clean",
+      "message": "tool_call_status=tool_calls_key_missing"
+    },
+    {
+      "line_number": 4,
+      "record_id": "score-004",
+      "severity": "warning",
+      "issue_code": "tool_call_status_not_clean",
+      "message": "tool_call_status=tool_call_payload_partial_or_invalid"
+    },
+    {
+      "line_number": 6,
+      "record_id": "score-006",
+      "severity": "warning",
+      "issue_code": "parse_status_non_strict_object",
+      "message": "parse status is invalid_json_with_embedded_object"
+    },
+    {
+      "line_number": 6,
+      "record_id": "score-006",
+      "severity": "warning",
+      "issue_code": "tool_call_status_not_clean",
+      "message": "tool_call_status=tool_call_unavailable_parse_failure"
+    },
+    {
+      "record_id": "score-002",
+      "fixture_id": "A-C-004",
+      "issue_code": "scoring_dimension_fail",
+      "message": "tool call required but status=tool_call_unavailable_parse_failure",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-002",
+      "fixture_id": "A-C-004",
+      "issue_code": "scoring_dimension_fail",
+      "message": "observed tool name 'None' does not match expected 'read_file'",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-002",
+      "fixture_id": "A-C-004",
+      "issue_code": "scoring_dimension_fail",
+      "message": "arguments unavailable: parsed_tool_call_payload_missing",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-002",
+      "fixture_id": "A-C-004",
+      "issue_code": "scoring_dimension_fail",
+      "message": "no-call mismatch: observed=None, expected=False",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-003",
+      "fixture_id": "A-C-006",
+      "issue_code": "scoring_dimension_fail",
+      "message": "tool call required but status=tool_calls_key_missing",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-003",
+      "fixture_id": "A-C-006",
+      "issue_code": "scoring_dimension_fail",
+      "message": "observed tool name 'None' does not match expected 'read_file'",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-003",
+      "fixture_id": "A-C-006",
+      "issue_code": "scoring_dimension_fail",
+      "message": "arguments unavailable: parsed_tool_call_payload_missing",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-003",
+      "fixture_id": "A-C-006",
+      "issue_code": "scoring_dimension_fail",
+      "message": "no-call mismatch: observed=None, expected=False",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-004",
+      "fixture_id": "A-C-008",
+      "issue_code": "scoring_dimension_fail",
+      "message": "arguments unavailable: arguments_missing",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-005",
+      "fixture_id": "A-C-007",
+      "issue_code": "scoring_dimension_fail",
+      "message": "observed tool name 'list_dir' does not match expected 'read_file'",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-006",
+      "fixture_id": "A-C-005",
+      "issue_code": "scoring_dimension_fail",
+      "message": "tool call required but status=tool_call_unavailable_parse_failure",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-006",
+      "fixture_id": "A-C-005",
+      "issue_code": "scoring_dimension_fail",
+      "message": "observed tool name 'None' does not match expected 'read_file'",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-006",
+      "fixture_id": "A-C-005",
+      "issue_code": "scoring_dimension_fail",
+      "message": "arguments unavailable: parsed_tool_call_payload_missing",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-006",
+      "fixture_id": "A-C-005",
+      "issue_code": "scoring_dimension_fail",
+      "message": "no-call mismatch: observed=None, expected=False",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-006",
+      "fixture_id": "A-C-005",
+      "issue_code": "scoring_dimension_fail",
+      "message": "wrapper/prose leakage detected",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-008",
+      "fixture_id": "A-NI-004",
+      "issue_code": "scoring_dimension_fail",
+      "message": "no-call expected but observed status=tool_call_payload_present",
+      "severity": "warning"
+    },
+    {
+      "record_id": "score-008",
+      "fixture_id": "A-NI-004",
+      "issue_code": "scoring_dimension_fail",
+      "message": "no-call mismatch: observed=False, expected=True",
+      "severity": "warning"
+    }
+  ]
+}

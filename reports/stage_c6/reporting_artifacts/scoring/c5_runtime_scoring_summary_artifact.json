@@ -1,0 +1,48 @@
+{
+  "contract_scope": "stage_c5_scoring_path_integration",
+  "fixtures_root": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures",
+  "output_records_path": "/opt/ai-stack/assistant-training/reports/stage_c6/input/stage_c6_sample_output_records.jsonl",
+  "artifacts_dir": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring",
+  "generated_at_utc": "2026-05-31T22:04:29.010319Z",
+  "record_count": 8,
+  "overall_pass_count": 2,
+  "overall_fail_count": 6,
+  "c4_validation_issue_count": 6,
+  "c5_scoring_validation_issue_count": 17,
+  "guardrail_status": {
+    "collapsed_state_behavior_detected": false,
+    "inference_behavior_detected": false,
+    "substitution_behavior_detected": false,
+    "reconstruction_behavior_detected": false,
+    "tool_call_reconstruction_performed": false,
+    "argument_reconstruction_performed": false,
+    "fallback_tool_name_inference_performed": false
+  },
+  "c4_summary": {
+    "artifact_paths": {
+      "output_inventory": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_output_inventory_artifact.json",
+      "parse_toolcall_status": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_parse_toolcall_status_artifact.json",
+      "row_fact_metadata": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_row_fact_metadata_artifact.json",
+      "state_axis_from_outputs": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_state_axis_from_outputs_artifact.json",
+      "aggregation_summary_from_outputs": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_aggregation_summary_from_outputs_artifact.json",
+      "reconciliation_summary_from_outputs": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_reconciliation_summary_from_outputs_artifact.json",
+      "validation_issues": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_validation_issues_artifact.json",
+      "governance_guardrails": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_governance_guardrails_artifact.json",
+      "runtime_contract_summary": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_runtime_contract_summary_artifact.json"
+    },
+    "record_count": 8,
+    "validation_issue_count": 6,
+    "reconciliation_fail_count": 0,
+    "reconciliation_blocked_count": 0,
+    "guardrail_status": {
+      "collapsed_state_behavior_detected": false,
+      "inference_behavior_detected": false,
+      "substitution_behavior_detected": false,
+      "reconstruction_behavior_detected": false,
+      "tool_call_reconstruction_performed": false,
+      "argument_reconstruction_performed": false,
+      "fallback_tool_name_inference_performed": false
+    },
+    "summary_path": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/c4_runtime_integration_summary.json"
+  }
+}

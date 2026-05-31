@@ -1,0 +1,25 @@
+{
+  "artifact_paths": {
+    "per_fixture_scoring_summary": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/c6_per_fixture_scoring_summary_artifact.json",
+    "per_model_scoring_summary": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/c6_per_model_scoring_summary_artifact.json",
+    "parse_tool_nocall_summary": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/c6_parse_tool_nocall_summary_artifact.json",
+    "wrapper_leakage_summary": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/c6_wrapper_leakage_summary_artifact.json",
+    "validation_issue_summary": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/c6_validation_issue_summary_artifact.json",
+    "governance_guardrail_summary": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/c6_governance_guardrail_summary_artifact.json",
+    "runtime_scoring_summary": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/c6_runtime_scoring_summary_artifact.json",
+    "detector_projection_preparation": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/c6_detector_projection_preparation_artifact.json"
+  },
+  "record_count": 8,
+  "overall_pass_count": 2,
+  "overall_fail_count": 6,
+  "guardrail_status": {
+    "collapsed_state_behavior_detected": false,
+    "inference_behavior_detected": false,
+    "substitution_behavior_detected": false,
+    "reconstruction_behavior_detected": false,
+    "tool_call_reconstruction_performed": false,
+    "argument_reconstruction_performed": false,
+    "fallback_tool_name_inference_performed": false
+  },
+  "detector_projection_authoritative": false
+}

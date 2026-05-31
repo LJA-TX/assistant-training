@@ -1,0 +1,698 @@
+{
+  "projection_scope": "preparation_only_non_authoritative",
+  "authoritative_detector_output": false,
+  "detector_migration_enabled": false,
+  "threshold_profile_migration_enabled": false,
+  "mapping_specification": {
+    "completeness_axis_source": "c4_state_axis_from_outputs_artifact.records[].completeness",
+    "current_run_computability_axis_source": "c4_state_axis_from_outputs_artifact.records[].current_run_computability",
+    "comparability_axis_source": "c4_state_axis_from_outputs_artifact.records[].comparability",
+    "non_inference_guardrail_source": "c5_governance_guardrails_artifact.guardrail_status",
+    "denominator_provenance_source": "c4_row_fact_metadata_artifact.records[].denominator_provenance",
+    "scoring_evidence_source": "c5_per_output_scoring_status_artifact.records[]"
+  },
+  "prepared_projection_record_count": 8,
+  "prepared_projection_records": [
+    {
+      "record_id": "score-001",
+      "fixture_id": "A-C-001",
+      "model_identifier": "score-model-v0",
+      "projection_state_axes": {
+        "completeness": "complete",
+        "current_run_computability": "current-run computable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ]
+      },
+      "projection_provenance": {
+        "provenance": {
+          "row_source": "stage_c4_output_ingestion",
+          "dataset_id": "stage_c4_model_output_records",
+          "dataset_version": "contract-baseline",
+          "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+          "evidence_digest": "61d06dd866922e0a5192c49cf468a9b30eba965f31c63fbc86b6488218205f3b"
+        },
+        "denominator_provenance": {
+          "eligible_population_source": "stage_c4_output_record_population",
+          "non_exact_population_source": "stage_c4_output_record_population",
+          "read_file_population_source": null,
+          "symbol_name_population_source": null,
+          "anchor_population_source": null,
+          "no_anchor_population_source": null
+        }
+      },
+      "projection_scoring_evidence": {
+        "overall_status": "pass",
+        "fail_reasons": [],
+        "scoring_dimensions": [
+          {
+            "dimension": "strict_json_validity",
+            "status": "pass",
+            "reason": "strict_json_validity matched expectation (True)"
+          },
+          {
+            "dimension": "tool_call_presence_absence",
+            "status": "pass",
+            "reason": "tool/no-call presence matched expectation"
+          },
+          {
+            "dimension": "tool_name_correctness",
+            "status": "pass",
+            "reason": "observed tool name matches expected"
+          },
+          {
+            "dimension": "argument_presence_structure",
+            "status": "pass",
+            "reason": "all expected argument keys present"
+          },
+          {
+            "dimension": "no_call_correctness",
+            "status": "pass",
+            "reason": "no-call behavior matched expectation"
+          },
+          {
+            "dimension": "wrapper_leakage",
+            "status": "pass",
+            "reason": "no wrapper/prose leakage detected"
+          },
+          {
+            "dimension": "malformed_partial_preservation",
+            "status": "pass",
+            "reason": "preservation constraint not triggered"
+          }
+        ]
+      },
+      "non_inference_guardrails": {
+        "collapsed_state_behavior_detected": false,
+        "inference_behavior_detected": false,
+        "substitution_behavior_detected": false,
+        "reconstruction_behavior_detected": false,
+        "tool_call_reconstruction_performed": false,
+        "argument_reconstruction_performed": false,
+        "fallback_tool_name_inference_performed": false
+      }
+    },
+    {
+      "record_id": "score-002",
+      "fixture_id": "A-C-004",
+      "model_identifier": "score-model-v0",
+      "projection_state_axes": {
+        "completeness": "complete",
+        "current_run_computability": "current-run noncomputable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [
+          "parse status is invalid_json",
+          "tool call status is tool_call_unavailable_parse_failure"
+        ],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ]
+      },
+      "projection_provenance": {
+        "provenance": {
+          "row_source": "stage_c4_output_ingestion",
+          "dataset_id": "stage_c4_model_output_records",
+          "dataset_version": "contract-baseline",
+          "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+          "evidence_digest": "0be9a2d00cd685b8f54c396d38e129a84ff4dfc2212b018bd4c48ddeeec96393"
+        },
+        "denominator_provenance": {
+          "eligible_population_source": "stage_c4_output_record_population",
+          "non_exact_population_source": "stage_c4_output_record_population",
+          "read_file_population_source": null,
+          "symbol_name_population_source": null,
+          "anchor_population_source": null,
+          "no_anchor_population_source": null
+        }
+      },
+      "projection_scoring_evidence": {
+        "overall_status": "fail",
+        "fail_reasons": [
+          "tool call required but status=tool_call_unavailable_parse_failure",
+          "observed tool name 'None' does not match expected 'read_file'",
+          "arguments unavailable: parsed_tool_call_payload_missing",
+          "no-call mismatch: observed=None, expected=False"
+        ],
+        "scoring_dimensions": [
+          {
+            "dimension": "strict_json_validity",
+            "status": "pass",
+            "reason": "strict_json_validity matched expectation (False)"
+          },
+          {
+            "dimension": "tool_call_presence_absence",
+            "status": "fail",
+            "reason": "tool call required but status=tool_call_unavailable_parse_failure"
+          },
+          {
+            "dimension": "tool_name_correctness",
+            "status": "fail",
+            "reason": "observed tool name 'None' does not match expected 'read_file'"
+          },
+          {
+            "dimension": "argument_presence_structure",
+            "status": "fail",
+            "reason": "arguments unavailable: parsed_tool_call_payload_missing"
+          },
+          {
+            "dimension": "no_call_correctness",
+            "status": "fail",
+            "reason": "no-call mismatch: observed=None, expected=False"
+          },
+          {
+            "dimension": "wrapper_leakage",
+            "status": "pass",
+            "reason": "no wrapper/prose leakage detected"
+          },
+          {
+            "dimension": "malformed_partial_preservation",
+            "status": "pass",
+            "reason": "malformed/partial output preserved without reconstruction"
+          }
+        ]
+      },
+      "non_inference_guardrails": {
+        "collapsed_state_behavior_detected": false,
+        "inference_behavior_detected": false,
+        "substitution_behavior_detected": false,
+        "reconstruction_behavior_detected": false,
+        "tool_call_reconstruction_performed": false,
+        "argument_reconstruction_performed": false,
+        "fallback_tool_name_inference_performed": false
+      }
+    },
+    {
+      "record_id": "score-003",
+      "fixture_id": "A-C-006",
+      "model_identifier": "score-model-v0",
+      "projection_state_axes": {
+        "completeness": "complete",
+        "current_run_computability": "current-run noncomputable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [
+          "tool call status is tool_calls_key_missing"
+        ],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ]
+      },
+      "projection_provenance": {
+        "provenance": {
+          "row_source": "stage_c4_output_ingestion",
+          "dataset_id": "stage_c4_model_output_records",
+          "dataset_version": "contract-baseline",
+          "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+          "evidence_digest": "3b9752c4ff89fc582b16b660d8fac3dba274185973bd84fbeb9a44735d36014e"
+        },
+        "denominator_provenance": {
+          "eligible_population_source": "stage_c4_output_record_population",
+          "non_exact_population_source": "stage_c4_output_record_population",
+          "read_file_population_source": null,
+          "symbol_name_population_source": null,
+          "anchor_population_source": null,
+          "no_anchor_population_source": null
+        }
+      },
+      "projection_scoring_evidence": {
+        "overall_status": "fail",
+        "fail_reasons": [
+          "tool call required but status=tool_calls_key_missing",
+          "observed tool name 'None' does not match expected 'read_file'",
+          "arguments unavailable: parsed_tool_call_payload_missing",
+          "no-call mismatch: observed=None, expected=False"
+        ],
+        "scoring_dimensions": [
+          {
+            "dimension": "strict_json_validity",
+            "status": "pass",
+            "reason": "strict_json_validity matched expectation (True)"
+          },
+          {
+            "dimension": "tool_call_presence_absence",
+            "status": "fail",
+            "reason": "tool call required but status=tool_calls_key_missing"
+          },
+          {
+            "dimension": "tool_name_correctness",
+            "status": "fail",
+            "reason": "observed tool name 'None' does not match expected 'read_file'"
+          },
+          {
+            "dimension": "argument_presence_structure",
+            "status": "fail",
+            "reason": "arguments unavailable: parsed_tool_call_payload_missing"
+          },
+          {
+            "dimension": "no_call_correctness",
+            "status": "fail",
+            "reason": "no-call mismatch: observed=None, expected=False"
+          },
+          {
+            "dimension": "wrapper_leakage",
+            "status": "pass",
+            "reason": "no wrapper/prose leakage detected"
+          },
+          {
+            "dimension": "malformed_partial_preservation",
+            "status": "pass",
+            "reason": "malformed/partial output preserved without reconstruction"
+          }
+        ]
+      },
+      "non_inference_guardrails": {
+        "collapsed_state_behavior_detected": false,
+        "inference_behavior_detected": false,
+        "substitution_behavior_detected": false,
+        "reconstruction_behavior_detected": false,
+        "tool_call_reconstruction_performed": false,
+        "argument_reconstruction_performed": false,
+        "fallback_tool_name_inference_performed": false
+      }
+    },
+    {
+      "record_id": "score-004",
+      "fixture_id": "A-C-008",
+      "model_identifier": "score-model-v0",
+      "projection_state_axes": {
+        "completeness": "complete",
+        "current_run_computability": "current-run noncomputable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [
+          "tool call status is tool_call_payload_partial_or_invalid"
+        ],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ]
+      },
+      "projection_provenance": {
+        "provenance": {
+          "row_source": "stage_c4_output_ingestion",
+          "dataset_id": "stage_c4_model_output_records",
+          "dataset_version": "contract-baseline",
+          "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+          "evidence_digest": "2768e554f3eff30c191dc58e1c16691e5c61b9d219386c4729b3e9e834f5dd67"
+        },
+        "denominator_provenance": {
+          "eligible_population_source": "stage_c4_output_record_population",
+          "non_exact_population_source": "stage_c4_output_record_population",
+          "read_file_population_source": null,
+          "symbol_name_population_source": null,
+          "anchor_population_source": null,
+          "no_anchor_population_source": null
+        }
+      },
+      "projection_scoring_evidence": {
+        "overall_status": "fail",
+        "fail_reasons": [
+          "arguments unavailable: arguments_missing"
+        ],
+        "scoring_dimensions": [
+          {
+            "dimension": "strict_json_validity",
+            "status": "pass",
+            "reason": "strict_json_validity matched expectation (True)"
+          },
+          {
+            "dimension": "tool_call_presence_absence",
+            "status": "pass",
+            "reason": "tool/no-call presence matched expectation"
+          },
+          {
+            "dimension": "tool_name_correctness",
+            "status": "pass",
+            "reason": "observed tool name matches expected"
+          },
+          {
+            "dimension": "argument_presence_structure",
+            "status": "fail",
+            "reason": "arguments unavailable: arguments_missing"
+          },
+          {
+            "dimension": "no_call_correctness",
+            "status": "pass",
+            "reason": "no-call behavior matched expectation"
+          },
+          {
+            "dimension": "wrapper_leakage",
+            "status": "pass",
+            "reason": "no wrapper/prose leakage detected"
+          },
+          {
+            "dimension": "malformed_partial_preservation",
+            "status": "pass",
+            "reason": "malformed/partial output preserved without reconstruction"
+          }
+        ]
+      },
+      "non_inference_guardrails": {
+        "collapsed_state_behavior_detected": false,
+        "inference_behavior_detected": false,
+        "substitution_behavior_detected": false,
+        "reconstruction_behavior_detected": false,
+        "tool_call_reconstruction_performed": false,
+        "argument_reconstruction_performed": false,
+        "fallback_tool_name_inference_performed": false
+      }
+    },
+    {
+      "record_id": "score-005",
+      "fixture_id": "A-C-007",
+      "model_identifier": "score-model-v0",
+      "projection_state_axes": {
+        "completeness": "complete",
+        "current_run_computability": "current-run computable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ]
+      },
+      "projection_provenance": {
+        "provenance": {
+          "row_source": "stage_c4_output_ingestion",
+          "dataset_id": "stage_c4_model_output_records",
+          "dataset_version": "contract-baseline",
+          "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+          "evidence_digest": "ac7d7f8b382056d677d112661a5c8588791f387950f7ba98a2bcb475beadf1c1"
+        },
+        "denominator_provenance": {
+          "eligible_population_source": "stage_c4_output_record_population",
+          "non_exact_population_source": "stage_c4_output_record_population",
+          "read_file_population_source": null,
+          "symbol_name_population_source": null,
+          "anchor_population_source": null,
+          "no_anchor_population_source": null
+        }
+      },
+      "projection_scoring_evidence": {
+        "overall_status": "fail",
+        "fail_reasons": [
+          "observed tool name 'list_dir' does not match expected 'read_file'"
+        ],
+        "scoring_dimensions": [
+          {
+            "dimension": "strict_json_validity",
+            "status": "pass",
+            "reason": "strict_json_validity matched expectation (True)"
+          },
+          {
+            "dimension": "tool_call_presence_absence",
+            "status": "pass",
+            "reason": "tool/no-call presence matched expectation"
+          },
+          {
+            "dimension": "tool_name_correctness",
+            "status": "fail",
+            "reason": "observed tool name 'list_dir' does not match expected 'read_file'"
+          },
+          {
+            "dimension": "argument_presence_structure",
+            "status": "pass",
+            "reason": "all expected argument keys present"
+          },
+          {
+            "dimension": "no_call_correctness",
+            "status": "pass",
+            "reason": "no-call behavior matched expectation"
+          },
+          {
+            "dimension": "wrapper_leakage",
+            "status": "pass",
+            "reason": "no wrapper/prose leakage detected"
+          },
+          {
+            "dimension": "malformed_partial_preservation",
+            "status": "pass",
+            "reason": "preservation constraint not triggered"
+          }
+        ]
+      },
+      "non_inference_guardrails": {
+        "collapsed_state_behavior_detected": false,
+        "inference_behavior_detected": false,
+        "substitution_behavior_detected": false,
+        "reconstruction_behavior_detected": false,
+        "tool_call_reconstruction_performed": false,
+        "argument_reconstruction_performed": false,
+        "fallback_tool_name_inference_performed": false
+      }
+    },
+    {
+      "record_id": "score-006",
+      "fixture_id": "A-C-005",
+      "model_identifier": "score-model-v0",
+      "projection_state_axes": {
+        "completeness": "complete",
+        "current_run_computability": "current-run noncomputable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [
+          "parse status is invalid_json_with_embedded_object",
+          "tool call status is tool_call_unavailable_parse_failure"
+        ],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ]
+      },
+      "projection_provenance": {
+        "provenance": {
+          "row_source": "stage_c4_output_ingestion",
+          "dataset_id": "stage_c4_model_output_records",
+          "dataset_version": "contract-baseline",
+          "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+          "evidence_digest": "7a8c71bf15ff23d653a5dc660955178aea586dabc3b5496e191f047b86598d32"
+        },
+        "denominator_provenance": {
+          "eligible_population_source": "stage_c4_output_record_population",
+          "non_exact_population_source": "stage_c4_output_record_population",
+          "read_file_population_source": null,
+          "symbol_name_population_source": null,
+          "anchor_population_source": null,
+          "no_anchor_population_source": null
+        }
+      },
+      "projection_scoring_evidence": {
+        "overall_status": "fail",
+        "fail_reasons": [
+          "tool call required but status=tool_call_unavailable_parse_failure",
+          "observed tool name 'None' does not match expected 'read_file'",
+          "arguments unavailable: parsed_tool_call_payload_missing",
+          "no-call mismatch: observed=None, expected=False",
+          "wrapper/prose leakage detected"
+        ],
+        "scoring_dimensions": [
+          {
+            "dimension": "strict_json_validity",
+            "status": "pass",
+            "reason": "strict_json_validity matched expectation (False)"
+          },
+          {
+            "dimension": "tool_call_presence_absence",
+            "status": "fail",
+            "reason": "tool call required but status=tool_call_unavailable_parse_failure"
+          },
+          {
+            "dimension": "tool_name_correctness",
+            "status": "fail",
+            "reason": "observed tool name 'None' does not match expected 'read_file'"
+          },
+          {
+            "dimension": "argument_presence_structure",
+            "status": "fail",
+            "reason": "arguments unavailable: parsed_tool_call_payload_missing"
+          },
+          {
+            "dimension": "no_call_correctness",
+            "status": "fail",
+            "reason": "no-call mismatch: observed=None, expected=False"
+          },
+          {
+            "dimension": "wrapper_leakage",
+            "status": "fail",
+            "reason": "wrapper/prose leakage detected"
+          },
+          {
+            "dimension": "malformed_partial_preservation",
+            "status": "pass",
+            "reason": "malformed/partial output preserved without reconstruction"
+          }
+        ]
+      },
+      "non_inference_guardrails": {
+        "collapsed_state_behavior_detected": false,
+        "inference_behavior_detected": false,
+        "substitution_behavior_detected": false,
+        "reconstruction_behavior_detected": false,
+        "tool_call_reconstruction_performed": false,
+        "argument_reconstruction_performed": false,
+        "fallback_tool_name_inference_performed": false
+      }
+    },
+    {
+      "record_id": "score-007",
+      "fixture_id": "A-NI-004",
+      "model_identifier": "score-model-v0",
+      "projection_state_axes": {
+        "completeness": "complete",
+        "current_run_computability": "current-run computable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ]
+      },
+      "projection_provenance": {
+        "provenance": {
+          "row_source": "stage_c4_output_ingestion",
+          "dataset_id": "stage_c4_model_output_records",
+          "dataset_version": "contract-baseline",
+          "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+          "evidence_digest": "220227c9824cec00ee38fc2c27f76d908113e9a43e627f632b7d5ac98dccb940"
+        },
+        "denominator_provenance": {
+          "eligible_population_source": "stage_c4_output_record_population",
+          "non_exact_population_source": "stage_c4_output_record_population",
+          "read_file_population_source": null,
+          "symbol_name_population_source": null,
+          "anchor_population_source": null,
+          "no_anchor_population_source": null
+        }
+      },
+      "projection_scoring_evidence": {
+        "overall_status": "pass",
+        "fail_reasons": [],
+        "scoring_dimensions": [
+          {
+            "dimension": "strict_json_validity",
+            "status": "pass",
+            "reason": "strict_json_validity matched expectation (True)"
+          },
+          {
+            "dimension": "tool_call_presence_absence",
+            "status": "pass",
+            "reason": "tool/no-call presence matched expectation"
+          },
+          {
+            "dimension": "tool_name_correctness",
+            "status": "not_applicable",
+            "reason": "expected_tool_name not declared"
+          },
+          {
+            "dimension": "argument_presence_structure",
+            "status": "not_applicable",
+            "reason": "expected_argument_keys not declared"
+          },
+          {
+            "dimension": "no_call_correctness",
+            "status": "pass",
+            "reason": "no-call behavior matched expectation"
+          },
+          {
+            "dimension": "wrapper_leakage",
+            "status": "pass",
+            "reason": "no wrapper/prose leakage detected"
+          },
+          {
+            "dimension": "malformed_partial_preservation",
+            "status": "pass",
+            "reason": "preservation constraint not triggered"
+          }
+        ]
+      },
+      "non_inference_guardrails": {
+        "collapsed_state_behavior_detected": false,
+        "inference_behavior_detected": false,
+        "substitution_behavior_detected": false,
+        "reconstruction_behavior_detected": false,
+        "tool_call_reconstruction_performed": false,
+        "argument_reconstruction_performed": false,
+        "fallback_tool_name_inference_performed": false
+      }
+    },
+    {
+      "record_id": "score-008",
+      "fixture_id": "A-NI-004",
+      "model_identifier": "score-model-v0",
+      "projection_state_axes": {
+        "completeness": "complete",
+        "current_run_computability": "current-run computable",
+        "comparability": "comparison-blocked",
+        "noncomputability_reasons": [],
+        "comparison_block_reasons": [
+          "comparability baseline not enabled for stage c4 output ingestion"
+        ]
+      },
+      "projection_provenance": {
+        "provenance": {
+          "row_source": "stage_c4_output_ingestion",
+          "dataset_id": "stage_c4_model_output_records",
+          "dataset_version": "contract-baseline",
+          "extraction_timestamp_utc": "2026-05-31T22:04:29.006106Z",
+          "evidence_digest": "a86a86ed3dd4216f3f13023bc8172262a2cfc95aed78ac11a5aa3d7c9f0fe54a"
+        },
+        "denominator_provenance": {
+          "eligible_population_source": "stage_c4_output_record_population",
+          "non_exact_population_source": "stage_c4_output_record_population",
+          "read_file_population_source": null,
+          "symbol_name_population_source": null,
+          "anchor_population_source": null,
+          "no_anchor_population_source": null
+        }
+      },
+      "projection_scoring_evidence": {
+        "overall_status": "fail",
+        "fail_reasons": [
+          "no-call expected but observed status=tool_call_payload_present",
+          "no-call mismatch: observed=False, expected=True"
+        ],
+        "scoring_dimensions": [
+          {
+            "dimension": "strict_json_validity",
+            "status": "pass",
+            "reason": "strict_json_validity matched expectation (True)"
+          },
+          {
+            "dimension": "tool_call_presence_absence",
+            "status": "fail",
+            "reason": "no-call expected but observed status=tool_call_payload_present"
+          },
+          {
+            "dimension": "tool_name_correctness",
+            "status": "pass",
+            "reason": "observed tool name matches expected"
+          },
+          {
+            "dimension": "argument_presence_structure",
+            "status": "pass",
+            "reason": "all expected argument keys present"
+          },
+          {
+            "dimension": "no_call_correctness",
+            "status": "fail",
+            "reason": "no-call mismatch: observed=False, expected=True"
+          },
+          {
+            "dimension": "wrapper_leakage",
+            "status": "pass",
+            "reason": "no wrapper/prose leakage detected"
+          },
+          {
+            "dimension": "malformed_partial_preservation",
+            "status": "pass",
+            "reason": "preservation constraint not triggered"
+          }
+        ]
+      },
+      "non_inference_guardrails": {
+        "collapsed_state_behavior_detected": false,
+        "inference_behavior_detected": false,
+        "substitution_behavior_detected": false,
+        "reconstruction_behavior_detected": false,
+        "tool_call_reconstruction_performed": false,
+        "argument_reconstruction_performed": false,
+        "fallback_tool_name_inference_performed": false
+      }
+    }
+  ]
+}

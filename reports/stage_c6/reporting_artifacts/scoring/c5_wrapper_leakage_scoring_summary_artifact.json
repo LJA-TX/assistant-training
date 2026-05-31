@@ -1,0 +1,8 @@
+{
+  "record_count": 8,
+  "wrapper_or_prose_leakage_count": 1,
+  "wrapper_score_fail_count": 1,
+  "wrapper_record_ids": [
+    "score-006"
+  ]
+}

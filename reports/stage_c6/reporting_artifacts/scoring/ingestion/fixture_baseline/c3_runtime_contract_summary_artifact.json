@@ -1,0 +1,16 @@
+{
+  "fixtures_root": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures",
+  "artifacts_dir": "/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts/scoring/ingestion/fixture_baseline",
+  "generated_at_utc": "2026-05-31T22:04:28.997701Z",
+  "contract_scope": "stage_c3_baseline_integration",
+  "harness_issue_count": 0,
+  "reconciliation_fail_count": 0,
+  "guardrail_status": {
+    "collapsed_state_behavior_detected": false,
+    "forbidden_detector_behavior_detected": false,
+    "invalid_state_axis_values_detected": false,
+    "inference_behavior_detected": false,
+    "substitution_behavior_detected": false,
+    "reconstruction_behavior_detected": false
+  }
+}

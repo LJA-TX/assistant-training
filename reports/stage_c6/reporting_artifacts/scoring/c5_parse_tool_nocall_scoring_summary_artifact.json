@@ -1,0 +1,36 @@
+{
+  "parse_status_counts": {
+    "invalid_json": 1,
+    "invalid_json_with_embedded_object": 1,
+    "strict_json_object": 6
+  },
+  "tool_call_status_counts": {
+    "no_tool_calls_emitted": 1,
+    "tool_call_payload_partial_or_invalid": 1,
+    "tool_call_payload_present": 3,
+    "tool_call_unavailable_parse_failure": 2,
+    "tool_calls_key_missing": 1
+  },
+  "no_call_status_counts": {
+    "expected_no_call_emitted": 1,
+    "expected_no_call_not_emitted": 1,
+    "no_call_emission_unknown": 3,
+    "tool_call_emitted": 3
+  },
+  "dimension_scored_counts": {
+    "argument_presence_structure": 7,
+    "malformed_partial_preservation": 8,
+    "no_call_correctness": 8,
+    "strict_json_validity": 8,
+    "tool_call_presence_absence": 8,
+    "tool_name_correctness": 7,
+    "wrapper_leakage": 8
+  },
+  "dimension_fail_counts": {
+    "argument_presence_structure": 4,
+    "no_call_correctness": 4,
+    "tool_call_presence_absence": 4,
+    "tool_name_correctness": 4,
+    "wrapper_leakage": 1
+  }
+}
