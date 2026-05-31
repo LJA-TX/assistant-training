@@ -1,0 +1,70 @@
+{
+  "fixture_id": "X-CMP-008",
+  "source_definition_id": "X-CMP-008",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Historical taxonomy",
+  "intended_subslice_or_state": "historical baseline present with taxonomy change and no approved bridge",
+  "required_inputs": {
+    "current_run_facts_computable": true,
+    "historical_baseline_present": true,
+    "taxonomy_changed_between_current_and_historical": true,
+    "approved_taxonomy_bridge_present": false,
+    "migration_status_for_concept": "bridge-required"
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run complete and computable concept facts",
+      "historical baseline facts",
+      "taxonomy version/change evidence",
+      "bridge approval evidence"
+    ],
+    "missing": [
+      "approved taxonomy bridge"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "taxonomy_owner": "governance-approved taxonomy authority",
+    "bridge_approval_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "bridge-required",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "taxonomy comparability unresolved"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_current_run_evaluation": true,
+    "block_comparison_pending_taxonomy_bridge": true,
+    "treat_taxonomy_resemblance_as_compatible": false,
+    "infer_bridge_approval": false,
+    "report_bridge_required_status": true
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "comparison_reconciliation_passes": false,
+    "taxonomy_bridge_reconciliation_passes": false,
+    "comparison_delta_or_rule_execution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if taxonomy change requires bridge approval before comparison.",
+    "Fixture fails if detector compares across taxonomy change without approved bridge.",
+    "Fixture fails if taxonomy compatibility is inferred from label similarity or category overlap."
+  ],
+  "rationale": "This fixture enforces taxonomy bridge doctrine for comparability. Historical taxonomy changes remain non-comparable until explicit bridge approval is emitted."
+}

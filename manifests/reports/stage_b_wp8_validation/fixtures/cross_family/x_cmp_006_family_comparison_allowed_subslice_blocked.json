@@ -1,0 +1,72 @@
+{
+  "fixture_id": "X-CMP-006",
+  "source_definition_id": "X-CMP-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Family/sub-slice comparison",
+  "intended_subslice_or_state": "family comparison allowed while governed sub-slice comparison status is blocked",
+  "required_inputs": {
+    "family_level_current_run_facts_computable": true,
+    "family_level_comparison_status": "comparison-allowed",
+    "governed_subslice_current_run_facts_present": true,
+    "governed_subslice_comparison_status": "comparison-blocked",
+    "governed_subslice_migration_marker_missing_or_invalid": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "family-level complete and computable facts",
+      "family-level comparison approval",
+      "governed sub-slice current-run facts",
+      "governed sub-slice comparison status evidence"
+    ],
+    "missing": [
+      "valid governed sub-slice migration marker"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "family_aggregation_owner": "evaluator",
+    "governed_subslice_membership_owner": "approved family-specific ownership contracts",
+    "comparison_status_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "governed sub-slice migration marker failure"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_family_level_comparison": true,
+    "block_governed_subslice_comparison": true,
+    "infer_governed_subslice_comparison_eligibility_from_family_status": false,
+    "treat_family_approval_as_subslice_approval": false,
+    "preserve_current_run_review_for_both_levels": true
+  },
+  "expected_reconciliation_behavior": {
+    "family_level_current_run_reconciliation_passes": true,
+    "family_level_comparison_reconciliation_passes": true,
+    "governed_subslice_current_run_reconciliation_passes": true,
+    "governed_subslice_comparison_reconciliation_passes": false,
+    "scope_separation_preserved": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if family-level comparison remains allowed while governed sub-slice comparison remains blocked.",
+    "Fixture fails if family comparison approval is propagated to the governed sub-slice.",
+    "Fixture fails if governed sub-slice comparison runs despite blocked migration status."
+  ],
+  "rationale": "This fixture proves concept-scope isolation for comparability: family and governed sub-slice comparison statuses are independent and must not be collapsed."
+}

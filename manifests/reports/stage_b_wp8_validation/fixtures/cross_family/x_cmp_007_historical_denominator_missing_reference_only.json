@@ -1,0 +1,69 @@
+{
+  "fixture_id": "X-CMP-007",
+  "source_definition_id": "X-CMP-007",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Historical denominator",
+  "intended_subslice_or_state": "historical baseline present but historical denominator missing",
+  "required_inputs": {
+    "current_run_facts_computable": true,
+    "historical_baseline_value_present": true,
+    "historical_denominator_present": false,
+    "historical_denominator_required_for_comparison": true,
+    "historical_value_status": "reference-only"
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run complete and computable concept facts",
+      "historical baseline value",
+      "historical denominator"
+    ],
+    "missing": [
+      "historical denominator"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "current_run_aggregation_owner": "evaluator",
+    "historical_provenance_owner": "historical reports and migration records",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "reference-only",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "historical denominator missing"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_current_run_evaluation": true,
+    "run_comparative_rule_or_delta": false,
+    "treat_historical_value_as_non_comparative_reference": true,
+    "infer_historical_denominator": false,
+    "allow_missing_historical_denominator_to_pass_comparison": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "historical_reference_visibility_allowed": true,
+    "comparison_reconciliation_passes": false,
+    "historical_denominator_reconciliation_passes": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing historical denominator forces reference-only treatment.",
+    "Fixture fails if comparison runs without historical denominator evidence.",
+    "Fixture fails if historical denominator is inferred or reconstructed."
+  ],
+  "rationale": "This fixture enforces denominator doctrine for historical comparisons: a missing historical denominator blocks comparison even when current-run facts are computable."
+}

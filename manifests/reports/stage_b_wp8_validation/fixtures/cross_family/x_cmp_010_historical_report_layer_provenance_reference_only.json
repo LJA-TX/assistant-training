@@ -1,0 +1,70 @@
+{
+  "fixture_id": "X-CMP-010",
+  "source_definition_id": "X-CMP-010",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Historical provenance",
+  "intended_subslice_or_state": "historical baseline is report-layer only and non-comparable",
+  "required_inputs": {
+    "current_run_facts_computable": true,
+    "historical_value_present": true,
+    "historical_value_provenance": "report-layer only",
+    "historical_source_denominator_and_marker_lineage_absent": true,
+    "historical_value_status": "reference-only"
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run complete and computable concept facts",
+      "historical value",
+      "historical provenance evidence"
+    ],
+    "missing": [
+      "comparable historical source lineage"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "current_run_aggregation_owner": "evaluator",
+    "historical_provenance_owner": "report artifacts",
+    "comparison_status_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "reference-only",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "historical provenance is report-layer only"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_current_run_evaluation": true,
+    "run_comparative_rule_or_delta": false,
+    "treat_report_layer_history_as_non_comparative_reference": true,
+    "promote_report_layer_history_to_comparable_baseline": false,
+    "infer_historical_lineage_from_report_shape": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "historical_reference_visibility_allowed": true,
+    "comparison_reconciliation_passes": false,
+    "historical_provenance_reconciliation_passes": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if report-layer historical values remain reference-only.",
+    "Fixture fails if report-layer history is treated as a comparable baseline.",
+    "Fixture fails if comparative rules run without comparable historical lineage evidence."
+  ],
+  "rationale": "This fixture enforces provenance doctrine for comparability: report-layer historical values are visible context only, not comparable detector inputs."
+}
