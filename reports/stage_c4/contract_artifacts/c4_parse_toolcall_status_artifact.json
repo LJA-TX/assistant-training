@@ -1,0 +1,89 @@
+{
+  "record_count": 6,
+  "records": [
+    {
+      "record_id": "out-001",
+      "line_number": 1,
+      "fixture_id": "A-C-001",
+      "source_definition_id": "A-C-001",
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "tool_call_status": "tool_call_payload_present",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": false,
+      "no_call_status": "tool_call_emitted"
+    },
+    {
+      "record_id": "out-002",
+      "line_number": 2,
+      "fixture_id": "A-C-005",
+      "source_definition_id": "A-C-005",
+      "parse_status": "invalid_json_with_embedded_object",
+      "parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "tool_call_status": "tool_call_unavailable_parse_failure",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": true,
+      "no_call_expected": false,
+      "no_call_emitted": null,
+      "no_call_status": "no_call_emission_unknown"
+    },
+    {
+      "record_id": "out-003",
+      "line_number": 3,
+      "fixture_id": "A-C-006",
+      "source_definition_id": "A-C-006",
+      "parse_status": "invalid_json",
+      "parse_error": "Expecting ',' delimiter: line 1 column 125 (char 124)",
+      "tool_call_status": "tool_call_unavailable_parse_failure",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": null,
+      "no_call_status": "no_call_emission_unknown"
+    },
+    {
+      "record_id": "out-004",
+      "line_number": 4,
+      "fixture_id": "A-NI-004",
+      "source_definition_id": "A-NI-004",
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "tool_call_status": "no_tool_calls_emitted",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": true,
+      "no_call_emitted": true,
+      "no_call_status": "expected_no_call_emitted"
+    },
+    {
+      "record_id": "out-005",
+      "line_number": 5,
+      "fixture_id": "A-C-008",
+      "source_definition_id": "A-C-008",
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "tool_call_status": "tool_call_payload_partial_or_invalid",
+      "tool_call_entry_issue_count": 1,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": false,
+      "no_call_status": "tool_call_emitted"
+    },
+    {
+      "record_id": "out-006",
+      "line_number": 6,
+      "fixture_id": "A-C-007",
+      "source_definition_id": "A-C-007",
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "tool_call_status": "tool_calls_key_missing",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": null,
+      "no_call_status": "no_call_emission_unknown"
+    }
+  ]
+}

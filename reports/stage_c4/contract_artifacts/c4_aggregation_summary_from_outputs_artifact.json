@@ -1,0 +1,162 @@
+{
+  "family_report_count": 1,
+  "family_reports": [
+    {
+      "family_id": "Family A",
+      "total_rows": 6,
+      "concept_summaries": [
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "/opt/ai-stack/assistant-training/reports/stage_c4/input/stage_c4_sample_output_records.jsonl"
+          ],
+          "evidence_refs": [
+            "out-004"
+          ]
+        },
+        {
+          "concept_id": "Failure-subtype aggregate",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "/opt/ai-stack/assistant-training/reports/stage_c4/input/stage_c4_sample_output_records.jsonl"
+          ],
+          "evidence_refs": [
+            "out-001"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 4,
+          "provenance_refs": [
+            "/opt/ai-stack/assistant-training/reports/stage_c4/input/stage_c4_sample_output_records.jsonl"
+          ],
+          "evidence_refs": [
+            "out-002",
+            "out-003",
+            "out-005",
+            "out-006"
+          ]
+        }
+      ],
+      "sub_slice_summaries": [
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "sub_slice_id": "direct-answer substitution candidate, no-call proxy rejected",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "/opt/ai-stack/assistant-training/reports/stage_c4/input/stage_c4_sample_output_records.jsonl"
+          ],
+          "evidence_refs": [
+            "out-004"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "missing tool call",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "/opt/ai-stack/assistant-training/reports/stage_c4/input/stage_c4_sample_output_records.jsonl"
+          ],
+          "evidence_refs": [
+            "out-003"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "wrapper/envelope drift",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "/opt/ai-stack/assistant-training/reports/stage_c4/input/stage_c4_sample_output_records.jsonl"
+          ],
+          "evidence_refs": [
+            "out-002"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "wrong argument",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "/opt/ai-stack/assistant-training/reports/stage_c4/input/stage_c4_sample_output_records.jsonl"
+          ],
+          "evidence_refs": [
+            "out-005"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "wrong tool name",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "/opt/ai-stack/assistant-training/reports/stage_c4/input/stage_c4_sample_output_records.jsonl"
+          ],
+          "evidence_refs": [
+            "out-006"
+          ]
+        }
+      ],
+      "split_summaries": [
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Failure-subtype aggregate",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "guardrail_status": {
+    "collapsed_state_behavior_detected": false,
+    "inference_behavior_detected": false,
+    "substitution_behavior_detected": false,
+    "reconstruction_behavior_detected": false,
+    "tool_call_reconstruction_performed": false,
+    "argument_reconstruction_performed": false,
+    "fallback_tool_name_inference_performed": false
+  },
+  "guardrail_counts": {
+    "record_count": 6,
+    "parse_failure_count": 2,
+    "wrapper_or_prose_leakage_count": 1,
+    "partial_tool_payload_count": 1,
+    "raw_response_mutated_count": 0,
+    "validation_issue_count": 6
+  }
+}

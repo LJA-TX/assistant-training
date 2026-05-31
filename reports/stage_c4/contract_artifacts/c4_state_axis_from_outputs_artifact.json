@@ -1,0 +1,81 @@
+{
+  "record_count": 6,
+  "records": [
+    {
+      "concept_id": "out-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "out-002",
+      "completeness": "complete",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "parse status is invalid_json_with_embedded_object",
+        "tool call status is tool_call_unavailable_parse_failure"
+      ],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "out-003",
+      "completeness": "complete",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "parse status is invalid_json",
+        "tool call status is tool_call_unavailable_parse_failure"
+      ],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "out-004",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "out-005",
+      "completeness": "complete",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "tool call status is tool_call_payload_partial_or_invalid"
+      ],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "out-006",
+      "completeness": "complete",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "tool call status is tool_calls_key_missing"
+      ],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    }
+  ]
+}

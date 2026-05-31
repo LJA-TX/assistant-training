@@ -1,0 +1,1227 @@
+{
+  "record_count": 117,
+  "records": [
+    {
+      "concept_id": "WP8B-CS-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-002",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing required fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-003",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing family"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-004",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing governed sub-slice"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-005",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-006",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing marker"
+      ],
+      "comparison_block_reasons": [
+        "comparison marker missing"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-007",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "Required migration status is absent or explicitly comparison-blocked."
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-008",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "current-run missing fact",
+        "comparison blocked"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-009",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-allowed",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-010",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "bridge-required",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "bridge required for comparison"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-011",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "reference-only",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "historical evidence is reference-only"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-012",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "sub-slice missing required fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-013",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing source row fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-014",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing scorer fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-CS-015",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "conflicting ownership marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-NI-001",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-NI-002",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "reference-only",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "historical report-layer value lacks comparison-allowed status"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "WP8B-NI-003",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing emitted label or marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-C-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-allowed",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-002",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "bridge-required",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "bridge approval missing"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-003",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "reference-only",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "historical value is reference-only"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-004",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "required migration status missing"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-005",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "required current-run fact missing"
+      ],
+      "comparison_block_reasons": [
+        "current-run concept noncomputable"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-006",
+      "completeness": "partial",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "governed sub-slice migration marker failure"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-007",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "reference-only",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "historical denominator missing"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-008",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "bridge-required",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "taxonomy comparability unresolved"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-009",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "bridge-required",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "subpopulation comparability unresolved"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-CMP-010",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "reference-only",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "historical provenance is report-layer only"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-M-001",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing shared row-level source fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-NC-001",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing governed denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-NC-002",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "governed sub-slice missing required fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-NI-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "comparison marker absent"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-NI-002",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "required denominator missing",
+        "alternate denominator substitution rejected"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-P-001",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "partial family package present",
+        "missing family package present"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-002",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-003",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-004",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-005",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-006",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-007",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-008",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-009",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "X-REC-010",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-002",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-003",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-004",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-005",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-006",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-007",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-008",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-009",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-C-010",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-M-001",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing active Family A aggregate"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-M-002",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing direct-answer governed subtype summary"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-M-003",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing taxonomy marker",
+        "missing approved subtype set"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-M-004",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing scorer primary outcome"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-M-005",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing exact-valid fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-M-006",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing approved non-exact subtype assignment"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-NI-001",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing emitted direct-answer subtype"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-NI-002",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing emitted subtype assignment"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-NI-003",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "bridge-required",
+      "noncomputability_reasons": [
+        "missing current-run taxonomy marker or denominator",
+        "historical-only direct-answer evidence"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-NI-004",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing direct-answer subtype fact",
+        "proxy metric rejected"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-P-001",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing required approved subtype summary",
+        "partial subtype distribution"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-P-002",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing eligible denominator",
+        "missing non-exact denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-P-003",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing failure taxonomy marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-P-004",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing active split-scoped subtype summary"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "A-P-005",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing eligible tool-expected denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-002",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-003",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-004",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-005",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-006",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-007",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-008",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-C-009",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-M-001",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing active read-file family summary"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-M-002",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing read-file eligibility marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-M-003",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing expected-tool identity"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-M-004",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing symbol-name membership marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-M-005",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing scorer exact-valid fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-M-006",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing read-file denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-NI-001",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing read-file aggregate",
+        "mixed-tool aggregate is not read-file evidence"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-NI-002",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing symbol-name governed sub-slice",
+        "parent aggregate is not sub-slice evidence"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-NI-003",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing symbol-name marker",
+        "prompt text is not membership evidence"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-NI-004",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "bridge-required",
+      "noncomputability_reasons": [
+        "missing current subpopulation marker",
+        "historical symbol-name rate is not current-run evidence"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-P-001",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing symbol-name governed sub-slice"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-P-002",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing symbol-name denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-P-003",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing parent read-file context"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-P-004",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing expected-tool marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B1-P-005",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing active split-scoped symbol-name summary"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-C-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-C-002",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-C-003",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-C-004",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-C-005",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-C-006",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-C-007",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-C-008",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-M-001",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing anchor-generalization family summary"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-M-002",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing anchor taxonomy marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-M-003",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing anchor assignment ownership marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-M-004",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing anchor category for eligible row"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-M-005",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing no-anchor governed sub-slice"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-M-006",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing exact-valid scorer fact"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-NI-001",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing no-anchor marker",
+        "missing no-anchor denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-NI-002",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "bridge-required",
+      "noncomputability_reasons": [
+        "missing current no-anchor denominator-compatible rate",
+        "historical denominator-incompatible share is not current-run evidence"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-NI-003",
+      "completeness": "missing",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing no-anchor governed sub-slice",
+        "family aggregate cannot substitute for no-anchor evidence"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-NI-004",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-P-001",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing no-anchor governed sub-slice"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-P-002",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing no-anchor denominator"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-P-003",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing anchor assignment ownership marker"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-P-004",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "incomplete anchor-category distribution"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "B2-P-005",
+      "completeness": "partial",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "missing split-scoped no-anchor summary"
+      ],
+      "comparison_block_reasons": [],
+      "missing_required_evidence_fields": []
+    }
+  ]
+}

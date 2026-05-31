@@ -1,0 +1,86 @@
+{
+  "total_checks": 4,
+  "pass_count": 4,
+  "fail_count": 0,
+  "blocked_count": 0,
+  "results": [
+    {
+      "check_id": "output_parse_status_partition",
+      "check_type": "denominator_partition",
+      "result": "pass",
+      "evaluated_inputs": {
+        "parent_denominator": 6,
+        "partition_denominators": [
+          4,
+          2
+        ],
+        "partition_labels": [
+          "strict_json_object",
+          "non_strict_or_invalid_json"
+        ]
+      },
+      "reasons": []
+    },
+    {
+      "check_id": "output_tool_status_computability_boundary",
+      "check_type": "parent_subslice_boundary",
+      "result": "pass",
+      "evaluated_inputs": {
+        "parent_numerator": 2,
+        "parent_denominator": 6,
+        "subslice_numerators": [
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "subslice_denominators": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "subslice_labels": [
+          "no_tool_calls_emitted",
+          "tool_call_payload_partial_or_invalid",
+          "tool_call_payload_present",
+          "tool_call_unavailable_parse_failure",
+          "tool_calls_key_missing"
+        ]
+      },
+      "reasons": []
+    },
+    {
+      "check_id": "output_family_split_to_aggregate",
+      "check_type": "split_to_aggregate",
+      "result": "pass",
+      "evaluated_inputs": {
+        "aggregate_numerator": 6,
+        "aggregate_denominator": 6,
+        "split_numerators": [
+          6
+        ],
+        "split_denominators": [
+          6
+        ],
+        "split_labels": [
+          "Family A"
+        ]
+      },
+      "reasons": []
+    },
+    {
+      "check_id": "output_contract_coverage_arithmetic",
+      "check_type": "coverage_arithmetic",
+      "result": "pass",
+      "evaluated_inputs": {
+        "covered_count": 6,
+        "uncovered_count": 0,
+        "total_count": 6
+      },
+      "reasons": []
+    }
+  ]
+}
