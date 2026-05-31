@@ -1,0 +1,97 @@
+{
+  "total_checks": 4,
+  "pass_count": 4,
+  "fail_count": 0,
+  "blocked_count": 0,
+  "results": [
+    {
+      "check_id": "fixture_inventory_completeness_partition",
+      "check_type": "denominator_partition",
+      "result": "pass",
+      "evaluated_inputs": {
+        "parent_denominator": 117,
+        "partition_denominators": [
+          54,
+          29,
+          34
+        ],
+        "partition_labels": [
+          "complete",
+          "partial",
+          "missing"
+        ]
+      },
+      "reasons": []
+    },
+    {
+      "check_id": "computability_by_comparability_boundary",
+      "check_type": "parent_subslice_boundary",
+      "result": "pass",
+      "evaluated_inputs": {
+        "parent_numerator": 55,
+        "parent_denominator": 117,
+        "subslice_numerators": [
+          4,
+          2,
+          44,
+          5
+        ],
+        "subslice_denominators": [
+          7,
+          2,
+          103,
+          5
+        ],
+        "subslice_labels": [
+          "bridge-required",
+          "comparison-allowed",
+          "comparison-blocked",
+          "reference-only"
+        ]
+      },
+      "reasons": []
+    },
+    {
+      "check_id": "family_inventory_split_to_aggregate",
+      "check_type": "split_to_aggregate",
+      "result": "pass",
+      "evaluated_inputs": {
+        "aggregate_numerator": 117,
+        "aggregate_denominator": 117,
+        "split_numerators": [
+          24,
+          26,
+          25,
+          24,
+          18
+        ],
+        "split_denominators": [
+          24,
+          26,
+          25,
+          24,
+          18
+        ],
+        "split_labels": [
+          "Cross-family",
+          "Family A",
+          "Family B1",
+          "Family B2",
+          "Unspecified family scope"
+        ]
+      },
+      "reasons": []
+    },
+    {
+      "check_id": "fixture_validation_coverage_arithmetic",
+      "check_type": "coverage_arithmetic",
+      "result": "pass",
+      "evaluated_inputs": {
+        "covered_count": 117,
+        "uncovered_count": 0,
+        "total_count": 117
+      },
+      "reasons": []
+    }
+  ]
+}

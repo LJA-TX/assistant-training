@@ -1,0 +1,24 @@
+{
+  "artifact_paths": {
+    "fixture_inventory": "/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts/c3_fixture_inventory_artifact.json",
+    "row_fact_metadata": "/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts/c3_row_fact_metadata_artifact.json",
+    "state_axis": "/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts/c3_state_axis_artifact.json",
+    "aggregation_summary": "/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts/c3_aggregation_summary_artifact.json",
+    "reconciliation_summary": "/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts/c3_reconciliation_summary_artifact.json",
+    "governance_guardrails": "/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts/c3_governance_guardrails_artifact.json",
+    "validation_issues": "/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts/c3_validation_issues_artifact.json",
+    "runtime_contract_summary": "/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts/c3_runtime_contract_summary_artifact.json"
+  },
+  "fixture_count": 117,
+  "harness_issue_count": 0,
+  "reconciliation_fail_count": 0,
+  "reconciliation_blocked_count": 0,
+  "guardrail_status": {
+    "collapsed_state_behavior_detected": false,
+    "forbidden_detector_behavior_detected": false,
+    "invalid_state_axis_values_detected": false,
+    "inference_behavior_detected": false,
+    "substitution_behavior_detected": false,
+    "reconstruction_behavior_detected": false
+  }
+}

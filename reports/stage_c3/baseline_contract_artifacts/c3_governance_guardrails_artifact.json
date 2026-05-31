@@ -1,0 +1,20 @@
+{
+  "guardrail_status": {
+    "collapsed_state_behavior_detected": false,
+    "forbidden_detector_behavior_detected": false,
+    "invalid_state_axis_values_detected": false,
+    "inference_behavior_detected": false,
+    "substitution_behavior_detected": false,
+    "reconstruction_behavior_detected": false
+  },
+  "guardrail_counts": {
+    "collapsed_state_issues": 0,
+    "forbidden_detector_behavior_issues": 0,
+    "invalid_state_axis_issues": 0,
+    "inference_flags": 0,
+    "substitution_flags": 0,
+    "reconstruction_flags": 0,
+    "records_with_ownership_fields_present": 47,
+    "total_row_fact_records": 117
+  }
+}
