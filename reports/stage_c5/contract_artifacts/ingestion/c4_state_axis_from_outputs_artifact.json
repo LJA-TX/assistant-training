@@ -1,0 +1,103 @@
+{
+  "record_count": 8,
+  "records": [
+    {
+      "concept_id": "score-001",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "score-002",
+      "completeness": "complete",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "parse status is invalid_json",
+        "tool call status is tool_call_unavailable_parse_failure"
+      ],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "score-003",
+      "completeness": "complete",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "tool call status is tool_calls_key_missing"
+      ],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "score-004",
+      "completeness": "complete",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "tool call status is tool_call_payload_partial_or_invalid"
+      ],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "score-005",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "score-006",
+      "completeness": "complete",
+      "current_run_computability": "current-run noncomputable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [
+        "parse status is invalid_json_with_embedded_object",
+        "tool call status is tool_call_unavailable_parse_failure"
+      ],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "score-007",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    },
+    {
+      "concept_id": "score-008",
+      "completeness": "complete",
+      "current_run_computability": "current-run computable",
+      "comparability": "comparison-blocked",
+      "noncomputability_reasons": [],
+      "comparison_block_reasons": [
+        "comparability baseline not enabled for stage c4 output ingestion"
+      ],
+      "missing_required_evidence_fields": []
+    }
+  ]
+}

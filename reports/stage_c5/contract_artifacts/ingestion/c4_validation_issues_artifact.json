@@ -1,0 +1,54 @@
+{
+  "issue_count": 6,
+  "issue_counts_by_code": {
+    "parse_status_non_strict_object": 2,
+    "tool_call_status_not_clean": 4
+  },
+  "issue_counts_by_severity": {
+    "warning": 6
+  },
+  "issues": [
+    {
+      "line_number": 2,
+      "record_id": "score-002",
+      "severity": "warning",
+      "issue_code": "parse_status_non_strict_object",
+      "message": "parse status is invalid_json"
+    },
+    {
+      "line_number": 2,
+      "record_id": "score-002",
+      "severity": "warning",
+      "issue_code": "tool_call_status_not_clean",
+      "message": "tool_call_status=tool_call_unavailable_parse_failure"
+    },
+    {
+      "line_number": 3,
+      "record_id": "score-003",
+      "severity": "warning",
+      "issue_code": "tool_call_status_not_clean",
+      "message": "tool_call_status=tool_calls_key_missing"
+    },
+    {
+      "line_number": 4,
+      "record_id": "score-004",
+      "severity": "warning",
+      "issue_code": "tool_call_status_not_clean",
+      "message": "tool_call_status=tool_call_payload_partial_or_invalid"
+    },
+    {
+      "line_number": 6,
+      "record_id": "score-006",
+      "severity": "warning",
+      "issue_code": "parse_status_non_strict_object",
+      "message": "parse status is invalid_json_with_embedded_object"
+    },
+    {
+      "line_number": 6,
+      "record_id": "score-006",
+      "severity": "warning",
+      "issue_code": "tool_call_status_not_clean",
+      "message": "tool_call_status=tool_call_unavailable_parse_failure"
+    }
+  ]
+}

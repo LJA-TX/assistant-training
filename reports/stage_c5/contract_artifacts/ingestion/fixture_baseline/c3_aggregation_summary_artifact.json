@@ -1,0 +1,3096 @@
+{
+  "family_report_count": 5,
+  "family_reports": [
+    {
+      "family_id": "Cross-family",
+      "total_rows": 24,
+      "concept_summaries": [
+        {
+          "concept_id": "Active family package",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_p_001_mixed_complete_partial_missing_families.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-P-001"
+          ]
+        },
+        {
+          "concept_id": "Aggregate reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_001_numerator_partition_equals_eligible_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-001"
+          ]
+        },
+        {
+          "concept_id": "All active families and governed sub-slices",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_c_001_complete_all_active_families.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-C-001"
+          ]
+        },
+        {
+          "concept_id": "Baseline comparison",
+          "numerator": 4,
+          "denominator": 5,
+          "rate": 0.8,
+          "excluded_count": 0,
+          "row_count": 5,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_001_comparison_allowed_approved_migration_scope.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_002_bridge_required_related_historical_concept.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_003_reference_only_historical_value.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_004_missing_migration_status_comparison_blocked.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_005_noncomputable_current_run_with_baseline_present.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-001",
+            "fixture_id:X-CMP-002",
+            "fixture_id:X-CMP-003",
+            "fixture_id:X-CMP-004",
+            "fixture_id:X-CMP-005"
+          ]
+        },
+        {
+          "concept_id": "Count-only governed evidence",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_nc_001_count_without_governed_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-NC-001"
+          ]
+        },
+        {
+          "concept_id": "Coverage reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_005_row_fact_coverage_reconciles_governed_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-005"
+          ]
+        },
+        {
+          "concept_id": "Denominator construction",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_ni_002_required_denominator_missing_alternate_exists.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-NI-002"
+          ]
+        },
+        {
+          "concept_id": "Exclusion reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_003_exclusion_summary_reconciles_source_coverage.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-003"
+          ]
+        },
+        {
+          "concept_id": "Family/sub-slice comparison",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_006_family_comparison_allowed_subslice_blocked.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-006"
+          ]
+        },
+        {
+          "concept_id": "Historical comparison",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_ni_001_historical_report_layer_without_migration_status.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-NI-001"
+          ]
+        },
+        {
+          "concept_id": "Historical denominator",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_007_historical_denominator_missing_reference_only.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-007"
+          ]
+        },
+        {
+          "concept_id": "Historical provenance",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_010_historical_report_layer_provenance_reference_only.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-010"
+          ]
+        },
+        {
+          "concept_id": "Historical subpopulation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_009_historical_subpopulation_change_bridge_required.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-009"
+          ]
+        },
+        {
+          "concept_id": "Historical taxonomy",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_008_historical_taxonomy_change_bridge_required.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-008"
+          ]
+        },
+        {
+          "concept_id": "Parent and governed sub-slice relationship",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_nc_002_parent_computable_subslice_noncomputable.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-NC-002"
+          ]
+        },
+        {
+          "concept_id": "Rate reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_009_count_denominator_rate_precision_reconciliation.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-009"
+          ]
+        },
+        {
+          "concept_id": "Small-denominator visibility",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_010_small_denominator_visibility_preserved.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-010"
+          ]
+        },
+        {
+          "concept_id": "Source fact dependency",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_m_001_missing_shared_source_row_fact.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-M-001"
+          ]
+        },
+        {
+          "concept_id": "Split reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_004_split_scoped_totals_reconcile_aggregate.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-004"
+          ]
+        },
+        {
+          "concept_id": "Sub-slice reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_002_subslice_denominator_bounded_by_parent.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-002"
+          ]
+        }
+      ],
+      "sub_slice_summaries": [
+        {
+          "concept_id": "Active family package",
+          "sub_slice_id": "one family complete, one family partial, one family missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_p_001_mixed_complete_partial_missing_families.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-P-001"
+          ]
+        },
+        {
+          "concept_id": "Aggregate reconciliation",
+          "sub_slice_id": "numerator and non-numerator partitions emitted for eligible denominator",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_001_numerator_partition_equals_eligible_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-001"
+          ]
+        },
+        {
+          "concept_id": "All active families and governed sub-slices",
+          "sub_slice_id": "Family A, B1, and B2 complete emissions present together",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_c_001_complete_all_active_families.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-C-001"
+          ]
+        },
+        {
+          "concept_id": "Baseline comparison",
+          "sub_slice_id": "current-run facts computable and baseline migration approved at same concept level",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_001_comparison_allowed_approved_migration_scope.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-001"
+          ]
+        },
+        {
+          "concept_id": "Baseline comparison",
+          "sub_slice_id": "current-run facts computable and required migration status missing",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_004_missing_migration_status_comparison_blocked.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-004"
+          ]
+        },
+        {
+          "concept_id": "Baseline comparison",
+          "sub_slice_id": "current-run facts computable, historical concept related, bridge not approved",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_002_bridge_required_related_historical_concept.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-002"
+          ]
+        },
+        {
+          "concept_id": "Baseline comparison",
+          "sub_slice_id": "current-run facts computable; historical value retained for reference only",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_003_reference_only_historical_value.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-003"
+          ]
+        },
+        {
+          "concept_id": "Baseline comparison",
+          "sub_slice_id": "current-run facts noncomputable while baseline exists",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_005_noncomputable_current_run_with_baseline_present.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-005"
+          ]
+        },
+        {
+          "concept_id": "Count-only governed evidence",
+          "sub_slice_id": "count emitted without required denominator for a governed rate",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_nc_001_count_without_governed_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-NC-001"
+          ]
+        },
+        {
+          "concept_id": "Coverage reconciliation",
+          "sub_slice_id": "row-fact coverage summary emitted for governed population",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_005_row_fact_coverage_reconciles_governed_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-005"
+          ]
+        },
+        {
+          "concept_id": "Denominator construction",
+          "sub_slice_id": "required denominator missing while another population denominator exists",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_ni_002_required_denominator_missing_alternate_exists.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-NI-002"
+          ]
+        },
+        {
+          "concept_id": "Exclusion reconciliation",
+          "sub_slice_id": "excluded rows emitted with exclusion summary",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_003_exclusion_summary_reconciles_source_coverage.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-003"
+          ]
+        },
+        {
+          "concept_id": "Family/sub-slice comparison",
+          "sub_slice_id": "family comparison allowed while governed sub-slice comparison status is blocked",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_006_family_comparison_allowed_subslice_blocked.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-006"
+          ]
+        },
+        {
+          "concept_id": "Historical comparison",
+          "sub_slice_id": "historical report-layer value exists without migration status",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_ni_001_historical_report_layer_without_migration_status.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-NI-001"
+          ]
+        },
+        {
+          "concept_id": "Historical denominator",
+          "sub_slice_id": "historical baseline present but historical denominator missing",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_007_historical_denominator_missing_reference_only.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-007"
+          ]
+        },
+        {
+          "concept_id": "Historical provenance",
+          "sub_slice_id": "historical baseline is report-layer only and non-comparable",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_010_historical_report_layer_provenance_reference_only.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-010"
+          ]
+        },
+        {
+          "concept_id": "Historical subpopulation",
+          "sub_slice_id": "historical baseline present with subpopulation definition change",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_009_historical_subpopulation_change_bridge_required.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-009"
+          ]
+        },
+        {
+          "concept_id": "Historical taxonomy",
+          "sub_slice_id": "historical baseline present with taxonomy change and no approved bridge",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_cmp_008_historical_taxonomy_change_bridge_required.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-CMP-008"
+          ]
+        },
+        {
+          "concept_id": "Parent and governed sub-slice relationship",
+          "sub_slice_id": "parent family computable; required governed sub-slice noncomputable",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_nc_002_parent_computable_subslice_noncomputable.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-NC-002"
+          ]
+        },
+        {
+          "concept_id": "Rate reconciliation",
+          "sub_slice_id": "count, denominator, and rate emitted for governed concept",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_009_count_denominator_rate_precision_reconciliation.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-009"
+          ]
+        },
+        {
+          "concept_id": "Small-denominator visibility",
+          "sub_slice_id": "governed sub-slice has small denominator with visible count and denominator",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_010_small_denominator_visibility_preserved.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-010"
+          ]
+        },
+        {
+          "concept_id": "Source fact dependency",
+          "sub_slice_id": "shared required row-level source fact missing for an active concept",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_m_001_missing_shared_source_row_fact.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-M-001"
+          ]
+        },
+        {
+          "concept_id": "Split reconciliation",
+          "sub_slice_id": "split-scoped summaries emitted for active split scope",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_004_split_scoped_totals_reconcile_aggregate.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-004"
+          ]
+        },
+        {
+          "concept_id": "Sub-slice reconciliation",
+          "sub_slice_id": "governed sub-slice denominator emitted with parent denominator",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_002_subslice_denominator_bounded_by_parent.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-002"
+          ]
+        }
+      ],
+      "split_summaries": [
+        {
+          "concept_id": "Active family package",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Aggregate reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "All active families and governed sub-slices",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Baseline comparison",
+          "split_id": "all_splits",
+          "numerator": 4,
+          "denominator": 5,
+          "rate": 0.8,
+          "excluded_count": 0,
+          "row_count": 5
+        },
+        {
+          "concept_id": "Count-only governed evidence",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Coverage reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Denominator construction",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Exclusion reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Family/sub-slice comparison",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Historical comparison",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Historical denominator",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Historical provenance",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Historical subpopulation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Historical taxonomy",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Parent and governed sub-slice relationship",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Rate reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Small-denominator visibility",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Source fact dependency",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Split reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Sub-slice reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        }
+      ]
+    },
+    {
+      "family_id": "Family A",
+      "total_rows": 26,
+      "concept_summaries": [
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "numerator": 1,
+          "denominator": 8,
+          "rate": 0.125,
+          "excluded_count": 0,
+          "row_count": 8,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_002_direct_answer_substitution.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_002_missing_direct_answer_subtype.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_001_prose_without_subtype_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_002_scalar_without_subtype_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_003_historical_direct_answer_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_004_no_call_proxy_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_002_direct_answer_count_without_denominator.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_003_direct_answer_missing_taxonomy_marker.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-002",
+            "fixture_id:A-M-002",
+            "fixture_id:A-NI-001",
+            "fixture_id:A-NI-002",
+            "fixture_id:A-NI-003",
+            "fixture_id:A-NI-004",
+            "fixture_id:A-P-002",
+            "fixture_id:A-P-003"
+          ]
+        },
+        {
+          "concept_id": "Exact-valid fact",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_005_missing_exact_valid_fact.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-M-005"
+          ]
+        },
+        {
+          "concept_id": "Exclusion handling",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_009_excluded_row_control.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-009"
+          ]
+        },
+        {
+          "concept_id": "Failure taxonomy",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_003_missing_failure_taxonomy.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-M-003"
+          ]
+        },
+        {
+          "concept_id": "Failure-subtype aggregate",
+          "numerator": 1,
+          "denominator": 4,
+          "rate": 0.25,
+          "excluded_count": 0,
+          "row_count": 4,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_001_exact_valid_control.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_001_missing_family_a.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_001_missing_subtype_summary.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_005_missing_eligible_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-001",
+            "fixture_id:A-M-001",
+            "fixture_id:A-P-001",
+            "fixture_id:A-P-005"
+          ]
+        },
+        {
+          "concept_id": "Failure-subtype reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_006_family_a_subtype_counts_reconcile_non_exact_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-006"
+          ]
+        },
+        {
+          "concept_id": "Non-exact subtype",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_006_missing_non_exact_subtype.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-M-006"
+          ]
+        },
+        {
+          "concept_id": "Scorer primary outcome",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_004_missing_primary_scorer_outcome.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-M-004"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "numerator": 6,
+          "denominator": 6,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 6,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_003_scalar_substitution.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_004_malformed_output.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_005_wrapper_envelope_drift.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_006_missing_tool_call.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_007_wrong_tool_name.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_008_wrong_argument.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-003",
+            "fixture_id:A-C-004",
+            "fixture_id:A-C-005",
+            "fixture_id:A-C-006",
+            "fixture_id:A-C-007",
+            "fixture_id:A-C-008"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped subtype summaries",
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5,
+          "excluded_count": 0,
+          "row_count": 2,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_010_split_scoped_subtypes.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_004_missing_split_summary.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-010",
+            "fixture_id:A-P-004"
+          ]
+        }
+      ],
+      "sub_slice_summaries": [
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "sub_slice_id": "direct-answer substitution",
+          "numerator": 1,
+          "denominator": 4,
+          "rate": 0.25,
+          "excluded_count": 0,
+          "row_count": 4,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_002_direct_answer_substitution.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_002_missing_direct_answer_subtype.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_002_direct_answer_count_without_denominator.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_003_direct_answer_missing_taxonomy_marker.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-002",
+            "fixture_id:A-M-002",
+            "fixture_id:A-P-002",
+            "fixture_id:A-P-003"
+          ]
+        },
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "sub_slice_id": "direct-answer substitution candidate, missing evidence",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_001_prose_without_subtype_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-NI-001"
+          ]
+        },
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "sub_slice_id": "direct-answer substitution candidate, no-call proxy rejected",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_004_no_call_proxy_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-NI-004"
+          ]
+        },
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "sub_slice_id": "direct-answer substitution, historical-only evidence",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_003_historical_direct_answer_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-NI-003"
+          ]
+        },
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "sub_slice_id": "scalar substitution candidate, missing evidence",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_002_scalar_without_subtype_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-NI-002"
+          ]
+        },
+        {
+          "concept_id": "Exact-valid fact",
+          "sub_slice_id": "affected subtype unknown",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_005_missing_exact_valid_fact.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-M-005"
+          ]
+        },
+        {
+          "concept_id": "Failure taxonomy",
+          "sub_slice_id": "all approved subtypes",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_003_missing_failure_taxonomy.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-M-003"
+          ]
+        },
+        {
+          "concept_id": "Failure-subtype aggregate",
+          "sub_slice_id": "affected approved subtype unknown or missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_001_missing_subtype_summary.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-P-001"
+          ]
+        },
+        {
+          "concept_id": "Failure-subtype aggregate",
+          "sub_slice_id": "all approved subtype rates",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_005_missing_eligible_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-P-005"
+          ]
+        },
+        {
+          "concept_id": "Failure-subtype reconciliation",
+          "sub_slice_id": "Family A subtype counts emitted for non-exact eligible denominator",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_006_family_a_subtype_counts_reconcile_non_exact_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-006"
+          ]
+        },
+        {
+          "concept_id": "Non-exact subtype",
+          "sub_slice_id": "affected approved subtype missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_006_missing_non_exact_subtype.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-M-006"
+          ]
+        },
+        {
+          "concept_id": "Scorer primary outcome",
+          "sub_slice_id": "affected subtype unknown",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_m_004_missing_primary_scorer_outcome.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-M-004"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "malformed output",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_004_malformed_output.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-004"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "missing tool call",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_006_missing_tool_call.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-006"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "scalar substitution",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_003_scalar_substitution.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-003"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "wrapper/envelope drift",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_005_wrapper_envelope_drift.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-005"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "wrong argument",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_008_wrong_argument.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-008"
+          ]
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "sub_slice_id": "wrong tool name",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_007_wrong_tool_name.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-007"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped subtype summaries",
+          "sub_slice_id": "all approved subtypes, split-scoped",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_010_split_scoped_subtypes.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-C-010"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped subtype summaries",
+          "sub_slice_id": "direct-answer substitution, split-scoped",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_p_004_missing_split_summary.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:A-P-004"
+          ]
+        }
+      ],
+      "split_summaries": [
+        {
+          "concept_id": "Direct-answer governed subtype",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 8,
+          "rate": 0.125,
+          "excluded_count": 0,
+          "row_count": 8
+        },
+        {
+          "concept_id": "Exact-valid fact",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Exclusion handling",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Failure taxonomy",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Failure-subtype aggregate",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 4,
+          "rate": 0.25,
+          "excluded_count": 0,
+          "row_count": 4
+        },
+        {
+          "concept_id": "Failure-subtype reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Non-exact subtype",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Scorer primary outcome",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Sibling subtype",
+          "split_id": "all_splits",
+          "numerator": 6,
+          "denominator": 6,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 6
+        },
+        {
+          "concept_id": "Split-scoped subtype summaries",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5,
+          "excluded_count": 0,
+          "row_count": 2
+        }
+      ]
+    },
+    {
+      "family_id": "Family B1",
+      "total_rows": 25,
+      "concept_summaries": [
+        {
+          "concept_id": "Exclusion handling",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_007_excluded_read_file_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-007"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333,
+          "excluded_count": 0,
+          "row_count": 9,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_001_exact_valid_read_file_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_002_non_exact_read_file_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_006_non_read_file_tool_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_001_missing_read_file_family.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_002_missing_read_file_eligibility_marker.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_003_missing_expected_tool_identity.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_006_missing_read_file_denominator.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_ni_001_mixed_tool_aggregate_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_004_read_file_missing_expected_tool_marker.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-001",
+            "fixture_id:B1-C-002",
+            "fixture_id:B1-C-006",
+            "fixture_id:B1-M-001",
+            "fixture_id:B1-M-002",
+            "fixture_id:B1-M-003",
+            "fixture_id:B1-M-006",
+            "fixture_id:B1-NI-001",
+            "fixture_id:B1-P-004"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate and symbol-name sub-slice",
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5,
+          "excluded_count": 0,
+          "row_count": 2,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_005_read_file_outside_symbol_name.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_005_missing_exact_valid_scorer_fact.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-005",
+            "fixture_id:B1-M-005"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped read-file and symbol-name summaries",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_009_split_scoped_read_file_symbol_name.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-009"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped symbol-name summary",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_005_missing_split_symbol_name_summary.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-P-005"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "numerator": 3,
+          "denominator": 10,
+          "rate": 0.3,
+          "excluded_count": 0,
+          "row_count": 10,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_003_exact_valid_symbol_name_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_004_non_exact_symbol_name_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_008_small_denominator_symbol_name.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_004_missing_symbol_name_membership_marker.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_ni_002_parent_read_file_aggregate_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_ni_003_symbol_like_prompt_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_ni_004_historical_symbol_name_rate_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_001_missing_symbol_name_subslice.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_002_symbol_name_count_without_denominator.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_003_symbol_name_without_parent_context.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-003",
+            "fixture_id:B1-C-004",
+            "fixture_id:B1-C-008",
+            "fixture_id:B1-M-004",
+            "fixture_id:B1-NI-002",
+            "fixture_id:B1-NI-003",
+            "fixture_id:B1-NI-004",
+            "fixture_id:B1-P-001",
+            "fixture_id:B1-P-002",
+            "fixture_id:B1-P-003"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_007_family_b1_symbol_name_denominator_reconciles_parent_context.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-007"
+          ]
+        }
+      ],
+      "sub_slice_summaries": [
+        {
+          "concept_id": "Exclusion handling",
+          "sub_slice_id": "excluded read-file row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_007_excluded_read_file_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-007"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "exact-valid read-file row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_001_exact_valid_read_file_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-001"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "expected tool identity missing for eligible row",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_003_missing_expected_tool_identity.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-M-003"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "mixed-tool aggregate must not substitute for read-file aggregate",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_ni_001_mixed_tool_aggregate_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-NI-001"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "non-exact read-file row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_002_non_exact_read_file_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-002"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "non-read-file tool row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_006_non_read_file_tool_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-006"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "read-file aggregate present without expected-tool marker",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_004_read_file_missing_expected_tool_marker.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-P-004"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "read-file denominator missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_006_missing_read_file_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-M-006"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "read-file eligibility marker missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_002_missing_read_file_eligibility_marker.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-M-002"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "sub_slice_id": "read-file family missing while registered active",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_001_missing_read_file_family.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-M-001"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate and symbol-name sub-slice",
+          "sub_slice_id": "exact-valid scorer fact missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_005_missing_exact_valid_scorer_fact.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-M-005"
+          ]
+        },
+        {
+          "concept_id": "Read-file aggregate and symbol-name sub-slice",
+          "sub_slice_id": "read-file row explicitly outside symbol-name sub-slice",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_005_read_file_outside_symbol_name.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-005"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped read-file and symbol-name summaries",
+          "sub_slice_id": "complete split-scoped read-file and symbol-name coverage",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_009_split_scoped_read_file_symbol_name.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-009"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped symbol-name summary",
+          "sub_slice_id": "aggregate symbol-name summary present but active split-scoped summary missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_005_missing_split_symbol_name_summary.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-P-005"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "exact-valid read-file symbol-name row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_003_exact_valid_symbol_name_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-003"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "historical symbol-name rate must not become current-run evidence",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_ni_004_historical_symbol_name_rate_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-NI-004"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "non-exact read-file symbol-name row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_004_non_exact_symbol_name_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-004"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "parent read-file aggregate must not substitute for symbol-name sub-slice",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_ni_002_parent_read_file_aggregate_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-NI-002"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "read-file aggregate present but symbol-name sub-slice missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_001_missing_symbol_name_subslice.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-P-001"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "small-denominator symbol-name set",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_c_008_small_denominator_symbol_name.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-C-008"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "symbol-like prompt text must not create symbol-name membership",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_ni_003_symbol_like_prompt_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-NI-003"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "symbol-name membership marker missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_m_004_missing_symbol_name_membership_marker.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-M-004"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "symbol-name numerator present but denominator missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_002_symbol_name_count_without_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-P-002"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "sub_slice_id": "symbol-name summary present without parent read-file context",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b1/b1_p_003_symbol_name_without_parent_context.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B1-P-003"
+          ]
+        },
+        {
+          "concept_id": "Symbol-name reconciliation",
+          "sub_slice_id": "symbol-name denominator and parent read-file denominator emitted",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_007_family_b1_symbol_name_denominator_reconciles_parent_context.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-007"
+          ]
+        }
+      ],
+      "split_summaries": [
+        {
+          "concept_id": "Exclusion handling",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Read-file aggregate",
+          "split_id": "all_splits",
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333,
+          "excluded_count": 0,
+          "row_count": 9
+        },
+        {
+          "concept_id": "Read-file aggregate and symbol-name sub-slice",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5,
+          "excluded_count": 0,
+          "row_count": 2
+        },
+        {
+          "concept_id": "Split-scoped read-file and symbol-name summaries",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Split-scoped symbol-name summary",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Symbol-name governed sub-slice",
+          "split_id": "all_splits",
+          "numerator": 3,
+          "denominator": 10,
+          "rate": 0.3,
+          "excluded_count": 0,
+          "row_count": 10
+        },
+        {
+          "concept_id": "Symbol-name reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        }
+      ]
+    },
+    {
+      "family_id": "Family B2",
+      "total_rows": 24,
+      "concept_summaries": [
+        {
+          "concept_id": "Anchor assignment ownership",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_003_missing_anchor_assignment_ownership.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-003"
+          ]
+        },
+        {
+          "concept_id": "Anchor category",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_004_missing_anchor_category_for_eligible_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-004"
+          ]
+        },
+        {
+          "concept_id": "Anchor taxonomy",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_002_missing_anchor_taxonomy.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-002"
+          ]
+        },
+        {
+          "concept_id": "Anchor-category distribution",
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5,
+          "excluded_count": 0,
+          "row_count": 2,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_007_multi_category_anchor_distribution.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_004_incomplete_anchor_category_distribution.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-007",
+            "fixture_id:B2-P-004"
+          ]
+        },
+        {
+          "concept_id": "Anchor-category reconciliation",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_008_family_b2_anchor_category_counts_reconcile_family_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-008"
+          ]
+        },
+        {
+          "concept_id": "Anchor-generalization aggregate",
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333,
+          "excluded_count": 0,
+          "row_count": 3,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_005_outside_anchor_population_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_001_missing_anchor_family.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_003_anchor_categories_without_assignment_ownership.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-005",
+            "fixture_id:B2-M-001",
+            "fixture_id:B2-P-003"
+          ]
+        },
+        {
+          "concept_id": "Exact-valid fact",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_006_missing_exact_valid_scorer_fact_anchor_eligible_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-006"
+          ]
+        },
+        {
+          "concept_id": "Exclusion handling",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_006_excluded_anchor_eligible_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-006"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333,
+          "excluded_count": 0,
+          "row_count": 9,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_001_exact_valid_no_anchor_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_002_non_exact_no_anchor_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_005_missing_no_anchor_subslice.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_ni_001_prompt_without_no_anchor_marker_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_ni_002_historical_no_anchor_share_denominator_incompatible.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_ni_003_anchor_family_aggregate_substitution_rejected.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_ni_004_taxonomy_change_without_migration_status_blocked.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_001_missing_no_anchor_subslice.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_002_no_anchor_count_without_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-001",
+            "fixture_id:B2-C-002",
+            "fixture_id:B2-M-005",
+            "fixture_id:B2-NI-001",
+            "fixture_id:B2-NI-002",
+            "fixture_id:B2-NI-003",
+            "fixture_id:B2-NI-004",
+            "fixture_id:B2-P-001",
+            "fixture_id:B2-P-002"
+          ]
+        },
+        {
+          "concept_id": "Sibling anchor category",
+          "numerator": 2,
+          "denominator": 2,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 2,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_003_exact_valid_sibling_anchor_row.json",
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_004_non_exact_sibling_anchor_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-003",
+            "fixture_id:B2-C-004"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped anchor summaries",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_008_split_scoped_anchor_summaries.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-008"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped no-anchor summary",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_005_missing_split_scoped_no_anchor_summary.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-P-005"
+          ]
+        }
+      ],
+      "sub_slice_summaries": [
+        {
+          "concept_id": "Anchor assignment ownership",
+          "sub_slice_id": "anchor assignment ownership marker missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_003_missing_anchor_assignment_ownership.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-003"
+          ]
+        },
+        {
+          "concept_id": "Anchor category",
+          "sub_slice_id": "anchor category missing for eligible row",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_004_missing_anchor_category_for_eligible_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-004"
+          ]
+        },
+        {
+          "concept_id": "Anchor taxonomy",
+          "sub_slice_id": "anchor taxonomy marker missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_002_missing_anchor_taxonomy.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-002"
+          ]
+        },
+        {
+          "concept_id": "Anchor-category distribution",
+          "sub_slice_id": "anchor taxonomy marker present but category distribution incomplete",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_004_incomplete_anchor_category_distribution.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-P-004"
+          ]
+        },
+        {
+          "concept_id": "Anchor-category distribution",
+          "sub_slice_id": "multiple approved anchor categories emitted with full markers",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_007_multi_category_anchor_distribution.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-007"
+          ]
+        },
+        {
+          "concept_id": "Anchor-category reconciliation",
+          "sub_slice_id": "anchor category counts emitted for active taxonomy",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/cross_family/x_rec_008_family_b2_anchor_category_counts_reconcile_family_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:X-REC-008"
+          ]
+        },
+        {
+          "concept_id": "Anchor-generalization aggregate",
+          "sub_slice_id": "anchor categories emitted without assignment ownership marker",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_003_anchor_categories_without_assignment_ownership.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-P-003"
+          ]
+        },
+        {
+          "concept_id": "Anchor-generalization aggregate",
+          "sub_slice_id": "anchor family missing while registered active",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_001_missing_anchor_family.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-001"
+          ]
+        },
+        {
+          "concept_id": "Anchor-generalization aggregate",
+          "sub_slice_id": "row outside anchor-generalization population",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_005_outside_anchor_population_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-005"
+          ]
+        },
+        {
+          "concept_id": "Exact-valid fact",
+          "sub_slice_id": "exact-valid scorer fact missing for anchor-eligible row",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_006_missing_exact_valid_scorer_fact_anchor_eligible_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-006"
+          ]
+        },
+        {
+          "concept_id": "Exclusion handling",
+          "sub_slice_id": "excluded anchor-eligible row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_006_excluded_anchor_eligible_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-006"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "anchor family aggregate emitted but no-anchor sub-slice absent",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_001_missing_no_anchor_subslice.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-P-001"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "anchor taxonomy changed; no approved migration status emitted",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_ni_004_taxonomy_change_without_migration_status_blocked.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-NI-004"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "exact-valid no-anchor row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_001_exact_valid_no_anchor_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-001"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "family aggregate exact-valid rate exists; no-anchor sub-slice absent",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_ni_003_anchor_family_aggregate_substitution_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-NI-003"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "historical share of exact-valid rows that are no-anchor exists; no-anchor exact-valid rate absent",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_ni_002_historical_no_anchor_share_denominator_incompatible.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-NI-002"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "no-anchor count emitted without denominator",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_002_no_anchor_count_without_denominator.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-P-002"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "no-anchor sub-slice missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_m_005_missing_no_anchor_subslice.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-M-005"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "non-exact no-anchor row",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_002_non_exact_no_anchor_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-002"
+          ]
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "sub_slice_id": "prompt text lacks obvious anchor phrase; no-anchor marker missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_ni_001_prompt_without_no_anchor_marker_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-NI-001"
+          ]
+        },
+        {
+          "concept_id": "Sibling anchor category",
+          "sub_slice_id": "exact-valid row in another approved anchor category",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_003_exact_valid_sibling_anchor_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-003"
+          ]
+        },
+        {
+          "concept_id": "Sibling anchor category",
+          "sub_slice_id": "non-exact row in another approved anchor category",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_004_non_exact_sibling_anchor_row.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-004"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped anchor summaries",
+          "sub_slice_id": "complete split-scoped anchor and no-anchor coverage",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_c_008_split_scoped_anchor_summaries.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-C-008"
+          ]
+        },
+        {
+          "concept_id": "Split-scoped no-anchor summary",
+          "sub_slice_id": "aggregate no-anchor summary emitted but active split-scoped no-anchor summary missing",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_b2/b2_p_005_missing_split_scoped_no_anchor_summary.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:B2-P-005"
+          ]
+        }
+      ],
+      "split_summaries": [
+        {
+          "concept_id": "Anchor assignment ownership",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Anchor category",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Anchor taxonomy",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Anchor-category distribution",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5,
+          "excluded_count": 0,
+          "row_count": 2
+        },
+        {
+          "concept_id": "Anchor-category reconciliation",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Anchor-generalization aggregate",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333,
+          "excluded_count": 0,
+          "row_count": 3
+        },
+        {
+          "concept_id": "Exact-valid fact",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Exclusion handling",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "No-anchor governed sub-slice",
+          "split_id": "all_splits",
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333,
+          "excluded_count": 0,
+          "row_count": 9
+        },
+        {
+          "concept_id": "Sibling anchor category",
+          "split_id": "all_splits",
+          "numerator": 2,
+          "denominator": 2,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 2
+        },
+        {
+          "concept_id": "Split-scoped anchor summaries",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "Split-scoped no-anchor summary",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        }
+      ]
+    },
+    {
+      "family_id": "Unspecified family scope",
+      "total_rows": 18,
+      "concept_summaries": [
+        {
+          "concept_id": "WP8B-CS-001",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_001_complete_state.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-001"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-002",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_002_partial_state.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-002"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-003",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_003_missing_family.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-003"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-004",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_004_missing_governed_subslice.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-004"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-005",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_005_denominator_missing.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-005"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-006",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_006_marker_missing.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-006"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-007",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_007_computable_comparison_blocked.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-007"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-008",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_008_noncomputable_comparison_blocked.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-008"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-009",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_009_comparison_allowed.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-009"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-010",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_010_bridge_required.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-010"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-011",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_011_reference_only.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-011"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-012",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_012_parent_computable_subslice_noncomputable.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-012"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-013",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_013_missing_source_row_fact.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-013"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-014",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_014_missing_scorer_fact.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-014"
+          ]
+        },
+        {
+          "concept_id": "WP8B-CS-015",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_cs_015_conflicting_ownership_marker.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-CS-015"
+          ]
+        },
+        {
+          "concept_id": "WP8B-NI-001",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_ni_001_alternate_denominator_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-NI-001"
+          ]
+        },
+        {
+          "concept_id": "WP8B-NI-002",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_ni_002_historical_report_layer_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-NI-002"
+          ]
+        },
+        {
+          "concept_id": "WP8B-NI-003",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1,
+          "provenance_refs": [
+            "fixture:/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/common_state/wp8b_ni_003_prompt_or_generated_text_classification_rejected.json"
+          ],
+          "evidence_refs": [
+            "fixture_id:WP8B-NI-003"
+          ]
+        }
+      ],
+      "sub_slice_summaries": [],
+      "split_summaries": [
+        {
+          "concept_id": "WP8B-CS-001",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-002",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-003",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-004",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-005",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-006",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-007",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-008",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-009",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-010",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-011",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-012",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-013",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-014",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-CS-015",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-NI-001",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-NI-002",
+          "split_id": "all_splits",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "excluded_count": 0,
+          "row_count": 1
+        },
+        {
+          "concept_id": "WP8B-NI-003",
+          "split_id": "all_splits",
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0,
+          "excluded_count": 0,
+          "row_count": 1
+        }
+      ]
+    }
+  ]
+}

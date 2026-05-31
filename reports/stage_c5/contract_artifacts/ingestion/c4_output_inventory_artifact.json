@@ -1,0 +1,314 @@
+{
+  "record_count": 8,
+  "model_identifier_counts": {
+    "score-model-v0": 8
+  },
+  "parse_status_counts": {
+    "invalid_json": 1,
+    "invalid_json_with_embedded_object": 1,
+    "strict_json_object": 6
+  },
+  "tool_call_status_counts": {
+    "no_tool_calls_emitted": 1,
+    "tool_call_payload_partial_or_invalid": 1,
+    "tool_call_payload_present": 3,
+    "tool_call_unavailable_parse_failure": 2,
+    "tool_calls_key_missing": 1
+  },
+  "no_call_status_counts": {
+    "expected_no_call_emitted": 1,
+    "expected_no_call_not_emitted": 1,
+    "no_call_emission_unknown": 3,
+    "tool_call_emitted": 3
+  },
+  "records": [
+    {
+      "record_id": "score-001",
+      "line_number": 1,
+      "fixture_id": "A-C-001",
+      "source_definition_id": "A-C-001",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-001",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/a.txt\\\",\\\"line_start\\\":1,\\\"line_end\\\":2}\"}}]}",
+      "raw_response_mutated": false,
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "parsed_tool_call_payload": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "read_file",
+              "arguments": "{\"path\":\"/tmp/a.txt\",\"line_start\":1,\"line_end\":2}"
+            }
+          }
+        ]
+      },
+      "embedded_payload_candidate": null,
+      "tool_call_status": "tool_call_payload_present",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": false,
+      "no_call_status": "tool_call_emitted",
+      "contract_valid": true,
+      "contract_issues": [],
+      "matched_fixture": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_001_exact_valid_control.json",
+      "evidence_provenance": {
+        "source_path": "/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+        "line_number": 1,
+        "captured_at_utc": "2026-05-31T21:57:20.662764Z",
+        "record_metadata": {}
+      }
+    },
+    {
+      "record_id": "score-002",
+      "line_number": 2,
+      "fixture_id": "A-C-004",
+      "source_definition_id": "A-C-004",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-004",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/bad.json\\\"}\"}}]",
+      "raw_response_mutated": false,
+      "parse_status": "invalid_json",
+      "parse_error": "Expecting ',' delimiter: line 1 column 125 (char 124)",
+      "parsed_tool_call_payload": null,
+      "embedded_payload_candidate": null,
+      "tool_call_status": "tool_call_unavailable_parse_failure",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": null,
+      "no_call_status": "no_call_emission_unknown",
+      "contract_valid": true,
+      "contract_issues": [],
+      "matched_fixture": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_004_malformed_output.json",
+      "evidence_provenance": {
+        "source_path": "/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+        "line_number": 2,
+        "captured_at_utc": "2026-05-31T21:57:20.662815Z",
+        "record_metadata": {}
+      }
+    },
+    {
+      "record_id": "score-003",
+      "line_number": 3,
+      "fixture_id": "A-C-006",
+      "source_definition_id": "A-C-006",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-006",
+      "raw_model_response": "{\"message\":\"no tool call emitted\"}",
+      "raw_response_mutated": false,
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "parsed_tool_call_payload": null,
+      "embedded_payload_candidate": null,
+      "tool_call_status": "tool_calls_key_missing",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": null,
+      "no_call_status": "no_call_emission_unknown",
+      "contract_valid": true,
+      "contract_issues": [],
+      "matched_fixture": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_006_missing_tool_call.json",
+      "evidence_provenance": {
+        "source_path": "/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+        "line_number": 3,
+        "captured_at_utc": "2026-05-31T21:57:20.662828Z",
+        "record_metadata": {}
+      }
+    },
+    {
+      "record_id": "score-004",
+      "line_number": 4,
+      "fixture_id": "A-C-008",
+      "source_definition_id": "A-C-008",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-008",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\"}}]}",
+      "raw_response_mutated": false,
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "parsed_tool_call_payload": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "read_file"
+            }
+          }
+        ]
+      },
+      "embedded_payload_candidate": null,
+      "tool_call_status": "tool_call_payload_partial_or_invalid",
+      "tool_call_entry_issue_count": 1,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": false,
+      "no_call_status": "tool_call_emitted",
+      "contract_valid": true,
+      "contract_issues": [],
+      "matched_fixture": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_008_wrong_argument.json",
+      "evidence_provenance": {
+        "source_path": "/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+        "line_number": 4,
+        "captured_at_utc": "2026-05-31T21:57:20.662841Z",
+        "record_metadata": {}
+      }
+    },
+    {
+      "record_id": "score-005",
+      "line_number": 5,
+      "fixture_id": "A-C-007",
+      "source_definition_id": "A-C-007",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-007",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"list_dir\",\"arguments\":\"{\\\"path\\\":\\\"/tmp\\\"}\"}}]}",
+      "raw_response_mutated": false,
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "parsed_tool_call_payload": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "list_dir",
+              "arguments": "{\"path\":\"/tmp\"}"
+            }
+          }
+        ]
+      },
+      "embedded_payload_candidate": null,
+      "tool_call_status": "tool_call_payload_present",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": false,
+      "no_call_emitted": false,
+      "no_call_status": "tool_call_emitted",
+      "contract_valid": true,
+      "contract_issues": [],
+      "matched_fixture": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_007_wrong_tool_name.json",
+      "evidence_provenance": {
+        "source_path": "/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+        "line_number": 5,
+        "captured_at_utc": "2026-05-31T21:57:20.662851Z",
+        "record_metadata": {}
+      }
+    },
+    {
+      "record_id": "score-006",
+      "line_number": 6,
+      "fixture_id": "A-C-005",
+      "source_definition_id": "A-C-005",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-c-005",
+      "raw_model_response": "Wrapper prefix {\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/wrapped.txt\\\"}\"}}]} wrapper suffix",
+      "raw_response_mutated": false,
+      "parse_status": "invalid_json_with_embedded_object",
+      "parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "parsed_tool_call_payload": null,
+      "embedded_payload_candidate": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "read_file",
+              "arguments": "{\"path\":\"/tmp/wrapped.txt\"}"
+            }
+          }
+        ]
+      },
+      "tool_call_status": "tool_call_unavailable_parse_failure",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": true,
+      "no_call_expected": false,
+      "no_call_emitted": null,
+      "no_call_status": "no_call_emission_unknown",
+      "contract_valid": true,
+      "contract_issues": [],
+      "matched_fixture": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_c_005_wrapper_envelope_drift.json",
+      "evidence_provenance": {
+        "source_path": "/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+        "line_number": 6,
+        "captured_at_utc": "2026-05-31T21:57:20.662869Z",
+        "record_metadata": {}
+      }
+    },
+    {
+      "record_id": "score-007",
+      "line_number": 7,
+      "fixture_id": "A-NI-004",
+      "source_definition_id": "A-NI-004",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-ni-004",
+      "raw_model_response": "{\"tool_calls\":[]}",
+      "raw_response_mutated": false,
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "parsed_tool_call_payload": {
+        "tool_calls": []
+      },
+      "embedded_payload_candidate": null,
+      "tool_call_status": "no_tool_calls_emitted",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": true,
+      "no_call_emitted": true,
+      "no_call_status": "expected_no_call_emitted",
+      "contract_valid": true,
+      "contract_issues": [],
+      "matched_fixture": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_004_no_call_proxy_rejected.json",
+      "evidence_provenance": {
+        "source_path": "/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+        "line_number": 7,
+        "captured_at_utc": "2026-05-31T21:57:20.662878Z",
+        "record_metadata": {}
+      }
+    },
+    {
+      "record_id": "score-008",
+      "line_number": 8,
+      "fixture_id": "A-NI-004",
+      "source_definition_id": "A-NI-004",
+      "model_identifier": "score-model-v0",
+      "prompt_reference": "prompt://a-ni-004b",
+      "raw_model_response": "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/unexpected.txt\\\"}\"}}]}",
+      "raw_response_mutated": false,
+      "parse_status": "strict_json_object",
+      "parse_error": null,
+      "parsed_tool_call_payload": {
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "read_file",
+              "arguments": "{\"path\":\"/tmp/unexpected.txt\"}"
+            }
+          }
+        ]
+      },
+      "embedded_payload_candidate": null,
+      "tool_call_status": "tool_call_payload_present",
+      "tool_call_entry_issue_count": 0,
+      "wrapper_or_prose_leakage": false,
+      "no_call_expected": true,
+      "no_call_emitted": false,
+      "no_call_status": "expected_no_call_not_emitted",
+      "contract_valid": true,
+      "contract_issues": [],
+      "matched_fixture": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures/family_a/a_ni_004_no_call_proxy_rejected.json",
+      "evidence_provenance": {
+        "source_path": "/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+        "line_number": 8,
+        "captured_at_utc": "2026-05-31T21:57:20.662888Z",
+        "record_metadata": {}
+      }
+    }
+  ]
+}

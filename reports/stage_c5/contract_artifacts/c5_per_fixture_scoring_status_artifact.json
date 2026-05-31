@@ -1,0 +1,84 @@
+{
+  "fixture_count": 7,
+  "records": [
+    {
+      "fixture_id": "A-C-001",
+      "record_count": 1,
+      "pass_count": 1,
+      "fail_count": 0,
+      "overall_status": "pass",
+      "fail_reasons": []
+    },
+    {
+      "fixture_id": "A-C-004",
+      "record_count": 1,
+      "pass_count": 0,
+      "fail_count": 1,
+      "overall_status": "fail",
+      "fail_reasons": [
+        "tool call required but status=tool_call_unavailable_parse_failure",
+        "observed tool name 'None' does not match expected 'read_file'",
+        "arguments unavailable: parsed_tool_call_payload_missing",
+        "no-call mismatch: observed=None, expected=False"
+      ]
+    },
+    {
+      "fixture_id": "A-C-005",
+      "record_count": 1,
+      "pass_count": 0,
+      "fail_count": 1,
+      "overall_status": "fail",
+      "fail_reasons": [
+        "tool call required but status=tool_call_unavailable_parse_failure",
+        "observed tool name 'None' does not match expected 'read_file'",
+        "arguments unavailable: parsed_tool_call_payload_missing",
+        "no-call mismatch: observed=None, expected=False",
+        "wrapper/prose leakage detected"
+      ]
+    },
+    {
+      "fixture_id": "A-C-006",
+      "record_count": 1,
+      "pass_count": 0,
+      "fail_count": 1,
+      "overall_status": "fail",
+      "fail_reasons": [
+        "tool call required but status=tool_calls_key_missing",
+        "observed tool name 'None' does not match expected 'read_file'",
+        "arguments unavailable: parsed_tool_call_payload_missing",
+        "no-call mismatch: observed=None, expected=False"
+      ]
+    },
+    {
+      "fixture_id": "A-C-007",
+      "record_count": 1,
+      "pass_count": 0,
+      "fail_count": 1,
+      "overall_status": "fail",
+      "fail_reasons": [
+        "observed tool name 'list_dir' does not match expected 'read_file'"
+      ]
+    },
+    {
+      "fixture_id": "A-C-008",
+      "record_count": 1,
+      "pass_count": 0,
+      "fail_count": 1,
+      "overall_status": "fail",
+      "fail_reasons": [
+        "arguments unavailable: arguments_missing"
+      ]
+    },
+    {
+      "fixture_id": "A-NI-004",
+      "record_count": 2,
+      "pass_count": 1,
+      "fail_count": 1,
+      "overall_status": "fail",
+      "fail_reasons": [
+        "no-call expected but observed status=tool_call_payload_present",
+        "no-call mismatch: observed=False, expected=True"
+      ]
+    }
+  ]
+}
