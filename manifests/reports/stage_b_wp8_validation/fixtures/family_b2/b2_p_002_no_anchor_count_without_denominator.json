@@ -1,0 +1,67 @@
+{
+  "fixture_id": "B2-P-002",
+  "source_definition_id": "B2-P-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "No-anchor governed sub-slice",
+  "intended_subslice_or_state": "no-anchor count emitted without denominator",
+  "required_inputs": {
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "no_anchor_count_emitted": true,
+    "no_anchor_denominator_marker_present": false,
+    "no_anchor_rate_emitted": false,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "no-anchor count",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing no-anchor denominator"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_count_only_as_incomplete_evidence": true,
+    "compute_no_anchor_rate_without_denominator": false,
+    "borrow_denominator_from_anchor_family_or_sibling_category": false,
+    "infer_denominator_from_prompt_text_or_raw_rows": false,
+    "resolve_missing_denominator_from_historical_reports": false
+  },
+  "expected_reconciliation_behavior": {
+    "no_anchor_count_reconciles_diagnostically": true,
+    "no_anchor_rate_reconciliation_possible": false,
+    "no_anchor_governed_rate_marked_noncomputable": true,
+    "denominator_substitution_rejected": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if count-only no-anchor evidence remains noncomputable for governed rate interpretation.",
+    "Fixture fails if any alternate denominator is used to compute a no-anchor rate.",
+    "Fixture fails if detector infers denominator membership from text or historical artifacts."
+  ],
+  "rationale": "This fixture proves denominator visibility doctrine for no-anchor behavior. Count-only evidence is insufficient for governed no-anchor rate computation."
+}

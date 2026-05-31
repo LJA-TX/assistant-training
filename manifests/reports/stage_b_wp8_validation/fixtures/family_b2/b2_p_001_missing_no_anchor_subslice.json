@@ -1,0 +1,66 @@
+{
+  "fixture_id": "B2-P-001",
+  "source_definition_id": "B2-P-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "No-anchor governed sub-slice",
+  "intended_subslice_or_state": "anchor family aggregate emitted but no-anchor sub-slice absent",
+  "required_inputs": {
+    "anchor_family_aggregate_emitted": true,
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "no_anchor_subslice_emitted": false,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor-family aggregate facts",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing no-anchor governed sub-slice"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_emitted_anchor_family_aggregate": true,
+    "use_anchor_family_aggregate_as_no_anchor_substitute": false,
+    "infer_no_anchor_membership_from_prompt_text": false,
+    "infer_no_anchor_membership_from_generated_text": false,
+    "resolve_missing_subslice_from_neighboring_category_facts": false
+  },
+  "expected_reconciliation_behavior": {
+    "anchor_family_aggregate_may_reconcile": true,
+    "no_anchor_reconciliation_possible": false,
+    "no_anchor_count_denominator_rate_computable": false,
+    "no_anchor_subslice_marked_noncomputable": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if no-anchor concept remains current-run noncomputable when the sub-slice is absent.",
+    "Fixture fails if anchor-family aggregate facts are treated as a no-anchor substitute.",
+    "Fixture fails if detector infers missing no-anchor membership from prompt or generated text."
+  ],
+  "rationale": "This fixture proves that the no-anchor governed sub-slice is required and cannot be repaired by anchor-family aggregate facts."
+}

@@ -1,0 +1,70 @@
+{
+  "fixture_id": "B2-P-005",
+  "source_definition_id": "B2-P-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "partial emission",
+  "governed_concept": "Split-scoped no-anchor summary",
+  "intended_subslice_or_state": "aggregate no-anchor summary emitted but active split-scoped no-anchor summary missing",
+  "required_inputs": {
+    "active_split_scopes_present": true,
+    "aggregate_no_anchor_summary_emitted": true,
+    "split_scoped_no_anchor_summary_emitted": false,
+    "split_scoped_sibling_category_summaries_may_be_emitted": true,
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "aggregate no-anchor summary",
+      "split membership evidence",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "split_owner": "dataset metadata",
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "partial",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing split-scoped no-anchor summary"
+    ]
+  },
+  "expected_detector_treatment": {
+    "consume_aggregate_no_anchor_summary": true,
+    "synthesize_split_scoped_no_anchor_summary_from_aggregate": false,
+    "infer_split_membership_from_prompt_text": false,
+    "infer_split_membership_from_generated_text": false,
+    "use_sibling_split_summaries_as_no_anchor_substitute": false
+  },
+  "expected_reconciliation_behavior": {
+    "aggregate_no_anchor_summary_may_reconcile": true,
+    "split_to_aggregate_no_anchor_reconciliation_possible": false,
+    "missing_split_scoped_no_anchor_marked_noncomputable": true,
+    "category_substitution_for_missing_no_anchor_split_rejected": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing split-scoped no-anchor summary blocks split-scoped governed interpretation.",
+    "Fixture fails if aggregate summary is used to synthesize missing split-scoped no-anchor facts.",
+    "Fixture fails if sibling category split facts are reused as no-anchor split facts."
+  ],
+  "rationale": "This fixture proves split-scoped doctrine for no-anchor behavior. Split-scoped no-anchor facts must be emitted and cannot be synthesized from aggregate or sibling split summaries."
+}
