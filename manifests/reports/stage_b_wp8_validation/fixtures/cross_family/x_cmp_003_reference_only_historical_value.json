@@ -1,0 +1,67 @@
+{
+  "fixture_id": "X-CMP-003",
+  "source_definition_id": "X-CMP-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Baseline comparison",
+  "intended_subslice_or_state": "current-run facts computable; historical value retained for reference only",
+  "required_inputs": {
+    "current_run_facts_computable": true,
+    "historical_value_present": true,
+    "historical_value_reference_only": true,
+    "historical_denominator_or_provenance_usable_for_comparison": false,
+    "migration_status_for_concept": "reference-only"
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run complete and computable concept facts",
+      "historical value retained as reference",
+      "explicit reference-only status"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "current_run_aggregation_owner": "evaluator",
+    "historical_reference_owner": "historical reports with non-comparative provenance",
+    "comparison_status_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "reference-only",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "historical value is reference-only"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_current_run_evaluation": true,
+    "run_comparative_rule_or_delta": false,
+    "treat_historical_value_as_non_comparative_reference": true,
+    "allow_historical_reference_to_change_detector_outcome": false,
+    "infer_comparison_eligibility_from_metric_resemblance": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "historical_reference_visibility_allowed": true,
+    "comparison_reconciliation_passes": false,
+    "comparison_delta_or_rule_execution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if historical value remains reference-only and non-comparative.",
+    "Fixture fails if comparative rules or deltas run on reference-only history.",
+    "Fixture fails if historical reference changes detector outcome."
+  ],
+  "rationale": "This fixture proves that reference-only history stays visible but non-comparative. Current-run computation remains valid while comparison remains disabled."
+}

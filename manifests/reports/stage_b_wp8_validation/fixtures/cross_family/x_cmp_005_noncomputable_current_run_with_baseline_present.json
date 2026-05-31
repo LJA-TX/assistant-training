@@ -1,0 +1,69 @@
+{
+  "fixture_id": "X-CMP-005",
+  "source_definition_id": "X-CMP-005",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Baseline comparison",
+  "intended_subslice_or_state": "current-run facts noncomputable while baseline exists",
+  "required_inputs": {
+    "current_run_facts_computable": false,
+    "current_run_required_fact_missing": true,
+    "historical_baseline_present": true,
+    "affected_concept_requires_current_run_before_comparison": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run fact set for affected concept",
+      "historical baseline context"
+    ],
+    "missing": [
+      "required current-run fact(s)"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "current_run_aggregation_owner": "evaluator",
+    "historical_baseline_owner": "historical reports and migration records",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "required current-run fact missing"
+    ],
+    "comparison_block_reasons": [
+      "current-run concept noncomputable"
+    ]
+  },
+  "expected_detector_treatment": {
+    "block_current_run_evaluation_for_affected_concept": true,
+    "block_comparative_evaluation_for_affected_concept": true,
+    "use_baseline_to_reconstruct_missing_current_run_facts": false,
+    "allow_baseline_only_comparison": false,
+    "treat_missing_current_run_as_zero": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": false,
+    "comparison_reconciliation_passes": false,
+    "affected_concept_reconciliation_blocked": true,
+    "baseline_context_may_remain_visible": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if current-run noncomputability blocks both current-run and comparative evaluation for the affected concept.",
+    "Fixture fails if baseline presence is used to reconstruct missing current-run facts.",
+    "Fixture fails if baseline-only comparison is run for a noncomputable current-run concept."
+  ],
+  "rationale": "This fixture proves precedence of current-run computability in comparability doctrine. Baseline presence does not bypass missing current-run requirements."
+}

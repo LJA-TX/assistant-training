@@ -1,0 +1,68 @@
+{
+  "fixture_id": "X-CMP-004",
+  "source_definition_id": "X-CMP-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Baseline comparison",
+  "intended_subslice_or_state": "current-run facts computable and required migration status missing",
+  "required_inputs": {
+    "current_run_facts_computable": true,
+    "historical_baseline_present": true,
+    "required_migration_status_present": false,
+    "current_run_reconciliation_complete": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run complete and computable concept facts",
+      "historical baseline context",
+      "migration status marker"
+    ],
+    "missing": [
+      "migration status marker"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "current_run_aggregation_owner": "evaluator",
+    "comparison_status_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "required migration status missing"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_current_run_evaluation": true,
+    "block_comparison": true,
+    "infer_migration_status": false,
+    "infer_comparison_eligibility_from_artifact_name_or_path": false,
+    "run_comparative_rule_or_delta": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "comparison_reconciliation_passes": false,
+    "migration_marker_reconciliation_passes": false,
+    "comparison_delta_or_rule_execution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing migration status blocks comparison.",
+    "Fixture fails if migration status is inferred from names, paths, or resemblance.",
+    "Fixture fails if comparative rules run while migration status is absent."
+  ],
+  "rationale": "This fixture proves explicit migration-status gating. Computable current-run facts do not authorize comparison when required migration status is missing."
+}

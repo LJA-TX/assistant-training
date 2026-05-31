@@ -1,0 +1,69 @@
+{
+  "fixture_id": "X-CMP-002",
+  "source_definition_id": "X-CMP-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Baseline comparison",
+  "intended_subslice_or_state": "current-run facts computable, historical concept related, bridge not approved",
+  "required_inputs": {
+    "current_run_facts_computable": true,
+    "historical_related_concept_present": true,
+    "bridge_approval_present": false,
+    "migration_status_for_concept": "bridge-required",
+    "current_run_reconciliation_complete": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run complete and computable concept facts",
+      "related historical concept evidence",
+      "explicit bridge-required status"
+    ],
+    "missing": [
+      "approved bridge evidence"
+    ],
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "current_run_aggregation_owner": "evaluator",
+    "bridge_approval_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "bridge-required",
+    "noncomputability_reasons": [],
+    "comparison_block_reasons": [
+      "bridge approval missing"
+    ]
+  },
+  "expected_detector_treatment": {
+    "allow_current_run_evaluation": true,
+    "block_comparison_pending_bridge": true,
+    "treat_related_historical_concept_as_automatically_comparable": false,
+    "report_bridge_required_status": true,
+    "infer_bridge_approval_from_metric_resemblance": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "comparison_reconciliation_passes": false,
+    "bridge_evidence_incomplete": true,
+    "comparison_delta_or_rule_execution_allowed": false
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if bridge-required status blocks comparison.",
+    "Fixture fails if detector compares related historical concept without bridge approval.",
+    "Fixture fails if bridge approval is inferred from relatedness or resemblance."
+  ],
+  "rationale": "This fixture proves that related historical concepts do not become comparable by default. Bridge approval remains required even when current-run facts are computable."
+}

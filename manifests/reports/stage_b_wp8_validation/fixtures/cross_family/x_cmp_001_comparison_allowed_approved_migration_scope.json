@@ -1,0 +1,65 @@
+{
+  "fixture_id": "X-CMP-001",
+  "source_definition_id": "X-CMP-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_EXECUTION_PLAN_REVIEW.md",
+    "docs/convergence/STAGE_B_WP8_CROSS_FAMILY_READINESS_CONFIRMATION.md",
+    "docs/convergence/STAGE_B_WP8_B2_EXIT_REVIEW.md",
+    "docs/convergence/STAGE_B_B1_NI_SCENARIO_RECONCILIATION_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Cross-family",
+  "classification": "Required",
+  "scenario_type": "comparability state",
+  "governed_concept": "Baseline comparison",
+  "intended_subslice_or_state": "current-run facts computable and baseline migration approved at same concept level",
+  "required_inputs": {
+    "current_run_facts_computable": true,
+    "current_run_denominator_and_marker_reconciliation_passes": true,
+    "historical_baseline_facts_exist_for_same_concept": true,
+    "migration_status_for_same_concept": "comparison-allowed",
+    "baseline_denominator_marker_and_scope_compatible_or_bridged": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "current-run complete and computable concept facts",
+      "baseline facts for the same governed concept",
+      "explicit comparison-allowed migration status",
+      "compatible denominator/marker/scope evidence"
+    ],
+    "missing_evidence_expected": false
+  },
+  "ownership_expectations": {
+    "current_run_aggregation_owner": "evaluator",
+    "baseline_provenance_owner": "historical migration/governance records",
+    "comparison_status_owner": "migration/governance review",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "complete",
+    "current_run_computability": "current-run computable",
+    "comparability": "comparison-allowed",
+    "noncomputability_reasons": []
+  },
+  "expected_detector_treatment": {
+    "allow_comparison_for_approved_concept_only": true,
+    "allow_current_run_evaluation": true,
+    "apply_approval_to_related_or_sibling_concepts": false,
+    "apply_approval_to_subslices_without_explicit_status": false,
+    "infer_comparison_eligibility_without_emitted_status": false
+  },
+  "expected_reconciliation_behavior": {
+    "current_run_reconciliation_passes": true,
+    "baseline_reconciliation_passes_for_approved_scope": true,
+    "comparison_scope_is_concept_level": true,
+    "comparison_delta_or_rule_execution_allowed": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if comparison is allowed for the approved concept scope.",
+    "Fixture fails if comparison-allowed status is applied to related concepts without emitted approval.",
+    "Fixture fails if comparison eligibility is inferred rather than explicitly emitted."
+  ],
+  "rationale": "This fixture proves explicit comparability approval. Comparison is permitted only when current-run computability and concept-level migration approval are both present and reconciled."
+}
