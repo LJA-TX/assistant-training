@@ -1,0 +1,27 @@
+{
+  "fixtures_root": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures",
+  "fixture_count": 117,
+  "valid_fixture_count": 117,
+  "invalid_fixture_count": 0,
+  "issue_count": 0,
+  "issue_counts_by_code": {},
+  "state_tuple_counts": {
+    "complete | current-run computable | bridge-required": 4,
+    "complete | current-run computable | comparison-allowed": 2,
+    "complete | current-run computable | comparison-blocked": 43,
+    "complete | current-run computable | reference-only": 5,
+    "missing | current-run noncomputable | bridge-required": 1,
+    "missing | current-run noncomputable | comparison-blocked": 33,
+    "partial | current-run computable | comparison-blocked": 1,
+    "partial | current-run noncomputable | bridge-required": 2,
+    "partial | current-run noncomputable | comparison-blocked": 26
+  },
+  "fixture_counts_by_family_group": {
+    "common_state": 18,
+    "cross_family": 27,
+    "family_a": 25,
+    "family_b1": 24,
+    "family_b2": 23
+  },
+  "issues": []
+}
