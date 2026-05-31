@@ -1,0 +1,69 @@
+{
+  "fixture_id": "B2-M-006",
+  "source_definition_id": "B2-M-006",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Exact-valid fact",
+  "intended_subslice_or_state": "exact-valid scorer fact missing for anchor-eligible row",
+  "required_inputs": {
+    "anchor_generalization_eligible_row": true,
+    "anchor_category_emitted": "approved_anchor_category",
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "scorer_exact_valid_fact_emitted": false,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor-generalization eligibility",
+      "anchor category assignment",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "exact_valid_owner": "scorer",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing exact-valid scorer fact"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_scorer_fact": true,
+    "infer_exact_valid_from_output_shape": false,
+    "infer_exact_valid_from_parse_state": false,
+    "infer_exact_valid_from_neighboring_rows": false,
+    "treat_missing_exact_valid_as_non_exact_by_default": false
+  },
+  "expected_reconciliation_behavior": {
+    "category_exact_valid_numerator_reconciliation_possible": false,
+    "category_exact_non_exact_partition_reconciliation_possible": false,
+    "anchor_family_exact_valid_reconciliation_possible": false,
+    "missing_scorer_fact_blocks_dependent_rates": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing exact-valid scorer fact remains noncomputable for category and family exact-valid rates.",
+    "Fixture fails if detector infers or defaults exact-valid status.",
+    "Fixture fails if missing scorer fact is silently treated as non-exact contribution."
+  ],
+  "rationale": "This fixture proves scorer-fact dependency in B2. Without explicit exact-valid scorer evidence, anchor-category and no-anchor rate computation remains noncomputable."
+}

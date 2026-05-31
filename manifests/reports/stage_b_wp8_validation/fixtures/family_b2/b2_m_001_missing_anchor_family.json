@@ -1,0 +1,62 @@
+{
+  "fixture_id": "B2-M-001",
+  "source_definition_id": "B2-M-001",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Anchor-generalization aggregate",
+  "intended_subslice_or_state": "anchor family missing while registered active",
+  "required_inputs": {
+    "anchor_family_registered_active": true,
+    "anchor_family_summary_emitted": false,
+    "anchor_category_distribution_emitted": false,
+    "no_anchor_subslice_emitted": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "active family registration"
+    ],
+    "subslice_membership_expected": false,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing anchor-generalization family summary"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_family": true,
+    "infer_family_from_other_families": false,
+    "infer_anchor_family_from_prompt_text": false,
+    "infer_anchor_family_from_historical_reports": false,
+    "synthesize_family_aggregate_from_category_fragments": false
+  },
+  "expected_reconciliation_behavior": {
+    "anchor_family_reconciliation_possible": false,
+    "no_anchor_reconciliation_possible": false,
+    "category_distribution_reconciliation_possible": false,
+    "missing_family_blocks_dependent_concepts": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if the missing Family B2 aggregate remains noncomputable and comparison-blocked.",
+    "Fixture fails if detector reconstructs the family from neighboring concepts or historical context.",
+    "Fixture fails if zero-filled family values are treated as emitted family facts."
+  ],
+  "rationale": "This fixture proves missing-family behavior for B2. When the active family summary is absent, governed anchor and no-anchor interpretation remains noncomputable."
+}

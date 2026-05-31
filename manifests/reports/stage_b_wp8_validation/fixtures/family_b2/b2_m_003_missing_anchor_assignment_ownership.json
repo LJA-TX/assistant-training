@@ -1,0 +1,66 @@
+{
+  "fixture_id": "B2-M-003",
+  "source_definition_id": "B2-M-003",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Anchor assignment ownership",
+  "intended_subslice_or_state": "anchor assignment ownership marker missing",
+  "required_inputs": {
+    "anchor_family_summary_emitted": true,
+    "anchor_taxonomy_marker_present": true,
+    "anchor_category_summaries_emitted": true,
+    "anchor_assignment_ownership_marker_present": false,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor-family summary",
+      "anchor taxonomy marker",
+      "anchor-category summaries"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "missing or undefined",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing anchor assignment ownership marker"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_ownership_marker": true,
+    "infer_ownership_from_source_context": false,
+    "default_ownership_to_dataset_or_evaluator": false,
+    "resolve_missing_ownership_by_preference_order": false,
+    "treat_numeric_reconciliation_as_ownership_proof": false
+  },
+  "expected_reconciliation_behavior": {
+    "category_distribution_may_exist": true,
+    "ownership_provenance_validation_passes": false,
+    "governed_category_assignment_computable": false,
+    "comparison_blocked_until_ownership_is_explicit": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing ownership marker blocks governed anchor-assignment interpretation.",
+    "Fixture fails if detector chooses an implied ownership source.",
+    "Fixture fails if numeric coherence is used to bypass missing ownership provenance."
+  ],
+  "rationale": "This fixture proves ownership doctrine for B2. Without explicit assignment ownership, anchor-category provenance remains noncomputable."
+}

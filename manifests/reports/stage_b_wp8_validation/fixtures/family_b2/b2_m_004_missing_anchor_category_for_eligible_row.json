@@ -1,0 +1,67 @@
+{
+  "fixture_id": "B2-M-004",
+  "source_definition_id": "B2-M-004",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Anchor category",
+  "intended_subslice_or_state": "anchor category missing for eligible row",
+  "required_inputs": {
+    "anchor_generalization_eligible_row": true,
+    "anchor_taxonomy_marker_present": true,
+    "anchor_assignment_ownership_marker_present": true,
+    "anchor_category_emitted_for_row": false,
+    "scorer_exact_valid_fact_may_be_emitted": true,
+    "conflicting_ownership_markers_present": false
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor-generalization eligibility",
+      "anchor taxonomy marker",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing anchor category for eligible row"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_anchor_category": true,
+    "infer_anchor_category_from_prompt_text": false,
+    "infer_anchor_category_from_generated_text": false,
+    "infer_no_anchor_by_absence_of_literal_cues": false,
+    "substitute_neighboring_row_category": false
+  },
+  "expected_reconciliation_behavior": {
+    "anchor_family_denominator_by_category_reconciliation_possible": false,
+    "no_anchor_or_sibling_category_membership_computable_for_row": false,
+    "category_distribution_includes_unassigned_eligible_row": false,
+    "missing_category_blocks_governed_rate_computation": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing eligible-row category remains noncomputable for anchor-category aggregation.",
+    "Fixture fails if detector classifies the row from prompt or generated text.",
+    "Fixture fails if row is force-assigned to no-anchor or a sibling category without emitted evidence."
+  ],
+  "rationale": "This fixture proves row-level category assignment requirements. Eligible rows without emitted category remain noncomputable for governed anchor distribution."
+}

@@ -1,0 +1,66 @@
+{
+  "fixture_id": "B2-M-002",
+  "source_definition_id": "B2-M-002",
+  "source_documents": [
+    "docs/convergence/STAGE_B_WP8A_SCENARIO_CATALOG.md",
+    "docs/convergence/STAGE_B_VALIDATION_FIXTURE_MATRIX_PLAN.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_TAXONOMY_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_ANCHOR_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_NO_ANCHOR_MEMBERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_CONFLICTING_OWNERSHIP_REVIEW.md",
+    "docs/convergence/STAGE_B_B2_READINESS_CLOSURE_ASSESSMENT.md"
+  ],
+  "family": "Family B2",
+  "classification": "Required",
+  "scenario_type": "missing emission",
+  "governed_concept": "Anchor taxonomy",
+  "intended_subslice_or_state": "anchor taxonomy marker missing",
+  "required_inputs": {
+    "anchor_family_summary_emitted": true,
+    "anchor_category_summaries_emitted": true,
+    "anchor_taxonomy_marker_present": false,
+    "anchor_assignment_ownership_marker_present": true,
+    "no_anchor_subslice_may_be_emitted": true
+  },
+  "scorer_evidence_expectations": {
+    "required": [
+      "anchor-family summary",
+      "anchor-category summaries",
+      "anchor assignment ownership marker"
+    ],
+    "subslice_membership_expected": true,
+    "missing_evidence_expected": true
+  },
+  "ownership_expectations": {
+    "anchor_assignment_owner": "dataset metadata by default or explicitly approved evaluator-owned pre-aggregation assignment",
+    "aggregation_owner": "evaluator",
+    "detector_role": "consumer only"
+  },
+  "expected_state": {
+    "completeness": "missing",
+    "current_run_computability": "current-run noncomputable",
+    "comparability": "comparison-blocked",
+    "noncomputability_reasons": [
+      "missing anchor taxonomy marker"
+    ]
+  },
+  "expected_detector_treatment": {
+    "report_missing_taxonomy": true,
+    "infer_taxonomy_from_category_labels": false,
+    "infer_taxonomy_from_prompt_text": false,
+    "infer_taxonomy_from_file_names_or_paths": false,
+    "treat_existing_category_counts_as_taxonomy_proof": false
+  },
+  "expected_reconciliation_behavior": {
+    "category_distribution_may_exist": true,
+    "taxonomy_validation_passes": false,
+    "governed_category_interpretation_computable": false,
+    "comparison_blocked_until_taxonomy_is_explicit": true
+  },
+  "acceptance_criteria": [
+    "Fixture passes only if missing taxonomy marker keeps anchor-category interpretation noncomputable.",
+    "Fixture fails if detector infers taxonomy from category strings or context.",
+    "Fixture fails if numeric distribution evidence substitutes for explicit taxonomy provenance."
+  ],
+  "rationale": "This fixture proves that anchor taxonomy must be explicit. Category counts without taxonomy marker do not satisfy governed interpretation requirements."
+}
