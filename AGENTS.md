@@ -33,13 +33,14 @@ Run these checks before execution:
 
 | Route | Trigger Intent | Primary Assets |
 |---|---|---|
-| `slice_execution` | author bounded execution slice outputs | package review, coverage summary, reconciliation summary templates; review-package completeness, ZIP, and hygiene checklists |
-| `readiness_or_closure_review` | readiness/exit/closure assessment requests | readiness determination, transition readiness assessment, closure determination templates; review-package completeness and hygiene checklists |
-| `conformance_slice` | implementation conformance/reporting slice | conformance report and implementation summary templates; validation evidence and hygiene checklists |
-| `publication_checkpoint` | publication-readiness verification | publication-readiness checklist; hygiene and governance-boundary checklists |
-| `push_checkpoint` | authorized push operations | push-readiness checklist; git-ignore verification checklist |
-| `milestone_determination` | milestone checkpoint determinations | milestone determination template; validation evidence and hygiene checklists |
-| `architecture_or_process_assessment` | architecture/process-only assessments | implementation summary template (structure-only) plus hygiene checklist |
+| `slice_execution` | author bounded execution slice outputs | `docs/process_infrastructure/templates/package_review_template.md`; `docs/process_infrastructure/templates/coverage_summary_template.md`; `docs/process_infrastructure/templates/reconciliation_summary_template.md`; `docs/process_infrastructure/checklists/review_package_completeness_checklist.md`; `docs/process_infrastructure/checklists/zip_workflow_checklist.md`; `docs/process_infrastructure/checklists/hygiene_review_checklist.md` |
+| `readiness_or_closure_review` | readiness/exit/closure assessment requests | `docs/process_infrastructure/templates/readiness_determination_template.md`; `docs/process_infrastructure/templates/transition_readiness_assessment_template.md`; `docs/process_infrastructure/templates/closure_determination_template.md`; `docs/process_infrastructure/checklists/review_package_completeness_checklist.md`; `docs/process_infrastructure/checklists/hygiene_review_checklist.md` |
+| `conformance_slice` | implementation conformance/reporting slice | `docs/process_infrastructure/templates/conformance_report_template.md`; `docs/process_infrastructure/templates/implementation_summary_template.md`; `docs/process_infrastructure/checklists/validation_evidence_checklist.md`; `docs/process_infrastructure/checklists/hygiene_review_checklist.md` |
+| `migration_gate` | migration-readiness or migration-safety gate requests | `docs/process_infrastructure/templates/conformance_report_template.md`; `docs/process_infrastructure/templates/milestone_determination_template.md`; `docs/process_infrastructure/checklists/validation_evidence_checklist.md`; `docs/process_infrastructure/checklists/governance_boundary_verification_checklist.md`; `docs/process_infrastructure/checklists/hygiene_review_checklist.md` |
+| `publication_checkpoint` | publication-readiness verification | `docs/process_infrastructure/checklists/publication_readiness_checklist.md`; `docs/process_infrastructure/checklists/hygiene_review_checklist.md`; `docs/process_infrastructure/checklists/governance_boundary_verification_checklist.md` |
+| `push_checkpoint` | authorized push operations | `docs/process_infrastructure/checklists/push_readiness_checklist.md`; `docs/process_infrastructure/checklists/git_ignore_verification_checklist.md` |
+| `milestone_determination` | milestone checkpoint determinations | `docs/process_infrastructure/templates/milestone_determination_template.md`; `docs/process_infrastructure/checklists/validation_evidence_checklist.md`; `docs/process_infrastructure/checklists/hygiene_review_checklist.md` |
+| `architecture_or_process_assessment` | architecture/process-only assessments | `docs/process_infrastructure/templates/implementation_summary_template.md`; `docs/process_infrastructure/checklists/hygiene_review_checklist.md` |
 
 ## Stop-And-Escalate Triggers
 
