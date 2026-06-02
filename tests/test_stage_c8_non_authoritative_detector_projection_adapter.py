@@ -30,10 +30,32 @@ def _copy_sample_inputs(target_path: Path):
     target_path.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
 
 
+def _write_records(target_path: Path, records: list[dict]):
+    target_path.write_text(
+        "\n".join(json.dumps(record, sort_keys=True) for record in records) + "\n",
+        encoding="utf-8",
+    )
+
+
 def _run(tmp_path: Path):
     mod = _load_module()
     output_records_path = tmp_path / "c8_outputs.jsonl"
     _copy_sample_inputs(output_records_path)
+    artifacts_dir = tmp_path / "artifacts"
+
+    summary = mod.run_stage_c8_projection_adapter(
+        fixtures_root=FIXTURES_ROOT,
+        output_records_path=output_records_path,
+        threshold_profile_path=THRESHOLD_PROFILE_PATH,
+        artifacts_dir=artifacts_dir,
+    )
+    return summary
+
+
+def _run_with_records(tmp_path: Path, records: list[dict]):
+    mod = _load_module()
+    output_records_path = tmp_path / "c8_outputs.jsonl"
+    _write_records(output_records_path, records)
     artifacts_dir = tmp_path / "artifacts"
 
     summary = mod.run_stage_c8_projection_adapter(
@@ -52,6 +74,7 @@ def test_stage_c8_emits_required_projection_artifacts(tmp_path):
         "projection_adapter",
         "projected_eval_summary",
         "projected_baseline_summary",
+        "baseline_delta_gate",
         "noncomputable_metrics",
         "compatibility_harness",
         "projection_validation",
@@ -101,6 +124,7 @@ def test_blocked_and_missing_source_metrics_are_explicitly_noncomputable(tmp_pat
 
     assert rows["no_anchor_exact_valid_share"]["projection_status"] == "noncomputable_blocked"
     assert rows["no_anchor_exact_valid_share"]["reason_code"] == "blocked_no_anchor_share_semantic_mismatch"
+    assert rows["no_anchor_exact_valid_share"]["evidence"]["disposition"] == "authoritative_noncomputable_preservation"
 
     assert rows["read_file_exact_valid_rate"]["projection_status"] == "noncomputable_missing_source"
     assert rows["read_file_exact_valid_rate"]["reason_code"] == "source_family_concept_missing_in_current_run"
@@ -114,6 +138,9 @@ def test_compatibility_harness_proves_consumer_readability_and_axis_preservation
     compatibility = _load_json(Path(summary["artifact_paths"]["compatibility_harness"]))
 
     assert compatibility["fail_count"] == 0
+    assert compatibility["adapter_flags"]["authoritative_detector_output"] is False
+    assert compatibility["adapter_flags"]["detector_migration_enabled"] is False
+    assert compatibility["adapter_flags"]["threshold_profile_migration_enabled"] is False
     checks = {check["check_id"]: check for check in compatibility["checks"]}
     assert checks["schema_continuity_metric_catalog_coverage"]["result"] == "pass"
     assert checks["axis_preservation"]["result"] == "pass"
@@ -136,8 +163,110 @@ def test_projection_validation_keeps_guardrails_and_migration_flags_disabled(tmp
     assert validation["fail_count"] == 0
     checks = {check["check_id"]: check for check in validation["checks"]}
     assert checks["unambiguous_mapping_stability"]["result"] == "pass"
-    assert checks["blocked_metrics_noncomputable"]["result"] == "pass"
+    assert checks["adversarial_mapping_contract_behavior"]["result"] == "pass"
+    assert checks["no_anchor_noncomputable_preservation"]["result"] == "pass"
+    assert checks["baseline_delta_gate_blocked_for_compatibility_baseline"]["result"] == "pass"
     assert checks["no_inference_substitution_reconstruction"]["result"] == "pass"
     assert checks["migration_flags_disabled"]["result"] == "pass"
     assert checks["consumer_compatibility_harness"]["result"] == "pass"
 
+
+def test_c10b_baseline_delta_gate_blocks_compatibility_only_baseline(tmp_path):
+    summary = _run(tmp_path)
+    gate = _load_json(Path(summary["artifact_paths"]["baseline_delta_gate"]))
+
+    assert gate["authoritative_detector_output"] is False
+    assert gate["detector_migration_enabled"] is False
+    assert gate["threshold_profile_migration_enabled"] is False
+    assert gate["compatibility_only_baseline"] is True
+    assert gate["rule_count"] == 1
+    assert gate["blocked_rule_count"] == 1
+
+    rule = gate["rule_records"][0]
+    assert rule["rule_id"] == "direct_answer_substitution_delta_gt_3"
+    assert rule["gate_result"] == "blocked"
+    assert "baseline_compatibility_only" in rule["reason_codes"]
+    assert "comparability_status_missing" in rule["reason_codes"]
+
+
+def test_c10b_contract_references_are_emitted(tmp_path):
+    summary = _run(tmp_path)
+    projection = _load_json(Path(summary["artifact_paths"]["projection_adapter"]))
+
+    assert projection["integration_scope"] == "stage_c10b_non_authoritative_contract_integration"
+    contract_sources = projection["contract_sources"]
+    assert "STAGE_C9A_ADVERSARIAL_NO_CALL_SUBSET_MAPPING_REVIEW.md" in contract_sources[
+        "c9a_adversarial_no_call_subset_mapping"
+    ]
+    assert "STAGE_C9C_BASELINE_DELTA_COMPARABILITY_GATE_REVIEW.md" in contract_sources[
+        "c9c_baseline_delta_comparability_gate"
+    ]
+    assert "STAGE_C9D_NO_ANCHOR_METRIC_DISPOSITION_REVIEW.md" in contract_sources[
+        "c9d_no_anchor_metric_disposition"
+    ]
+
+
+def test_c10b_adversarial_metric_computes_only_from_explicit_subset_evidence(tmp_path):
+    records = [
+        {
+            "record_id": "adv-explicit-001",
+            "fixture_id": "A-NI-004",
+            "source_definition_id": "A-NI-004",
+            "model_identifier": "score-model-v0",
+            "prompt_reference": "prompt://adv-explicit-001",
+            "raw_model_response": "{\"tool_calls\":[]}",
+            "no_call_expected": True,
+            "expected_tool_call_required": False,
+            "expected_strict_json_object": True,
+            "wrapper_prohibited": True,
+            "subset_id": "adversarial_no_call",
+        },
+        {
+            "record_id": "adv-explicit-002",
+            "fixture_id": "A-NI-004",
+            "source_definition_id": "A-NI-004",
+            "model_identifier": "score-model-v0",
+            "prompt_reference": "prompt://adv-explicit-002",
+            "raw_model_response": (
+                "{\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\","
+                "\"function\":{\"name\":\"read_file\",\"arguments\":\"{\\\"path\\\":\\\"/tmp/unexpected.txt\\\"}\"}}]}"
+            ),
+            "no_call_expected": True,
+            "expected_tool_call_required": False,
+            "expected_tool_name": "read_file",
+            "expected_argument_keys": ["path"],
+            "expected_strict_json_object": True,
+            "wrapper_prohibited": True,
+            "source_split": "adversarial",
+        },
+        {
+            "record_id": "aggregate-no-call-only",
+            "fixture_id": "A-NI-004",
+            "source_definition_id": "A-NI-004",
+            "model_identifier": "score-model-v0",
+            "prompt_reference": "prompt://aggregate-no-call-only",
+            "raw_model_response": "{\"tool_calls\":[]}",
+            "no_call_expected": True,
+            "expected_tool_call_required": False,
+            "expected_strict_json_object": True,
+            "wrapper_prohibited": True,
+        },
+    ]
+
+    summary = _run_with_records(tmp_path, records)
+    projection = _load_json(Path(summary["artifact_paths"]["projection_adapter"]))
+    record = projection["metric_records"]["no_call_correctness_adversarial"]
+
+    assert record["projection_status"] == "computed"
+    assert record["value"] == 0.5
+    assert record["evidence"]["reason_code"] == "source_adversarial_subset_explicit_evidence_computed"
+    assert record["evidence"]["denominator"] == 2.0
+    assert record["evidence"]["numerator"] == 1.0
+    assert {row["record_id"] for row in record["evidence"]["included_records"]} == {
+        "adv-explicit-001",
+        "adv-explicit-002",
+    }
+
+    validation = _load_json(Path(summary["artifact_paths"]["projection_validation"]))
+    checks = {check["check_id"]: check for check in validation["checks"]}
+    assert checks["adversarial_mapping_contract_behavior"]["result"] == "pass"
