@@ -1,0 +1,176 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-03T11:46:40Z",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_successor_probe",
+    "cell_id": "cell_live_lh_nocall_low_readfile_high_v1"
+  },
+  "conditions": [
+    {
+      "condition_id": "pref_model_path_exists",
+      "phase": "preflight",
+      "condition_name": "model_path_exists",
+      "source_file": "scripts/preflight_lora_run.py",
+      "source_ref": "scripts/preflight_lora_run.py:18-20",
+      "current_state": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Restore the configured model mirror path if it becomes unavailable."
+    },
+    {
+      "condition_id": "pref_tokenizer_path_exists",
+      "phase": "preflight",
+      "condition_name": "tokenizer_path_exists",
+      "source_file": "scripts/preflight_lora_run.py",
+      "source_ref": "scripts/preflight_lora_run.py:18-20",
+      "current_state": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Restore the configured tokenizer mirror path if it becomes unavailable."
+    },
+    {
+      "condition_id": "pref_train_exists",
+      "phase": "preflight",
+      "condition_name": "train_exists",
+      "source_file": "scripts/preflight_lora_run.py",
+      "source_ref": "scripts/preflight_lora_run.py:22-23",
+      "current_state": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Restore the committed train dataset file."
+    },
+    {
+      "condition_id": "pref_val_exists",
+      "phase": "preflight",
+      "condition_name": "val_exists",
+      "source_file": "scripts/preflight_lora_run.py",
+      "source_ref": "scripts/preflight_lora_run.py:22-23",
+      "current_state": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Restore the committed validation dataset file."
+    },
+    {
+      "condition_id": "pref_loss_fallback_fail_fast",
+      "phase": "preflight",
+      "condition_name": "assistant_only_fail_fast_configured",
+      "source_file": "scripts/preflight_lora_run.py",
+      "source_ref": "scripts/preflight_lora_run.py:26-28",
+      "current_state": "loss.fallback_behavior_if_not_supported=fail_fast",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Keep loss.fallback_behavior_if_not_supported set to fail_fast."
+    },
+    {
+      "condition_id": "pref_adapter_output_not_present",
+      "phase": "preflight",
+      "condition_name": "adapter_output_not_present",
+      "source_file": "scripts/preflight_lora_run.py",
+      "source_ref": "scripts/preflight_lora_run.py:30-31",
+      "current_state": "exists=False path=/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Remove stale successor adapter output if it is ever created before an intended clean launch."
+    },
+    {
+      "condition_id": "succ_run_root_absent_for_clean_launch",
+      "phase": "train_startup",
+      "condition_name": "run_root_absent_when_allow_overwrite_false",
+      "source_file": "scripts/train_lora_sft.py",
+      "source_ref": "scripts/train_lora_sft.py:1816-1847",
+      "current_state": "exists=False path=/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Keep the successor run root absent until launch or remove it if stale outputs accumulate."
+    },
+    {
+      "condition_id": "succ_sidecar_positive_rows_sufficient",
+      "phase": "train_startup",
+      "condition_name": "sidecar_positive_rows_sufficient",
+      "source_file": "scripts/provision_geometry_probe_weights.py",
+      "source_ref": "scripts/provision_geometry_probe_weights.py:341-347,507-516",
+      "current_state": {
+        "weights_count": 1982,
+        "positive_weight_rows": 13,
+        "zero_weight_rows": 1969,
+        "weights_sum": 30.0
+      },
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Regenerate the sidecar from the committed declared-exposure and geometry-context inputs."
+    },
+    {
+      "condition_id": "succ_sidecar_row_identity_digest_alignment",
+      "phase": "train_startup",
+      "condition_name": "sidecar_row_identity_digest_matches_runtime_builder",
+      "source_file": "scripts/train_lora_sft.py",
+      "source_ref": "scripts/train_lora_sft.py:879-944,1969-2009",
+      "current_state": {
+        "runtime_rows_digest_sha256": "f6e00d5e8a74e63e7e0c73c71b91dddcdc8cbc443e69467362f87200363de4ae",
+        "sidecar_rows_digest_sha256": "f6e00d5e8a74e63e7e0c73c71b91dddcdc8cbc443e69467362f87200363de4ae"
+      },
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Regenerate the successor sidecar against the current runtime row-identity builder if digests ever diverge."
+    },
+    {
+      "condition_id": "succ_threshold_profile_present",
+      "phase": "governance",
+      "condition_name": "threshold_profile_present",
+      "source_file": "manifests/reports/stage_b_v1_threshold_profile.json",
+      "source_ref": "metric_catalog and active rule set",
+      "current_state": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Restore the active threshold profile path."
+    },
+    {
+      "condition_id": "succ_baseline_present",
+      "phase": "governance",
+      "condition_name": "baseline_summary_present",
+      "source_file": "manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+      "source_ref": "required baseline for detector delta rules",
+      "current_state": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Restore the required baseline summary path."
+    },
+    {
+      "condition_id": "succ_restored_metric_paths_bound",
+      "phase": "governance",
+      "condition_name": "restored_metric_paths_bound_in_success_criteria",
+      "source_file": "manifests/reports/stage_b_successor_probe_success_criteria.json",
+      "source_ref": "evaluation_plan.required_eval_suite.required_metric_paths",
+      "current_state": {
+        "read_file_exact_valid_rate": "failure_profile.read_file_exact_valid.rate",
+        "read_file_symbol_name_exact_valid_rate": "failure_profile.read_file_symbol_name_exact_valid.rate",
+        "direct_answer_substitution_count": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution",
+        "no_anchor_exact_valid_share": "failure_profile.anchor_exact_share.no_anchor_phrase"
+      },
+      "pass": true,
+      "would_halt_execution_if_launched_today": false,
+      "safe_remediation": "Keep successor success criteria aligned to the restored additive raw-summary surfaces."
+    },
+    {
+      "condition_id": "train_runtime_approval_gate",
+      "phase": "train_startup",
+      "condition_name": "runtime approval gate",
+      "source_file": "scripts/train_lora_sft.py",
+      "source_ref": "scripts/train_lora_sft.py:1451-1464,2148-2156",
+      "current_state": {
+        "requires_manual_review": true,
+        "config_approved_to_run": false,
+        "manifest_approved_to_run": false
+      },
+      "pass": false,
+      "would_halt_execution_if_launched_today": true,
+      "safe_remediation": "Record explicit human launch authorization by setting the successor manifest review gate or config approved_to_run flag immediately before launch."
+    }
+  ],
+  "summary": {
+    "total_conditions": 12,
+    "pass": 11,
+    "fail": 1,
+    "halting_now": 1
+  }
+}

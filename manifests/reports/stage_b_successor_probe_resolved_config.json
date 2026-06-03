@@ -1,0 +1,197 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-03T11:39:47Z",
+  "artifact": "stage_b_successor_probe_resolved_config",
+  "status": "execution_preparation_only",
+  "execution_authorized": false,
+  "config_path_planned": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_geometry_probe_lh.config.json",
+  "run_manifest_path_planned": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_geometry_probe_lh.run_manifest.json",
+  "name": "stage_b_llama31_8b_base_v1_geometry_probe_lh",
+  "purpose": "Stage B successor live geometry probe (L_H) with deterministic weighted sampling and restored detector-facing metric surfaces.",
+  "lineage": {
+    "parent_checkpoint_reference": "stage_b_llama31_8b_base_v1_i10r_counterbalanced_probe",
+    "probe_design_reference": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_design.md",
+    "intervention_scope": "single_live_geometry_cell_probe",
+    "non_objectives": [
+      "do_not_change_eval_topology",
+      "do_not_change_decode_defaults",
+      "do_not_execute_hidden_retries",
+      "do_not_mutate_datasets_during_execution",
+      "do_not_promote_without_governance_review"
+    ]
+  },
+  "model": {
+    "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+    "tokenizer_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+    "trust_remote_code": false,
+    "torch_dtype": "bfloat16"
+  },
+  "dataset": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+    "format": "openai_messages_with_assistant_tool_calls",
+    "field_map": {
+      "messages": "messages",
+      "metadata": "metadata"
+    },
+    "max_seq_length": 2048,
+    "packing": false
+  },
+  "prompt_template": {
+    "mode": "tokenizer_chat_template",
+    "fallback_mode": "custom",
+    "allow_custom_fallback": true,
+    "custom_template_name": "generic_roles_v1"
+  },
+  "loss": {
+    "assistant_completion_only_requested": true,
+    "assistant_only_loss": true,
+    "completion_only_loss": true,
+    "train_on_inputs": false,
+    "mask_user_and_system_tokens": true,
+    "fallback_behavior_if_not_supported": "fail_fast"
+  },
+  "lora": {
+    "enabled": true,
+    "use_qlora": true,
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "bias": "none",
+    "task_type": "CAUSAL_LM",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "quantization": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "bnb_4bit_compute_dtype": "bfloat16"
+  },
+  "geometry_mapping": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_successor_probe",
+    "cell_id": "cell_live_lh_nocall_low_readfile_high_v1",
+    "axis_levels": {
+      "no_call_pressure": "low",
+      "read_file_counterweight": "high",
+      "rg_search_contrastive": "low",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 10,
+      "read_file_symbol_name_family": 10,
+      "valid_rg_search_contrastive_family": 10,
+      "uncertainty_conditioning_family": 0
+    }
+  },
+  "geometry_sampling": {
+    "enabled": true,
+    "sampler_type": "weighted_random",
+    "replacement": true,
+    "num_samples_policy": "dataset_length",
+    "num_samples": null,
+    "sampler_seed": 314159,
+    "capture_sampled_indices": true,
+    "weight_source": {
+      "kind": "sidecar",
+      "metadata_weight_keys": [
+        "geometry_weight",
+        "sampling_weight",
+        "sample_weight",
+        "weight"
+      ],
+      "sidecar_weight_key_candidates": [
+        "weight",
+        "sampling_weight",
+        "geometry_weight"
+      ],
+      "default_weight": 0.0,
+      "sidecar_json_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_weights_sidecar.json"
+    },
+    "weight_provisioning": "probe_specific_overlay_rows"
+  },
+  "optimization": {
+    "num_train_epochs": 0.2,
+    "learning_rate": 0.0001,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "gradient_checkpointing": true,
+    "optim": "paged_adamw_8bit",
+    "logging_steps": 10,
+    "eval_strategy": "steps",
+    "eval_steps": 40,
+    "save_strategy": "steps",
+    "save_steps": 80,
+    "save_total_limit": 2,
+    "bf16": true,
+    "fp16": false,
+    "seed": 42
+  },
+  "outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+    "save_adapter_only": true,
+    "merge_adapter_after_training": false,
+    "allow_overwrite_run_root": false
+  },
+  "governance_linkage": {
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "threshold_profile_id": "stage_b_v1_geometry_mapping_collapse_profile",
+    "digest_contract_path": "/opt/ai-stack/assistant-training/manifests/reports/digest_contract_v1.json",
+    "digest_contract_id": "stage_b_v1_digest_contract",
+    "required_baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "canonical_eval_manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json"
+  },
+  "digest_contract_fields": {
+    "digest_contract_version": "1.0",
+    "geometry_mapping_identity_digest": "b0614eb0d3003bd8872c6ccfe8191516e85dad429f2b8030a6731709b3ceb2e8",
+    "geometry_context_input_digest": "dff1885f76feb183023d1ce512e416c540c0973bb9cf61fe3d876655b86976df",
+    "geometry_context_digest": "b0614eb0d3003bd8872c6ccfe8191516e85dad429f2b8030a6731709b3ceb2e8",
+    "geometry_context_digest_alias_of": "geometry_mapping_identity_digest"
+  },
+  "readiness_preconditions": {
+    "weight_provisioning_mode": "sidecar_overlay_rows",
+    "sidecar_weight_coverage_required": true,
+    "sidecar_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_weights_sidecar.json",
+    "minimum_positive_weight_rows_expected": 13,
+    "current_sidecar_weight_coverage": {
+      "weights_count": 1982,
+      "positive_weight_rows": 13,
+      "zero_weight_rows": 1969,
+      "weights_sum": 30.0,
+      "status": "sufficient_for_successor_probe_execution_preconditions"
+    },
+    "legacy_metadata_weight_coverage": {
+      "train_rows_with_weight_key": 0,
+      "val_rows_with_weight_key": 0,
+      "status": "unused_in_sidecar_mode"
+    },
+    "execution_policy_if_precondition_fails": "no_go_until_sidecar_weight_coverage_resolved"
+  },
+  "safety": {
+    "do_not_start_training_automatically": true,
+    "requires_manual_review": true,
+    "approved_to_run": false
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

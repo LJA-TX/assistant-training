@@ -1,0 +1,33 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_geometry_probe_lh",
+  "generated_utc": "2026-06-03T11:39:47Z",
+  "status": "prepared_for_launch_review",
+  "training_started": false,
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_geometry_probe_lh.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "geometry_context_input_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_geometry_context_input.json",
+    "weight_sidecar_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_weights_sidecar.json"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_geometry_probe_lh"
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "Roy",
+    "approved_utc": "2026-06-03T11:46:40Z"
+  },
+  "scaffold_notes": {
+    "single_run_only": true,
+    "hidden_retries_allowed": false,
+    "auto_chain_disabled": true,
+    "hard_stop_enforced": true
+  }
+}

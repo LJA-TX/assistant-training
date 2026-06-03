@@ -1,0 +1,78 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-03T11:39:47Z",
+  "artifact": "stage_b_successor_probe_go_no_go_summary",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_successor_probe",
+    "cell_id": "cell_live_lh_nocall_low_readfile_high_v1"
+  },
+  "weight_provisioning_mode": "probe_specific_overlay_row_identity_rows",
+  "authorization_criteria": {
+    "must_all_be_true": [
+      "geometry_mapping_identity_verified",
+      "geometry_context_input_digest_verified",
+      "threshold_profile_linkage_verified",
+      "digest_contract_linkage_verified",
+      "required_baseline_present_and_verified",
+      "restored_detector_metric_paths_verified",
+      "sidecar_path_present_and_readable",
+      "sidecar_digest_binding_verified",
+      "row_identity_digest_match_verified",
+      "positive_weight_rows_sufficient",
+      "sidecar_fail_fast_validation_passed",
+      "successor_output_paths_clear",
+      "declared_exposure_and_drift_targets_approved",
+      "explicit_manual_run_authorization_recorded"
+    ]
+  },
+  "halt_criteria": [
+    "detector_status_catastrophic_halt",
+    "detector_status_halt_progression",
+    "wrapper_leakage_gt_0",
+    "missing_typed_digest_or_ledger_artifacts",
+    "declared_vs_realized_drift_max_abs_delta_any_dimension_gt_6",
+    "sidecar_missing_or_unreadable_at_launch",
+    "sidecar_digest_binding_mismatch",
+    "row_identity_digest_mismatch",
+    "positive_weight_rows_below_required_minimum"
+  ],
+  "escalation_criteria": [
+    "detector_status_watch",
+    "drift_max_abs_delta_any_dimension_between_4_and_6",
+    "direct_answer_substitution_delta_rule_triggered",
+    "no_call_under_target_without_catastrophic_failure"
+  ],
+  "current_pre_execution_assessment": {
+    "instrumentation_stack_status": "ready",
+    "threshold_profile_status": "ready",
+    "baseline_status": "ready",
+    "weight_provisioning_status": "ready",
+    "detector_metric_observability_status": "ready",
+    "sidecar_overlay_readiness": {
+      "sidecar_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_weights_sidecar.json",
+      "sidecar_payload_digest_sha256": "18fc997add2fd495f9f3fdc690b9c766fb4c82b3f967751f13a524e442d81e31",
+      "geometry_mapping_identity_digest": "b0614eb0d3003bd8872c6ccfe8191516e85dad429f2b8030a6731709b3ceb2e8",
+      "geometry_context_input_digest": "dff1885f76feb183023d1ce512e416c540c0973bb9cf61fe3d876655b86976df",
+      "row_identity_rows_digest_sha256": "f6e00d5e8a74e63e7e0c73c71b91dddcdc8cbc443e69467362f87200363de4ae",
+      "weights_count": 1982,
+      "positive_weight_rows": 13,
+      "zero_weight_rows": 1969,
+      "weights_sum": 30.0,
+      "minimum_positive_weight_rows_required": 13,
+      "fail_fast_validation_status": "pass"
+    },
+    "ready_to_execute_now": false,
+    "ready_for_final_human_go": true
+  },
+  "decision": {
+    "execution_authorization_state": "READY_PENDING_MANUAL_GO",
+    "recommended_next_action": "Perform final human launch review, then record explicit run authorization before any successor probe command is executed."
+  },
+  "final_recommendation": "READY_PENDING_MANUAL_GO",
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

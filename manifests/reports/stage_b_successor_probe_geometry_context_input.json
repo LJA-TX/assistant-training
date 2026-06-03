@@ -1,0 +1,18 @@
+{
+  "geometry_schema_version": "1.0",
+  "sweep_id": "stage_b_v1_geometry_successor_probe",
+  "cell_id": "cell_live_lh_nocall_low_readfile_high_v1",
+  "axis_levels": {
+    "no_call_pressure": "low",
+    "read_file_counterweight": "high",
+    "rg_search_contrastive": "low",
+    "uncertainty_conditioning": "zero"
+  },
+  "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay",
+  "declared_exposure_units": {
+    "no_call_adversarial_family": 10,
+    "read_file_symbol_name_family": 10,
+    "valid_rg_search_contrastive_family": 10,
+    "uncertainty_conditioning_family": 0
+  }
+}

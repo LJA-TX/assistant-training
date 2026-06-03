@@ -1,0 +1,161 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-03T11:46:40Z",
+  "probe_identity": {
+    "sweep_id": "stage_b_v1_geometry_successor_probe",
+    "cell_id": "cell_live_lh_nocall_low_readfile_high_v1",
+    "package_head_commit": "0b505213825e63aa4a9901d65b8379d0857ec91b"
+  },
+  "paths": [
+    {
+      "path": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_geometry_probe_lh.run_manifest.json",
+      "role": "run manifest",
+      "classification": "must_preserve",
+      "required_state": "must_exist_file",
+      "state": {
+        "exists": true,
+        "is_file": true,
+        "is_dir": false
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_geometry_probe_lh.config.json",
+      "role": "runtime config",
+      "classification": "must_preserve",
+      "required_state": "must_exist_file",
+      "state": {
+        "exists": true,
+        "is_file": true,
+        "is_dir": false
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_train.jsonl",
+      "role": "train dataset",
+      "classification": "must_preserve",
+      "required_state": "must_exist_file",
+      "state": {
+        "exists": true,
+        "is_file": true,
+        "is_dir": false
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/data/v1_0/dataset_v1_0_stage_b_recovery_i10r_counterbalanced_val.jsonl",
+      "role": "val dataset",
+      "classification": "must_preserve",
+      "required_state": "must_exist_file",
+      "state": {
+        "exists": true,
+        "is_file": true,
+        "is_dir": false
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_weights_sidecar.json",
+      "role": "weight sidecar overlay",
+      "classification": "must_preserve",
+      "required_state": "must_exist_file",
+      "state": {
+        "exists": true,
+        "is_file": true,
+        "is_dir": false
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_geometry_context_input.json",
+      "role": "geometry context input",
+      "classification": "must_preserve",
+      "required_state": "must_exist_file",
+      "state": {
+        "exists": true,
+        "is_file": true,
+        "is_dir": false
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+      "role": "collapse threshold profile",
+      "classification": "must_preserve",
+      "required_state": "must_exist_file",
+      "state": {
+        "exists": true,
+        "is_file": true,
+        "is_dir": false
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+      "role": "baseline eval summary",
+      "classification": "must_preserve",
+      "required_state": "must_exist_file",
+      "state": {
+        "exists": true,
+        "is_file": true,
+        "is_dir": false
+      }
+    },
+    {
+      "path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+      "role": "base model mirror",
+      "classification": "must_exist",
+      "required_state": "must_exist_dir",
+      "state": {
+        "exists": true,
+        "is_file": false,
+        "is_dir": true
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+      "role": "adapter output dir (training target)",
+      "classification": "launch_target",
+      "required_state": "must_not_exist_for_preflight",
+      "state": {
+        "exists": false,
+        "is_file": null,
+        "is_dir": null
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+      "role": "run root (probe runtime artifacts)",
+      "classification": "launch_target",
+      "required_state": "must_not_exist_for_clean_launch_when_allow_overwrite_false",
+      "state": {
+        "exists": false,
+        "is_file": null,
+        "is_dir": null
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_geometry_probe_lh",
+      "role": "logs dir (training target)",
+      "classification": "optional_launch_target",
+      "required_state": "may_absent_before_run",
+      "state": {
+        "exists": false,
+        "is_file": null,
+        "is_dir": null
+      }
+    },
+    {
+      "path": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_lh_eval",
+      "role": "eval output directory",
+      "classification": "optional_launch_target",
+      "required_state": "may_absent_before_run",
+      "state": {
+        "exists": false,
+        "is_file": null,
+        "is_dir": null
+      }
+    }
+  ],
+  "successor_launch_cleanup_required": [],
+  "successor_launch_cleanup_optional": [],
+  "assessment": {
+    "successor_output_paths_clear": true,
+    "must_preserve_inputs_present": true,
+    "successor_specific_cleanup_required": false
+  }
+}
