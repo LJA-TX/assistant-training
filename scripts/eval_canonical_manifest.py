@@ -25,6 +25,25 @@ CLASS_PRIORITY = [
     "other_failure",
 ]
 
+LEGACY_ANCHOR_BUCKETS = (
+    "literal_tool_calls",
+    "paraphrastic_tool_call",
+    "schema_paraphrase",
+    "no_anchor_phrase",
+)
+
+FAILURE_SUBTYPE_KEYS = (
+    "direct_answer_substitution",
+    "scalar_substitution",
+    "malformed_partial_json",
+    "near_canonical_wrapper_or_envelope_drift",
+    "other_non_exact",
+)
+
+LEGACY_ANCHOR_TAXONOMY_MARKER = "legacy_prompt_anchor_bucket_v1"
+EVALUATOR_PREAGGREGATION_OWNER = "evaluator_pre_aggregation_v1"
+DATASET_METADATA_OWNER = "dataset_metadata"
+
 
 @dataclass
 class EvalRow:
@@ -39,6 +58,7 @@ class EvalRow:
     expected_payload: dict[str, Any] | None
     expected_tool_names: list[str]
     expected_args: list[Any]
+    metadata: dict[str, Any]
 
 
 def _now_utc() -> str:
@@ -183,6 +203,245 @@ def _looks_like_tool_intent(text: str) -> bool:
     return False
 
 
+def _rate(num: int, den: int) -> float:
+    return float(num) / float(den) if den else 0.0
+
+
+def _is_number_token(text: str) -> bool:
+    return bool(re.fullmatch(r"[-+]?\d+(\.\d+)?", text.strip()))
+
+
+def _primary_expected_tool_name(row: EvalRow) -> str:
+    if not row.expected_tool_names:
+        return ""
+    return str(row.expected_tool_names[0] or "")
+
+
+def _prompt_anchor_bucket(prompt: str) -> str:
+    lowered = prompt.lower()
+    if "tool_calls" in lowered:
+        return "literal_tool_calls"
+    if "tool call" in lowered or "tool-call" in lowered or "function call" in lowered:
+        return "paraphrastic_tool_call"
+    if "json object" in lowered or "structured payload" in lowered or "canonical payload" in lowered:
+        return "schema_paraphrase"
+    return "no_anchor_phrase"
+
+
+def _read_file_archetype(prompt: str) -> str:
+    lowered = prompt.lower()
+    if "report whether" in lowered and "appears" in lowered:
+        return "read_file_boolean_presence"
+    if "first function name" in lowered:
+        return "read_file_first_function_name"
+    if "symbol name" in lowered:
+        return "read_file_symbol_name"
+    return "read_file_other"
+
+
+def _coerce_optional_bool(value: Any) -> bool | None:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        lowered = value.strip().lower()
+        if lowered in {"true", "1", "yes"}:
+            return True
+        if lowered in {"false", "0", "no"}:
+            return False
+    return None
+
+
+def _anchor_assignment_labels(row: EvalRow) -> tuple[str, str, str]:
+    meta = row.metadata
+    explicit_bucket = None
+    for key in ("anchor_bucket", "eval_anchor_bucket", "intervention_i10_anchor_bucket"):
+        value = meta.get(key)
+        if isinstance(value, str) and value.strip():
+            explicit_bucket = value.strip()
+            break
+    explicit_owner = str(meta.get("anchor_assignment_owner") or "").strip() or None
+    explicit_taxonomy = str(meta.get("anchor_taxonomy_marker") or "").strip() or None
+    if explicit_bucket is not None:
+        return (
+            explicit_bucket,
+            explicit_owner or DATASET_METADATA_OWNER,
+            explicit_taxonomy or LEGACY_ANCHOR_TAXONOMY_MARKER,
+        )
+    return (
+        _prompt_anchor_bucket(row.user_text),
+        explicit_owner or EVALUATOR_PREAGGREGATION_OWNER,
+        explicit_taxonomy or LEGACY_ANCHOR_TAXONOMY_MARKER,
+    )
+
+
+def _read_file_membership_labels(row: EvalRow) -> tuple[str | None, bool | None, str | None]:
+    if _primary_expected_tool_name(row) != "read_file":
+        return None, None, None
+
+    meta = row.metadata
+    explicit_archetype = None
+    for key in ("read_file_archetype", "eval_read_file_archetype", "intervention_i10_query_archetype"):
+        value = meta.get(key)
+        if isinstance(value, str) and value.strip():
+            explicit_archetype = value.strip()
+            break
+    explicit_membership = _coerce_optional_bool(meta.get("symbol_name_membership"))
+    explicit_owner = (
+        str(
+            meta.get("membership_owner")
+            or meta.get("symbol_name_membership_owner")
+            or ""
+        ).strip()
+        or None
+    )
+
+    if explicit_archetype is not None:
+        membership = explicit_membership if explicit_membership is not None else explicit_archetype == "read_file_symbol_name"
+        return explicit_archetype, membership, explicit_owner or DATASET_METADATA_OWNER
+
+    if explicit_membership is not None:
+        archetype = "read_file_symbol_name" if explicit_membership else "read_file_other"
+        return archetype, explicit_membership, explicit_owner or DATASET_METADATA_OWNER
+
+    derived_archetype = _read_file_archetype(row.user_text)
+    return (
+        derived_archetype,
+        derived_archetype == "read_file_symbol_name",
+        explicit_owner or EVALUATOR_PREAGGREGATION_OWNER,
+    )
+
+
+def _failure_subtype(row: EvalRow, classified: dict[str, Any]) -> str | None:
+    if not row.expected_tool or bool(classified.get("exact_valid", False)):
+        return None
+
+    generated = str(classified.get("generated_text") or "").strip()
+    lowered = generated.lower()
+    parse_mode = str(classified.get("parse_mode") or "")
+    schema_reason = str(classified.get("schema_reason") or "")
+    primary_class = str(classified.get("primary_class") or "")
+
+    if primary_class in {"wrong_tool_name", "wrong_arguments", "wrapper_leakage", "missing_tool_call"}:
+        return "near_canonical_wrapper_or_envelope_drift"
+    if schema_reason == "missing_tool_calls":
+        return "near_canonical_wrapper_or_envelope_drift"
+
+    if parse_mode in {"invalid", "empty"} or schema_reason in {"payload_not_parsed", "payload_not_object"}:
+        if _is_number_token(generated) or lowered in {"true", "false", "null"}:
+            return "scalar_substitution"
+        if generated.startswith("{") or generated.startswith("[") or _looks_like_tool_intent(generated):
+            return "malformed_partial_json"
+        return "direct_answer_substitution"
+
+    if primary_class == "invalid_schema":
+        if generated.startswith("{") or generated.startswith("[") or _looks_like_tool_intent(generated):
+            return "malformed_partial_json"
+        return "near_canonical_wrapper_or_envelope_drift"
+
+    return "other_non_exact"
+
+
+def _build_preaggregation_labels(row: EvalRow, classified: dict[str, Any]) -> dict[str, Any]:
+    anchor_bucket, anchor_assignment_owner, anchor_taxonomy_marker = _anchor_assignment_labels(row)
+    read_file_archetype, symbol_name_membership, membership_owner = _read_file_membership_labels(row)
+    return {
+        "failure_subtype": _failure_subtype(row, classified),
+        "anchor_bucket": anchor_bucket,
+        "anchor_assignment_owner": anchor_assignment_owner,
+        "anchor_taxonomy_marker": anchor_taxonomy_marker,
+        "read_file_archetype": read_file_archetype,
+        "symbol_name_membership": symbol_name_membership,
+        "membership_owner": membership_owner,
+    }
+
+
+def _build_detector_metrics(side_summary: dict[str, Any]) -> dict[str, Any]:
+    aggregate = side_summary["aggregate"]
+    adversarial = side_summary["per_split"]["adversarial"]
+    return {
+        "aggregate": {
+            "exact_json_validity": float(aggregate["exact_json_validity"]["rate"]),
+            "invalid_json": float(aggregate["invalid_json_rate"]),
+            "tool_name_accuracy": float(aggregate["tool_name_accuracy"]["rate"]),
+            "argument_accuracy": float(aggregate["argument_accuracy"]["rate"]),
+            "wrapper_leakage": float(aggregate["wrapper_leakage_rate"]),
+            "no_call_correctness": float(aggregate["no_call_correctness"]["rate"]),
+        },
+        "probes": {
+            "no_call_adversarial": {
+                "no_call_correctness": float(adversarial["no_call_correctness"]["rate"]),
+            }
+        },
+    }
+
+
+def _tool_expected_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [row for row in rows if bool(row["expected_tool"])]
+
+
+def _build_failure_profile(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    tool_rows = _tool_expected_rows(rows)
+    non_exact_tool_rows = [row for row in tool_rows if not bool(row["eval"]["exact_valid"])]
+
+    subtype_counts = Counter({key: 0 for key in FAILURE_SUBTYPE_KEYS})
+    for row in non_exact_tool_rows:
+        subtype = str(row.get("failure_subtype") or "other_non_exact")
+        if subtype not in subtype_counts:
+            subtype = "other_non_exact"
+        subtype_counts[subtype] += 1
+
+    read_file_rows = [row for row in tool_rows if str(row.get("expected_primary_tool_name") or "") == "read_file"]
+    read_file_exact = sum(1 for row in read_file_rows if bool(row["eval"]["exact_valid"]))
+
+    symbol_rows = [row for row in read_file_rows if row.get("symbol_name_membership") is True]
+    symbol_exact = sum(1 for row in symbol_rows if bool(row["eval"]["exact_valid"]))
+
+    exact_tool_rows = [row for row in tool_rows if bool(row["eval"]["exact_valid"])]
+    anchor_counts = Counter({bucket: 0 for bucket in LEGACY_ANCHOR_BUCKETS})
+    for row in exact_tool_rows:
+        bucket = str(row.get("anchor_bucket") or "")
+        if bucket in anchor_counts:
+            anchor_counts[bucket] += 1
+
+    exact_tool_row_count = len(exact_tool_rows)
+    anchor_share = {
+        bucket: _rate(anchor_counts[bucket], exact_tool_row_count)
+        for bucket in LEGACY_ANCHOR_BUCKETS
+    }
+
+    return {
+        "tool_expected_rows": len(tool_rows),
+        "non_exact_tool_rows": len(non_exact_tool_rows),
+        "failure_categories_non_exact_tool_rows": {
+            key: int(subtype_counts.get(key, 0))
+            for key in FAILURE_SUBTYPE_KEYS
+        },
+        "read_file_exact_valid": {
+            "count": read_file_exact,
+            "rows": len(read_file_rows),
+            "rate": _rate(read_file_exact, len(read_file_rows)),
+        },
+        "read_file_symbol_name_exact_valid": {
+            "count": symbol_exact,
+            "rows": len(symbol_rows),
+            "rate": _rate(symbol_exact, len(symbol_rows)),
+        },
+        "anchor_exact_share": anchor_share,
+    }
+
+
+def _select_detector_side(
+    *,
+    base_summary: dict[str, Any],
+    base_rows: list[dict[str, Any]],
+    adapter_summary: dict[str, Any] | None,
+    adapter_rows: list[dict[str, Any]],
+) -> tuple[str, dict[str, Any], list[dict[str, Any]]]:
+    if adapter_summary is not None:
+        return "adapter", adapter_summary, adapter_rows
+    return "base", base_summary, base_rows
+
+
 def _expected_from_row(row: dict[str, Any]) -> tuple[bool, bool, dict[str, Any] | None, list[str], list[Any]]:
     msgs = row.get("messages")
     if not isinstance(msgs, list) or len(msgs) < 3:
@@ -272,6 +531,7 @@ def _build_rows(split: str, rows: list[dict[str, Any]], tokenizer: Any, tokenize
                 expected_payload=expected_payload,
                 expected_tool_names=expected_tool_names,
                 expected_args=expected_args,
+                metadata=dict(meta),
             )
         )
     return out
@@ -453,9 +713,6 @@ def _summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
     )
     no_call_correct = classes.get("refusal_expected", 0)
 
-    def _rate(num: int, den: int) -> float:
-        return float(num) / float(den) if den else 0.0
-
     return {
         "rows": total,
         "class_counts": dict(sorted(classes.items(), key=lambda kv: kv[0])),
@@ -492,9 +749,6 @@ def _aggregate_split_summaries(per_split: dict[str, dict[str, Any]]) -> dict[str
     exact_valid_count = merged_classes.get("exact_valid", 0)
     wrapper_count = merged_classes.get("wrapper_leakage", 0)
     no_call_correct = merged_classes.get("refusal_expected", 0)
-
-    def _rate(num: int, den: int) -> float:
-        return float(num) / float(den) if den else 0.0
 
     return {
         "rows": merged_rows,
@@ -543,6 +797,7 @@ def _eval_one_side(
         eval_rows: list[dict[str, Any]] = []
         for row, output_text in zip(split_rows, generated):
             classified = _classify(row, output_text)
+            labels = _build_preaggregation_labels(row, classified)
             eval_rows.append(
                 {
                     "split": split_name,
@@ -552,7 +807,9 @@ def _eval_one_side(
                     "expected_tool": row.expected_tool,
                     "expected_no_call": row.expected_no_call,
                     "expected_tool_names": row.expected_tool_names,
+                    "expected_primary_tool_name": _primary_expected_tool_name(row) or None,
                     "expected_arguments": row.expected_args,
+                    **labels,
                     "eval": classified,
                 }
             )
@@ -683,6 +940,13 @@ def main() -> int:
             entry["adapter"] = payload["adapter"]
         comparison_rows.append(entry)
 
+    detector_side_name, detector_summary, detector_rows = _select_detector_side(
+        base_summary=base_summary,
+        base_rows=base_rows,
+        adapter_summary=adapter_summary,
+        adapter_rows=adapter_rows,
+    )
+
     result = {
         "generated_utc": _now_utc(),
         "manifest_path": str(manifest_path),
@@ -692,6 +956,9 @@ def main() -> int:
         "base": base_summary,
         "adapter": adapter_summary,
         "delta_adapter_minus_base": deltas,
+        "detector_summary_side": detector_side_name,
+        "metrics": _build_detector_metrics(detector_summary),
+        "failure_profile": _build_failure_profile(detector_rows),
     }
 
     _write_json(out_dir / "summary.json", result)
