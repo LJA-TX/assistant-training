@@ -1,0 +1,75 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-03T13:01:56Z",
+  "status": "catastrophic_halt",
+  "threshold_profile_id": "stage_b_v1_geometry_mapping_collapse_profile",
+  "threshold_profile_digest": "9ca7b94f73667d6a779be0df03cde14c9afe8f2aaf827d0de8fea96db0e2c7e7",
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "stage_b_v1_geometry_successor_probe",
+    "cell_id": "cell_live_lh_nocall_low_readfile_high_v1",
+    "axis_levels": {
+      "no_call_pressure": "low",
+      "read_file_counterweight": "high",
+      "rg_search_contrastive": "low",
+      "uncertainty_conditioning": "zero"
+    },
+    "weighting_mode": "deterministic_weighted_sampler_sidecar_overlay",
+    "declared_exposure_units": {
+      "no_call_adversarial_family": 10,
+      "read_file_symbol_name_family": 10,
+      "valid_rg_search_contrastive_family": 10,
+      "uncertainty_conditioning_family": 0
+    }
+  },
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": "b0614eb0d3003bd8872c6ccfe8191516e85dad429f2b8030a6731709b3ceb2e8",
+  "geometry_context_input_digest": "dff1885f76feb183023d1ce512e416c540c0973bb9cf61fe3d876655b86976df",
+  "geometry_context_digest": "dff1885f76feb183023d1ce512e416c540c0973bb9cf61fe3d876655b86976df",
+  "geometry_context_digest_alias_of": "geometry_context_input_digest",
+  "inputs": {
+    "eval_summary_path": "/opt/ai-stack/assistant-training/evals/runs/stage_b_v1_geometry_probe_lh_eval/summary.json",
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "baseline_summary_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_i10r_counterbalanced_probe_canonical_eval_summary.json",
+    "geometry_context_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_successor_probe_geometry_context_input.json"
+  },
+  "decision_breakdown": {
+    "hard_invariant_violation_count": 2,
+    "catastrophic_trigger_count": 2,
+    "tradeoff_watch_warning_count": 1,
+    "noncomputable_rule_count": 0
+  },
+  "noncomputable_metrics": {
+    "eval_summary": [],
+    "baseline_summary": []
+  },
+  "noncomputable_rules": [],
+  "noncomputable_policy_applied": {
+    "missing_baseline_policy": "fail_fast",
+    "noncomputable_status": "halt_progression",
+    "noncomputable_rule_count": 0,
+    "noncomputable_metric_count": 0
+  },
+  "active_rule_ids": {
+    "hard_invariant_violations": [
+      "no_call_correctness_aggregate_lt_1_0",
+      "no_call_correctness_adversarial_lt_1_0"
+    ],
+    "catastrophic_triggers": [
+      "invalid_json_overall_gte_0_35",
+      "read_file_exact_valid_rate_lt_0_40"
+    ],
+    "tradeoff_watch_warnings": [
+      "read_file_exact_valid_rate_lt_0_70"
+    ],
+    "noncomputable_rules": []
+  },
+  "progression_allowed": false,
+  "halt_recommended": true,
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}
