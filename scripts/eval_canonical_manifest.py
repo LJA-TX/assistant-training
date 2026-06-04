@@ -3,10 +3,13 @@ from __future__ import annotations
 
 import argparse
 import gc
+import hashlib
+import importlib.util
 import json
 import os
 import random
 import re
+import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -43,6 +46,15 @@ FAILURE_SUBTYPE_KEYS = (
 LEGACY_ANCHOR_TAXONOMY_MARKER = "legacy_prompt_anchor_bucket_v1"
 EVALUATOR_PREAGGREGATION_OWNER = "evaluator_pre_aggregation_v1"
 DATASET_METADATA_OWNER = "dataset_metadata"
+FAMILY_A_FAILURE_TAXONOMY_MARKER = "family_a_failure_taxonomy_v1"
+FAMILY_A_SCORER_SEMANTICS_MARKER = "canonical_eval_manifest_stage_c_package1_v1"
+
+STAGE_C_ROW_FACT_ARTIFACT_NAME = "stage_c_row_fact_metadata_artifact.json"
+STAGE_C_FAMILY_A_SCORER_ARTIFACT_NAME = "stage_c_family_a_scorer_evidence_artifact.json"
+STAGE_C_GOVERNANCE_GUARDRAILS_ARTIFACT_NAME = "stage_c_governance_guardrails_artifact.json"
+STAGE_C_RUNTIME_CONTRACT_SUMMARY_ARTIFACT_NAME = "stage_c_runtime_contract_summary_artifact.json"
+
+_STAGE_C1_FOUNDATION = None
 
 
 @dataclass
@@ -63,6 +75,28 @@ class EvalRow:
 
 def _now_utc() -> str:
     return datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _load_stage_c1_foundation():
+    global _STAGE_C1_FOUNDATION
+    if _STAGE_C1_FOUNDATION is not None:
+        return _STAGE_C1_FOUNDATION
+
+    module_name = "stage_c1_evaluator_foundation"
+    existing = sys.modules.get(module_name)
+    if existing is not None:
+        _STAGE_C1_FOUNDATION = existing
+        return _STAGE_C1_FOUNDATION
+
+    module_path = Path(__file__).resolve().parent / "stage_c1_evaluator_foundation.py"
+    spec = importlib.util.spec_from_file_location(module_name, str(module_path))
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"unable to load Stage C1 foundation at {module_path}")
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = mod
+    spec.loader.exec_module(mod)
+    _STAGE_C1_FOUNDATION = mod
+    return _STAGE_C1_FOUNDATION
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -249,6 +283,267 @@ def _coerce_optional_bool(value: Any) -> bool | None:
         if lowered in {"false", "0", "no"}:
             return False
     return None
+
+
+def _nonempty_str(value: Any) -> str | None:
+    if not isinstance(value, str):
+        return None
+    stripped = value.strip()
+    return stripped or None
+
+
+def _first_declared_str(meta: dict[str, Any], keys: tuple[str, ...]) -> str | None:
+    for key in keys:
+        value = _nonempty_str(meta.get(key))
+        if value is not None:
+            return value
+    return None
+
+
+def _stage_c_row_id(row: EvalRow) -> str:
+    return f"{row.split}:{row.row_index_1based}"
+
+
+def _stage_c_manifest_identity(manifest: dict[str, Any], manifest_path: Path) -> tuple[str, str]:
+    runtime = manifest.get("runtime", {})
+    if not isinstance(runtime, dict):
+        runtime = {}
+    dataset_id = _nonempty_str(runtime.get("eval_schema_version")) or manifest_path.name
+    dataset_version = (
+        _nonempty_str(manifest.get("manifest_version"))
+        or _nonempty_str(runtime.get("dataset_manifest_version"))
+        or "unknown"
+    )
+    return dataset_id, dataset_version
+
+
+def _stage_c_row_fact_digest(row: EvalRow) -> str:
+    payload = {
+        "split": row.split,
+        "row_index_1based": row.row_index_1based,
+        "source_case_id": row.source_case_id,
+        "expected_tool": row.expected_tool,
+        "expected_no_call": row.expected_no_call,
+        "expected_tool_names": row.expected_tool_names,
+        "expected_args": row.expected_args,
+        "metadata": row.metadata,
+    }
+    raw = json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+def _declared_symbol_name_membership(row: EvalRow) -> tuple[bool | None, str | None, str | None]:
+    if _primary_expected_tool_name(row) != "read_file":
+        return None, None, None
+
+    meta = row.metadata
+    explicit_owner = _first_declared_str(meta, ("membership_owner", "symbol_name_membership_owner"))
+    explicit_membership = _coerce_optional_bool(meta.get("symbol_name_membership"))
+    if explicit_membership is not None:
+        return explicit_membership, explicit_owner, "metadata.symbol_name_membership"
+
+    explicit_archetype = _first_declared_str(
+        meta,
+        ("read_file_archetype", "eval_read_file_archetype", "intervention_i10_query_archetype"),
+    )
+    if explicit_archetype == "read_file_symbol_name":
+        return True, explicit_owner, "metadata.read_file_archetype"
+    if explicit_archetype is not None:
+        return False, explicit_owner, "metadata.read_file_archetype"
+
+    return None, None, None
+
+
+def _declared_anchor_markers(row: EvalRow) -> tuple[bool, bool | None, str | None, str | None, str | None, str | None]:
+    meta = row.metadata
+    explicit_anchor_eligible = _coerce_optional_bool(meta.get("family_b2_anchor_eligible"))
+    explicit_no_anchor_member = _coerce_optional_bool(meta.get("family_b2_no_anchor_member"))
+    explicit_anchor_category = _first_declared_str(
+        meta,
+        ("family_b2_anchor_category", "anchor_category"),
+    )
+    explicit_assignment_owner = _first_declared_str(meta, ("anchor_assignment_owner",))
+    explicit_taxonomy_owner = _first_declared_str(meta, ("anchor_taxonomy_owner",))
+
+    anchor_eligible = bool(
+        explicit_anchor_eligible is True
+        or explicit_no_anchor_member is not None
+        or explicit_anchor_category is not None
+    )
+    if explicit_anchor_eligible is False:
+        anchor_eligible = False
+
+    declaration_source = None
+    if explicit_anchor_eligible is not None:
+        declaration_source = "metadata.family_b2_anchor_eligible"
+    elif explicit_no_anchor_member is not None:
+        declaration_source = "metadata.family_b2_no_anchor_member"
+    elif explicit_anchor_category is not None:
+        declaration_source = "metadata.family_b2_anchor_category"
+
+    return (
+        anchor_eligible,
+        explicit_no_anchor_member,
+        explicit_anchor_category,
+        explicit_assignment_owner,
+        explicit_taxonomy_owner,
+        declaration_source,
+    )
+
+
+def _stage_c_row_fact_payload(
+    *,
+    manifest: dict[str, Any],
+    manifest_path: Path,
+    row: EvalRow,
+    now_utc: str,
+) -> dict[str, Any]:
+    dataset_id, dataset_version = _stage_c_manifest_identity(manifest, manifest_path)
+    expected_tool_name = _primary_expected_tool_name(row) or None
+    symbol_name_member, symbol_owner, symbol_source = _declared_symbol_name_membership(row)
+    (
+        anchor_eligible,
+        no_anchor_member,
+        anchor_category,
+        anchor_assignment_owner,
+        anchor_taxonomy_owner,
+        anchor_source,
+    ) = _declared_anchor_markers(row)
+
+    read_file_eligible = expected_tool_name == "read_file"
+    denominator_sources = {
+        "eligible_population_source": "canonical_manifest_declared_eval_population",
+        "non_exact_population_source": "stage_c_family_a_scorer_evidence_artifact",
+        "read_file_population_source": "declared_expected_tool_identity" if read_file_eligible else None,
+        "symbol_name_population_source": "declared_symbol_name_membership" if symbol_name_member is not None else None,
+        "anchor_population_source": "declared_family_b2_anchor_membership" if anchor_eligible else None,
+        "no_anchor_population_source": "declared_family_b2_no_anchor_membership" if no_anchor_member is not None else None,
+    }
+
+    evidence = {
+        "source_case_id": row.source_case_id,
+        "split": row.split,
+        "row_index_1based": row.row_index_1based,
+        "expected_tool": row.expected_tool,
+        "expected_no_call": row.expected_no_call,
+        "expected_tool_names": list(row.expected_tool_names),
+        "expected_arguments": list(row.expected_args),
+        "metadata_keys": sorted(row.metadata.keys()),
+        "declared_symbol_name_membership_source": symbol_source,
+        "declared_anchor_membership_source": anchor_source,
+        "guardrail_flags": {
+            "inference_used": False,
+            "substitution_used": False,
+            "reconstruction_used": False,
+        },
+    }
+
+    return {
+        "row_id": _stage_c_row_id(row),
+        "split_id": row.split,
+        "excluded": False,
+        "expected_tool_name": expected_tool_name,
+        "membership_markers": {
+            "family_a_tool_expected_eligible": bool(row.expected_tool),
+            "family_b1_read_file_eligible": read_file_eligible,
+            "family_b1_symbol_name_member": symbol_name_member,
+            "family_b2_anchor_eligible": anchor_eligible,
+            "family_b2_no_anchor_member": no_anchor_member,
+            "family_b2_anchor_category": anchor_category,
+        },
+        "ownership_markers": {
+            "symbol_name_membership_owner": symbol_owner,
+            "anchor_assignment_owner": anchor_assignment_owner,
+            "anchor_taxonomy_owner": anchor_taxonomy_owner,
+            "conflicting_ownership_markers": False,
+            "ownership_conflict_reasons": [],
+        },
+        "provenance": {
+            "row_source": "canonical_eval_live_evaluator",
+            "dataset_id": dataset_id,
+            "dataset_version": dataset_version,
+            "extraction_timestamp_utc": now_utc,
+            "evidence_digest": _stage_c_row_fact_digest(row),
+        },
+        "denominator_provenance": denominator_sources,
+        "evidence": evidence,
+    }
+
+
+def _build_stage_c_row_fact_records(
+    *,
+    stage_c1: Any,
+    manifest: dict[str, Any],
+    manifest_path: Path,
+    rows_by_split: dict[str, list[EvalRow]],
+    now_utc: str,
+) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    for split_rows in rows_by_split.values():
+        for row in split_rows:
+            record = stage_c1.build_row_fact_record(
+                _stage_c_row_fact_payload(
+                    manifest=manifest,
+                    manifest_path=manifest_path,
+                    row=row,
+                    now_utc=now_utc,
+                )
+            )
+            records.append(record.to_dict())
+    return records
+
+
+def _stage_c_family_a_declared_subtype(classified: dict[str, Any]) -> tuple[str | None, tuple[str, ...]]:
+    primary_class = str(classified.get("primary_class") or "")
+    generated = str(classified.get("generated_text") or "")
+    schema_reason = str(classified.get("schema_reason") or "")
+    looks_like_tool_attempt = _looks_like_tool_intent(generated)
+
+    if primary_class == "wrong_tool_name":
+        return "wrong tool name", tuple()
+    if primary_class == "wrong_arguments":
+        return "wrong argument", tuple()
+    if primary_class == "missing_tool_call":
+        return "missing tool call", tuple()
+    if primary_class == "wrapper_leakage":
+        return "wrapper/envelope drift", tuple()
+    if primary_class == "invalid_json":
+        if looks_like_tool_attempt:
+            return "malformed output", tuple()
+        return None, (
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence",
+        )
+    if primary_class == "invalid_schema":
+        if schema_reason in {"missing_tool_calls", "payload_not_object"} and not looks_like_tool_attempt:
+            return None, (
+                "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence",
+            )
+        if schema_reason != "missing_tool_calls" or looks_like_tool_attempt:
+            return "malformed output", tuple()
+        return None, (
+            "current canonical evaluator cannot distinguish schema-invalid tool omission from governed substitution categories",
+        )
+    return None, (
+        "current canonical evaluator lacks approved Family A subtype evidence for this non-exact tool-expected row",
+    )
+
+
+def _build_stage_c_family_a_record(stage_c1: Any, row: EvalRow, classified: dict[str, Any]) -> dict[str, Any]:
+    declared_subtype, missing_reasons = _stage_c_family_a_declared_subtype(classified)
+    record = stage_c1.emit_family_a_scorer_evidence(
+        stage_c1.FamilyAScorerEvidenceInput(
+            row_id=_stage_c_row_id(row),
+            tool_expected_eligibility=bool(row.expected_tool),
+            excluded=False,
+            exact_valid=bool(classified.get("exact_valid", False)),
+            primary_outcome=str(classified.get("primary_class") or ""),
+            failure_taxonomy_marker=FAMILY_A_FAILURE_TAXONOMY_MARKER,
+            scorer_semantics_marker=FAMILY_A_SCORER_SEMANTICS_MARKER,
+            declared_subtype=declared_subtype,
+            missing_evidence_reasons=missing_reasons,
+        )
+    )
+    return record.to_dict()
 
 
 def _anchor_assignment_labels(row: EvalRow) -> tuple[str, str, str]:
@@ -767,6 +1062,159 @@ def _aggregate_split_summaries(per_split: dict[str, dict[str, Any]]) -> dict[str
     }
 
 
+def _build_stage_c_row_fact_artifact(records: list[dict[str, Any]]) -> dict[str, Any]:
+    read_file_rows = [
+        record
+        for record in records
+        if bool(record.get("membership_markers", {}).get("family_b1_read_file_eligible"))
+    ]
+    symbol_declared = sum(
+        1
+        for record in read_file_rows
+        if record.get("membership_markers", {}).get("family_b1_symbol_name_member") is not None
+    )
+    anchor_declared = sum(
+        1
+        for record in records
+        if bool(record.get("membership_markers", {}).get("family_b2_anchor_eligible"))
+    )
+    return {
+        "report_version": "stage_c_package1_row_facts_v1",
+        "artifact_scope": "authoritative_live_canonical_eval_row_facts",
+        "row_fact_count": len(records),
+        "coverage_summary": {
+            "family_a_tool_expected_eligible_count": sum(
+                1
+                for record in records
+                if bool(record.get("membership_markers", {}).get("family_a_tool_expected_eligible"))
+            ),
+            "family_b1_read_file_eligible_count": len(read_file_rows),
+            "family_b1_symbol_name_declared_count": symbol_declared,
+            "family_b1_symbol_name_missing_count": len(read_file_rows) - symbol_declared,
+            "family_b2_anchor_eligible_declared_count": anchor_declared,
+            "family_b2_anchor_eligible_missing_count": len(records) - anchor_declared,
+        },
+        "records": records,
+    }
+
+
+def _build_stage_c_family_a_artifact(records_by_side: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
+    sides: dict[str, Any] = {}
+    for side_name, records in records_by_side.items():
+        if not records:
+            continue
+        subtype_counter = Counter(
+            str(record["subtype_assignment"])
+            for record in records
+            if record.get("subtype_assignment") is not None
+        )
+        missing_reason_counter = Counter(
+            reason
+            for record in records
+            for reason in record.get("missing_evidence_reasons", [])
+        )
+        sides[side_name] = {
+            "record_count": len(records),
+            "tool_expected_eligible_count": sum(
+                1 for record in records if bool(record.get("tool_expected_eligibility"))
+            ),
+            "exact_valid_count": sum(1 for record in records if bool(record.get("exact_valid"))),
+            "non_exact_tool_expected_count": sum(
+                1 for record in records if bool(record.get("non_exact_tool_expected"))
+            ),
+            "subtype_assigned_count": sum(
+                1 for record in records if record.get("subtype_assignment") is not None
+            ),
+            "missing_evidence_count": sum(1 for record in records if bool(record.get("missing_evidence"))),
+            "subtype_counts": dict(sorted(subtype_counter.items())),
+            "missing_evidence_reason_counts": dict(sorted(missing_reason_counter.items())),
+            "records": records,
+        }
+    return {
+        "report_version": "stage_c_package1_family_a_scorer_evidence_v1",
+        "artifact_scope": "authoritative_live_canonical_eval_family_a_scorer_evidence",
+        "failure_taxonomy_marker": FAMILY_A_FAILURE_TAXONOMY_MARKER,
+        "scorer_semantics_marker": FAMILY_A_SCORER_SEMANTICS_MARKER,
+        "sides": sides,
+    }
+
+
+def _build_stage_c_governance_guardrails(
+    row_fact_records: list[dict[str, Any]],
+    family_a_records_by_side: dict[str, list[dict[str, Any]]],
+) -> dict[str, Any]:
+    family_a_record_count = sum(len(records) for records in family_a_records_by_side.values())
+    missing_evidence_count = sum(
+        1
+        for records in family_a_records_by_side.values()
+        for record in records
+        if bool(record.get("missing_evidence"))
+    )
+    return {
+        "guardrail_status": {
+            "inference_behavior_detected": False,
+            "substitution_behavior_detected": False,
+            "reconstruction_behavior_detected": False,
+            "legacy_summary_modified": False,
+            "legacy_detector_surface_modified": False,
+        },
+        "guardrail_counts": {
+            "row_fact_record_count": len(row_fact_records),
+            "family_a_record_count": family_a_record_count,
+            "family_a_missing_evidence_count": missing_evidence_count,
+        },
+    }
+
+
+def _write_stage_c_package1_artifacts(
+    *,
+    out_dir: Path,
+    manifest_path: Path,
+    generated_utc: str,
+    row_fact_records: list[dict[str, Any]],
+    family_a_records_by_side: dict[str, list[dict[str, Any]]],
+) -> dict[str, str]:
+    row_fact_artifact = _build_stage_c_row_fact_artifact(row_fact_records)
+    family_a_artifact = _build_stage_c_family_a_artifact(family_a_records_by_side)
+    governance_guardrails = _build_stage_c_governance_guardrails(
+        row_fact_records=row_fact_records,
+        family_a_records_by_side=family_a_records_by_side,
+    )
+    runtime_summary = {
+        "report_version": "stage_c_package1_live_canonical_evaluator_v1",
+        "artifact_scope": "authoritative_row_fact_and_family_a_emission_only",
+        "generated_utc": generated_utc,
+        "manifest_path": str(manifest_path),
+        "row_fact_count": len(row_fact_records),
+        "family_a_side_record_counts": {
+            side_name: len(records)
+            for side_name, records in sorted(family_a_records_by_side.items())
+            if records
+        },
+        "legacy_surface_policy": {
+            "summary_json": "preserved",
+            "comparison_rows_jsonl": "preserved",
+            "detector_metrics": "unchanged",
+            "threshold_behavior": "unchanged",
+            "comparability_policy": "unchanged",
+        },
+        "guardrail_status": governance_guardrails["guardrail_status"],
+    }
+
+    payloads = {
+        STAGE_C_ROW_FACT_ARTIFACT_NAME: row_fact_artifact,
+        STAGE_C_FAMILY_A_SCORER_ARTIFACT_NAME: family_a_artifact,
+        STAGE_C_GOVERNANCE_GUARDRAILS_ARTIFACT_NAME: governance_guardrails,
+        STAGE_C_RUNTIME_CONTRACT_SUMMARY_ARTIFACT_NAME: runtime_summary,
+    }
+    paths: dict[str, str] = {}
+    for filename, payload in payloads.items():
+        path = out_dir / filename
+        _write_json(path, payload)
+        paths[filename] = str(path)
+    return paths
+
+
 def _release_model(model: Any) -> None:
     try:
         del model
@@ -788,9 +1236,11 @@ def _eval_one_side(
     tokenizer: Any,
     rows_by_split: dict[str, list[EvalRow]],
     decode_cfg: dict[str, Any],
-) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    stage_c1: Any | None = None,
+) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
     per_split_summary: dict[str, Any] = {}
     all_rows: list[dict[str, Any]] = []
+    family_a_records: list[dict[str, Any]] = []
 
     for split_name, split_rows in rows_by_split.items():
         generated = _infer(model, tokenizer, split_rows, decode_cfg)
@@ -798,6 +1248,8 @@ def _eval_one_side(
         for row, output_text in zip(split_rows, generated):
             classified = _classify(row, output_text)
             labels = _build_preaggregation_labels(row, classified)
+            if stage_c1 is not None:
+                family_a_records.append(_build_stage_c_family_a_record(stage_c1, row, classified))
             eval_rows.append(
                 {
                     "split": split_name,
@@ -820,7 +1272,7 @@ def _eval_one_side(
         "side": side_name,
         "per_split": per_split_summary,
         "aggregate": _aggregate_split_summaries(per_split_summary),
-    }, all_rows
+    }, all_rows, family_a_records
 
 
 def _compute_delta(adapter: dict[str, Any], base: dict[str, Any]) -> dict[str, float]:
@@ -897,16 +1349,28 @@ def main() -> int:
         out_dir = manifest_path.parent / "runs" / f"canonical_eval_{stamp}"
         out_dir.mkdir(parents=True, exist_ok=False)
 
-    base_summary, base_rows = _eval_one_side(
+    generated_utc = _now_utc()
+    stage_c1 = _load_stage_c1_foundation()
+    row_fact_records = _build_stage_c_row_fact_records(
+        stage_c1=stage_c1,
+        manifest=manifest,
+        manifest_path=manifest_path,
+        rows_by_split=rows_by_split,
+        now_utc=generated_utc,
+    )
+
+    base_summary, base_rows, base_family_a_records = _eval_one_side(
         side_name="base",
         model=model,
         tokenizer=tokenizer,
         rows_by_split=rows_by_split,
         decode_cfg=decode_cfg,
+        stage_c1=stage_c1,
     )
 
     adapter_summary = None
     adapter_rows: list[dict[str, Any]] = []
+    adapter_family_a_records: list[dict[str, Any]] = []
     deltas = None
 
     if args.adapter_dir:
@@ -914,12 +1378,13 @@ def main() -> int:
 
         adapter_model = PeftModel.from_pretrained(model, str(Path(args.adapter_dir).resolve()))
         adapter_model.eval()
-        adapter_summary, adapter_rows = _eval_one_side(
+        adapter_summary, adapter_rows, adapter_family_a_records = _eval_one_side(
             side_name="adapter",
             model=adapter_model,
             tokenizer=tokenizer,
             rows_by_split=rows_by_split,
             decode_cfg=decode_cfg,
+            stage_c1=stage_c1,
         )
         deltas = _compute_delta(adapter_summary, base_summary)
         _release_model(adapter_model)
@@ -948,7 +1413,7 @@ def main() -> int:
     )
 
     result = {
-        "generated_utc": _now_utc(),
+        "generated_utc": generated_utc,
         "manifest_path": str(manifest_path),
         "model_name_or_path": model_path,
         "adapter_dir": str(Path(args.adapter_dir).resolve()) if args.adapter_dir else None,
@@ -963,6 +1428,16 @@ def main() -> int:
 
     _write_json(out_dir / "summary.json", result)
     _write_jsonl(out_dir / "comparison_rows.jsonl", comparison_rows)
+    _write_stage_c_package1_artifacts(
+        out_dir=out_dir,
+        manifest_path=manifest_path,
+        generated_utc=generated_utc,
+        row_fact_records=row_fact_records,
+        family_a_records_by_side={
+            "base": base_family_a_records,
+            "adapter": adapter_family_a_records,
+        },
+    )
 
     print(json.dumps(result, indent=2, ensure_ascii=False))
     print(json.dumps({"comparison_rows_path": str(out_dir / "comparison_rows.jsonl")}, ensure_ascii=False))
