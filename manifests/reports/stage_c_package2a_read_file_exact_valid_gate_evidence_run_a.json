@@ -1,0 +1,373 @@
+{
+  "bundle_schema_version": "stage_c_package2a_gate_evidence_bundle_v1",
+  "bundle_scope": "stage_c_package2a_full_run_gate_evidence",
+  "focus_surface": "read_file_exact_valid_rate",
+  "bundle_label": "run_a",
+  "run_dir": "/tmp/stage_c_package2a_full_run_a",
+  "runtime_configuration": {
+    "generated_utc": "2026-06-04T12:19:18Z",
+    "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+    "adapter_dir": null,
+    "decode_defaults": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "repetition_penalty": 1.0,
+      "max_new_tokens": 64,
+      "seed": 1234
+    },
+    "detector_summary_side": "base"
+  },
+  "manifest_identity": {
+    "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "manifest_sha256": "5c09163b90ed07d310ed5715cae301797cb2aee7917ec486f727f7f6a24150cf",
+    "manifest_version": "v1",
+    "eval_schema_version": "canonical_eval_manifest_v1",
+    "dataset_manifest_version": "dataset_v1_0_summary",
+    "evaluation_order": [
+      "heldout_validation",
+      "tool_holdout",
+      "no_call",
+      "adversarial",
+      "direct_answer"
+    ],
+    "split_hashes": {
+      "adversarial": "c500b8195722355b54dc7ddb612690daa9ef530ba4b030bcd04c7c2b2b50c5cc",
+      "direct_answer": "969d1d5dde3b17515c45c9a5f4b69beb1d908063f61ce470f778d625b1b1afbd",
+      "heldout_validation": "78d47d4fb974f0f3245eaf81a17a847febc2667da5926bd372f625cd00b127a5",
+      "no_call": "0584f529d86b8b319b2abaaa2410e504d614243f32a56a3a1eae44e8f8768fa7",
+      "tool_holdout": "ca492290645cdf3e374bdd456b9488500c594b080180caae9b3b73fe288d0f45"
+    },
+    "dataset_rows": {
+      "adversarial": 20,
+      "direct_answer": 20,
+      "heldout_validation": 100,
+      "no_call": 20,
+      "tool_holdout": 40
+    }
+  },
+  "raw_artifact_hashes": {
+    "summary_json": "03936b526be52d8823ef85bf696ef3ff8428f19471d7be6cd48e7afffc63b5c8",
+    "comparison_rows_jsonl": "8f8a69042ffaaaa223a97a99cbbdba69f6bef4cb22dd0cbc37880853fa3734f8",
+    "row_fact_metadata": "bc6c79e5105d5e6886a9398b1aaaca223d0727868029bc7eba34fdd6d232d994",
+    "family_a_scorer_evidence": "6b394a7d8abe010d20e6a06c357f25ea3a71e69441a0c2d1b23f486d85c01496",
+    "governance_guardrails": "02279845028aa2bd7c0091d9355f42dcdc44ecaf1bc0d825ee42d5adfda8b528",
+    "runtime_contract_summary": "a1677a64a5e9aee0474dfd8f9c5603b0cf493109a05b245eeb04478a32a7ba18",
+    "package1b_governance_report": "479fd9026321ab897cde439ca9f84d58812ae7f9cc7f6d153b083b421f45b06c",
+    "package1c_reconciliation_report": "b47b8e8c631ba0f26532db2e70c6a7101a45bb08bc3329c6a4febaeadfa8d2ef",
+    "package1d_readiness_report": "a6a2c2b9f0ce733e1442a3853859016590074b6b9fb5c927ad556baa8d52954d"
+  },
+  "normalized_digests": {
+    "summary_semantic_digest": "0e8ea3262ad25ebaec2886329287ddec107e9043f2c7330ed2aeb7173d69efb2",
+    "row_fact_semantic_digest": "c98eaca7bb970d080feb4fdbf3c0284ee9e2a1f9898b817202959530f6424fa0",
+    "focus_reconciliation_digest": "eb5a94f7072797a2c9d2c5b737a0e3a4572e52e21ade7b4a22cab6a82006e3fd",
+    "focus_readiness_digest": "b2c7a9c963417557fb09adacdac1530053ecf51ff5679d830cb1ad3735543f2e",
+    "package1b_semantic_digest": "666fd64c7488c1318820762a1b40461dcedf4697b6b2a664e8fbc993eb4b4ba3"
+  },
+  "row_identity_snapshot": {
+    "row_fact_record_count": 200,
+    "unique_row_id_count": 200,
+    "row_id_digest": "2bcdf0a929456c43ac72470d92234cb969bfeb3de27e9ac160e0099f930fedc4",
+    "read_file_row_id_count": 27,
+    "read_file_row_id_digest": "8473a1afb97fe883249311f605770d69851d21ed484486cf241f96457e73138c",
+    "read_file_row_ids": [
+      "heldout_validation:1",
+      "heldout_validation:11",
+      "heldout_validation:16",
+      "heldout_validation:23",
+      "heldout_validation:25",
+      "heldout_validation:26",
+      "heldout_validation:3",
+      "heldout_validation:33",
+      "heldout_validation:36",
+      "heldout_validation:37",
+      "heldout_validation:40",
+      "heldout_validation:48",
+      "heldout_validation:54",
+      "heldout_validation:56",
+      "heldout_validation:57",
+      "heldout_validation:61",
+      "heldout_validation:63",
+      "heldout_validation:67",
+      "heldout_validation:74",
+      "heldout_validation:78",
+      "heldout_validation:8",
+      "heldout_validation:85",
+      "heldout_validation:86",
+      "heldout_validation:87",
+      "heldout_validation:92",
+      "heldout_validation:97",
+      "heldout_validation:98"
+    ]
+  },
+  "guardrail_results": {
+    "guardrail_status": {
+      "inference_behavior_detected": false,
+      "legacy_detector_surface_modified": false,
+      "legacy_summary_modified": false,
+      "reconstruction_behavior_detected": false,
+      "substitution_behavior_detected": false
+    },
+    "runtime_legacy_surface_policy": {
+      "comparability_policy": "unchanged",
+      "comparison_rows_jsonl": "preserved",
+      "detector_metrics": "unchanged",
+      "summary_json": "preserved",
+      "threshold_behavior": "unchanged"
+    },
+    "guardrails_clear": true
+  },
+  "legacy_surface_snapshot": {
+    "failure_profile_read_file_exact_valid": {
+      "count": 0,
+      "rows": 27,
+      "rate": 0.0
+    },
+    "metrics_aggregate": {
+      "argument_accuracy": 0.0,
+      "exact_json_validity": 0.0,
+      "invalid_json": 0.7,
+      "no_call_correctness": 1.0,
+      "tool_name_accuracy": 0.0,
+      "wrapper_leakage": 0.0
+    }
+  },
+  "package1b_snapshot": {
+    "consumer_scope": "stage_c_package1b_family_a_passive_governance_consumer",
+    "row_fact_record_count": 200,
+    "family_a_tool_expected_population_count": 140,
+    "family_a_missing_evidence_count": 134,
+    "ownership_conflict_row_count": 0,
+    "integrity_checks": {
+      "family_a_row_ids_resolve_to_row_facts": true,
+      "family_a_side_record_count_matches_runtime_summary": true,
+      "guardrails_clear": true,
+      "row_fact_count_matches_runtime_summary": true,
+      "row_id_uniqueness_preserved": true,
+      "tool_expected_row_ids_have_family_a_records": true
+    }
+  },
+  "focus_surface_reconciliation": {
+    "surface_id": "read_file_exact_valid_rate",
+    "reconciliation_status": "aligned",
+    "reason_code": "direct_stage_c_rate_matches_legacy_rate",
+    "reason": "Authoritative read-file eligibility and exact-valid scorer facts reconcile exactly with the legacy read-file exact-valid surface.",
+    "authoritative_source": {
+      "consumption_paths": [
+        "records[].membership_markers.family_b1_read_file_eligible == true",
+        "sides.base.records[].exact_valid joined by row_id"
+      ],
+      "source_state": "available",
+      "value": {
+        "rows": 27,
+        "count": 0,
+        "rate": 0.0,
+        "row_ids": [
+          "heldout_validation:1",
+          "heldout_validation:11",
+          "heldout_validation:16",
+          "heldout_validation:23",
+          "heldout_validation:25",
+          "heldout_validation:26",
+          "heldout_validation:3",
+          "heldout_validation:33",
+          "heldout_validation:36",
+          "heldout_validation:37",
+          "heldout_validation:40",
+          "heldout_validation:48",
+          "heldout_validation:54",
+          "heldout_validation:56",
+          "heldout_validation:57",
+          "heldout_validation:61",
+          "heldout_validation:63",
+          "heldout_validation:67",
+          "heldout_validation:74",
+          "heldout_validation:78",
+          "heldout_validation:8",
+          "heldout_validation:85",
+          "heldout_validation:86",
+          "heldout_validation:87",
+          "heldout_validation:92",
+          "heldout_validation:97",
+          "heldout_validation:98"
+        ],
+        "missing_family_a_row_ids": []
+      }
+    },
+    "legacy_source": {
+      "consumption_path": "failure_profile.read_file_exact_valid",
+      "value": {
+        "rows": 27,
+        "count": 0,
+        "rate": 0.0
+      }
+    },
+    "ownership_authority": {
+      "authoritative": "dataset metadata + scorer consumed by evaluator",
+      "legacy": "legacy evaluator failure_profile"
+    }
+  },
+  "focus_surface_readiness": {
+    "surface_id": "read_file_exact_valid_rate",
+    "readiness_state": "migration-ready",
+    "reasoning": "The authoritative and legacy surfaces reconcile directly, and no active guardrail or policy blocker is visible in the current artifacts.",
+    "blocking_conditions": [],
+    "reconciliation_record": {
+      "surface_id": "read_file_exact_valid_rate",
+      "authoritative_source": {
+        "consumption_paths": [
+          "records[].membership_markers.family_b1_read_file_eligible == true",
+          "sides.base.records[].exact_valid joined by row_id"
+        ],
+        "source_state": "available",
+        "value": {
+          "rows": 27,
+          "count": 0,
+          "rate": 0.0,
+          "row_ids": [
+            "heldout_validation:1",
+            "heldout_validation:11",
+            "heldout_validation:16",
+            "heldout_validation:23",
+            "heldout_validation:25",
+            "heldout_validation:26",
+            "heldout_validation:3",
+            "heldout_validation:33",
+            "heldout_validation:36",
+            "heldout_validation:37",
+            "heldout_validation:40",
+            "heldout_validation:48",
+            "heldout_validation:54",
+            "heldout_validation:56",
+            "heldout_validation:57",
+            "heldout_validation:61",
+            "heldout_validation:63",
+            "heldout_validation:67",
+            "heldout_validation:74",
+            "heldout_validation:78",
+            "heldout_validation:8",
+            "heldout_validation:85",
+            "heldout_validation:86",
+            "heldout_validation:87",
+            "heldout_validation:92",
+            "heldout_validation:97",
+            "heldout_validation:98"
+          ],
+          "missing_family_a_row_ids": []
+        }
+      },
+      "legacy_source": {
+        "consumption_path": "failure_profile.read_file_exact_valid",
+        "value": {
+          "rows": 27,
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "ownership_authority": {
+        "authoritative": "dataset metadata + scorer consumed by evaluator",
+        "legacy": "legacy evaluator failure_profile"
+      },
+      "reconciliation_status": "aligned",
+      "reason_code": "direct_stage_c_rate_matches_legacy_rate",
+      "reason": "Authoritative read-file eligibility and exact-valid scorer facts reconcile exactly with the legacy read-file exact-valid surface."
+    },
+    "authoritative_support": {
+      "read_file_row_ids": [
+        "heldout_validation:1",
+        "heldout_validation:11",
+        "heldout_validation:16",
+        "heldout_validation:23",
+        "heldout_validation:25",
+        "heldout_validation:26",
+        "heldout_validation:3",
+        "heldout_validation:33",
+        "heldout_validation:36",
+        "heldout_validation:37",
+        "heldout_validation:40",
+        "heldout_validation:48",
+        "heldout_validation:54",
+        "heldout_validation:56",
+        "heldout_validation:57",
+        "heldout_validation:61",
+        "heldout_validation:63",
+        "heldout_validation:67",
+        "heldout_validation:74",
+        "heldout_validation:78",
+        "heldout_validation:8",
+        "heldout_validation:85",
+        "heldout_validation:86",
+        "heldout_validation:87",
+        "heldout_validation:92",
+        "heldout_validation:97",
+        "heldout_validation:98"
+      ],
+      "missing_family_a_row_ids": [],
+      "exact_valid_count": 0
+    },
+    "integrity_checks": {
+      "family_a_rows_resolve_to_row_facts": true,
+      "guardrails_clear": true,
+      "legacy_surface_policy_preserved": true,
+      "package1c_surface_count_matches": true,
+      "row_id_uniqueness_preserved": true
+    },
+    "readiness_counts": {
+      "insufficient-evidence": 1,
+      "migration-blocked": 1,
+      "migration-ready": 1,
+      "not-comparable": 1
+    }
+  },
+  "dependency_inventory": {
+    "focus_surface": "read_file_exact_valid_rate",
+    "legacy_metric_path": "failure_profile.read_file_exact_valid.rate",
+    "threshold_profile_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json",
+    "threshold_consumers": {
+      "catastrophic_rules": [
+        {
+          "rule_id": "read_file_exact_valid_rate_lt_0_40",
+          "basis": "absolute",
+          "comparator": "lt",
+          "threshold": 0.4
+        }
+      ],
+      "watch_rules": [
+        {
+          "rule_id": "read_file_exact_valid_rate_lt_0_70",
+          "basis": "absolute",
+          "comparator": "lt",
+          "threshold": 0.7
+        }
+      ]
+    },
+    "detector_consumers": [
+      {
+        "path": "scripts/post_eval_collapse_detector.py",
+        "function": "_resolve_metric_from_catalog",
+        "role": "resolves failure_profile.read_file_exact_valid.rate from the threshold profile metric catalog"
+      },
+      {
+        "path": "scripts/post_eval_collapse_detector.py",
+        "function": "_resolve_required_metrics",
+        "role": "collects current-run metric dependencies for active threshold rules touching read_file_exact_valid_rate"
+      },
+      {
+        "path": "scripts/post_eval_collapse_detector.py",
+        "function": "_run_detector",
+        "role": "evaluates read_file_exact_valid_rate against catastrophic and watch rule groups from the threshold profile"
+      }
+    ]
+  },
+  "supporting_artifacts": {
+    "summary_json": "/tmp/stage_c_package2a_full_run_a/summary.json",
+    "comparison_rows_jsonl": "/tmp/stage_c_package2a_full_run_a/comparison_rows.jsonl",
+    "row_fact_metadata": "/tmp/stage_c_package2a_full_run_a/stage_c_row_fact_metadata_artifact.json",
+    "family_a_scorer_evidence": "/tmp/stage_c_package2a_full_run_a/stage_c_family_a_scorer_evidence_artifact.json",
+    "governance_guardrails": "/tmp/stage_c_package2a_full_run_a/stage_c_governance_guardrails_artifact.json",
+    "runtime_contract_summary": "/tmp/stage_c_package2a_full_run_a/stage_c_runtime_contract_summary_artifact.json",
+    "package1b_governance_report": "/tmp/stage_c_package2a_full_run_a/stage_c_package1b_passive_governance_report.json",
+    "package1c_reconciliation_report": "/tmp/stage_c_package2a_full_run_a/stage_c_package1c_passive_reconciliation_report.json",
+    "package1d_readiness_report": "/tmp/stage_c_package2a_full_run_a/stage_c_package1d_migration_readiness_assessment.json"
+  }
+}

@@ -1,0 +1,539 @@
+{
+  "comparison_schema_version": "stage_c_package2a_gate_evidence_stability_v1",
+  "comparison_scope": "stage_c_package2a_full_run_gate_evidence_stability",
+  "focus_surface": "read_file_exact_valid_rate",
+  "left_bundle_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_c_package2a_read_file_exact_valid_gate_evidence_run_a.json",
+  "right_bundle_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_c_package2a_read_file_exact_valid_gate_evidence_run_b.json",
+  "left_bundle_label": "run_a",
+  "right_bundle_label": "run_b",
+  "stability_findings": {
+    "manifest_identity_stable": true,
+    "runtime_configuration_stable": true,
+    "summary_semantic_digest_stable": true,
+    "row_fact_semantic_digest_stable": true,
+    "comparison_rows_hash_stable": true,
+    "row_identity_stable": true,
+    "read_file_row_identity_stable": true,
+    "package1b_snapshot_stable": true,
+    "focus_reconciliation_stable": true,
+    "focus_reconciliation_aligned_both": true,
+    "focus_readiness_stable": true,
+    "focus_readiness_migration_ready_both": true,
+    "guardrails_clear_both": true,
+    "legacy_surface_stable": true,
+    "readiness_integrity_checks_stable": true
+  },
+  "raw_hash_comparison": {
+    "comparison_rows_jsonl": {
+      "left": "8f8a69042ffaaaa223a97a99cbbdba69f6bef4cb22dd0cbc37880853fa3734f8",
+      "right": "8f8a69042ffaaaa223a97a99cbbdba69f6bef4cb22dd0cbc37880853fa3734f8",
+      "equal": true
+    },
+    "family_a_scorer_evidence": {
+      "left": "6b394a7d8abe010d20e6a06c357f25ea3a71e69441a0c2d1b23f486d85c01496",
+      "right": "6b394a7d8abe010d20e6a06c357f25ea3a71e69441a0c2d1b23f486d85c01496",
+      "equal": true
+    },
+    "governance_guardrails": {
+      "left": "02279845028aa2bd7c0091d9355f42dcdc44ecaf1bc0d825ee42d5adfda8b528",
+      "right": "02279845028aa2bd7c0091d9355f42dcdc44ecaf1bc0d825ee42d5adfda8b528",
+      "equal": true
+    },
+    "package1b_governance_report": {
+      "left": "479fd9026321ab897cde439ca9f84d58812ae7f9cc7f6d153b083b421f45b06c",
+      "right": "57847376bf96dd23a94fee8bbadb3202c1d6271cf17b864b87cf3d9738e761e0",
+      "equal": false
+    },
+    "package1c_reconciliation_report": {
+      "left": "b47b8e8c631ba0f26532db2e70c6a7101a45bb08bc3329c6a4febaeadfa8d2ef",
+      "right": "e41cf49414acd0f5947a60ea0a7916bf4db9ff1ff0f38a922a5d54d625f0ce64",
+      "equal": false
+    },
+    "package1d_readiness_report": {
+      "left": "a6a2c2b9f0ce733e1442a3853859016590074b6b9fb5c927ad556baa8d52954d",
+      "right": "7b0c3b4b68a443708a080ecb9d82effa4366f436ced0728669afdd74f95e950b",
+      "equal": false
+    },
+    "row_fact_metadata": {
+      "left": "bc6c79e5105d5e6886a9398b1aaaca223d0727868029bc7eba34fdd6d232d994",
+      "right": "8d39ba4a5cce03253dd884f734a103487ebd740a307b2b0b453418f07d2ab701",
+      "equal": false
+    },
+    "runtime_contract_summary": {
+      "left": "a1677a64a5e9aee0474dfd8f9c5603b0cf493109a05b245eeb04478a32a7ba18",
+      "right": "1c46772a5dd16c18fa34037d1ab6b2093acac6d2148ddf6e2ac5c76952c4b081",
+      "equal": false
+    },
+    "summary_json": {
+      "left": "03936b526be52d8823ef85bf696ef3ff8428f19471d7be6cd48e7afffc63b5c8",
+      "right": "f877894204efede72a70bc65957e43d03163d3e2c6878a8b219950822e1c0a50",
+      "equal": false
+    }
+  },
+  "focus_surface_summary": {
+    "left": {
+      "legacy_surface_snapshot": {
+        "count": 0,
+        "rows": 27,
+        "rate": 0.0
+      },
+      "reconciliation": {
+        "surface_id": "read_file_exact_valid_rate",
+        "reconciliation_status": "aligned",
+        "reason_code": "direct_stage_c_rate_matches_legacy_rate",
+        "reason": "Authoritative read-file eligibility and exact-valid scorer facts reconcile exactly with the legacy read-file exact-valid surface.",
+        "authoritative_source": {
+          "consumption_paths": [
+            "records[].membership_markers.family_b1_read_file_eligible == true",
+            "sides.base.records[].exact_valid joined by row_id"
+          ],
+          "source_state": "available",
+          "value": {
+            "rows": 27,
+            "count": 0,
+            "rate": 0.0,
+            "row_ids": [
+              "heldout_validation:1",
+              "heldout_validation:11",
+              "heldout_validation:16",
+              "heldout_validation:23",
+              "heldout_validation:25",
+              "heldout_validation:26",
+              "heldout_validation:3",
+              "heldout_validation:33",
+              "heldout_validation:36",
+              "heldout_validation:37",
+              "heldout_validation:40",
+              "heldout_validation:48",
+              "heldout_validation:54",
+              "heldout_validation:56",
+              "heldout_validation:57",
+              "heldout_validation:61",
+              "heldout_validation:63",
+              "heldout_validation:67",
+              "heldout_validation:74",
+              "heldout_validation:78",
+              "heldout_validation:8",
+              "heldout_validation:85",
+              "heldout_validation:86",
+              "heldout_validation:87",
+              "heldout_validation:92",
+              "heldout_validation:97",
+              "heldout_validation:98"
+            ],
+            "missing_family_a_row_ids": []
+          }
+        },
+        "legacy_source": {
+          "consumption_path": "failure_profile.read_file_exact_valid",
+          "value": {
+            "rows": 27,
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "ownership_authority": {
+          "authoritative": "dataset metadata + scorer consumed by evaluator",
+          "legacy": "legacy evaluator failure_profile"
+        }
+      },
+      "readiness": {
+        "surface_id": "read_file_exact_valid_rate",
+        "readiness_state": "migration-ready",
+        "reasoning": "The authoritative and legacy surfaces reconcile directly, and no active guardrail or policy blocker is visible in the current artifacts.",
+        "blocking_conditions": [],
+        "reconciliation_record": {
+          "surface_id": "read_file_exact_valid_rate",
+          "authoritative_source": {
+            "consumption_paths": [
+              "records[].membership_markers.family_b1_read_file_eligible == true",
+              "sides.base.records[].exact_valid joined by row_id"
+            ],
+            "source_state": "available",
+            "value": {
+              "rows": 27,
+              "count": 0,
+              "rate": 0.0,
+              "row_ids": [
+                "heldout_validation:1",
+                "heldout_validation:11",
+                "heldout_validation:16",
+                "heldout_validation:23",
+                "heldout_validation:25",
+                "heldout_validation:26",
+                "heldout_validation:3",
+                "heldout_validation:33",
+                "heldout_validation:36",
+                "heldout_validation:37",
+                "heldout_validation:40",
+                "heldout_validation:48",
+                "heldout_validation:54",
+                "heldout_validation:56",
+                "heldout_validation:57",
+                "heldout_validation:61",
+                "heldout_validation:63",
+                "heldout_validation:67",
+                "heldout_validation:74",
+                "heldout_validation:78",
+                "heldout_validation:8",
+                "heldout_validation:85",
+                "heldout_validation:86",
+                "heldout_validation:87",
+                "heldout_validation:92",
+                "heldout_validation:97",
+                "heldout_validation:98"
+              ],
+              "missing_family_a_row_ids": []
+            }
+          },
+          "legacy_source": {
+            "consumption_path": "failure_profile.read_file_exact_valid",
+            "value": {
+              "rows": 27,
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "ownership_authority": {
+            "authoritative": "dataset metadata + scorer consumed by evaluator",
+            "legacy": "legacy evaluator failure_profile"
+          },
+          "reconciliation_status": "aligned",
+          "reason_code": "direct_stage_c_rate_matches_legacy_rate",
+          "reason": "Authoritative read-file eligibility and exact-valid scorer facts reconcile exactly with the legacy read-file exact-valid surface."
+        },
+        "authoritative_support": {
+          "read_file_row_ids": [
+            "heldout_validation:1",
+            "heldout_validation:11",
+            "heldout_validation:16",
+            "heldout_validation:23",
+            "heldout_validation:25",
+            "heldout_validation:26",
+            "heldout_validation:3",
+            "heldout_validation:33",
+            "heldout_validation:36",
+            "heldout_validation:37",
+            "heldout_validation:40",
+            "heldout_validation:48",
+            "heldout_validation:54",
+            "heldout_validation:56",
+            "heldout_validation:57",
+            "heldout_validation:61",
+            "heldout_validation:63",
+            "heldout_validation:67",
+            "heldout_validation:74",
+            "heldout_validation:78",
+            "heldout_validation:8",
+            "heldout_validation:85",
+            "heldout_validation:86",
+            "heldout_validation:87",
+            "heldout_validation:92",
+            "heldout_validation:97",
+            "heldout_validation:98"
+          ],
+          "missing_family_a_row_ids": [],
+          "exact_valid_count": 0
+        },
+        "integrity_checks": {
+          "family_a_rows_resolve_to_row_facts": true,
+          "guardrails_clear": true,
+          "legacy_surface_policy_preserved": true,
+          "package1c_surface_count_matches": true,
+          "row_id_uniqueness_preserved": true
+        },
+        "readiness_counts": {
+          "insufficient-evidence": 1,
+          "migration-blocked": 1,
+          "migration-ready": 1,
+          "not-comparable": 1
+        }
+      },
+      "guardrail_results": {
+        "guardrail_status": {
+          "inference_behavior_detected": false,
+          "legacy_detector_surface_modified": false,
+          "legacy_summary_modified": false,
+          "reconstruction_behavior_detected": false,
+          "substitution_behavior_detected": false
+        },
+        "runtime_legacy_surface_policy": {
+          "comparability_policy": "unchanged",
+          "comparison_rows_jsonl": "preserved",
+          "detector_metrics": "unchanged",
+          "summary_json": "preserved",
+          "threshold_behavior": "unchanged"
+        },
+        "guardrails_clear": true
+      },
+      "row_identity_snapshot": {
+        "row_fact_record_count": 200,
+        "unique_row_id_count": 200,
+        "row_id_digest": "2bcdf0a929456c43ac72470d92234cb969bfeb3de27e9ac160e0099f930fedc4",
+        "read_file_row_id_count": 27,
+        "read_file_row_id_digest": "8473a1afb97fe883249311f605770d69851d21ed484486cf241f96457e73138c",
+        "read_file_row_ids": [
+          "heldout_validation:1",
+          "heldout_validation:11",
+          "heldout_validation:16",
+          "heldout_validation:23",
+          "heldout_validation:25",
+          "heldout_validation:26",
+          "heldout_validation:3",
+          "heldout_validation:33",
+          "heldout_validation:36",
+          "heldout_validation:37",
+          "heldout_validation:40",
+          "heldout_validation:48",
+          "heldout_validation:54",
+          "heldout_validation:56",
+          "heldout_validation:57",
+          "heldout_validation:61",
+          "heldout_validation:63",
+          "heldout_validation:67",
+          "heldout_validation:74",
+          "heldout_validation:78",
+          "heldout_validation:8",
+          "heldout_validation:85",
+          "heldout_validation:86",
+          "heldout_validation:87",
+          "heldout_validation:92",
+          "heldout_validation:97",
+          "heldout_validation:98"
+        ]
+      }
+    },
+    "right": {
+      "legacy_surface_snapshot": {
+        "count": 0,
+        "rows": 27,
+        "rate": 0.0
+      },
+      "reconciliation": {
+        "surface_id": "read_file_exact_valid_rate",
+        "reconciliation_status": "aligned",
+        "reason_code": "direct_stage_c_rate_matches_legacy_rate",
+        "reason": "Authoritative read-file eligibility and exact-valid scorer facts reconcile exactly with the legacy read-file exact-valid surface.",
+        "authoritative_source": {
+          "consumption_paths": [
+            "records[].membership_markers.family_b1_read_file_eligible == true",
+            "sides.base.records[].exact_valid joined by row_id"
+          ],
+          "source_state": "available",
+          "value": {
+            "rows": 27,
+            "count": 0,
+            "rate": 0.0,
+            "row_ids": [
+              "heldout_validation:1",
+              "heldout_validation:11",
+              "heldout_validation:16",
+              "heldout_validation:23",
+              "heldout_validation:25",
+              "heldout_validation:26",
+              "heldout_validation:3",
+              "heldout_validation:33",
+              "heldout_validation:36",
+              "heldout_validation:37",
+              "heldout_validation:40",
+              "heldout_validation:48",
+              "heldout_validation:54",
+              "heldout_validation:56",
+              "heldout_validation:57",
+              "heldout_validation:61",
+              "heldout_validation:63",
+              "heldout_validation:67",
+              "heldout_validation:74",
+              "heldout_validation:78",
+              "heldout_validation:8",
+              "heldout_validation:85",
+              "heldout_validation:86",
+              "heldout_validation:87",
+              "heldout_validation:92",
+              "heldout_validation:97",
+              "heldout_validation:98"
+            ],
+            "missing_family_a_row_ids": []
+          }
+        },
+        "legacy_source": {
+          "consumption_path": "failure_profile.read_file_exact_valid",
+          "value": {
+            "rows": 27,
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "ownership_authority": {
+          "authoritative": "dataset metadata + scorer consumed by evaluator",
+          "legacy": "legacy evaluator failure_profile"
+        }
+      },
+      "readiness": {
+        "surface_id": "read_file_exact_valid_rate",
+        "readiness_state": "migration-ready",
+        "reasoning": "The authoritative and legacy surfaces reconcile directly, and no active guardrail or policy blocker is visible in the current artifacts.",
+        "blocking_conditions": [],
+        "reconciliation_record": {
+          "surface_id": "read_file_exact_valid_rate",
+          "authoritative_source": {
+            "consumption_paths": [
+              "records[].membership_markers.family_b1_read_file_eligible == true",
+              "sides.base.records[].exact_valid joined by row_id"
+            ],
+            "source_state": "available",
+            "value": {
+              "rows": 27,
+              "count": 0,
+              "rate": 0.0,
+              "row_ids": [
+                "heldout_validation:1",
+                "heldout_validation:11",
+                "heldout_validation:16",
+                "heldout_validation:23",
+                "heldout_validation:25",
+                "heldout_validation:26",
+                "heldout_validation:3",
+                "heldout_validation:33",
+                "heldout_validation:36",
+                "heldout_validation:37",
+                "heldout_validation:40",
+                "heldout_validation:48",
+                "heldout_validation:54",
+                "heldout_validation:56",
+                "heldout_validation:57",
+                "heldout_validation:61",
+                "heldout_validation:63",
+                "heldout_validation:67",
+                "heldout_validation:74",
+                "heldout_validation:78",
+                "heldout_validation:8",
+                "heldout_validation:85",
+                "heldout_validation:86",
+                "heldout_validation:87",
+                "heldout_validation:92",
+                "heldout_validation:97",
+                "heldout_validation:98"
+              ],
+              "missing_family_a_row_ids": []
+            }
+          },
+          "legacy_source": {
+            "consumption_path": "failure_profile.read_file_exact_valid",
+            "value": {
+              "rows": 27,
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "ownership_authority": {
+            "authoritative": "dataset metadata + scorer consumed by evaluator",
+            "legacy": "legacy evaluator failure_profile"
+          },
+          "reconciliation_status": "aligned",
+          "reason_code": "direct_stage_c_rate_matches_legacy_rate",
+          "reason": "Authoritative read-file eligibility and exact-valid scorer facts reconcile exactly with the legacy read-file exact-valid surface."
+        },
+        "authoritative_support": {
+          "read_file_row_ids": [
+            "heldout_validation:1",
+            "heldout_validation:11",
+            "heldout_validation:16",
+            "heldout_validation:23",
+            "heldout_validation:25",
+            "heldout_validation:26",
+            "heldout_validation:3",
+            "heldout_validation:33",
+            "heldout_validation:36",
+            "heldout_validation:37",
+            "heldout_validation:40",
+            "heldout_validation:48",
+            "heldout_validation:54",
+            "heldout_validation:56",
+            "heldout_validation:57",
+            "heldout_validation:61",
+            "heldout_validation:63",
+            "heldout_validation:67",
+            "heldout_validation:74",
+            "heldout_validation:78",
+            "heldout_validation:8",
+            "heldout_validation:85",
+            "heldout_validation:86",
+            "heldout_validation:87",
+            "heldout_validation:92",
+            "heldout_validation:97",
+            "heldout_validation:98"
+          ],
+          "missing_family_a_row_ids": [],
+          "exact_valid_count": 0
+        },
+        "integrity_checks": {
+          "family_a_rows_resolve_to_row_facts": true,
+          "guardrails_clear": true,
+          "legacy_surface_policy_preserved": true,
+          "package1c_surface_count_matches": true,
+          "row_id_uniqueness_preserved": true
+        },
+        "readiness_counts": {
+          "insufficient-evidence": 1,
+          "migration-blocked": 1,
+          "migration-ready": 1,
+          "not-comparable": 1
+        }
+      },
+      "guardrail_results": {
+        "guardrail_status": {
+          "inference_behavior_detected": false,
+          "legacy_detector_surface_modified": false,
+          "legacy_summary_modified": false,
+          "reconstruction_behavior_detected": false,
+          "substitution_behavior_detected": false
+        },
+        "runtime_legacy_surface_policy": {
+          "comparability_policy": "unchanged",
+          "comparison_rows_jsonl": "preserved",
+          "detector_metrics": "unchanged",
+          "summary_json": "preserved",
+          "threshold_behavior": "unchanged"
+        },
+        "guardrails_clear": true
+      },
+      "row_identity_snapshot": {
+        "row_fact_record_count": 200,
+        "unique_row_id_count": 200,
+        "row_id_digest": "2bcdf0a929456c43ac72470d92234cb969bfeb3de27e9ac160e0099f930fedc4",
+        "read_file_row_id_count": 27,
+        "read_file_row_id_digest": "8473a1afb97fe883249311f605770d69851d21ed484486cf241f96457e73138c",
+        "read_file_row_ids": [
+          "heldout_validation:1",
+          "heldout_validation:11",
+          "heldout_validation:16",
+          "heldout_validation:23",
+          "heldout_validation:25",
+          "heldout_validation:26",
+          "heldout_validation:3",
+          "heldout_validation:33",
+          "heldout_validation:36",
+          "heldout_validation:37",
+          "heldout_validation:40",
+          "heldout_validation:48",
+          "heldout_validation:54",
+          "heldout_validation:56",
+          "heldout_validation:57",
+          "heldout_validation:61",
+          "heldout_validation:63",
+          "heldout_validation:67",
+          "heldout_validation:74",
+          "heldout_validation:78",
+          "heldout_validation:8",
+          "heldout_validation:85",
+          "heldout_validation:86",
+          "heldout_validation:87",
+          "heldout_validation:92",
+          "heldout_validation:97",
+          "heldout_validation:98"
+        ]
+      }
+    }
+  }
+}
