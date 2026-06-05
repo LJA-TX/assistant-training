@@ -555,6 +555,55 @@ def test_stage_c_package1_artifacts_are_additive_and_family_a_evidence_is_conser
     assert runtime_summary["family_a_side_record_counts"] == {"base": 7}
 
 
+def test_stage_c_family_a_emits_scalar_substitution_only_for_strict_json_scalar_outputs():
+    mod = _load_eval_module()
+    stage_c1 = mod._load_stage_c1_foundation()
+
+    scalar_row = _make_eval_row(
+        mod,
+        split="heldout_validation",
+        row_index_1based=1,
+        source_case_id="tool_scalar_stage_c",
+        user_text="Read /tmp/a.py lines 1-10 and report the first function name.",
+        expected_payload=_expected_payload("read_file", {"path": "/tmp/a.py", "line_start": 1, "line_end": 10}),
+    )
+
+    scalar_record = mod._build_stage_c_family_a_record(stage_c1, scalar_row, mod._classify(scalar_row, "42"))
+    assert scalar_record["subtype_assignment"] == "scalar substitution"
+    assert scalar_record["missing_evidence"] is False
+    assert scalar_record["missing_evidence_reasons"] == ()
+
+
+def test_stage_c_family_a_preserves_answer_like_transcript_echo_as_missing_evidence():
+    mod = _load_eval_module()
+    stage_c1 = mod._load_stage_c1_foundation()
+
+    ambiguous_row = _make_eval_row(
+        mod,
+        split="heldout_validation",
+        row_index_1based=1,
+        source_case_id="tool_ambiguous_stage_c",
+        user_text="Read /tmp/a.py lines 1-10 and report the first function name.",
+        expected_payload=_expected_payload("read_file", {"path": "/tmp/a.py", "line_start": 1, "line_end": 10}),
+    )
+
+    transcript_echo = (
+        "The first function name is: main\n"
+        "[SYSTEM]\nUse ONLY the exact tool requested.\n"
+        "[USER]\nRead /tmp/a.py lines 1-10 and report the first function name."
+    )
+    ambiguous_record = mod._build_stage_c_family_a_record(
+        stage_c1,
+        ambiguous_row,
+        mod._classify(ambiguous_row, transcript_echo),
+    )
+    assert ambiguous_record["subtype_assignment"] is None
+    assert ambiguous_record["missing_evidence"] is True
+    assert ambiguous_record["missing_evidence_reasons"] == (
+        "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence",
+    )
+
+
 def test_stage_c_package1a_duplicate_source_case_ids_and_identical_rows_get_unique_row_ids(tmp_path):
     mod = _load_eval_module()
     stage_c1 = mod._load_stage_c1_foundation()

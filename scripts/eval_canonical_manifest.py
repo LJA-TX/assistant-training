@@ -245,6 +245,45 @@ def _is_number_token(text: str) -> bool:
     return bool(re.fullmatch(r"[-+]?\d+(\.\d+)?", text.strip()))
 
 
+def _is_identifier_like_token(text: str) -> bool:
+    return bool(re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", text.strip()))
+
+
+def _stage_c_scalar_substitution_candidate(classified: dict[str, Any]) -> bool:
+    """Return True only for strict JSON scalar outputs with unambiguous scalar evidence.
+
+    This remains intentionally narrow:
+    - only the scorer-owned authoritative Family A path may use it;
+    - it never inspects prompt text;
+    - it never falls back to broad generated-text heuristics;
+    - it preserves missingness whenever scalar evidence is not explicit.
+    """
+
+    if str(classified.get("primary_class") or "") != "invalid_schema":
+        return False
+    if str(classified.get("parse_mode") or "") != "strict":
+        return False
+    if str(classified.get("schema_reason") or "") != "payload_not_object":
+        return False
+
+    generated = str(classified.get("generated_text") or "")
+    if _looks_like_tool_intent(generated):
+        return False
+
+    try:
+        parsed = json.loads(generated.strip())
+    except Exception:
+        return False
+
+    if parsed is None or isinstance(parsed, bool):
+        return True
+    if isinstance(parsed, (int, float)) and not isinstance(parsed, bool):
+        return True
+    if isinstance(parsed, str) and _is_identifier_like_token(parsed):
+        return True
+    return False
+
+
 def _primary_expected_tool_name(row: EvalRow) -> str:
     if not row.expected_tool_names:
         return ""
@@ -514,6 +553,8 @@ def _stage_c_family_a_declared_subtype(classified: dict[str, Any]) -> tuple[str 
             "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence",
         )
     if primary_class == "invalid_schema":
+        if _stage_c_scalar_substitution_candidate(classified):
+            return "scalar substitution", tuple()
         if schema_reason in {"missing_tool_calls", "payload_not_object"} and not looks_like_tool_attempt:
             return None, (
                 "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence",
