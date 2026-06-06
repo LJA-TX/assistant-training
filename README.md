@@ -1,8 +1,22 @@
 # assistant-training
 
-This repository develops a reusable post-training and evaluation regimen for runtime-oriented assistant models. It contains reusable doctrine, contracts, evaluation surfaces, training and dataset tooling, process infrastructure, and preserved project history from the Llama-3.1-8B-Base effort.
+This repository develops a reusable post-training and evaluation regimen for runtime-oriented assistant models. Its public value is the regimen itself: doctrine, contracts, evaluation surfaces, training and dataset tooling, process infrastructure, and preserved project history that let a technically competent reader inspect how the regimen was built and judged.
+
+The repository is structured for public inspection rather than community development. The main distinction is between the reusable framework and the preserved history that remains in place for provenance, comparison, and review.
 
 The repository is now on the merged post-Wave-1, post-compatibility-adoption baseline. Wave 1 framework-history separation and the bounded compatibility adoption slice are complete and closed. Broader history separation, archive formation, and pruning remain out of scope until later authorized work.
+
+## Quick Orientation
+
+If you are new, use this small inspection path:
+
+| Question | Read first |
+| --- | --- |
+| What is this repository? | [docs/current/current_status.md](docs/current/current_status.md) |
+| Why does it exist? | [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md) and [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md) |
+| What makes it different? | [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md) |
+| What should I read first? | [docs/current/start_here.md](docs/current/start_here.md) |
+| What can I inspect quickly? | [evals/canonical_eval_manifest_v1.json](evals/canonical_eval_manifest_v1.json), [scripts/build_dataset_v1.py](scripts/build_dataset_v1.py), [scripts/eval_canonical_manifest.py](scripts/eval_canonical_manifest.py), [scripts/train_lora_sft.py](scripts/train_lora_sft.py), [tests/test_dataset_contract.py](tests/test_dataset_contract.py) |
 
 ## Start Here
 
@@ -14,7 +28,7 @@ The repository is now on the merged post-Wave-1, post-compatibility-adoption bas
 
 ## Repository Identity
 
-This repository now has five distinct value surfaces:
+This repository now has five distinct value surfaces. The first three define the public method; the latter two preserve evidence and context:
 
 - Reusable regimen and framework:
   - doctrine

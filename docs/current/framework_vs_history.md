@@ -2,6 +2,20 @@
 
 This repository still mixes reusable framework assets with preserved project history, but the completed Wave 1 separation and completed compatibility adoption slice are now part of the current repository state.
 
+Use this simple rule of thumb:
+
+- if a path defines current behavior, current authority, or current contracts, treat it as framework
+- if a path preserves prior runs, prior architecture, or continuity evidence, treat it as history
+- if a path is a historical container that still holds active fixtures or compatibility aliases, treat it as mixed and inspect the current boundary carefully
+
+## At A Glance
+
+| Category | What it means | Examples |
+| --- | --- | --- |
+| Reusable framework or active infrastructure | Current doctrine, contracts, code, tests, and active support surfaces | `../goal_charter_v5a.md`, `../appendix_a_operational_execution_contract_v3a.md`, `../metric_specification_v1a.md`, `../../scripts/train_lora_sft.py`, `../../tests/test_dataset_contract.py` |
+| Preserved history or reference material | Prior runs, continuity records, and historical artifacts kept for provenance | `../convergence/`, `../continuity/`, `../deprecated/`, `../../data/v1_0/`, `../../reports/stage_c1/` through `../../reports/stage_c6/` |
+| Mixed surface | Historical container that still hosts active fixtures or compatibility aliases | `../../manifests/reports/stage_b_wp8_validation/fixtures/`, `../../manifests/reports/stage_b_v1_threshold_profile.json` |
+
 ## Treat As Reusable Framework Or Active Infrastructure
 
 - `../../AGENTS.md`

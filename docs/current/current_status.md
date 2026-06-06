@@ -1,5 +1,7 @@
 # Current Status
 
+This page records the accepted baseline and the current boundary for public-inspection work. Use it to tell at a glance whether a surface is active framework, preserved history, or still parked.
+
 ## Repository Objective
 
 The repository objective is to create a reusable post-training and evaluation regimen that generalizes beyond the current model, dataset, repository state, or investigation family.

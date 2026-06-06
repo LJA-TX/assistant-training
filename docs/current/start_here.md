@@ -1,6 +1,6 @@
 # Start Here
 
-Use this page as the first navigation path into the repository.
+Use this page as the fastest useful navigation path into the repository. If you only have a few minutes, read the first three sections and then inspect the quick targets listed below.
 
 ## 1. Confirm Current State
 
@@ -35,6 +35,19 @@ The main reusable framework surfaces are:
 - [../../scripts/preflight_lora_run.py](../../scripts/preflight_lora_run.py)
 - [../../scripts/build_dataset_v1.py](../../scripts/build_dataset_v1.py)
 - [../../scripts/eval_canonical_manifest.py](../../scripts/eval_canonical_manifest.py)
+
+## 3.1 Quick Inspection Targets
+
+If you want the smallest useful inspection set, focus on these files and directories:
+
+- [../goal_charter_v5a.md](../goal_charter_v5a.md): what the repository is trying to do
+- [../appendix_a_operational_execution_contract_v3a.md](../appendix_a_operational_execution_contract_v3a.md): how the regimen is governed
+- [../metric_specification_v1a.md](../metric_specification_v1a.md): how the canonical evals are scored
+- [../../evals/canonical_eval_manifest_v1.json](../../evals/canonical_eval_manifest_v1.json): the pinned evaluation contract
+- [../../scripts/build_dataset_v1.py](../../scripts/build_dataset_v1.py): how the dataset and eval corpora are constructed
+- [../../scripts/eval_canonical_manifest.py](../../scripts/eval_canonical_manifest.py): how canonical evaluation is scored
+- [../../scripts/train_lora_sft.py](../../scripts/train_lora_sft.py): the main training entrypoint
+- [../../tests/test_dataset_contract.py](../../tests/test_dataset_contract.py): one concrete contract check
 
 ## 4. Check Housekeeping Boundaries
 
