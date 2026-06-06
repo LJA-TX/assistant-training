@@ -9,16 +9,16 @@ The repository objective is to create a reusable post-training and evaluation re
 - Stage B is complete.
 - Stage C blocker-oriented branch is complete.
 - The runtime-output / corpus-behavior investigation family is defined and parked.
-- Housekeeping is the active phase.
-- The authorized minimal Wave 1 structural migration is complete.
+- Wave 1 is complete and closed.
+- Compatibility adoption is complete and closed.
+- The merged `main` branch is the canonical repository baseline for future work.
 
 ## What Is Active Now
 
-The active workstream is housekeeping for long-term framework reuse. Current focus:
+No structural housekeeping execution or Stage C investigation execution is active on this baseline. Current posture:
 
-- validating the executed Wave 1 separation
-- preserving compatibility and rollback safety
-- preparing only later, separately authorized migration waves
+- preserve the merged baseline as the current canonical state
+- authorize the next major phase separately before additional housekeeping or Stage C execution begins
 
 ## What Is Preserved And Still Active
 
@@ -48,21 +48,21 @@ The following remain preserved project history and provenance:
 
 Housekeeping authorities H-01 through H-05 remain accepted.
 
-Wave 1 structural execution is governed by:
+Wave 1 and compatibility adoption are part of the accepted merged baseline. Closure records:
 
-- `docs/housekeeping/W1-05_REVISED_MINIMAL_FRAMEWORK_SEPARATION_EXECUTION_PLAN.md`
-- `docs/housekeeping/W1-07_WAVE_1_AUTHORIZATION_GAP_CLOSURE.md`
-- `docs/housekeeping/W1-08_FINAL_WAVE_1_AUTHORIZATION_DECISION.md`
+- `docs/housekeeping/W1-13_WAVE_1_CLOSURE_REPORT.md`
+- `docs/housekeeping/CA-06_COMPATIBILITY_ADOPTION_CLOSURE_REPORT.md`
 
 ## Current Boundary
 
-The first bounded structural migration wave is part of the current repository state.
+The completed Wave 1 migration and completed compatibility adoption slice are part of the current repository state.
 
-Broader migration remains gated:
+Broader migration and Stage C runtime-output execution remain gated:
 
 - no Wave 2 or later movement
 - no archive formation
 - no pruning or deletion work
-- no fixture or sample extraction in this wave
+- no fixture or sample extraction
+- no Stage C runtime-output / corpus-behavior execution without separate reactivation authorization
 
 Deletion and pruning remain out of scope.

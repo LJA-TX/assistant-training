@@ -4,7 +4,7 @@ Use this page as the first navigation path into the repository.
 
 ## 1. Confirm Current State
 
-Read [current_status.md](current_status.md) for the accepted repository state, active phase, and current housekeeping boundary.
+Read [current_status.md](current_status.md) for the accepted repository state, the closed Wave 1 and compatibility status, and the current boundary.
 
 ## 2. Read The Governing Doctrine
 
@@ -26,6 +26,7 @@ The main reusable framework surfaces are:
 - [../framework/process_infrastructure/](../framework/process_infrastructure/)
 - [../framework/lineages/](../framework/lineages/)
 - [../framework/methodology/](../framework/methodology/)
+- [../../scripts/repo_paths.py](../../scripts/repo_paths.py)
 - [status/STAGE_B_COMPLETION_DETERMINATION.md](status/STAGE_B_COMPLETION_DETERMINATION.md)
 - [roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md](roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md)
 - [../../evals/canonical_eval_manifest_v1.json](../../evals/canonical_eval_manifest_v1.json)
@@ -42,8 +43,8 @@ Read [housekeeping_status.md](housekeeping_status.md) before planning any struct
 That page explains:
 
 - which housekeeping documents are accepted authorities
-- what Wave 1 changed
-- what remains out of scope after Wave 1
+- what Wave 1 and compatibility adoption changed
+- what remains out of scope on the current baseline
 
 ## 5. Use History Deliberately
 

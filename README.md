@@ -2,7 +2,7 @@
 
 This repository develops a reusable post-training and evaluation regimen for runtime-oriented assistant models. It contains reusable doctrine, contracts, evaluation surfaces, training and dataset tooling, process infrastructure, and preserved project history from the Llama-3.1-8B-Base effort.
 
-The repository remains in a housekeeping phase. The authorized minimal Wave 1 framework-history separation is now part of the repository structure, while broader history separation, archive formation, and pruning remain out of scope.
+The repository is now on the merged post-Wave-1, post-compatibility-adoption baseline. Wave 1 framework-history separation and the bounded compatibility adoption slice are complete and closed. Broader history separation, archive formation, and pruning remain out of scope until later authorized work.
 
 ## Start Here
 
@@ -55,6 +55,7 @@ This repository now has five distinct value surfaces:
   - [scripts/build_dataset_v1.py](scripts/build_dataset_v1.py)
   - [scripts/eval_canonical_manifest.py](scripts/eval_canonical_manifest.py)
   - [scripts/stage_c1_evaluator_foundation.py](scripts/stage_c1_evaluator_foundation.py)
+  - [scripts/repo_paths.py](scripts/repo_paths.py)
 - Active validation and support surfaces:
   - `tests/test_dataset_contract.py`
   - `tests/test_masking_behavior.py`
@@ -88,7 +89,7 @@ The runtime-output / corpus-behavior investigation family is defined but intenti
 
 - [docs/current/roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md](docs/current/roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md)
 
-It is part of the preserved project trajectory, but it is not the current active housekeeping workstream.
+It is part of the preserved project trajectory, but it is not active execution work on the current baseline.
 
 ## Housekeeping Authority
 
@@ -102,14 +103,15 @@ Current governing housekeeping documents:
 
 ## Current Boundary
 
-This repository includes the authorized Wave 1 structural migration.
+This repository includes the completed Wave 1 structural migration and the completed compatibility adoption slice.
 
-Still not authorized by this migration:
+Still not authorized on this baseline:
 
 - Wave 2 or later structural work
 - archive formation
 - deletions or pruning
-- additional convergence-history cleanup beyond the Wave 1 move set
-- code, test, doctrine, or runtime behavior changes
+- fixture or sample extraction
+- Stage C runtime-output / corpus-behavior execution
+- additional convergence-history cleanup beyond the completed Wave 1 move set
 
-Broader migration remains gated until later migration waves are separately authorized.
+Broader migration and Stage C reactivation remain gated until later packages are separately authorized.

@@ -18,7 +18,7 @@ These documents are the accepted housekeeping basis for structural planning and 
 
 ## Current Structural State
 
-The repository now includes the minimal authorized Wave 1 framework-history separation.
+The repository now includes the minimal authorized Wave 1 framework-history separation and the closed compatibility adoption slice.
 
 Wave 1 canonicalized:
 
@@ -30,18 +30,27 @@ Wave 1 canonicalized:
 
 Exact-file aliases preserve the old Wave 1 paths for compatibility and discoverability.
 
+Compatibility adoption additionally merged:
+
+- `scripts/repo_paths.py`
+- bounded resolver-based path adoption in the active evaluator chain
+- bounded resolver-based path adoption in core training, preflight, and dataset entrypoints
+- directly affected test updates and resolver regression coverage
+
 ## Current Boundary
 
-Wave 1 does not authorize:
+The current merged baseline does not authorize:
 
 - additional structural waves
 - archival execution
-- code or test changes
-- doctrine modification
+- fixture or sample extraction
+- pruning or deletion
+- Stage C runtime-output / corpus-behavior execution
+- doctrine modification or methodology redesign
 
 ## Permitted Next Phase
 
-The permitted next phase is post-Wave-1 review, remediation if needed, and later separately authorized migration planning.
+The permitted next phase is later separately authorized migration planning or explicit Stage C reactivation planning.
 
 That may include:
 

@@ -1,6 +1,6 @@
 # Framework Versus History
 
-This repository still mixes reusable framework assets with preserved project history, but the minimal Wave 1 separation is now part of the current repository state.
+This repository still mixes reusable framework assets with preserved project history, but the completed Wave 1 separation and completed compatibility adoption slice are now part of the current repository state.
 
 ## Treat As Reusable Framework Or Active Infrastructure
 
@@ -18,9 +18,12 @@ This repository still mixes reusable framework assets with preserved project his
 - `../../scripts/build_dataset_v1.py`
 - `../../scripts/eval_canonical_manifest.py`
 - `../../scripts/stage_c1_evaluator_foundation.py`
+- `../../scripts/repo_paths.py`
 - `../../tests/test_dataset_contract.py`
 - `../../tests/test_masking_behavior.py`
 - `../../tests/test_eval_canonical_manifest.py`
+- `../../tests/test_repo_paths.py`
+- `../../tests/test_compatibility_path_resolution.py`
 - `../../manifests/reports/stage_b_wp8_validation/fixtures/`
 - `../../manifests/reports/stage_b_v1_threshold_profile.json`
 
@@ -59,13 +62,14 @@ Examples:
 
 - active fixtures currently live under `manifests/reports/`
 - sample artifacts currently live under `reports/stage_c*`
+- active evaluator and core entrypoint path resolution now runs through `../../scripts/repo_paths.py`
 - bulk project execution history remains under `docs/convergence/`, while selected current-state and methodology records now have canonical paths elsewhere
 
 That mixed state is known and intentional during housekeeping preparation.
 
 ## Structural Boundary
 
-This page is a navigation aid after the executed Wave 1 move.
+This page is a navigation aid after the completed Wave 1 move and completed compatibility adoption merge.
 
 Old exact file paths for moved Wave 1 records remain preserved through compatibility aliases.
 No history has been archived.
