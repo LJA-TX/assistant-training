@@ -12,6 +12,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from repo_paths import resolve_repo_root
+
 
 @dataclass
 class EncodedExample:
@@ -19,6 +21,13 @@ class EncodedExample:
     labels: list[int]
     attention_mask: list[int]
     audit: dict[str, Any]
+
+
+def _resolve_repo_root_relative_path(raw_path: str, *, repo_root: Path) -> Path:
+    path = Path(raw_path)
+    if path.is_absolute():
+        return path.resolve()
+    return (repo_root / path).resolve()
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -2126,9 +2135,9 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    config_path = Path(args.config).resolve()
+    repo_root = resolve_repo_root()
+    config_path = _resolve_repo_root_relative_path(args.config, repo_root=repo_root)
     config = _load_json(config_path)
-    repo_root = Path(__file__).resolve().parents[1]
     manifest_path = _find_manifest_for_config(repo_root, config_path)
     manifest = _load_json(manifest_path) if manifest_path else None
     prompt_template_cfg = _resolve_prompt_template_cfg(config)

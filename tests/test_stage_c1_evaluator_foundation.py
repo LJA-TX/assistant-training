@@ -3,8 +3,14 @@ import json
 import sys
 from pathlib import Path
 
+SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
-SCRIPT_PATH = Path("/opt/ai-stack/assistant-training/scripts/stage_c1_evaluator_foundation.py")
+from repo_paths import resolve_fixture_root, resolve_script_path
+
+
+SCRIPT_PATH = resolve_script_path("stage_c1_evaluator_foundation")
 
 
 def _load_module():
@@ -143,7 +149,7 @@ def test_emit_family_a_scorer_evidence_accepts_approved_subtype_only():
 
 def test_fixture_harness_reports_zero_issues_for_authoritative_fixture_corpus():
     mod = _load_module()
-    root = Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures")
+    root = resolve_fixture_root()
 
     report = mod.run_fixture_harness(root)
     assert report.fixture_count == 117

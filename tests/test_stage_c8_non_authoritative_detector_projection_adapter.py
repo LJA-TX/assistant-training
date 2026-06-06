@@ -3,10 +3,16 @@ import json
 import sys
 from pathlib import Path
 
+SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
-SCRIPT_PATH = Path("/opt/ai-stack/assistant-training/scripts/stage_c8_non_authoritative_detector_projection_adapter.py")
-FIXTURES_ROOT = Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures")
-THRESHOLD_PROFILE_PATH = Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json")
+from repo_paths import resolve_artifact_path, resolve_fixture_root, resolve_repo_root, resolve_script_path
+
+
+SCRIPT_PATH = resolve_script_path("stage_c8_non_authoritative_detector_projection_adapter")
+FIXTURES_ROOT = resolve_fixture_root()
+THRESHOLD_PROFILE_PATH = resolve_artifact_path("stage_b_v1_threshold_profile")
 
 
 def _load_module():
@@ -26,7 +32,7 @@ def _load_json(path: Path):
 
 
 def _copy_sample_inputs(target_path: Path):
-    source = Path("/opt/ai-stack/assistant-training/reports/stage_c6/input/stage_c6_sample_output_records.jsonl")
+    source = resolve_artifact_path("stage_c6_sample_output_records")
     target_path.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
 
 
@@ -112,6 +118,26 @@ def test_unambiguous_metrics_are_projected_without_enabling_migration(tmp_path):
     assert (
         projected_eval["failure_profile"]["failure_categories_non_exact_tool_rows"]["direct_answer_substitution"] == 2.0
     )
+
+
+def test_convergence_metadata_source_paths_are_repo_root_resolved_and_present():
+    mod = _load_module()
+    repo_root = resolve_repo_root()
+    paths = mod._convergence_metadata_source_paths()
+
+    assert set(paths) == {
+        "c7_gate",
+        "c9a_contract",
+        "c9b_review",
+        "c9c_gate",
+        "c9d_disposition",
+        "c10a_plan",
+    }
+    for value in paths.values():
+        path = Path(value)
+        assert path.is_absolute()
+        assert path.exists()
+        assert path.is_relative_to(repo_root)
 
 
 def test_blocked_and_missing_source_metrics_are_explicitly_noncomputable(tmp_path):

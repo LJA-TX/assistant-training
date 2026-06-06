@@ -11,6 +11,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from repo_paths import resolve_repo_root
+
 DEFAULT_SEED = 20260525
 
 SYSTEM_TOOL = (
@@ -719,6 +721,14 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     return summary
 
 
+def _default_output_root() -> Path:
+    return resolve_repo_root() / "data" / "v1_0"
+
+
+def _default_eval_output_root() -> Path:
+    return resolve_repo_root() / "evals" / "data" / "canonical_v1"
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build dataset v1.0 and canonical eval suite assets.")
     parser.add_argument(
@@ -727,8 +737,8 @@ def parse_args() -> argparse.Namespace:
         required=True,
         help="Tool-positive JSONL source files.",
     )
-    parser.add_argument("--output-root", default="/opt/ai-stack/assistant-training/data/v1_0")
-    parser.add_argument("--eval-output-root", default="/opt/ai-stack/assistant-training/evals/data/canonical_v1")
+    parser.add_argument("--output-root", default=str(_default_output_root()))
+    parser.add_argument("--eval-output-root", default=str(_default_eval_output_root()))
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument("--total-rows", type=int, default=2400)
     parser.add_argument("--eval-heldout-validation-rows", type=int, default=100)

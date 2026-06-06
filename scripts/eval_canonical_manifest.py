@@ -16,6 +16,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from repo_paths import resolve_script_path
+
 
 CLASS_PRIORITY = [
     "invalid_json",
@@ -88,7 +90,7 @@ def _load_stage_c1_foundation():
         _STAGE_C1_FOUNDATION = existing
         return _STAGE_C1_FOUNDATION
 
-    module_path = Path(__file__).resolve().parent / "stage_c1_evaluator_foundation.py"
+    module_path = resolve_script_path("stage_c1_evaluator_foundation")
     spec = importlib.util.spec_from_file_location(module_name, str(module_path))
     if spec is None or spec.loader is None:
         raise RuntimeError(f"unable to load Stage C1 foundation at {module_path}")

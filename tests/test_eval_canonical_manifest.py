@@ -3,10 +3,16 @@ import json
 import sys
 from pathlib import Path
 
+SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
-EVAL_SCRIPT_PATH = Path("/opt/ai-stack/assistant-training/scripts/eval_canonical_manifest.py")
-DETECTOR_SCRIPT_PATH = Path("/opt/ai-stack/assistant-training/scripts/post_eval_collapse_detector.py")
-THRESHOLD_PROFILE_PATH = Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json")
+from repo_paths import resolve_artifact_path, resolve_script_path
+
+
+EVAL_SCRIPT_PATH = resolve_script_path("eval_canonical_manifest")
+DETECTOR_SCRIPT_PATH = resolve_script_path("post_eval_collapse_detector")
+THRESHOLD_PROFILE_PATH = resolve_artifact_path("stage_b_v1_threshold_profile")
 
 
 def _load_module(path: Path, name: str):

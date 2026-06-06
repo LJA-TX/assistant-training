@@ -3,9 +3,15 @@ import json
 import sys
 from pathlib import Path
 
+SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
-SCRIPT_PATH = Path("/opt/ai-stack/assistant-training/scripts/stage_c6_scoring_report_integration.py")
-FIXTURES_ROOT = Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures")
+from repo_paths import resolve_artifact_path, resolve_fixture_root, resolve_script_path
+
+
+SCRIPT_PATH = resolve_script_path("stage_c6_scoring_report_integration")
+FIXTURES_ROOT = resolve_fixture_root()
 
 
 def _load_module():
@@ -22,7 +28,7 @@ def _load_json(path: Path):
 
 
 def _copy_sample_inputs(target_path: Path):
-    source = Path("/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl")
+    source = resolve_artifact_path("stage_c5_sample_output_records")
     target_path.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
 
 

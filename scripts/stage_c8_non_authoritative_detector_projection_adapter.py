@@ -9,6 +9,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping
 
+from repo_paths import resolve_artifact_path, resolve_fixture_root, resolve_repo_root, resolve_script_path
+
 
 class StageC8ProjectionError(RuntimeError):
     """Raised when Stage C8 projection adapter execution cannot proceed."""
@@ -25,13 +27,24 @@ def _load_module(module_path: Path, module_name: str):
 
 
 def _load_stage_c6():
-    scripts_dir = Path(__file__).resolve().parent
-    return _load_module(scripts_dir / "stage_c6_scoring_report_integration.py", "stage_c6_scoring_report_integration")
+    return _load_module(resolve_script_path("stage_c6_scoring_report_integration"), "stage_c6_scoring_report_integration")
 
 
 def _load_detector():
-    scripts_dir = Path(__file__).resolve().parent
-    return _load_module(scripts_dir / "post_eval_collapse_detector.py", "post_eval_collapse_detector")
+    return _load_module(resolve_script_path("post_eval_collapse_detector"), "post_eval_collapse_detector")
+
+
+def _convergence_metadata_source_paths() -> dict[str, str]:
+    # These documentation references are emitted as provenance metadata, not loaded as executable inputs.
+    convergence_root = resolve_repo_root() / "docs" / "convergence"
+    return {
+        "c7_gate": str(convergence_root / "STAGE_C7_DETECTOR_PROJECTION_MIGRATION_IMPLEMENTATION_GATE.md"),
+        "c9a_contract": str(convergence_root / "STAGE_C9A_ADVERSARIAL_NO_CALL_SUBSET_MAPPING_REVIEW.md"),
+        "c9b_review": str(convergence_root / "STAGE_C9B_NO_ANCHOR_SEMANTIC_EQUIVALENCE_BRIDGE_REVIEW.md"),
+        "c9c_gate": str(convergence_root / "STAGE_C9C_BASELINE_DELTA_COMPARABILITY_GATE_REVIEW.md"),
+        "c9d_disposition": str(convergence_root / "STAGE_C9D_NO_ANCHOR_METRIC_DISPOSITION_REVIEW.md"),
+        "c10a_plan": str(convergence_root / "STAGE_C10A_NON_AUTHORITATIVE_ADAPTER_INTEGRATION_PLAN.md"),
+    }
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -1136,12 +1149,7 @@ def run_stage_c8_projection_adapter(
         "wrapper_summary": str(wrapper_summary_path),
         "per_output_scoring": str(per_output_scoring_path),
         "aggregation_summary": str(aggregation_summary_path),
-        "c7_gate": "/opt/ai-stack/assistant-training/docs/convergence/STAGE_C7_DETECTOR_PROJECTION_MIGRATION_IMPLEMENTATION_GATE.md",
-        "c9a_contract": "/opt/ai-stack/assistant-training/docs/convergence/STAGE_C9A_ADVERSARIAL_NO_CALL_SUBSET_MAPPING_REVIEW.md",
-        "c9b_review": "/opt/ai-stack/assistant-training/docs/convergence/STAGE_C9B_NO_ANCHOR_SEMANTIC_EQUIVALENCE_BRIDGE_REVIEW.md",
-        "c9c_gate": "/opt/ai-stack/assistant-training/docs/convergence/STAGE_C9C_BASELINE_DELTA_COMPARABILITY_GATE_REVIEW.md",
-        "c9d_disposition": "/opt/ai-stack/assistant-training/docs/convergence/STAGE_C9D_NO_ANCHOR_METRIC_DISPOSITION_REVIEW.md",
-        "c10a_plan": "/opt/ai-stack/assistant-training/docs/convergence/STAGE_C10A_NON_AUTHORITATIVE_ADAPTER_INTEGRATION_PLAN.md",
+        **_convergence_metadata_source_paths(),
     }
 
     metric_records = _compute_projection_metrics(
@@ -1274,19 +1282,19 @@ def run_stage_c8_projection_adapter(
 
 
 def _default_fixtures_root() -> Path:
-    return Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures")
+    return resolve_fixture_root()
 
 
 def _default_output_records_path() -> Path:
-    return Path("/opt/ai-stack/assistant-training/reports/stage_c6/input/stage_c6_sample_output_records.jsonl")
+    return resolve_artifact_path("stage_c6_sample_output_records")
 
 
 def _default_threshold_profile_path() -> Path:
-    return Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_v1_threshold_profile.json")
+    return resolve_artifact_path("stage_b_v1_threshold_profile")
 
 
 def _default_artifacts_dir() -> Path:
-    return Path("/opt/ai-stack/assistant-training/reports/stage_c8/projection_artifacts")
+    return resolve_artifact_path("stage_c8_projection_artifacts_dir")
 
 
 def main() -> int:

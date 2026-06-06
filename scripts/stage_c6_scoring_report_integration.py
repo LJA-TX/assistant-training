@@ -10,6 +10,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping
 
+from repo_paths import resolve_artifact_path, resolve_fixture_root, resolve_script_path
+
 
 class ReportingIntegrationError(RuntimeError):
     """Raised when Stage C6 reporting integration cannot proceed."""
@@ -26,8 +28,7 @@ def _load_module(module_path: Path, module_name: str):
 
 
 def _load_stage_c5():
-    scripts_dir = Path(__file__).resolve().parent
-    return _load_module(scripts_dir / "stage_c5_scoring_path_integration.py", "stage_c5_scoring_path_integration")
+    return _load_module(resolve_script_path("stage_c5_scoring_path_integration"), "stage_c5_scoring_path_integration")
 
 
 def _write_json(path: Path, payload: Mapping[str, Any]) -> None:
@@ -408,15 +409,15 @@ def run_stage_c6_reporting_integration(
 
 
 def _default_fixtures_root() -> Path:
-    return Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures")
+    return resolve_fixture_root()
 
 
 def _default_output_records_path() -> Path:
-    return Path("/opt/ai-stack/assistant-training/reports/stage_c6/input/stage_c6_sample_output_records.jsonl")
+    return resolve_artifact_path("stage_c6_sample_output_records")
 
 
 def _default_artifacts_dir() -> Path:
-    return Path("/opt/ai-stack/assistant-training/reports/stage_c6/reporting_artifacts")
+    return resolve_artifact_path("stage_c6_reporting_artifacts_dir")
 
 
 def main() -> int:

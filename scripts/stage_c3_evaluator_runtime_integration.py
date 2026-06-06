@@ -12,6 +12,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping
 
+from repo_paths import resolve_artifact_path, resolve_fixture_root, resolve_script_path
+
 
 class RuntimeIntegrationError(RuntimeError):
     """Raised when runtime integration cannot complete."""
@@ -34,10 +36,9 @@ def _load_module(module_path: Path, module_name: str):
 
 
 def _load_foundations():
-    scripts_dir = Path(__file__).resolve().parent
-    c1 = _load_module(scripts_dir / "stage_c1_evaluator_foundation.py", "stage_c1_evaluator_foundation")
+    c1 = _load_module(resolve_script_path("stage_c1_evaluator_foundation"), "stage_c1_evaluator_foundation")
     c2 = _load_module(
-        scripts_dir / "stage_c2_family_state_reconciliation_foundation.py",
+        resolve_script_path("stage_c2_family_state_reconciliation_foundation"),
         "stage_c2_family_state_reconciliation_foundation",
     )
     return c1, c2
@@ -441,11 +442,11 @@ def run_stage_c3_runtime_integration(fixtures_root: Path, artifacts_dir: Path) -
 
 
 def _default_fixtures_root() -> Path:
-    return Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures")
+    return resolve_fixture_root()
 
 
 def _default_artifacts_dir() -> Path:
-    return Path("/opt/ai-stack/assistant-training/reports/stage_c3/baseline_contract_artifacts")
+    return resolve_artifact_path("stage_c3_baseline_artifacts_dir")
 
 
 def main() -> int:

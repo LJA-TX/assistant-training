@@ -10,6 +10,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping
 
+from repo_paths import resolve_artifact_path, resolve_fixture_root, resolve_script_path
+
 
 class ScoringIntegrationError(RuntimeError):
     """Raised when Stage C5 scoring-path integration cannot proceed."""
@@ -26,8 +28,7 @@ def _load_module(module_path: Path, module_name: str):
 
 
 def _load_foundations():
-    scripts_dir = Path(__file__).resolve().parent
-    c4 = _load_module(scripts_dir / "stage_c4_real_output_ingestion.py", "stage_c4_real_output_ingestion")
+    c4 = _load_module(resolve_script_path("stage_c4_real_output_ingestion"), "stage_c4_real_output_ingestion")
     return c4
 
 
@@ -666,15 +667,15 @@ def run_stage_c5_scoring_integration(fixtures_root: Path, output_records_path: P
 
 
 def _default_fixtures_root() -> Path:
-    return Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures")
+    return resolve_fixture_root()
 
 
 def _default_output_records_path() -> Path:
-    return Path("/opt/ai-stack/assistant-training/reports/stage_c5/input/stage_c5_sample_output_records.jsonl")
+    return resolve_artifact_path("stage_c5_sample_output_records")
 
 
 def _default_artifacts_dir() -> Path:
-    return Path("/opt/ai-stack/assistant-training/reports/stage_c5/contract_artifacts")
+    return resolve_artifact_path("stage_c5_contract_artifacts_dir")
 
 
 def main() -> int:

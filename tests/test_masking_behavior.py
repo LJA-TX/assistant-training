@@ -3,8 +3,11 @@ import json
 import sys
 from pathlib import Path
 
+SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
-SCRIPT_PATH = Path("/opt/ai-stack/assistant-training/scripts/train_lora_sft.py")
+SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "train_lora_sft.py"
 
 
 def _load_module():
@@ -224,12 +227,16 @@ def test_masking_audit_only_does_not_load_model_or_train(tmp_path):
     mod._load_model_and_tokenizer = _model_loader
 
     prompt_cfg = mod._resolve_prompt_template_cfg(config)
+    geometry_context = mod._resolve_geometry_context(config)
+    geometry_context_digest = mod._build_geometry_mapping_identity_digest(geometry_context)
     rc = mod._run_masking_audit_only(
         config=config,
         config_path=tmp_path / "config.json",
         manifest_path=None,
         gate_info={"requires_manual_review": True},
         prompt_template_cfg=prompt_cfg,
+        geometry_context=geometry_context,
+        geometry_context_digest=geometry_context_digest,
     )
     assert rc == 0
     assert called["model_loader"] == 0

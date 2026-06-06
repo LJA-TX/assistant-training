@@ -2,8 +2,14 @@ import importlib.util
 import sys
 from pathlib import Path
 
+SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
-SCRIPT_PATH = Path("/opt/ai-stack/assistant-training/scripts/stage_c2_family_state_reconciliation_foundation.py")
+from repo_paths import resolve_script_path
+
+
+SCRIPT_PATH = resolve_script_path("stage_c2_family_state_reconciliation_foundation")
 
 
 def _load_module():

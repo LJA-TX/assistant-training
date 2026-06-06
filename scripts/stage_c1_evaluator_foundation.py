@@ -9,6 +9,8 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Mapping
 
+from repo_paths import resolve_fixture_root
+
 
 class ContractViolation(RuntimeError):
     """Raised when contract-locked requirements are violated."""
@@ -611,7 +613,7 @@ def run_fixture_harness(fixtures_root: Path) -> FixtureValidationReport:
 
 
 def _default_fixtures_root() -> Path:
-    return Path("/opt/ai-stack/assistant-training/manifests/reports/stage_b_wp8_validation/fixtures")
+    return resolve_fixture_root()
 
 
 def main() -> int:
