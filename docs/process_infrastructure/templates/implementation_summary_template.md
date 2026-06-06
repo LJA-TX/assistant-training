@@ -1,29 +1,7 @@
-# <Implementation Summary Title>
+# Compatibility Alias
 
-## Scope
+This historical path is preserved for compatibility and discoverability.
 
-Describe bounded implementation slice scope and exclusions.
+Canonical location: `docs/framework/process_infrastructure/templates/implementation_summary_template.md`
 
-## Assets Created
-
-List newly created assets in this slice.
-
-## Assets Modified
-
-List modified assets in this slice.
-
-## Rationale
-
-Summarize why implemented assets were selected in this slice.
-
-## Validation Results
-
-List validation commands/checks and outcomes.
-
-## Boundary Confirmation
-
-Confirm excluded surfaces were not modified.
-
-## Deferred Items
-
-List deferred items for later approved slices.
+Do not treat this alias as the canonical authority.

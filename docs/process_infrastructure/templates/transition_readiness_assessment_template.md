@@ -1,28 +1,7 @@
-# <Transition Readiness Assessment Title>
+# Compatibility Alias
 
-## Scope
+This historical path is preserved for compatibility and discoverability.
 
-Describe transition boundary and exclusions.
+Canonical location: `docs/framework/process_infrastructure/templates/transition_readiness_assessment_template.md`
 
-## Inputs
-
-List readiness/closure artifacts and authoritative planning inputs reviewed.
-
-## Transition Readiness Checks
-
-| Check | Status | Notes |
-|---|---|---|
-| <check-1> | <pass/fail/partial> | <note> |
-| <check-2> | <pass/fail/partial> | <note> |
-
-## Readiness Determination
-
-State transition readiness result and interpretation.
-
-## Required Controls Before Next Milestone
-
-List controls that must be preserved for the transition.
-
-## Boundary Confirmation
-
-Confirm this assessment does not itself authorize out-of-scope implementation.
+Do not treat this alias as the canonical authority.

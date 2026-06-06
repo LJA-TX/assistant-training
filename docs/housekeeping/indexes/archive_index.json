@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "family": "archives",
+  "index_id": "idx:family:archives:0001",
+  "registry_id": "idx:registry:0001",
+  "status": "partially_populated",
+  "description": "Migration-critical archive anchors for Wave 0 population.",
+  "last_verified": "2026-06-05T00:00:00-05:00",
+  "entries": [
+    {
+      "stable_id": "arc:seed:0001",
+      "current_path": "docs/deprecated",
+      "canonical_path": "history/archive/deprecated_doctrine",
+      "source_path": "docs/deprecated",
+      "previous_paths": [],
+      "status": "seed",
+      "role": "family_anchor",
+      "hash": null,
+      "provenance_note": "Seed anchor for canonical archive indexing; no repository-wide population yet.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:archives:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "arc:convergence:0001",
+      "current_path": "docs/convergence",
+      "canonical_path": "history/projects/llama31_8b_base/convergence",
+      "source_path": "docs/convergence",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "archive_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for convergence archive tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:archives:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "arc:deprecated:0001",
+      "current_path": "docs/deprecated",
+      "canonical_path": "history/archive/deprecated_doctrine",
+      "source_path": "docs/deprecated",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "archive_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for deprecated doctrine archive tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:archives:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "arc:continuity:0001",
+      "current_path": "docs/continuity",
+      "canonical_path": "history/projects/llama31_8b_base/continuity",
+      "source_path": "docs/continuity",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "archive_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for continuity archive tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:archives:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    }
+  ]
+}

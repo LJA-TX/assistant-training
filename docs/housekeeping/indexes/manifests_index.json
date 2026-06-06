@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "family": "manifests",
+  "index_id": "idx:family:manifests:0001",
+  "registry_id": "idx:registry:0001",
+  "status": "partially_populated",
+  "description": "Migration-critical manifest anchors for Wave 0 population.",
+  "last_verified": "2026-06-05T00:00:00-05:00",
+  "entries": [
+    {
+      "stable_id": "mfst:seed:0001",
+      "current_path": "manifests/runs",
+      "canonical_path": "history/projects/llama31_8b_base/run_manifests",
+      "source_path": "manifests/runs",
+      "previous_paths": [],
+      "status": "seed",
+      "role": "family_anchor",
+      "hash": null,
+      "provenance_note": "Seed anchor for canonical manifest indexing; no repository-wide population yet.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:manifests:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "mfst:canonical_eval_manifest:0001",
+      "current_path": "evals/canonical_eval_manifest_v1.json",
+      "canonical_path": "regimen/contracts/canonical_eval_manifest_v1.json",
+      "source_path": "evals/canonical_eval_manifest_v1.json",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "canonical_manifest_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for canonical evaluation manifest tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:manifests:0001",
+        "mfst:canonical_eval_corpus:0001",
+        "mfst:run_manifests:0001",
+        "mfst:lora_configs:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "mfst:canonical_eval_corpus:0001",
+      "current_path": "evals/data/canonical_v1",
+      "canonical_path": "fixtures/canonical_eval/canonical_v1",
+      "source_path": "evals/data/canonical_v1",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "canonical_corpus_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for canonical evaluation corpus tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:manifests:0001",
+        "mfst:canonical_eval_manifest:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "mfst:run_manifests:0001",
+      "current_path": "manifests/runs",
+      "canonical_path": "history/projects/llama31_8b_base/run_manifests",
+      "source_path": "manifests/runs",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "run_history_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for run-manifest history tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:manifests:0001",
+        "mfst:canonical_eval_manifest:0001",
+        "mfst:lora_configs:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "mfst:lora_configs:0001",
+      "current_path": "configs/lora",
+      "canonical_path": "history/projects/llama31_8b_base/configs",
+      "source_path": "configs/lora",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "config_history_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for Lora config history tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:manifests:0001",
+        "mfst:canonical_eval_manifest:0001",
+        "mfst:run_manifests:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    }
+  ]
+}

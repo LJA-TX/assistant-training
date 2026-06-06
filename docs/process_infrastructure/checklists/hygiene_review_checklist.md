@@ -1,24 +1,7 @@
-# Hygiene Review Checklist
+# Compatibility Alias
 
-## Purpose
+This historical path is preserved for compatibility and discoverability.
 
-Provide a repeatable repository hygiene check for slice boundaries and review checkpoints.
+Canonical location: `docs/framework/process_infrastructure/checklists/hygiene_review_checklist.md`
 
-## Trigger
-
-Use at minimum before final slice reporting, and before publication/push checkpoints.
-
-## Checklist
-
-- [ ] Review branch and repository status (`git status --short --branch`).
-- [ ] Confirm all changed files align with authorized scope.
-- [ ] Confirm no unexpected runtime, evaluator, or governance surfaces were modified.
-- [ ] Confirm untracked files are expected and documented for the current slice.
-- [ ] Confirm temporary artifacts remain in intended local-only locations.
-- [ ] Confirm no unintended staging state exists.
-- [ ] Confirm final report fields can be populated from verified command evidence.
-
-## Boundary Notes
-
-- Hygiene review detects operational drift.
-- It does not replace domain-specific reconciliation or conformance validation.
+Do not treat this alias as the canonical authority.

@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "idx:registry:0001",
+  "schema_path": "docs/housekeeping/indexes/index_schema.json",
+  "status": "partially_populated",
+  "last_verified": "2026-06-05T00:00:00-05:00",
+  "families": [
+    {
+      "family": "convergence_history",
+      "index_id": "idx:family:convergence_history:0001",
+      "path": "docs/housekeeping/indexes/convergence_history_index.json",
+      "status": "partially_populated",
+      "seed_count": 1,
+      "entry_count": 12,
+      "anchor_entry_id": "conv:seed:0001",
+      "description": "Migration-critical convergence anchors for Wave 0 population."
+    },
+    {
+      "family": "reports",
+      "index_id": "idx:family:reports:0001",
+      "path": "docs/housekeeping/indexes/reports_index.json",
+      "status": "partially_populated",
+      "seed_count": 1,
+      "entry_count": 7,
+      "anchor_entry_id": "rpt:seed:0001",
+      "description": "Migration-critical report anchors for Wave 0 population."
+    },
+    {
+      "family": "manifests",
+      "index_id": "idx:family:manifests:0001",
+      "path": "docs/housekeeping/indexes/manifests_index.json",
+      "status": "partially_populated",
+      "seed_count": 1,
+      "entry_count": 5,
+      "anchor_entry_id": "mfst:seed:0001",
+      "description": "Migration-critical manifest anchors for Wave 0 population."
+    },
+    {
+      "family": "fixtures",
+      "index_id": "idx:family:fixtures:0001",
+      "path": "docs/housekeeping/indexes/fixture_index.json",
+      "status": "partially_populated",
+      "seed_count": 1,
+      "entry_count": 3,
+      "anchor_entry_id": "fix:seed:0001",
+      "description": "Migration-critical fixture anchors for Wave 0 population."
+    },
+    {
+      "family": "sample_artifacts",
+      "index_id": "idx:family:sample_artifacts:0001",
+      "path": "docs/housekeeping/indexes/sample_artifact_index.json",
+      "status": "partially_populated",
+      "seed_count": 1,
+      "entry_count": 4,
+      "anchor_entry_id": "samp:seed:0001",
+      "description": "Migration-critical sample-artifact anchors for Wave 0 population."
+    },
+    {
+      "family": "archives",
+      "index_id": "idx:family:archives:0001",
+      "path": "docs/housekeeping/indexes/archive_index.json",
+      "status": "partially_populated",
+      "seed_count": 1,
+      "entry_count": 4,
+      "anchor_entry_id": "arc:seed:0001",
+      "description": "Migration-critical archive anchors for Wave 0 population."
+    }
+  ]
+}

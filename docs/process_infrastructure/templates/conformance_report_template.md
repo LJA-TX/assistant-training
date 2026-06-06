@@ -1,33 +1,7 @@
-# <Conformance Report Title>
+# Compatibility Alias
 
-## Scope
+This historical path is preserved for compatibility and discoverability.
 
-Describe implementation slice scope assessed by this report.
+Canonical location: `docs/framework/process_infrastructure/templates/conformance_report_template.md`
 
-## Conformance Targets
-
-List contracts, boundaries, and invariants checked.
-
-## Findings
-
-For each target, record status and supporting evidence.
-
-## Validation Results
-
-List validations executed and pass/fail outcomes.
-
-## Governance Concerns
-
-List concerns introduced by this slice, or state none.
-
-## Residual Ambiguities
-
-List unresolved ambiguities relevant to next slice.
-
-## Determination
-
-State conformance determination for the declared scope.
-
-## Boundary Confirmation
-
-Confirm excluded surfaces were not modified in this slice.
+Do not treat this alias as the canonical authority.

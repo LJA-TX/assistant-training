@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0",
+  "family": "convergence_history",
+  "index_id": "idx:family:convergence_history:0001",
+  "registry_id": "idx:registry:0001",
+  "status": "partially_populated",
+  "description": "Migration-critical convergence anchors for Wave 0 population.",
+  "last_verified": "2026-06-05T00:00:00-05:00",
+  "entries": [
+    {
+      "stable_id": "conv:seed:0001",
+      "current_path": "docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_B_COMPLETION_DETERMINATION.md",
+      "source_path": "docs/convergence/STAGE_B_COMPLETION_DETERMINATION.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_B_COMPLETION_DETERMINATION.md"
+      ],
+      "status": "seed",
+      "role": "family_anchor",
+      "hash": null,
+      "provenance_note": "Seed anchor for canonical convergence-history indexing; no repository-wide population yet.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_b:0001",
+      "current_path": "docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_B_COMPLETION_DETERMINATION.md",
+      "source_path": "docs/convergence/STAGE_B_COMPLETION_DETERMINATION.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_B_COMPLETION_DETERMINATION.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for Stage B completion boundary tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_bc:0001",
+      "current_path": "docs/framework/methodology/STAGE_BC_PROCESS_EXTRACTION_ASSESSMENT.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_BC_PROCESS_EXTRACTION_ASSESSMENT.md",
+      "source_path": "docs/convergence/STAGE_BC_PROCESS_EXTRACTION_ASSESSMENT.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_BC_PROCESS_EXTRACTION_ASSESSMENT.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for process extraction boundary tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_bc:0002",
+      "current_path": "docs/framework/methodology/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md",
+      "source_path": "docs/convergence/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for process architecture boundary tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_c:0001",
+      "current_path": "docs/framework/methodology/STAGE_C_BLOCKER_BRANCH_CLOSURE_AND_RUNTIME_OUTPUT_TRANSITION_ASSESSMENT.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_C_BLOCKER_BRANCH_CLOSURE_AND_RUNTIME_OUTPUT_TRANSITION_ASSESSMENT.md",
+      "source_path": "docs/convergence/STAGE_C_BLOCKER_BRANCH_CLOSURE_AND_RUNTIME_OUTPUT_TRANSITION_ASSESSMENT.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_C_BLOCKER_BRANCH_CLOSURE_AND_RUNTIME_OUTPUT_TRANSITION_ASSESSMENT.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for blocker-branch closure boundary tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_c:0002",
+      "current_path": "docs/current/roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md",
+      "source_path": "docs/convergence/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for parked runtime-output investigation boundary tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_bc:0003",
+      "current_path": "docs/framework/methodology/STAGE_BC_PHASE1_PROCESS_INFRASTRUCTURE_CLOSURE_DETERMINATION.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_BC_PHASE1_PROCESS_INFRASTRUCTURE_CLOSURE_DETERMINATION.md",
+      "source_path": "docs/convergence/STAGE_BC_PHASE1_PROCESS_INFRASTRUCTURE_CLOSURE_DETERMINATION.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_BC_PHASE1_PROCESS_INFRASTRUCTURE_CLOSURE_DETERMINATION.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by Wave 1 for the process-infrastructure closure methodology record.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_c:0003",
+      "current_path": "docs/framework/methodology/STAGE_C_PACKAGE_3C_REGIMEN_RETROSPECTIVE_AND_REUSABILITY_ASSESSMENT.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_C_PACKAGE_3C_REGIMEN_RETROSPECTIVE_AND_REUSABILITY_ASSESSMENT.md",
+      "source_path": "docs/convergence/STAGE_C_PACKAGE_3C_REGIMEN_RETROSPECTIVE_AND_REUSABILITY_ASSESSMENT.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_C_PACKAGE_3C_REGIMEN_RETROSPECTIVE_AND_REUSABILITY_ASSESSMENT.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by Wave 1 for the Stage C 3C regimen retrospective.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_c:0004",
+      "current_path": "docs/framework/methodology/STAGE_C_PACKAGE_5E_DIRECT_ANSWER_LIFECYCLE_RETROSPECTIVE_AND_REGIMEN_GENERALIZATION_ASSESSMENT.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_C_PACKAGE_5E_DIRECT_ANSWER_LIFECYCLE_RETROSPECTIVE_AND_REGIMEN_GENERALIZATION_ASSESSMENT.md",
+      "source_path": "docs/convergence/STAGE_C_PACKAGE_5E_DIRECT_ANSWER_LIFECYCLE_RETROSPECTIVE_AND_REGIMEN_GENERALIZATION_ASSESSMENT.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_C_PACKAGE_5E_DIRECT_ANSWER_LIFECYCLE_RETROSPECTIVE_AND_REGIMEN_GENERALIZATION_ASSESSMENT.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by Wave 1 for the Stage C 5E direct-answer lifecycle retrospective.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_c:0005",
+      "current_path": "docs/framework/methodology/STAGE_C_PACKAGE_6A_FORMAL_BLOCKER_ORIENTED_REGIMEN_BRANCH_ADOPTION_ASSESSMENT.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_C_PACKAGE_6A_FORMAL_BLOCKER_ORIENTED_REGIMEN_BRANCH_ADOPTION_ASSESSMENT.md",
+      "source_path": "docs/convergence/STAGE_C_PACKAGE_6A_FORMAL_BLOCKER_ORIENTED_REGIMEN_BRANCH_ADOPTION_ASSESSMENT.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_C_PACKAGE_6A_FORMAL_BLOCKER_ORIENTED_REGIMEN_BRANCH_ADOPTION_ASSESSMENT.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by Wave 1 for the Stage C 6A branch-adoption assessment.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_c:0006",
+      "current_path": "docs/framework/methodology/STAGE_C_PACKAGE_6B_CONDITIONAL_BLOCKER_ORIENTED_BRANCH_ADOPTION_DETERMINATION.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_C_PACKAGE_6B_CONDITIONAL_BLOCKER_ORIENTED_BRANCH_ADOPTION_DETERMINATION.md",
+      "source_path": "docs/convergence/STAGE_C_PACKAGE_6B_CONDITIONAL_BLOCKER_ORIENTED_BRANCH_ADOPTION_DETERMINATION.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_C_PACKAGE_6B_CONDITIONAL_BLOCKER_ORIENTED_BRANCH_ADOPTION_DETERMINATION.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by Wave 1 for the Stage C 6B branch-adoption determination.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "conv:stage_c:0007",
+      "current_path": "docs/framework/methodology/STAGE_C10C_REFRESHED_DETECTOR_MIGRATION_GATE_DETERMINATION.md",
+      "canonical_path": "history/projects/llama31_8b_base/convergence/STAGE_C10C_REFRESHED_DETECTOR_MIGRATION_GATE_DETERMINATION.md",
+      "source_path": "docs/convergence/STAGE_C10C_REFRESHED_DETECTOR_MIGRATION_GATE_DETERMINATION.md",
+      "previous_paths": [
+        "docs/convergence/STAGE_C10C_REFRESHED_DETECTOR_MIGRATION_GATE_DETERMINATION.md"
+      ],
+      "status": "anchor",
+      "role": "migration_boundary_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by Wave 1 for the Stage C10C migration-gate determination.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:convergence_history:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    }
+  ]
+}

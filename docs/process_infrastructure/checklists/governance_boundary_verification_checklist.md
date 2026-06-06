@@ -1,23 +1,7 @@
-# Governance Boundary Verification Checklist
+# Compatibility Alias
 
-## Purpose
+This historical path is preserved for compatibility and discoverability.
 
-Ensure bounded slices remain within authorized governance and scope constraints.
+Canonical location: `docs/framework/process_infrastructure/checklists/governance_boundary_verification_checklist.md`
 
-## Trigger
-
-Use before finalizing any execution or review slice.
-
-## Checklist
-
-- [ ] Confirm scope remains within explicitly authorized slice boundaries.
-- [ ] Confirm no unauthorized workstreams were started.
-- [ ] Confirm no authority-order overrides were introduced.
-- [ ] Confirm no unapproved methodology redesign was introduced.
-- [ ] Confirm stop-and-escalate conditions were checked and reported.
-- [ ] Confirm boundary confirmation section is present in the slice summary/report.
-
-## Boundary Notes
-
-- This checklist verifies procedural boundaries only.
-- It does not replace readiness/closure/migration protocol decisions.
+Do not treat this alias as the canonical authority.

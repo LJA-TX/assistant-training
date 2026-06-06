@@ -1,10 +1,7 @@
-# Lineage History (Minimal)
+# Compatibility Alias
 
-Purpose: preserve concise, durable continuity for major experimental inflection points.
+This historical path is preserved for compatibility and discoverability.
 
-Entries:
-- `i2_contamination_event.md`
-- `i4_i5_overconstraint_collapse.md`
-- `i6_isolated_variable_pivot.md`
-- `i7_coupled_schema_dynamics.md`
-- `i8_bounded_implementation_scaffold.md`
+Canonical location: `docs/framework/lineages/README.md`
+
+The lineage directory now lives under `docs/framework/lineages/`, but the old exact file paths remain preserved as compatibility aliases.

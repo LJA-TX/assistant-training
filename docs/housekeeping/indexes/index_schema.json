@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "registry_required_fields": [
+    "schema_version",
+    "registry_id",
+    "schema_path",
+    "status",
+    "last_verified",
+    "families"
+  ],
+  "family_index_required_fields": [
+    "schema_version",
+    "family",
+    "index_id",
+    "registry_id",
+    "status",
+    "description",
+    "last_verified",
+    "entries"
+  ],
+  "entry_required_fields": [
+    "stable_id",
+    "current_path",
+    "canonical_path",
+    "source_path",
+    "previous_paths",
+    "status",
+    "role",
+    "hash",
+    "provenance_note",
+    "related_ids",
+    "last_verified"
+  ],
+  "field_types": {
+    "schema_version": "string",
+    "registry_id": "string",
+    "schema_path": "string",
+    "entry_count": "number",
+    "family": "string",
+    "index_id": "string",
+    "status": "string",
+    "last_verified": "string",
+    "description": "string",
+    "entries": "array",
+    "stable_id": "string",
+    "current_path": [
+      "string",
+      "null"
+    ],
+    "canonical_path": [
+      "string",
+      "null"
+    ],
+    "source_path": [
+      "string",
+      "null"
+    ],
+    "previous_paths": "array",
+    "role": "string",
+    "hash": [
+      "string",
+      "null"
+    ],
+    "provenance_note": "string",
+    "related_ids": "array"
+  },
+  "id_patterns": {
+    "registry_id": "^idx:registry:[0-9]{4}$",
+    "family_index_id": "^idx:family:[a-z0-9_]+:[0-9]{4}$",
+    "entry_stable_id": "^(conv|rpt|mfst|fix|samp|arc):[a-z0-9_]+:[0-9]{4}$"
+  },
+  "family_prefixes": {
+    "convergence_history": "conv",
+    "reports": "rpt",
+    "manifests": "mfst",
+    "fixtures": "fix",
+    "sample_artifacts": "samp",
+    "archives": "arc"
+  }
+}

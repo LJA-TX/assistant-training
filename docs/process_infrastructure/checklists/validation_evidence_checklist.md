@@ -1,23 +1,7 @@
-# Validation Evidence Checklist
+# Compatibility Alias
 
-## Purpose
+This historical path is preserved for compatibility and discoverability.
 
-Standardize validation evidence capture for implementation and review slices.
+Canonical location: `docs/framework/process_infrastructure/checklists/validation_evidence_checklist.md`
 
-## Trigger
-
-Use when a slice requires validation or conformance reporting.
-
-## Checklist
-
-- [ ] Identify required validations for the declared slice scope.
-- [ ] Execute validations or explicitly record why a validation was not run.
-- [ ] Capture command names and pass/fail outcomes.
-- [ ] Record key output indicators needed for decision visibility.
-- [ ] Confirm validation evidence aligns with artifacts produced in the slice.
-- [ ] Include validation evidence summary in final slice reporting.
-
-## Boundary Notes
-
-- This checklist governs evidence capture quality.
-- It does not define domain-specific acceptance thresholds.
+Do not treat this alias as the canonical authority.

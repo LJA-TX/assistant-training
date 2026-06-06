@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "family": "sample_artifacts",
+  "index_id": "idx:family:sample_artifacts:0001",
+  "registry_id": "idx:registry:0001",
+  "status": "partially_populated",
+  "description": "Migration-critical sample-artifact anchors for Wave 0 population.",
+  "last_verified": "2026-06-05T00:00:00-05:00",
+  "entries": [
+    {
+      "stable_id": "samp:seed:0001",
+      "current_path": "reports/stage_c4/input/stage_c4_sample_output_records.jsonl",
+      "canonical_path": "fixtures/stage_c_samples/stage_c4_sample_output_records.jsonl",
+      "source_path": "reports/stage_c4/input/stage_c4_sample_output_records.jsonl",
+      "previous_paths": [],
+      "status": "seed",
+      "role": "family_anchor",
+      "hash": null,
+      "provenance_note": "Seed anchor for canonical sample-artifact indexing; no repository-wide population yet.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:sample_artifacts:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "samp:stage_c4:0001",
+      "current_path": "reports/stage_c4/input/stage_c4_sample_output_records.jsonl",
+      "canonical_path": "fixtures/stage_c_samples/stage_c4_sample_output_records.jsonl",
+      "source_path": "reports/stage_c4/input/stage_c4_sample_output_records.jsonl",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "sample_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C4 sample outputs.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:sample_artifacts:0001",
+        "rpt:stage_c4:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "samp:stage_c5:0001",
+      "current_path": "reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+      "canonical_path": "fixtures/stage_c_samples/stage_c5_sample_output_records.jsonl",
+      "source_path": "reports/stage_c5/input/stage_c5_sample_output_records.jsonl",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "sample_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C5 sample outputs.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:sample_artifacts:0001",
+        "rpt:stage_c5:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "samp:stage_c6:0001",
+      "current_path": "reports/stage_c6/input/stage_c6_sample_output_records.jsonl",
+      "canonical_path": "fixtures/stage_c_samples/stage_c6_sample_output_records.jsonl",
+      "source_path": "reports/stage_c6/input/stage_c6_sample_output_records.jsonl",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "sample_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C6 sample outputs.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:sample_artifacts:0001",
+        "rpt:stage_c6:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    }
+  ]
+}

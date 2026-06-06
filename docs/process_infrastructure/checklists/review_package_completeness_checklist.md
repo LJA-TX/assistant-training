@@ -1,23 +1,7 @@
-# Review Package Completeness Checklist
+# Compatibility Alias
 
-## Purpose
+This historical path is preserved for compatibility and discoverability.
 
-Standardize completeness checks for package-level review bundles and related reporting artifacts.
+Canonical location: `docs/framework/process_infrastructure/checklists/review_package_completeness_checklist.md`
 
-## Trigger
-
-Use when closing a package/slice that requires review artifacts.
-
-## Checklist
-
-- [ ] Confirm expected review artifact classes are present for the slice scope.
-- [ ] Confirm coverage summary artifact is present when coverage claims are made.
-- [ ] Confirm reconciliation summary artifact is present when reconciliation claims are made.
-- [ ] Confirm package review artifact includes determination and boundary confirmation.
-- [ ] Confirm cross-references between package artifacts are valid.
-- [ ] Confirm final report includes artifact list and reconciliation/coverage status.
-
-## Boundary Notes
-
-- Completeness checks are structural/process-oriented.
-- Domain-specific doctrine correctness is validated separately.
+Do not treat this alias as the canonical authority.

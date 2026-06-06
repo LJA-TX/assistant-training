@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "family": "reports",
+  "index_id": "idx:family:reports:0001",
+  "registry_id": "idx:registry:0001",
+  "status": "partially_populated",
+  "description": "Migration-critical report anchors for Wave 0 population.",
+  "last_verified": "2026-06-05T00:00:00-05:00",
+  "entries": [
+    {
+      "stable_id": "rpt:seed:0001",
+      "current_path": "reports/stage_c3/baseline_contract_artifacts",
+      "canonical_path": "history/reports/stage_c3/baseline_contract_artifacts",
+      "source_path": "reports/stage_c3/baseline_contract_artifacts",
+      "previous_paths": [],
+      "status": "seed",
+      "role": "family_anchor",
+      "hash": null,
+      "provenance_note": "Seed anchor for canonical report indexing; no repository-wide population yet.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:reports:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "rpt:stage_c1:0001",
+      "current_path": "reports/stage_c1/stage_c1_fixture_harness_report.json",
+      "canonical_path": "history/reports/stage_c1/stage_c1_fixture_harness_report.json",
+      "source_path": "reports/stage_c1/stage_c1_fixture_harness_report.json",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "active_report_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C1 report tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:reports:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "rpt:stage_c2:0001",
+      "current_path": "reports/stage_c2/stage_c2_foundation_report.json",
+      "canonical_path": "history/reports/stage_c2/stage_c2_foundation_report.json",
+      "source_path": "reports/stage_c2/stage_c2_foundation_report.json",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "active_report_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C2 report tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:reports:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "rpt:stage_c3:0001",
+      "current_path": "reports/stage_c3/baseline_contract_artifacts",
+      "canonical_path": "history/reports/stage_c3/baseline_contract_artifacts",
+      "source_path": "reports/stage_c3/baseline_contract_artifacts",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "historical_report_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C3 baseline contract artifact tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:reports:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "rpt:stage_c4:0001",
+      "current_path": "reports/stage_c4/contract_artifacts",
+      "canonical_path": "history/reports/stage_c4/contract_artifacts",
+      "source_path": "reports/stage_c4/contract_artifacts",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "historical_report_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C4 report tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:reports:0001",
+        "samp:stage_c4:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "rpt:stage_c5:0001",
+      "current_path": "reports/stage_c5/contract_artifacts",
+      "canonical_path": "history/reports/stage_c5/contract_artifacts",
+      "source_path": "reports/stage_c5/contract_artifacts",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "historical_report_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C5 report tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:reports:0001",
+        "samp:stage_c5:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    },
+    {
+      "stable_id": "rpt:stage_c6:0001",
+      "current_path": "reports/stage_c6/reporting_artifacts",
+      "canonical_path": "history/reports/stage_c6/reporting_artifacts",
+      "source_path": "reports/stage_c6/reporting_artifacts",
+      "previous_paths": [],
+      "status": "anchor",
+      "role": "historical_report_anchor",
+      "hash": null,
+      "provenance_note": "Anchor record populated by W0-04 for stage C6 report tracking.",
+      "related_ids": [
+        "idx:registry:0001",
+        "idx:family:reports:0001",
+        "samp:stage_c6:0001"
+      ],
+      "last_verified": "2026-06-05T00:00:00-05:00"
+    }
+  ]
+}

@@ -1,31 +1,7 @@
-# <Coverage Summary Title>
+# Compatibility Alias
 
-## Scope
+This historical path is preserved for compatibility and discoverability.
 
-Describe the bounded scope covered by this summary.
+Canonical location: `docs/framework/process_infrastructure/templates/coverage_summary_template.md`
 
-## Inputs
-
-List authoritative inputs used for coverage accounting.
-
-## Coverage Table
-
-| Group | Planned Count | Authored Count | Status |
-|---|---:|---:|---|
-| <group-1> | <n> | <n> | <status> |
-| <group-2> | <n> | <n> | <status> |
-| Total | <n> | <n> | <status> |
-
-## ID Coverage Notes
-
-- Missing IDs: <list or none>
-- Extra IDs: <list or none>
-- Duplicate IDs: <list or none>
-
-## Determination
-
-State coverage determination and any residual gaps.
-
-## Boundary Confirmation
-
-Confirm out-of-scope surfaces were not modified.
+Do not treat this alias as the canonical authority.

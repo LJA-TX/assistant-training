@@ -1,0 +1,71 @@
+# Start Here
+
+Use this page as the first navigation path into the repository.
+
+## 1. Confirm Current State
+
+Read [current_status.md](current_status.md) for the accepted repository state, active phase, and current housekeeping boundary.
+
+## 2. Read The Governing Doctrine
+
+The reusable regimen is governed by:
+
+- [../goal_charter_v5a.md](../goal_charter_v5a.md)
+- [../appendix_a_operational_execution_contract_v3a.md](../appendix_a_operational_execution_contract_v3a.md)
+- [../metric_specification_v1a.md](../metric_specification_v1a.md)
+
+These are doctrine surfaces, not optional background reading.
+
+## 3. Identify The Reusable Framework
+
+Read [framework_vs_history.md](framework_vs_history.md) to distinguish reusable regimen assets from preserved project history.
+
+The main reusable framework surfaces are:
+
+- [../../AGENTS.md](../../AGENTS.md)
+- [../framework/process_infrastructure/](../framework/process_infrastructure/)
+- [../framework/lineages/](../framework/lineages/)
+- [../framework/methodology/](../framework/methodology/)
+- [status/STAGE_B_COMPLETION_DETERMINATION.md](status/STAGE_B_COMPLETION_DETERMINATION.md)
+- [roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md](roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md)
+- [../../evals/canonical_eval_manifest_v1.json](../../evals/canonical_eval_manifest_v1.json)
+- [../../evals/data/canonical_v1/](../../evals/data/canonical_v1/)
+- [../../scripts/train_lora_sft.py](../../scripts/train_lora_sft.py)
+- [../../scripts/preflight_lora_run.py](../../scripts/preflight_lora_run.py)
+- [../../scripts/build_dataset_v1.py](../../scripts/build_dataset_v1.py)
+- [../../scripts/eval_canonical_manifest.py](../../scripts/eval_canonical_manifest.py)
+
+## 4. Check Housekeeping Boundaries
+
+Read [housekeeping_status.md](housekeeping_status.md) before planning any structural repository work.
+
+That page explains:
+
+- which housekeeping documents are accepted authorities
+- what Wave 1 changed
+- what remains out of scope after Wave 1
+
+## 5. Use History Deliberately
+
+Project history remains preserved in its current locations. Use it when you need provenance, methodological evidence, or lineage-specific context.
+
+Primary preserved history surfaces:
+
+- `../convergence/`
+- `../continuity/`
+- `../deprecated/`
+- `../../configs/lora/`
+- `../../manifests/runs/`
+- `../../manifests/reports/`
+- `../../data/v1_0/`
+- `../../reports/stage_c1/` through `../../reports/stage_c6/`
+
+## 6. Parked Family Status
+
+The runtime-output / corpus-behavior investigation family is defined but parked.
+
+Planning anchor:
+
+- [roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md](roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md)
+
+Do not treat that family as active implementation work unless a later phase explicitly reactivates it.
