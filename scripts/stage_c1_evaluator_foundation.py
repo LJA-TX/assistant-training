@@ -9,7 +9,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Mapping
 
-from repo_paths import resolve_fixture_root
+from repo_paths import resolve_repo_root
 
 
 class ContractViolation(RuntimeError):
@@ -613,7 +613,7 @@ def run_fixture_harness(fixtures_root: Path) -> FixtureValidationReport:
 
 
 def _default_fixtures_root() -> Path:
-    return resolve_fixture_root()
+    return resolve_repo_root() / "tests" / "fixtures" / "stage_c1"
 
 
 def main() -> int:
@@ -623,7 +623,7 @@ def main() -> int:
     parser.add_argument(
         "--fixtures-root",
         default=str(_default_fixtures_root()),
-        help="Path to Stage B WP8 fixture root",
+        help="Path to Stage C1 fixture root",
     )
     parser.add_argument(
         "--report-output",

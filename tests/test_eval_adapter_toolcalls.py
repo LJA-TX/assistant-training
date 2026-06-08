@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 
-SCRIPT_PATH = Path('/opt/ai-stack/assistant-training/scripts/eval_adapter_toolcalls.py')
+SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "eval_adapter_toolcalls.py"
 
 
 def _load_module():

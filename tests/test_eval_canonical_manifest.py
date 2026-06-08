@@ -7,12 +7,11 @@ SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
-from repo_paths import resolve_artifact_path, resolve_script_path
+from repo_paths import resolve_script_path
 
 
 EVAL_SCRIPT_PATH = resolve_script_path("eval_canonical_manifest")
 DETECTOR_SCRIPT_PATH = resolve_script_path("post_eval_collapse_detector")
-THRESHOLD_PROFILE_PATH = resolve_artifact_path("stage_b_v1_threshold_profile")
 
 
 def _load_module(path: Path, name: str):
@@ -54,6 +53,25 @@ def _fake_manifest():
             "eval_schema_version": "canonical_eval_manifest_v1",
             "dataset_manifest_version": "dataset_v1_0_summary",
         },
+    }
+
+
+def _fake_threshold_profile():
+    return {
+        "metric_catalog": {
+            "no_call_correctness_aggregate": {"path": "metrics.aggregate.no_call_correctness"},
+            "no_call_correctness_adversarial": {"path": "metrics.probes.no_call_adversarial.no_call_correctness"},
+            "wrapper_leakage_overall": {"path": "metrics.aggregate.wrapper_leakage"},
+            "invalid_json_overall": {"path": "metrics.aggregate.invalid_json"},
+            "read_file_exact_valid_rate": {"path": "failure_profile.read_file_exact_valid.rate"},
+            "read_file_symbol_name_exact_valid_rate": {
+                "path": "failure_profile.read_file_symbol_name_exact_valid.rate"
+            },
+            "no_anchor_exact_valid_share": {"path": "failure_profile.anchor_exact_share.no_anchor_phrase"},
+            "direct_answer_substitution_count": {
+                "path": "failure_profile.failure_categories_non_exact_tool_rows.direct_answer_substitution"
+            },
+        }
     }
 
 
@@ -120,7 +138,7 @@ def _build_side_summary(mod, rows: list[dict], side: str):
 def test_raw_summary_resolves_all_active_detector_paths():
     eval_mod = _load_eval_module()
     detector_mod = _load_detector_module()
-    threshold_profile = json.loads(THRESHOLD_PROFILE_PATH.read_text(encoding="utf-8"))
+    threshold_profile = _fake_threshold_profile()
 
     adversarial_row = _make_eval_row(
         eval_mod,

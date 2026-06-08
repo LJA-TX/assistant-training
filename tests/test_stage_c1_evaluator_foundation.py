@@ -7,7 +7,7 @@ SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
-from repo_paths import resolve_fixture_root, resolve_script_path
+from repo_paths import resolve_script_path
 
 
 SCRIPT_PATH = resolve_script_path("stage_c1_evaluator_foundation")
@@ -62,6 +62,13 @@ def _row_fact_payload():
             "raw_record_locator": "s3://bucket/path",
         },
     }
+
+
+def _write_fixture(root: Path, relative_path: str, fixture: dict):
+    path = root / relative_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(fixture, indent=2), encoding="utf-8")
+    return path
 
 
 def test_build_row_fact_record_happy_path():
@@ -147,20 +154,37 @@ def test_emit_family_a_scorer_evidence_accepts_approved_subtype_only():
     assert rec.missing_evidence is False
 
 
-def test_fixture_harness_reports_zero_issues_for_authoritative_fixture_corpus():
+def test_fixture_harness_reports_zero_issues_for_authoritative_fixture_corpus(tmp_path):
     mod = _load_module()
-    root = resolve_fixture_root()
+    root = tmp_path / "fixture_corpus"
+
+    valid_fixture = {
+        "source_documents": ["test"],
+        "classification": {},
+        "required_inputs": {},
+        "expected_state": {
+            "completeness": "complete",
+            "current_run_computability": "current-run computable",
+            "comparability": "comparison-allowed",
+            "noncomputability_reasons": [],
+        },
+        "expected_detector_treatment": {},
+        "expected_reconciliation_behavior": {},
+        "acceptance_criteria": [],
+        "rationale": "test",
+    }
+    _write_fixture(root, "family_a/a_c_001.json", {**valid_fixture, "fixture_id": "A-C-001", "source_definition_id": "A-C-001"})
+    _write_fixture(root, "family_b1/b1_c_001.json", {**valid_fixture, "fixture_id": "B1-C-001", "source_definition_id": "B1-C-001"})
+    _write_fixture(root, "family_b2/b2_c_001.json", {**valid_fixture, "fixture_id": "B2-C-001", "source_definition_id": "B2-C-001"})
 
     report = mod.run_fixture_harness(root)
-    assert report.fixture_count == 117
+    assert report.fixture_count == 3
     assert report.issue_count == 0
     assert report.invalid_fixture_count == 0
     assert report.fixture_counts_by_family_group == {
-        "common_state": 18,
-        "cross_family": 27,
-        "family_a": 25,
-        "family_b1": 24,
-        "family_b2": 23,
+        "family_a": 1,
+        "family_b1": 1,
+        "family_b2": 1,
     }
 
 

@@ -12,7 +12,7 @@ This appendix defines frozen evaluation contracts, dataset composition rules, pr
 Codex must pin runtime semantics before serious training/eval begins.
 
 **Required pinned artifacts**:
-- assistant-runtime git commit, tool schema version, eval schema version, dataset manifest version
+- assistant-runtime release or commit identifier, tool schema version, eval schema version, dataset manifest version
 - tokenizer version, training-script version, eval-script version
 - dependency lock snapshot, training seed(s)
 - CUDA / torch / transformers / PEFT versions
@@ -31,7 +31,7 @@ If runtime semantics must change, create a new evaluation generation/version and
 All serious runs must evaluate against a fixed baseline suite.
 
 ### 2.1 Canonical Eval Manifest
-Use a single pinned manifest artifact (canonical: `/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json`).
+Use a single pinned manifest artifact (`evals/canonical_eval_manifest_v1.json`).
 
 The manifest must pin: dataset paths/hashes, split hashes, scorer script paths/hashes, decode parameters, prompt serialization contract, tokenizer version, evaluation order, and random seed(s).
 
@@ -266,9 +266,9 @@ Codex must pause and request human direction if:
 
 ## 13. Canonical Model and Storage Guidance
 
-**Preferred local model mirror root**: `/mnt/mirrors/hf_mirrors/transformers/`
+**Preferred model source**: a validated local mirror or Hugging Face registry reference configured by the execution environment
 
-**Expected canonical target path**: `/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base`
+**Expected canonical target reference**: `llama-3.1-8b-base`
 
 Instruct-model checkpoints may be used for comparative evaluation, ablation studies, curriculum experiments, and behavioral reference baselines — but are non-canonical unless formally promoted.
 

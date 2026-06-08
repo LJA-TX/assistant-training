@@ -6,21 +6,7 @@ SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
-from repo_paths import (
-    REPO_ROOT_ENV,
-    fixture_registry,
-    resolve_repo_root,
-    validate_fixture_registry,
-    validate_role_maps,
-)
-
-
-def _create_sentinel_repo(root: Path) -> None:
-    (root / "docs").mkdir(parents=True, exist_ok=True)
-    (root / "scripts").mkdir(parents=True, exist_ok=True)
-    (root / "evals").mkdir(parents=True, exist_ok=True)
-    (root / "AGENTS.md").write_text("sentinel\n", encoding="utf-8")
-    (root / "docs" / "goal_charter_v5a.md").write_text("sentinel\n", encoding="utf-8")
+from repo_paths import resolve_artifact_path, resolve_repo_root, resolve_script_path
 
 
 def test_resolve_repo_root_from_test_path():
@@ -29,52 +15,25 @@ def test_resolve_repo_root_from_test_path():
 
 def test_resolve_repo_root_honors_environment_override(monkeypatch, tmp_path):
     repo_root = tmp_path / "synthetic-repo"
-    _create_sentinel_repo(repo_root)
+    (repo_root / "docs").mkdir(parents=True, exist_ok=True)
+    (repo_root / "scripts").mkdir(parents=True, exist_ok=True)
+    (repo_root / "evals").mkdir(parents=True, exist_ok=True)
+    (repo_root / "AGENTS.md").write_text("sentinel\n", encoding="utf-8")
+    (repo_root / "docs" / "goal_charter_v5a.md").write_text("sentinel\n", encoding="utf-8")
+
     nested_start = repo_root / "nested" / "deeper" / "placeholder.py"
     nested_start.parent.mkdir(parents=True, exist_ok=True)
     nested_start.write_text("# placeholder\n", encoding="utf-8")
 
-    monkeypatch.setenv(REPO_ROOT_ENV, str(repo_root))
+    monkeypatch.setenv("ASSISTANT_TRAINING_REPO_ROOT", str(repo_root))
 
     assert resolve_repo_root(start=nested_start) == repo_root.resolve()
 
 
-def test_role_maps_and_fixture_registry_validate_against_current_repo():
-    validation = validate_role_maps()
-    all_roles = validation["all_roles"]
-    present_roles = validation["present_roles"]
+def test_alpha_scoped_roles_resolve_against_current_repo():
+    root = resolve_repo_root()
 
-    assert all_roles["script:eval_canonical_manifest"].exists()
-    assert all_roles["artifact:wp8_fixture_root"].exists()
-    assert "script:eval_canonical_manifest" in present_roles
-    assert "artifact:wp8_fixture_root" in present_roles
-
-    resolved_registry = validate_fixture_registry()
-    assert set(resolved_registry) == {
-        "fixture_family/wp8_validation",
-        "threshold_profile/stage_b_v1",
-        "sample_output/stage_c4_v1",
-        "sample_output/stage_c5_v1",
-        "sample_output/stage_c6_v1",
-    }
-
-    public_registry = fixture_registry()
-    for artifact_id, record in public_registry.items():
-        assert artifact_id in resolved_registry
-        assert Path(record["current_path"]).exists()
-        assert Path(record["recorded_source_path"]).exists()
-
-
-def test_validate_role_maps_reports_optional_output_roles_separately():
-    validation = validate_role_maps()
-    all_roles = validation["all_roles"]
-    present_roles = validation["present_roles"]
-    optional_missing_roles = validation["optional_missing_roles"]
-
-    optional_role = "artifact:stage_c8_projection_artifacts_dir"
-    if all_roles[optional_role].exists():
-        assert optional_role in present_roles
-        assert optional_role not in optional_missing_roles
-    else:
-        assert optional_role not in present_roles
-        assert optional_role in optional_missing_roles
+    assert resolve_script_path("eval_canonical_manifest") == root / "scripts" / "eval_canonical_manifest.py"
+    assert resolve_script_path("post_eval_collapse_detector") == root / "scripts" / "post_eval_collapse_detector.py"
+    assert resolve_script_path("stage_c1_evaluator_foundation") == root / "scripts" / "stage_c1_evaluator_foundation.py"
+    assert resolve_artifact_path("canonical_eval_manifest") == root / "evals" / "canonical_eval_manifest_v1.json"

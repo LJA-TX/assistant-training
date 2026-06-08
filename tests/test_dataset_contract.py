@@ -25,32 +25,78 @@ def _validate_row(row: dict):
     assert args == json.dumps(obj, ensure_ascii=False, sort_keys=True)
 
 
-def _dataset_paths(version: str):
-    base = "/opt/ai-stack/runtimes/assistant-runtime/reports/ft_data"
-    return (
-        Path(f"{base}/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_{version}_train_grouped.jsonl"),
-        Path(f"{base}/tool_sft_broad_allaliases_20260504_v2_positive_aug_inferred_{version}_val_grouped.jsonl"),
+def _canonical_row(system_text: str, file_path: str, line_start: int = 1, line_end: int = 2):
+    args = json.dumps(
+        {"line_end": line_end, "line_start": line_start, "path": file_path},
+        ensure_ascii=False,
+        sort_keys=True,
     )
+    return {
+        "messages": [
+            {"role": "system", "content": system_text},
+            {"role": "user", "content": f"Read {file_path} lines {line_start}-{line_end}."},
+            {
+                "role": "assistant",
+                "tool_calls": [
+                    {
+                        "id": "call_1",
+                        "type": "function",
+                        "function": {
+                            "name": "read_file",
+                            "arguments": args,
+                        },
+                    }
+                ],
+            },
+        ]
+    }
 
 
-def test_dataset_contract_paths_exist():
+def _write_dataset(root: Path, version: str, system_text: str):
+    base = root / version
+    base.mkdir(parents=True, exist_ok=True)
+    train = base / "train.jsonl"
+    val = base / "val.jsonl"
+    rows = [
+        _canonical_row(system_text, "/tmp/a.txt"),
+        _canonical_row(system_text, "/tmp/b.txt", line_start=3, line_end=4),
+    ]
+    payload = "\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + "\n"
+    train.write_text(payload, encoding="utf-8")
+    val.write_text(payload, encoding="utf-8")
+    return train, val
+
+
+def test_dataset_contract_paths_exist(tmp_path):
     for version in ("v0_1", "v0_2"):
-        train, val = _dataset_paths(version)
+        train, val = _write_dataset(
+            tmp_path,
+            version,
+            "You are a dataset contract test model."
+            if version == "v0_1"
+            else "You are an assistant-runtime tool-call emission model.",
+        )
         assert train.exists()
         assert val.exists()
 
 
-def test_dataset_rows_are_canonical():
+def test_dataset_rows_are_canonical(tmp_path):
     for version in ("v0_1", "v0_2"):
-        train, val = _dataset_paths(version)
+        train, val = _write_dataset(
+            tmp_path,
+            version,
+            "You are a dataset contract test model."
+            if version == "v0_1"
+            else "You are an assistant-runtime tool-call emission model.",
+        )
         for path in (train, val):
             for row in _rows(path):
                 _validate_row(row)
 
 
-def test_v0_2_system_prompt_is_strict_contract():
+def test_v0_2_system_prompt_is_strict_contract(tmp_path):
     strict_prefix = "You are an assistant-runtime tool-call emission model."
-    train, val = _dataset_paths("v0_2")
+    train, val = _write_dataset(tmp_path, "v0_2", strict_prefix)
     for path in (train, val):
         for row in _rows(path):
             msgs = row["messages"]

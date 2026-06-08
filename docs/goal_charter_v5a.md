@@ -33,7 +33,7 @@ The project intentionally favors a cleaner behavioral substrate over inherited c
 ## Primary Target
 
 **Canonical Autonomous Target**: Llama-3.1-8B base  
-**Expected Initial Model Path**: `/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base`
+**Expected Initial Model Reference**: `llama-3.1-8b-base`
 
 **Operational Objective**: Construct disciplined runtime-assistant behavior through runtime behavioral alignment followed by tool-call specialization.
 
@@ -59,10 +59,11 @@ Codex may perform runtime behavioral alignment, tool-call specialization, staged
 ---
 
 ## Repositories
-- **Training repo** (`/opt/ai-stack/assistant-training`): datasets, transforms, validation, configs, manifests, training/eval scripts, artifacts, reports.
-- **Runtime repo** (`/opt/ai-stack/runtimes/assistant-runtime`): tool schemas, runtime semantics, validation cases, production behavior.
-- **Model Service**: `/opt/ai-stack/runtimes/modular` and `/opt/ai-stack/runtimes/monolith`.
-- **Stack Repo**: `/opt/ai-stack/stacks/llama-3.1-8b-base`.
+- **Canonical source repository**: `assistant-training-private`
+- **Curated/public repository**: `assistant-training`
+- **Runtime repository**: `assistant-runtime`
+- **Model service repositories**: `modular` and `monolith`
+- **Base model reference**: `llama-3.1-8b-base`
 
 ---
 
