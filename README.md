@@ -1,6 +1,48 @@
 # assistant-training
 
-This repository is the curated public package for a runtime-oriented assistant-training regimen. It is intentionally lean: it explains the doctrine, evaluation contract, current-state guidance, and a bounded historical evidence spine without turning the repository into an archive.
+This repository documents an ongoing effort to develop, validate, and document a reproducible training and evaluation methodology for tool-calling assistants built from open-weight language models.
+
+The current experimental platform is Llama-3.1-8B-Base, but the long-term goal is a model-agnostic regimen that can be applied across future open-weight models.
+
+This repository is presented as a curated public package rather than a complete project archive. It focuses on methodology, evaluation contracts, tooling, current-state guidance, and selected historical evidence that explains how the approach evolved.
+
+## Project Status & Philosophy
+
+This is an active development effort, not a completed research program or polished product.
+
+### What Has Been Achieved So Far
+
+The project has developed and documented a repeatable regimen covering:
+
+- Definition of target assistant behaviors
+- Dataset construction and curation strategies
+- Evaluation contracts and automated validation
+- Detection of contamination, overfitting, and subtle failure modes
+- Governed and reproducible iteration cycles
+
+### Key Insights
+
+The work has surfaced several important failure modes that conventional benchmarks often fail to reveal:
+
+- Evaluation/runtime divergence
+- Overconstraint collapse
+- Wrapper-behavior persistence
+- Schema-coupling effects
+- Tool-selection and restraint failures
+
+The project has also developed practical methods for detecting, measuring, and mitigating these issues.
+
+### Current Focus
+
+The project remains in active development.
+
+Current work is focused on understanding the relationship between offline evaluation results and real-world runtime behavior, with the goal of making tool-calling assistants more predictable, reliable, and trustworthy in actual use.
+
+### Why This Repository Exists
+
+This repository exists to share the methodology, tooling, evaluation surfaces, evidence trail, and lessons learned throughout that process.
+
+The long-term goal is not merely to produce a single strong adapter. The larger objective is to develop a reusable training and evaluation framework that can help improve future generations of open-weight tool-calling models.
 
 ## What This Repository Shows
 
