@@ -144,7 +144,7 @@ The following items are intentionally deferred beyond version 1:
 
 - bulk `docs/convergence/`
 - bulk `docs/continuity/`
-- bulk `docs/deprecated/`
+- bulk `docs/history/`
 - `docs/research/` as a public-facing package family
 - `data/`
 - `evals/data/`

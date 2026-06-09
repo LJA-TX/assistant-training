@@ -9,9 +9,9 @@
   "entries": [
     {
       "stable_id": "arc:seed:0001",
-      "current_path": "docs/deprecated",
+      "current_path": "docs/history",
       "canonical_path": "history/archive/deprecated_doctrine",
-      "source_path": "docs/deprecated",
+      "source_path": "docs/history",
       "previous_paths": [],
       "status": "seed",
       "role": "family_anchor",
@@ -41,9 +41,9 @@
     },
     {
       "stable_id": "arc:deprecated:0001",
-      "current_path": "docs/deprecated",
+      "current_path": "docs/history",
       "canonical_path": "history/archive/deprecated_doctrine",
-      "source_path": "docs/deprecated",
+      "source_path": "docs/history",
       "previous_paths": [],
       "status": "anchor",
       "role": "archive_anchor",

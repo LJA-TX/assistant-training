@@ -474,7 +474,7 @@ This should remain separate from `CL-01` unless validation shows the extra scope
 | Doctrine docs | None directly | future doc-path redirects or link rewrites if doctrine moves |
 | `docs/process_infrastructure/`, `docs/lineages/`, selected synthesis docs | None directly | documentation citation and index work still required |
 | Bulk `docs/convergence/` history | None directly | canonical record index, redirect strategy, and high-citation link handling still required |
-| `docs/continuity/`, `docs/deprecated/`, bootstrap docs, proposals | None directly | history indexes and archive-placement decisions still required |
+| `docs/continuity/`, `docs/history/`, bootstrap docs, proposals | None directly | history indexes and archive-placement decisions still required |
 | Canonical eval manifest and eval corpora | Partially: resolver pattern can later absorb manifest and dataset roles | frozen-manifest dual-path design and dataset-path portability still remain |
 | Core scripts: `train_lora_sft.py`, `preflight_lora_run.py`, `build_dataset_v1.py`, `eval_canonical_manifest.py` | `eval_canonical_manifest.py` becomes materially less coupled; resolver architecture becomes available for the remaining core scripts | `train_lora_sft.py`, `preflight_lora_run.py`, and `build_dataset_v1.py` still need direct adoption or a follow-on slice |
 | `scripts/stage_c1_evaluator_foundation.py` | yes: fixture root becomes role-based instead of absolute | future wrapper needed only once physical move begins |

@@ -74,7 +74,7 @@ If any of the first two steps are incomplete, alpha assembly will remain brittle
 | `evals/canonical_eval_manifest_v1.json` | Doctrine and Manifest Normalization Package | Convert the manifest into a public-alpha-safe contract or fence unresolved paths explicitly. | High | `jq .`; `git diff --check`; grep for absolute paths and excluded surface names. | The manifest is valid JSON, no longer leaks private/local paths, and no longer implies that excluded data/report surfaces are part of the assembled package. |
 | `docs/current/start_here.md` | Front Door Package | Rewrite the navigation path so it only leads through alpha-approved files. | Medium | `git diff --check`; manual path walk from README to evidence spine. | The reader journey stays entirely inside the accepted alpha boundary. |
 | `docs/current/current_status.md` | Front Door Package | Replace closure references and boundary language with the accepted alpha baseline. | Medium | `git diff --check`; grep for closure-only artifacts and excluded families. | The status summary reflects the accepted alpha package and no longer depends on missing closure docs. |
-| `docs/current/framework_vs_history.md` | Front Door Package | Prune excluded-family references and restate the history/current split around the accepted public package. | Medium | `git diff --check`; grep for `docs/convergence/`, `docs/continuity/`, `docs/deprecated/`, `data/`, `reports/`, `manifests/`. | The page explains the current method versus curated history without enumerating excluded surfaces as public navigation. |
+| `docs/current/framework_vs_history.md` | Front Door Package | Prune excluded-family references and restate the history/current split around the accepted public package. | Medium | `git diff --check`; grep for `docs/convergence/`, `docs/continuity/`, `docs/history/`, `data/`, `reports/`, `manifests/`. | The page explains the current method versus curated history without enumerating excluded surfaces as public navigation. |
 | `docs/current/housekeeping_status.md` | Front Door Package | Remove closure-report references and align the housekeeping narrative to the accepted alpha boundary. | Medium | `git diff --check`; grep for missing closure-only document names. | The page can be read without requiring non-alpha artifacts. |
 | `docs/framework/lineages/README.md` | Evidence Spine Package | Rewrite the index so it reflects the accepted curated evidence spine and reading order. | High | `git diff --check`; verify the listed evidence set matches the accepted 12-artifact spine. | The index points to the correct bounded spine and does not imply an archive. |
 | `scripts/stage_c1_evaluator_foundation.py` | Test and Evaluator Decoupling Package | Decouple the evaluator foundation from the WP8 fixture corpus and excluded report surfaces. | High | Targeted test run plus path grep for excluded fixture/report roots. | The evaluator no longer depends on excluded WP8 fixture surfaces. |
@@ -119,7 +119,7 @@ Run after the front-door and doctrine updates:
   - `/mnt/mirrors`
   - `docs/convergence/`
   - `docs/continuity/`
-  - `docs/deprecated/`
+  - `docs/history/`
   - `data/`
   - `evals/data/`
   - `evals/runs/`

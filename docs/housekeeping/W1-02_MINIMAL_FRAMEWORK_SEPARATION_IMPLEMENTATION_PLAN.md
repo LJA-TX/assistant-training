@@ -70,7 +70,7 @@ This plan keeps the first wave small enough to validate the framework/history sp
 
 - `docs/assistant_training_goal_documents_and_artifacts_index.md` stays in place for now.
 - Bulk `docs/convergence/` history outside the exact file list above stays in place.
-- `docs/continuity/`, `docs/deprecated/`, `configs/lora/`, `manifests/runs/`, `manifests/reports/`, `data/v1_0/`, and `reports/stage_c1/` through `reports/stage_c6/` stay in place.
+- `docs/continuity/`, `docs/history/`, `configs/lora/`, `manifests/runs/`, `manifests/reports/`, `data/v1_0/`, and `reports/stage_c1/` through `reports/stage_c6/` stay in place.
 
 ## B. Alias And Redirect Plan
 

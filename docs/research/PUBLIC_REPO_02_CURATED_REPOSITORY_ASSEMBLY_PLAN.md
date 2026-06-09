@@ -249,7 +249,7 @@ Before version 1 assembly approval, verify:
 - `local_review_bundles/`
 - `configs/`
 - `docs/research/`
-- `docs/deprecated/`
+- `docs/history/`
 - bulk `docs/convergence/`
 - bulk `docs/housekeeping/`
 - `docs/continuity/` unless a later version explicitly needs an extra continuity bridge

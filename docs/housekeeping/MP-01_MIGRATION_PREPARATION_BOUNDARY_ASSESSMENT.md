@@ -81,7 +81,7 @@ The safest boundary is:
 | `data/v1_0/` | It is lineage evidence for Stage A/B. | Preserve original dataset snapshots, keep hashable references, and avoid rewriting content. |
 | `manifests/reports/` bulk history | It contains the evidence chain for decisions, gates, and runtime outcomes. | Preserve source paths, create canonical indexes, and only move after reference maps exist. |
 | `docs/convergence/` bulk history | It contains the project execution log and decision trail. | Preserve original file content and add a canonical record index before any separation. |
-| `docs/continuity/` and `docs/deprecated/` | They preserve handoff history and doctrine evolution. | Keep immutable history references and avoid reinterpreting old path strings as current targets. |
+| `docs/continuity/` and `docs/history/` | They preserve handoff history and doctrine evolution. | Keep immutable history references and avoid reinterpreting old path strings as current targets. |
 | `data/tool_ft_allaliases_*` | Runtime paths inside the data are part of the training evidence. | Treat path strings as data content, not as migration instructions. |
 
 ### Required Protections

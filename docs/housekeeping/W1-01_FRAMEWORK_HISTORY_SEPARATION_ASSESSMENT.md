@@ -72,7 +72,7 @@ These surfaces are clearly historical evidence or provenance-heavy lineage recor
 
 - bulk `docs/convergence/` package records outside the selected framework/current-state set
 - `docs/continuity/`
-- `docs/deprecated/`
+- `docs/history/`
 - `configs/lora/`
 - `manifests/runs/`
 - bulk `manifests/reports/`
@@ -110,7 +110,7 @@ The first framework-history separation wave should include only the families tha
 These families should be part of later waves, not the first separation wave:
 
 - `docs/continuity/`
-- `docs/deprecated/`
+- `docs/history/`
 - `configs/lora/`
 - `manifests/runs/`
 - bulk `manifests/reports/`
@@ -133,7 +133,7 @@ These families should be part of later waves, not the first separation wave:
 | selected `docs/convergence/` synthesis/current-state docs | Low to medium | None | None | Medium | Medium |
 | `docs/current/` navigation pointers | Low | None | None | Low | Low |
 | `docs/continuity/` | None to low | None | None | Medium | Medium |
-| `docs/deprecated/` | None | None | None | Medium | Medium |
+| `docs/history/` | None | None | None | Medium | Medium |
 | `configs/lora/` | Low | None | Low | High | High |
 | `manifests/runs/` | Low | None | Low | High | High |
 | bulk `manifests/reports/` | Low | Low | Low | High | High |
@@ -158,7 +158,7 @@ These families should be part of later waves, not the first separation wave:
 ### 2. Moderate Separation Wave
 
 - Do everything in the minimal wave.
-- Also separate `docs/continuity/`, `docs/deprecated/`, and bootstrap history docs into a history-oriented layout.
+- Also separate `docs/continuity/`, `docs/history/`, and bootstrap history docs into a history-oriented layout.
 - Keep provenance-heavy configs, manifests, datasets, and report bundles in place for later waves.
 
 ### 3. Aggressive Separation Wave

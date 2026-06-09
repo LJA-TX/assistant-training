@@ -49,7 +49,7 @@ Compatibility aliases and small support files can be retained if they materially
 | [docs/convergence/](/opt/ai-stack/assistant-training/docs/convergence/) | Canonical Only | Large closure and transition archive. High noise, high explanation burden, not needed for the curated public repo. |
 | [docs/continuity/](/opt/ai-stack/assistant-training/docs/continuity/) | Canonical Only | Useful continuity record, but still archive material rather than public-front-door material. |
 | [docs/housekeeping/](/opt/ai-stack/assistant-training/docs/housekeeping/) | Canonical Only | Internal review, preservation, and process history. Valuable privately, too heavy publicly. |
-| [docs/deprecated/](/opt/ai-stack/assistant-training/docs/deprecated/) | Canonical Only | Deprecated material is not part of the clean public narrative. |
+| [docs/history/](/opt/ai-stack/assistant-training/docs/history/) | Canonical Only | Deprecated material is not part of the clean public narrative. |
 | Transitional/historical root docs: [docs/migration_checklist.md](/opt/ai-stack/assistant-training/docs/migration_checklist.md), [docs/assistant_training_goal_documents_and_artifacts_index.md](/opt/ai-stack/assistant-training/docs/assistant_training_goal_documents_and_artifacts_index.md), [docs/assistant_training_initial_ChatGPT_thread_summary.md](/opt/ai-stack/assistant-training/docs/assistant_training_initial_ChatGPT_thread_summary.md), [docs/repository_establishment_plan_v1.md](/opt/ai-stack/assistant-training/docs/repository_establishment_plan_v1.md) | Canonical Only | These are useful internal history and index material, but they are not necessary for the curated public package. |
 | [configs/](/opt/ai-stack/assistant-training/configs/) | Canonical Only | Stage-specific, path-heavy configuration material. Useful privately; too costly for the public default. |
 | [evals/data/](/opt/ai-stack/assistant-training/evals/data/) | Canonical Only | Mixed-provenance evaluation corpus. Important privately, but not appropriate for the clean public boundary. |
@@ -83,7 +83,7 @@ Compatibility aliases and small support files can be retained if they materially
 | [docs/convergence/](/opt/ai-stack/assistant-training/docs/convergence/) | Important | Rich history of methodological transitions and closures, though too heavy for the default public surface. |
 | [docs/continuity/](/opt/ai-stack/assistant-training/docs/continuity/) | Supporting | Useful continuity context, but not core to understanding the method. |
 | [docs/housekeeping/](/opt/ai-stack/assistant-training/docs/housekeeping/) | Minimal | Mostly internal process and review history rather than methodology itself. |
-| [docs/deprecated/](/opt/ai-stack/assistant-training/docs/deprecated/) | Minimal | Deprecated material is historically interesting but not necessary for the curated public method. |
+| [docs/history/](/opt/ai-stack/assistant-training/docs/history/) | Minimal | Deprecated material is historically interesting but not necessary for the curated public method. |
 | Transitional/historical root docs | Supporting | Useful for provenance and internal continuity, but not necessary for the public method. |
 | [configs/](/opt/ai-stack/assistant-training/configs/) | Important | Configuration records help explain how the regimen was run, but they are too stage-specific for the public default. |
 | [evals/data/](/opt/ai-stack/assistant-training/evals/data/) | Important | The evaluation corpus is method-relevant, but its provenance burden is too high for the curated public repo. |
@@ -117,7 +117,7 @@ Compatibility aliases and small support files can be retained if they materially
 | [docs/convergence/](/opt/ai-stack/assistant-training/docs/convergence/) | High | Large, historically dense, and explanation-heavy. |
 | [docs/continuity/](/opt/ai-stack/assistant-training/docs/continuity/) | Moderate | Useful context, but still a historical layer to explain. |
 | [docs/housekeeping/](/opt/ai-stack/assistant-training/docs/housekeeping/) | High | Large internal process/archive layer. |
-| [docs/deprecated/](/opt/ai-stack/assistant-training/docs/deprecated/) | Moderate | Historical/deprecated material still requires context and maintenance. |
+| [docs/history/](/opt/ai-stack/assistant-training/docs/history/) | Moderate | Historical/deprecated material still requires context and maintenance. |
 | Transitional/historical root docs | Moderate | Useful context, but not worth carrying into the lean public package by default. |
 | [configs/](/opt/ai-stack/assistant-training/configs/) | High | Stage-specific, path-heavy, and likely to require ongoing cleanup if public. |
 | [evals/data/](/opt/ai-stack/assistant-training/evals/data/) | High | Mixed provenance and corpus explanation burden. |
@@ -151,7 +151,7 @@ Compatibility aliases and small support files can be retained if they materially
 | [docs/convergence/](/opt/ai-stack/assistant-training/docs/convergence/) | Useful history | It records important methodological transitions, closures, and retrospective decisions. |
 | [docs/continuity/](/opt/ai-stack/assistant-training/docs/continuity/) | Useful history | It preserves continuity context for the project’s evolution. |
 | [docs/housekeeping/](/opt/ai-stack/assistant-training/docs/housekeeping/) | Generated history | Mostly generated review/preservation/process artifacts. |
-| [docs/deprecated/](/opt/ai-stack/assistant-training/docs/deprecated/) | Low-value history | Deprecated content is mainly historical residue. |
+| [docs/history/](/opt/ai-stack/assistant-training/docs/history/) | Low-value history | Deprecated content is mainly historical residue. |
 | Transitional/historical root docs | Useful history | They capture internal genesis, migration, and index material that is helpful privately but not necessary publicly. |
 | [configs/](/opt/ai-stack/assistant-training/configs/) | Generated history | Operational configuration artifacts from specific stages and runs. |
 | [evals/data/](/opt/ai-stack/assistant-training/evals/data/) | Generated history | Generated/curated corpora with provenance complexity. |
@@ -192,7 +192,7 @@ Keep these only in `assistant-training-private`:
 - [docs/convergence/](/opt/ai-stack/assistant-training/docs/convergence/)
 - [docs/continuity/](/opt/ai-stack/assistant-training/docs/continuity/)
 - [docs/housekeeping/](/opt/ai-stack/assistant-training/docs/housekeeping/)
-- [docs/deprecated/](/opt/ai-stack/assistant-training/docs/deprecated/)
+- [docs/history/](/opt/ai-stack/assistant-training/docs/history/)
 - Transitional/historical root docs: [docs/migration_checklist.md](/opt/ai-stack/assistant-training/docs/migration_checklist.md), [docs/assistant_training_goal_documents_and_artifacts_index.md](/opt/ai-stack/assistant-training/docs/assistant_training_goal_documents_and_artifacts_index.md), [docs/assistant_training_initial_ChatGPT_thread_summary.md](/opt/ai-stack/assistant-training/docs/assistant_training_initial_ChatGPT_thread_summary.md), [docs/repository_establishment_plan_v1.md](/opt/ai-stack/assistant-training/docs/repository_establishment_plan_v1.md)
 - [configs/](/opt/ai-stack/assistant-training/configs/)
 - [evals/data/](/opt/ai-stack/assistant-training/evals/data/)
@@ -235,7 +235,7 @@ Not part of the default curated repo:
 - [docs/convergence/](/opt/ai-stack/assistant-training/docs/convergence/)
 - [docs/continuity/](/opt/ai-stack/assistant-training/docs/continuity/)
 - [docs/housekeeping/](/opt/ai-stack/assistant-training/docs/housekeeping/)
-- [docs/deprecated/](/opt/ai-stack/assistant-training/docs/deprecated/)
+- [docs/history/](/opt/ai-stack/assistant-training/docs/history/)
 - [docs/migration_checklist.md](/opt/ai-stack/assistant-training/docs/migration_checklist.md)
 - [docs/assistant_training_goal_documents_and_artifacts_index.md](/opt/ai-stack/assistant-training/docs/assistant_training_goal_documents_and_artifacts_index.md)
 - [docs/assistant_training_initial_ChatGPT_thread_summary.md](/opt/ai-stack/assistant-training/docs/assistant_training_initial_ChatGPT_thread_summary.md)

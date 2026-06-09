@@ -3,7 +3,7 @@ Assessment only. No repository changes were made as part of the assessment itsel
 
 ## 1. Executive Summary
 
-The current documentation taxonomy is broadly sound and should be preserved. `docs/research/` is a legitimate long-term category and should be recognized formally alongside `docs/framework/`, `docs/current/`, `docs/continuity/`, `docs/convergence/`, `docs/housekeeping/`, and `docs/deprecated/`.
+The current documentation taxonomy is broadly sound and should be preserved. `docs/research/` is a legitimate long-term category and should be recognized formally alongside `docs/framework/`, `docs/current/`, `docs/continuity/`, `docs/convergence/`, `docs/housekeeping/`, and `docs/history/`.
 
 The taxonomy is strongest when each category has a narrow purpose:
 - `framework` for authoritative methodology and process structure
@@ -28,7 +28,7 @@ Each category has a distinct purpose, and the overlap is manageable if the bound
 | `docs/convergence/` | Closed work-package history, assessments, and closure evidence | Moderate, mostly with `housekeeping` |
 | `docs/housekeeping/` | Repository governance, preservation, boundaries, compatibility, and architectural decisions | Moderate, mostly with `research` |
 | `docs/research/` | Exploratory research and historical analysis of datasets, acquisition strategy, and provenance | Moderate, mostly with `housekeeping` and `convergence` |
-| `docs/deprecated/` | Superseded or retired content | Low |
+| `docs/history/` | Superseded or retired content | Low |
 
 The current taxonomy supports preservation and discoverability better than a single undifferentiated archive would. It also supports public curation by making it easier to exclude exploratory or archive-heavy material from a future curated repository.
 
@@ -131,7 +131,7 @@ Recommended official taxonomy:
 - `docs/convergence/`
 - `docs/housekeeping/`
 - `docs/research/`
-- `docs/deprecated/`
+- `docs/history/`
 
 Recommended role of `docs/research/`:
 - official long-term category

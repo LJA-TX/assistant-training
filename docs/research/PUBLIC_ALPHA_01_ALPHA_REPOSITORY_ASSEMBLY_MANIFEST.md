@@ -127,7 +127,7 @@ The following families should remain canonical-only for the alpha package:
 
 - `docs/convergence/`
 - `docs/continuity/`
-- `docs/deprecated/`
+- `docs/history/`
 - `docs/research/`
 - `docs/process_infrastructure/` compatibility-pointer subtree
 - `data/`

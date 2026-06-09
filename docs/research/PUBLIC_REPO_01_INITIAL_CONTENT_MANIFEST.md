@@ -120,7 +120,7 @@ These categories should remain in `assistant-training-private` by default.
 - [artifacts/](/opt/ai-stack/assistant-training/artifacts/)
 - [local_review_bundles/](/opt/ai-stack/assistant-training/local_review_bundles/)
 - [configs/](/opt/ai-stack/assistant-training/configs/)
-- [docs/deprecated/](/opt/ai-stack/assistant-training/docs/deprecated/)
+- [docs/history/](/opt/ai-stack/assistant-training/docs/history/)
 - bulk [docs/convergence/](/opt/ai-stack/assistant-training/docs/convergence/) outside the curated evidence spine
 - bulk [docs/housekeeping/](/opt/ai-stack/assistant-training/docs/housekeeping/) outside the curated evidence spine
 - [docs/continuity/](/opt/ai-stack/assistant-training/docs/continuity/) for version 1, because the evidence spine already captures the needed evolution signal more compactly

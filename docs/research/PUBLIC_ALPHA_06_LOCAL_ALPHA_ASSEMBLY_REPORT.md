@@ -105,7 +105,7 @@ The following families were intentionally left out of the assembled workspace:
 
 - `docs/convergence/`
 - `docs/continuity/`
-- `docs/deprecated/`
+- `docs/history/`
 - `docs/research/`
 - `data/`
 - `evals/data/`

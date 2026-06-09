@@ -217,7 +217,7 @@ This is a planning model only:
 | Selected synthesis docs in `docs/convergence/` | `docs/framework/methodology/` or `docs/current/status/` | These are reusable methodology and current-state records | Medium | Many internal doc links would need remapping |
 | Bulk `docs/convergence/` | `history/projects/llama31_8b_base/convergence/` | Preserve evidence chain while removing it from primary navigation | Medium | Cross-linked docs; needs canonical-record index first |
 | `docs/continuity/` | `history/projects/llama31_8b_base/continuity/` | Preserve handoff state as project history | Low | Mostly documentation references |
-| `docs/deprecated/` | `history/archive/deprecated_doctrine/` | Preserve governance evolution without primary-path clutter | Low | Low executable coupling |
+| `docs/history/` | `history/archive/deprecated_doctrine/` | Preserve governance evolution without primary-path clutter | Low | Low executable coupling |
 | Bootstrap docs such as `docs/assistant_training_initial_ChatGPT_thread_summary.md`, `docs/repository_establishment_plan_v1.md`, `docs/evaluation_manifest_v1.md`, `docs/migration_checklist.md` | `history/archive/bootstrap/` | Useful for provenance, not active navigation | Low | Minimal code coupling |
 | `docs/potential_skills/` | `history/archive/proposals/` or `docs/framework/proposals/` | Preserve reusable seeds without keeping them on the main path | Low | Low coupling |
 | `evals/canonical_eval_manifest_v1.json` and `evals/data/canonical_v1/` | `regimen/contracts/` plus `fixtures/canonical_eval/` or remain in place with framework aliasing | Critical framework contract and pinned corpora | Medium | Scripts, docs, validators, and examples rely on current location |

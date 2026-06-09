@@ -174,7 +174,7 @@ Definition:
 | `docs/convergence/` | Canonical Only | Curated Historical Evidence | Too valuable to hide entirely from a reviewer, but too large for full public inclusion. |
 | `docs/continuity/` | Canonical Only or Optional | Public Supporting | Small, compact, and high reviewer value. |
 | `docs/housekeeping/` | Canonical Only | Curated Historical Evidence | Selected authority/governance/preservation docs are useful evidence. |
-| `docs/deprecated/` | Canonical Only | Canonical Only | Low-value history for the curated repo. |
+| `docs/history/` | Canonical Only | Canonical Only | Low-value history for the curated repo. |
 | `scripts/` | Public Core | Public Core | Core executable regimen. |
 | `tests/` | Public Core | Public Core | Essential for rigor and trust. |
 | `configs/` | Canonical Only | Canonical Only | Path-heavy and stage-specific; low public value. |

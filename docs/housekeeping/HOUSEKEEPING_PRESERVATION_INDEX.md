@@ -88,7 +88,7 @@ Preservation priorities used below:
 | Bulk `manifests/reports/` run-specific artifacts outside the fixture corpus and threshold profile | Historical Evidence | Archive | High | Includes Stage B run reports, Stage C gate bundles, technical spike outputs, runtime forensics outputs, and probe records. Preserve for provenance, but move off the future main path. |
 | Bulk `docs/convergence/` package-level assessments, package reviews, acceptance assessments, implementation summaries, runtime validation reports, and companion determinations not listed above | Historical Evidence | Archive | High | This is the main project execution log. Preserve because it contains the evidence chain, but it should become historical/reference material rather than future primary navigation. |
 | `docs/continuity/` | Project History | Historical | Medium | Snapshot and handoff material. Preserve for orientation, but this is not the future reusable framework surface. |
-| `docs/deprecated/` | Project History | Archive | High | Doctrine and charter version history. Not primary navigation, but should remain preserved for provenance and governance evolution. |
+| `docs/history/` | Project History | Archive | High | Doctrine and charter version history. Not primary navigation, but should remain preserved for provenance and governance evolution. |
 | `docs/assistant_training_initial_ChatGPT_thread_summary.md`, `docs/assistant_training_goal_documents_and_artifacts_index.md`, `docs/repository_establishment_plan_v1.md`, `docs/evaluation_manifest_v1.md`, `docs/migration_checklist.md` | Project History | Archive | Medium | Valuable for bootstrap provenance and early architecture intent, but no longer primary navigation. `docs/evaluation_manifest_v1.md` is a superseded precursor, not the live contract. |
 | `docs/potential_skills/canonical_eval_stage_ab_skill.md` | Reusable Methodology | Archive | Medium | Seed material for later extraction into a reusable skill or operator guide. Preserve, but keep off the main path until formalized. |
 | `scripts/build_stage_b_recovery_*.py`, `scripts/build_stage_b_v1_*_family_concentration_review.py`, `scripts/validate_stage_b_recovery_*.py`, `scripts/i8_diagnostics_scaffold.py`, `scripts/i9_diagnostics_scaffold.py`, `scripts/i10_diagnostics_scaffold.py`, `scripts/provision_geometry_probe_weights.py` | Historical Evidence | Archive | Medium | Encodes project-specific recovery interventions and diagnostics. Preserve as lineage evidence and future example material; do not keep on the main path. |
@@ -226,7 +226,7 @@ This section recommends a future structure only. No structural changes are imple
 - run-specific `manifests/reports/`
 - current closure and transition determinations in `docs/convergence/`
 - `docs/continuity/`
-- `docs/deprecated/`
+- `docs/history/`
 
 These artifacts prove what was run, what was concluded, and under which assumptions the project moved between stages.
 
