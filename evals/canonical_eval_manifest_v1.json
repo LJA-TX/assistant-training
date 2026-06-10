@@ -77,7 +77,7 @@
   ],
   "scoring": {
     "scorer_script": "scripts/eval_canonical_manifest.py",
-    "scorer_sha256": "80af75c494e0da59f30f33a910997b5fdff15d4ffa8dca09988cdedc0fc06e3f",
+    "scorer_sha256": "08a5cec22a781193365bed85b709ceebef534846602004bbfa047f4e0b59d738",
     "metric_spec_path": "docs/metric_specification_v1a.md",
     "metric_spec_sha256": "793a884bbd783c3559828ab2cf84e4ceccc2aab256a80cf360c624dd8a549a3d",
     "legacy_eval_script": "scripts/eval_adapter_toolcalls.py",

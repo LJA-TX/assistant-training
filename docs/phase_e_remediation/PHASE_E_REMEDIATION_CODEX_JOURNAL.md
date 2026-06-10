@@ -18,11 +18,16 @@ Purpose: record progress on the bounded evaluator-contract drift investigation a
 - Confirmed the only remaining untracked files outside this bundle are the user-supplied work-package prompts.
 - Committed the remediation bundle on `main` as `9aa0711` and pushed it to `origin/main`.
 - Left the manifest unchanged; the docs record Option A as the required remediation.
+- Applied the final closure step by repinning `evals/canonical_eval_manifest_v1.json` to the live evaluator hash `08a5cec22a781193365bed85b709ceebef534846602004bbfa047f4e0b59d738`.
+- Verified the manifest parses successfully and that the only manifest change is `scoring.scorer_sha256`.
+- Added the closure assessment document at `docs/phase_e_remediation/PHASE_E_CONTRACT_RECONCILIATION_CLOSURE.md`.
+- Confirmed the manifest hash now matches `scripts/eval_canonical_manifest.py` exactly.
+- The remaining untracked files are still the known operator-created prompt artifacts and are not treated as defects.
 
 ## Current Focus
 
-- None. The remediation bundle is complete and pushed.
+- Final commit and push for the closure implementation.
 
 ## Open Items
 
-- None in scope for this package.
+- Commit and push the manifest repin and closure document.
