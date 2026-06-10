@@ -20,6 +20,7 @@ _SCRIPT_ROLE_PATHS: dict[str, str] = {
     "stage_c8_non_authoritative_detector_projection_adapter": (
         "scripts/stage_c8_non_authoritative_detector_projection_adapter.py"
     ),
+    "stage_c_e1_prompt_trace_evidence_creation": "scripts/stage_c_e1_prompt_trace_evidence_creation.py",
 }
 
 _ARTIFACT_ROLE_PATHS: dict[str, str] = {

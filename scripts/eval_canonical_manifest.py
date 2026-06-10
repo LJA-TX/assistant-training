@@ -73,6 +73,12 @@ class EvalRow:
     expected_tool_names: list[str]
     expected_args: list[Any]
     metadata: dict[str, Any]
+    prompt_template_mode: str = ""
+    render_path_used: str = ""
+    fallback_used: bool = False
+    custom_template_name: str | None = None
+    tokenizer_chat_template_text: str | None = None
+    tokenizer_chat_template_sha256: str | None = None
 
 
 def _now_utc() -> str:
@@ -129,6 +135,10 @@ def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     with path.open("w", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def _sha256_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
 def _coerce_args(raw_args: Any) -> tuple[Any, bool]:
@@ -804,21 +814,53 @@ def _render_custom_prompt_prefix(system_text: str, user_text: str, custom_templa
     raise RuntimeError(f"unsupported custom template: {custom_template_name}")
 
 
-def _prompt_prefix(system_text: str, user_text: str, tokenizer: Any, tokenizer_cfg: dict[str, Any]) -> str:
+def _prompt_prefix_with_meta(
+    system_text: str,
+    user_text: str,
+    tokenizer: Any,
+    tokenizer_cfg: dict[str, Any],
+) -> tuple[str, dict[str, Any]]:
     mode = str(tokenizer_cfg.get("chat_template_mode", "tokenizer_native"))
     allow_custom_fallback = bool(tokenizer_cfg.get("allow_custom_fallback", False))
     custom_template_name = str(tokenizer_cfg.get("custom_template_name", "generic_roles_v1"))
+    tokenizer_chat_template_text = getattr(tokenizer, "chat_template", None)
+    tokenizer_chat_template_text = str(tokenizer_chat_template_text) if tokenizer_chat_template_text else None
+    tokenizer_chat_template_sha256 = _sha256_text(tokenizer_chat_template_text) if tokenizer_chat_template_text else None
 
     if mode == "custom":
-        return _render_custom_prompt_prefix(system_text, user_text, custom_template_name)
+        text = _render_custom_prompt_prefix(system_text, user_text, custom_template_name)
+        return text, {
+            "prompt_template_mode": mode,
+            "render_path_used": "custom_template",
+            "fallback_used": False,
+            "custom_template_name": custom_template_name,
+            "tokenizer_chat_template_text": tokenizer_chat_template_text,
+            "tokenizer_chat_template_sha256": tokenizer_chat_template_sha256,
+        }
 
     if not hasattr(tokenizer, "apply_chat_template"):
         if allow_custom_fallback:
-            return _render_custom_prompt_prefix(system_text, user_text, custom_template_name)
+            text = _render_custom_prompt_prefix(system_text, user_text, custom_template_name)
+            return text, {
+                "prompt_template_mode": mode,
+                "render_path_used": "generic_roles_v1_fallback",
+                "fallback_used": True,
+                "custom_template_name": custom_template_name,
+                "tokenizer_chat_template_text": tokenizer_chat_template_text,
+                "tokenizer_chat_template_sha256": tokenizer_chat_template_sha256,
+            }
         raise RuntimeError("tokenizer.apply_chat_template missing")
     if not getattr(tokenizer, "chat_template", None):
         if allow_custom_fallback:
-            return _render_custom_prompt_prefix(system_text, user_text, custom_template_name)
+            text = _render_custom_prompt_prefix(system_text, user_text, custom_template_name)
+            return text, {
+                "prompt_template_mode": mode,
+                "render_path_used": "generic_roles_v1_fallback",
+                "fallback_used": True,
+                "custom_template_name": custom_template_name,
+                "tokenizer_chat_template_text": tokenizer_chat_template_text,
+                "tokenizer_chat_template_sha256": tokenizer_chat_template_sha256,
+            }
         raise RuntimeError("tokenizer.chat_template missing")
 
     text = tokenizer.apply_chat_template(
@@ -830,13 +872,38 @@ def _prompt_prefix(system_text: str, user_text: str, tokenizer: Any, tokenizer_c
         add_generation_prompt=True,
     )
     if isinstance(text, str) and text:
-        return text
+        return text, {
+            "prompt_template_mode": mode,
+            "render_path_used": "tokenizer_native",
+            "fallback_used": False,
+            "custom_template_name": custom_template_name,
+            "tokenizer_chat_template_text": tokenizer_chat_template_text,
+            "tokenizer_chat_template_sha256": tokenizer_chat_template_sha256,
+        }
     if allow_custom_fallback:
-        return _render_custom_prompt_prefix(system_text, user_text, custom_template_name)
+        text = _render_custom_prompt_prefix(system_text, user_text, custom_template_name)
+        return text, {
+            "prompt_template_mode": mode,
+            "render_path_used": "generic_roles_v1_fallback",
+            "fallback_used": True,
+            "custom_template_name": custom_template_name,
+            "tokenizer_chat_template_text": tokenizer_chat_template_text,
+            "tokenizer_chat_template_sha256": tokenizer_chat_template_sha256,
+        }
     raise RuntimeError("empty prompt template output")
 
 
-def _build_rows(split: str, rows: list[dict[str, Any]], tokenizer: Any, tokenizer_cfg: dict[str, Any]) -> list[EvalRow]:
+def _prompt_prefix(system_text: str, user_text: str, tokenizer: Any, tokenizer_cfg: dict[str, Any]) -> str:
+    return _prompt_prefix_with_meta(system_text, user_text, tokenizer, tokenizer_cfg)[0]
+
+
+def _build_rows(
+    split: str,
+    rows: list[dict[str, Any]],
+    tokenizer: Any,
+    tokenizer_cfg: dict[str, Any],
+    row_index_offset: int = 0,
+) -> list[EvalRow]:
     out: list[EvalRow] = []
     for idx, row in enumerate(rows, start=1):
         msgs = row.get("messages")
@@ -851,25 +918,30 @@ def _build_rows(split: str, rows: list[dict[str, Any]], tokenizer: Any, tokenize
         meta = row.get("metadata") if isinstance(row.get("metadata"), dict) else {}
         source_case_id = str(meta.get("source_case_id") or meta.get("case_id") or f"{split}_{idx}")
 
+        system_text = str(msgs[0].get("content") or "")
+        user_text = str(msgs[1].get("content") or "")
+        prompt_prefix, prompt_meta = _prompt_prefix_with_meta(
+            system_text,
+            user_text,
+            tokenizer,
+            tokenizer_cfg,
+        )
+
         out.append(
             EvalRow(
                 split=split,
-                row_index_1based=idx,
+                row_index_1based=row_index_offset + idx,
                 source_case_id=source_case_id,
-                system_text=str(msgs[0].get("content") or ""),
-                user_text=str(msgs[1].get("content") or ""),
-                prompt_prefix=_prompt_prefix(
-                    str(msgs[0].get("content") or ""),
-                    str(msgs[1].get("content") or ""),
-                    tokenizer,
-                    tokenizer_cfg,
-                ),
+                system_text=system_text,
+                user_text=user_text,
+                prompt_prefix=prompt_prefix,
                 expected_tool=expected_tool,
                 expected_no_call=expected_no_call,
                 expected_payload=expected_payload,
                 expected_tool_names=expected_tool_names,
                 expected_args=expected_args,
                 metadata=dict(meta),
+                **prompt_meta,
             )
         )
     return out
