@@ -16,11 +16,13 @@ Purpose: record progress on the bounded evaluator-contract drift investigation a
 - Started the remediation documentation bundle under `docs/phase_e_remediation/`.
 - Drafted the full assessment bundle and validated it with `git diff --check`.
 - Confirmed the only remaining untracked files outside this bundle are the user-supplied work-package prompts.
+- Committed the remediation bundle on `main` as `9aa0711` and pushed it to `origin/main`.
+- Left the manifest unchanged; the docs record Option A as the required remediation.
 
 ## Current Focus
 
-- Finish the assessment documents and capture the smallest correct remediation.
+- None. The remediation bundle is complete and pushed.
 
 ## Open Items
 
-- Commit and push the documentation bundle if the tree is clean.
+- None in scope for this package.
