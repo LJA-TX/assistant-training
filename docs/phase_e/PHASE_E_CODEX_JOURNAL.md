@@ -13,6 +13,7 @@ Purpose: record evidence gathering, validation progress, and remaining work for 
 - Completed fresh canonical i3 adapter revalidation at `evals/runs/phase_e_i3_revalidation_20260610_r1`.
 - Captured fresh `summary.json` and `comparison_rows.jsonl` artifacts for both runs.
 - Identified scorer-hash drift: the manifest pins `80af75c494e0da59f30f33a910997b5fdff15d4ffa8dca09988cdedc0fc06e3f`, while the current `scripts/eval_canonical_manifest.py` hash is `08a5cec22a781193365bed85b709ceebef534846602004bbfa047f4e0b59d738`.
+- Committed and pushed the Phase D and Phase E assessment bundles on `main` at `60c454b` (`Add Phase D and Phase E assessment bundles`).
 
 ## Current Focus
 
@@ -21,3 +22,4 @@ Purpose: record evidence gathering, validation progress, and remaining work for 
 ## Open Items
 
 - Finish the Phase E handoff checks, then do hygiene/commit/push if the bundle is internally consistent.
+- The committed bundle is now on `origin/main`; the remaining untracked files are the user-supplied Phase D/E work-package prompts.
