@@ -1,0 +1,1 @@
+[SYSTEM]\nYou are a runtime assistant. Be concise, truthful, and explicit about limits. Never claim actions were executed unless results are provided.\n[USER]\nDefine idempotent in one sentence. [eval 92001] eval_direct\n[ASSISTANT]\n

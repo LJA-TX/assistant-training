@@ -1,0 +1,51 @@
+{
+  "bundle_root": "/opt/ai-stack/assistant-training/manifests/reports/stage_c_prompt_trace_evidence/stage_c_e1_prompt_trace_20260609T221315792398Z",
+  "render_only": true,
+  "generation_invoked": false,
+  "scoring_invoked": false,
+  "detector_invoked": false,
+  "checked_rows": 2,
+  "checks": [
+    {
+      "check": "row_resolution",
+      "status": "pass",
+      "details": "Selected source rows resolved to unique dataset rows with matching source_case_id values."
+    },
+    {
+      "check": "render_exactness",
+      "status": "pass",
+      "details": "Each raw prompt file matches the in-memory row.prompt_prefix exactly."
+    },
+    {
+      "check": "hash_match",
+      "status": "pass",
+      "details": "Each raw prompt file hash matches the recorded rendered_prompt_sha256 value."
+    },
+    {
+      "check": "template_provenance",
+      "status": "pass",
+      "details": "Render-path metadata and tokenizer/template identity were recorded for each row."
+    },
+    {
+      "check": "no_generation_path",
+      "status": "pass",
+      "details": "This trace run does not call _eval_one_side, _infer, model.generate, or any scoring path."
+    },
+    {
+      "check": "no_scoring_path",
+      "status": "pass",
+      "details": "No scorer or detector entrypoints were invoked."
+    },
+    {
+      "check": "control_cleanliness",
+      "status": "pass",
+      "details": "The direct-answer control prompt is distinct from the affected prompt and contains only its own canonical prompt surface."
+    },
+    {
+      "check": "completeness",
+      "status": "pass",
+      "details": "The bundle contains the run manifest, prompt trace index, raw prompt snapshots, and validation report."
+    }
+  ],
+  "overall_status": "pass"
+}

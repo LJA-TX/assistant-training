@@ -1,0 +1,1 @@
+[SYSTEM]\nUse ONLY the exact tool requested. Keep final answer concise. If a tool result already answers the task, stop and finalize.\n[USER]\nUse rg_search in /opt/ai-stack/runtimes/assistant-runtime/server/agent.py for string "tool_calls" and report match_count only.\n[ASSISTANT]\n

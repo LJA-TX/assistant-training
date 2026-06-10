@@ -1,0 +1,56 @@
+{
+  "artifact_type": "stage_c_prompt_trace_evidence_bundle",
+  "artifact_version": "v1",
+  "run_id": "stage_c_e1_prompt_trace_20260609T221315792398Z",
+  "created_utc": "2026-06-09T22:13:15Z",
+  "repo_root": "/opt/ai-stack/assistant-training",
+  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "manifest_sha256": "725557dbb7047cfa983e243613f71dfb4f42d0e225a17e2e02197b4ad835411a",
+  "render_only": true,
+  "generation_invoked": false,
+  "scoring_invoked": false,
+  "detector_invoked": false,
+  "tokenizer": {
+    "reference": "llama-3.1-8b-base",
+    "path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+    "version": "llama-3.1-8b-base",
+    "chat_template_mode": "tokenizer_native",
+    "add_generation_prompt": true,
+    "allow_custom_fallback": true,
+    "custom_template_name": "generic_roles_v1"
+  },
+  "integrity": {
+    "prompt_contract": "tokenizer.apply_chat_template(messages, add_generation_prompt=true)"
+  },
+  "selection_count": 2,
+  "selected_rows": [
+    {
+      "trace_id": "heldout_validation:2:p0_rg_search_4",
+      "split": "heldout_validation",
+      "row_index_1based": 2,
+      "source_case_id": "p0_rg_search_4",
+      "dataset_path": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/heldout_validation.jsonl",
+      "dataset_sha256": "78d47d4fb974f0f3245eaf81a17a847febc2667da5926bd372f625cd00b127a5",
+      "rendered_prompt_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_c_prompt_trace_evidence/stage_c_e1_prompt_trace_20260609T221315792398Z/rows/heldout_validation_2_p0_rg_search_4.prompt.txt",
+      "rendered_prompt_sha256": "85ce7a146e52ab64d89d09fd7ed87fd4e49ee7a7e77fa77d1a72a2236c256d8e",
+      "render_path_used": "generic_roles_v1_fallback",
+      "fallback_used": true
+    },
+    {
+      "trace_id": "direct_answer:1:da_92001",
+      "split": "direct_answer",
+      "row_index_1based": 1,
+      "source_case_id": "da_92001",
+      "dataset_path": "/opt/ai-stack/assistant-training/evals/data/canonical_v1/direct_answer.jsonl",
+      "dataset_sha256": "969d1d5dde3b17515c45c9a5f4b69beb1d908063f61ce470f778d625b1b1afbd",
+      "rendered_prompt_path": "/opt/ai-stack/assistant-training/manifests/reports/stage_c_prompt_trace_evidence/stage_c_e1_prompt_trace_20260609T221315792398Z/rows/direct_answer_1_da_92001.prompt.txt",
+      "rendered_prompt_sha256": "0558c5a81bfcd52bd9830d760ccfc381910ef10ed558460c534c279f53437e24",
+      "render_path_used": "generic_roles_v1_fallback",
+      "fallback_used": true
+    }
+  ],
+  "artifacts": {
+    "prompt_traces_jsonl": "/opt/ai-stack/assistant-training/manifests/reports/stage_c_prompt_trace_evidence/stage_c_e1_prompt_trace_20260609T221315792398Z/prompt_traces.jsonl",
+    "validation_report_json": "/opt/ai-stack/assistant-training/manifests/reports/stage_c_prompt_trace_evidence/stage_c_e1_prompt_trace_20260609T221315792398Z/validation_report.json"
+  }
+}
