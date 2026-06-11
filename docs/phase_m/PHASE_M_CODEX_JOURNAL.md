@@ -10,12 +10,17 @@ Purpose: record the failure-attribution investigation for the Phase L Dataset v1
 - Confirmed the run preserved safety on no-call and adversarial no-call while collapsing tool-call capability.
 - Confirmed the most likely cause is dataset signal-shape and rebalancing, not evaluator drift or trainer geometry.
 
+## 2026-06-11 Package Commit
+
+- Created commit `0ea4154` with message `Phase M: add failure attribution package`.
+- Pushed `main` to `origin/main` successfully at `0ea4154`.
+- Validation outcome: `git diff --check` pass.
+
 ## Validation State
 
-- `git diff --check`: pending
+- `git diff --check`: pass
 
 ## Current Focus
 
-- Draft the Phase M attribution package.
-- Validate the documentation-only changes.
-- Commit the package and record the commit and push results here.
+- Phase M attribution package is complete.
+- No further implementation is authorized in this phase.
