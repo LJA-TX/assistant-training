@@ -113,6 +113,18 @@ Purpose: record Phase I execution progress, validations, and stop-rule decisions
 - Recorded the H2 checkpoint report in `docs/phase_i/H2_CHECKPOINT_REPORT.md`.
 - Updated the comparison matrix and bottleneck decision to reflect the resumed-probe results and the stop-rule ceiling.
 
+## 2026-06-11 Phase I Closure Commits
+
+- Committed the continuation-authority milestone:
+  - commit `08183af`
+  - message `Phase I: record continuation authority`
+- Pushed the continuation-authority milestone to `origin/main` successfully.
+- Committed the H2 probe and closure milestone:
+  - commit `e364f71`
+  - message `Phase I: record H2 probe and close attribution`
+- Pushed the H2 probe and closure milestone to `origin/main` successfully.
+- Validation for both documentation milestones remained clean under `git diff --check`.
+
 ## Commands Executed
 
 - `git status --short --branch`
