@@ -24,9 +24,10 @@ Purpose: record the Dataset v1.2 construction and validation phase.
 - `git diff --check`: PASS
 - Contamination validation: pass
 - Readiness assessment: ready
+- Package commit: `c71816b` (`docs: add phase o dataset v1.2 package`)
+- First push: `git push origin main` succeeded; remote `main` advanced from `879e0bd` to `c71816b`
+
 ## Current Focus
 
-- Complete the Phase O documentation package.
-- Run repository hygiene validation.
-- Commit and push the candidate plus reports.
-- Record the commit hashes and push results here.
+- Package documentation is complete and published.
+- Capture the final repository status after the journal closeout commit.
