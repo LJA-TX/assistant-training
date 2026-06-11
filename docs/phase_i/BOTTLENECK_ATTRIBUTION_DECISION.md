@@ -2,12 +2,17 @@
 
 ## Current Decision
 
-**Pending execution**
+**inconclusive_external_first**
 
 ## Why This Is Pending
 
-The Phase I treatment datasets were built successfully, but the first-screen runs have not been executed yet.
-Without the H0/H2/H1 metrics, there is no basis for a valid attribution decision under the Phase H thresholds.
+The Phase I control run completed, but it violated the Phase H hard-stop invariant:
+
+- adapter-side `adversarial no_call_correctness = 0.75`
+- Phase H requires `no_call` and `adversarial` correctness to remain exactly `1.0`
+
+Because H0 is not trustworthy, the experiment cannot proceed to `H2_commitment_patch` or `H1_diversity_patch`.
+That leaves no defensible basis for A/B/C/D/E attribution.
 
 ## Required Inputs Before Decision
 
@@ -29,4 +34,4 @@ Without the H0/H2/H1 metrics, there is no basis for a valid attribution decision
 ## Interim Conclusion
 
 No bottleneck attribution should be recorded yet.
-The only correct state at this point is "ready for first-screen execution."
+The only correct state now is "halted after H0 control failure; escalate externally."

@@ -52,6 +52,17 @@ Purpose: record Phase I execution progress, validations, and stop-rule decisions
   - `manifests/runs/stage_b_llama31_8b_base_v1_phase_i_h2_commitment_patch.run_manifest.json`
 - Opened the execution gate and recorded the approval in `docs/phase_i/EXECUTION_GATE_APPROVAL.md`.
 - Confirmed the planned run roots, adapter roots, and log roots are currently missing, so the first runs can start without overwrite flags.
+- Executed the H0 training run successfully after fixing the local runtime package set (`bitsandbytes` and `transformers`).
+- Ran the H0 canonical evaluator with the approved local base-model mirror and the correct adapter output directory.
+- Captured the H0 checkpoint metrics and found a hard-stop regression on the adversarial no-call invariant.
+- Stopped the first-screen sequence after H0 and did not launch H2 or H1.
+- Wrote the H0 checkpoint report at `docs/phase_i/H0_CHECKPOINT_REPORT.md`.
+- Recorded the earlier H0 infrastructure blockers and recoveries:
+  - missing `bitsandbytes` package,
+  - `transformers` 5.x incompatible with the frozen trainer surface,
+  - stale partial H0 artifacts requiring cleanup before retry,
+  - canonical eval base-model path override to the local mirror,
+  - canonical eval adapter-path correction from run root to adapter output.
 
 ## Commands Executed
 
@@ -68,6 +79,10 @@ Purpose: record Phase I execution progress, validations, and stop-rule decisions
 - `test -e artifacts/stage_b_llama31_8b_base_v1_phase_i_h0_control_i3_micro`
 - `test -e artifacts/stage_b_llama31_8b_base_v1_phase_i_h1_diversity_patch`
 - `test -e artifacts/stage_b_llama31_8b_base_v1_phase_i_h2_commitment_patch`
+- `python scripts/train_lora_sft.py --config configs/lora/stage_b_llama31_8b_base_v1_phase_i_h0_control_i3_micro.config.json`
+- `python -m pip install -U 'bitsandbytes>=0.46.1'`
+- `python -m pip install -U 'transformers==4.57.3'`
+- `python scripts/eval_canonical_manifest.py --manifest evals/canonical_eval_manifest_v1.json --model-name-or-path /mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base --adapter-dir artifacts/adapters/stage_b_llama31_8b_base_v1_phase_i_h0_control_i3_micro --out-dir evals/runs/stage_b_v1_phase_i_h0_control_i3_micro_eval_20260611T103048Z`
 
 ## Validation Performed
 
@@ -80,15 +95,20 @@ Purpose: record Phase I execution progress, validations, and stop-rule decisions
 - Verified that the promoted execution configs differ from the drafts only in approved run-state fields plus the execution file names.
 - Verified that the promoted execution run manifests differ from the drafts only in approved run-state fields plus the execution file names.
 - Verified that the planned artifact roots do not already exist.
+- Verified that the H0 training run completed successfully.
+- Verified that the H0 canonical eval completed successfully with the correct adapter path and base-model mirror.
+- Verified that the H0 adapter violates the Phase H no-call/adversarial invariant.
 
 ## Stop-Rule Decisions
 
 - No Phase H stop rule tripped during the dataset-preparation slice.
 - No Phase H stop rule tripped during the execution-gate verification slice.
+- Phase H kill metric tripped during the H0 checkpoint (`adversarial no_call_correctness = 0.75`).
+- The first-screen sequence halted after H0.
 - No contamination or repository anomaly required escalation.
 - No methodology redesign was requested or introduced.
 
 ## Escalation Decisions
 
-- None yet.
-- The next escalation point will be the first-screen execution results, not the dataset-preparation slice.
+- Escalated to runtime/evaluation remediation after H0.
+- The next step is external remediation or revalidation, not more internal runs.
