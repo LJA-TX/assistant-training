@@ -27,6 +27,8 @@ Can the external-first, safety-calibrated Dataset v1.1 preserve the H1 diversity
 - [Runtime Requirements](RUNTIME_REQUIREMENTS.md)
 - [Expected Outputs](EXPECTED_OUTPUTS.md)
 - [Phase L Readiness Assessment](PHASE_L_READINESS_ASSESSMENT.md)
+- [Final Pre-Execution Review](FINAL_PRE_EXECUTION_REVIEW.md)
+- [Execution Authorization Recommendation](PHASE_L_EXECUTION_AUTHORIZATION_RECOMMENDATION.md)
 
 ## Progress Log
 
@@ -34,5 +36,5 @@ Can the external-first, safety-calibrated Dataset v1.1 preserve the H1 diversity
 
 ## Notes
 
-- This folder is documentation-only for the Phase L planning slice.
+- This folder is documentation-only for the Phase L planning and authorization review slice.
 - No training, canonical evaluation, evaluator, scoring, or governance surfaces were modified in this slice.
