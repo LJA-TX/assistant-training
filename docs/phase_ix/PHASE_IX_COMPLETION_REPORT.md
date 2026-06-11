@@ -86,3 +86,9 @@ The official Phase I determination remains:
 `inconclusive_external_first`
 
 This exception run does not reopen Phase I and does not authorize any additional internal runs.
+
+## Repository Record
+
+- Authority commit: `c19c741` (`Phase IX: record H1 exception authority`) pushed successfully to `origin/main`
+- Documentation commit: `c54719f` (`Phase IX: document H1 exception results`) pushed successfully to `origin/main`
+- Validation outcome: `git diff --check` PASS
