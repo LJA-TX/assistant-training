@@ -65,4 +65,5 @@ Official Phase I determination remains unchanged.
 
 ## Status
 
-Ready for the single authorized exception run.
+The single authorized exception run has been executed.
+No further runs are authorized by this record.
