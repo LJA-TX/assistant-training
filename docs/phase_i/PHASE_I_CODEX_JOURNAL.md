@@ -83,6 +83,36 @@ Purpose: record Phase I execution progress, validations, and stop-rule decisions
 - Recorded the continuation authority inventory in `docs/phase_i/CONTINUATION_AUTHORITY_RECORD.md`.
 - Confirmed the resumed execution scope is still limited to `H2_commitment_patch` and `H1_diversity_patch` as diagnostic/report-only probes.
 
+## 2026-06-11 H2 Commitment Probe Completed
+
+- Executed `H2_commitment_patch` successfully with the approved config and adapter output root.
+- H2 training completed with:
+  - runtime `159.4807` seconds,
+  - train loss `0.5947615747098569`,
+  - internal eval loss `0.4286271333694458`.
+- Ran the canonical evaluator against the H2 adapter output directory and captured the full comparison summary.
+- Recorded the H2 adapter metrics:
+  - exact JSON validity `0.48`,
+  - invalid JSON rate `0.085`,
+  - tool-name accuracy `0.7714285714285715`,
+  - argument accuracy `0.6928571428571428`,
+  - wrapper leakage `0.005`,
+  - no-call correctness `0.8`,
+  - adversarial no-call correctness `0.4`.
+- Recorded the H2 tool-side lifts relative to H0:
+  - tool-holdout exact-valid `0.525`,
+  - heldout-validation exact-valid `0.75`,
+  - no-anchor exact-valid share `0.84375`.
+- Observed the H2 safety regression:
+  - wrapper leakage appeared,
+  - no-call correctness fell below `1.0`,
+  - adversarial no-call correctness fell sharply below `1.0`.
+- Applied the Phase H run-level stop rule:
+  - H2 became the second kill-tripped run after H0,
+  - `H1_diversity_patch` was therefore blocked and not launched.
+- Recorded the H2 checkpoint report in `docs/phase_i/H2_CHECKPOINT_REPORT.md`.
+- Updated the comparison matrix and bottleneck decision to reflect the resumed-probe results and the stop-rule ceiling.
+
 ## Commands Executed
 
 - `git status --short --branch`

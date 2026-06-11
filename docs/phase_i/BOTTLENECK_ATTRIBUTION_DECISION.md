@@ -6,13 +6,15 @@
 
 ## Why This Is Pending
 
-The Phase I control run completed, but it violated the Phase H hard-stop invariant:
+The Phase I control run completed, and the H2 commitment probe completed, but both runs violated the Phase H hard-stop invariant:
 
-- adapter-side `adversarial no_call_correctness = 0.75`
+- `H0_control_i3_micro`: adapter-side `adversarial no_call_correctness = 0.75`
+- `H2_commitment_patch`: adapter-side `wrapper_leakage = 0.005`, `no_call_correctness = 0.8`, and `adversarial no_call_correctness = 0.4`
 - Phase H requires `no_call` and `adversarial` correctness to remain exactly `1.0`
 
-Because H0 is not trustworthy, the experiment cannot proceed to `H2_commitment_patch` or `H1_diversity_patch`.
-That leaves no defensible basis for A/B/C/D/E attribution.
+The H2 probe also triggered the run-level ceiling for additional internal-only runs because it became the second kill-tripped run after H0.
+That blocked `H1_diversity_patch`, so the first-screen pair was never completed.
+Without the H1 comparator, the published A/B/C/D/E thresholds cannot be applied as written.
 
 ## Required Inputs Before Decision
 
@@ -33,5 +35,12 @@ That leaves no defensible basis for A/B/C/D/E attribution.
 
 ## Interim Conclusion
 
-No bottleneck attribution should be recorded yet.
-The only correct state now is "halted after H0 control failure; escalate externally."
+The strongest signal observed is commitment-dominant:
+
+- `H2` raised tool-holdout exact-valid from `0.0` to `0.525`
+- `H2` raised heldout-validation exact-valid from `0.09` to `0.75`
+- `H2` raised no-anchor exact-valid from `0.0` to `0.84375`
+- `H2` sharply improved tool-name and argument accuracy
+
+That signal is not formally decidable under the published Phase H framework because the first-screen pair was truncated before `H1_diversity_patch` could run and the H2 probe was not safety-clean.
+The official attribution state remains `inconclusive_external_first`.
