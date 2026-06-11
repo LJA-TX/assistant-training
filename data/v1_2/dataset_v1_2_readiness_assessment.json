@@ -1,0 +1,51 @@
+{
+  "generated_utc": "2026-06-11T16:47:01Z",
+  "dataset": "dataset_v1_2",
+  "status": "Ready",
+  "checks": {
+    "contamination_zero_for_heldout_and_tool_holdout": true,
+    "contamination_zero_for_all_eval_splits": true,
+    "train_tool_positive_density_in_target_range": true,
+    "core_anchor_share_in_target_range": true,
+    "rg_search_read_file_share_in_target_range": true,
+    "all_tool_families_represented": true,
+    "safety_block_present": true
+  },
+  "summary": {
+    "row_counts": {
+      "train": 2160,
+      "val": 240,
+      "total": 2400
+    },
+    "category_counts": {
+      "adversarial_no_call_calibration": 72,
+      "no_call_direct_calibration": 240,
+      "refusal_calibration": 180,
+      "runtime_alignment": 360,
+      "tool_positive": 1548
+    },
+    "phase_o_component_counts": {
+      "diversity": 774,
+      "commitment": 774,
+      "safety": 492
+    },
+    "tool_counts_top10": {
+      "apply_unified_diff": 30,
+      "archive_create": 44,
+      "archive_extract": 43,
+      "check_service_health": 50,
+      "copy_path": 30,
+      "debug_tools": 100,
+      "find_files": 120,
+      "get_system_datetime": 48,
+      "get_system_version": 29,
+      "git_diff": 30
+    }
+  },
+  "metrics": {
+    "train_tool_positive_density": 0.6449074074074074,
+    "core_anchor_share": 0.5200258397932817,
+    "rg_search_read_file_share": 0.31330749354005166
+  },
+  "rationale": "Ready for future execution review: contamination is zero, all 26 tool families are represented, the safety block remains explicit, and the tool-positive density / anchor concentration both land in the Phase N target bands."
+}
