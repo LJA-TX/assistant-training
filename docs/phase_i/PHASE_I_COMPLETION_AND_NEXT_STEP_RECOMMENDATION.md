@@ -1,5 +1,7 @@
 # Phase I Completion And Next Step Recommendation
 
+> Supersession note (2026-06-11): this document records the immediate post-`H0` checkpoint recommendation. Current continuation authority is now defined by `docs/phase_i/PHASE_H_GATE_REVIEW_AND_PHASE_I_CONTINUATION_DETERMINATION.md`.
+
 ## Current Completion State
 
 The Phase I preparation slice is complete, but the experiment halted at H0:

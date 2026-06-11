@@ -64,6 +64,25 @@ Purpose: record Phase I execution progress, validations, and stop-rule decisions
   - canonical eval base-model path override to the local mirror,
   - canonical eval adapter-path correction from run root to adapter output.
 
+## 2026-06-11 Resumed Continuation Authority Review
+
+- Reviewed `docs/phase_i/PHASE_H_GATE_REVIEW_AND_PHASE_I_CONTINUATION_DETERMINATION.md` as the controlling authority for resumed Phase I execution.
+- Reviewed the supporting continuation-review artifacts:
+  - `docs/phase_i/Phase_I_H0_Hard_Stop_Assessment_Grok-Build.md`
+  - `docs/phase_i/Phase_I_H0_Hard_Stop_Assessment_GB-Composer.md`
+- Re-verified the treatment asset surfaces against their draft counterparts:
+  - the H1 and H2 config diffs collapse to approved run-state and approval metadata only,
+  - the H1 and H2 run-manifest diffs collapse to approved run-state and approval metadata only,
+  - the treatment datasets keep the frozen row counts and holdout contamination gates intact,
+  - and the published dataset hashes match the Phase I records.
+- Reconfirmed the H1 and H2 treatment hashes:
+  - H1 train `fb488f828b9ff42f2c067031ae4e7d65edecd791420c2d6daf79e27422e4e947`
+  - H1 val `d1bde5c675e22a88df250ac91e13522bb4d9ff8685d86e3b885f6d8d106d661f`
+  - H2 train `41834b7dd1b06bf90bfdb38b77c15f67a3dfdab802d164b0edddfcc686a75fd5`
+  - H2 val `d1bde5c675e22a88df250ac91e13522bb4d9ff8685d86e3b885f6d8d106d661f`
+- Recorded the continuation authority inventory in `docs/phase_i/CONTINUATION_AUTHORITY_RECORD.md`.
+- Confirmed the resumed execution scope is still limited to `H2_commitment_patch` and `H1_diversity_patch` as diagnostic/report-only probes.
+
 ## Commands Executed
 
 - `git status --short --branch`
