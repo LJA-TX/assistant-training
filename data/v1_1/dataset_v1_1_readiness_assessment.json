@@ -1,0 +1,43 @@
+{
+  "generated_utc": "2026-06-11T14:10:56Z",
+  "dataset": "dataset_v1_1",
+  "status": "Ready",
+  "checks": {
+    "contamination_zero_for_heldout_and_tool_holdout": true,
+    "contamination_zero_for_all_eval_splits": true,
+    "balanced_diversity_commitment": true,
+    "safety_rows_present": true
+  },
+  "summary": {
+    "row_counts": {
+      "train": 2160,
+      "val": 240,
+      "total": 2400
+    },
+    "category_counts": {
+      "adversarial_no_call_calibration": 180,
+      "no_call_direct_calibration": 240,
+      "refusal_calibration": 180,
+      "runtime_alignment": 360,
+      "tool_positive": 1440
+    },
+    "tool_counts_top10": {
+      "apply_unified_diff": 56,
+      "archive_create": 56,
+      "archive_extract": 56,
+      "check_service_health": 56,
+      "copy_path": 56,
+      "debug_tools": 56,
+      "find_files": 56,
+      "get_system_datetime": 56,
+      "get_system_version": 56,
+      "git_diff": 56
+    },
+    "phase_k_component_counts": {
+      "diversity": 720,
+      "commitment": 720,
+      "safety": 600
+    }
+  },
+  "rationale": "Ready for future training evaluation if all contamination checks are zero and the diversity/commitment split is balanced."
+}

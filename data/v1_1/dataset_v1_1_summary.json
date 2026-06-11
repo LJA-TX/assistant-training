@@ -1,0 +1,80 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-11T14:10:56Z",
+  "dataset": "dataset_v1_1",
+  "source_files": [
+    "/opt/ai-stack/assistant-training/data/tool_ft_allaliases_20260525_from_qual_reports_freq.jsonl"
+  ],
+  "row_counts": {
+    "train": 2160,
+    "val": 240,
+    "total": 2400
+  },
+  "category_counts": {
+    "adversarial_no_call_calibration": 180,
+    "no_call_direct_calibration": 240,
+    "refusal_calibration": 180,
+    "runtime_alignment": 360,
+    "tool_positive": 1440
+  },
+  "tool_counts": {
+    "apply_unified_diff": 56,
+    "archive_create": 56,
+    "archive_extract": 56,
+    "check_service_health": 56,
+    "copy_path": 56,
+    "debug_tools": 56,
+    "find_files": 56,
+    "get_system_datetime": 56,
+    "get_system_version": 56,
+    "git_diff": 56,
+    "git_status": 55,
+    "http_request": 55,
+    "json_edit": 55,
+    "list_active_ports": 55,
+    "list_dir": 55,
+    "list_models": 55,
+    "list_tools": 55,
+    "move_path": 55,
+    "read_file": 55,
+    "rg_search": 55,
+    "run_command": 55,
+    "service_control": 55,
+    "sha256_file": 55,
+    "stat_path": 55,
+    "test_run": 55,
+    "write_file": 55
+  },
+  "phase_k_component_counts": {
+    "diversity": 720,
+    "commitment": 720,
+    "safety": 600
+  },
+  "phase_k_lineage_counts": {
+    "source_category": {
+      "canonical_case_template": 720,
+      "contrastive_negative": 180,
+      "contrastive_positive": 540
+    },
+    "component": {
+      "commitment": 720,
+      "diversity": 720
+    },
+    "prompt_style": {
+      "anchor_light": 178,
+      "canonical": 178,
+      "concise": 182,
+      "contrastive": 182,
+      "evidence": 178,
+      "paraphrastic": 182,
+      "structured": 182,
+      "uncertainty": 178
+    }
+  },
+  "hashes": {
+    "train_sha256": "90e802baaccbdfc39d4fd5748b54a942397104b400c75410136f00bb8dc5ae50",
+    "val_sha256": "98b95e21de0f32e1d603b68be7175f6c9ed576cb7ebb9e65b4a7fcf2bf484bf4"
+  },
+  "contamination_report_path": "/opt/ai-stack/assistant-training/data/v1_1/dataset_v1_1_leakage_report.json",
+  "summary_path": "/opt/ai-stack/assistant-training/data/v1_1/dataset_v1_1_summary.json"
+}
