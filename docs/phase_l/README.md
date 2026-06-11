@@ -29,6 +29,8 @@ Can the external-first, safety-calibrated Dataset v1.1 preserve the H1 diversity
 - [Phase L Readiness Assessment](PHASE_L_READINESS_ASSESSMENT.md)
 - [Final Pre-Execution Review](FINAL_PRE_EXECUTION_REVIEW.md)
 - [Execution Authorization Recommendation](PHASE_L_EXECUTION_AUTHORIZATION_RECOMMENDATION.md)
+- [Phase L Execution Review](PHASE_L_EXECUTION_REVIEW.md)
+- [Phase L Completion Report](PHASE_L_COMPLETION_REPORT.md)
 
 ## Progress Log
 
