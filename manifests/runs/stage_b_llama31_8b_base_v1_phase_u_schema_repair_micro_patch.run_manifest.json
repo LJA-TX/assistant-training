@@ -1,0 +1,49 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_phase_u_schema_repair_micro_patch",
+  "generated_utc": "2026-06-12T11:18:07Z",
+  "status": "prepared_not_started",
+  "training_started": false,
+  "training_started_utc": null,
+  "training_completed_utc": null,
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_phase_u_schema_repair_micro_patch.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_t_schema_repair_patch_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_t_schema_repair_patch_summary.json",
+    "dataset_leakage_report": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_t_schema_repair_patch_leakage_report.json",
+    "dataset_readiness_assessment": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_t_schema_repair_patch_readiness_assessment.json",
+    "phase_s_completion_report": "/opt/ai-stack/assistant-training/docs/phase_s/PHASE_S_COMPLETION_REPORT.md",
+    "phase_t_completion_report": "/opt/ai-stack/assistant-training/docs/phase_t/PHASE_T_COMPLETION_REPORT.md",
+    "phase_t_patch_summary": "/opt/ai-stack/assistant-training/docs/phase_t/SCHEMA_REPAIR_PATCH_SUMMARY.md",
+    "phase_t_patch_contamination_report": "/opt/ai-stack/assistant-training/docs/phase_t/SCHEMA_REPAIR_CONTAMINATION_REPORT.md",
+    "phase_t_patch_readiness_assessment": "/opt/ai-stack/assistant-training/docs/phase_t/SCHEMA_REPAIR_READINESS_ASSESSMENT.md"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_u_schema_repair_micro_patch",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_u_schema_repair_micro_patch",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_phase_u_schema_repair_micro_patch",
+    "merge_output_expected": false
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "phase_u_controlled_execution_authorization_2026-06-12",
+    "approved_utc": "2026-06-12T11:18:07Z"
+  },
+  "scaffold_notes": {
+    "implementation_phase": "phase_u_schema_repair_controlled_execution",
+    "dataset_generation_completed": true,
+    "training_started": false,
+    "canonical_eval_executed": false,
+    "single_run_only": true,
+    "auto_chain_disabled": true,
+    "hard_stop_triggered": false,
+    "auto_progression_halted": false,
+    "gate_opened": true
+  },
+  "canonical_eval_run": null,
+  "canonical_eval_summary": null,
+  "gate_assessment": null,
+  "promotion_packet": null
+}
