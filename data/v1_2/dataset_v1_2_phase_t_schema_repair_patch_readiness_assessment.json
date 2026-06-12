@@ -1,0 +1,36 @@
+{
+  "generated_utc": "2026-06-12T11:11:25Z",
+  "dataset": "dataset_v1_2_phase_t_schema_repair_patch",
+  "status": "Ready",
+  "checks": {
+    "contamination_zero_for_all_eval_splits": true,
+    "canonical_tool_calls_envelope_present": true,
+    "single_call_structure_present": true,
+    "all_five_anchor_tools_represented": true,
+    "row_count_60": true,
+    "lineage_auditable": true
+  },
+  "summary": {
+    "row_counts": {
+      "train": 60,
+      "val": 0,
+      "total": 60
+    },
+    "category_counts": {
+      "tool_positive": 60
+    },
+    "tool_counts": {
+      "debug_tools": 12,
+      "find_files": 12,
+      "read_file": 12,
+      "rg_search": 12,
+      "run_command": 12
+    },
+    "schema_targets": {
+      "canonical_tool_calls_envelope": 60,
+      "single_call_structure": 60,
+      "no_alternative_wrapper_shapes": 60
+    }
+  },
+  "rationale": "Ready for controlled execution: the patch is exactly 60 tool-positive rows, is limited to the five core anchors, uses the canonical single-call tool_calls envelope, and shows zero exact overlap against all frozen evaluation splits."
+}

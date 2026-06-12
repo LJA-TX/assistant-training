@@ -1,0 +1,54 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-12T11:11:25Z",
+  "dataset": "dataset_v1_2_phase_t_schema_repair_patch",
+  "patch_type": "schema_repair_micro_patch",
+  "source_basis": "phase_s_schema_repair_design",
+  "source_files": [
+    "/opt/ai-stack/assistant-training/data/tool_ft_allaliases_20260525_from_qual_reports_freq.jsonl"
+  ],
+  "row_counts": {
+    "train": 60,
+    "val": 0,
+    "total": 60
+  },
+  "category_counts": {
+    "tool_positive": 60
+  },
+  "tool_counts": {
+    "debug_tools": 12,
+    "find_files": 12,
+    "read_file": 12,
+    "rg_search": 12,
+    "run_command": 12
+  },
+  "schema_targets": {
+    "canonical_tool_calls_envelope": 60,
+    "single_call_structure": 60,
+    "no_alternative_wrapper_shapes": 60
+  },
+  "lineage": {
+    "parent_dataset": "dataset_v1_2",
+    "control_surface": "frozen_stage_b_recovery_scaffold",
+    "reference_phases": [
+      "H1",
+      "H2",
+      "Phase_Q"
+    ],
+    "prompt_regime": {
+      "strict_json": 60
+    },
+    "component": {
+      "schema_repair": 60
+    },
+    "source_category": {
+      "schema_repair_patch": 60
+    }
+  },
+  "hashes": {
+    "train_sha256": "8b43e274930dd615cbc2c9b2dd4a7e688f30a27ff7e10235839c4af297ce38bc"
+  },
+  "contamination_report_path": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_t_schema_repair_patch_leakage_report.json",
+  "summary_path": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_t_schema_repair_patch_summary.json",
+  "readiness_assessment_path": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_t_schema_repair_patch_readiness_assessment.json"
+}
