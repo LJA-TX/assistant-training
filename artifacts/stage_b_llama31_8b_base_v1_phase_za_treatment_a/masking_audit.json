@@ -1,0 +1,156 @@
+{
+  "train_first_3": [
+    {
+      "row_index_1based": 1,
+      "input_token_count": 140,
+      "supervised_label_token_count": 47,
+      "masked_token_count": 93,
+      "first_input_token_id": 58,
+      "tokenizer_bos_token_id": 128000,
+      "tokenizer_eos_token_id": 128001,
+      "manual_bos_added": false,
+      "eos_appended": true,
+      "prompt_template_mode": "tokenizer_chat_template",
+      "fallback_used": true,
+      "custom_template_name": "generic_roles_v1",
+      "decoded_prompt_prefix_tail": "[SYSTEM]\nUse ONLY the exact tool requested. Keep final answer concise. If a tool result already answers the task, stop and finalize. Return only strict JSON tool calls when a tool is required. Do not add prose, markdown, or shell blocks.\n[USER]\nInspect /opt/ai-stack/assistant-training/docs/phase_j/LESSONS_LEARNED_INVENTORY.md for pattern \"phase_k\" and report match_count only.\n[ASSISTANT]\n",
+      "decoded_supervised_target_text": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/assistant-training/docs/phase_j/LESSONS_LEARNED_INVENTORY.md\",\"pattern\":\"phase_k\"},\"name\":\"rg_search\"},\"type\":\"function\"}]}<|end_of_text|>",
+      "source_case_id": "phase_y_treatment_a_rg_search_p0_rg_search_1_0000",
+      "tool": "rg_search"
+    },
+    {
+      "row_index_1based": 2,
+      "input_token_count": 145,
+      "supervised_label_token_count": 49,
+      "masked_token_count": 96,
+      "first_input_token_id": 58,
+      "tokenizer_bos_token_id": 128000,
+      "tokenizer_eos_token_id": 128001,
+      "manual_bos_added": false,
+      "eos_appended": true,
+      "prompt_template_mode": "tokenizer_chat_template",
+      "fallback_used": true,
+      "custom_template_name": "generic_roles_v1",
+      "decoded_prompt_prefix_tail": "[SYSTEM]\nUse ONLY the exact tool requested. Keep final answer concise. If a tool result already answers the task, stop and finalize. Return only strict JSON tool calls when a tool is required. Do not add prose, markdown, or shell blocks.\n[USER]\nLocate /opt/ai-stack/assistant-training/docs/phase_j/COMBINED_BOTTLENECK_MODEL.md for pattern \"phase_k\" and report match_count only.\n[ASSISTANT]\n",
+      "decoded_supervised_target_text": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/assistant-training/docs/phase_j/COMBINED_BOTTLENECK_MODEL.md\",\"pattern\":\"phase_k\"},\"name\":\"rg_search\"},\"type\":\"function\"}]}<|end_of_text|>",
+      "source_case_id": "phase_y_treatment_a_rg_search_p0_rg_search_1_0001",
+      "tool": "rg_search"
+    },
+    {
+      "row_index_1based": 3,
+      "input_token_count": 146,
+      "supervised_label_token_count": 50,
+      "masked_token_count": 96,
+      "first_input_token_id": 58,
+      "tokenizer_bos_token_id": 128000,
+      "tokenizer_eos_token_id": 128001,
+      "manual_bos_added": false,
+      "eos_appended": true,
+      "prompt_template_mode": "tokenizer_chat_template",
+      "fallback_used": true,
+      "custom_template_name": "generic_roles_v1",
+      "decoded_prompt_prefix_tail": "[SYSTEM]\nUse ONLY the exact tool requested. Keep final answer concise. If a tool result already answers the task, stop and finalize. Return only strict JSON tool calls when a tool is required. Do not add prose, markdown, or shell blocks.\n[USER]\nSearch /opt/ai-stack/assistant-training/docs/phase_j/DATASET_V1_1_DESIGN_REQUIREMENTS.md for pattern \"phase_k\" and report match_count only.\n[ASSISTANT]\n",
+      "decoded_supervised_target_text": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/assistant-training/docs/phase_j/DATASET_V1_1_DESIGN_REQUIREMENTS.md\",\"pattern\":\"phase_k\"},\"name\":\"rg_search\"},\"type\":\"function\"}]}<|end_of_text|>",
+      "source_case_id": "phase_y_treatment_a_rg_search_p0_rg_search_1_0002",
+      "tool": "rg_search"
+    }
+  ],
+  "val_first_2": [
+    {
+      "row_index_1based": 1,
+      "input_token_count": 133,
+      "supervised_label_token_count": 57,
+      "masked_token_count": 76,
+      "first_input_token_id": 58,
+      "tokenizer_bos_token_id": 128000,
+      "tokenizer_eos_token_id": 128001,
+      "manual_bos_added": false,
+      "eos_appended": true,
+      "prompt_template_mode": "tokenizer_chat_template",
+      "fallback_used": true,
+      "custom_template_name": "generic_roles_v1",
+      "decoded_prompt_prefix_tail": "[SYSTEM]\nYou are a runtime tool-call assistant. Return only strict JSON tool calls when a tool is required. Do not add prose, markdown, or shell blocks.\n[USER]\nUse write_file to create /opt/ai-stack/assistant-training/data/v1_1/staging/phase_k_note_02.txt with short content and confirm success.\n[ASSISTANT]\n",
+      "decoded_supervised_target_text": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"content\":\"phase_k_25021\\\\n\",\"overwrite\":true,\"path\":\"/opt/ai-stack/assistant-training/data/v1_1/staging/phase_k_note_02.txt\"},\"name\":\"write_file\"},\"type\":\"function\"}]}<|end_of_text|>",
+      "source_case_id": "phase_o_diversity_write_file_p0_write_file_3_25021",
+      "tool": "write_file"
+    },
+    {
+      "row_index_1based": 2,
+      "input_token_count": 111,
+      "supervised_label_token_count": 40,
+      "masked_token_count": 71,
+      "first_input_token_id": 58,
+      "tokenizer_bos_token_id": 128000,
+      "tokenizer_eos_token_id": 128001,
+      "manual_bos_added": false,
+      "eos_appended": true,
+      "prompt_template_mode": "tokenizer_chat_template",
+      "fallback_used": true,
+      "custom_template_name": "generic_roles_v1",
+      "decoded_prompt_prefix_tail": "[SYSTEM]\nYou are a runtime tool-call assistant. Return only strict JSON tool calls when a tool is required. Do not add prose, markdown, or shell blocks.\n[USER]\nCompute the SHA-256 for /opt/ai-stack/assistant-training/docs/phase_i/H2_CHECKPOINT_REPORT.md and report digest only.\n[ASSISTANT]\n",
+      "decoded_supervised_target_text": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"path\":\"/opt/ai-stack/assistant-training/docs/phase_i/H2_CHECKPOINT_REPORT.md\"},\"name\":\"sha256_file\"},\"type\":\"function\"}]}<|end_of_text|>",
+      "source_case_id": "phase_o_diversity_sha256_file_p3_sha256_file_1_22003",
+      "tool": "sha256_file"
+    }
+  ],
+  "geometry_trace": {
+    "geometry_context": {
+      "geometry_schema_version": "1.0",
+      "sweep_id": "unspecified",
+      "cell_id": "unspecified",
+      "axis_levels": {},
+      "weighting_mode": "none",
+      "declared_exposure_units": {}
+    },
+    "digest_contract_version": "1.0",
+    "geometry_mapping_identity_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+    "geometry_context_input_digest": "780f71feb8e08bd2e46b00b18b356fdf224aca41caad201762f62e24ac274b0f",
+    "geometry_context_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+    "geometry_context_digest_alias_of": "geometry_mapping_identity_digest",
+    "declared_exposure_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_za_treatment_a/exposure_ledger_declared.json",
+    "declared_exposure_summary": {
+      "rows_total": 2400,
+      "rows_train": 2160,
+      "rows_val": 240,
+      "unique_families": 1,
+      "unique_archetypes": 1,
+      "rows_with_metadata": 2400
+    },
+    "row_identity_sidecar_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_za_treatment_a/exposure_row_identity_sidecar.json",
+    "row_identity_summary": {
+      "rows_total": 2160,
+      "rows_digest_sha256": "56ca7f98a3f0937c254100c40a5c18b2d6cf7e908b9812ddcc332aab6342c88f",
+      "unique_families": 1,
+      "unique_archetypes": 1
+    },
+    "realized_exposure_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_za_treatment_a/exposure_ledger_realized.json",
+    "realized_exposure_summary": {
+      "rows_total": 2160,
+      "unique_families": 1,
+      "unique_archetypes": 1,
+      "status": "realized_exposure_default_path_inferred",
+      "capture_mode": "index_space_inferred_no_sampler_stream_capture",
+      "confidence": "limited"
+    },
+    "exposure_drift_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_za_treatment_a/exposure_ledger_drift.json",
+    "exposure_drift_summary": {
+      "confidence": "limited",
+      "max_abs_delta_any_dimension": 0,
+      "exact_match_all_dimensions": true
+    },
+    "geometry_sampling": {
+      "enabled": false,
+      "sampler_type": "weighted_random",
+      "replacement": true,
+      "num_samples_policy": "dataset_length",
+      "sampler_seed": 42,
+      "capture_sampled_indices": true,
+      "weight_source_kind": "metadata",
+      "num_samples": 2160,
+      "sampler_class": "transformers_default_random_sampler_path",
+      "weights_digest_sha256": null,
+      "weights_summary": null
+    },
+    "sampler_determinism_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_za_treatment_a/sampler_determinism_report.json"
+  }
+}

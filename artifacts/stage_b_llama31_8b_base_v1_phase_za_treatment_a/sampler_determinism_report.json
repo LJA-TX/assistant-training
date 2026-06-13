@@ -1,0 +1,45 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-13T00:50:27Z",
+  "status": "geometry_sampling_disabled_default_sampler_path",
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_phase_za_treatment_a.config.json",
+  "manifest_path": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_phase_za_treatment_a.run_manifest.json",
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_input_digest": "780f71feb8e08bd2e46b00b18b356fdf224aca41caad201762f62e24ac274b0f",
+  "geometry_context_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_digest_alias_of": "geometry_mapping_identity_digest",
+  "geometry_sampling": {
+    "enabled": false,
+    "sampler_type": "weighted_random",
+    "replacement": true,
+    "num_samples_policy": "dataset_length",
+    "sampler_seed": 42,
+    "capture_sampled_indices": true,
+    "weight_source_kind": "metadata",
+    "num_samples": 2160,
+    "sampler_class": "transformers_default_random_sampler_path",
+    "weights_digest_sha256": null,
+    "weights_summary": null
+  },
+  "runtime_capture": {
+    "captured": false,
+    "sampled_index_stream_total": 0,
+    "sampled_index_stream_digest_sha256": "",
+    "sampler_iteration_count": 0
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

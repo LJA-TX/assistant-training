@@ -1,0 +1,145 @@
+{
+  "config_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_phase_za_treatment_a",
+  "generated_utc": "2026-06-13T00:46:27Z",
+  "status": "approved_for_execution",
+  "purpose": "Phase ZA governed Treatment A execution package for the Phase Y preservation ablation.",
+  "lineage": {
+    "parent_checkpoint": "stage_b_llama31_8b_base_v1_phase_z_control",
+    "parent_dataset_iteration": "dataset_v1_2_phase_y_treatment_a",
+    "intervention_scope": "phase_za_treatment_a_preservation_ablation",
+    "targeted_tools": [
+      "apply_unified_diff",
+      "archive_create",
+      "archive_extract",
+      "check_service_health",
+      "copy_path",
+      "debug_tools",
+      "find_files",
+      "get_system_datetime",
+      "get_system_version",
+      "git_diff",
+      "git_status",
+      "http_request",
+      "json_edit",
+      "list_active_ports",
+      "list_dir",
+      "list_models",
+      "list_tools",
+      "move_path",
+      "read_file",
+      "rg_search",
+      "run_command",
+      "service_control",
+      "sha256_file",
+      "stat_path",
+      "test_run",
+      "write_file"
+    ],
+    "non_objectives": [
+      "do_not_change_eval_topology",
+      "do_not_change_decode_defaults",
+      "do_not_mutate_dataset_composition",
+      "do_not_relax_thresholds",
+      "do_not_change_governance"
+    ]
+  },
+  "model": {
+    "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+    "tokenizer_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+    "trust_remote_code": false,
+    "torch_dtype": "bfloat16"
+  },
+  "dataset": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_a_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_a_val.jsonl",
+    "format": "openai_messages_with_assistant_tool_calls",
+    "field_map": {
+      "messages": "messages",
+      "metadata": "metadata"
+    },
+    "max_seq_length": 2048,
+    "packing": false
+  },
+  "prompt_template": {
+    "mode": "tokenizer_chat_template",
+    "fallback_mode": "custom",
+    "allow_custom_fallback": true,
+    "custom_template_name": "generic_roles_v1"
+  },
+  "loss": {
+    "assistant_completion_only_requested": true,
+    "assistant_only_loss": true,
+    "completion_only_loss": true,
+    "train_on_inputs": false,
+    "mask_user_and_system_tokens": true,
+    "fallback_behavior_if_not_supported": "fail_fast"
+  },
+  "lora": {
+    "enabled": true,
+    "use_qlora": true,
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "bias": "none",
+    "task_type": "CAUSAL_LM",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "quantization": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "bnb_4bit_compute_dtype": "bfloat16"
+  },
+  "optimization": {
+    "num_train_epochs": 0.2,
+    "learning_rate": 0.0001,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "gradient_checkpointing": true,
+    "optim": "paged_adamw_8bit",
+    "logging_steps": 10,
+    "eval_strategy": "steps",
+    "eval_steps": 40,
+    "save_strategy": "steps",
+    "save_steps": 80,
+    "save_total_limit": 2,
+    "bf16": true,
+    "fp16": false,
+    "seed": 42
+  },
+  "outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_za_treatment_a",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_za_treatment_a",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_phase_za_treatment_a",
+    "save_adapter_only": true,
+    "merge_adapter_after_training": false
+  },
+  "safety": {
+    "do_not_start_training_automatically": false,
+    "requires_manual_review": true,
+    "approved_to_run": true
+  },
+  "scaffold_notes": {
+    "execution_state": "approved_for_bounded_execution",
+    "dataset_generation_completed": true,
+    "training_started": false,
+    "eval_executed": false,
+    "gate_opened": true,
+    "auto_continuation_allowed": false,
+    "hidden_retries_allowed": false
+  }
+}

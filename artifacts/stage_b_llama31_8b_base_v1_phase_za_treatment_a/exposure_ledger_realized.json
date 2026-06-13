@@ -1,0 +1,69 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-13T00:47:04Z",
+  "status": "realized_exposure_default_path_inferred",
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_phase_za_treatment_a.config.json",
+  "manifest_path": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_phase_za_treatment_a.run_manifest.json",
+  "dataset_paths": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_a_train.jsonl"
+  },
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_input_digest": "780f71feb8e08bd2e46b00b18b356fdf224aca41caad201762f62e24ac274b0f",
+  "geometry_context_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_digest_alias_of": "geometry_mapping_identity_digest",
+  "capture_mode": "index_space_inferred_no_sampler_stream_capture",
+  "confidence": "limited",
+  "limitations": [
+    "Exact sampled index stream is not captured in this phase.",
+    "Realized accounting is inferred from default-path train index space, not runtime sampler trace.",
+    "Future Trainer subclass instrumentation is required for high-confidence sampled-stream realized exposure."
+  ],
+  "geometry_sampling": {
+    "enabled": false,
+    "sampler_type": "weighted_random",
+    "replacement": true,
+    "num_samples_policy": "dataset_length",
+    "sampler_seed": 42,
+    "capture_sampled_indices": true,
+    "weight_source_kind": "metadata",
+    "num_samples": 2160,
+    "sampler_class": "transformers_default_random_sampler_path",
+    "weights_digest_sha256": null,
+    "weights_summary": null
+  },
+  "sampler_behavior_assumption": {
+    "trainer_sampler_path": "transformers_default_random_sampler_path",
+    "sampler_behavior_changed": false
+  },
+  "row_identity_reference": {
+    "rows_total": 2160,
+    "rows_digest_sha256": "56ca7f98a3f0937c254100c40a5c18b2d6cf7e908b9812ddcc332aab6342c88f"
+  },
+  "realized_exposure": {
+    "family_counts": {
+      "unspecified": 2160
+    },
+    "archetype_counts": {
+      "unspecified": 2160
+    },
+    "axis_signature_counts": {
+      "{}": 2160
+    },
+    "pair_id_counts": {}
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

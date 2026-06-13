@@ -1,0 +1,405 @@
+{
+  "generated_utc": "2026-06-13T00:50:40Z",
+  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+  "adapter_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_za_treatment_a",
+  "decode_defaults": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "max_new_tokens": 64,
+    "seed": 1234
+  },
+  "base": {
+    "side": "base",
+    "per_split": {
+      "heldout_validation": {
+        "rows": 100,
+        "class_counts": {
+          "invalid_json": 100
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 1.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 100
+      },
+      "tool_holdout": {
+        "rows": 40,
+        "class_counts": {
+          "invalid_json": 40
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 1.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 40
+      },
+      "no_call": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "adversarial": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "direct_answer": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      }
+    },
+    "aggregate": {
+      "rows": 200,
+      "class_counts": {
+        "invalid_json": 140,
+        "refusal_expected": 60
+      },
+      "exact_json_validity": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "invalid_json_rate": 0.7,
+      "tool_name_accuracy": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "argument_accuracy": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrapper_leakage_rate": 0.0,
+      "no_call_correctness": {
+        "count": 60,
+        "rate": 1.0,
+        "expected_rows": 60
+      },
+      "tool_expected_rows": 140
+    }
+  },
+  "adapter": {
+    "side": "adapter",
+    "per_split": {
+      "heldout_validation": {
+        "rows": 100,
+        "class_counts": {
+          "exact_valid": 6,
+          "invalid_json": 34,
+          "invalid_schema": 37,
+          "wrapper_leakage": 1,
+          "wrong_arguments": 15,
+          "wrong_tool_name": 7
+        },
+        "exact_json_validity": {
+          "count": 6,
+          "rate": 0.06
+        },
+        "invalid_json_rate": 0.34,
+        "tool_name_accuracy": {
+          "count": 22,
+          "rate": 0.22
+        },
+        "argument_accuracy": {
+          "count": 13,
+          "rate": 0.13
+        },
+        "wrapper_leakage_rate": 0.01,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 100
+      },
+      "tool_holdout": {
+        "rows": 40,
+        "class_counts": {
+          "exact_valid": 8,
+          "invalid_json": 2,
+          "invalid_schema": 30
+        },
+        "exact_json_validity": {
+          "count": 8,
+          "rate": 0.2
+        },
+        "invalid_json_rate": 0.05,
+        "tool_name_accuracy": {
+          "count": 8,
+          "rate": 0.2
+        },
+        "argument_accuracy": {
+          "count": 8,
+          "rate": 0.2
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 40
+      },
+      "no_call": {
+        "rows": 20,
+        "class_counts": {
+          "invalid_json": 1,
+          "refusal_expected": 19
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.05,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 19,
+          "rate": 0.95,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "adversarial": {
+        "rows": 20,
+        "class_counts": {
+          "invalid_schema": 10,
+          "refusal_expected": 5,
+          "unexpected_tool_call": 5
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 5,
+          "rate": 0.25,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "direct_answer": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      }
+    },
+    "aggregate": {
+      "rows": 200,
+      "class_counts": {
+        "exact_valid": 14,
+        "invalid_json": 37,
+        "invalid_schema": 77,
+        "refusal_expected": 44,
+        "unexpected_tool_call": 5,
+        "wrapper_leakage": 1,
+        "wrong_arguments": 15,
+        "wrong_tool_name": 7
+      },
+      "exact_json_validity": {
+        "count": 14,
+        "rate": 0.07
+      },
+      "invalid_json_rate": 0.185,
+      "tool_name_accuracy": {
+        "count": 30,
+        "rate": 0.21428571428571427
+      },
+      "argument_accuracy": {
+        "count": 21,
+        "rate": 0.15
+      },
+      "wrapper_leakage_rate": 0.005,
+      "no_call_correctness": {
+        "count": 44,
+        "rate": 0.7333333333333333,
+        "expected_rows": 60
+      },
+      "tool_expected_rows": 140
+    }
+  },
+  "delta_adapter_minus_base": {
+    "exact_json_validity_rate": 0.07,
+    "invalid_json_rate": -0.5149999999999999,
+    "tool_name_accuracy_rate": 0.21428571428571427,
+    "argument_accuracy_rate": 0.15,
+    "wrapper_leakage_rate": 0.005,
+    "no_call_correctness_rate": -0.2666666666666667
+  },
+  "detector_summary_side": "adapter",
+  "metrics": {
+    "aggregate": {
+      "exact_json_validity": 0.07,
+      "invalid_json": 0.185,
+      "tool_name_accuracy": 0.21428571428571427,
+      "argument_accuracy": 0.15,
+      "wrapper_leakage": 0.005,
+      "no_call_correctness": 0.7333333333333333
+    },
+    "probes": {
+      "no_call_adversarial": {
+        "no_call_correctness": 0.25
+      }
+    }
+  },
+  "failure_profile": {
+    "tool_expected_rows": 140,
+    "non_exact_tool_rows": 126,
+    "failure_categories_non_exact_tool_rows": {
+      "direct_answer_substitution": 34,
+      "scalar_substitution": 39,
+      "malformed_partial_json": 4,
+      "near_canonical_wrapper_or_envelope_drift": 49,
+      "other_non_exact": 0
+    },
+    "read_file_exact_valid": {
+      "count": 0,
+      "rows": 27,
+      "rate": 0.0
+    },
+    "read_file_symbol_name_exact_valid": {
+      "count": 0,
+      "rows": 13,
+      "rate": 0.0
+    },
+    "anchor_exact_share": {
+      "literal_tool_calls": 0.0,
+      "paraphrastic_tool_call": 0.14285714285714285,
+      "schema_paraphrase": 0.0,
+      "no_anchor_phrase": 0.8571428571428571
+    }
+  }
+}
