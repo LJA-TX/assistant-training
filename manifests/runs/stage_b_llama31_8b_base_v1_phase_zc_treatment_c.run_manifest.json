@@ -1,0 +1,44 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_phase_zc_treatment_c",
+  "generated_utc": "2026-06-13T21:28:00Z",
+  "status": "prepared_not_started",
+  "training_started": false,
+  "training_started_utc": null,
+  "training_completed_utc": null,
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_phase_zc_treatment_c.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_c_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_c_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_c_summary.json",
+    "dataset_leakage_report": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_c_leakage_report.json",
+    "dataset_readiness_assessment": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_c_readiness_assessment.json",
+    "phase_zb_completion_report": "/opt/ai-stack/assistant-training/docs/phase_zb/PHASE_ZB_COMPLETION_REPORT.md",
+    "phase_zb_next_action_recommendation": "/opt/ai-stack/assistant-training/docs/phase_zb/PHASE_ZB_NEXT_ACTION_RECOMMENDATION.md",
+    "phase_y_completion_report": "/opt/ai-stack/assistant-training/docs/phase_y/PHASE_Y_COMPLETION_REPORT.md",
+    "phase_y_codex_journal": "/opt/ai-stack/assistant-training/docs/phase_y/PHASE_Y_CODEX_JOURNAL.md"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_zc_treatment_c",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_zc_treatment_c",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_phase_zc_treatment_c",
+    "merge_output_expected": false
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "phase_zc_treatment_c_execution_authorization_2026-06-13",
+    "approved_utc": "2026-06-13T21:28:00Z"
+  },
+  "scaffold_notes": {
+    "implementation_phase": "phase_zc_treatment_c_final_governed_execution",
+    "dataset_generation_completed": true,
+    "training_started": false,
+    "canonical_eval_executed": false,
+    "single_run_only": true,
+    "auto_chain_disabled": true,
+    "hard_stop_triggered": false,
+    "auto_progression_halted": false,
+    "gate_opened": true
+  }
+}
