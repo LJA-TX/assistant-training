@@ -1,0 +1,59 @@
+{
+  "generated_utc": "2026-06-13T00:07:12Z",
+  "dataset": "dataset_v1_2_phase_y_treatment_c",
+  "arm": "treatment_c",
+  "status": "Ready",
+  "scientifically_admissible": true,
+  "checks": {
+    "contamination_zero_for_all_eval_splits": true,
+    "anchor_count_matches_target": true,
+    "exact_tool_request_cue_retained": true,
+    "scaffold_invariant": true,
+    "tool_calls_envelope_valid": true,
+    "safety_block_preserved": true,
+    "all_tool_families_represented": true
+  },
+  "summary": {
+    "row_counts": {
+      "train": 2160,
+      "val": 240,
+      "total": 2400
+    },
+    "arm_targets": {
+      "anchor_rows": 1011,
+      "long_tail_rows": 382,
+      "tool_positive_rows": 1393,
+      "safety_rows": 767
+    },
+    "train_category_counts": {
+      "adversarial_no_call_calibration": 65,
+      "no_call_direct_calibration": 216,
+      "refusal_calibration": 162,
+      "runtime_alignment": 324,
+      "tool_positive": 1393
+    },
+    "train_tool_counts_top10": {
+      "apply_unified_diff": 15,
+      "archive_create": 21,
+      "archive_extract": 23,
+      "check_service_health": 26,
+      "copy_path": 16,
+      "debug_tools": 122,
+      "find_files": 155,
+      "get_system_datetime": 22,
+      "get_system_version": 15,
+      "git_diff": 15
+    },
+    "phase_y_component_counts": {
+      "anchor": 1011,
+      "long_tail": 382,
+      "safety": 767
+    },
+    "phase_y_validation_component_counts": {
+      "anchor": 79,
+      "long_tail": 76,
+      "safety": 85
+    }
+  },
+  "rationale": "Ready: contamination is zero, the cue and scaffold are fixed, the tool_calls envelope is canonical, the safety block is preserved, and the anchor count matches the arm target."
+}

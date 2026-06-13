@@ -1,0 +1,145 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-13T00:07:12Z",
+  "dataset": "dataset_v1_2_phase_y_treatment_c",
+  "arm": "treatment_c",
+  "source_files": [
+    "/opt/ai-stack/assistant-training/data/tool_ft_allaliases_20260525_from_qual_reports_freq.jsonl"
+  ],
+  "arm_targets": {
+    "anchor_rows": 1011,
+    "long_tail_rows": 382,
+    "tool_positive_rows": 1393,
+    "safety_rows": 767
+  },
+  "row_counts": {
+    "train": 2160,
+    "val": 240,
+    "total": 2400
+  },
+  "train_category_counts": {
+    "adversarial_no_call_calibration": 65,
+    "no_call_direct_calibration": 216,
+    "refusal_calibration": 162,
+    "runtime_alignment": 324,
+    "tool_positive": 1393
+  },
+  "val_category_counts": {
+    "adversarial_no_call_calibration": 7,
+    "no_call_direct_calibration": 24,
+    "refusal_calibration": 18,
+    "runtime_alignment": 36,
+    "tool_positive": 155
+  },
+  "combined_category_counts": {
+    "adversarial_no_call_calibration": 72,
+    "no_call_direct_calibration": 240,
+    "refusal_calibration": 180,
+    "runtime_alignment": 360,
+    "tool_positive": 1548
+  },
+  "train_tool_counts": {
+    "apply_unified_diff": 15,
+    "archive_create": 21,
+    "archive_extract": 23,
+    "check_service_health": 26,
+    "copy_path": 16,
+    "debug_tools": 122,
+    "find_files": 155,
+    "get_system_datetime": 22,
+    "get_system_version": 15,
+    "git_diff": 15,
+    "git_status": 17,
+    "http_request": 15,
+    "json_edit": 14,
+    "list_active_ports": 15,
+    "list_dir": 19,
+    "list_models": 21,
+    "list_tools": 15,
+    "move_path": 21,
+    "read_file": 230,
+    "rg_search": 375,
+    "run_command": 129,
+    "service_control": 16,
+    "sha256_file": 14,
+    "stat_path": 23,
+    "test_run": 15,
+    "write_file": 24
+  },
+  "val_tool_counts": {
+    "apply_unified_diff": 4,
+    "archive_create": 8,
+    "archive_extract": 3,
+    "check_service_health": 5,
+    "copy_path": 2,
+    "debug_tools": 12,
+    "find_files": 9,
+    "get_system_datetime": 10,
+    "get_system_version": 3,
+    "git_diff": 3,
+    "http_request": 2,
+    "json_edit": 5,
+    "list_active_ports": 3,
+    "list_dir": 5,
+    "list_models": 2,
+    "list_tools": 3,
+    "move_path": 1,
+    "read_file": 20,
+    "rg_search": 31,
+    "run_command": 7,
+    "sha256_file": 5,
+    "stat_path": 5,
+    "test_run": 2,
+    "write_file": 5
+  },
+  "combined_tool_counts": {
+    "apply_unified_diff": 19,
+    "archive_create": 29,
+    "archive_extract": 26,
+    "check_service_health": 31,
+    "copy_path": 18,
+    "debug_tools": 134,
+    "find_files": 164,
+    "get_system_datetime": 32,
+    "get_system_version": 18,
+    "git_diff": 18,
+    "git_status": 17,
+    "http_request": 17,
+    "json_edit": 19,
+    "list_active_ports": 18,
+    "list_dir": 24,
+    "list_models": 23,
+    "list_tools": 18,
+    "move_path": 22,
+    "read_file": 250,
+    "rg_search": 406,
+    "run_command": 136,
+    "service_control": 16,
+    "sha256_file": 19,
+    "stat_path": 28,
+    "test_run": 17,
+    "write_file": 29
+  },
+  "phase_y_component_counts": {
+    "anchor": 1011,
+    "long_tail": 382,
+    "safety": 767
+  },
+  "phase_y_validation_component_counts": {
+    "anchor": 79,
+    "long_tail": 76,
+    "safety": 85
+  },
+  "hashes": {
+    "train_sha256": "7f7356d0067a154e32b19c07d6b2a5c67f2494a2f051dcee7aa7462d3d2de9c3",
+    "val_sha256": "0afe69984c099e169ffbccbfa9a7fb010bbfbcd9409eb680dacd386be562e844"
+  },
+  "contamination_report_path": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_treatment_c_leakage_report.json",
+  "checks": {
+    "exact_tool_request_cue_retained": true,
+    "tool_calls_envelope_valid": true,
+    "scaffold_matches_base_train": true,
+    "scaffold_matches_base_val": true,
+    "all_tool_families_represented": true
+  }
+}
