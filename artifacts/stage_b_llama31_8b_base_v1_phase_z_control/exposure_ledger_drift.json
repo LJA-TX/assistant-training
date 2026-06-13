@@ -1,0 +1,81 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-13T00:19:57Z",
+  "status": "declared_vs_realized_comparison_default_path_inferred",
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_phase_z_control.config.json",
+  "manifest_path": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_phase_z_control.run_manifest.json",
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_input_digest": "780f71feb8e08bd2e46b00b18b356fdf224aca41caad201762f62e24ac274b0f",
+  "geometry_context_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_digest_alias_of": "geometry_mapping_identity_digest",
+  "comparison_basis": "declared_train_split_vs_inferred_realized_index_space",
+  "confidence": "limited",
+  "limitations": [
+    "Exact sampled index stream is not captured in this phase.",
+    "Realized accounting is inferred from default-path train index space, not runtime sampler trace.",
+    "Future Trainer subclass instrumentation is required for high-confidence sampled-stream realized exposure."
+  ],
+  "drift": {
+    "family": {
+      "declared_total": 2160,
+      "realized_total": 2160,
+      "total_abs_delta": 0,
+      "max_abs_delta": 0,
+      "exact_match": true,
+      "per_key": {
+        "unspecified": {
+          "declared": 2160,
+          "realized": 2160,
+          "delta_realized_minus_declared": 0
+        }
+      }
+    },
+    "archetype": {
+      "declared_total": 2160,
+      "realized_total": 2160,
+      "total_abs_delta": 0,
+      "max_abs_delta": 0,
+      "exact_match": true,
+      "per_key": {
+        "unspecified": {
+          "declared": 2160,
+          "realized": 2160,
+          "delta_realized_minus_declared": 0
+        }
+      }
+    },
+    "axis_signature": {
+      "declared_total": 2160,
+      "realized_total": 2160,
+      "total_abs_delta": 0,
+      "max_abs_delta": 0,
+      "exact_match": true,
+      "per_key": {
+        "{}": {
+          "declared": 2160,
+          "realized": 2160,
+          "delta_realized_minus_declared": 0
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "max_abs_delta_any_dimension": 0,
+    "exact_match_all_dimensions": true
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

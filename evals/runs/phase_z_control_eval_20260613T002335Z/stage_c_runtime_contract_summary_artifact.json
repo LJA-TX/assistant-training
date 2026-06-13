@@ -1,0 +1,25 @@
+{
+  "report_version": "stage_c_package1_live_canonical_evaluator_v1",
+  "artifact_scope": "authoritative_row_fact_and_family_a_emission_only",
+  "generated_utc": "2026-06-13T00:23:44Z",
+  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "row_fact_count": 200,
+  "family_a_side_record_counts": {
+    "adapter": 200,
+    "base": 200
+  },
+  "legacy_surface_policy": {
+    "summary_json": "preserved",
+    "comparison_rows_jsonl": "preserved",
+    "detector_metrics": "unchanged",
+    "threshold_behavior": "unchanged",
+    "comparability_policy": "unchanged"
+  },
+  "guardrail_status": {
+    "inference_behavior_detected": false,
+    "substitution_behavior_detected": false,
+    "reconstruction_behavior_detected": false,
+    "legacy_summary_modified": false,
+    "legacy_detector_surface_modified": false
+  }
+}

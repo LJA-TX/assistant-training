@@ -1,0 +1,46 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_phase_z_control",
+  "generated_utc": "2026-06-13T00:19:09Z",
+  "status": "prepared_not_started",
+  "training_started": false,
+  "training_started_utc": null,
+  "training_completed_utc": null,
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_phase_z_control.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_summary.json",
+    "dataset_leakage_report": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_leakage_report.json",
+    "dataset_readiness_assessment": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_readiness_assessment.json",
+    "phase_l_execution_package": "/opt/ai-stack/assistant-training/docs/phase_l/PHASE_L_EXECUTION_PACKAGE.md",
+    "phase_l_completion_report": "/opt/ai-stack/assistant-training/docs/phase_l/PHASE_L_COMPLETION_REPORT.md",
+    "phase_q_execution_review": "/opt/ai-stack/assistant-training/docs/phase_q/PHASE_Q_EXECUTION_REVIEW.md",
+    "phase_y_completion_report": "/opt/ai-stack/assistant-training/docs/phase_y/PHASE_Y_COMPLETION_REPORT.md",
+    "phase_y_control_readiness_assessment": "/opt/ai-stack/assistant-training/docs/phase_y/DATASET_CONTROL_READINESS.md",
+    "phase_y_codex_journal": "/opt/ai-stack/assistant-training/docs/phase_y/PHASE_Y_CODEX_JOURNAL.md"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_z_control",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_phase_z_control",
+    "merge_output_expected": false
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "phase_z_control_execution_authorization_2026-06-13",
+    "approved_utc": "2026-06-13T00:19:09Z"
+  },
+  "scaffold_notes": {
+    "implementation_phase": "phase_z_control_first_governed_execution",
+    "dataset_generation_completed": true,
+    "training_started": false,
+    "canonical_eval_executed": false,
+    "single_run_only": true,
+    "auto_chain_disabled": true,
+    "hard_stop_triggered": false,
+    "auto_progression_halted": false,
+    "gate_opened": true
+  }
+}

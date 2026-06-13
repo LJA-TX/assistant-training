@@ -1,0 +1,182 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-13T00:19:56Z",
+  "status": "declared_exposure_accounting_only",
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_phase_z_control.config.json",
+  "manifest_path": "/opt/ai-stack/assistant-training/manifests/runs/stage_b_llama31_8b_base_v1_phase_z_control.run_manifest.json",
+  "dataset_paths": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_val.jsonl"
+  },
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_input_digest": "780f71feb8e08bd2e46b00b18b356fdf224aca41caad201762f62e24ac274b0f",
+  "geometry_context_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_digest_alias_of": "geometry_mapping_identity_digest",
+  "declaration": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "declared_exposure_by_split": {
+    "train": {
+      "rows_total": 2160,
+      "metadata_coverage": {
+        "rows_with_metadata": 2160,
+        "rows_with_family": 0,
+        "rows_with_archetype": 0,
+        "rows_with_geometry_axes": 0
+      },
+      "family_counts": {
+        "unspecified": 2160
+      },
+      "archetype_counts": {
+        "unspecified": 2160
+      },
+      "tool_counts": {
+        "non_tool": 767,
+        "rg_search": 269,
+        "read_file": 165,
+        "find_files": 111,
+        "run_command": 93,
+        "debug_tools": 88,
+        "check_service_health": 45,
+        "write_file": 42,
+        "stat_path": 41,
+        "archive_extract": 40,
+        "get_system_datetime": 38,
+        "move_path": 37,
+        "archive_create": 36,
+        "list_models": 36,
+        "list_dir": 33,
+        "git_status": 29,
+        "service_control": 29,
+        "copy_path": 28,
+        "git_diff": 27,
+        "http_request": 27,
+        "test_run": 27,
+        "apply_unified_diff": 26,
+        "get_system_version": 26,
+        "list_active_ports": 26,
+        "list_tools": 26,
+        "json_edit": 24,
+        "sha256_file": 24
+      },
+      "axis_signature_counts": {
+        "{}": 2160
+      },
+      "pair_id_counts": {}
+    },
+    "val": {
+      "rows_total": 240,
+      "metadata_coverage": {
+        "rows_with_metadata": 240,
+        "rows_with_family": 0,
+        "rows_with_archetype": 0,
+        "rows_with_geometry_axes": 0
+      },
+      "family_counts": {
+        "unspecified": 240
+      },
+      "archetype_counts": {
+        "unspecified": 240
+      },
+      "tool_counts": {
+        "non_tool": 85,
+        "rg_search": 31,
+        "read_file": 20,
+        "debug_tools": 12,
+        "get_system_datetime": 10,
+        "find_files": 9,
+        "archive_create": 8,
+        "run_command": 7,
+        "check_service_health": 5,
+        "json_edit": 5,
+        "list_dir": 5,
+        "sha256_file": 5,
+        "stat_path": 5,
+        "write_file": 5,
+        "apply_unified_diff": 4,
+        "archive_extract": 3,
+        "get_system_version": 3,
+        "git_diff": 3,
+        "list_active_ports": 3,
+        "list_tools": 3,
+        "copy_path": 2,
+        "http_request": 2,
+        "list_models": 2,
+        "test_run": 2,
+        "move_path": 1
+      },
+      "axis_signature_counts": {
+        "{}": 240
+      },
+      "pair_id_counts": {}
+    },
+    "combined": {
+      "rows_total": 2400,
+      "metadata_coverage": {
+        "rows_with_metadata": 2400,
+        "rows_with_family": 0,
+        "rows_with_archetype": 0,
+        "rows_with_geometry_axes": 0
+      },
+      "family_counts": {
+        "unspecified": 2400
+      },
+      "archetype_counts": {
+        "unspecified": 2400
+      },
+      "tool_counts": {
+        "non_tool": 852,
+        "rg_search": 300,
+        "read_file": 185,
+        "find_files": 120,
+        "debug_tools": 100,
+        "run_command": 100,
+        "check_service_health": 50,
+        "get_system_datetime": 48,
+        "write_file": 47,
+        "stat_path": 46,
+        "archive_create": 44,
+        "archive_extract": 43,
+        "list_dir": 38,
+        "list_models": 38,
+        "move_path": 38,
+        "apply_unified_diff": 30,
+        "copy_path": 30,
+        "git_diff": 30,
+        "get_system_version": 29,
+        "git_status": 29,
+        "http_request": 29,
+        "json_edit": 29,
+        "list_active_ports": 29,
+        "list_tools": 29,
+        "service_control": 29,
+        "sha256_file": 29,
+        "test_run": 29
+      },
+      "axis_signature_counts": {
+        "{}": 2400
+      },
+      "pair_id_counts": {}
+    }
+  },
+  "approval_state": {
+    "approved_to_generate_dataset": false,
+    "approved_to_run": false,
+    "approved_to_train": false,
+    "approved_to_promote": false
+  }
+}

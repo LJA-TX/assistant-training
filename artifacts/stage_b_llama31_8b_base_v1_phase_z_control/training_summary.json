@@ -1,0 +1,84 @@
+{
+  "status": "completed",
+  "train_rows": 2160,
+  "val_rows": 240,
+  "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control",
+  "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_z_control",
+  "train_metrics": {
+    "train_runtime": 165.6615,
+    "train_samples_per_second": 2.608,
+    "train_steps_per_second": 0.163,
+    "total_flos": 2040642841853952.0,
+    "train_loss": 0.7193721665276421,
+    "epoch": 0.2
+  },
+  "eval_metrics": {
+    "eval_loss": 0.5284086465835571,
+    "eval_runtime": 30.5152,
+    "eval_samples_per_second": 7.865,
+    "eval_steps_per_second": 7.865,
+    "epoch": 0.2
+  },
+  "geometry_context": {
+    "geometry_schema_version": "1.0",
+    "sweep_id": "unspecified",
+    "cell_id": "unspecified",
+    "axis_levels": {},
+    "weighting_mode": "none",
+    "declared_exposure_units": {}
+  },
+  "digest_contract_version": "1.0",
+  "geometry_mapping_identity_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_input_digest": "780f71feb8e08bd2e46b00b18b356fdf224aca41caad201762f62e24ac274b0f",
+  "geometry_context_digest": "1ed3ee23b8e58f048ff8367932a8f6a9ba52707198ad338c0aaf3d05c448c651",
+  "geometry_context_digest_alias_of": "geometry_mapping_identity_digest",
+  "geometry_sampling": {
+    "enabled": false,
+    "sampler_type": "weighted_random",
+    "replacement": true,
+    "num_samples_policy": "dataset_length",
+    "sampler_seed": 42,
+    "capture_sampled_indices": true,
+    "weight_source_kind": "metadata",
+    "num_samples": 2160,
+    "sampler_class": "transformers_default_random_sampler_path",
+    "weights_digest_sha256": null,
+    "weights_summary": null
+  },
+  "trainer_class": "Trainer",
+  "sampler_determinism_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control/sampler_determinism_report.json",
+  "sampler_determinism_status": "geometry_sampling_disabled_default_sampler_path",
+  "declared_exposure_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control/exposure_ledger_declared.json",
+  "declared_exposure_summary": {
+    "rows_total": 2400,
+    "rows_train": 2160,
+    "rows_val": 240,
+    "unique_families": 1,
+    "unique_archetypes": 1,
+    "rows_with_metadata": 2400
+  },
+  "row_identity_sidecar_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control/exposure_row_identity_sidecar.json",
+  "row_identity_summary": {
+    "rows_total": 2160,
+    "rows_digest_sha256": "bb11d3ad3f65e285a1356d9abecd7b5e7e176c7063d40728d4599a1a0f6b7896",
+    "unique_families": 1,
+    "unique_archetypes": 1
+  },
+  "realized_exposure_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control/exposure_ledger_realized.json",
+  "realized_exposure_summary": {
+    "rows_total": 2160,
+    "unique_families": 1,
+    "unique_archetypes": 1,
+    "status": "realized_exposure_default_path_inferred",
+    "capture_mode": "index_space_inferred_no_sampler_stream_capture",
+    "confidence": "limited"
+  },
+  "exposure_drift_ledger_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control/exposure_ledger_drift.json",
+  "exposure_drift_summary": {
+    "confidence": "limited",
+    "max_abs_delta_any_dimension": 0,
+    "exact_match_all_dimensions": true
+  },
+  "masking_audit_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control/masking_audit.json",
+  "resolved_config_path": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_z_control/resolved_config.json"
+}
