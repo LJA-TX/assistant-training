@@ -1,4 +1,4 @@
-# Project-Wide Baseline Comparison
+# NVFP4 Baseline Comparison
 
 ## Comparison Table
 
@@ -12,50 +12,21 @@
 | Phase U | `stage_b_llama31_8b_base_v1_phase_u_schema_repair_micro_patch` | `0.0` | `0.0` | `0.0` | `1.0` | `1.0` | Safety-preserving collapse of capability |
 | Anchor sweep | `stage_b_llama31_8b_base_v1_phase_zc_treatment_c` | `0.085` | `0.2857142857142857` | `0.18571428571428572` | `0.6666666666666666` | `0.0` | Anchor concentration helps exact-call realization, but not enough |
 | Topology sweep | `stage_b_llama31_8b_base_v1_phase_zj_treatment_c` | `0.04` | `0.17142857142857143` | `0.09285714285714286` | `0.6833333333333333` | `0.05` | Topology is weakened; no arm reaches the H1/H2 floor |
-
-## External Reference Baseline
-
-| Regime | Representative run | exact JSON | tool-name | arg | no-call | adversarial no-call | Reading |
-|---|---|---:|---:|---:|---:|---:|---|
-| Instruct external reference | `llama-3.1-8b-instruct` canonical run | `0.0` | `0.0` | `0.0` | `1.0` | `1.0` | Direct-load baseline; matches NVFP4 at the aggregate contract floor |
 | NVFP4 external reference | `llama-3.1-8b-instruct-nvfp4` service-backed benchmark | `0.0` | `0.0` | `0.0` | `1.0` | `1.0` | Production-speed reference; it sits below the project-trained adapters on tool-call capability |
 
-## Best-Performing Runs
+## What NVFP4 Adds
 
-- Best exact JSON validity: H2 at `0.48`.
-- Best tool-name accuracy: H2 at `0.7714285714285715`.
-- Best argument accuracy: H2 at `0.6928571428571428`.
-- Best no-call correctness: Base model and Phase U at `1.0`.
-- Best adversarial no-call correctness: Phase U at `1.0`.
+- It confirms that a production-speed reference model can be benchmarked on the frozen contract through the vLLM service path.
+- It does not change the project ordering: H1/H2 still dominate exact tool-call recovery.
+- It behaves much closer to the base-model floor than to any project-trained adapter on exact JSON, tool-name, and argument accuracy.
 
-## Major Capability Regimes
+## Key Deltas
 
-### Raw base / collapse floor
-
-The base model and Phase L show that the frozen canonical contract is not satisfied without specialized intervention.
-
-### Diversity / commitment recovery
-
-H1 and H2 establish the only clear high-capability regime in the repository.
-
-### Anchor-weighted partial recovery
-
-Phase Q, Phase ZC, and the Z-series show that anchor concentration helps, but it does not reproduce H1/H2 by itself.
-
-### Schema-preserving collapse
-
-Phase U preserves safety but loses capability completely.
-
-### Topology refinement failure
-
-The ZG-ZJ sweep changes the shape of the failure, but not enough to recreate H1/H2-level exact-call behavior.
+- Compared with H1, NVFP4 is down `0.44` on exact JSON, `0.7142857142857143` on tool-name accuracy, and `0.6285714285714286` on argument accuracy.
+- Compared with H2, NVFP4 is down `0.48` on exact JSON, `0.7714285714285715` on tool-name accuracy, and `0.6928571428571428` on argument accuracy.
+- Compared with Phase U, NVFP4 reaches the same aggregate exact/tool/argument floor, but its failure profile is different: it substitutes direct answers on tool-expected rows rather than collapsing into pure refusal-only behavior.
 
 ## Bottom Line
 
-The repository has one clear high-capability region:
+NVFP4 is a useful external reference for runtime context, but it is clearly below the project-trained adapters for tool-call capability. It does not threaten the conclusion that H1/H2 are the only high-capability regimes in the repository.
 
-- H1/H2 on the frozen recovery scaffold.
-
-Everything else is either partial recovery, safety-preserving collapse, or a weakened variant of the same failure family.
-
-The raw Instruct baseline now confirms that NVFP4 is not introducing a material behavior shift on the frozen contract.

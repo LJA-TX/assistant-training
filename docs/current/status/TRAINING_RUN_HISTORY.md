@@ -4,6 +4,7 @@ Status: living log.
 
 This document records completed training runs from the beginning of the project onward.
 It is intended to be updated at the end of each completed training run.
+External reference baselines are tracked separately and do not count toward the canonical-eval/probe totals.
 
 ## Split Definition
 
@@ -75,6 +76,13 @@ Ranking rule:
 | Date (UTC) | Run | Train/Val | Train loss | Eval loss | Exact JSON | Tool name | Arg | No-call | Notes |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | 2026-05-05 00:17:53 UTC | `lora_probe_llama_3_2_3b_instruct_toolcall_v0_1` | 162/40 | 1.827 | 1.821 | 5.0% | 0.0% | 0.0% | n/a | Headline metric uses the strong-prompt validation eval. The earlier minimum and train40 evals were `0.0%` exact. |
+
+## External Reference Baselines
+
+| Date (UTC) | Reference | Train/Val | Train loss | Eval loss | Exact JSON | Tool name | Arg | No-call | Adversarial no-call | Notes |
+|---|---|---|---|---|---:|---:|---:|---:|---:|---|
+| 2026-06-14 13:10:06 UTC | `llama-3.1-8b-instruct-nvfp4` external reference | `n/a` | `n/a` | `n/a` | `0.0%` | `0.0%` | `0.0%` | `100.0%` | `100.0%` | Service-backed canonical-manifest benchmark; the HF Transformers load path failed, so the frozen contract was executed through the production vLLM stack. |
+| 2026-06-14 13:34:54 UTC | `llama-3.1-8b-instruct` external reference | `n/a` | `n/a` | `n/a` | `0.0%` | `0.0%` | `0.0%` | `100.0%` | `100.0%` | Direct canonical-manifest benchmark on the frozen local harness; the non-quantized model loaded successfully with no fallback path. |
 
 ## Source Notes
 
