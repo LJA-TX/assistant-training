@@ -21,6 +21,7 @@ No broader structural work is active on this baseline. Current posture:
 - preserve the curated public package as the current presentation surface
 - keep the alpha-preparation boundary narrow and reviewable
 - authorize any later structural work separately before additional expansion begins
+- maintain the living training-run history log at [status/TRAINING_RUN_HISTORY.md](status/TRAINING_RUN_HISTORY.md) after each completed run
 
 ## What Is Preserved As Current Method
 

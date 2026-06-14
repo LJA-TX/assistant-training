@@ -1,0 +1,106 @@
+{
+  "report_version": "1.0",
+  "generated_utc": "2026-06-13T23:02:45Z",
+  "source_pool": "/opt/ai-stack/assistant-training/data/tool_ft_allaliases_20260525_from_qual_reports_freq.jsonl",
+  "base_train": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_train.jsonl",
+  "base_val": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_y_control_val.jsonl",
+  "patch_rows": 100,
+  "anchor_patch_counts": {
+    "rg_search": 20,
+    "read_file": 20,
+    "find_files": 20,
+    "debug_tools": 20,
+    "run_command": 20
+  },
+  "arms": {
+    "control": {
+      "topology": "compact_local",
+      "topology_pattern": "minimal_span_window_of_100_rg_search_rows",
+      "position_stats": {
+        "min_position": 130,
+        "max_position": 268,
+        "span": 138,
+        "mean_gap": 1.393939,
+        "median_gap": 1
+      },
+      "anchor_rows": 726,
+      "long_tail_rows": 667,
+      "tool_positive_rows": 1393,
+      "paths": {
+        "train": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_control_train.jsonl",
+        "val": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_control_val.jsonl",
+        "summary": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_control_summary.json",
+        "leakage": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_control_leakage_report.json",
+        "readiness": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_control_readiness_assessment.json"
+      }
+    },
+    "treatment_a": {
+      "topology": "two_cluster",
+      "topology_pattern": "two_clusters_50_plus_50_rg_search_rows",
+      "position_stats": {
+        "min_position": 0,
+        "max_position": 420,
+        "span": 420,
+        "mean_gap": 4.242424,
+        "median_gap": 1
+      },
+      "anchor_rows": 726,
+      "long_tail_rows": 667,
+      "tool_positive_rows": 1393,
+      "paths": {
+        "train": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_train.jsonl",
+        "val": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_val.jsonl",
+        "summary": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_summary.json",
+        "leakage": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_leakage_report.json",
+        "readiness": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_readiness_assessment.json"
+      }
+    },
+    "treatment_b": {
+      "topology": "four_cluster",
+      "topology_pattern": "four_clusters_25_plus_25_plus_25_plus_25_rg_search_rows",
+      "position_stats": {
+        "min_position": 0,
+        "max_position": 420,
+        "span": 420,
+        "mean_gap": 4.242424,
+        "median_gap": 1
+      },
+      "anchor_rows": 726,
+      "long_tail_rows": 667,
+      "tool_positive_rows": 1393,
+      "paths": {
+        "train": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_b_train.jsonl",
+        "val": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_b_val.jsonl",
+        "summary": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_b_summary.json",
+        "leakage": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_b_leakage_report.json",
+        "readiness": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_b_readiness_assessment.json"
+      }
+    },
+    "treatment_c": {
+      "topology": "fully_dispersed",
+      "topology_pattern": "quantile_dispersed_100_rg_search_rows",
+      "position_stats": {
+        "min_position": 0,
+        "max_position": 418,
+        "span": 418,
+        "mean_gap": 4.222222,
+        "median_gap": 4
+      },
+      "anchor_rows": 726,
+      "long_tail_rows": 667,
+      "tool_positive_rows": 1393,
+      "paths": {
+        "train": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_c_train.jsonl",
+        "val": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_c_val.jsonl",
+        "summary": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_c_summary.json",
+        "leakage": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_c_leakage_report.json",
+        "readiness": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_c_readiness_assessment.json"
+      }
+    }
+  },
+  "comparability": {
+    "train_tool_counts_identical_across_arms": true,
+    "anchor_rows_identical_across_arms": true,
+    "long_tail_rows_identical_across_arms": true
+  }
+}

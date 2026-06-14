@@ -1,0 +1,49 @@
+{
+  "generated_utc": "2026-06-13T23:02:45Z",
+  "dataset": "dataset_v1_2_phase_zf_treatment_b",
+  "arm": "treatment_b",
+  "status": "Ready",
+  "scientifically_admissible": true,
+  "checks": {
+    "contamination_zero_for_all_eval_splits": true,
+    "anchor_count_matches_target": true,
+    "exact_tool_request_cue_retained": true,
+    "scaffold_invariant": true,
+    "tool_calls_envelope_valid": true,
+    "safety_block_preserved": true,
+    "all_tool_families_represented": true
+  },
+  "summary": {
+    "row_counts": {},
+    "train_category_counts": {
+      "adversarial_no_call_calibration": 65,
+      "no_call_direct_calibration": 216,
+      "refusal_calibration": 162,
+      "runtime_alignment": 324,
+      "tool_positive": 1393
+    },
+    "train_tool_counts_top10": {
+      "apply_unified_diff": 26,
+      "archive_create": 36,
+      "archive_extract": 40,
+      "check_service_health": 45,
+      "copy_path": 28,
+      "debug_tools": 108,
+      "find_files": 131,
+      "get_system_datetime": 38,
+      "get_system_version": 26,
+      "git_diff": 27
+    },
+    "anchor_rows": 726,
+    "long_tail_rows": 667,
+    "patch_rows": 100,
+    "position_stats": {
+      "min_position": 0,
+      "max_position": 420,
+      "span": 420,
+      "mean_gap": 4.242424,
+      "median_gap": 1
+    }
+  },
+  "rationale": "Ready: the patch is contamination-clean, the exact tool cue and canonical envelope are retained, the scaffold is frozen, the safety block is preserved, all tool families remain represented, and the anchor row count matches the frozen scaffold."
+}

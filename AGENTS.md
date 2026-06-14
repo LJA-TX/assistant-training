@@ -68,3 +68,4 @@ This dispatcher must not contain:
 
 Phase 1 extraction provides dispatcher routing + references to checklists/templates only.
 Protocol library extraction remains deferred to later phases.
+After each completed canonical run or probe, update `docs/current/status/TRAINING_RUN_HISTORY.md` before closing out the work.

@@ -1,0 +1,45 @@
+{
+  "manifest_version": "1.0",
+  "name": "stage_b_llama31_8b_base_v1_phase_zh_treatment_a",
+  "generated_utc": "2026-06-13T23:44:52Z",
+  "status": "prepared_not_started",
+  "training_started": false,
+  "training_started_utc": null,
+  "training_completed_utc": null,
+  "config_path": "/opt/ai-stack/assistant-training/configs/lora/stage_b_llama31_8b_base_v1_phase_zh_treatment_a.config.json",
+  "inputs": {
+    "train_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_train.jsonl",
+    "val_jsonl": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_val.jsonl",
+    "canonical_eval_manifest": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+    "dataset_manifest": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_summary.json",
+    "dataset_leakage_report": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_leakage_report.json",
+    "dataset_readiness_assessment": "/opt/ai-stack/assistant-training/data/v1_2/dataset_v1_2_phase_zf_treatment_a_readiness_assessment.json",
+    "phase_zf_completion_report": "/opt/ai-stack/assistant-training/docs/phase_zf/PHASE_ZF_COMPLETION_REPORT.md",
+    "phase_zf_treatment_a_readiness_assessment": "/opt/ai-stack/assistant-training/docs/phase_zf/TOPOLOGY_TREATMENT_A_READINESS.md",
+    "phase_zf_codex_journal": "/opt/ai-stack/assistant-training/docs/phase_zf/PHASE_ZF_CODEX_JOURNAL.md",
+    "phase_zg_control_execution_review": "/opt/ai-stack/assistant-training/docs/phase_zg/PHASE_ZG_CONTROL_EXECUTION_REVIEW.md",
+    "phase_zg_baseline_comparison": "/opt/ai-stack/assistant-training/docs/phase_zg/PHASE_ZG_BASELINE_COMPARISON.md"
+  },
+  "expected_outputs": {
+    "run_root": "/opt/ai-stack/assistant-training/artifacts/stage_b_llama31_8b_base_v1_phase_zh_treatment_a",
+    "adapter_output_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_zh_treatment_a",
+    "logs_dir": "/opt/ai-stack/assistant-training/artifacts/logs/stage_b_llama31_8b_base_v1_phase_zh_treatment_a",
+    "merge_output_expected": false
+  },
+  "review_gate": {
+    "approved_to_run": true,
+    "approved_by": "phase_zh_treatment_a_execution_authorization_2026-06-13",
+    "approved_utc": "2026-06-13T23:44:52Z"
+  },
+  "scaffold_notes": {
+    "implementation_phase": "phase_zh_topology_treatment_a_governed_execution",
+    "dataset_generation_completed": true,
+    "training_started": false,
+    "canonical_eval_executed": false,
+    "single_run_only": true,
+    "auto_chain_disabled": true,
+    "hard_stop_triggered": false,
+    "auto_progression_halted": false,
+    "gate_opened": true
+  }
+}
