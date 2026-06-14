@@ -12,6 +12,7 @@ The repository objective is to present a reproducible post-training and evaluati
 - Wave 1 is complete and closed.
 - Compatibility adoption is complete and closed.
 - The curated public package has a defined alpha baseline.
+- A curated Llama 3.1 baseline evidence package is published.
 - The Stage C runtime-output / corpus-behavior family remains parked.
 
 ## What Is Active Now
@@ -19,6 +20,7 @@ The repository objective is to present a reproducible post-training and evaluati
 No broader structural work is active on this baseline. Current posture:
 
 - preserve the curated public package as the current presentation surface
+- keep the published baseline package under `evals/baselines/llama31/` and `docs/current/baselines/` aligned with the front door
 - keep the alpha-preparation boundary narrow and reviewable
 - authorize any later structural work separately before additional expansion begins
 - maintain the living training-run history log at [status/TRAINING_RUN_HISTORY.md](status/TRAINING_RUN_HISTORY.md) after each completed run
@@ -29,6 +31,7 @@ The following remain active framework or infrastructure surfaces in the current 
 
 - doctrine
 - canonical evaluation contract
+- curated Llama 3.1 baseline evidence under `evals/baselines/llama31/`
 - core training, dataset, and evaluation scripts
 - process infrastructure under `docs/framework/process_infrastructure/`
 - distilled methodology under `docs/framework/methodology/`

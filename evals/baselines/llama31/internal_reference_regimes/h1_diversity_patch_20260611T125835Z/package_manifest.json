@@ -1,0 +1,42 @@
+{
+  "package_version": "1.0",
+  "bundle_id": "h1_diversity_patch_20260611T125835Z",
+  "bundle_class": "internal_reference_regime",
+  "role": "report_only_non_promotional_reference_regime",
+  "public_label": "H1 diversity patch internal reference regime",
+  "model_reference": "llama-3.1-8b-base",
+  "adapter_label": "stage_b_llama31_8b_base_v1_phase_i_h1_diversity_patch",
+  "evaluation_contract_path": "evals/canonical_eval_manifest_v1.json",
+  "source_run_path": "evals/runs/stage_b_v1_phase_i_h1_diversity_patch_eval_20260611T125835Z",
+  "published_bundle_path": "evals/baselines/llama31/internal_reference_regimes/h1_diversity_patch_20260611T125835Z",
+  "generated_utc": "2026-06-11T13:02:09Z",
+  "artifact_edit_policy": "verbatim_copy_of_executed_evidence",
+  "artifact_files": [
+    "comparison_rows.jsonl",
+    "stage_c_family_a_scorer_evidence_artifact.json",
+    "stage_c_governance_guardrails_artifact.json",
+    "stage_c_row_fact_metadata_artifact.json",
+    "stage_c_runtime_contract_summary_artifact.json",
+    "summary.json"
+  ],
+  "metric_snapshot": {
+    "exact_json_validity": 0.44,
+    "invalid_json_rate": 0.1,
+    "tool_name_accuracy": 0.7142857142857143,
+    "argument_accuracy": 0.6285714285714286,
+    "wrapper_leakage": 0.0,
+    "no_call_correctness": 0.9,
+    "adversarial_no_call_correctness": 0.7
+  },
+  "supporting_documents": [
+    "docs/phase_ix/H1_EXCEPTION_CHECKPOINT_REPORT.md",
+    "docs/phase_ix/H1_EXCEPTION_SCIENTIFIC_INTERPRETATION.md",
+    "docs/phase_v/CONTROL_SURFACE_COMPARISON.md",
+    "data/v1_0/dataset_v1_0_phase_i_h1_diversity_patch_summary.json"
+  ],
+  "notes": [
+    "Published as an internal reference regime because it is scientifically central and explicitly non-promotional.",
+    "H1 remains report-only evidence under the repository's safety and stop-rule framing."
+  ]
+}
+

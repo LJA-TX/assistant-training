@@ -1,0 +1,73 @@
+{
+  "package_version": "1.0",
+  "package_root": "evals/baselines/llama31",
+  "package_readme": "evals/baselines/llama31/README.md",
+  "evaluation_contract_path": "evals/canonical_eval_manifest_v1.json",
+  "project_wide_comparison_table_path": "evals/baselines/llama31/project_wide_comparison_table.json",
+  "evidence_policy": {
+    "primary_artifacts": "verbatim_copy_of_executed_repository_evidence",
+    "environment_specific_literals": "preserved_and_documented",
+    "package_metadata_surfaces": "repo_relative_and_curated"
+  },
+  "naming_legend": {
+    "directory_names": "Bundle directory names preserve executed run provenance.",
+    "stable_interpretation_surface": "Use each bundle's package_manifest.json for role, class, and caveat interpretation."
+  },
+  "authoritative_base_bundle_id": "base_revalidation_20260610_r1",
+  "historical_provenance_bundle_ids": [
+    "base_original_20260526T0044Z"
+  ],
+  "canonical_baselines": [
+    {
+      "bundle_id": "base_original_20260526T0044Z",
+      "public_label": "Llama-3.1-8B-Base original baseline",
+      "bundle_path": "evals/baselines/llama31/canonical_baselines/base_original_20260526T0044Z",
+      "bundle_manifest_path": "evals/baselines/llama31/canonical_baselines/base_original_20260526T0044Z/package_manifest.json",
+      "bundle_class": "canonical_baseline",
+      "role": "historical_provenance_baseline"
+    },
+    {
+      "bundle_id": "base_revalidation_20260610_r1",
+      "public_label": "Llama-3.1-8B-Base authoritative revalidation baseline",
+      "bundle_path": "evals/baselines/llama31/canonical_baselines/base_revalidation_20260610_r1",
+      "bundle_manifest_path": "evals/baselines/llama31/canonical_baselines/base_revalidation_20260610_r1/package_manifest.json",
+      "bundle_class": "canonical_baseline",
+      "role": "authoritative_base_baseline"
+    },
+    {
+      "bundle_id": "instruct_external_reference_20260614T131500Z",
+      "public_label": "Llama-3.1-8B-Instruct external reference baseline",
+      "bundle_path": "evals/baselines/llama31/canonical_baselines/instruct_external_reference_20260614T131500Z",
+      "bundle_manifest_path": "evals/baselines/llama31/canonical_baselines/instruct_external_reference_20260614T131500Z/package_manifest.json",
+      "bundle_class": "canonical_baseline",
+      "role": "external_reference_baseline"
+    },
+    {
+      "bundle_id": "nvfp4_external_reference_20260614T131002Z",
+      "public_label": "Llama-3.1-8B-Instruct-NVFP4 external reference baseline",
+      "bundle_path": "evals/baselines/llama31/canonical_baselines/nvfp4_external_reference_20260614T131002Z",
+      "bundle_manifest_path": "evals/baselines/llama31/canonical_baselines/nvfp4_external_reference_20260614T131002Z/package_manifest.json",
+      "bundle_class": "canonical_baseline",
+      "role": "external_reference_baseline"
+    }
+  ],
+  "internal_reference_regimes": [
+    {
+      "bundle_id": "h1_diversity_patch_20260611T125835Z",
+      "public_label": "H1 diversity patch internal reference regime",
+      "bundle_path": "evals/baselines/llama31/internal_reference_regimes/h1_diversity_patch_20260611T125835Z",
+      "bundle_manifest_path": "evals/baselines/llama31/internal_reference_regimes/h1_diversity_patch_20260611T125835Z/package_manifest.json",
+      "bundle_class": "internal_reference_regime",
+      "role": "report_only_non_promotional_reference_regime"
+    },
+    {
+      "bundle_id": "h2_commitment_patch_20260611T120228Z",
+      "public_label": "H2 commitment patch internal reference regime",
+      "bundle_path": "evals/baselines/llama31/internal_reference_regimes/h2_commitment_patch_20260611T120228Z",
+      "bundle_manifest_path": "evals/baselines/llama31/internal_reference_regimes/h2_commitment_patch_20260611T120228Z/package_manifest.json",
+      "bundle_class": "internal_reference_regime",
+      "role": "report_only_non_promotional_reference_regime"
+    }
+  ]
+}
+

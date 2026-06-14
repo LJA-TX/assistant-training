@@ -1,0 +1,40 @@
+{
+  "package_version": "1.0",
+  "bundle_id": "instruct_external_reference_20260614T131500Z",
+  "bundle_class": "canonical_baseline",
+  "role": "external_reference_baseline",
+  "public_label": "Llama-3.1-8B-Instruct external reference baseline",
+  "model_reference": "llama-3.1-8b-instruct",
+  "evaluation_contract_path": "evals/canonical_eval_manifest_v1.json",
+  "source_run_path": "evals/runs/phase_zm_instruct_external_reference_eval_20260614T131500Z",
+  "published_bundle_path": "evals/baselines/llama31/canonical_baselines/instruct_external_reference_20260614T131500Z",
+  "generated_utc": "2026-06-14T13:34:54Z",
+  "artifact_edit_policy": "verbatim_copy_of_executed_evidence",
+  "artifact_files": [
+    "comparison_rows.jsonl",
+    "stage_c_family_a_scorer_evidence_artifact.json",
+    "stage_c_governance_guardrails_artifact.json",
+    "stage_c_row_fact_metadata_artifact.json",
+    "stage_c_runtime_contract_summary_artifact.json",
+    "summary.json"
+  ],
+  "metric_snapshot": {
+    "exact_json_validity": 0.0,
+    "invalid_json_rate": 0.69,
+    "tool_name_accuracy": 0.0,
+    "argument_accuracy": 0.0,
+    "wrapper_leakage": 0.0,
+    "no_call_correctness": 1.0,
+    "adversarial_no_call_correctness": 1.0
+  },
+  "supporting_documents": [
+    "docs/phase_zm/INSTRUCT_CANONICAL_EVAL_REPORT.md",
+    "docs/phase_zm/INSTRUCT_MODEL_AVAILABILITY_REPORT.md",
+    "docs/current/baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md"
+  ],
+  "notes": [
+    "Direct-load external reference baseline executed on the frozen local harness.",
+    "Published as a canonical baseline rather than an internal reference regime."
+  ]
+}
+

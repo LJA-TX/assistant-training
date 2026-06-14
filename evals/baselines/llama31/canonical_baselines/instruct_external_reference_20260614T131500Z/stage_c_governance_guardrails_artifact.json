@@ -1,0 +1,14 @@
+{
+  "guardrail_status": {
+    "inference_behavior_detected": false,
+    "substitution_behavior_detected": false,
+    "reconstruction_behavior_detected": false,
+    "legacy_summary_modified": false,
+    "legacy_detector_surface_modified": false
+  },
+  "guardrail_counts": {
+    "row_fact_record_count": 200,
+    "family_a_record_count": 200,
+    "family_a_missing_evidence_count": 135
+  }
+}

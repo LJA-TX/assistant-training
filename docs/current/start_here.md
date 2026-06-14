@@ -6,7 +6,15 @@ Use this page as the fastest path into the curated public package.
 
 Read [current_status.md](current_status.md) for the accepted baseline and the current boundary.
 
-## 2. Read The Doctrine
+## 2. Inspect The Published Baseline Package
+
+For the curated Llama 3.1 evidence package, start with:
+
+- [baselines/README.md](baselines/README.md)
+- [baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md](baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md)
+- [../../evals/baselines/llama31/README.md](../../evals/baselines/llama31/README.md)
+
+## 3. Read The Doctrine
 
 The regimen is governed by:
 
@@ -16,7 +24,7 @@ The regimen is governed by:
 
 These are doctrine surfaces, not optional background reading.
 
-## 3. Identify The Reusable Framework
+## 4. Identify The Reusable Framework
 
 Read [framework_vs_history.md](framework_vs_history.md) to distinguish reusable regimen assets from curated historical evidence.
 
@@ -39,11 +47,11 @@ The main framework surfaces are:
 - [../../tests/test_repo_paths.py](../../tests/test_repo_paths.py)
 - [../../tests/test_compatibility_path_resolution.py](../../tests/test_compatibility_path_resolution.py)
 
-## 4. Check Housekeeping Boundaries
+## 5. Check Housekeeping Boundaries
 
 Read [housekeeping_status.md](housekeeping_status.md) before planning any structural change.
 
-## 5. Follow The Evidence Spine
+## 6. Follow The Evidence Spine
 
 The curated evidence spine starts here:
 
@@ -55,7 +63,7 @@ The curated evidence spine starts here:
 - [../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md](../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md)
 - [../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md](../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md)
 
-## 6. Keep The Boundary
+## 7. Keep The Boundary
 
 No archive expansion.
 No broad structural changes.

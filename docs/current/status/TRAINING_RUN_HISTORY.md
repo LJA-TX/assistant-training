@@ -84,6 +84,13 @@ Ranking rule:
 | 2026-06-14 13:10:06 UTC | `llama-3.1-8b-instruct-nvfp4` external reference | `n/a` | `n/a` | `n/a` | `0.0%` | `0.0%` | `0.0%` | `100.0%` | `100.0%` | Service-backed canonical-manifest benchmark; the HF Transformers load path failed, so the frozen contract was executed through the production vLLM stack. |
 | 2026-06-14 13:34:54 UTC | `llama-3.1-8b-instruct` external reference | `n/a` | `n/a` | `n/a` | `0.0%` | `0.0%` | `0.0%` | `100.0%` | `100.0%` | Direct canonical-manifest benchmark on the frozen local harness; the non-quantized model loaded successfully with no fallback path. |
 
+## Published Llama 3.1 Evidence Package
+
+- Landing page: [../baselines/README.md](../baselines/README.md)
+- Project-wide comparison: [../baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md](../baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md)
+- Machine-readable package root: [../../../evals/baselines/llama31/README.md](../../../evals/baselines/llama31/README.md)
+- The curated package includes the authoritative Base revalidation baseline, the Instruct and NVFP4 external references, and H1/H2 as internal reference regimes.
+
 ## Source Notes
 
 - Canonical-eval source tree: [`evals/runs/`](../../../evals/runs/)

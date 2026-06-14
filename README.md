@@ -48,6 +48,7 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 
 - the regimen and its governing doctrine
 - the pinned canonical evaluation contract
+- a curated Llama 3.1 baseline evidence package
 - the scripts and tests that make the contract inspectable
 - the curated historical evidence that explains how the method evolved
 
@@ -57,6 +58,7 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 | --- | --- |
 | What is this repository? | [docs/current/current_status.md](docs/current/current_status.md) |
 | What has the project accomplished so far? | [docs/current/project_outcomes_to_date.md](docs/current/project_outcomes_to_date.md) |
+| Where are the published baseline artifacts? | [docs/current/baselines/README.md](docs/current/baselines/README.md) |
 | Why does it exist? | [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md) and [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md) |
 | How do current method and history differ? | [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md) |
 | Where do I start? | [docs/current/start_here.md](docs/current/start_here.md) |
@@ -73,6 +75,7 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 
 ## Core Inspection Targets
 
+- [docs/current/baselines/README.md](docs/current/baselines/README.md)
 - [docs/metric_specification_v1a.md](docs/metric_specification_v1a.md)
 - [evals/canonical_eval_manifest_v1.json](evals/canonical_eval_manifest_v1.json)
 - [scripts/build_dataset_v1.py](scripts/build_dataset_v1.py)
