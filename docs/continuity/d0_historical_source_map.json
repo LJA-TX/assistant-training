@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "generated_utc": "2026-06-15T00:00:00Z",
+  "notes": [
+    "Sample historical source map for D0 parser validation.",
+    "This file is read-only documentation and is not authoritative.",
+    "Only dataset_builder is referenced here so training_script remains unresolved unless a valid reference is supplied elsewhere."
+  ],
+  "references": [
+    {
+      "artifact_id": "dataset_builder",
+      "reference_kind": "git_commit",
+      "repo_path": "scripts/build_dataset_v1.py",
+      "commit_oid": "7b694fbd8df5e7bbc5073127732ff9283992b085",
+      "notes": [
+        "Baseline historical commit reference used for read-only resolution plumbing validation."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/d0_historical_source_map.schema.json",
+  "title": "D0 Historical Source Map",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "references"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "generated_utc": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["artifact_id", "reference_kind", "repo_path", "commit_oid"],
+            "properties": {
+              "artifact_id": {
+                "type": "string"
+              },
+              "reference_kind": {
+                "type": "string",
+                "const": "git_commit"
+              },
+              "repo_path": {
+                "type": "string"
+              },
+              "commit_oid": {
+                "type": "string",
+                "pattern": "^[0-9a-fA-F]{7,64}$"
+              },
+              "notes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["artifact_id", "reference_kind", "repo_path", "blob_oid"],
+            "properties": {
+              "artifact_id": {
+                "type": "string"
+              },
+              "reference_kind": {
+                "type": "string",
+                "const": "git_blob"
+              },
+              "repo_path": {
+                "type": "string"
+              },
+              "blob_oid": {
+                "type": "string",
+                "pattern": "^[0-9a-fA-F]{7,64}$"
+              },
+              "notes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
