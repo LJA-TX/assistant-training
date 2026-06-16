@@ -15,6 +15,7 @@ Date: 2026-06-16
 - H1 and H2 remain observational reference regimes, not replay targets.
 - This is an initial catalog of candidate explanations, not evidence that any explanation is correct.
 - Evidence is typed by role. Only `behavioral_evidence` is direct support for a behavior claim; the other roles are boundary, provenance, contract, or continuity context and must not be treated as direct behavioral support.
+- Confounds are recorded as structured records with shared IDs where applicable.
 
 ## Inventory Overview
 
@@ -50,7 +51,25 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: overlaps with anchor concentration and cue phrasing; measured gains may reflect several co-moving surfaces; evaluation metrics are coupled rather than independent
+- `confounds`:
+  - `confound_id`: `CFN-001`
+    `description`: Envelope pressure, cue phrasing, strict-JSON wording, and duplicate or derivative rephrasings are tightly coupled and can collapse into one causal surface.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-002`, `D1-HYP-003`, `D1-HYP-007`, `D1-HYP-008`, `D1-HYP-013`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can inflate apparent separation between envelope, cue, and duplicate or derivative variants.
+    `impact_scope`: Envelope-family hypotheses and their duplicate or derivative cross-references.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared envelope/cue family confound; reuse this ID for lexical variants instead of inventing new causal categories.
+  - `confound_id`: `CFN-002`
+    `description`: Several preserved H1/H2 surface changes co-vary, so apparent gains may reflect a conjunctive bundle rather than any single factor.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-004`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can overstate the specificity of parent and composite explanations.
+    `impact_scope`: Parent and composite umbrella entries.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared co-variation confound across the broad umbrella entries.
 - `status`: candidate
 - `notes`: Broad parent family only; the child entries carry the more specific explanations.
 
@@ -76,7 +95,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: cue phrasing and anchor concentration are tightly coupled to envelope pressure; the same wording can be paraphrased in ways that obscure whether this is a distinct factor
+- `confounds`:
+  - `confound_id`: `CFN-001`
+    `description`: Envelope pressure, cue phrasing, strict-JSON wording, and duplicate or derivative rephrasings are tightly coupled and can collapse into one causal surface.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-002`, `D1-HYP-003`, `D1-HYP-007`, `D1-HYP-008`, `D1-HYP-013`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can inflate apparent separation between envelope, cue, and duplicate or derivative variants.
+    `impact_scope`: Envelope-family hypotheses and their duplicate or derivative cross-references.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared envelope/cue family confound; reuse this ID for lexical variants instead of inventing new causal categories.
 - `status`: candidate
 - `notes`: This entry is the source reference for the duplicate entry below.
 
@@ -100,7 +128,25 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: strong overlap with explicit `tool_calls` pressure; decode defaults and scorer behavior may make the effect look stronger or weaker than it is; wording choices may collapse into a duplicate of the envelope-pressure hypothesis
+- `confounds`:
+  - `confound_id`: `CFN-001`
+    `description`: Envelope pressure, cue phrasing, strict-JSON wording, and duplicate or derivative rephrasings are tightly coupled and can collapse into one causal surface.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-002`, `D1-HYP-003`, `D1-HYP-007`, `D1-HYP-008`, `D1-HYP-013`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can inflate apparent separation between envelope, cue, and duplicate or derivative variants.
+    `impact_scope`: Envelope-family hypotheses and their duplicate or derivative cross-references.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared envelope/cue family confound; reuse this ID for lexical variants instead of inventing new causal categories.
+  - `confound_id`: `CFN-008`
+    `description`: Decode defaults, scorer-path consistency, and evaluation-contract alignment can make exact-JSON or measurement effects look stronger or weaker than they are.
+    `affected_hypothesis_ids`: `D1-HYP-003`, `D1-HYP-012`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/D0_HASH_AUTHORITY_VERIFICATION.md`
+    `direction_of_bias`: Can collapse a wording or contract effect into a measurement-only story or exaggerate scorer sensitivity.
+    `impact_scope`: Strict-JSON and evaluation-contract hypotheses.
+    `resolution_status`: unresolved
+    `residual_risk`: low
+    `notes`: Shared by the strict-JSON source, the evaluation-contract hypothesis, and the derivative reference because all depend on the same decode and scorer surfaces.
 - `status`: provisional
 - `notes`: This entry is the source reference for the derivative entry below.
 
@@ -126,7 +172,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: the component factors co-vary by design in the preserved H-series surfaces; a conjunctive explanation can be overfit if one component is treated as causal without the rest
+- `confounds`:
+  - `confound_id`: `CFN-002`
+    `description`: Several preserved H1/H2 surface changes co-vary, so apparent gains may reflect a conjunctive bundle rather than any single factor.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-004`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can overstate the specificity of parent and composite explanations.
+    `impact_scope`: Parent and composite umbrella entries.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared co-variation confound across the broad umbrella entries.
 - `status`: candidate
 - `notes`: Composite umbrella only; the component entries below provide the finer-grained candidate explanations.
 
@@ -154,7 +209,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: patch locality may simply preserve other hidden factors; low-delta replacement can be a proxy for broader lineage fidelity; row-level preservation and patch size are difficult to separate cleanly
+- `confounds`:
+  - `confound_id`: `CFN-003`
+    `description`: Low-delta patch-local replacement and replacement density may proxy broader lineage fidelity or capacity rather than a direct mechanism.
+    `affected_hypothesis_ids`: `D1-HYP-005`, `D1-HYP-008`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can make patch-local preservation look causal when it is only a surrogate for broader fidelity or capacity.
+    `impact_scope`: Patch-local and replacement-density hypotheses.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared patch-budget confound.
 - `status`: candidate
 - `notes`: None
 
@@ -178,7 +242,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: anchor concentration may only proxy for cue strength or patch budget; high-anchor regions may co-occur with other improvements that drive the same metric shift
+- `confounds`:
+  - `confound_id`: `CFN-004`
+    `description`: Anchor concentration may proxy cue strength or patch budget and may co-occur with other improvements.
+    `affected_hypothesis_ids`: `D1-HYP-006`, `D1-HYP-008`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can overstate anchor causality by collapsing it into a broader surface-strength effect.
+    `impact_scope`: Anchor and patch-budget hypotheses.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared between anchor and budget hypotheses.
 - `status`: provisional
 - `notes`: None
 
@@ -202,7 +275,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: cue phrasing overlaps with envelope pressure; phrasing changes can be hard to separate from general instruction strength; exact wording may be a derivative of the envelope-pressure hypothesis rather than a distinct driver
+- `confounds`:
+  - `confound_id`: `CFN-001`
+    `description`: Envelope pressure, cue phrasing, strict-JSON wording, and duplicate or derivative rephrasings are tightly coupled and can collapse into one causal surface.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-002`, `D1-HYP-003`, `D1-HYP-007`, `D1-HYP-008`, `D1-HYP-013`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can inflate apparent separation between envelope, cue, and duplicate or derivative variants.
+    `impact_scope`: Envelope-family hypotheses and their duplicate or derivative cross-references.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared envelope/cue family confound; reuse this ID for lexical variants instead of inventing new causal categories.
 - `status`: provisional
 - `notes`: None
 
@@ -228,7 +310,34 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: budget may be a capacity proxy rather than a direct cause; it can be entangled with anchor concentration and cue phrasing; larger budgets may simply preserve more of the useful pattern without generating it
+- `confounds`:
+  - `confound_id`: `CFN-001`
+    `description`: Envelope pressure, cue phrasing, strict-JSON wording, and duplicate or derivative rephrasings are tightly coupled and can collapse into one causal surface.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-002`, `D1-HYP-003`, `D1-HYP-007`, `D1-HYP-008`, `D1-HYP-013`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can inflate apparent separation between envelope, cue, and duplicate or derivative variants.
+    `impact_scope`: Envelope-family hypotheses and their duplicate or derivative cross-references.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared envelope/cue family confound; reuse this ID for lexical variants instead of inventing new causal categories.
+  - `confound_id`: `CFN-003`
+    `description`: Low-delta patch-local replacement and replacement density may proxy broader lineage fidelity or capacity rather than a direct mechanism.
+    `affected_hypothesis_ids`: `D1-HYP-005`, `D1-HYP-008`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can make patch-local preservation look causal when it is only a surrogate for broader fidelity or capacity.
+    `impact_scope`: Patch-local and replacement-density hypotheses.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared patch-budget confound.
+  - `confound_id`: `CFN-004`
+    `description`: Anchor concentration may proxy cue strength or patch budget and may co-occur with other improvements.
+    `affected_hypothesis_ids`: `D1-HYP-006`, `D1-HYP-008`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can overstate anchor causality by collapsing it into a broader surface-strength effect.
+    `impact_scope`: Anchor and patch-budget hypotheses.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared between anchor and budget hypotheses.
 - `status`: candidate
 - `notes`: None
 
@@ -252,7 +361,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: no-call balance may be an effect of other factors rather than a cause; metric coupling can make preservation look explanatory when it is only a boundary condition
+- `confounds`:
+  - `confound_id`: `CFN-005`
+    `description`: No-call preservation may be a boundary condition or effect of other factors, and metric coupling can make it look explanatory when it is only preserving the floor.
+    `affected_hypothesis_ids`: `D1-HYP-009`
+    `evidence_ref`: `docs/current/baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md`
+    `direction_of_bias`: Can overstate the null-style explanatory role of no-call balance.
+    `impact_scope`: No-call balance hypothesis.
+    `resolution_status`: unresolved
+    `residual_risk`: low
+    `notes`: Boundary-condition confound only.
 - `status`: provisional
 - `notes`: Descriptive boundary-condition candidate only.
 
@@ -280,7 +398,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: scaffold fidelity is a prerequisite for comparison and may not be a positive driver; the hypothesis can collapse into a boundary condition rather than a mechanism
+- `confounds`:
+  - `confound_id`: `CFN-006`
+    `description`: Preserved current-tree scaffold fidelity and baseline alignment are comparison infrastructure and may be prerequisites rather than causal drivers.
+    `affected_hypothesis_ids`: `D1-HYP-010`
+    `evidence_ref`: `docs/continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md`
+    `direction_of_bias`: Can collapse the hypothesis into a boundary condition instead of a positive mechanism.
+    `impact_scope`: Scaffold fidelity hypothesis.
+    `resolution_status`: unresolved
+    `residual_risk`: low
+    `notes`: Boundary-condition confound only.
 - `status`: confounded
 - `notes`: Boundary-condition candidate only.
 
@@ -304,7 +431,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: contamination control is likely necessary but not sufficient; it may explain why the signal is not lost rather than why it is gained
+- `confounds`:
+  - `confound_id`: `CFN-007`
+    `description`: Contamination and leakage control may be necessary but not sufficient and may explain preservation rather than gain.
+    `affected_hypothesis_ids`: `D1-HYP-011`
+    `evidence_ref`: `docs/continuity/D0_FAILURE_TAXONOMY.md`
+    `direction_of_bias`: Can overstate boundary discipline as a positive mechanism.
+    `impact_scope`: Contamination-bound hypothesis.
+    `resolution_status`: unresolved
+    `residual_risk`: low
+    `notes`: Boundary-preservation confound only.
 - `status`: confounded
 - `notes`: Competing null-style explanation.
 
@@ -329,7 +465,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: stable measurement is a requirement for interpretation but may not by itself generate the H1/H2 regime; this explanation can easily collapse into a measurement-only story
+- `confounds`:
+  - `confound_id`: `CFN-008`
+    `description`: Decode defaults, scorer-path consistency, and evaluation-contract alignment can make exact-JSON or measurement effects look stronger or weaker than they are.
+    `affected_hypothesis_ids`: `D1-HYP-003`, `D1-HYP-012`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/D0_HASH_AUTHORITY_VERIFICATION.md`
+    `direction_of_bias`: Can collapse a wording or contract effect into a measurement-only story or exaggerate scorer sensitivity.
+    `impact_scope`: Strict-JSON and evaluation-contract hypotheses.
+    `resolution_status`: unresolved
+    `residual_risk`: low
+    `notes`: Shared by the strict-JSON source, the evaluation-contract hypothesis, and the derivative reference because all depend on the same decode and scorer surfaces.
 - `status`: confounded
 - `notes`: Competing null-style explanation.
 
@@ -355,7 +500,16 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: duplicate phrasing can make two entries look distinct when they are only lexical variants; this entry should be merged with its source entry if the catalog is normalized
+- `confounds`:
+  - `confound_id`: `CFN-001`
+    `description`: Envelope pressure, cue phrasing, strict-JSON wording, and duplicate or derivative rephrasings are tightly coupled and can collapse into one causal surface.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-002`, `D1-HYP-003`, `D1-HYP-007`, `D1-HYP-008`, `D1-HYP-013`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can inflate apparent separation between envelope, cue, and duplicate or derivative variants.
+    `impact_scope`: Envelope-family hypotheses and their duplicate or derivative cross-references.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared envelope/cue family confound; reuse this ID for lexical variants instead of inventing new causal categories.
 - `status`: duplicate
 - `notes`: Cross-reference only; not a separate source of support.
 
@@ -379,6 +533,24 @@ Relationship clusters:
 - `comparison_class`: current-tree stabilized implementation surfaces compared against H1/H2 observational reference regimes under the frozen canonical evaluation contract
 - `control_class`: `i3` / `H0` control scaffold plus frozen evaluation contract
 - `fixed_surfaces`: current stabilized trainer surface; current stabilized dataset-builder surface; current stabilized evaluation surface; `i3` control scaffold; `H0` control comparator; H1/H2 reference surfaces; canonical eval manifest; decode defaults; scorer / evaluator path
-- `confounds`: derivative wording inherits the same ambiguity as the source hypothesis and can be mistaken for a distinct mechanism if not merged carefully
+- `confounds`:
+  - `confound_id`: `CFN-001`
+    `description`: Envelope pressure, cue phrasing, strict-JSON wording, and duplicate or derivative rephrasings are tightly coupled and can collapse into one causal surface.
+    `affected_hypothesis_ids`: `D1-HYP-001`, `D1-HYP-002`, `D1-HYP-003`, `D1-HYP-007`, `D1-HYP-008`, `D1-HYP-013`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/post-publication_h1_h2_mechanism_isolation_continuity_2026-06-14.md`
+    `direction_of_bias`: Can inflate apparent separation between envelope, cue, and duplicate or derivative variants.
+    `impact_scope`: Envelope-family hypotheses and their duplicate or derivative cross-references.
+    `resolution_status`: unresolved
+    `residual_risk`: moderate
+    `notes`: Shared envelope/cue family confound; reuse this ID for lexical variants instead of inventing new causal categories.
+  - `confound_id`: `CFN-008`
+    `description`: Decode defaults, scorer-path consistency, and evaluation-contract alignment can make exact-JSON or measurement effects look stronger or weaker than they are.
+    `affected_hypothesis_ids`: `D1-HYP-003`, `D1-HYP-012`, `D1-HYP-014`
+    `evidence_ref`: `docs/continuity/D0_HASH_AUTHORITY_VERIFICATION.md`
+    `direction_of_bias`: Can collapse a wording or contract effect into a measurement-only story or exaggerate scorer sensitivity.
+    `impact_scope`: Strict-JSON and evaluation-contract hypotheses.
+    `resolution_status`: unresolved
+    `residual_risk`: low
+    `notes`: Shared by the strict-JSON source, the evaluation-contract hypothesis, and the derivative reference because all depend on the same decode and scorer surfaces.
 - `status`: provisional
 - `notes`: Derivative cross-reference only.
