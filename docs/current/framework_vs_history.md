@@ -13,7 +13,7 @@ Use this simple rule of thumb:
 | Category | What it means | Examples |
 | --- | --- | --- |
 | Reusable framework or active infrastructure | Current doctrine, contracts, code, tests, and active support surfaces | `../goal_charter_v5a.md`, `../appendix_a_operational_execution_contract_v3a.md`, `../metric_specification_v1a.md`, `../../scripts/train_lora_sft.py`, `../../tests/test_dataset_contract.py` |
-| Curated historical evidence | Selected records that explain how the method evolved and why the current boundary exists | `../framework/lineages/README.md`, `../framework/methodology/`, `status/STAGE_B_COMPLETION_DETERMINATION.md`, `roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md`, `../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md`, `../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md` |
+| Curated historical evidence | Selected records that explain how the method evolved and why the current boundary exists | `../framework/lineages/README.md`, `../framework/methodology/`, `status/STAGE_B_COMPLETION_DETERMINATION.md`, `../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md`, `../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md`, `../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md`, `../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md` |
 
 ## Treat As Reusable Framework Or Active Infrastructure
 
@@ -40,6 +40,8 @@ Use this simple rule of thumb:
 Selected records that still belong near the main path because they express current status or reusable methodology:
 
 - `status/STAGE_B_COMPLETION_DETERMINATION.md`
+- `status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md`
+- `../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md`
 - `../framework/methodology/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md`
 - `../framework/methodology/STAGE_C_BLOCKER_BRANCH_CLOSURE_AND_RUNTIME_OUTPUT_TRANSITION_ASSESSMENT.md`
 - `roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md`
@@ -51,6 +53,8 @@ Selected records that still belong near the main path because they express curre
 - `../framework/lineages/i6_isolated_variable_pivot.md`
 - `../framework/lineages/i7_coupled_schema_dynamics.md`
 - `../framework/lineages/i8_pre_training_governance_snapshot.md`
+- `../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md`
+- `../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md`
 - `../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md`
 - `../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md`
 
@@ -61,6 +65,7 @@ Current location does not equal future architectural role.
 Examples:
 
 - some current-status records are still presented as framework because they define the accepted baseline
+- Stage C closure artifacts remain curated history because they close a completed branch rather than reopen it
 - selected historical records are retained because they explain the method, not because they should expand into an archive
 - the evidence spine is bounded and thematic, not a dump of everything the project has ever produced
 
