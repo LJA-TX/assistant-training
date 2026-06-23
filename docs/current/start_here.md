@@ -2,18 +2,28 @@
 
 Use this page as the fastest path into the curated public package.
 
+## Plain-English Overview (Optional)
+
+If you want a low-jargon introduction first, read [plain_english_project_summary.md](plain_english_project_summary.md).
+
+This page is an informal overview for casual readers, not an authority or governance document.
+
 ## 1. Confirm Current State
 
 Read [current_status.md](current_status.md) for the accepted baseline and the current boundary.
 
-## 2. Read The Latest Closure And Handoff Status
+## 2. Read The Latest Closure, Handoff, And Gen-2 Framing Status
 
-For the latest authoritative closure and handoff conclusions, read:
+For the latest authoritative closure, handoff, and Gen-2 strategic framing surfaces, read:
 
 - [../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
 - [../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md](../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md)
 - [status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
 - [../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md](../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md)
+- [status/GEN2_PROGRAM_CHARTER.md](status/GEN2_PROGRAM_CHARTER.md)
+- [status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md](status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md)
+- [status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md](status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md)
+- [status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md](status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md)
 
 ## 3. Inspect The Published Baseline Package
 

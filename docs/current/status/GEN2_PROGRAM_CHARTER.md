@@ -2,7 +2,7 @@
 
 Date: 2026-06-21
 
-**Status:** Draft. Documentation-only synthesis of prior Gen-2 strategic assessments. This charter does not authorize D2 planning, D2 execution, experiment design, treatment-arm design, run planning, preregistration creation, manifest edits, hash-claim edits, training, evaluation execution, or governance reinterpretation.
+**Status:** Published current charter. Documentation-only synthesis of prior Gen-2 strategic assessments. This charter does not authorize D2 planning, D2 execution, experiment design, treatment-arm design, run planning, preregistration creation, manifest edits, hash-claim edits, training, evaluation execution, or governance reinterpretation.
 
 `Gen-2` is used here as a strategic program label only. It does not replace the repository's existing stage, family, or blocker terminology.
 

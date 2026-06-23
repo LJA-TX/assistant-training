@@ -28,7 +28,7 @@ The project has produced both **software artifacts** and **methodological findin
 - A documented governance and execution framework
 - A bounded evidence spine that explains how the method evolved
 
-The overall project remains active in understanding how offline evaluation results relate to runtime behavior. Within this public repository, Stage C is preserved as closed historical work with retained guidance, and D1 is complete and published while the D0 blocker remains active and D2 is not authorized.
+The overall project remains active in understanding how offline evaluation results relate to runtime behavior. Within this public repository, Stage C is preserved as closed historical work with retained guidance, D1 is complete and published, and a documentation-only Gen-2 charter package is published as the current prospective framing surface while the D0 blocker remains active and D2 is not authorized.
 
 ---
 
@@ -70,6 +70,12 @@ These utilities are accompanied by tests that help detect drift, regressions, an
 The project documents its operating doctrine in [docs/goal_charter_v5a.md](../goal_charter_v5a.md), [docs/appendix_a_operational_execution_contract_v3a.md](../appendix_a_operational_execution_contract_v3a.md), and related process docs.
 
 Together, these define the project’s execution rules, evaluation expectations, and reproducibility requirements.
+
+### Published Gen-2 Charter Package
+
+The repository now also includes a published documentation-only Gen-2 charter package under [docs/current/status/GEN2_PROGRAM_CHARTER.md](status/GEN2_PROGRAM_CHARTER.md).
+
+This package defines the current strategic framing, boundaries, and non-goals for a prospective Gen-2 evidence program and is supported by the linked Gen-2 assessment documents in the same directory.
 
 ### Framework / History Separation
 
@@ -123,6 +129,7 @@ Reliable conclusions require controlled datasets, pinned evaluation contracts, r
 - Stage B completion
 - Stage C completion and closure as historical work with retained guidance
 - D1 completion and publication
+- Published documentation-only Gen-2 charter package
 - Canonical evaluation infrastructure
 - Governance framework
 - Framework/history separation
@@ -136,6 +143,7 @@ Reliable conclusions require controlled datasets, pinned evaluation contracts, r
 - Stage C is closed historical work and is not an active execution track in this package.
 - D0 blocker `D0-BLK-TRAINING-SCRIPT-PROVENANCE-001` remains active.
 - D1 is complete and published.
+- The Gen-2 charter package is published as the current strategic framing surface and remains documentation-only.
 - D2 is not authorized.
 - No broader structural work or execution is active in this package unless separately authorized.
 
@@ -145,6 +153,8 @@ Reliable conclusions require controlled datasets, pinned evaluation contracts, r
 - Stage C final disposition: [docs/convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md](../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md)
 - D1 closure and D2 readiness: [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
 - Stage D handoff status: [docs/continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md](../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md)
+- Current Gen-2 charter: [docs/current/status/GEN2_PROGRAM_CHARTER.md](status/GEN2_PROGRAM_CHARTER.md)
+- Supporting Gen-2 assessments: [docs/current/status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md](status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md), [docs/current/status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md](status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md), [docs/current/status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md](status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md)
 
 ---
 

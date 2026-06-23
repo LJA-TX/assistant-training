@@ -53,12 +53,19 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 - the scripts and tests that make the contract inspectable
 - the curated historical evidence that explains how the method evolved
 
+## Plain-English Overview
+
+Casual readers who want a low-jargon introduction can start with [docs/current/plain_english_project_summary.md](docs/current/plain_english_project_summary.md).
+
+This page is an informal overview, not an authority or governance document.
+
 ## Quick Orientation
 
 | Question | Read first |
 | --- | --- |
 | What is this repository? | [docs/current/current_status.md](docs/current/current_status.md) |
 | What has the project accomplished so far? | [docs/current/project_outcomes_to_date.md](docs/current/project_outcomes_to_date.md) |
+| What defines the current Gen-2 framing? | [docs/current/status/GEN2_PROGRAM_CHARTER.md](docs/current/status/GEN2_PROGRAM_CHARTER.md), [docs/current/status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md](docs/current/status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md), [docs/current/status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md](docs/current/status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md), and [docs/current/status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md](docs/current/status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md) |
 | Where are the published baseline artifacts? | [docs/current/baselines/README.md](docs/current/baselines/README.md) |
 | What is the final Stage C status? | [docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md) and [docs/convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md](docs/convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md) |
 | What is the latest D1 / D2 readiness status? | [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md) and [docs/continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md](docs/continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md) |
@@ -71,12 +78,13 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 
 1. [docs/current/start_here.md](docs/current/start_here.md)
 2. [docs/current/current_status.md](docs/current/current_status.md)
-3. [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
-4. [docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
-5. [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md)
-6. [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
-7. [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md)
-8. [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md)
+3. [docs/current/status/GEN2_PROGRAM_CHARTER.md](docs/current/status/GEN2_PROGRAM_CHARTER.md)
+4. [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
+5. [docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
+6. [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md)
+7. [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
+8. [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md)
+9. [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md)
 
 ## Core Inspection Targets
 
@@ -100,7 +108,7 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 
 - [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
 - [docs/framework/methodology/](docs/framework/methodology/)
-- [docs/current/status/](docs/current/status/)
+- [docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md](docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md)
 - [docs/current/roadmap/](docs/current/roadmap/)
 - [docs/housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md](docs/housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md)
 - [docs/housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md](docs/housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md)
