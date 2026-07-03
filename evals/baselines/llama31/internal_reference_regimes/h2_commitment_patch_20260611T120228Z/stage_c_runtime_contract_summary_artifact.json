@@ -2,7 +2,7 @@
   "report_version": "stage_c_package1_live_canonical_evaluator_v1",
   "artifact_scope": "authoritative_row_fact_and_family_a_emission_only",
   "generated_utc": "2026-06-11T12:02:39Z",
-  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "manifest_path": "<local-repository-path>/evals/canonical_eval_manifest_v1.json",
   "row_fact_count": 200,
   "family_a_side_record_counts": {
     "adapter": 200,

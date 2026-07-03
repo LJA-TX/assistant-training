@@ -1,6 +1,6 @@
 {
   "generated_utc": "2026-06-14T13:34:54Z",
-  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "manifest_path": "<local-repository-path>/evals/canonical_eval_manifest_v1.json",
   "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-instruct",
   "adapter_dir": null,
   "decode_defaults": {

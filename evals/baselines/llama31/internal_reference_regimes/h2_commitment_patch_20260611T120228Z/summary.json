@@ -1,8 +1,8 @@
 {
   "generated_utc": "2026-06-11T12:02:39Z",
-  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "manifest_path": "<local-repository-path>/evals/canonical_eval_manifest_v1.json",
   "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
-  "adapter_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_i_h2_commitment_patch",
+  "adapter_dir": "<local-repository-path>/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_i_h2_commitment_patch",
   "decode_defaults": {
     "temperature": 0.0,
     "top_p": 1.0,
