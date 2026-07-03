@@ -2,18 +2,26 @@
 
 Use this page as the fastest path into the curated public package.
 
+## Plain-English Overview (Optional)
+
+If you want a low-jargon introduction first, read [plain_english_project_summary.md](plain_english_project_summary.md).
+
+This page is an informal overview for casual readers, not an authority or governance document.
+
 ## 1. Confirm Current State
 
 Read [current_status.md](current_status.md) for the accepted baseline and the current boundary.
 
-## 2. Read The Latest Closure And Handoff Status
+## 2. Read The Current Closure, Readiness, And Gen-2 Framing Status
 
-For the latest authoritative closure and handoff conclusions, read:
+For the current authoritative closure, readiness, and Gen-2 strategic framing surfaces, read:
 
-- [../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
-- [../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md](../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md)
+- [status/STAGE_B_COMPLETION_DETERMINATION.md](status/STAGE_B_COMPLETION_DETERMINATION.md)
 - [status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
-- [../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md](../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md)
+- [status/GEN2_PROGRAM_CHARTER.md](status/GEN2_PROGRAM_CHARTER.md)
+- [status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md](status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md)
+- [status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md](status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md)
+- [status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md](status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md)
 
 ## 3. Inspect The Published Baseline Package
 
@@ -65,10 +73,18 @@ Read [housekeeping_status.md](housekeeping_status.md) before planning any struct
 The curated evidence spine starts here:
 
 - [../framework/lineages/README.md](../framework/lineages/README.md)
+- [../framework/methodology/STAGE_BC_PHASE1_PROCESS_INFRASTRUCTURE_CLOSURE_DETERMINATION.md](../framework/methodology/STAGE_BC_PHASE1_PROCESS_INFRASTRUCTURE_CLOSURE_DETERMINATION.md)
 - [../framework/methodology/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md](../framework/methodology/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md)
-- [../framework/methodology/STAGE_C_BLOCKER_BRANCH_CLOSURE_AND_RUNTIME_OUTPUT_TRANSITION_ASSESSMENT.md](../framework/methodology/STAGE_C_BLOCKER_BRANCH_CLOSURE_AND_RUNTIME_OUTPUT_TRANSITION_ASSESSMENT.md)
+- [../framework/methodology/STAGE_BC_PROCESS_EXTRACTION_ASSESSMENT.md](../framework/methodology/STAGE_BC_PROCESS_EXTRACTION_ASSESSMENT.md)
+- [../framework/methodology/STAGE_C10C_REFRESHED_DETECTOR_MIGRATION_GATE_DETERMINATION.md](../framework/methodology/STAGE_C10C_REFRESHED_DETECTOR_MIGRATION_GATE_DETERMINATION.md)
+- [../framework/methodology/STAGE_C_PACKAGE_3C_REGIMEN_RETROSPECTIVE_AND_REUSABILITY_ASSESSMENT.md](../framework/methodology/STAGE_C_PACKAGE_3C_REGIMEN_RETROSPECTIVE_AND_REUSABILITY_ASSESSMENT.md)
+- [../framework/methodology/STAGE_C_PACKAGE_5E_DIRECT_ANSWER_LIFECYCLE_RETROSPECTIVE_AND_REGIMEN_GENERALIZATION_ASSESSMENT.md](../framework/methodology/STAGE_C_PACKAGE_5E_DIRECT_ANSWER_LIFECYCLE_RETROSPECTIVE_AND_REGIMEN_GENERALIZATION_ASSESSMENT.md)
+- [../framework/methodology/STAGE_C_PACKAGE_6A_FORMAL_BLOCKER_ORIENTED_REGIMEN_BRANCH_ADOPTION_ASSESSMENT.md](../framework/methodology/STAGE_C_PACKAGE_6A_FORMAL_BLOCKER_ORIENTED_REGIMEN_BRANCH_ADOPTION_ASSESSMENT.md)
+- [../framework/methodology/STAGE_C_PACKAGE_6B_CONDITIONAL_BLOCKER_ORIENTED_BRANCH_ADOPTION_DETERMINATION.md](../framework/methodology/STAGE_C_PACKAGE_6B_CONDITIONAL_BLOCKER_ORIENTED_BRANCH_ADOPTION_DETERMINATION.md)
 - [status/STAGE_B_COMPLETION_DETERMINATION.md](status/STAGE_B_COMPLETION_DETERMINATION.md)
-- [roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md](roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md)
+- [../continuity/D0_BLOCKER_REGISTER.md](../continuity/D0_BLOCKER_REGISTER.md)
+- [../continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md](../continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md)
+- [../continuity/D1_GOVERNANCE_FOUNDATION_PACKAGE.md](../continuity/D1_GOVERNANCE_FOUNDATION_PACKAGE.md)
 - [../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md](../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md)
 - [../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md](../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md)
 

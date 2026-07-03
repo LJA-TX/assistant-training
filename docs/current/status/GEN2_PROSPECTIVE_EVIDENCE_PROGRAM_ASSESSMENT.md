@@ -15,17 +15,15 @@ It does not replace the repository's existing stage, family, or blocker terminol
 
 ## Inputs
 
-- [current_status.md](../current_status.md)
-- [project_outcomes_to_date.md](../project_outcomes_to_date.md)
-- [STAGE_B_COMPLETION_DETERMINATION.md](./STAGE_B_COMPLETION_DETERMINATION.md)
-- [D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](./D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
-- [../../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](../../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
-- [../../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md](../../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md)
+- [../current_status.md](../current_status.md)
+- [../project_outcomes_to_date.md](../project_outcomes_to_date.md)
+- [./STAGE_B_COMPLETION_DETERMINATION.md](./STAGE_B_COMPLETION_DETERMINATION.md)
+- [./D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](./D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
 - [../../continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md](../../continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md)
 - [../../continuity/D1_GOVERNANCE_FOUNDATION_PACKAGE.md](../../continuity/D1_GOVERNANCE_FOUNDATION_PACKAGE.md)
 - [../../continuity/D1_MECHANISM_HYPOTHESIS_INVENTORY_SPECIFICATION.md](../../continuity/D1_MECHANISM_HYPOTHESIS_INVENTORY_SPECIFICATION.md)
 - [../../continuity/D1_MECHANISM_HYPOTHESIS_INVENTORY.md](../../continuity/D1_MECHANISM_HYPOTHESIS_INVENTORY.md)
-- [TRAINING_RUN_HISTORY.md](./TRAINING_RUN_HISTORY.md)
+- [./TRAINING_RUN_HISTORY.md](./TRAINING_RUN_HISTORY.md)
 - [../baselines/README.md](../baselines/README.md)
 - [../baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md](../baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md)
 - [../../../evals/canonical_eval_manifest_v1.json](../../../evals/canonical_eval_manifest_v1.json)
@@ -113,10 +111,11 @@ The following Gen-1 outputs should be treated as foundational inputs to Gen-2.
 ### Closure And Boundary Determinations
 
 - Stage B completion determination;
-- Stage C closure continuity package and final disposition assessment;
+- Stage B completion determination and D1 readiness assessment;
+- D0-to-current-tree governance transition;
 - D0-to-current-tree governance transition;
 - D1 closure and D2 readiness assessment;
-- Stage D continuity handoff and the D1 governance foundation.
+- D1 governance foundation and the published Gen-2 charter package.
 
 ### Explanatory Starting Corpus
 

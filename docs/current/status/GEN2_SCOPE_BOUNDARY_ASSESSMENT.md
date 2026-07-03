@@ -24,14 +24,14 @@ It does not replace the repository's existing stage, blocker, or family terminol
 
 ## Inputs
 
-- [GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md](./GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md)
-- [GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md](./GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md)
-- [D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](./D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
+- [./GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md](./GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md)
+- [./GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md](./GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md)
+- [./STAGE_B_COMPLETION_DETERMINATION.md](./STAGE_B_COMPLETION_DETERMINATION.md)
+- [./D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](./D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
 - [../current_status.md](../current_status.md)
 - [../project_outcomes_to_date.md](../project_outcomes_to_date.md)
 - [../../continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md](../../continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md)
 - [../../continuity/D1_GOVERNANCE_FOUNDATION_PACKAGE.md](../../continuity/D1_GOVERNANCE_FOUNDATION_PACKAGE.md)
-- [../../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](../../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
 - [../../goal_charter_v5a.md](../../goal_charter_v5a.md)
 - [../../appendix_a_operational_execution_contract_v3a.md](../../appendix_a_operational_execution_contract_v3a.md)
 - [../../metric_specification_v1a.md](../../metric_specification_v1a.md)

@@ -13,14 +13,19 @@ Current posture:
 - pruning and deletion are out of scope
 - Stage C is closed historical work; no Stage C execution is active on this package
 - D1 is published; D2 planning is not authorized
+- the published Gen-2 charter package defines prospective Gen-2 framing only and does not authorize structural expansion
 - bounded public-package maintenance inside the accepted alpha-preparation boundary is the only active structural work
 
 ## What To Read Before Changing Structure
 
 - [current_status.md](current_status.md)
 - [framework_vs_history.md](framework_vs_history.md)
-- [../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
+- [status/STAGE_B_COMPLETION_DETERMINATION.md](status/STAGE_B_COMPLETION_DETERMINATION.md)
 - [status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
+- [status/GEN2_PROGRAM_CHARTER.md](status/GEN2_PROGRAM_CHARTER.md)
+- [../continuity/D0_BLOCKER_REGISTER.md](../continuity/D0_BLOCKER_REGISTER.md)
+- [../continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md](../continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md)
+- [../continuity/D1_GOVERNANCE_FOUNDATION_PACKAGE.md](../continuity/D1_GOVERNANCE_FOUNDATION_PACKAGE.md)
 - [../framework/lineages/README.md](../framework/lineages/README.md)
 
 ## Current Boundary
