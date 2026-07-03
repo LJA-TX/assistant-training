@@ -1,12 +1,12 @@
 # Project Outcomes to Date
 
-**Status:** Active development (not a completed project)
+**Status:** Overall project active; public repository maintained as a bounded curated package
 
 ## Purpose
 
 This document summarizes repository-backed outcomes and deliverables produced to date.
 
-It is a current-state summary, not a final report. Several investigation tracks remain active, and the project continues to evolve. The purpose of this document is to identify tangible progress, key findings, and the current shape of the work.
+It is a current-state summary, not a final report. The overall project remains active, while this public repository is maintained as a bounded curated package of the current framework, evidence spine, baselines, and status documents. The purpose of this document is to identify tangible progress, key findings, and the current shape of the published work.
 
 ---
 
@@ -28,7 +28,7 @@ The project has produced both **software artifacts** and **methodological findin
 - A documented governance and execution framework
 - A bounded evidence spine that explains how the method evolved
 
-Work continues on bridging offline evaluation results with real-world runtime behavior.
+The overall project remains active in understanding how offline evaluation results relate to runtime behavior. Within this public repository, Stage C is preserved as closed historical work with retained guidance, and D1 is complete and published while the D0 blocker remains active and D2 is not authorized.
 
 ---
 
@@ -87,7 +87,7 @@ The repository has defined a curated-public publication architecture and a bound
 
 One of the most significant observations to emerge from the project is that strong evaluation performance does not necessarily imply equivalent runtime behavior.
 
-This observation motivated additional investigation into runtime-output and corpus-behavior characteristics.
+This observation motivated the Stage C runtime-output and corpus-behavior investigation, which is now complete and closed as historical work with retained guidance.
 
 ### Tool Calling Is More Than Schema Compliance
 
@@ -121,19 +121,30 @@ Reliable conclusions require controlled datasets, pinned evaluation contracts, r
 ### Completed
 
 - Stage B completion
+- Stage C completion and closure as historical work with retained guidance
+- D1 completion and publication
 - Canonical evaluation infrastructure
 - Governance framework
 - Framework/history separation
 - Publication architecture
 - Reproducibility-oriented training and evaluation tooling
 
-### Ongoing and Future Work
+### Current Boundary And Active Posture
 
-- Runtime-behavior investigation
-- Methodology refinement
-- Additional model experimentation
-- Publication-process maturation
-- Continued development of a model-agnostic training and evaluation regimen
+- The overall project remains active in refining a reusable, model-agnostic training and evaluation regimen.
+- This public repository remains a bounded curated package rather than an open-ended working archive.
+- Stage C is closed historical work and is not an active execution track in this package.
+- D0 blocker `D0-BLK-TRAINING-SCRIPT-PROVENANCE-001` remains active.
+- D1 is complete and published.
+- D2 is not authorized.
+- No broader structural work or execution is active in this package unless separately authorized.
+
+### Current Status References
+
+- Stage C closure and continuity: [docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
+- Stage C final disposition: [docs/convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md](../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md)
+- D1 closure and D2 readiness: [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
+- Stage D handoff status: [docs/continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md](../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md)
 
 ---
 

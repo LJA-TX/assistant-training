@@ -8,7 +8,8 @@ This repository is presented as a curated public package rather than a complete 
 
 ## Project Status & Philosophy
 
-This is an active development effort, not a completed research program or polished product.
+The overall project remains active.
+This public repository is maintained as a bounded curated package of the current framework, evidence spine, baselines, and status documents rather than an open-ended working archive.
 
 ### What Has Been Achieved So Far
 
@@ -34,9 +35,9 @@ The project has also developed practical methods for detecting, measuring, and m
 
 ### Current Focus
 
-The project remains in active development.
+The overall project remains in active development.
 
-Current work is focused on understanding the relationship between offline evaluation results and real-world runtime behavior, with the goal of making tool-calling assistants more predictable, reliable, and trustworthy in actual use.
+Current project-level work remains focused on understanding the relationship between offline evaluation results and real-world runtime behavior and on maintaining a reusable training and evaluation framework. This bounded public repository preserves the current framework, baselines, evidence spine, and status surfaces; it does not imply active Stage C execution or open-ended structural work.
 
 ### Why This Repository Exists
 
@@ -59,6 +60,8 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 | What is this repository? | [docs/current/current_status.md](docs/current/current_status.md) |
 | What has the project accomplished so far? | [docs/current/project_outcomes_to_date.md](docs/current/project_outcomes_to_date.md) |
 | Where are the published baseline artifacts? | [docs/current/baselines/README.md](docs/current/baselines/README.md) |
+| What is the final Stage C status? | [docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md) and [docs/convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md](docs/convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md) |
+| What is the latest D1 / D2 readiness status? | [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md) and [docs/continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md](docs/continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md) |
 | Why does it exist? | [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md) and [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md) |
 | How do current method and history differ? | [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md) |
 | Where do I start? | [docs/current/start_here.md](docs/current/start_here.md) |
@@ -68,10 +71,12 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 
 1. [docs/current/start_here.md](docs/current/start_here.md)
 2. [docs/current/current_status.md](docs/current/current_status.md)
-3. [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md)
-4. [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
-5. [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md)
-6. [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md)
+3. [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
+4. [docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
+5. [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md)
+6. [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
+7. [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md)
+8. [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md)
 
 ## Core Inspection Targets
 

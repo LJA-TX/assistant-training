@@ -6,7 +6,16 @@ Use this page as the fastest path into the curated public package.
 
 Read [current_status.md](current_status.md) for the accepted baseline and the current boundary.
 
-## 2. Inspect The Published Baseline Package
+## 2. Read The Latest Closure And Handoff Status
+
+For the latest authoritative closure and handoff conclusions, read:
+
+- [../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md](../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md)
+- [../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md](../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md)
+- [status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
+- [../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md](../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md)
+
+## 3. Inspect The Published Baseline Package
 
 For the curated Llama 3.1 evidence package, start with:
 
@@ -14,7 +23,7 @@ For the curated Llama 3.1 evidence package, start with:
 - [baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md](baselines/LLAMA31_PROJECT_WIDE_COMPARISON.md)
 - [../../evals/baselines/llama31/README.md](../../evals/baselines/llama31/README.md)
 
-## 3. Read The Doctrine
+## 4. Read The Doctrine
 
 The regimen is governed by:
 
@@ -24,7 +33,7 @@ The regimen is governed by:
 
 These are doctrine surfaces, not optional background reading.
 
-## 4. Identify The Reusable Framework
+## 5. Identify The Reusable Framework
 
 Read [framework_vs_history.md](framework_vs_history.md) to distinguish reusable regimen assets from curated historical evidence.
 
@@ -47,11 +56,11 @@ The main framework surfaces are:
 - [../../tests/test_repo_paths.py](../../tests/test_repo_paths.py)
 - [../../tests/test_compatibility_path_resolution.py](../../tests/test_compatibility_path_resolution.py)
 
-## 5. Check Housekeeping Boundaries
+## 6. Check Housekeeping Boundaries
 
 Read [housekeeping_status.md](housekeeping_status.md) before planning any structural change.
 
-## 6. Follow The Evidence Spine
+## 7. Follow The Evidence Spine
 
 The curated evidence spine starts here:
 
@@ -63,8 +72,9 @@ The curated evidence spine starts here:
 - [../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md](../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md)
 - [../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md](../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md)
 
-## 7. Keep The Boundary
+## 8. Keep The Boundary
 
 No archive expansion.
 No broad structural changes.
-No Stage C execution unless separately authorized.
+Stage C is closed historical work.
+No Stage C execution, D2 planning, or broader execution is active unless separately authorized.
