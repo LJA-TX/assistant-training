@@ -56,6 +56,7 @@ The long-term goal is not merely to produce a single strong adapter. The larger 
 | Question | Read first |
 | --- | --- |
 | What is this repository? | [docs/current/current_status.md](docs/current/current_status.md) |
+| What has the project accomplished so far? | [docs/current/project_outcomes_to_date.md](docs/current/project_outcomes_to_date.md) |
 | Why does it exist? | [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md) and [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md) |
 | How do current method and history differ? | [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md) |
 | Where do I start? | [docs/current/start_here.md](docs/current/start_here.md) |
