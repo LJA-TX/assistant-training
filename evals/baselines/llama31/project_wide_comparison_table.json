@@ -1,0 +1,83 @@
+{
+  "table_version": "1.0",
+  "table_scope": "llama31_published_baselines_and_internal_reference_regimes",
+  "evaluation_contract_path": "evals/canonical_eval_manifest_v1.json",
+  "rows": [
+    {
+      "regime": "Base",
+      "class": "canonical_baseline",
+      "bundle_id": "base_revalidation_20260610_r1",
+      "published_bundle_path": "evals/baselines/llama31/canonical_baselines/base_revalidation_20260610_r1",
+      "exact_json_validity": 0.0,
+      "invalid_json_rate": 0.7,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0,
+      "adversarial_no_call_correctness": 1.0,
+      "status": "authoritative_base_baseline",
+      "reading": "Non-tool baseline; no-call behavior is intact but tool-call realization is absent."
+    },
+    {
+      "regime": "Instruct",
+      "class": "canonical_baseline",
+      "bundle_id": "instruct_external_reference_20260614T131500Z",
+      "published_bundle_path": "evals/baselines/llama31/canonical_baselines/instruct_external_reference_20260614T131500Z",
+      "exact_json_validity": 0.0,
+      "invalid_json_rate": 0.69,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0,
+      "adversarial_no_call_correctness": 1.0,
+      "status": "external_reference_baseline",
+      "reading": "Direct-load external reference baseline at the frozen-contract floor."
+    },
+    {
+      "regime": "NVFP4",
+      "class": "canonical_baseline",
+      "bundle_id": "nvfp4_external_reference_20260614T131002Z",
+      "published_bundle_path": "evals/baselines/llama31/canonical_baselines/nvfp4_external_reference_20260614T131002Z",
+      "exact_json_validity": 0.0,
+      "invalid_json_rate": 0.695,
+      "tool_name_accuracy": 0.0,
+      "argument_accuracy": 0.0,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 1.0,
+      "adversarial_no_call_correctness": 1.0,
+      "status": "external_reference_baseline",
+      "reading": "Service-backed external reference baseline that matches Instruct on the aggregate contract floor."
+    },
+    {
+      "regime": "H1",
+      "class": "internal_reference_regime",
+      "bundle_id": "h1_diversity_patch_20260611T125835Z",
+      "published_bundle_path": "evals/baselines/llama31/internal_reference_regimes/h1_diversity_patch_20260611T125835Z",
+      "exact_json_validity": 0.44,
+      "invalid_json_rate": 0.1,
+      "tool_name_accuracy": 0.7142857142857143,
+      "argument_accuracy": 0.6285714285714286,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.9,
+      "adversarial_no_call_correctness": 0.7,
+      "status": "report_only_non_promotional_reference_regime",
+      "reading": "Diversity-lift internal reference regime; strong capability signal with safety regression."
+    },
+    {
+      "regime": "H2",
+      "class": "internal_reference_regime",
+      "bundle_id": "h2_commitment_patch_20260611T120228Z",
+      "published_bundle_path": "evals/baselines/llama31/internal_reference_regimes/h2_commitment_patch_20260611T120228Z",
+      "exact_json_validity": 0.48,
+      "invalid_json_rate": 0.085,
+      "tool_name_accuracy": 0.7714285714285715,
+      "argument_accuracy": 0.6928571428571428,
+      "wrapper_leakage": 0.005,
+      "no_call_correctness": 0.8,
+      "adversarial_no_call_correctness": 0.4,
+      "status": "report_only_non_promotional_reference_regime",
+      "reading": "Commitment-lift internal reference regime; strongest exact-call realization with larger safety regression."
+    }
+  ]
+}
+

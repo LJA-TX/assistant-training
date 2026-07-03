@@ -1,0 +1,178 @@
+{
+  "generated_utc": "2026-05-26T01:08:37Z",
+  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+  "adapter_dir": null,
+  "decode_defaults": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "max_new_tokens": 64,
+    "seed": 1234
+  },
+  "base": {
+    "side": "base",
+    "per_split": {
+      "heldout_validation": {
+        "rows": 100,
+        "class_counts": {
+          "invalid_json": 100
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 1.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 100
+      },
+      "tool_holdout": {
+        "rows": 40,
+        "class_counts": {
+          "invalid_json": 40
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 1.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 40
+      },
+      "no_call": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "adversarial": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "direct_answer": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      }
+    },
+    "aggregate": {
+      "rows": 200,
+      "class_counts": {
+        "invalid_json": 140,
+        "refusal_expected": 60
+      },
+      "exact_json_validity": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "invalid_json_rate": 0.7,
+      "tool_name_accuracy": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "argument_accuracy": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrapper_leakage_rate": 0.0,
+      "no_call_correctness": {
+        "count": 60,
+        "rate": 1.0,
+        "expected_rows": 60
+      },
+      "tool_expected_rows": 140
+    }
+  },
+  "adapter": null,
+  "delta_adapter_minus_base": null
+}

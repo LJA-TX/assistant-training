@@ -1,0 +1,399 @@
+{
+  "generated_utc": "2026-06-11T13:02:09Z",
+  "manifest_path": "/opt/ai-stack/assistant-training/evals/canonical_eval_manifest_v1.json",
+  "model_name_or_path": "/mnt/mirrors/hf_mirrors/transformers/llama-3.1-8b-base",
+  "adapter_dir": "/opt/ai-stack/assistant-training/artifacts/adapters/stage_b_llama31_8b_base_v1_phase_i_h1_diversity_patch",
+  "decode_defaults": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "max_new_tokens": 64,
+    "seed": 1234
+  },
+  "base": {
+    "side": "base",
+    "per_split": {
+      "heldout_validation": {
+        "rows": 100,
+        "class_counts": {
+          "invalid_json": 100
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 1.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 100
+      },
+      "tool_holdout": {
+        "rows": 40,
+        "class_counts": {
+          "invalid_json": 40
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 1.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 40
+      },
+      "no_call": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "adversarial": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "direct_answer": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      }
+    },
+    "aggregate": {
+      "rows": 200,
+      "class_counts": {
+        "invalid_json": 140,
+        "refusal_expected": 60
+      },
+      "exact_json_validity": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "invalid_json_rate": 0.7,
+      "tool_name_accuracy": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "argument_accuracy": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrapper_leakage_rate": 0.0,
+      "no_call_correctness": {
+        "count": 60,
+        "rate": 1.0,
+        "expected_rows": 60
+      },
+      "tool_expected_rows": 140
+    }
+  },
+  "adapter": {
+    "side": "adapter",
+    "per_split": {
+      "heldout_validation": {
+        "rows": 100,
+        "class_counts": {
+          "exact_valid": 64,
+          "invalid_json": 15,
+          "wrong_arguments": 12,
+          "wrong_tool_name": 9
+        },
+        "exact_json_validity": {
+          "count": 64,
+          "rate": 0.64
+        },
+        "invalid_json_rate": 0.15,
+        "tool_name_accuracy": {
+          "count": 76,
+          "rate": 0.76
+        },
+        "argument_accuracy": {
+          "count": 64,
+          "rate": 0.64
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 100
+      },
+      "tool_holdout": {
+        "rows": 40,
+        "class_counts": {
+          "exact_valid": 24,
+          "invalid_json": 5,
+          "invalid_schema": 11
+        },
+        "exact_json_validity": {
+          "count": 24,
+          "rate": 0.6
+        },
+        "invalid_json_rate": 0.125,
+        "tool_name_accuracy": {
+          "count": 24,
+          "rate": 0.6
+        },
+        "argument_accuracy": {
+          "count": 24,
+          "rate": 0.6
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 0,
+          "rate": 0.0,
+          "expected_rows": 0
+        },
+        "tool_expected_rows": 40
+      },
+      "no_call": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "adversarial": {
+        "rows": 20,
+        "class_counts": {
+          "invalid_schema": 6,
+          "refusal_expected": 14
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 14,
+          "rate": 0.7,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      },
+      "direct_answer": {
+        "rows": 20,
+        "class_counts": {
+          "refusal_expected": 20
+        },
+        "exact_json_validity": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_json_rate": 0.0,
+        "tool_name_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "argument_accuracy": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrapper_leakage_rate": 0.0,
+        "no_call_correctness": {
+          "count": 20,
+          "rate": 1.0,
+          "expected_rows": 20
+        },
+        "tool_expected_rows": 0
+      }
+    },
+    "aggregate": {
+      "rows": 200,
+      "class_counts": {
+        "exact_valid": 88,
+        "invalid_json": 20,
+        "invalid_schema": 17,
+        "refusal_expected": 54,
+        "wrong_arguments": 12,
+        "wrong_tool_name": 9
+      },
+      "exact_json_validity": {
+        "count": 88,
+        "rate": 0.44
+      },
+      "invalid_json_rate": 0.1,
+      "tool_name_accuracy": {
+        "count": 100,
+        "rate": 0.7142857142857143
+      },
+      "argument_accuracy": {
+        "count": 88,
+        "rate": 0.6285714285714286
+      },
+      "wrapper_leakage_rate": 0.0,
+      "no_call_correctness": {
+        "count": 54,
+        "rate": 0.9,
+        "expected_rows": 60
+      },
+      "tool_expected_rows": 140
+    }
+  },
+  "delta_adapter_minus_base": {
+    "exact_json_validity_rate": 0.44,
+    "invalid_json_rate": -0.6,
+    "tool_name_accuracy_rate": 0.7142857142857143,
+    "argument_accuracy_rate": 0.6285714285714286,
+    "wrapper_leakage_rate": 0.0,
+    "no_call_correctness_rate": -0.09999999999999998
+  },
+  "detector_summary_side": "adapter",
+  "metrics": {
+    "aggregate": {
+      "exact_json_validity": 0.44,
+      "invalid_json": 0.1,
+      "tool_name_accuracy": 0.7142857142857143,
+      "argument_accuracy": 0.6285714285714286,
+      "wrapper_leakage": 0.0,
+      "no_call_correctness": 0.9
+    },
+    "probes": {
+      "no_call_adversarial": {
+        "no_call_correctness": 0.7
+      }
+    }
+  },
+  "failure_profile": {
+    "tool_expected_rows": 140,
+    "non_exact_tool_rows": 52,
+    "failure_categories_non_exact_tool_rows": {
+      "direct_answer_substitution": 12,
+      "scalar_substitution": 0,
+      "malformed_partial_json": 8,
+      "near_canonical_wrapper_or_envelope_drift": 32,
+      "other_non_exact": 0
+    },
+    "read_file_exact_valid": {
+      "count": 14,
+      "rows": 27,
+      "rate": 0.5185185185185185
+    },
+    "read_file_symbol_name_exact_valid": {
+      "count": 11,
+      "rows": 13,
+      "rate": 0.8461538461538461
+    },
+    "anchor_exact_share": {
+      "literal_tool_calls": 0.056818181818181816,
+      "paraphrastic_tool_call": 0.07954545454545454,
+      "schema_paraphrase": 0.0,
+      "no_anchor_phrase": 0.8636363636363636
+    }
+  }
+}

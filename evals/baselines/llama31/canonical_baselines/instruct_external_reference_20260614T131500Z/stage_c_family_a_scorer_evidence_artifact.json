@@ -1,0 +1,2894 @@
+{
+  "report_version": "stage_c_package1_family_a_scorer_evidence_v1",
+  "artifact_scope": "authoritative_live_canonical_eval_family_a_scorer_evidence",
+  "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+  "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1",
+  "sides": {
+    "base": {
+      "record_count": 200,
+      "tool_expected_eligible_count": 140,
+      "exact_valid_count": 0,
+      "non_exact_tool_expected_count": 140,
+      "subtype_assigned_count": 5,
+      "missing_evidence_count": 135,
+      "subtype_counts": {
+        "malformed output": 5
+      },
+      "missing_evidence_reason_counts": {
+        "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence": 135
+      },
+      "records": [
+        {
+          "row_id": "heldout_validation:1",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:2",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": "malformed output",
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:3",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:4",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:5",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": "malformed output",
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:6",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:7",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": "malformed output",
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:8",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:9",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:10",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:11",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:12",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:13",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:14",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:15",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:16",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:17",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:18",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_schema",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:19",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:20",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:21",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:22",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:23",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:24",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:25",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:26",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:27",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:28",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:29",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:30",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:31",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:32",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": "malformed output",
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:33",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:34",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:35",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:36",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:37",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:38",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:39",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:40",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:41",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:42",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:43",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:44",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:45",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:46",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:47",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:48",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:49",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:50",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:51",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:52",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:53",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:54",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:55",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:56",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:57",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:58",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:59",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:60",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:61",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:62",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": "malformed output",
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:63",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:64",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:65",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:66",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:67",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:68",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:69",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:70",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:71",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:72",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:73",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:74",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:75",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:76",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:77",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:78",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:79",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:80",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:81",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:82",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:83",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:84",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:85",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:86",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:87",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:88",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_schema",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:89",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:90",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:91",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:92",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:93",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:94",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:95",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:96",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:97",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:98",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:99",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "heldout_validation:100",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:1",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:2",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:3",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:4",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:5",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:6",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:7",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:8",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:9",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:10",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:11",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:12",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:13",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:14",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:15",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:16",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:17",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:18",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:19",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:20",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:21",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:22",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:23",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:24",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:25",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:26",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:27",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:28",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:29",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:30",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:31",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:32",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:33",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:34",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:35",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:36",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:37",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:38",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:39",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "tool_holdout:40",
+          "tool_expected_eligibility": true,
+          "excluded": false,
+          "primary_outcome": "invalid_json",
+          "exact_valid": false,
+          "non_exact_tool_expected": true,
+          "subtype_assignment": null,
+          "missing_evidence": true,
+          "missing_evidence_reasons": [
+            "current canonical evaluator does not emit approved direct-answer or scalar substitution evidence"
+          ],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:1",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:2",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:3",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:4",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:5",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:6",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:7",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:8",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:9",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:10",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:11",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:12",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:13",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:14",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:15",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:16",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:17",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:18",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:19",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "no_call:20",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:1",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:2",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:3",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:4",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:5",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:6",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:7",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:8",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:9",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:10",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:11",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:12",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:13",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:14",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:15",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:16",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:17",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:18",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:19",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "adversarial:20",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:1",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:2",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:3",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:4",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:5",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:6",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:7",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:8",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:9",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:10",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:11",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:12",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:13",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:14",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:15",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:16",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:17",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:18",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:19",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        },
+        {
+          "row_id": "direct_answer:20",
+          "tool_expected_eligibility": false,
+          "excluded": false,
+          "primary_outcome": "refusal_expected",
+          "exact_valid": false,
+          "non_exact_tool_expected": false,
+          "subtype_assignment": null,
+          "missing_evidence": false,
+          "missing_evidence_reasons": [],
+          "failure_taxonomy_marker": "family_a_failure_taxonomy_v1",
+          "scorer_semantics_marker": "canonical_eval_manifest_stage_c_package1_v1"
+        }
+      ]
+    }
+  }
+}

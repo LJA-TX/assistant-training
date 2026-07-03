@@ -22,6 +22,7 @@ The project has produced both **software artifacts** and **methodological findin
 
 - Scripted dataset-generation and training pipelines with reproducibility-oriented inputs and validation checks
 - A pinned canonical evaluation contract
+- A curated Llama 3.1 baseline evidence package with machine-readable and human-readable comparison surfaces
 - Evaluation, validation, and preflight tooling
 - Contract-oriented tests and reproducibility safeguards
 - A documented governance and execution framework
@@ -44,6 +45,19 @@ This work established a stable baseline for subsequent investigation.
 The project maintains a pinned canonical evaluation contract in [evals/canonical_eval_manifest_v1.json](../../evals/canonical_eval_manifest_v1.json).
 
 It pins datasets, decode defaults, prompt serialization, scorer inputs, and integrity expectations.
+
+### Published Llama 3.1 Baseline Evidence Package
+
+The repository now includes a curated public evidence package for the principal Llama 3.1 baseline and reference-regime results.
+
+The landing page is [docs/current/baselines/README.md](baselines/README.md), and the machine-readable package root is [evals/baselines/llama31/README.md](../../evals/baselines/llama31/README.md).
+
+This package publishes:
+
+- canonical baselines for Base, Instruct, and NVFP4
+- H1 and H2 as internal reference regimes
+- a canonical index and project-wide comparison table
+- verbatim benchmark artifacts accompanied by explanatory documentation
 
 ### Reproducible Tooling
 

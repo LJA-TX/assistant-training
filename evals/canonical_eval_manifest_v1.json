@@ -1,0 +1,119 @@
+{
+  "manifest_version": "v1",
+  "created_utc": "2026-05-26T00:36:45Z",
+  "charter_version": "goal_charter_v5a",
+  "appendix_version": "appendix_a_operational_execution_contract_v3a",
+  "metric_spec_version": "metric_specification_v1a",
+  "runtime": {
+    "assistant_runtime_repo": "assistant-runtime",
+    "assistant_runtime_commit": "05f9aaecb61a8685bcdc1ad5dc286bb06434e08d",
+    "tool_schema_version": "server/tools.py@sha256:d7045d48a0b3b2322d29e7e48389218087f7d1cff627a5c395fbb54b3f731b35",
+    "eval_schema_version": "canonical_eval_manifest_v1",
+    "dataset_manifest_version": "dataset_v1_0_summary",
+    "dataset_manifest_path": "data/v1_0/dataset_v1_0_summary.json",
+    "dataset_manifest_sha256": "86f68710d7257bb43793fb6a47245a232a3d390e55890604e8926676e6a2b4fd"
+  },
+  "tokenizer": {
+    "path": "llama-3.1-8b-base",
+    "version": "llama-3.1-8b-base",
+    "chat_template_mode": "tokenizer_native",
+    "add_generation_prompt": true,
+    "allow_custom_fallback": true,
+    "custom_template_name": "generic_roles_v1"
+  },
+  "decode_defaults": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "max_new_tokens": 64,
+    "seed": 1234
+  },
+  "datasets": {
+    "heldout_validation": {
+      "path": "evals/data/canonical_v1/heldout_validation.jsonl",
+      "sha256": "78d47d4fb974f0f3245eaf81a17a847febc2667da5926bd372f625cd00b127a5",
+      "rows": 100,
+      "promotion_eligible": true
+    },
+    "tool_holdout": {
+      "path": "evals/data/canonical_v1/tool_holdout.jsonl",
+      "sha256": "ca492290645cdf3e374bdd456b9488500c594b080180caae9b3b73fe288d0f45",
+      "rows": 40,
+      "promotion_eligible": true
+    },
+    "no_call": {
+      "path": "evals/data/canonical_v1/no_call.jsonl",
+      "sha256": "0584f529d86b8b319b2abaaa2410e504d614243f32a56a3a1eae44e8f8768fa7",
+      "rows": 20,
+      "promotion_eligible": true
+    },
+    "adversarial": {
+      "path": "evals/data/canonical_v1/adversarial.jsonl",
+      "sha256": "c500b8195722355b54dc7ddb612690daa9ef530ba4b030bcd04c7c2b2b50c5cc",
+      "rows": 20,
+      "promotion_eligible": true
+    },
+    "direct_answer": {
+      "path": "evals/data/canonical_v1/direct_answer.jsonl",
+      "sha256": "969d1d5dde3b17515c45c9a5f4b69beb1d908063f61ce470f778d625b1b1afbd",
+      "rows": 20,
+      "promotion_eligible": true
+    }
+  },
+  "split_hashes": {
+    "heldout_validation": "78d47d4fb974f0f3245eaf81a17a847febc2667da5926bd372f625cd00b127a5",
+    "tool_holdout": "ca492290645cdf3e374bdd456b9488500c594b080180caae9b3b73fe288d0f45",
+    "no_call": "0584f529d86b8b319b2abaaa2410e504d614243f32a56a3a1eae44e8f8768fa7",
+    "adversarial": "c500b8195722355b54dc7ddb612690daa9ef530ba4b030bcd04c7c2b2b50c5cc",
+    "direct_answer": "969d1d5dde3b17515c45c9a5f4b69beb1d908063f61ce470f778d625b1b1afbd"
+  },
+  "evaluation_order": [
+    "heldout_validation",
+    "tool_holdout",
+    "no_call",
+    "adversarial",
+    "direct_answer"
+  ],
+  "scoring": {
+    "scorer_script": "scripts/eval_canonical_manifest.py",
+    "scorer_sha256": "08a5cec22a781193365bed85b709ceebef534846602004bbfa047f4e0b59d738",
+    "metric_spec_path": "docs/metric_specification_v1a.md",
+    "metric_spec_sha256": "793a884bbd783c3559828ab2cf84e4ceccc2aab256a80cf360c624dd8a549a3d",
+    "legacy_eval_script": "scripts/eval_adapter_toolcalls.py",
+    "legacy_eval_sha256": "2d78c9fedc20458e8b77b5dc6d16a1fd3d0e04893348473ea89b94d1ced84920"
+  },
+  "training_and_eval_code": {
+    "training_script": "scripts/train_lora_sft.py",
+    "training_script_sha256": "28900accae3d6abf05ddb9e86b41c03ad3c812a683f3af343bffa94281e14c8b",
+    "dataset_builder_script": "scripts/build_dataset_v1.py",
+    "dataset_builder_sha256": "05843673f68fc8a492e889fb9e96e87dff09d189f5df220b092f233de82839d9"
+  },
+  "environment": {
+    "snapshot_path": "manifests/environment/canonical_env_snapshot_v1.json",
+    "snapshot_sha256": "ae3f853694c2f940bf015772d4e639004f49eb4646f54395ad8a536d05f187d3",
+    "dependency_lock_snapshot_path": "manifests/environment/pip_freeze_llama_venv_20260526.txt",
+    "dependency_lock_snapshot_sha256": "e75c5cc0673060e154baf99ff12a85a6ad8d10bee3e2d54181f859c861493cf5",
+    "python_version": "3.12.13",
+    "cuda_version": "12.9",
+    "torch": "2.10.0+cu129",
+    "transformers": "4.57.6",
+    "peft": "0.18.1",
+    "accelerate": "1.13.0",
+    "bitsandbytes": "0.49.2"
+  },
+  "seeds": {
+    "eval_seed": 1234,
+    "dataset_seed": 20260525,
+    "train_stage_a_seed": 42,
+    "train_stage_b_seed": 42
+  },
+  "integrity": {
+    "frozen_eval_contract": true,
+    "allow_dynamic_dataset_discovery": false,
+    "allow_implicit_latest_resolution": false,
+    "cross_version_comparison_requires_annotation": true,
+    "prompt_contract": "tokenizer.apply_chat_template(messages, add_generation_prompt=true)",
+    "strong_system_overrides_allowed_for_promotion": false
+  }
+}
