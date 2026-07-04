@@ -45,6 +45,18 @@ This repository exists to share the methodology, tooling, evaluation surfaces, e
 
 The long-term goal is not merely to produce a single strong adapter. The larger objective is to develop a reusable training and evaluation framework that can help improve future generations of open-weight tool-calling models.
 
+## Repository History
+
+**July 2026 — Publication Lineage Version 2**
+
+This repository has been under active development for considerably longer than the visible commit history on the `main` branch may suggest.
+
+In July 2026, the project underwent a deliberate repository-topology remediation after a workflow issue caused content that was not intended for this repository to be committed directly to it for several weeks.
+
+Once the issue was discovered, the repository was intentionally rebuilt beginning with **Publication Lineage Version 2**. As a result, the commit history visible on this branch begins with this reconstructed lineage rather than with the repository's original published history.
+
+This reconstruction preserved the project's intended content while establishing a durable and safe publication workflow. Future commits will continue incrementally from this publication lineage.
+
 ## What This Repository Shows
 
 - the regimen and its governing doctrine
