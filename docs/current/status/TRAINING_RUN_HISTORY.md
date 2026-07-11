@@ -93,9 +93,7 @@ Ranking rule:
 
 ## Source Notes
 
-- Canonical-eval source tree: [`evals/runs/`](../../../evals/runs/)
-- Canonical exception: [`docs/phase_zb/PHASE_ZB_COMPLETION_REPORT.md`](../../../docs/phase_zb/PHASE_ZB_COMPLETION_REPORT.md)
-- Probe-only source tree: [`artifacts/lora_probe_llama_3_2_3b_instruct_toolcall_v0_1/evals/`](../../../artifacts/lora_probe_llama_3_2_3b_instruct_toolcall_v0_1/evals/)
+- Canonical-eval source runs, the Phase ZB completion report, and probe-only artifact outputs are generated/private provenance intentionally omitted from this curated package; see the [public-reference disposition metadata](../../publication/public_reference_dispositions.json).
 
 ## Update Rule
 

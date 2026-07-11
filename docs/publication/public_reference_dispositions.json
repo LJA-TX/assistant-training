@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "description": "Exact dispositions for repository-relative references retained in the curated public package even though their targets are intentionally absent.",
+  "dispositions": [
+    {
+      "source": "evals/canonical_eval_manifest_v1.json",
+      "kind": "json_path",
+      "json_paths": [
+        "datasets.adversarial.path",
+        "datasets.direct_answer.path",
+        "datasets.heldout_validation.path",
+        "datasets.no_call.path",
+        "datasets.tool_holdout.path",
+        "environment.dependency_lock_snapshot_path",
+        "environment.snapshot_path",
+        "runtime.dataset_manifest_path"
+      ],
+      "targets": [
+        "evals/data/canonical_v1/adversarial.jsonl",
+        "evals/data/canonical_v1/direct_answer.jsonl",
+        "evals/data/canonical_v1/heldout_validation.jsonl",
+        "evals/data/canonical_v1/no_call.jsonl",
+        "evals/data/canonical_v1/tool_holdout.jsonl",
+        "manifests/environment/pip_freeze_llama_venv_20260526.txt",
+        "manifests/environment/canonical_env_snapshot_v1.json",
+        "data/v1_0/dataset_v1_0_summary.json"
+      ],
+      "disposition": "intentional_public_omission",
+      "reason": "Canonical datasets and workstation-specific environment records remain private and are not published merely to satisfy a reference."
+    },
+    {
+      "source": "evals/baselines/llama31/canonical_baselines/base_original_20260526T0044Z/package_manifest.json",
+      "kind": "json_path",
+      "json_path": "source_run_path",
+      "target": "evals/runs/canonical_baseline_llama31_8b_base_20260526T0044Z",
+      "disposition": "generated_output",
+      "reason": "The executed source-run directory is generated/private provenance and is not included in the curated package."
+    },
+    {
+      "source": "evals/baselines/llama31/canonical_baselines/base_revalidation_20260610_r1/package_manifest.json",
+      "kind": "json_path",
+      "json_paths": ["source_run_path", "supporting_documents[0]", "supporting_documents[1]"],
+      "targets": [
+        "evals/runs/phase_e_base_revalidation_20260610_r1",
+        "docs/phase_e/BASE_MODEL_REVALIDATION_REPORT.md",
+        "docs/phase_e/CANONICAL_CONTRACT_VERIFICATION.md"
+      ],
+      "disposition": "historical_provenance",
+      "dispositions": ["generated_output", "historical_provenance", "historical_provenance"],
+      "reason": "The detailed private phase report and generated source-run directory are historical provenance outside the curated public package."
+    },
+    {
+      "source": "evals/baselines/llama31/canonical_baselines/instruct_external_reference_20260614T131500Z/package_manifest.json",
+      "kind": "json_path",
+      "json_paths": ["source_run_path", "supporting_documents[0]", "supporting_documents[1]"],
+      "targets": [
+        "evals/runs/phase_zm_instruct_external_reference_eval_20260614T131500Z",
+        "docs/phase_zm/INSTRUCT_CANONICAL_EVAL_REPORT.md",
+        "docs/phase_zm/INSTRUCT_MODEL_AVAILABILITY_REPORT.md"
+      ],
+      "disposition": "historical_provenance",
+      "dispositions": ["generated_output", "historical_provenance", "historical_provenance"],
+      "reason": "The detailed private phase report and generated source-run directory are historical provenance outside the curated public package."
+    },
+    {
+      "source": "evals/baselines/llama31/canonical_baselines/nvfp4_external_reference_20260614T131002Z/package_manifest.json",
+      "kind": "json_path",
+      "json_paths": ["source_run_path", "supporting_documents[0]", "supporting_documents[1]"],
+      "targets": [
+        "evals/runs/phase_zl_nvfp4_external_reference_eval_20260614T131002Z",
+        "docs/phase_zl/NVFP4_CANONICAL_EVAL_REPORT.md",
+        "docs/phase_zl/NVFP4_MODEL_AVAILABILITY_REPORT.md"
+      ],
+      "disposition": "historical_provenance",
+      "dispositions": ["generated_output", "historical_provenance", "historical_provenance"],
+      "reason": "The detailed private phase report and generated source-run directory are historical provenance outside the curated public package."
+    },
+    {
+      "source": "evals/baselines/llama31/internal_reference_regimes/h1_diversity_patch_20260611T125835Z/package_manifest.json",
+      "kind": "json_path",
+      "json_paths": ["source_run_path", "supporting_documents[0]", "supporting_documents[1]", "supporting_documents[2]", "supporting_documents[3]"],
+      "targets": [
+        "evals/runs/stage_b_v1_phase_i_h1_diversity_patch_eval_20260611T125835Z",
+        "docs/phase_ix/H1_EXCEPTION_CHECKPOINT_REPORT.md",
+        "docs/phase_ix/H1_EXCEPTION_SCIENTIFIC_INTERPRETATION.md",
+        "docs/phase_v/CONTROL_SURFACE_COMPARISON.md",
+        "data/v1_0/dataset_v1_0_phase_i_h1_diversity_patch_summary.json"
+      ],
+      "disposition": "historical_provenance",
+      "dispositions": ["generated_output", "historical_provenance", "historical_provenance", "historical_provenance", "intentional_public_omission"],
+      "reason": "The detailed private reports, dataset summary, and generated source-run directory are historical provenance outside the curated public package."
+    },
+    {
+      "source": "evals/baselines/llama31/internal_reference_regimes/h2_commitment_patch_20260611T120228Z/package_manifest.json",
+      "kind": "json_path",
+      "json_paths": ["source_run_path", "supporting_documents[0]", "supporting_documents[1]", "supporting_documents[2]"],
+      "targets": [
+        "evals/runs/stage_b_v1_phase_i_h2_commitment_patch_eval_20260611T120228Z",
+        "docs/phase_i/H2_CHECKPOINT_REPORT.md",
+        "docs/phase_v/CONTROL_SURFACE_COMPARISON.md",
+        "data/v1_0/dataset_v1_0_phase_i_h2_commitment_patch_summary.json"
+      ],
+      "disposition": "historical_provenance",
+      "dispositions": ["generated_output", "historical_provenance", "historical_provenance", "intentional_public_omission"],
+      "reason": "The detailed private reports, dataset summary, and generated source-run directory are historical provenance outside the curated public package."
+    }
+  ],
+  "public_verification": [
+    {
+      "source": "evals/canonical_eval_manifest_v1.json",
+      "path": "scripts/train_lora_sft.py",
+      "sha256": "faf6cd4b676e230c5d2797392bc2fca204752d012f3e80e71c0af4ced7288432",
+      "canonical_field": "training_and_eval_code.training_script_sha256",
+      "canonical_hash": "28900accae3d6abf05ddb9e86b41c03ad3c812a683f3af343bffa94281e14c8b",
+      "relationship": "current_public_snapshot_differs_from_frozen_historical_execution_claim",
+      "provenance_classification": "current_public_snapshot_does_not_establish_original_canonical_execution_artifact",
+      "historical_provenance_status": "unrecovered_original_bytes",
+      "note": "The current public training script hash is verified for the public snapshot only. No reachable Git blob or preserved file reproduces the original canonical training-script hash; the original execution bytes remain unrecovered."
+    },
+    {
+      "source": "evals/canonical_eval_manifest_v1.json",
+      "path": "scripts/build_dataset_v1.py",
+      "sha256": "de830e5e444c811aefb27b2ead056f13611609021f7c2faed0e4ad8ad422ead3",
+      "canonical_field": "training_and_eval_code.dataset_builder_sha256",
+      "canonical_hash": "05843673f68fc8a492e889fb9e96e87dff09d189f5df220b092f233de82839d9",
+      "relationship": "current_public_snapshot_is_later_path_decoupled_version",
+      "provenance_classification": "later_path_decoupled_version_with_recoverable_historical_blob",
+      "historical_provenance_status": "recoverable_earlier_git_blob",
+      "note": "The original canonical builder hash matches the recoverable blob added by Git commit 7b694fbd. The current public builder hash is verified separately and reflects the later path-decoupling change."
+    }
+  ]
+}

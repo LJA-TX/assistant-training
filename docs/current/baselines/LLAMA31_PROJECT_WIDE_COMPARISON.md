@@ -33,7 +33,4 @@ That distinction is intentional:
 - Package root: [../../../evals/baselines/llama31/README.md](../../../evals/baselines/llama31/README.md)
 - Machine-readable index: [../../../evals/baselines/llama31/canonical_baseline_index.json](../../../evals/baselines/llama31/canonical_baseline_index.json)
 - Machine-readable comparison table: [../../../evals/baselines/llama31/project_wide_comparison_table.json](../../../evals/baselines/llama31/project_wide_comparison_table.json)
-- H1 checkpoint: [../../phase_ix/H1_EXCEPTION_CHECKPOINT_REPORT.md](../../phase_ix/H1_EXCEPTION_CHECKPOINT_REPORT.md)
-- H1 interpretation: [../../phase_ix/H1_EXCEPTION_SCIENTIFIC_INTERPRETATION.md](../../phase_ix/H1_EXCEPTION_SCIENTIFIC_INTERPRETATION.md)
-- H2 checkpoint: [../../phase_i/H2_CHECKPOINT_REPORT.md](../../phase_i/H2_CHECKPOINT_REPORT.md)
-
+- H1/H2 phase reports are retained as private historical provenance and are intentionally omitted from this curated package; see the [public-reference disposition metadata](../../publication/public_reference_dispositions.json).

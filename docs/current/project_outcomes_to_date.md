@@ -83,7 +83,7 @@ The repository distinguishes reusable framework surfaces from curated historical
 
 ### Publication Architecture
 
-The repository has defined a curated-public publication architecture and a bounded alpha assembly model through the publication-planning artifacts under [docs/research/](../research/).
+The repository has defined a curated-public publication architecture and a bounded alpha assembly model. The private publication-planning artifacts remain outside this curated package; the public [lineage spine](../framework/lineages/README.md) provides the published historical context.
 
 ---
 
