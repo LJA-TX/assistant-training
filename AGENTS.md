@@ -29,6 +29,14 @@ Run these checks before execution:
    - `docs/framework/process_infrastructure/checklists/governance_boundary_verification_checklist.md`
    - `docs/framework/process_infrastructure/checklists/git_ignore_verification_checklist.md` (when temporary bundles/artifacts are created)
 
+## Public Publication Boundary
+
+This checkout is the only authorized local publication origin. Pushes may target only the GitHub repository `LJA-TX/assistant-training`; publication to `main` requires explicit maintainer authorization.
+
+Before publication, verify that the push is non-force and fast-forward, the exact reviewed base and candidate commits match the authorized publication record, and the working tree and index are clean. Stop on any topology, destination, refspec, or history anomaly.
+
+Authorization to publish does not authorize unrelated edits, amendments, rebases, or additional commits. Ordinary development should remain in the private canonical checkout; projection into this checkout and remote publication are separate governed operations.
+
 ## Route Selection
 
 | Route | Trigger Intent | Primary Assets |
