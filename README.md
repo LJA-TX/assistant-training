@@ -6,6 +6,23 @@ The current experimental platform is Llama-3.1-8B-Base, but the long-term goal i
 
 This repository is presented as a curated public package rather than a complete project archive. It focuses on methodology, evaluation contracts, tooling, current-state guidance, and selected historical evidence that explains how the approach evolved.
 
+## Public Snapshot Identity
+
+This repository is published under Publication Lineage Version 2. The package is living and curated; the record below identifies one historical frozen publication point rather than a promise that future repository heads remain unchanged.
+
+| Field | Value |
+| --- | --- |
+| Snapshot ID | `publication-lineage-v2-snapshot-v1` |
+| Snapshot version | `v1` |
+| Publication date | `2026-07-11` |
+| Status | living curated package with a frozen historical publication snapshot |
+| Public snapshot commit | `05634b6a3f47dfd6cf5656d4ab8da7997bf894d1` |
+| Private lineage commit | `9d88798c506328635200b95b5aff9234dc127079` |
+
+Machine-readable record: [docs/publication/public_snapshot.json](docs/publication/public_snapshot.json)
+
+This snapshot identifies a historical publication point in a related public/private lineage, not an identical mirror. Future commits do not invalidate the snapshot, and private engineering work continues independently.
+
 ## Project Status & Philosophy
 
 The overall project remains active.

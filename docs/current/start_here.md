@@ -2,6 +2,20 @@
 
 Use this page as the fastest path into the curated public package.
 
+## Current Public Snapshot
+
+The living curated package records the historical publication point `publication-lineage-v2-snapshot-v1`.
+
+- Publication date: `2026-07-11`
+- Lineage: `Publication Lineage Version 2`
+- Status: living curated package with a frozen historical publication snapshot
+- Public snapshot commit: `05634b6a3f47dfd6cf5656d4ab8da7997bf894d1`
+- Private lineage commit: `9d88798c506328635200b95b5aff9234dc127079`
+
+Machine-readable record: [../publication/public_snapshot.json](../publication/public_snapshot.json)
+
+This is a historical marker for one public publication point in a related public/private lineage, not an identical mirror or a signal that private engineering work has stopped.
+
 ## Plain-English Overview (Optional)
 
 If you want a low-jargon introduction first, read [plain_english_project_summary.md](plain_english_project_summary.md).

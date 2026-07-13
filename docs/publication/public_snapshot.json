@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "publication-lineage-v2-snapshot-v1",
+  "snapshot_version": "v1",
+  "publication_date": "2026-07-11",
+  "last_material_update": "2026-07-11",
+  "publication_lineage": {
+    "id": "Publication Lineage Version 2",
+    "version": "v2"
+  },
+  "status": "living curated package with a frozen historical publication snapshot",
+  "public_snapshot_commit": "05634b6a3f47dfd6cf5656d4ab8da7997bf894d1",
+  "private_lineage_commit": "9d88798c506328635200b95b5aff9234dc127079",
+  "relationship": "This record identifies one frozen public publication point in a governed derivative lineage; future commits do not invalidate it, and private engineering continues independently.",
+  "release_model": "not a semantic-versioned software release"
+}
