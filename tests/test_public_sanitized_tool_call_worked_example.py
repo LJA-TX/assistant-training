@@ -164,7 +164,7 @@ def _row_output_records(row: dict) -> list[dict]:
     return records
 
 
-def test_fixture_contract_and_canonical_evaluator_reuse():
+def validate_fixture_contract_and_canonical_evaluator_reuse():
     fixture = _load_fixture()
     train_mod = _load_module("train_lora_sft.py", "train_lora_sft_public_worked_example")
     eval_mod = _load_module("eval_canonical_manifest.py", "eval_canonical_manifest_public_worked_example")
@@ -363,7 +363,7 @@ def test_fixture_contract_and_canonical_evaluator_reuse():
     assert fixture["rows"][1]["source_fields"]["system_content"] == fixture["rows"][1]["dataset_row"]["messages"][0]["content"]
 
 
-def test_documents_links_contamination_boundaries_and_public_portability():
+def validate_documents_links_contamination_boundaries_and_public_portability():
     fixture = _load_fixture()
     doc_text = _read_text(DOC_PATH)
     readme_text = _read_text(README_PATH)
@@ -410,7 +410,7 @@ def test_documents_links_contamination_boundaries_and_public_portability():
     assert len(PUBLIC_PORTABLE_SURFACES) == 8
 
 
-def test_fixture_identity_and_join_integrity():
+def validate_fixture_identity_and_join_integrity():
     fixture = _load_fixture()
     row_map = {row["row_id"]: row for row in fixture["rows"]}
     prompt_map = {entry["row_id"]: entry["prompt_sha256"] for entry in fixture["row_to_prompt_map"]}
@@ -432,3 +432,15 @@ def test_fixture_identity_and_join_integrity():
             assert output_map[output_record["output_id"]]["output_sha256"] == output_record["output_sha256"]
 
     assert len(row_output_ids) == 11
+
+
+def test_fixture_contract_and_canonical_evaluator_reuse():
+    validate_fixture_contract_and_canonical_evaluator_reuse()
+
+
+def test_documents_links_contamination_boundaries_and_public_portability():
+    validate_documents_links_contamination_boundaries_and_public_portability()
+
+
+def test_fixture_identity_and_join_integrity():
+    validate_fixture_identity_and_join_integrity()

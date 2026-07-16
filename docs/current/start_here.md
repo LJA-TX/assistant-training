@@ -16,6 +16,20 @@ Machine-readable record: [../publication/public_snapshot.json](../publication/pu
 
 This is a historical marker for one public publication point in a related public/private lineage, not an identical mirror or a signal that private engineering work has stopped.
 
+## Five-Minute Public Validation
+
+From the root of a public checkout, run:
+
+```text
+python3 scripts/validate_public_package.py
+```
+
+This requires Python 3.10+ and the standard library only. It checks the
+snapshot/front door, public references, and the synthetic Harborview worked
+example without requiring the private checkout, network, pytest, a model, a
+GPU, credentials, or an external service. A successful run leaves the checkout
+unchanged.
+
 ## Plain-English Overview (Optional)
 
 If you want a low-jargon introduction first, read [plain_english_project_summary.md](plain_english_project_summary.md).
@@ -30,10 +44,9 @@ Read [current_status.md](current_status.md) for the accepted baseline and the cu
 
 For the latest authoritative closure, handoff, and Gen-2 strategic framing surfaces, read:
 
-- ../continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md
-- ../convergence/STAGE_C_FINAL_DISPOSITION_AND_PUBLICATION_ASSESSMENT.md
+- [current_status.md](current_status.md) for the accepted baseline, Stage C closure, and current boundary
+- [status/STAGE_B_COMPLETION_DETERMINATION.md](status/STAGE_B_COMPLETION_DETERMINATION.md) for the published Stage B completion determination
 - [status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
-- ../continuity/STAGE_D_D1_CLOSURE_AND_D2_READINESS_HANDOFF_2026-06-16.md
 - [status/GEN2_PROGRAM_CHARTER.md](status/GEN2_PROGRAM_CHARTER.md)
 - [status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md](status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md)
 - [status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md](status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md)
@@ -92,9 +105,8 @@ The curated evidence spine starts here:
 
 - [../framework/lineages/README.md](../framework/lineages/README.md)
 - [../framework/methodology/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md](../framework/methodology/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md)
-- ../framework/methodology/STAGE_C_BLOCKER_BRANCH_CLOSURE_AND_RUNTIME_OUTPUT_TRANSITION_ASSESSMENT.md
 - [status/STAGE_B_COMPLETION_DETERMINATION.md](status/STAGE_B_COMPLETION_DETERMINATION.md)
-- roadmap/STAGE_C_RUNTIME_OUTPUT_AND_CORPUS_BEHAVIOR_INVESTIGATION_LAUNCH_PLAN.md
+- [current_status.md](current_status.md) for the closed historical Stage C boundary and the exclusion of runtime-output/corpus-behavior execution
 - [../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md](../housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md)
 - [../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md](../housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md)
 

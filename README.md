@@ -90,6 +90,19 @@ This page is an informal overview, not an authority or governance document.
 
 ## Quick Orientation
 
+### Five-Minute Public Validation
+
+From the root of a public checkout, run:
+
+```text
+python3 scripts/validate_public_package.py
+```
+
+This Python 3.10+ standard-library command checks the public snapshot/front
+door, public references, and the synthetic Harborview worked example. It does
+not require the private checkout, network, pytest, a model, GPU, credentials,
+or an external service, and it leaves the checkout unchanged.
+
 | Question | Read first |
 | --- | --- |
 | What is this repository? | [docs/current/current_status.md](docs/current/current_status.md) |
@@ -107,14 +120,13 @@ This page is an informal overview, not an authority or governance document.
 ## First Inspection Path
 
 1. [docs/current/start_here.md](docs/current/start_here.md)
-2. [docs/current/current_status.md](docs/current/current_status.md)
+2. [docs/current/current_status.md](docs/current/current_status.md) — accepted baseline, including Stage C closure and the current boundary
 3. [docs/current/status/GEN2_PROGRAM_CHARTER.md](docs/current/status/GEN2_PROGRAM_CHARTER.md)
 4. [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
-5. docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md
-6. [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md)
-7. [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
-8. [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md)
-9. [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md)
+5. [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md)
+6. [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
+7. [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md)
+8. [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md)
 
 ## Core Inspection Targets
 
