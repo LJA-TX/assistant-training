@@ -1,0 +1,517 @@
+{
+  "schema_version": "public-sanitized-tool-call-worked-example-v1",
+  "package_id": "harborview-public-sanitized-tool-call-example-v1",
+  "artifact_role": "synthetic_public_demonstration",
+  "execution_status": "synthetic_not_executed",
+  "render_contract": "synthetic-render-v1",
+  "registry": {
+    "name": "harborview_public_library_circulation_tools",
+    "description": "Synthetic Harborview Public Library registry for the public worked example.",
+    "tools": [
+      {
+        "name": "search_catalog",
+        "description": "Find catalog item records matching a title query.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "query"
+          ],
+          "properties": {
+            "query": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      {
+        "name": "get_availability",
+        "description": "Read the availability of one catalog item at one branch.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "item_id",
+            "branch_code"
+          ],
+          "properties": {
+            "item_id": {
+              "type": "string"
+            },
+            "branch_code": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      {
+        "name": "place_hold",
+        "description": "Place a hold for a patron on one catalog item at one branch.",
+        "parameters": {
+          "type": "object",
+          "required": [
+            "item_id",
+            "branch_code",
+            "patron_ref"
+          ],
+          "properties": {
+            "item_id": {
+              "type": "string"
+            },
+            "branch_code": {
+              "type": "string"
+            },
+            "patron_ref": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "registry_sha256": "59cb806fea2d3eac7739d465cf60940edcbb1f1ad9777e6e258fdbb96c1ac786",
+  "system_content": "You are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result.",
+  "rows": [
+    {
+      "row_id": "demo_row_availability_01",
+      "row_role": "correct_tool_call",
+      "execution_status": "synthetic_not_executed",
+      "expected_assistant_action": "Call get_availability with the resolved item and branch.",
+      "prompt_visible_arguments": {
+        "item_id": "hv-item-204",
+        "branch_code": "central-01"
+      },
+      "source_fields": {
+        "row_id": "demo_row_availability_01",
+        "row_role": "correct_tool_call",
+        "system_content": "You are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result.",
+        "user_content": "The catalog has resolved The Glass Orchard to item hv-item-204, and Harborview Central to branch central-01. Check whether that item is available at that branch.",
+        "assistant_message": {
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "id": "call_demo_availability_01",
+              "type": "function",
+              "function": {
+                "name": "get_availability",
+                "arguments": "{\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\"}"
+              }
+            }
+          ]
+        }
+      },
+      "source_sha256": "e150deb4da4fc4078a9c0dea6f177cb14b51a35aa84c22cf98862928f122c664",
+      "rendered_prompt": "SYSTEM\nYou are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result.\nTOOLS\n{\"description\":\"Synthetic Harborview Public Library registry for the public worked example.\",\"name\":\"harborview_public_library_circulation_tools\",\"tools\":[{\"description\":\"Find catalog item records matching a title query.\",\"name\":\"search_catalog\",\"parameters\":{\"properties\":{\"query\":{\"type\":\"string\"}},\"required\":[\"query\"],\"type\":\"object\"}},{\"description\":\"Read the availability of one catalog item at one branch.\",\"name\":\"get_availability\",\"parameters\":{\"properties\":{\"branch_code\":{\"type\":\"string\"},\"item_id\":{\"type\":\"string\"}},\"required\":[\"item_id\",\"branch_code\"],\"type\":\"object\"}},{\"description\":\"Place a hold for a patron on one catalog item at one branch.\",\"name\":\"place_hold\",\"parameters\":{\"properties\":{\"branch_code\":{\"type\":\"string\"},\"item_id\":{\"type\":\"string\"},\"patron_ref\":{\"type\":\"string\"}},\"required\":[\"item_id\",\"branch_code\",\"patron_ref\"],\"type\":\"object\"}}]}\nUSER\nThe catalog has resolved The Glass Orchard to item hv-item-204, and Harborview Central to branch central-01. Check whether that item is available at that branch.\nASSISTANT\n",
+      "prompt_sha256": "12b24c348916e5da1da4a808a5f778b5cadc74239ca45db3d79de02bfc429caa",
+      "dataset_row": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result."
+          },
+          {
+            "role": "user",
+            "content": "The catalog has resolved The Glass Orchard to item hv-item-204, and Harborview Central to branch central-01. Check whether that item is available at that branch."
+          },
+          {
+            "role": "assistant",
+            "tool_calls": [
+              {
+                "id": "call_demo_availability_01",
+                "type": "function",
+                "function": {
+                  "name": "get_availability",
+                  "arguments": "{\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\"}"
+                }
+              }
+            ]
+          }
+        ],
+        "metadata": {
+          "source_case_id": "demo_row_availability_01",
+          "row_role": "correct_tool_call",
+          "tool": "get_availability",
+          "expected_tool": true,
+          "expected_no_call": false,
+          "prompt_visible_arguments": {
+            "item_id": "hv-item-204",
+            "branch_code": "central-01"
+          }
+        }
+      },
+      "assistant_message": {
+        "role": "assistant",
+        "tool_calls": [
+          {
+            "id": "call_demo_availability_01",
+            "type": "function",
+            "function": {
+              "name": "get_availability",
+              "arguments": "{\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\"}"
+            }
+          }
+        ]
+      },
+      "assistant_target_text": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\"},\"name\":\"get_availability\"},\"type\":\"function\"}]}",
+      "assistant_target_sha256": "8971e96e028031a9742abc9cab289ea3deead2804612d36e10e68fbac4220323",
+      "expected_evaluator_result": {
+        "primary_class": "exact_valid",
+        "label": "exact_valid",
+        "exact_valid": true,
+        "secondary_annotations": []
+      },
+      "illustrative_bad_outputs": [
+        {
+          "output_id": "demo_row_availability_01_bad_direct_answer",
+          "output_kind": "illustrative_bad_output",
+          "execution_status": "synthetic_not_executed",
+          "serialized_output": "The item is available at Harborview Central.",
+          "output_sha256": "9d23ea243eecdd5ab8dbb7927160c58af2c1e2acdb3fcfac8fd2696af656d3d2",
+          "expected_evaluator_result": {
+            "primary_class": "invalid_json",
+            "label": "invalid_json",
+            "failure_subtype": "direct_answer_substitution",
+            "exact_valid": false
+          },
+          "row_id": "demo_row_availability_01"
+        },
+        {
+          "output_id": "demo_row_availability_01_bad_missing_tool_call",
+          "output_kind": "illustrative_bad_output",
+          "execution_status": "synthetic_not_executed",
+          "serialized_output": "{\"tool_calls\":[]}",
+          "output_sha256": "220227c9824cec00ee38fc2c27f76d908113e9a43e627f632b7d5ac98dccb940",
+          "expected_evaluator_result": {
+            "primary_class": "missing_tool_call",
+            "label": "missing_tool_call",
+            "exact_valid": false
+          },
+          "row_id": "demo_row_availability_01"
+        }
+      ],
+      "fabricated_tool_result": {
+        "output_id": "demo_row_availability_01_fabricated_tool_result",
+        "output_kind": "fabricated_tool_result",
+        "execution_status": "synthetic_not_executed",
+        "serialized_output": "{\"available\":true,\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\"}",
+        "output_sha256": "a7a91ba1777552bee1107de28be6584fd9f508e54f8159217e6c747fc67cd912",
+        "row_id": "demo_row_availability_01"
+      },
+      "illustrative_post_tool_response": {
+        "output_id": "demo_row_availability_01_post_tool_response",
+        "output_kind": "illustrative_post_tool_response",
+        "execution_status": "synthetic_not_executed",
+        "serialized_output": "After checking the catalog, The Glass Orchard is available at Harborview Central.",
+        "output_sha256": "7d00a7873091359305c6d51a3b524aa552ffdf79a53a5d70b0e3a6fbd2337f20",
+        "row_id": "demo_row_availability_01"
+      }
+    },
+    {
+      "row_id": "demo_row_definition_02",
+      "row_role": "no_call_restraint",
+      "execution_status": "synthetic_not_executed",
+      "expected_assistant_action": "Answer the library-card definition plainly with no tool call.",
+      "source_fields": {
+        "row_id": "demo_row_definition_02",
+        "row_role": "no_call_restraint",
+        "system_content": "You are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result.",
+        "user_content": "What is a library card used for?",
+        "assistant_message": {
+          "role": "assistant",
+          "content": "A library card identifies the borrower and allows eligible items to be borrowed or placed on hold."
+        }
+      },
+      "source_sha256": "031d1e0cc18b4dc5ab5e765d0321d48c518ac9405a9334f790c290eac82278ac",
+      "rendered_prompt": "SYSTEM\nYou are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result.\nTOOLS\n{\"description\":\"Synthetic Harborview Public Library registry for the public worked example.\",\"name\":\"harborview_public_library_circulation_tools\",\"tools\":[{\"description\":\"Find catalog item records matching a title query.\",\"name\":\"search_catalog\",\"parameters\":{\"properties\":{\"query\":{\"type\":\"string\"}},\"required\":[\"query\"],\"type\":\"object\"}},{\"description\":\"Read the availability of one catalog item at one branch.\",\"name\":\"get_availability\",\"parameters\":{\"properties\":{\"branch_code\":{\"type\":\"string\"},\"item_id\":{\"type\":\"string\"}},\"required\":[\"item_id\",\"branch_code\"],\"type\":\"object\"}},{\"description\":\"Place a hold for a patron on one catalog item at one branch.\",\"name\":\"place_hold\",\"parameters\":{\"properties\":{\"branch_code\":{\"type\":\"string\"},\"item_id\":{\"type\":\"string\"},\"patron_ref\":{\"type\":\"string\"}},\"required\":[\"item_id\",\"branch_code\",\"patron_ref\"],\"type\":\"object\"}}]}\nUSER\nWhat is a library card used for?\nASSISTANT\n",
+      "prompt_sha256": "d8da95e22735bf88df45b08ba175f0ce01179b29222f714bd7fe2747a873aa00",
+      "dataset_row": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result."
+          },
+          {
+            "role": "user",
+            "content": "What is a library card used for?"
+          },
+          {
+            "role": "assistant",
+            "content": "A library card identifies the borrower and allows eligible items to be borrowed or placed on hold."
+          }
+        ],
+        "metadata": {
+          "source_case_id": "demo_row_definition_02",
+          "row_role": "no_call_restraint",
+          "expected_tool": false,
+          "expected_no_call": true
+        }
+      },
+      "assistant_message": {
+        "role": "assistant",
+        "content": "A library card identifies the borrower and allows eligible items to be borrowed or placed on hold."
+      },
+      "assistant_target_text": "A library card identifies the borrower and allows eligible items to be borrowed or placed on hold.",
+      "assistant_target_sha256": "3c0bb511f05f0c5e98740b233c035c3202bebcee601591c4cd5bf45abd2c6d4d",
+      "expected_evaluator_result": {
+        "primary_class": "refusal_expected",
+        "label": "refusal_expected",
+        "exact_valid": false,
+        "secondary_annotations": []
+      },
+      "illustrative_bad_outputs": [],
+      "fabricated_tool_result": null,
+      "illustrative_post_tool_response": null
+    },
+    {
+      "row_id": "demo_row_hold_03",
+      "row_role": "anti_substitution",
+      "execution_status": "synthetic_not_executed",
+      "expected_assistant_action": "Call place_hold with the resolved item, branch, and patron reference.",
+      "prompt_visible_arguments": {
+        "item_id": "hv-item-204",
+        "branch_code": "central-01",
+        "patron_ref": "patron-demo-17"
+      },
+      "source_fields": {
+        "row_id": "demo_row_hold_03",
+        "row_role": "anti_substitution",
+        "system_content": "You are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result.",
+        "user_content": "The catalog has resolved The Glass Orchard to item hv-item-204, and Harborview Central to branch central-01. Place a hold on that item at that branch for patron patron-demo-17.",
+        "assistant_message": {
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "id": "call_demo_hold_03",
+              "type": "function",
+              "function": {
+                "name": "place_hold",
+                "arguments": "{\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\",\"patron_ref\":\"patron-demo-17\"}"
+              }
+            }
+          ]
+        }
+      },
+      "source_sha256": "0466b5b07af8aaabc6b7f462499b68ef393349b13a79f84bb23f7449b9f779ef",
+      "rendered_prompt": "SYSTEM\nYou are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result.\nTOOLS\n{\"description\":\"Synthetic Harborview Public Library registry for the public worked example.\",\"name\":\"harborview_public_library_circulation_tools\",\"tools\":[{\"description\":\"Find catalog item records matching a title query.\",\"name\":\"search_catalog\",\"parameters\":{\"properties\":{\"query\":{\"type\":\"string\"}},\"required\":[\"query\"],\"type\":\"object\"}},{\"description\":\"Read the availability of one catalog item at one branch.\",\"name\":\"get_availability\",\"parameters\":{\"properties\":{\"branch_code\":{\"type\":\"string\"},\"item_id\":{\"type\":\"string\"}},\"required\":[\"item_id\",\"branch_code\"],\"type\":\"object\"}},{\"description\":\"Place a hold for a patron on one catalog item at one branch.\",\"name\":\"place_hold\",\"parameters\":{\"properties\":{\"branch_code\":{\"type\":\"string\"},\"item_id\":{\"type\":\"string\"},\"patron_ref\":{\"type\":\"string\"}},\"required\":[\"item_id\",\"branch_code\",\"patron_ref\"],\"type\":\"object\"}}]}\nUSER\nThe catalog has resolved The Glass Orchard to item hv-item-204, and Harborview Central to branch central-01. Place a hold on that item at that branch for patron patron-demo-17.\nASSISTANT\n",
+      "prompt_sha256": "a0347fb90b85006c05a5f1dbf4bd01a268b78edca7a454b81e39fde276e78c82",
+      "dataset_row": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are Harborview Public Library's tool-calling assistant. Use the registry when a tool is needed. For general policy or definition questions, answer plainly and do not call a tool. Never claim a circulation action succeeded unless the fixture explicitly supplies a tool result."
+          },
+          {
+            "role": "user",
+            "content": "The catalog has resolved The Glass Orchard to item hv-item-204, and Harborview Central to branch central-01. Place a hold on that item at that branch for patron patron-demo-17."
+          },
+          {
+            "role": "assistant",
+            "tool_calls": [
+              {
+                "id": "call_demo_hold_03",
+                "type": "function",
+                "function": {
+                  "name": "place_hold",
+                  "arguments": "{\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\",\"patron_ref\":\"patron-demo-17\"}"
+                }
+              }
+            ]
+          }
+        ],
+        "metadata": {
+          "source_case_id": "demo_row_hold_03",
+          "row_role": "anti_substitution",
+          "tool": "place_hold",
+          "expected_tool": true,
+          "expected_no_call": false,
+          "prompt_visible_arguments": {
+            "item_id": "hv-item-204",
+            "branch_code": "central-01",
+            "patron_ref": "patron-demo-17"
+          }
+        }
+      },
+      "assistant_message": {
+        "role": "assistant",
+        "tool_calls": [
+          {
+            "id": "call_demo_hold_03",
+            "type": "function",
+            "function": {
+              "name": "place_hold",
+              "arguments": "{\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\",\"patron_ref\":\"patron-demo-17\"}"
+            }
+          }
+        ]
+      },
+      "assistant_target_text": "{\"tool_calls\":[{\"function\":{\"arguments\":{\"branch_code\":\"central-01\",\"item_id\":\"hv-item-204\",\"patron_ref\":\"patron-demo-17\"},\"name\":\"place_hold\"},\"type\":\"function\"}]}",
+      "assistant_target_sha256": "f768464f36e012fd69c7bd917e3d32a28fc8854511c10d6f4e57911b1b917e72",
+      "expected_evaluator_result": {
+        "primary_class": "exact_valid",
+        "label": "exact_valid",
+        "exact_valid": true,
+        "secondary_annotations": []
+      },
+      "illustrative_bad_outputs": [
+        {
+          "output_id": "demo_row_hold_03_bad_wrong_tool_and_args",
+          "output_kind": "illustrative_bad_output",
+          "execution_status": "synthetic_not_executed",
+          "serialized_output": "{\"tool_calls\":[{\"id\":\"call_demo_hold_03\",\"type\":\"function\",\"function\":{\"name\":\"get_availability\",\"arguments\":\"{\\\"branch_code\\\":\\\"west-02\\\",\\\"item_id\\\":\\\"hv-item-204\\\"}\"}}]}",
+          "output_sha256": "3731ee77d33f3617d7093a65aa2b6860460e9f71983ffbfaa12aca7be57546d0",
+          "expected_evaluator_result": {
+            "primary_class": "wrong_tool_name",
+            "label": "wrong_tool_name",
+            "exact_valid": false,
+            "secondary_annotations": [],
+            "precedence_note": "wrong_tool_name wins over wrong_arguments when both are present"
+          },
+          "row_id": "demo_row_hold_03"
+        },
+        {
+          "output_id": "demo_row_hold_03_bad_wrong_arguments",
+          "output_kind": "illustrative_bad_output",
+          "execution_status": "synthetic_not_executed",
+          "serialized_output": "{\"tool_calls\":[{\"id\":\"call_demo_hold_03\",\"type\":\"function\",\"function\":{\"name\":\"place_hold\",\"arguments\":\"{\\\"branch_code\\\":\\\"central-01\\\",\\\"item_id\\\":\\\"hv-item-204\\\",\\\"patron_ref\\\":\\\"patron-demo-99\\\"}\"}}]}",
+          "output_sha256": "356377ce0352a871f29f7e660c73a85a93fef5aa1f79f9a3e8dc522eb2e9cdb5",
+          "expected_evaluator_result": {
+            "primary_class": "wrong_arguments",
+            "label": "wrong_arguments",
+            "exact_valid": false,
+            "secondary_annotations": []
+          },
+          "row_id": "demo_row_hold_03"
+        }
+      ],
+      "fabricated_tool_result": {
+        "output_id": "demo_row_hold_03_fabricated_tool_result",
+        "output_kind": "fabricated_tool_result",
+        "execution_status": "synthetic_not_executed",
+        "serialized_output": "{\"branch_code\":\"central-01\",\"hold_id\":\"hv-hold-881\",\"item_id\":\"hv-item-204\",\"patron_ref\":\"patron-demo-17\",\"status\":\"queued\"}",
+        "output_sha256": "2e94ca03d40e1e4a67280505fef3d4bed1816bb7ebe31caa1fdc5c0240c73bd7",
+        "row_id": "demo_row_hold_03"
+      },
+      "illustrative_post_tool_response": {
+        "output_id": "demo_row_hold_03_post_tool_response",
+        "output_kind": "illustrative_post_tool_response",
+        "execution_status": "synthetic_not_executed",
+        "serialized_output": "The hold for patron-demo-17 on The Glass Orchard has been queued at Harborview Central.",
+        "output_sha256": "b7b29e9c1423b9c22e985d9be5415e0a362ede72e60354282dabee29e3e59068",
+        "row_id": "demo_row_hold_03"
+      }
+    }
+  ],
+  "row_to_prompt_map": [
+    {
+      "row_id": "demo_row_availability_01",
+      "prompt_sha256": "12b24c348916e5da1da4a808a5f778b5cadc74239ca45db3d79de02bfc429caa"
+    },
+    {
+      "row_id": "demo_row_definition_02",
+      "prompt_sha256": "d8da95e22735bf88df45b08ba175f0ce01179b29222f714bd7fe2747a873aa00"
+    },
+    {
+      "row_id": "demo_row_hold_03",
+      "prompt_sha256": "a0347fb90b85006c05a5f1dbf4bd01a268b78edca7a454b81e39fde276e78c82"
+    }
+  ],
+  "row_to_output_map": [
+    {
+      "row_id": "demo_row_availability_01",
+      "output_id": "demo_row_availability_01_scored_assistant_target",
+      "output_kind": "scored_assistant_target",
+      "output_sha256": "8971e96e028031a9742abc9cab289ea3deead2804612d36e10e68fbac4220323"
+    },
+    {
+      "row_id": "demo_row_availability_01",
+      "output_id": "demo_row_availability_01_bad_direct_answer",
+      "output_kind": "illustrative_bad_output",
+      "output_sha256": "9d23ea243eecdd5ab8dbb7927160c58af2c1e2acdb3fcfac8fd2696af656d3d2"
+    },
+    {
+      "row_id": "demo_row_availability_01",
+      "output_id": "demo_row_availability_01_bad_missing_tool_call",
+      "output_kind": "illustrative_bad_output",
+      "output_sha256": "220227c9824cec00ee38fc2c27f76d908113e9a43e627f632b7d5ac98dccb940"
+    },
+    {
+      "row_id": "demo_row_availability_01",
+      "output_id": "demo_row_availability_01_fabricated_tool_result",
+      "output_kind": "fabricated_tool_result",
+      "output_sha256": "a7a91ba1777552bee1107de28be6584fd9f508e54f8159217e6c747fc67cd912"
+    },
+    {
+      "row_id": "demo_row_availability_01",
+      "output_id": "demo_row_availability_01_post_tool_response",
+      "output_kind": "illustrative_post_tool_response",
+      "output_sha256": "7d00a7873091359305c6d51a3b524aa552ffdf79a53a5d70b0e3a6fbd2337f20"
+    },
+    {
+      "row_id": "demo_row_definition_02",
+      "output_id": "demo_row_definition_02_scored_assistant_target",
+      "output_kind": "scored_assistant_target",
+      "output_sha256": "3c0bb511f05f0c5e98740b233c035c3202bebcee601591c4cd5bf45abd2c6d4d"
+    },
+    {
+      "row_id": "demo_row_hold_03",
+      "output_id": "demo_row_hold_03_scored_assistant_target",
+      "output_kind": "scored_assistant_target",
+      "output_sha256": "f768464f36e012fd69c7bd917e3d32a28fc8854511c10d6f4e57911b1b917e72"
+    },
+    {
+      "row_id": "demo_row_hold_03",
+      "output_id": "demo_row_hold_03_bad_wrong_tool_and_args",
+      "output_kind": "illustrative_bad_output",
+      "output_sha256": "3731ee77d33f3617d7093a65aa2b6860460e9f71983ffbfaa12aca7be57546d0"
+    },
+    {
+      "row_id": "demo_row_hold_03",
+      "output_id": "demo_row_hold_03_bad_wrong_arguments",
+      "output_kind": "illustrative_bad_output",
+      "output_sha256": "356377ce0352a871f29f7e660c73a85a93fef5aa1f79f9a3e8dc522eb2e9cdb5"
+    },
+    {
+      "row_id": "demo_row_hold_03",
+      "output_id": "demo_row_hold_03_fabricated_tool_result",
+      "output_kind": "fabricated_tool_result",
+      "output_sha256": "2e94ca03d40e1e4a67280505fef3d4bed1816bb7ebe31caa1fdc5c0240c73bd7"
+    },
+    {
+      "row_id": "demo_row_hold_03",
+      "output_id": "demo_row_hold_03_post_tool_response",
+      "output_kind": "illustrative_post_tool_response",
+      "output_sha256": "b7b29e9c1423b9c22e985d9be5415e0a362ede72e60354282dabee29e3e59068"
+    }
+  ],
+  "interpretation": {
+    "role_table": [
+      {
+        "role": "demonstration",
+        "meaning": "A readable synthetic trace from row to prompt to assistant action to evaluator result."
+      },
+      {
+        "role": "validation",
+        "meaning": "Deterministic checks of rendering, hashes, joins, and exact canonical labels."
+      },
+      {
+        "role": "evidence",
+        "meaning": "Inspectable evidence that the fixture is internally coherent and reproducible."
+      },
+      {
+        "role": "proof_of_model_improvement",
+        "meaning": "None; improvement requires a separate authorized comparison on frozen evaluation data."
+      }
+    ],
+    "limits": [
+      "The fixture does not prove model improvement.",
+      "The fixture does not claim tokenizer-native rendering across every model.",
+      "The fixture does not substitute for a real training or evaluation run."
+    ]
+  },
+  "canonical_manifest_exclusion": {
+    "checked_surfaces": [
+      "evals/canonical_eval_manifest_v1.json",
+      "docs/current/status/TRAINING_RUN_HISTORY.md",
+      "docs/publication/public_reference_dispositions.json"
+    ],
+    "status": "excluded"
+  }
+}

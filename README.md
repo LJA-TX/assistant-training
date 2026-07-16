@@ -96,8 +96,9 @@ This page is an informal overview, not an authority or governance document.
 | What has the project accomplished so far? | [docs/current/project_outcomes_to_date.md](docs/current/project_outcomes_to_date.md) |
 | What defines the current Gen-2 framing? | [docs/current/status/GEN2_PROGRAM_CHARTER.md](docs/current/status/GEN2_PROGRAM_CHARTER.md), [docs/current/status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md](docs/current/status/GEN2_PROSPECTIVE_EVIDENCE_PROGRAM_ASSESSMENT.md), [docs/current/status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md](docs/current/status/GEN2_STRATEGIC_DIRECTION_OPTIONS_ASSESSMENT.md), and [docs/current/status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md](docs/current/status/GEN2_SCOPE_BOUNDARY_ASSESSMENT.md) |
 | Where are the published baseline artifacts? | [docs/current/baselines/README.md](docs/current/baselines/README.md) |
-| What is the current closure and handoff posture? | [docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md](docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md), [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md), and [docs/current/status/GEN2_PROGRAM_CHARTER.md](docs/current/status/GEN2_PROGRAM_CHARTER.md) |
-| What is the current readiness baseline? | [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md) and [docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md](docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md) |
+| What is the final Stage C status? | Stage C closure and publication disposition records |
+| What is the latest D1 / D2 readiness status? | D1 / D2 readiness and handoff records |
+| Where is the worked example? | [docs/framework/examples/public_sanitized_tool_call_worked_example.md](docs/framework/examples/public_sanitized_tool_call_worked_example.md) |
 | Why does it exist? | [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md) and [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md) |
 | How do current method and history differ? | [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md) |
 | Where do I start? | [docs/current/start_here.md](docs/current/start_here.md) |
@@ -107,14 +108,13 @@ This page is an informal overview, not an authority or governance document.
 
 1. [docs/current/start_here.md](docs/current/start_here.md)
 2. [docs/current/current_status.md](docs/current/current_status.md)
-3. [docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md](docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md)
+3. [docs/current/status/GEN2_PROGRAM_CHARTER.md](docs/current/status/GEN2_PROGRAM_CHARTER.md)
 4. [docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md](docs/current/status/D1_CLOSURE_AND_D2_READINESS_ASSESSMENT.md)
-5. [docs/current/status/GEN2_PROGRAM_CHARTER.md](docs/current/status/GEN2_PROGRAM_CHARTER.md)
-6. [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
-7. [docs/framework/methodology/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md](docs/framework/methodology/STAGE_BC_PROCESS_ARCHITECTURE_PROPOSAL.md)
-8. [docs/continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md](docs/continuity/D0_TO_CURRENT_TREE_MECHANISM_ISOLATION_GOVERNANCE.md)
-9. [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md)
-10. [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md)
+5. docs/continuity/STAGE_C_CLOSURE_CONTINUITY_PACKAGE.md
+6. [docs/current/framework_vs_history.md](docs/current/framework_vs_history.md)
+7. [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
+8. [docs/goal_charter_v5a.md](docs/goal_charter_v5a.md)
+9. [docs/appendix_a_operational_execution_contract_v3a.md](docs/appendix_a_operational_execution_contract_v3a.md)
 
 ## Core Inspection Targets
 
@@ -139,6 +139,6 @@ This page is an informal overview, not an authority or governance document.
 - [docs/framework/lineages/README.md](docs/framework/lineages/README.md)
 - [docs/framework/methodology/](docs/framework/methodology/)
 - [docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md](docs/current/status/STAGE_B_COMPLETION_DETERMINATION.md)
-- [docs/framework/methodology/STAGE_BC_PROCESS_EXTRACTION_ASSESSMENT.md](docs/framework/methodology/STAGE_BC_PROCESS_EXTRACTION_ASSESSMENT.md)
+- docs/current/roadmap/
 - [docs/housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md](docs/housekeeping/OSS_01_INDEPENDENT_REVIEW_AND_RECONCILIATION_GROK.md)
 - [docs/housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md](docs/housekeeping/OSS_05_PUBLIC_FRONT_DOOR_IMPLEMENTATION_SUMMARY.md)
